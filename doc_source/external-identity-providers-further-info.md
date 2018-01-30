@@ -1,0 +1,15 @@
+# AppStream 2\.0 Integration with SAML 2\.0<a name="external-identity-providers-further-info"></a>
+
+The following links help you configure third\-party SAML 2\.0 identity provider solutions to work with AppStream 2\.0\.
+
+
+| IdP solution | More information | 
+| --- | --- | 
+| Ping Identity |  [Configuring an SSO connection to Amazon AppStream 2\.0](https://ping.force.com/Support/PingIdentityArticle?id=kA340000000TOPDCA4) — Describes how to set up single sign\-on \(SSO\) to AppStream 2\.0\. | 
+| Okta |  [How to Configure SAML 2\.0 for Amazon AppStream 2\.0](http://saml-doc.okta.com/SAML_Docs/How-to-Configure-SAML-2.0-for-Amazon-AppStream-2-0.html) — Describes how to use Okta to set up SAML federation to AppStream 2\.0\. For stacks that are joined to a domain, the "Application username format" must be set to "AD user principal name"\. | 
+| Active Directory Federation Services \(AD FS\) for Windows Server |  [ Enabling Identity Federation with AD FS 3\.0 and Amazon AppStream 2\.0](https://aws.amazon.com/blogs/compute/enabling-identity-federation-with-ad-fs-3-0-and-amazon-appstream-2-0/) — Describes how to provide users with SSO access to AppStream 2\.0 by using their existing enterprise credentials\. You can configure federated identities for AppStream 2\.0 by using AD FS 3\.0\.  | 
+| Shibboleth |  [Single Sign\-On: Integrating AWS, OpenLDAP, and Shibboleth](https://aws.amazon.com/blogs/security/new-whitepaper-single-sign-on-integrating-aws-openldap-and-shibboleth/) — Describes how to set up the initial federation between the Shibboleth IdP and the AWS Management Console\. You must complete the following additional steps to enable federation to AppStream 2\.0\. Step 4 of the AWS Security whitepaper describes how to create IAM roles that define the permissions that federated users have to the AWS Management Console\. After you create these roles and embed the inline policy as described in the whitepaper, modify this policy so that it provides federated users with permissions to access only an AppStream 2\.0 stack\. To do this, replace the existing policy with the policy noted in *Step 3: Embed an Inline Policy for the IAM Role*, in [Setting Up SAML](external-identity-providers-setting-up-saml.md)\.When you add the stack relay state URL as described in *Step 6: Configure the Relay State of Your Federation*, in [Setting Up SAML](external-identity-providers-setting-up-saml.md), add the relay state parameter to the federation URL as a target request attribute\. For information about configuring relay state parameters, see the [SAML 2\.0](https://wiki.shibboleth.net/confluence/display/IDP30/UnsolicitedSSOConfiguration#UnsolicitedSSOConfiguration-SAML2.0) section in the Shibboleth documentation\.  | 
+
+For solutions to common problems you may encounter, see [Troubleshooting](troubleshooting.md)\.
+
+For more information about additional supported SAML providers, see [Integrating Third\-Party SAML Solution Providers with AWS](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml_3rd-party.html) in the *IAM User Guide*\.
