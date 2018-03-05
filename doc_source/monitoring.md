@@ -37,26 +37,10 @@ AppStream 2\.0 sends metrics to CloudWatch one time every minute\. The `AWS/AppS
 
 | Metric | Description | 
 | --- | --- | 
-| ActualCapacity |  The total number of instances that are available for streaming or are currently streaming\. 
-
-```
-ActualCapacity = AvailableCapacity + InUseCapacity
-``` Units: Count Valid statistics: Average, Minimum, Maximum  | 
-|  AvailableCapacity  |  The number of idle instances currently available for user sessions\. 
-
-```
-AvailableCapacity = ActualCapacity - InUseCapacity
-``` Units: Count Valid statistics: Average, Minimum, Maximum  | 
-| CapacityUtilization |  The percentage of instances in a fleet that are being used, using the following formula\. 
-
-```
-CapacityUtilization = (InUseCapacity/ActualCapacity) * 100
-``` Monitoring this metric helps with decisions about increasing or decreasing the value of a fleet's desired capacity\. Units: Percent Valid statistics: Average, Minimum, Maximum  | 
-|  DesiredCapacity  |  The total number of instances that are either running or pending\. This represents the total number of concurrent streaming sessions your fleet can support in a steady state\. 
-
-```
-DesiredCapacity = ActualCapacity + PendingCapacity
-``` Units: Count Valid statistics: Average, Minimum, Maximum  | 
+| ActualCapacity |  The total number of instances that are available for streaming or are currently streaming\. <pre>ActualCapacity = AvailableCapacity + InUseCapacity</pre> Units: Count Valid statistics: Average, Minimum, Maximum  | 
+|  AvailableCapacity  |  The number of idle instances currently available for user sessions\. <pre>AvailableCapacity = ActualCapacity - InUseCapacity</pre> Units: Count Valid statistics: Average, Minimum, Maximum  | 
+| CapacityUtilization |  The percentage of instances in a fleet that are being used, using the following formula\. <pre>CapacityUtilization = (InUseCapacity/ActualCapacity) * 100</pre> Monitoring this metric helps with decisions about increasing or decreasing the value of a fleet's desired capacity\. Units: Percent Valid statistics: Average, Minimum, Maximum  | 
+|  DesiredCapacity  |  The total number of instances that are either running or pending\. This represents the total number of concurrent streaming sessions your fleet can support in a steady state\. <pre>DesiredCapacity = ActualCapacity + PendingCapacity</pre> Units: Count Valid statistics: Average, Minimum, Maximum  | 
 |  InUseCapacity  |  The number of instances currently being used for streaming sessions\. One `InUseCapacity` count represents one streaming session\. Units: Count Valid statistics: Average, Minimum, Maximum  | 
 |  PendingCapacity  |  The number of instances being provisioned by AppStream 2\.0\. Represents the additional number of streaming sessions the fleet can support after provisioning is complete\. When provisioning starts, it usually takes 10\-20 minutes for an instance to become available for streaming\. Units: Count Valid statistics: Average, Minimum, Maximum  | 
 | RunningCapacity |  The total number of instances currently running\. Represents the number of concurrent streaming sessions that can be supported by the fleet in its current state\. This metric is provided for Always\-On fleets only, and has the same value as the `ActualCapacity` metric\. Units: Count Valid statistics: Average, Minimum, Maximum  | 

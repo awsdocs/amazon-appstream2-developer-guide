@@ -1,10 +1,26 @@
-# Network Settings for Fleet and Image Builder Instances<a name="managing-network"></a>
+# Network Settings for Amazon AppStream 2\.0<a name="managing-network"></a>
 
-The following sections contain information about configuring your AppStream 2\.0 fleets and image builders to access network resources and the internet\.
-
-When creating an AppStream 2\.0 fleet or image builder, you can provide Amazon VPC subnets\. AppStream 2\.0 sets up elastic network interfaces \(ENI\) to the subnets provided\. This is so that AppStream 2\.0 instances have access to your network resources or have access to the public internet through your VPC\. For more information, see [VPC and Subnet Basics](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#vpc-subnet-basics)\.
+The following sections contain information about enabling users to connnect to AppStream 2\.0 streaming instances and enabling your AppStream 2\.0 fleets and image builders to access network resources and the internet\.
 
 
++ [Port Requirements for User Connections to Amazon AppStream 2\.0](appstream2-port-requirements-users.md)
+  + [Ports for AppStream 2\.0 User Devices](appstream2-port-requirements-users.md#client-application-ports)
+  + [Whitelisted Domains](appstream2-port-requirements-users.md#whitelisted_ports)
++ [Port Requirements for Amazon AppStream 2\.0 Connections to Network Resources and the Internet](appstream2-port-requirements-appstream2.md)
+  + [Network Interfaces](appstream2-port-requirements-appstream2.md#network-interfaces)
+  + [Management Network Interface IP Address Range and Ports](appstream2-port-requirements-appstream2.md#management_ports)
+  + [Customer Network Interface Ports](appstream2-port-requirements-appstream2.md#primary_ports)
++ [Network Setup Guidelines](#managing-network-guidelines)
+  + [Fleets](#managing-network-guidelines-fleets)
+  + [Image Builders](#managing-network-guidelines-image-builders)
++ [Security Groups](#managing-network-security-groups)
++ [Home Folders and VPC Endpoints](#managing-network-vpce-iam-policy)
++ [Enabling Internet Access Using a Public Subnet](managing-network-internet-default.md)
+  + [Enabling Internet Access for a Fleet](managing-network-internet-default.md#managing-network-internet-dia-fleet)
+  + [Enabling Internet Access for an Image Builder](managing-network-internet-default.md#managing-network-internet-dia-image-builder)
++ [Enabling Internet Access Using a NAT Gateway](managing-network-internet-manual.md)
+  + [Enabling Internet Access for a Fleet Using a NAT Gateway](managing-network-internet-manual.md#managing-network-internet-manual-fleet)
+  + [Enabling Internet Access for an Image Builder Using a NAT Gateway](managing-network-internet-manual.md#managing-network-internet-manual-image-builder)
 
 ## Network Setup Guidelines<a name="managing-network-guidelines"></a>
 

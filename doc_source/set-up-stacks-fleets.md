@@ -46,7 +46,7 @@ Set up and create a fleet from which user applications are executed and streamed
 
 1. For **Step 4: Configure Network**, do the following:
 
-   1. To add internet access for fleet instances in a VPC with a public subnet, choose **Default Internet Access**\. If you are providing internet access using a NAT gateway, leave **Default Internet Access** unselected\. For more information, see [Network Settings for Fleet and Image Builder Instances](managing-network.md)\.
+   1. To add internet access for fleet instances in a VPC with a public subnet, choose **Default Internet Access**\. If you are providing internet access using a NAT gateway, leave **Default Internet Access** unselected\. For more information, see [Network Settings for Amazon AppStream 2\.0 ](managing-network.md)\.
 
    1. Choose a VPC and two subnets with access to the network resources that your application needs\. If you don't have a VPC or subnets, you can create them using the links provided and then click the refresh icons\.
 

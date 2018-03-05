@@ -79,11 +79,7 @@ The fixed fleet has constant capacity based on the value that you specified as *
 
 ## Managing Fleet Scaling Using the AWS CLI<a name="autoscaling-cli"></a>
 
-You can set up and manage fleet scaling using the AWS Command Line Interface\.
-
-### CLI Examples<a name="autoscaling-cli-example"></a>
-
-Before running scaling policy commands, you must register your fleet as a scalable target\. Use the following [register\-scalable\-target](http://docs.aws.amazon.com/cli/latest/reference/application-autoscaling/register-scalable-target.html) command:
+You can set up and manage fleet scaling using the AWS Command Line Interface \(CLI\)\. Before running scaling policy commands, you must register your fleet as a scalable target\. Use the following [register\-scalable\-target](http://docs.aws.amazon.com/cli/latest/reference/application-autoscaling/register-scalable-target.html) command:
 
 ```
 aws application-autoscaling register-scalable-target
@@ -94,7 +90,12 @@ aws application-autoscaling register-scalable-target
     --role-arn arn:aws:iam::account-number-without-hyphens:role/service-role/ApplicationAutoScalingForAmazonAppStreamAccess
 ```
 
-#### Example 1: Applying a Scaling Policy Based on Capacity Utilization<a name="autoscaling-cli-utilization"></a>
+
++ [Example 1: Applying a Scaling Policy Based on Capacity Utilization](#autoscaling-cli-utilization)
++ [Example 2: Applying a Scaling Policy Based on Insufficient Capacity Errors](#autoscaling-cli-capacity)
++ [Example 3: Change the Fleet Capacity Based on a Schedule](#autoscaling-cli-schedule)
+
+### Example 1: Applying a Scaling Policy Based on Capacity Utilization<a name="autoscaling-cli-utilization"></a>
 
 This CLI example sets up a scaling policy that scales out a fleet by 25% if Utilization >= 75%\.
 
@@ -149,7 +150,7 @@ aws cloudwatch put-metric-alarm
 --alarm-actions "arn:aws:autoscaling:your-region-code:account-number-without-hyphens:scalingPolicy:policyid:resource/appstream/fleet/fleetname:policyName/policyname"
 ```
 
-#### Example 2: Applying a Scaling Policy Based on Insufficient Capacity Errors<a name="autoscaling-cli-capacity"></a>
+### Example 2: Applying a Scaling Policy Based on Insufficient Capacity Errors<a name="autoscaling-cli-capacity"></a>
 
 This CLI example sets up a scaling policy that scales out the fleet by 1 if the fleet throws an `InsufficientCapacityError` error\.
 
@@ -203,3 +204,68 @@ aws cloudwatch put-metric-alarm
 --evaluation-periods 1 --unit Count \
 --alarm-actions "arn:aws:autoscaling:your-region-code:account-number-without-hyphens:scalingPolicy:policyid:resource/appstream/fleet/fleetname:policyName/policyname"
 ```
+
+### Example 3: Change the Fleet Capacity Based on a Schedule<a name="autoscaling-cli-schedule"></a>
+
+Changing your fleet capacity based on a schedule allows you to scale your fleet capacity in response to predictable changes in demand\. For example, at the start of a work day, you might expect a certain number of users to request streaming connections at one time\. To change your fleet capacity based on a schedule, you can use the Application Auto Scaling [PutScheduledAction](http://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScheduledAction.html) API action or the [put\-scheduled\-action](http://docs.aws.amazon.com/cli/latest/reference/application-autoscaling/put-scheduled-action.html) CLI command\.
+
+Before changing your fleet capacity, you can list your current fleet capacity by using the AppStream 2\.0 [describe\-fleets](http://docs.aws.amazon.com/cli/latest/reference/appstream/describe-fleets.html) CLI command\.
+
+```
+aws appstream describe-fleets --name fleetname
+```
+
+The current fleet capacity will appear similar to the following output \(shown in JSON format\):
+
+```
+{
+    {
+            "ComputeCapacityStatus": {
+                "Available": 1,
+                "Desired": 1,
+                "Running": 1,
+                "InUse": 0
+            },
+}
+```
+
+Then, use the `put-scheduled-action` command to create a scheduled action to change your fleet capacity\. For example, the following command changes the minimum capacity to 3 and the maximum capacity to 5 every day at 9:00 AM\.
+
+```
+aws application-autoscaling put-scheduled-action --service-namespace appstream \
+--resource-id fleet/fleetname \
+--schedule="cron(0 9 * * ? *)" \
+--scalable-target-action MinCapacity=3,MaxCapacity=5 \
+--scheduled-action-name ExampleScheduledAction \
+--scalable-dimension appstream:fleet:DesiredCapacity
+```
+
+To confirm that the scheduled action to change your fleet capacity was successfully created, run the [describe\-scheduled\-actions](http://docs.aws.amazon.com/cli/latest/reference/application-autoscaling/describe-scheduled-actions.html) command\.
+
+```
+aws application-autoscaling describe-scheduled-actions --service-namespace appstream --resource-id fleet/fleetname
+```
+
+If the scheduled action was successfully created, the JSON output appears similar to the following\.
+
+```
+{
+    "ScheduledActions": [
+        {
+            "ScalableDimension": "appstream:fleet:DesiredCapacity",
+            "Schedule": "cron(0 9 * * ? *)",
+            "ResourceId": "fleet/ExampleFleet",
+            "CreationTime": 1518651232.886,
+            "ScheduledActionARN": "<arn>",
+            "ScalableTargetAction": {
+                "MinCapacity": 3,
+                "MaxCapacity": 5
+            },
+            "ScheduledActionName": "ExampleScheduledAction",
+            "ServiceNamespace": "appstream"
+        }
+    ]
+}
+```
+
+To learn more about creating scheduled actions by using the Application Auto Scaling CLI commands or API actions, see the [application\-autoscaling](http://docs.aws.amazon.com/cli/latest/reference/application-autoscaling/application-autoscaling.html) section of the AWS CLI Command Reference and [Application Auto Scaling API Reference](http://docs.aws.amazon.com/autoscaling/application/APIReference/)\.

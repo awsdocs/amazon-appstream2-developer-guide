@@ -37,7 +37,7 @@ Before you can stream your applications, you need to set up a stack, choose an i
 
    + **Maximum capacity** — Choose a maximum number of instances for your fleet based on the maximum number of expected concurrent users\. Every unique user session is served by an instance\. For example, to have your stack support 500 concurrent users during high demand, specify a maximum capacity of 500\. This ensures that up to 500 instances can be created on demand\.
 
-1. For **Step 4: Configure Network**, choose a VPC and two subnets with access to the network resources that your application needs\. If you don't have a VPC or subnets, you can create them using the links provided and then click the refresh icons\. For **Security groups**, you can select up to five security groups\. Otherwise, the default security group is used\. For more information, see [Network Settings for Fleet and Image Builder Instances](managing-network.md)\.
+1. For **Step 4: Configure Network**, choose a VPC and two subnets with access to the network resources that your application needs\. If you don't have a VPC or subnets, you can create them using the links provided and then click the refresh icons\. For **Security groups**, you can select up to five security groups\. Otherwise, the default security group is used\. For more information, see [Network Settings for Amazon AppStream 2\.0 ](managing-network.md)\.
 
 1. For **Step 5: Enable Storage**, keep the default setting, **Enable Home Folders**, and choose **Review**\. Home Folders offer persistent storage for AppStream 2\.0 streaming sessions\. For more information, see [Persistent Storage with AppStream 2\.0 Home Folders](home-folders.md)\.
 

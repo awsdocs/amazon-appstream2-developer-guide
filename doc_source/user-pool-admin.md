@@ -107,7 +107,7 @@ An AppStream 2\.0 administrator can enable one or more user pool users, one at a
 
 ## Re\-Sending Welcome Email<a name="user-pool-admin-email"></a>
 
-An AppStream 2\.0 administrator can re\-send the welcome email with connection instructions to user pool users\. Unused passwords expire after 90 days\. To provide a new temporary password, the administrator must re\-send the welcome email\. This option is only available until the user sets their permanent password\. If they've already set a password and have forgotten it, they can set a new one\. For more information, see [Resetting a Forgotten Password](user-pool.md#user-pool-end-user-reset-password)\.
+An AppStream 2\.0 administrator can re\-send the welcome email with connection instructions to user pool users\. Unused passwords expire after seven days\. To provide a new temporary password, the administrator must re\-send the welcome email\. This option is only available until the user sets their permanent password\. If they've already set a password and have forgotten it, they can set a new one\. For more information, see [Resetting a Forgotten Password](user-pool.md#user-pool-end-user-reset-password)\.
 
 **To resend the welcome email for a user**
 

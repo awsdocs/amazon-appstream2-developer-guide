@@ -14,7 +14,11 @@ You can:
 
 For example, you can identify and group AppStream 2\.0 fleets that are in different environments \(such as Development or Production\) or that are assigned to different business units \(such as HR or Marketing\)\. You can then track the associated AWS costs for these fleets on a detailed level\. To do this, sign up to get your AWS account bill with tag key values included\. For more information about setting up a cost allocation report with tags, see [Monthly Cost Allocation Report](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/configurecostallocreport.html) in the *AWS Billing and Cost Management User Guide*\. 
 
-Contents
+
++ [Tagging Basics](#tagging-introduction)
++ [Tag Restrictions](#tag-restrictions)
++ [Working with Tags in the AppStream 2\.0 Console](#basic-tagging-console)
++ [Working with Tags by Using the AppStream 2\.0 API, an AWS SDK, or AWS CLI](#basic-tagging-API-SDK-CLI)
 
 ## Tagging Basics<a name="tagging-introduction"></a>
 

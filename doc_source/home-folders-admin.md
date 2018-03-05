@@ -18,7 +18,7 @@ Refer to the following guidelines before enabling Home Folders for a stack:
 
 + Use an image that was created from an AWS base image released on or after May 18, 2017\. For a current list of released AWS images, see [Amazon AppStream 2\.0 Windows Image Version History](base-image-version-history.md)\.
 
-+ Enable network connectivity to Amazon S3 from your VPC by configuring internet access or a VPC endpoint for Amazon S3\. For more information, see [Network Settings for Fleet and Image Builder Instances](managing-network.md) and [Home Folders and VPC Endpoints](managing-network.md#managing-network-vpce-iam-policy)\.
++ Enable network connectivity to Amazon S3 from your VPC by configuring internet access or a VPC endpoint for Amazon S3\. For more information, see [Network Settings for Amazon AppStream 2\.0 ](managing-network.md) and [Home Folders and VPC Endpoints](managing-network.md#managing-network-vpce-iam-policy)\.
 
 ## Enabling Home Folders<a name="home-folders-admin-enabling"></a>
 
@@ -106,7 +106,7 @@ For sessions created using `CreateStreamingURL` or `create-streaming-url` the us
 bucket-name/user/custom/user-id-SHA-256-hash/
 ```
 
-Where `bucket-name` is in the format shown in [Amazon S3 Bucket Storage](#home-folders-s3) and `user-id-SHA-256-hash` is the user\-specific folder name created using a lower case SHA\-256 hash hexadecimal string generated from the `UserId` value passed to the CreateStreamingURL API operation or `create-streaming-url` command\. For more information, see [CreateStreamingURL](http://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStreamingURL.html) in the *Amazon AppStream 2\.0 API Reference* and [create\-streaming\-url](http://docs.aws.amazon.com/cli/latest/reference/appstream/create-streaming-url.html) in the *AWS Command Line Interface Reference*\.
+Where `bucket-name` is in the format shown in [Amazon S3 Bucket Storage](#home-folders-s3) and `user-id-SHA-256-hash` is the user\-specific folder name created using a lower case SHA\-256 hash hexadecimal string generated from the `UserId` value passed to the CreateStreamingURL API operation or `create-streaming-url` command\. For more information, see [CreateStreamingURL](http://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStreamingURL.html) in the *Amazon AppStream 2\.0 API Reference* and [create\-streaming\-url](http://docs.aws.amazon.com/cli/latest/reference/appstream/create-streaming-url.html) in the *AWS CLI Command Reference*\.
 
 The following example folder structure applies to session access using the API or CLI with a `UserId` testuser@mydomain\.com, account id 123456789012 in region us\-west\-2:
 
