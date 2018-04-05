@@ -52,13 +52,9 @@ For user environments that vary in number, define scaling policies to control ho
 1. Add \(create\) new policies using the **Add Policy** link\. Set the desired values in the edit field and choose **Create**\. The new policy goes into effect within a few minutes\.
 
 You can use the **Fleet Usage** tab to monitor the effects of your scaling policy changes\. The following is an example usage graph of scaling activity when five users connect to the fleet and then disconnect\. This example is from a fleet using the following scaling policy values:
-
 + Minimum Capacity = 1
-
 + Maximum Capacity = 5
-
 + Scale Out = Add 2 instances if Capacity Utilization > 75%
-
 + Scale In = Remove 1 instance if Capacity Utilization < 25%
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/scaling-graph.png)
@@ -90,7 +86,7 @@ aws application-autoscaling register-scalable-target
     --role-arn arn:aws:iam::account-number-without-hyphens:role/service-role/ApplicationAutoScalingForAmazonAppStreamAccess
 ```
 
-
+**Topics**
 + [Example 1: Applying a Scaling Policy Based on Capacity Utilization](#autoscaling-cli-utilization)
 + [Example 2: Applying a Scaling Policy Based on Insufficient Capacity Errors](#autoscaling-cli-capacity)
 + [Example 3: Change the Fleet Capacity Based on a Schedule](#autoscaling-cli-schedule)

@@ -3,18 +3,15 @@
 AWS enables you to assign metadata to your AWS resources in the form of tags\. You can use these tags to help manage your AppStream 2\.0 image builders, images, fleets, and stacks, and also organize data, including billing data\. 
 
 You can:
-
 + Logically group resources in different ways \(for example, by purpose, owner, or environment\)\.
 
   This is useful when you have many resources of the same type\.
-
 + Quickly identify a specific resource based on the tags that you've assigned to it
-
 + Identify and control AWS costs
 
 For example, you can identify and group AppStream 2\.0 fleets that are in different environments \(such as Development or Production\) or that are assigned to different business units \(such as HR or Marketing\)\. You can then track the associated AWS costs for these fleets on a detailed level\. To do this, sign up to get your AWS account bill with tag key values included\. For more information about setting up a cost allocation report with tags, see [Monthly Cost Allocation Report](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/configurecostallocreport.html) in the *AWS Billing and Cost Management User Guide*\. 
 
-
+**Topics**
 + [Tagging Basics](#tagging-introduction)
 + [Tag Restrictions](#tag-restrictions)
 + [Working with Tags in the AppStream 2\.0 Console](#basic-tagging-console)
@@ -30,21 +27,13 @@ You can edit tag keys and values, and you can remove tags from a resource at any
 If you plan to set up a monthly cost allocation report to track AWS costs for AppStream 2\.0 resources, keep in mind that tags added to existing AppStream 2\.0 resources appear in your cost allocation report on the first of the following month for resources that are renewed in that month\. 
 
 ## Tag Restrictions<a name="tag-restrictions"></a>
-
 + The maximum number of tags per AppStream 2\.0 resource is 50\.
-
 + The maximum key length is 128 Unicode characters in UTF\-8\.
-
 + The maximum value length is 256 Unicode characters in UTF\-8\.
-
 + Tag keys and values are case\-sensitive\.
-
 + Do not use the "aws:" prefix in your tag names or values because it is a system tag that is reserved for AWS use\. You cannot edit or delete tag names or values with this prefix\. Tags with this prefix do not count against your tags per resource limit\.
-
 + You can only use the following special characters: \+ \- = \. \_ : / @\.
-
 + Although you can share the same key and value across multiple resources, you cannot have duplicate keys on the same resource\.
-
 + Tags can only be added to resources that are already created \(you cannot specify tags on resource creation\)\.
 
 ## Working with Tags in the AppStream 2\.0 Console<a name="basic-tagging-console"></a>
@@ -62,11 +51,8 @@ You can add, edit, and delete tags for existing resources by using the AppStream
 1. Select the resource from the resource list\. 
 
 1. Choose **Tags**, **Add/Edit Tags**, and then do one or more of the following:
-
    + To add a tag, choose **Add Tag**, and then specify the key and value for each tag\.
-
    + To edit a tag, modify the key and value for the tag as needed\.
-
    + To delete a tag, choose the **Delete** icon \(X\) for the tag\.
 
 1. Choose **Save**\.

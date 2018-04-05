@@ -9,7 +9,7 @@ After you create an image builder and it is running, your account may incur nomi
 This tutorial contains details that apply to the latest base image release\. For more information, see [Amazon AppStream 2\.0 Windows Image Version History](base-image-version-history.md)\.  
 If you are using images that are created from base images dated before 2017\-07\-24, you can view a compatible version of this tutorial by downloading the PDF file [appstream2\-dg\-2017\-07\-23\.pdf](http://awsdocs.s3.amazonaws.com/AppStream2/appstream2-dg-2017-07-23.pdf)\. 
 
-
+**Topics**
 + [Step 1: Create an Image Builder](#tutorial-image-builder-create)
 + [Step 2: Install Applications to an Image](#tutorial-image-builder-install)
 + [Step 3: Add Applications to an Image](#tutorial-image-builder-add)
@@ -27,13 +27,10 @@ In this step, you create a new image builder so that you can add applications an
 1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
 
 1. You can launch the image builder in the following ways: 
-
    + If a welcome screen appears displaying two options \(**Try it now** and **Get started**\), choose **Get started**, **Custom set up**\. 
 
      For information about these two options, see [Amazon AppStream 2\.0 FAQs](https://aws.amazon.com/appstream2/faqs/)\.
-
    + If a welcome screen does not appear, choose **Quick links** in the left navigation pane, then **Custom set up**\. 
-
    + Alternatively, choose **Images** in the left navigation pane, then the **Image Builder** tab, **Launch Image Builder**\.
 
 1. For **Step 1: Choose Image**, select a base image\. If you are launching the image builder for the first time, you can use one of the latest base images released by AWS \(selected by default\)\. For a list of the latest versions of base images released by AWS, see [Amazon AppStream 2\.0 Windows Image Version History](base-image-version-history.md)\. If you have already created images, or you want to update applications in an existing image, you can select one of your existing images\. Be sure to select an image that aligns with the instance family that you need\. For more information, see [AppStream 2\.0 Instance Families](instance-types.md)\.
@@ -101,7 +98,6 @@ In this step, you can add applications \(*\.exe*\), batch scripts \(*\.bat*\), a
 1. When you finish adding applications, choose **Next**\.
 
 **To test your applications**
-
 + Verify that the applications you've added start correctly\. To do this, start a new Windows session as a user who has similar access rights as your end users\. 
 
   1. From the **Admin Commands** menu, choose **Switch user**\. This disconnects you from the current session and shows the login menu\. 
@@ -179,11 +175,8 @@ Copying an image across geographically diverse regions enables you to stream app
 1. Choose **Actions**, **Copy**\.
 
 1. In the **Copy Image** dialog box, specify the following information, and then choose **Copy Image:**
-
    + For **Destination region**, choose the region to which to copy the new image\. 
-
    + For **Name**, specify a name that the image will have when it is copied to the destination\. 
-
    + For **Description** \(optional\), specify a description that the image will have when it is copied to the destination\. 
 
 1. To check on the progress of the copy operation, return to the console and navigate to **Images**, **Image Registry**\. Use the navigation bar to switch to the destination region \(if applicable\), and confirm that your new image appears in the list of images\.

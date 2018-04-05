@@ -1,12 +1,13 @@
 # Document History for Amazon AppStream 2\.0<a name="doc-history"></a>
 
 The following table describes important changes to the documentation for Amazon AppStream 2\.0\.
-
 + **API version:** 2016\-12\-01
 
 
 | Feature | Change | Date | 
 | --- | --- | --- | 
+| New region | Updated [Setting Up SAML](external-identity-providers-setting-up-saml.md) to add one new AppStream 2\.0 region: Frankfurt\. | March 28, 2018 | 
+| Custom branding | Created [Add Your Custom Branding to Amazon AppStream 2\.0](branding.md) and made other updates\. | March 26, 2018 | 
 | Image copy | Updated [Tutorial: Create a Custom Image](tutorial-image-builder.md) and made other updates\. | February 23, 2018 | 
 | New regions | Updated [Setting Up SAML](external-identity-providers-setting-up-saml.md) to add two new AppStream 2\.0 regions: Singapore and Sydney\. | January 24, 2018 | 
 | Resource tagging | Created [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md) and made other updates\. | December 15, 2017 | 

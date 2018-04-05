@@ -3,19 +3,11 @@
 Before you use Microsoft Active Directory with AppStream 2\.0, be aware of the following requirements\.
 
 **Requirements**
-
 + You need an Active Directory—compliant domain to which to join your streaming instances\. If you don't have an Active Directory or want to use your on\-premises Active Directory, see [Active Directory Domain Services on the AWS Cloud: Quick Start Reference Deployment](http://docs.aws.amazon.com/quickstart/latest/active-directory-ds/)\.
-
 + You need a domain service account with permissions to create and manage computer objects in the domain that you intend to use with AppStream 2\.0\.
-
   + To create a service account using a domain controller, see [Creating a service account](https://msdn.microsoft.com/en-us/library/ee250452.aspx) in the Microsoft documentation\.
-
   + While associating this Active Directory with AppStream 2\.0, provide the service account name and password\. AppStream 2\.0 uses this account to create and manage computer objects within the directory\. For more information, see [Granting Permissions to Create and Manage Active Directory Computer Objects](active-directory-admin.md#active-directory-permissions)\.
-
 + When you register your Active Directory with AppStream 2\.0, you must provide an organizational unit \(OU\) distinguished name\. Create an OU for this purpose\. The default Computers container is not an OU and cannot be used by AppStream 2\.0\. For more information, see [Finding the Organizational Unit Distinguished Name](active-directory-admin.md#active-directory-oudn)\.
-
 + The directories to use with AppStream 2\.0 must be accessible through their fully qualified domain names \(FQDNs\) via the VPC in which your streaming instances are launched\. For more information, see [Active Directory and Active Directory Domain Services Port Requirements](https://technet.microsoft.com/en-us/library/dd772723.aspx) in the Microsoft documentation\.
-
 + SAML 2\.0\-based user federation is required to stream from domain\-joined fleets\. You cannot launch sessions to domain\-joined instances using [CreateStreamingURL](http://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStreamingURL.html), or the AppStream 2\.0 User Pool\.
-
 + You must use an image that supports joining image builders and fleets to an Active Directory domain\. All public images published on or after July 24, 2017 support joining an Active Directory domain\. For more information, see [Amazon AppStream 2\.0 Windows Image Version History](base-image-version-history.md) and [Tutorial: Setting Up the Active Directory](active-directory-directory-setup.md)\.

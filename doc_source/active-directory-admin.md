@@ -2,7 +2,7 @@
 
 When setting up and using Active Directory with AppStream 2\.0, refer to the following administrator tasks\.
 
-
+**Topics**
 + [Granting Permissions to Create and Manage Active Directory Computer Objects](#active-directory-permissions)
 + [Finding the Organizational Unit Distinguished Name](#active-directory-oudn)
 + [Providing Local Administrator Permissions for Image Builders](#active-directory-image-builder-local-admin)
@@ -16,25 +16,17 @@ When setting up and using Active Directory with AppStream 2\.0, refer to the fol
 ## Granting Permissions to Create and Manage Active Directory Computer Objects<a name="active-directory-permissions"></a>
 
 To allow AppStream 2\.0 to perform Active Directory computer object operations, you need an account with the right permissions\. As a best practice, you should use an account that has only the minimum privileges necessary\. The minimum Active Directory organizational unit \(OU\) permissions are as follows:
-
 + Create Computer Object
-
 + Change Password
-
 + Reset Password
-
 + Write Description
 
 **Prerequisites**
 
 Before setting up permissions, you must complete the following tasks:
-
 + Get access to a computer or EC2 instance that is joined to your domain\.
-
 + Install the Active Directory User and Computers MMC snap\-in\. For more information, see [Installing or Removing Remote Server Administration Tools for Windows 7](https://technet.microsoft.com/en-us/library/ee449483.aspx) in the Microsoft documentation\.
-
 + Log in as a domain user with appropriate permissions to modify the OU security settings\.
-
 + Create or identify the user account, service account, or group for which to delegate permissions\.
 
 **To set up minimum permissions**
@@ -69,11 +61,8 @@ When you register your Active Directory with AppStream 2\.0, you must provide an
 The distinguished name must start with **OU=** or it cannot be used for computer objects\.
 
 **Prerequisites**
-
 + Get access to a computer or EC2 instance that is joined to your domain\.
-
 + Install the Active Directory User and Computers MMC snap\-in\. For more information, see [Installing or Removing Remote Server Administration Tools for Windows 7](https://technet.microsoft.com/en-us/library/ee449483.aspx) in the Microsoft documentation\.
-
 + Log in as a domain user with appropriate permissions to read the OU security properties\.
 
 **To find the distinguished name of an OU**
@@ -94,7 +83,7 @@ The distinguished name must start with **OU=** or it cannot be used for computer
 
 By default, Active Directory domain users do not have local administrator permissions on image builder instances\. You can provide these permissions using Group Policy preferences in your directory, or manually using the local administrator account\. This allows a domain user to install applications and create images in an AppStream 2\.0 image builder\.
 
-
+**Topics**
 + [Using Group Policy Permissions](#group-policy)
 + [Using Local Administrator](#manual-procedure)
 
@@ -103,11 +92,8 @@ By default, Active Directory domain users do not have local administrator permis
 Group Policy can be used to grant local administrator permissions to Active Directory users or groups and automatically to all computer objects in the specified OU\. The Active Directory users or groups to which to grant local administrator permissions must already exist\.
 
 **Prerequisites**
-
 + Get access to a computer or EC2 instance that is joined to your domain\.
-
 + Install the Group Policy Management MMC snap\-in\. For more information, see [Installing or Removing Remote Server Administration Tools for Windows 7](https://technet.microsoft.com/en-us/library/ee449483.aspx) in the Microsoft documentation\.
-
 + Log in as a domain user with appropriate permissions to create Group Policy Objects \(GPO\) and link them to the appropriate OUs\.
 
 **To provide permissions using Group Policy**
@@ -245,9 +231,7 @@ AppStream 2\.0 supports Active Directory domain environments where network resou
 When creating the directory configuration, specify a service account that has the appropriate permissions in the server Active Directory domain to manage computer objects\.
 
 Your end user Active Directory accounts must have the "Allowed to Authenticate" permissions for the following:
-
 + AppStream 2\.0 computer objects
-
 + Domain controllers for the domain
 
 For more information, see [Granting Permissions to Create and Manage Active Directory Computer Objects](#active-directory-permissions)\.
@@ -264,16 +248,14 @@ AppStream 2\.0 does not delete computer objects from your Active Directory\. The
 |  Fleet  |  ExampleFleet  |  `AppStream 2.0 - fleet:ExampleFleet`  | 
 |  Image builder  |  ExampleImageBuilder  |  `AppStream 2.0 - image-builder:ExampleImageBuilder`  | 
 
-You can identify and delete inactive computer objects created by AppStream 2\.0 with the following `dsquery` and `dsrm` commands\. For more information, see [Dsquery](https://technet.microsoft.com/en-us/library/cc732952.aspx) and [Dsrm](https://technet.microsoft.com/en-us/library/cc731865.aspx) in the Microsoft documentation\.
+You can identify and delete inactive computer objects created by AppStream 2\.0 with the following `dsquery computer` and `dsrm` commands\. For more information, see [Dsquery computer](https://technet.microsoft.com/en-us/library/cc730720.aspx) and [Dsrm](https://technet.microsoft.com/en-us/library/cc731865.aspx) in the Microsoft documentation\.
 
 The `dsquery` command is used to identify inactive computer objects over a certain period of time, and uses the following format\. The `dsquery` command should also be run with the parameter `-desc "AppStream 2.0*"` to show only AppStream 2\.0 objects\. 
 
 ```
 dsquery computer "OU-distinguished-name" -desc "AppStream 2.0*" -inactive number-of-weeks-since-last-login
 ```
-
 + `OU-distinguished-name` is the distinguished name of the organizational unit\. For more information, see [Finding the Organizational Unit Distinguished Name](#active-directory-oudn)\. If you don't provide the *OU\-distinguished\-name* parameter, the command searches the entire directory\. 
-
 + `number-of-weeks-since-last-log-in` is the desired value based on how you'd like to define what's "inactive"\. 
 
 For example, the following command displays all computer objects in the `OU=ExampleOU,DC=EXAMPLECO,DC=COM` organizational unit that have not logged in within the past two weeks\.

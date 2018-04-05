@@ -2,7 +2,7 @@
 
 The following are possible general issues you might have while using Amazon AppStream 2\.0\.
 
-
+**Topics**
 + [SAML federation is not working\. The user is not authorized to view AppStream 2\.0 applications\.](#troubleshooting-13)
 + [After federating from an ADFS portal, my streaming session doesn't start\. I am getting the error "Sorry connection went down"\.](#troubleshooting-adfs-upn)
 + [I get an invalid redirect URI error\.](#troubleshooting-14)
@@ -23,13 +23,9 @@ This error happens due to a malformed or invalid AppStream 2\.0 stack relay stat
 ## My stack's Home Folders aren't working correctly\.<a name="troubleshooting-s3-failures"></a>
 
 Home Folder backup to the S3 bucket can have problems under the following scenarios:
-
 + There is no internet connectivity from the streaming instance, or there is no access to the private Amazon S3 VPC endpoint, if applicable\.
-
 + Network bandwidth consumption is too high\. For example, multiple large files being downloaded or streamed by the user while the service is trying to back up the Home Folder containing large files to Amazon S3\.
-
 + The administrator deleted the bucket created by the service\.
-
 + The administrator incorrectly edited the Amazon S3 permissions of the **AmazonAppStreamServiceAccess** service role\.
 
 For more information, see the [Amazon Simple Storage Service Console User Guide](http://docs.aws.amazon.com/AmazonS3/latest/user-guide/) and [Amazon Simple Storage Service Developer Guide](http://docs.aws.amazon.com/AmazonS3/latest/dev/)\.

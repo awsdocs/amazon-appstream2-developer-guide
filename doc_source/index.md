@@ -31,6 +31,7 @@ Amazon's trademarks and trade dress may not be used in
    + [AppStream 2.0 Instance Families](instance-types.md)
    + [Create AppStream 2.0 Stacks and Fleets](set-up-stacks-fleets.md)
    + [Fleet Auto Scaling for Amazon AppStream 2.0](autoscaling.md)
++ [Add Your Custom Branding to Amazon AppStream 2.0](branding.md)
 + [Persistent Storage with AppStream 2.0 Home Folders](home-folders.md)
    + [Home Folder Administration](home-folders-admin.md)
 + [Manage Access Using the AppStream 2.0 User Pool](user-pool.md)

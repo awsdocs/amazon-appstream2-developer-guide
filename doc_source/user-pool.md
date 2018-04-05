@@ -6,15 +6,10 @@ The AppStream 2\.0 user pool offers a simplified way to manage access to applica
 User pool users cannot be assigned to stacks with fleets that are joined to an Active Directory domain\.
 
 The AppStream 2\.0 user pool offers the following key features:
-
 + Users can access application stacks through a persistent URL and login credentials using their email address and a password that they choose\.
-
 + Administrators can assign a user multiple stacks, offering multiple application catalogs to the user when they log in\.
-
 + When an administrator creates a new user, a welcome email is automatically sent to the end user with a login portal link and instructions\.
-
 + After being created, a user in the pool remains valid and usable unless an administrator specifically disables that user\.
-
 + Administrators can control which users have access to which application stacks, or disable access completely\.
 
 ## User Pool End User Experience<a name="user-pool-end-user"></a>

@@ -5,7 +5,7 @@ To perform administrator actions, sign in to the AppStream 2\.0 console in the A
 **Note**  
 AppStream 2\.0 sends email to users on your behalf, such as when a new user is created or a user is assigned to a stack\. To ensure that email is delivered, add `no-reply@accounts.aws-region-code.amazonappstream.com` to your whitelist, where `aws-region-code` is a valid AWS region code in which you are working\. If users are having difficulty finding the emails, ask them to check their "spam" email folder\.
 
-
+**Topics**
 + [Creating a User](#user-pool-admin-create)
 + [Assigning Stacks to Users](#user-pool-admin-assigning)
 + [Unassigning Stacks from Users](#user-pool-admin-unassigning)
@@ -18,13 +18,9 @@ AppStream 2\.0 sends email to users on your behalf, such as when a new user is c
 Users are managed on a per\-region basis\. You must use a valid and unique email address for each new user within a region\. However, you can reuse an email address for a new user in another region\.
 
 When you create a new user, be aware of the following:
-
 + There is no limit on the number of users in the user pool\. 
-
 + You can enable or disable a user, but you cannot delete a user\.
-
 + You cannot change the email address, first name, or last name for a user that you have already created\. To change this information for a user, disable the user\. Then, recreate the user \(as a new user\) and specify the updated information as needed\. 
-
 + You can assign one or more stacks to the user after the user is created\.
 
 **To create a new user**

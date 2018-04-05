@@ -28,9 +28,7 @@ Configure identity federation, which allows your users to access their applicati
 
 **Choose the fleet type that meets your needs**  
 There are two types of fleets:  
-
 + Always\-On — Your instances run all the time, even when no users are streaming applications\. Use an Always\-On fleet to provide your users with instant access to their applications\.
-
 + On\-Demand — Your instances run only when users are streaming applications\. Idle instances that are available for streaming are in a stopped state\. Use an On\-Demand fleet to optimize your streaming charges and provide your users with access to their applications after a 1\-2 minute wait\.
 For more information, see [Amazon AppStream 2\.0 Pricing](https://aws.amazon.com/appstream2/pricing/)\.
 
@@ -56,9 +54,7 @@ Use the *user pool* to manage users and their assigned stacks\.
 ## How to Get Started<a name="what-is-how-to-start"></a>
 
 If you are using AppStream 2\.0 for the first time, you can use the **Try it Now **feature or follow the [Getting Started with Amazon AppStream 2\.0](getting-started.md) tutorial \(both are available in the AppStream 2\.0 console\)\.
-
 + **Try It Now **provides you with a free trial experience that allows you to easily start desktop applications from your desktop browser\. 
-
 + The Getting Started tutorial enables you to set up application streaming by using sample applications or your own applications\. If you decide to start by using sample applications, you can always add your own applications later\.
 
   For more information about these two options, see [Amazon AppStream 2\.0 FAQs](https://aws.amazon.com/appstream2/faqs/)\.
@@ -97,10 +93,7 @@ AWS provides two sets of command line tools: the [AWS Command Line Interface](ht
 
 **AWS SDKs**  
 You can access AppStream 2\.0 from a variety of programming languages\. The SDKs automatically take care of tasks such as the following:  
-
 + Setting up an AppStream 2\.0 stack or fleet
-
 + Getting an application streaming URL to your stack
-
 + Describing your resources
 For more information, see [Tools for Amazon Web Services](https://aws.amazon.com/tools/)\.

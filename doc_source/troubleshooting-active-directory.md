@@ -2,7 +2,7 @@
 
 The following are possible issues you might have while setting up and using Active Directory with Amazon AppStream 2\.0\. For help troubleshooting notification codes, see [Troubleshooting Notification Codes](troubleshooting-notification-codes.md)\.
 
-
+**Topics**
 + [My image builders and fleet instances are stuck in "pending" status](#troubleshooting-active-directory-1)
 + [My users aren't able to log in with the SAML app](#troubleshooting-active-directory-2)
 + [My fleet instances work for one user but don't cycle correctly](#troubleshooting-active-directory-3)
@@ -29,9 +29,7 @@ Fleet instances are cycled after a user completes a session, ensuring that each 
 ## My user Group Policy Objects aren't applying successfully<a name="troubleshooting-active-directory-4"></a>
 
 By default, computer objects apply computer\-level policies based on the OU in which the computer object resides, while applying user\-level policies based on the OU in which the user resides\. If your user\-level policies aren't being applied, you can do one of the following: 
-
 + Move the user\-level policies to the OU in which the user Active Directory object resides
-
 + Enable computer\-level "loopback processing", which applies the user\-level policies in the computer object OU\. 
 
 For more information, see [Loopback processing of Group Policy](https://support.microsoft.com/en-us/help/231287/loopback-processing-of-group-policy) at Microsoft Support\.
@@ -73,15 +71,11 @@ If you were not able to manually join the EC2 instance to your domain, but were 
 ## User login is taking a long time to complete on a domain\-joined streaming session<a name="troubleshooting-active-directory-6"></a>
 
 AppStream 2\.0 performs a Windows login action after the end user provides their domain password, and then launches the application after successful authentication\. The login and launch time is impacted by many variables, such as network contention to the domain controllers or time taken to apply group policies to the streaming instance\. If domain authentication takes too long to complete, try the following actions\.
-
 + Minimize the network latency from your AppStream 2\.0 region to your domain controllers by choosing the correct domain controllers\. For example, if your fleet is in us\-east\-1, use domain controllers with high bandwidth and low latency to us\-east\-1 through Active Directory Sites and Services zone mappings\. For more information, see [Active Directory Sites and Services](https://technet.microsoft.com/en-us/library/cc730868.aspx) in the Microsoft documentation\.
-
 + Ensure that your group policies and user login scripts don't take prohibitively long to apply or execute\.
 
 If your login to AppStream 2\.0 fails after 3 minutes with a message "An unknown error occurred," validate that your group policies are not restricting third\-party credential providers\. There are two policies that block AppStream 2\.0 from authenticating your domain users:
-
 + **Computer Configuration > Administrative Templates > Windows Components > Windows Logon Options > Disable or Enable software Secure Attention Sequence** — This policy should be set to **Enabled** for **Services**\.
-
 + **Computer Configuration > Administrative Templates > System > Logon > Exclude credential providers** — Ensure that the following CLSID is *not* listed: `e7c1bab5-4b49-4e64-a966-8d99686f8c7c`
 
 ## The changes I made in the image builder aren't reflected in end user streaming sessions<a name="troubleshooting-active-directory-7"></a>

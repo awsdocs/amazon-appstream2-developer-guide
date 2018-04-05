@@ -5,13 +5,9 @@ AppStream 2\.0 supports persistent storage for your end users with Home Folders\
 ## Home Folder End User Experience<a name="home-folders-end-user"></a>
 
 For end users, the Home Folder behaves like a normal Windows folder\. Users experience the following Home Folder access features when they are working in an application during a streaming session\.
-
 + Users can save their documents and project files to their Home Folder\. AppStream 2\.0 continuously checks for the most recently modified files and backs them up to each user's folder in persistent storage\.
-
 + Data content in each user's Home Folder is specific to that user and cannot be accessed by other users\.
-
 + Users can easily access their Home Folder when they are working in an application by choosing **File Open** or **File Save** from the application interface\. 
-
 + A web view is available to access the Home Folder by choosing **My Files** from the web view session toolbar\.   
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/home-folder-ul-dl.png)
 

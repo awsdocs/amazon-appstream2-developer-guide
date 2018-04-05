@@ -6,7 +6,7 @@ If you want to create an image to use, see [Tutorial: Create a Custom Image](tut
 
 If you intend to join a fleet to an Active Directory domain, configure your Active Directory before following the steps below\. For more information, see [Using Active Directory Domains with AppStream 2\.0](active-directory.md)\.
 
-
+**Topics**
 + [Create a Fleet](#set-up-stacks-fleets-create)
 + [Create a Stack](#set-up-stacks-fleets-install)
 + [Provide Access to Users](#set-up-stacks-fleets-add)
@@ -68,7 +68,11 @@ Set up and create a stack to control access to your fleet\.
 
 1. In the left navigation pane, choose **Stacks**, and then choose **Create Stack**\.
 
-1. For **Step 1: Stack Details**, provide a stack name\. Optionally, you can also provide a display name, description, and redirect URL\. If you specify a redirect URL, after users’ streaming sessions end, the users are redirected to that URL\. For **Fleet**, choose the fleet to associate with your stack\. If you need to create a fleet, use the link provided and then click the refresh icon\. Choose **Next**\.
+1. For **Step 1: Stack Details**, provide a stack name\. Optionally, you can provide the following:
+   + **Display name** — Enter a name to display for the stack \(maximum of 100 characters\)\.
+   + **Description**— Enter a description for the stack \(maximum of 256 characters\)\.
+   + **Redirect URL** — Specify a URL to which users are redirected after their streaming sessions end\.
+   + **Feedback URL** — Specify a URL to which users are redirected after they click the **Send Feedback** link to submit feedback about their application streaming experience\. If you do not specify a URL, this link is not displayed\.
 
 1. For **Step 2: Enable Storage**, you can enable persistent storage for the stack users by selecting **Enable Home Folders**\. Choose **Review**\.
 

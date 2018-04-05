@@ -2,7 +2,7 @@
 
 To enable users to sign in to AppStream 2\.0 by using their existing credentials, and start streaming applications, you can set up identity federation using SAML 2\.0\. To do this, use an IAM role and a relay state URL to configure your SAML 2\.0\-compliant identity provider \(IdP\) and enable AWS to permit your federated users to access an AppStream 2\.0 stack\. The IAM role grants users the permissions to access the stack\. The relay state is the stack portal to which users are forwarded after successful authentication by AWS\.
 
-
+**Topics**
 + [Prerequisites](#external-identity-providers-setting-up-prerequisites)
 + [Step 1: Create a SAML Identity Provider in AWS IAM](#external-identity-providers-create-saml-provider)
 + [Step 2: Create a SAML 2\.0 Federation IAM Role](#external-identity-providers-grantperms)
@@ -16,9 +16,7 @@ To enable users to sign in to AppStream 2\.0 by using their existing credentials
 Complete the following prerequisites before configuring your SAML 2\.0 connection\.
 
 1. Configure your SAML\-based IdP to establish a trust relationship with AWS\. 
-
    + Inside your organization's network, configure your identity store to work with a SAML\-based IdP\. For configuration resources for using Ping Identity, Okta, Active Directory Federation Services \(AD FS\) in Windows Server, Shibboleth, or Google as your SAML\-based IdP, see [AppStream 2\.0 Integration with SAML 2\.0](external-identity-providers-further-info.md)\.
-
    + Use your SAML\-based IdP to generate and download a federation metadata document that describes your organization as an IdP\. This signed XML document is used to establish the relying party trust\. Save this file to a location that you can access from the IAM console later\.
 
 1. Use the AppStream 2\.0 management console to create an AppStream 2\.0 stack\. You need the stack name to create the IAM policy and to configure your IdP integration with AppStream 2\.0, as described later in this topic\.
@@ -100,15 +98,11 @@ If this update is not already configured in your IdP, review the documentation p
 Next, depending on your SAML\-based IdP, you may need to configure the information that the IdP passes as SAML attributes to AWS as part of the authentication response\. For some IdPs, this information may already be configured\. If this is the case, proceed to the next step\. 
 
 If this information is not already configured in your IdP, provide the following:
-
 + **SAML Subject NameID** – The unique identifier for the user who is signing in\. 
 **Note**  
 For stacks with domain\-joined fleets, the NameID value for the user must be provided in the format of "`domain\username`" using the sAMAccountName or "`username@domain.com`" using userPrincipalName\. If you are using the sAMAccountName format, you can specify the `domain` by using either the NetBIOS name or the fully qualified domain name \(FQDN\)\. For more information, see [Using Active Directory Domains with AppStream 2\.0](active-directory.md)\.
-
 + **SAML Subject Type** \(with a value set to `persistent`\) – Setting the value to `persistent` ensures that your IdP sends the same unique value for the `NameID` element in all SAML requests from a particular user\. Make sure that your IAM policy includes a condition to only allow SAML requests with a SAML sub\_type set to `persistent`, as described in [Step 2: Create a SAML 2\.0 Federation IAM Role](#external-identity-providers-grantperms)\.
-
 + **`Attribute` element with the `Name` attribute set to https://aws\.amazon\.com/SAML/Attributes/Role** – This element contains one or more `AttributeValue` elements that list the IAM role and SAML IdP to which the user is mapped by your IdP\. The role and IdP are specified as a comma\-delimited pair of ARNs\.
-
 + **`Attribute` element with the `SessionDuration` attribute set to https://aws\.amazon\.com/SAML/Attributes/SessionDuration \(optional\)** – This element contains one `AttributeValue` element that specifies the maximum amount of time that a federated streaming session for a user can remain active before reauthentication is required\. The default value is 60 minutes\. For more information, see the *An optional Attribute element with the SessionDuration attribute set to https://aws\.amazon\.com/SAML/Attributes/SessionDuration* section in [Configuring SAML Assertions for the Authentication Response](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_assertions.html)\.
 
 For more information about how to configure these elements, see [Configuring SAML Assertions for the Authentication Response](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_assertions.html) in the *IAM User Guide*\. For information about specific configuration requirements for your IdP, see the documentation for your IdP\.
@@ -130,7 +124,8 @@ Construct your relay state URL from your AWS account ID, stack name, and the rel
 | --- | --- | 
 | us\-east\-1 \(N\.Virginia\) | https://appstream2\.us\-east\-1\.aws\.amazon\.com/saml | 
 | us\-west\-2 \(Oregon\) | https://appstream2\.us\-west\-2\.aws\.amazon\.com/saml | 
-| eu\-west\-1 \(Ireland\) | https://appstream2\.eu\-west\-1\.aws\.amazon\.com/saml | 
 | ap\-northeast\-1 \(Tokyo\) | https://appstream2\.ap\-northeast\-1\.aws\.amazon\.com/saml | 
 | ap\-southeast\-1 \(Singapore\) | https://appstream2\.ap\-southeast\-1\.aws\.amazon\.com/saml | 
 | ap\-southeast\-2 \(Sydney\) | https://appstream2\.ap\-southeast\-2\.aws\.amazon\.com/saml | 
+| eu\-central\-1 \(Frankfurt\) | https://appstream2\.eu\-central\-1\.aws\.amazon\.com/saml | 
+| eu\-west\-1 \(Ireland\) | https://appstream2\.eu\-west\-1\.aws\.amazon\.com/saml | 

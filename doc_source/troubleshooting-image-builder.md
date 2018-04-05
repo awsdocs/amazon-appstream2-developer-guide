@@ -2,7 +2,7 @@
 
 The following are possible issues you might have while using Amazon AppStream 2\.0 image builder\.
 
-
+**Topics**
 + [I cannot connect to the internet from my image builder\.](#troubleshooting-01)
 + [When I tried installing my application, I see an error that the operating system version is not supported\.](#troubleshooting-02)
 + [When I connect to my image builder, I see a login screen asking me to enter Ctrl\+Alt\+Delete to log in\. However, my local machine intercepts the key strokes\.](#troubleshooting-03)
@@ -52,7 +52,7 @@ Check if the image builder was launched in the correct VPC subnet\. You may also
 
 ## I customized my image builder desktop, but my changes are not available when connecting to a session after launching a fleet from the image I created\.<a name="troubleshooting-09"></a>
 
-Changes that are saved as part of a local user session, such as wallpaper, are not persisted when creating an image\. To persist any local user session changes, add them to the local group policy on the image builder instance\.
+Changes that are saved as part of a local user session, such as time settings, are not persisted when creating an image\. To persist any local user session changes, add them to the local group policy on the image builder instance\.
 
 ## My application is missing a command line parameter when launching\.<a name="troubleshooting-10"></a>
 

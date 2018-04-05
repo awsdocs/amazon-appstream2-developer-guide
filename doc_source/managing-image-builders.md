@@ -27,13 +27,8 @@ Stop a running image builder\. A stopped instance is not billed to your account\
 The instance must be in a **Running** state\.
 
 None of these actions can be performed on an instance in any of the following intermediate states:
-
 + **Pending**
-
 + **Snapshotting**
-
 + **Stopping**
-
 + **Starting**
-
 + **Deleting**

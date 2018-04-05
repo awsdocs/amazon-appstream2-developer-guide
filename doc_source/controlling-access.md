@@ -7,7 +7,7 @@ While creating AppStream 2\.0 resources, AppStream 2\.0 makes API calls to other
 **Note**  
 IAM roles and policies control which AppStream 2\.0 resources can be accessed, while the user pool controls access to AppStream 2\.0 itself\. For more information, see [Manage Access Using the AppStream 2\.0 User Pool](user-pool.md)\.
 
-
+**Topics**
 + [IAM Service Role](#controlling-access-iam-service-role)
 + [Identity Based Policies](#controlling-access-iam)
 + [Application Auto Scaling IAM Role](#autoscaling-iam-role)
@@ -111,7 +111,7 @@ To use AppStream 2\.0 Fleet Auto Scaling, the IAM user accessing fleet creation 
 
 Access to the Amazon S3 bucket for Home folders is managed using IAM permissions and policies\.
 
-
+**Topics**
 + [Deleting the Amazon S3 Bucket for Home Folders](#s3-iam-policy-delete)
 + [Restricting Administrator Access to the Amazon S3 Bucket for Home Folders](#s3-iam-policy-restricted-access)
 

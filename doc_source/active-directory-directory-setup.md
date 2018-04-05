@@ -2,7 +2,7 @@
 
 To use Active Directory domain support in AppStream 2\.0, you must first register your directory configuration by creating a Directory Config object using the AppStream 2\.0 management console or using AWS SDK or AWS CLI\. You can then use the directory configuration to launch domain\-joined fleets and image builders\. 
 
-
+**Topics**
 + [Step 1: Create a Directory Configuration](#active-directory-setup-config)
 + [Step 2: Create an Image Using a Domain\-Joined Image Builder](#active-directory-setup-image-builder)
 + [Step 3: Create a Domain\-Joined Fleet](#active-directory-setup-fleet)
