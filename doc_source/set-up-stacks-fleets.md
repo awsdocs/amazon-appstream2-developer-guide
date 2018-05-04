@@ -4,7 +4,7 @@ To stream your applications, Amazon AppStream 2\.0 requires an environment consi
 
 If you want to create an image to use, see [Tutorial: Create a Custom Image](tutorial-image-builder.md)\.
 
-If you intend to join a fleet to an Active Directory domain, configure your Active Directory before following the steps below\. For more information, see [Using Active Directory Domains with AppStream 2\.0](active-directory.md)\.
+If you intend to join a fleet to an Active Directory domain, configure your Active Directory before following the steps below\. For more information, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.
 
 **Topics**
 + [Create a Fleet](#set-up-stacks-fleets-create)
@@ -52,11 +52,11 @@ Set up and create a fleet from which user applications are executed and streamed
 
    1. For **Security groups**, select up to five security groups to associate with this fleet\. Otherwise, the default security group for the VPC is used\. If you need to create a security group, use the link provided and then click the refresh icon\.
 
-   1. For **Active Directory Domain \(Optional\)**, choose the Active Directory and organizational unit \(OU\) for your streaming instance computer objects\. Ensure that the network access settings you selected enable DNS resolvability and communication with your directory\. For more information, see [Using Active Directory Domains with AppStream 2\.0](active-directory.md)\.
+   1. For **Active Directory Domain \(Optional\)**, choose the Active Directory and organizational unit \(OU\) for your streaming instance computer objects\. Ensure that the network access settings you selected enable DNS resolvability and communication with your directory\. For more information, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.
 
 1. Choose **Create**\.
 
-   The initial status of your new fleet is **Starting**\. You cannot associate the fleet with a stack and use it for streaming sessions until the status of the fleet is **Running**\.
+   Fleet provisioning usually takes 15 minutes to finish\. While your fleet is being created and fleet instances are provisioned, the status of your fleets displays as **Starting** in the **Fleets** list\. Choose the **Refresh** icon periodically to update the fleet status until the status is **Running**\. You cannot associate the fleet with a stack and use it for streaming sessions until the status of the fleet is **Running**\.
 
    Optionally, you can apply one or more tags to help manage the fleet\. Choose **Tags**, choose **Add/Edit Tags**, choose **Add Tag**, specify the key and value for the tag, and then choose **Save**\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.
 

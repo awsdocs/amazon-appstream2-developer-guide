@@ -1,6 +1,6 @@
 # Manage Access Using the AppStream 2\.0 User Pool<a name="user-pool"></a>
 
-The AppStream 2\.0 user pool offers a simplified way to manage access to applications for your end users through a persistent portal for each region\. This feature is offered as a built\-in alternative to user management through Active Directory and SAML 2\.0 federation\. To use external identity providers for user management, see [Single Sign\-on Access to AppStream 2\.0 Using SAML 2\.0](external-identity-providers.md)\. To join your Active Directory domain to AppStream 2\.0, see [Using Active Directory Domains with AppStream 2\.0](active-directory.md)\.
+The AppStream 2\.0 user pool offers a simplified way to manage access to applications for your end users through a persistent portal for each region\. This feature is offered as a built\-in alternative to user management through Active Directory and SAML 2\.0 federation\. To use external identity providers for user management, see [Single Sign\-on Access to AppStream 2\.0 Using SAML 2\.0](external-identity-providers.md)\. To join your Active Directory domain to AppStream 2\.0, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.
 
 **Note**  
 User pool users cannot be assigned to stacks with fleets that are joined to an Active Directory domain\.

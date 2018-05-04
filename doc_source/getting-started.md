@@ -64,7 +64,7 @@ After you create a stack, each user needs an active URL for access\. The AppStre
 For more information, see the following:
 + Learn how to use the AppStream 2\.0 image builder to add your own apps and create images you can stream\. For more information, see [Tutorial: Create a Custom Image](tutorial-image-builder.md)\.
 + Provide persistent storage for your session users using AppStream 2\.0 Home Folders\. For more information, see [Persistent Storage with AppStream 2\.0 Home Folders](home-folders.md)\.
-+ Integrate your AppStream 2\.0 streaming resources with your Microsoft Active Directory environment\. For more information, see [Using Active Directory Domains with AppStream 2\.0](active-directory.md)\.
-+ Control who has access to your AppStream 2\.0 streaming instances\. For more information, see [Controlling Access to Amazon AppStream 2\.0 with IAM Roles and Policies](controlling-access.md), [Manage Access Using the AppStream 2\.0 User Pool](user-pool.md) and [Single Sign\-on Access to AppStream 2\.0 Using SAML 2\.0](external-identity-providers.md)\.
++ Integrate your AppStream 2\.0 streaming resources with your Microsoft Active Directory environment\. For more information, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.
++ Control who has access to your AppStream 2\.0 streaming instances\. For more information, see [Controlling Access to Amazon AppStream 2\.0 with IAM Policies and Service Roles](controlling-access.md), [Manage Access Using the AppStream 2\.0 User Pool](user-pool.md) and [Single Sign\-on Access to AppStream 2\.0 Using SAML 2\.0](external-identity-providers.md)\.
 + Monitor your AppStream 2\.0 resources using Amazon CloudWatch\. For more information, see [AppStream 2\.0 Metrics and Dimensions](monitoring.md#monitoring-with-cloudwatch)\.
 + Troubleshoot your AppStream 2\.0 streaming experience\. For more information, see [Troubleshooting](troubleshooting.md)\.

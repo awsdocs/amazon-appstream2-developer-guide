@@ -1,6 +1,6 @@
-# Troubleshooting Image Builder<a name="troubleshooting-image-builder"></a>
+# Troubleshooting Image Builders<a name="troubleshooting-image-builder"></a>
 
-The following are possible issues you might have while using Amazon AppStream 2\.0 image builder\.
+The following are possible issues you might have while using Amazon AppStream 2\.0 image builders\.
 
 **Topics**
 + [I cannot connect to the internet from my image builder\.](#troubleshooting-01)
@@ -40,7 +40,7 @@ Check if your application is installed under the `C:\Users` folder hierarchy\. A
 
 ## I accidentally quit a background service on the image builder and got disconnected\. I am now unable to connect to that image builder\.<a name="troubleshooting-06"></a>
 
-Try stopping the image builder, restarting it and connecting to it again\. If the problem persists, you need to launch \(create\) a new image builder\. Do not stop any background services running on the image builder instance\. Doing so may interrupt your image builder session or interfere with the image creation\.
+Try stopping the image builder, restarting it and connecting to it again\. If the problem persists, you must launch \(create\) a new image builder\. Do not stop any background services running on the image builder instance\. Doing so may interrupt your image builder session or interfere with the image creation\.
 
 ## The application fails to launch in test mode\.<a name="troubleshooting-07"></a>
 
@@ -60,7 +60,7 @@ You can provide a command line parameter when using image builder to add an appl
 
 If the launch parameters are different for every launch, you can pass them programmatically when using the `CreateStreamingURL` API\. Set the `sessionContext` and `applicationID` parameters in the API fields\. The sessionContext is included as a command line option when launching the application\.
 
-If the launch parameters need to be computed on the fly, you can launch your application using a script\. You can parse the `sessionContext` parameter within your script before launching your application with a computed parameter\.
+If the launch parameters must be computed on the fly, you can launch your application using a script\. You can parse the `sessionContext` parameter within your script before launching your application with a computed parameter\.
 
 ## I am unable to use my image with a fleet after installing an antivirus application\.<a name="troubleshooting-11"></a>
 

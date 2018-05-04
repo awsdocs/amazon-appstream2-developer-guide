@@ -14,7 +14,7 @@ The following table describes important changes to the documentation for Amazon 
 | Managed AppStream 2\.0 agent updates | Created [Amazon AppStream 2\.0 Agent Version History](agent-software-versions.md) and made other updates\. | December 7, 2017 | 
 | On\-Demand fleets | Created [Fleet Type](managing-stacks-fleets.md#fleet-types) and made other updates\. | September 19, 2017 | 
 | Instance families | Created [AppStream 2\.0 Instance Families](instance-types.md) and made other updates\. | July 25, 2017 | 
-| Active Directory | Created [Using Active Directory Domains with AppStream 2\.0](active-directory.md) and made other updates\. | July 24, 2017 | 
+| Active Directory | Created [Using Active Directory with AppStream 2\.0](active-directory.md) and made other updates\. | July 24, 2017 | 
 | User pool | Created [Manage Access Using the AppStream 2\.0 User Pool](user-pool.md) and made other updates\. | June 15, 2017 | 
 | Security groups | Created [Security Groups](managing-network.md#managing-network-security-groups) and made other updates\. | May 26, 2017 | 
 | Home Folders | Created [Home Folders and VPC Endpoints](managing-network.md#managing-network-vpce-iam-policy) and made other updates\. | May 18, 2017 | 

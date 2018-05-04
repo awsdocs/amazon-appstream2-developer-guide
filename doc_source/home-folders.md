@@ -2,6 +2,10 @@
 
 AppStream 2\.0 supports persistent storage for your end users with Home Folders\. When this option is enabled for an AppStream 2\.0 stack, end users of the stack are presented with a persistent storage folder in their AppStream 2\.0 sessions\. No further conﬁguration is required on your users' part to access their Home Folder\. Data stored by users in their Home Folder is automatically backed up to an Amazon S3 bucket in your AWS account and is made available in subsequent sessions for those users\.
 
+**Note**  
+As an administrator, you can access the Home Folder in the following location on an image builder instance: C:\\Users\\PhotonUser\\My Files\\Home Folder\. Use this path if you are configuring your applications to save to the Home Folder\.  
+For your users, some applications do not recognize the redirect that displays the Home Folder as a top\-level folder in File Explorer\. If this is the case, your users can access their Home Folder when they are working in an application during a streaming session by choosing **File Open** from the application interface and browsing to the following directory: C:\\Users\\PhotonUser\\My Files\\Home Folder\. 
+
 ## Home Folder End User Experience<a name="home-folders-end-user"></a>
 
 For end users, the Home Folder behaves like a normal Windows folder\. Users experience the following Home Folder access features when they are working in an application during a streaming session\.

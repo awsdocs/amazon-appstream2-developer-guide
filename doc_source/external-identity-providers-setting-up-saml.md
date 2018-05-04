@@ -6,7 +6,7 @@ To enable users to sign in to AppStream 2\.0 by using their existing credentials
 + [Prerequisites](#external-identity-providers-setting-up-prerequisites)
 + [Step 1: Create a SAML Identity Provider in AWS IAM](#external-identity-providers-create-saml-provider)
 + [Step 2: Create a SAML 2\.0 Federation IAM Role](#external-identity-providers-grantperms)
-+ [Step 3: Embed an Inline Policy for the IAM Role](#external-identity-providers-embed-inline-policy-for-IAM-role.title)
++ [Step 3: Embed an Inline Policy for the IAM Role](#external-identity-providers-embed-inline-policy-for-IAM-role)
 + [Step 4: Configure Your SAML\-Based IdP](#external-identity-providers-config-idp)
 + [Step 5: Create Assertions for the SAML Authentication Response](#external-identity-providers-create-assertions)
 + [Step 6: Configure the Relay State of Your Federation](#external-identity-providers-relay-state)
@@ -57,7 +57,7 @@ Do not choose either of the two SAML 2\.0 access level methods\.
 
 1. Review the role details and choose **Create role**\.
 
-## Step 3: Embed an Inline Policy for the IAM Role<a name="external-identity-providers-embed-inline-policy-for-IAM-role.title"></a>
+## Step 3: Embed an Inline Policy for the IAM Role<a name="external-identity-providers-embed-inline-policy-for-IAM-role"></a>
 
 Next, embed an inline IAM policy for the role that you created\. When you embed an inline policy, the permissions in the policy cannot be inadvertently attached to the wrong principal entity\. The inline policy provides federated users with access to the AppStream 2\.0 stack that you created\. For information about how to embed the inline policy in JSON, see [Create a Policy on the JSON Tab](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html#access_policies_create-json-editor)\. 
 
@@ -100,7 +100,7 @@ Next, depending on your SAML\-based IdP, you may need to configure the informati
 If this information is not already configured in your IdP, provide the following:
 + **SAML Subject NameID** – The unique identifier for the user who is signing in\. 
 **Note**  
-For stacks with domain\-joined fleets, the NameID value for the user must be provided in the format of "`domain\username`" using the sAMAccountName or "`username@domain.com`" using userPrincipalName\. If you are using the sAMAccountName format, you can specify the `domain` by using either the NetBIOS name or the fully qualified domain name \(FQDN\)\. For more information, see [Using Active Directory Domains with AppStream 2\.0](active-directory.md)\.
+For stacks with domain\-joined fleets, the NameID value for the user must be provided in the format of "`domain\username`" using the sAMAccountName or "`username@domain.com`" using userPrincipalName\. If you are using the sAMAccountName format, you can specify the `domain` by using either the NetBIOS name or the fully qualified domain name \(FQDN\)\. For more information, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.
 + **SAML Subject Type** \(with a value set to `persistent`\) – Setting the value to `persistent` ensures that your IdP sends the same unique value for the `NameID` element in all SAML requests from a particular user\. Make sure that your IAM policy includes a condition to only allow SAML requests with a SAML sub\_type set to `persistent`, as described in [Step 2: Create a SAML 2\.0 Federation IAM Role](#external-identity-providers-grantperms)\.
 + **`Attribute` element with the `Name` attribute set to https://aws\.amazon\.com/SAML/Attributes/Role** – This element contains one or more `AttributeValue` elements that list the IAM role and SAML IdP to which the user is mapped by your IdP\. The role and IdP are specified as a comma\-delimited pair of ARNs\.
 + **`Attribute` element with the `SessionDuration` attribute set to https://aws\.amazon\.com/SAML/Attributes/SessionDuration \(optional\)** – This element contains one `AttributeValue` element that specifies the maximum amount of time that a federated streaming session for a user can remain active before reauthentication is required\. The default value is 60 minutes\. For more information, see the *An optional Attribute element with the SessionDuration attribute set to https://aws\.amazon\.com/SAML/Attributes/SessionDuration* section in [Configuring SAML Assertions for the Authentication Response](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_assertions.html)\.

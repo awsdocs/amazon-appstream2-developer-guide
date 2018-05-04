@@ -49,7 +49,7 @@ An AppStream 2\.0 administrator can assign one or more stacks to one or more use
 
 1. On the left navigation pane, choose **User Pool** and select the users\.
 
-1. Choose **Actions**, **Assign stack**\. Note that users cannot be assigned to stacks that have a fleet joined to an Active Directory domain\. For more information, see [Using Active Directory Domains with AppStream 2\.0](active-directory.md)\.
+1. Choose **Actions**, **Assign stack**\. Note that users cannot be assigned to stacks that have a fleet joined to an Active Directory domain\. For more information, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.
 
 1. Confirm the list of users in the resulting dialog box\. For **Stack**, choose the desired stack\.
 

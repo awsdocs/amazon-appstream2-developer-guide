@@ -1,8 +1,8 @@
 # What Is Amazon AppStream 2\.0?<a name="what-is-appstream"></a>
 
-Amazon AppStream 2\.0 is a fully managed application streaming service that enables you to stream desktop applications from Amazon Web Services \(AWS\) to any desktop device running a web browser, without rewriting them\. AppStream 2\.0 manages the AWS resources required to host and run your applications, scales automatically, and provides access to your users on demand\. AppStream 2\.0 provides users access to the applications they need on the device of their choice, with a responsive, fluid user experience that is indistinguishable from natively installed applications\. There are no files to download and no time\-consuming installations\.
+Amazon AppStream 2\.0 is a fully managed application streaming service that provides users with instant access to their desktop applications from anywhere\. AppStream 2\.0 manages the AWS resources required to host and run your applications, scales automatically, and provides access to your users on demand\. AppStream 2\.0 provides users access to the applications they need on the desktop device of their choice, with a responsive, fluid user experience that is indistinguishable from natively installed applications\. There are no files to download and no time\-consuming installations\.
 
-With AppStream 2\.0, you can easily add your existing desktop applications to AWS and instantly start streaming them to an HTML5 compatible browser\. You can maintain a single version of each of your apps, which makes application management easier\. Your users always access the latest versions of their applications\. Your applications run on AWS compute resources, and data is never stored on users' devices, which means they always get a high performance, secure experience\.
+With AppStream 2\.0, you can easily add your existing desktop applications to AWS and instantly start streaming them to an HTML5 compatible browser\. You can maintain a single version of each of your applications, which makes application management easier\. Your users always access the latest versions of their applications\. Your applications run on AWS compute resources, and data is never stored on users' devices, which means they always get a high performance, secure experience\.
 
 Unlike traditional on\-premises solutions for desktop application streaming, AppStream 2\.0 offers pay\-as\-you\-go pricing, with no upfront investment and no infrastructure to maintain\. You can scale instantly and globally, ensuring that your users always have the best possible experience\.
 
@@ -12,7 +12,7 @@ For more information, see [AppStream 2\.0](https://aws.amazon.com/appstream2/det
 
 Using Amazon AppStream 2\.0 provides the following advantages:
 
-**Run desktop applications on any device**  
+**Run desktop applications securely on any desktop device**  
 Your desktop applications run securely in an HTML5 web browser on Windows and Linux PCs, Macs, and Chromebooks\.
 
 **Secure applications and data**  

@@ -1,14 +1,14 @@
 # Overview of Active Directory Domains<a name="active-directory-overview"></a>
 
-Using Active Directory domains with AppStream 2\.0 requires some understanding of how they work together, and the tasks required\. The following tasks must be completed by an administrator:
+Using Active Directory domains with AppStream 2\.0 requires an understanding of how they work together and the configuration tasks that you'll need to complete\. You'll need to complete the following tasks:
 
-1. Set the group policies controlling the end user experience and security requirements for applications\.
+1. Configure Group Policy settings as needed to define the end user experience and security requirements for applications\.
 
 1. Create the domain\-joined application stack in AppStream 2\.0\.
 
-1. Create the AppStream 2\.0 app in the SAML 2\.0 identity provider and assign it to end users either directly or with Active Directory groups\.
+1. Create the AppStream 2\.0 application in the SAML 2\.0 identity provider and assign it to end users either directly or through Active Directory groups\.
 
-To authenticate users for proper access to the joined domain from within their streaming apps, there are several steps that occur when a user initiates an AppStream 2\.0 streaming session\. The following diagram illustrates the end\-to\-end user authentication flow from the initial browser request through all the SAML and Active Directory authentication steps\.
+For your users to be authenticated to a domain, several steps must occur when these users initiate an AppStream 2\.0 streaming session\. The following diagram illustrates the end\-to\-end user authentication flow from the initial browser request through SAML and Active Directory authentication\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/domain-join.png)
 
@@ -26,12 +26,12 @@ To authenticate users for proper access to the joined domain from within their s
 
 1. Using the authentication token from AWS, AppStream 2\.0 authorizes the user and presents applications to the browser\.
 
-1. The user chooses an app and is prompted to enter login information for the domain\.
+1. The user chooses an application and is prompted to enter login information for the domain\.
 
 1. The domain controller is contacted for user authentication\.
 
 1. After being authenticated with the domain, the user's session starts with domain connectivity\.
 
-From the user's perspective, the process happens transparently: The user starts at your organization's internal portal and lands at an AppStream 2\.0 application portal, without ever having to supply any AWS credentials\. Only Active Directory domain login credentials are required\.
+From the user's perspective, the process happens transparently\. The user starts at your organization's internal portal and lands at an AppStream 2\.0 application portal, without having to enter AWS credentials\. Only Active Directory domain login credentials are required\.
 
-The administrator's tasks, such as to set up the Active Directory with entitlements and group policies, and to create a domain\-joined application stack, must be completed before the user can initiate this authentication process\.
+Before a user can initiate this process, you must configure Active Directory with the required entitlements and Group Policy settings and create a domain\-joined application stack\.

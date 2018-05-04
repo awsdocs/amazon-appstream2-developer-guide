@@ -1,6 +1,6 @@
 # Amazon AppStream 2\.0 Service Limits<a name="limits"></a>
 
-By default, AWS limits the resources you can create and the number of users that can use the service\. To request a limit increase, use the [AppStream 2\.0 Limits form](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-appstream)\.
+By default, AWS limits the resources you can create and the number of users that can use the service\. To request a limit increase, use the [AppStream 2\.0 Limits form](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-appstream2)\.
 
 The following table lists the limits for each AppStream 2\.0 resource\.
 

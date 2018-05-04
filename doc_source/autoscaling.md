@@ -4,7 +4,7 @@ Fleet Auto Scaling allows you to automatically change the size of your AppStream
 
 AppStream 2\.0 scaling is provided by Application Auto Scaling\. For more information, see the [Application Auto Scaling API Reference](http://docs.aws.amazon.com/autoscaling/application/APIReference/)\.
 
-Before you can use Fleet Auto Scaling, Application Auto Scaling needs permissions to access Amazon CloudWatch alarms and AppStream 2\.0 fleets\. For more information, see [Application Auto Scaling IAM Role](controlling-access.md#autoscaling-iam-role) and [Application Auto Scaling Required IAM Permissions](controlling-access.md#autoscaling-iam-policy)\.
+Before you can use Fleet Auto Scaling, Application Auto Scaling needs permissions to access Amazon CloudWatch alarms and AppStream 2\.0 fleets\. For more information, see [IAM Service Roles Required for Managing AppStream 2\.0 Resources](controlling-access.md#controlling-access-iam-service-role) and [Application Auto Scaling Required IAM Permissions](controlling-access.md#autoscaling-iam-policy)\.
 
 For a walk\-through of AppStream 2\.0 scaling, see [Scaling Your Desktop Application Streams with Amazon AppStream 2\.0](http://aws.amazon.com/blogs/compute/scaling-your-desktop-application-streams-with-amazon-appstream-2-0/) in the *AWS Compute Blog*\.
 

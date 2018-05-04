@@ -53,7 +53,7 @@ You can enable automatic updates of the AppStream 2\.0 agent by creating a new i
 
    For **Security group\(s\)**, select up to five security groups to associate with this image builder\. If needed, choose **Create new security group**\. If you do not choose a security group, the image builder is associated with the default security group for your VPC\. For more information, see [Security Groups](managing-network.md#managing-network-security-groups)\.
 
-   For **Active Directory Domain \(Optional\)**, expand this section to choose which Active Directory and organizational unit in which to place your streaming instance computer objects\. Ensure that the selected network access settings enable DNS resolvability and communication with your directory\. For more information, see [Using Active Directory Domains with AppStream 2\.0](active-directory.md)\.
+   For **Active Directory Domain \(Optional\)**, expand this section to choose which Active Directory and organizational unit in which to place your streaming instance computer objects\. Ensure that the selected network access settings enable DNS resolvability and communication with your directory\. For more information, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.
 
 1. Choose **Review** and confirm the details for the image builder\. To change the configuration for any section, choose **Edit** and make the needed changes\. After you finish reviewing the configuration details, choose **Launch**\. 
 
@@ -77,7 +77,7 @@ This mode has full administrator permissions on the image builder instance\. Use
 **Test User **  
 This mode has the same limited permissions as your end users have on their streaming instances\. Use this mode to test applications for proper function as an end user\.  
 **Directory User **  
-If your image builder is joined to an Active Directory domain, this mode allows you to log in as a user in your domain to access resources that are managed by Active Directory\. Provide the user name and password of the user to log in as\. The user must have local administrator permissions to install applications\. For more information, see [Providing Local Administrator Permissions for Image Builders](active-directory-admin.md#active-directory-image-builder-local-admin)\.
+If your image builder is joined to an Active Directory domain, this mode allows you to log in as a user in your domain to access resources that are managed by Active Directory\. Provide the user name and password of the user to log in as\. The user must have local administrator permissions to install applications\. For more information, see [Granting Local Administrator Rights on Image Builders](active-directory-admin.md#active-directory-image-builder-local-admin)\.
 
     At any point after logging in, you can switch between users by selecting **Switch Users** from the **Admin Commands** menu\. This disconnects your current session and brings up the login menu\.
 
