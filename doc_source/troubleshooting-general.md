@@ -6,8 +6,8 @@ The following are possible general issues you might have while using Amazon AppS
 + [SAML federation is not working\. The user is not authorized to view AppStream 2\.0 applications\.](#troubleshooting-13)
 + [After federating from an ADFS portal, my streaming session doesn't start\. I am getting the error "Sorry connection went down"\.](#troubleshooting-adfs-upn)
 + [I get an invalid redirect URI error\.](#troubleshooting-14)
-+ [My stack's Home Folders aren't working correctly\.](#troubleshooting-s3-failures)
-+ [My users can't access their Home Folder directory from one of our applications\.](#alternate-path-accessing-home-folders)
++ [My stack's home folders aren't working correctly\.](#troubleshooting-s3-failures)
++ [My users can't access their home folder directory from one of our applications\.](#alternate-path-accessing-home-folders)
 
 ## SAML federation is not working\. The user is not authorized to view AppStream 2\.0 applications\.<a name="troubleshooting-13"></a>
 
@@ -21,16 +21,16 @@ Set the claim rule's **Incoming Claim Type** for the **NameID** SAML attribute t
 
 This error occurs due to a malformed or invalid AppStream 2\.0 stack relay state URL\. Make sure that the relay state configured in your federation setup is the same as the stack relay state that is displayed in the stack details through the AppStream 2\.0 console\. If they are the same and the problem still persists, contact AWS Support\. For more information, see [Single Sign\-on Access to AppStream 2\.0 Using SAML 2\.0](external-identity-providers.md)\.
 
-## My stack's Home Folders aren't working correctly\.<a name="troubleshooting-s3-failures"></a>
+## My stack's home folders aren't working correctly\.<a name="troubleshooting-s3-failures"></a>
 
-Problems with Home Folder backup to an S3 bucket can occur in the following scenarios:
+Problems with home folder backup to an S3 bucket can occur in the following scenarios:
 + There is no internet connectivity from the streaming instance, or there is no access to the private Amazon S3 VPC endpoint, if applicable\.
-+ Network bandwidth consumption is too high\. For example, multiple large files are being downloaded or streamed by the user while the service is trying to back up a Home Folder that contains large files to Amazon S3\.
++ Network bandwidth consumption is too high\. For example, multiple large files are being downloaded or streamed by the user while the service is trying to back up a home folder that contains large files to Amazon S3\.
 + An administrator deleted the bucket created by the service\.
 + An administrator incorrectly edited the Amazon S3 permissions for the **AmazonAppStreamServiceAccess** service role\.
 
 For more information, see the [Amazon Simple Storage Service Console User Guide](http://docs.aws.amazon.com/AmazonS3/latest/user-guide/) and [Amazon Simple Storage Service Developer Guide](http://docs.aws.amazon.com/AmazonS3/latest/dev/)\.
 
-## My users can't access their Home Folder directory from one of our applications\.<a name="alternate-path-accessing-home-folders"></a>
+## My users can't access their home folder directory from one of our applications\.<a name="alternate-path-accessing-home-folders"></a>
 
-Some applications do not recognize the redirect that displays the Home Folder as a top\-level folder in File Explorer\. If this is the case, your users can access their Home Folder when they are working in an application during a streaming session by choosing **File Open** from the application interface and browsing to the following directory: C:\\Users\\PhotonUser\\My Files\\Home Folder\.
+Some applications do not recognize the redirect that displays the home folder as a top\-level folder in File Explorer\. If this is the case, your users can access their home folder from within an application during a streaming session by choosing **File Open** from the application interface and browsing to the following directory: C:\\Users\\PhotonUser\\My Files\\Home Folder\.

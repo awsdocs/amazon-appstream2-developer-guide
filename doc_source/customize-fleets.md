@@ -13,6 +13,7 @@ For certain fleet customizations, in Active Directory environments, you might ne
 + [Persist Environment Variables](#customize-fleets-persist-environment-variables)
 + [Set Default File Associations for Your Users](#customize-fleets-set-default-file-associations)
 + [Set Google Chrome as the Default Browser for Users' Streaming Sessions](#customize-fleets-set-chrome-default-browser)
++ [Disable Internet Explorer Enhanced Security Configuration](#customize-fleets-disable-ie-esc)
 + [Change the Default Internet Explorer Home Page for Users' Streaming Sessions](#customize-fleets-change-ie-homepage)
 
 ## Persist Environment Variables<a name="customize-fleets-persist-environment-variables"></a>
@@ -21,8 +22,17 @@ Environment variables enable you to dynamically pass settings across application
 
 Follow the steps in these procedures to make environment variables available across your fleet instances\. 
 
+**Topics**
++ [Change System Environment Variables](#customize-fleets-system-environment-variables)
++ [Change User Environment Variables](#customize-fleets-user-environment-variables)
++ [Create an Environment Variable That is Limited in Scope](#customize-fleets-environment-variable-limited-scope)
+
 **Note**  
 If you are using Active Directory and Group Policy with AppStream 2\.0, keep in mind that streaming instances must be joined to an Active Directory domain to use Group Policy for environment variables\. For information about how to configure the Group Policy **Environment Variable** preference item, see [Configure an Environment Variable Item](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772047(v=ws.11)) in the Microsoft documentation\.
+
+### Change System Environment Variables<a name="customize-fleets-system-environment-variables"></a>
+
+Follow these steps to change system environment variables across your fleet instances\. 
 
 **To change system environment variables on an image builder**
 
@@ -30,75 +40,71 @@ This procedure applies only to system environment variables, not user environmen
 
 1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
 
-1. Connect in Administrator mode to the image builder on which you want to change system environment variables\. 
+1. In the left navigation pane, choose **Images**, **Image Builder**\.
 
-1. Choose the Windows **Start** menu, open the context \(right\-click\) menu for **Computer**, and then choose **Properties**\.
+1. Choose the image builder on which to change system environment variables, verify that it is in the **Running** state, and choose **Connect**\.
+
+1. Log in to the image builder by doing either of the following:
+   + If your image builder is not joined to an Active Directory domain, on the **Local User** tab, choose **Administrator**\.
+   + If your image builder is joined to an Active Directory domain, choose the **Directory User** tab, specify the credentials for a domain user account that has local administrator permissions on the image builder, then choose **Log in**\.
+
+1. Choose the Windows **Start** button, open the context \(right\-click\) menu for **Computer**, and then choose **Properties**\.
 
 1. In the navigation pane, choose **Advanced system settings**\. 
 
 1. In **System variables**, change the environment variables that you want to persist across your fleet instances, and then choose** OK**\.
 
-1. On the image builder desktop, open Image Assistant and install and configure applications as needed\. 
+1. On the image builder desktop, open Image Assistant\.
+
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom Image](tutorial-image-builder.md)\.
 
    The changes to the system environment variables persist across your fleet instances and are available to streaming sessions launched from those instances\. 
 **Note**  
 Setting AWS CLI credentials as system environment variables might prevent AppStream 2\.0 from creating the image\.
 
-**To change user environment variables on an image builder**
+### Change User Environment Variables<a name="customize-fleets-user-environment-variables"></a>
+
+Follow these steps to change user environment variables across your fleet instances\. 
+
+**To change user environment variables**
 
 1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
 
-1. Connect in Administrator mode to the image builder on which you want to change user environment variables\.
+1. In the left navigation pane, choose **Images**, **Image Builder**\.
 
-1. Create a child folder of C:\\ drive for the script \(for example, C:\\Scripts\)\.
+1. Choose the image builder on which to change user environment variables, verify that it is in the **Running** state, and choose **Connect**\.
 
-1. Open Notepad to create the new script\.
+1. On the **Local User** tab, choose **Template User**\. 
 
-1. In Notepad, enter the following lines:
+1. On the image builder, choose the Windows **Start** button, **Control Panel**, **User Accounts**\. 
 
-   `setx `*variable* *value*
+1. Choose **User Accounts** again\. In the left navigation pane, choose **Change my environment variables\.**
 
-   Where:
+1. Under **User environment variables** for **DefaultProfileUser**, set or create the user environment variables as needed, then choose **OK**\.
 
-   *variable* is the variable name to be used
+1. This disconnects your current session and opens the login menu\. Log in to the image builder by doing either of the following:
+   + If your image builder is not joined to an Active Directory domain, on the **Local User** tab, choose **Administrator**\.
+   + If your image builder is joined to an Active Directory domain, choose the **Directory User** tab, and log in as a domain user who has local administrator permissions on the image builder\.
 
-   *value* is the value for the given variable name
+1. On the image builder desktop, open Image Assistant\.
 
-1. Choose** File**, **Save**\. Name the file and save it with the \.bat extension to C:\\Scripts\. For example, name the file CreateVariable\.bat\.
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom Image](tutorial-image-builder.md)\.
 
-1. Open Local Group Policy Editor by opening the command prompt as an administrator, typing `gpedit.msc`, and then pressing ENTER\.
-
-1. In the console tree, under **Computer Configuration**, expand **Administrative Templates**, **System**, and then choose **Group Policy**\. 
-
-1. Double\-click **Configure Logon Script Delay**\.
-
-1. In the **Configure Login Script Delay **dialog box, choose **Enabled**\.
-
-1. Under **Options**, set the value to 0\.
-
-1. Choose **Apply**, **OK**\.
-
-1. In the console tree, under **User Configuration**, expand **Windows Settings**, and then choose **Scripts \(Logon/Logoff\)**\.
-
-1. Double\-click** Logon**\. 
-
-1. In the **Logon Properties** dialog box, on the **Scripts** tab, choose **Add,** and then browse to C:\\Scripts\\CreateVariable\.bat\.
-
-1. Choose **Apply**, **OK**\.
-
-1. Close Local Group Policy Editor\.
-
-1. On the image builder desktop, open Image Assistant and install and configure applications as needed\. 
-
-   The logon script runs when fleet users log in, setting the user environment variable\. This process makes the variable available in the associated streaming sessions\.
-
-**To create an environment variable with limited scope**
+### Create an Environment Variable That is Limited in Scope<a name="customize-fleets-environment-variable-limited-scope"></a>
 
 Follow these steps to create an environment variable that is limited in scope to the processes that are spawned off the script\. This approach is useful when you need to use the same environment variable name with different values for different applications\. For example, if you have two different applications that use the environment variable "LIC\_SERVER", but each application has a different value for "LIC\_SERVER"\.
 
+**To create an environment variable that is limited in scope**
+
 1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
 
-1. Connect in Administrator mode to the image builder on which you want to create an environment variable with a limited scope\.
+1. In the left navigation pane, choose **Images**, **Image Builder**\.
+
+1. Choose the image builder on which to create an environment variable that is limited in scope, verify that it is in the **Running** state, and choose **Connect**\.
+
+1. Log in to the image builder by doing either of the following:
+   + If your image builder is not joined to an Active Directory domain, on the **Local User** tab, choose **Administrator**\.
+   + If your image builder is joined to an Active Directory domain, choose the **Directory User** tab, specify the credentials for a domain user account that has local administrator permissions on the image builder, then choose **Log in**\.
 
 1. Create a child folder of C:\\ drive for the script \(for example, C:\\Scripts\)\.
 
@@ -106,7 +112,7 @@ Follow these steps to create an environment variable that is limited in scope to
 
    `set `*variable*=*value*
 
-   `start " "C:\path\to\application.exe` 
+   `start " " "C:\path\to\application.exe"` 
 
    Where:
 
@@ -123,11 +129,13 @@ If the application path includes spaces, the entire string must be encapsulated 
 
 1. On the image builder desktop, start Image Assistant\.
 
-1. Choose **Add Application**, browse to C:\\Scripts, and select one of the scripts that you created in step 5\. Choose **Save**\.
+1. Choose **Add App**, navigate to C:\\Scripts, and select one of the scripts that you created in step 5\. Choose **Open**\.
 
-1. If you created multiple scripts, repeat step 8 for each script\.
+1. In the **App Launch Settings** dialog box, keep or change the settings as needed\. When you're done, choose **Save**\.
 
-1. Continue installing and configuring applications as needed\.
+1. If you created multiple scripts, repeat steps 8 and 9 for each script\.
+
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom Image](tutorial-image-builder.md)\.
 
    The environment variable and specific value are now available for processes that are run from the script\. Other processes cannot access this variable and value\. 
 
@@ -139,9 +147,13 @@ The associations for application file extensions are set on a per\-user basis an
 
 1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
 
-1. Connect in Administrator mode to the image builder on which you want to set file associations\.
+1. Choose the image builder on which to set default file associations, verify that it is in the **Running** state, and choose **Connect**\.
 
-1. Set file associations as needed\.
+1. Log in to the image builder by doing either of the following:
+   + If your image builder is not joined to an Active Directory domain, on the **Local User** tab, choose **Administrator**\.
+   + If your image builder is joined to an Active Directory domain, choose the **Directory User** tab, specify the credentials for a domain user account that has local administrator permissions on the image builder, then choose **Log in**\.
+
+1. Set default file associations as needed\.
 
 1. Open the Windows command prompt as an administrator\.
 
@@ -163,7 +175,9 @@ The associations for application file extensions are set on a per\-user basis an
 
 1. Close Local Group Policy Editor\.
 
-1. On the image builder desktop, open Image Assistant and install and configure applications as needed\.
+1. On the image builder desktop, open Image Assistant\.
+
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom Image](tutorial-image-builder.md)\.
 
    The file associations that you configured are applied to the fleet instances and user streaming sessions that are launched from those instances\. 
 
@@ -175,13 +189,17 @@ By default, new user accounts for Microsoft Windows have Internet Explorer set a
 
 1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
 
-1. Connect in Administrator mode to the image builder on which you want to set Chrome as the default browser\.
+1. Choose the image builder on which to set Chrome as the default browser, verify that it is in the **Running** state, and choose **Connect**\.
+
+1. Log in to the image builder by doing either of the following:
+   + If your image builder is not joined to an Active Directory domain, on the **Local User** tab, choose **Administrator**\.
+   + If your image builder is joined to an Active Directory domain, choose the **Directory User** tab, specify the credentials for a domain user account that has local administrator permissions on the image builder, then choose **Log in**\.
 
 1. On the image builder desktop, start Image Assistant\.
 
-1. Choose **Add Application**, browse to the location where Chrome is installed \(for example, C:\\Program Files \(x86\)\\Google\\Chrome\\Application\\\), and select chrome\.exe\. 
+1. Choose **\+ Add App**, navigate to the location where Chrome is installed \(for example, C:\\Program Files \(x86\)\\Google\\Chrome\\Application\\\), and select chrome\.exe\. 
 
-1. In the **Edit Application Setting** dialog box, in **Launch Parameters**, enter the following: 
+1. In the **App Launch Settings** dialog box, in **Launch Parameters**, enter the following: 
 
    `--make-default-browser-for-user --no-first-run`
 
@@ -191,20 +209,84 @@ By default, new user accounts for Microsoft Windows have Internet Explorer set a
 
    Users who are connected to streaming sessions launched from those fleet instances have Google Chrome as the default browser for http:// and https:// connections\. The users’ existing application preferences for opening files with \.htm and \.html extensions are not changed\.
 
+## Disable Internet Explorer Enhanced Security Configuration<a name="customize-fleets-disable-ie-esc"></a>
+
+Internet Explorer Enhanced Security Configuration \(ESC\) places servers and Internet Explorer in a configuration that limits exposure to the internet\. However, this configuration can impact the AppStream 2\.0 end user experience\. Users who are connected to AppStream 2\.0 streaming sessions may find that websites do not display or perform as expected when: 
++ Internet Explorer ESC is enabled on fleet instances from which users’ streaming sessions are launched
++ Users run Internet Explorer during their streaming sessions
++ Applications use Internet Explorer to load data
+
+**To disable Internet Explorer Enhanced Security Configuration**
+
+1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
+
+1. In the left navigation pane, choose **Images**, **Image Builder**\.
+
+1. Choose the image builder on which to disable Internet Explorer ESC, verify that it is in the **Running** state, and choose **Connect**\.
+
+1. Log in to the image builder by doing either of the following:
+   + If your image builder is not joined to an Active Directory domain, on the **Local User** tab, choose **Administrator**\.
+   + If your image builder is joined to an Active Directory domain, choose the **Directory User** tab, specify the credentials for a domain user account that has local administrator permissions on the image builder, then choose **Log in**\.
+
+1. On the image builder, disable Internet Explorer ESC by doing the following:
+
+   1. Open Server Manager\. Choose the Windows **Start** button, and then choose **Server Manager**\.
+
+   1. In the left navigation pane, choose **Local Server**\. 
+
+   1. In the right properties pane, choose the **On** link next to IE Enhanced Security Configuration****\.
+
+   1. In the **Internet Explorer Enhanced Configuration** dialog box, choose the **Off** option under **Administrators** and **Users**, then choose **OK**\.
+
+1. In the upper right area of the image builder desktop, choose **Admin Commands**, **Switch User**\.   
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/admin-commands-switch-user.png)
+
+1. This disconnects your current session and opens the login menu\. Log in to the image builder by doing either of the following:
+   + If your image builder is not joined to an Active Directory domain, on the **Local User** tab, choose **Template User**\.
+   + If your image builder is joined to an Active Directory domain, choose the **Directory User** tab, and log in as a domain user who does not have local administrator permissions on the image builder\.
+
+1. Open Internet Explorer and reset your settings by doing the following:
+
+   1. In the upper right area of the Internet Explorer browser window, choose the **Tools** icon, then choose **Internet options**\.
+
+   1. Choose the **Advanced **tab, then choose **Reset**\.
+
+   1. When prompted to confirm your choice, choose **Reset** again\.
+
+   1. When the **Reset Internet Explorer Settings** message displays, choose **Close**\.
+
+1. Choose **Admin Commands**, **Switch User**, and then do either of the following: 
+   + If your image builder is not joined to an Active Directory domain, on the **Local User** tab, choose **Administrator**\.
+   + If your image builder is joined to an Active Directory domain, choose the **Directory User** tab, and log in with the same domain user account that you used in step 4\.
+
+1. On the image builder desktop, open Image Assistant\.
+
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom Image](tutorial-image-builder.md)\.
+
 ## Change the Default Internet Explorer Home Page for Users' Streaming Sessions<a name="customize-fleets-change-ie-homepage"></a>
 
-You can use Group Policy to change the default Internet Explorer home page for users' streaming sessions and optionally, enable your users to change the default home page\. To use the GPMC MMC snap\-in to perform this task, do the following first:
+You can use Group Policy to change the default Internet Explorer home page for users' streaming sessions\. Alternatively, if you do not have Group Policy in your environment or prefer not to use Group Policy, you can use the AppStream 2\.0 Template User account instead\.
+
+**Topics**
++ [Use Group Policy to Change the Default Internet Explorer Home Page](#customize-fleets-change-ie-homepage-group-policy)
++ [Use the AppStream 2\.0 Template User Account to Change the Default Internet Explorer Home Page](#customize-fleets-change-ie-homepage-template-user)
+
+### Use Group Policy to Change the Default Internet Explorer Home Page<a name="customize-fleets-change-ie-homepage-group-policy"></a>
+
+In Active Directory environments, you use the Group Policy Management \(GPMC\) MMC\-snap\-in to set a default home page that users can't change\. If Active Directory is not in your environment, you can use Local Group Policy Editor to perform this task\. To set a home page that users can change, you must use the GPMC\. 
+
+To use the GPMC, do the following first:
 + Obtain access to a computer or an EC2 instance that is joined to your domain\.
 + Install the GPMC\. For more information, see [Installing or Removing Remote Server Administration Tools for Windows 7](https://technet.microsoft.com/en-us/library/ee449483.aspx) in the Microsoft documentation\.
 + Log in as a domain user with permissions to create GPOs\. Link GPOs to the appropriate organizational units \(OUs\)\.
 
 **To change the default Internet Explorer home page by using a Group Policy administrative template**
 
-You can use an administrative template in Group Policy to set a default home page that users can’t change\. For more information about administrative templates, see [Edit Administrative Template Policy Settings](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771479(v=ws.11)) in the Microsoft documentation\.
+You can use a Group Policy administrative template to set a default home page that users can't change\. For more information about administrative templates, see [Edit Administrative Template Policy Settings](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771479(v=ws.11)) in the Microsoft documentation\.
 
 1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
 
-1. If you are not using Active Directory in your environment, open Local Group Policy Editor\. If you are using Active Directory, open the GPMC\. Locate the Scripts \(Logon\\Logoff\) policy setting: 
+1. If you are not using Active Directory in your environment, open Local Group Policy Editor\. If you are using Active Directory, open the GPMC\. Locate the **Scripts \(Logon\\Logoff\) **policy setting: 
    + Local Group Policy Editor: 
 
      On your image builder, open the command prompt as an administrator, type `gpedit.msc`, and then press ENTER\. 
@@ -256,3 +338,32 @@ You can use Group Policy preferences to set a default home page that users can c
 To enable your users to choose the **Use Default** button in their Internet Explorer browser settings and reset their default home page to your company home page, you can also set a value for Default\_Page\_URL without choosing **Apply Once** and **Do not Re\-Apply**\. 
 
 1. Choose **OK** and close the GPMC\.
+
+### Use the AppStream 2\.0 Template User Account to Change the Default Internet Explorer Home Page<a name="customize-fleets-change-ie-homepage-template-user"></a>
+
+Follow these steps to use the Template User account to change the default Internet Explorer home page\. 
+
+**To change the default Internet Explorer Home page by using the Template User account**
+
+1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
+
+1. In the left navigation pane, choose **Images**, **Image Builder**\.
+
+1. Choose the image builder on which to change the default Internet Explorer home page, verify that it is in the **Running** state, and choose **Connect**\.
+
+1. Log in to the image builder by doing either of the following:
+   + If your image builder is not joined to an Active Directory domain, on the **Local User** tab, choose **Template User**\.
+   + If your image builder is joined to an Active Directory domain, choose the **Directory User** tab, specify the credentials for a domain user account that does not have local administrator permissions on the image builder, then choose **Log in**\.
+
+1. Open Internet Explorer and complete the necessary steps to change the default home page\.
+
+1. In the upper right area of the image builder desktop, choose **Admin Commands**, **Switch User**\.   
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/admin-commands-switch-user.png)
+
+1. This disconnects your current session and opens the login menu\. Log in to the image builder by doing either of the following:
+   + If your image builder is not joined to an Active Directory domain, on the **Local User** tab, choose **Administrator**\.
+   + If your image builder is joined to an Active Directory domain, choose the **Directory User** tab, and log in as a domain user who has local administrator permissions on the image builder\.
+
+1. On the image builder desktop, open Image Assistant\.
+
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom Image](tutorial-image-builder.md)\.

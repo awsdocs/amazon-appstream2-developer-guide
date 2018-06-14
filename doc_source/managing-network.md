@@ -68,7 +68,7 @@ For more information, see the [AWS Command Line Interface User Guide](http://doc
 
 ## Home Folders and VPC Endpoints<a name="managing-network-vpce-iam-policy"></a>
 
-To support Home Folders on a private network, AppStream 2\.0 needs access permissions to the VPC endpoint\. To enable AppStream 2\.0 access to your private Amazon S3 endpoint, attach a custom policy, as defined below, to your VPC endpoint for Amazon S3\. For more information about private Amazon S3 endpoints, see [VPC Endpoints](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html) and [Endpoints for Amazon S3](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints-s3.html) in the *Amazon VPC User Guide*\.
+To support home folders on a private network, AppStream 2\.0 needs access permissions to the VPC endpoint\. To enable AppStream 2\.0 access to your private Amazon S3 endpoint, attach a custom policy, as defined below, to your VPC endpoint for Amazon S3\. For more information about private Amazon S3 endpoints, see [VPC Endpoints](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html) and [Endpoints for Amazon S3](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints-s3.html) in the *Amazon VPC User Guide*\.
 
 ```
 {

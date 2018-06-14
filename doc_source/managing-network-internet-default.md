@@ -45,7 +45,7 @@ After you have a public subnet available on a VPC, you can enable internet acces
 
 1. Choose a subnet for **Subnet 1** and, if desired, **Subnet 2**\. Choose **Update**\.
 
-You can test internet connectivity by starting your fleet, creating a stack, associating the fleet to a stack, and browsing the internet within a streaming session for stack\. For more information, see [Create AppStream 2\.0 Stacks and Fleets](set-up-stacks-fleets.md)\.
+You can test internet connectivity by starting your fleet, creating a stack, associating the fleet to a stack, and browsing the internet within a streaming session for stack\. For more information, see [Create AppStream 2\.0 Fleets and Stacks](set-up-stacks-fleets.md)\.
 
 ## Enabling Internet Access for an Image Builder<a name="managing-network-internet-dia-image-builder"></a>
 

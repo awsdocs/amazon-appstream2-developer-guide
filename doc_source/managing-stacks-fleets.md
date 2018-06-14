@@ -1,12 +1,12 @@
-# Amazon AppStream 2\.0 Stacks and Fleets<a name="managing-stacks-fleets"></a>
+# Amazon AppStream 2\.0 Fleets and Stacks<a name="managing-stacks-fleets"></a>
 
-With Amazon AppStream 2\.0, you create stacks and fleets as part of the process of streaming applications\. A fleet consists of streaming instances that run the image that you specify\. A stack consists of a fleet, user access policies, and storage configurations\.
+With Amazon AppStream 2\.0, you create stacks and fleets as part of the process of streaming applications\. A fleet consists of streaming instances that run the image that you specify\. A stack consists of an associated fleet, user access policies, and storage configurations\.
 
 **Topics**
 + [Fleet Type](#fleet-types)
 + [Session Context](#managing-stacks-fleets-parameters)
 + [Instance Families](instance-types.md)
-+ [Create Stacks and Fleets](set-up-stacks-fleets.md)
++ [Create Fleets and Stacks](set-up-stacks-fleets.md)
 + [Customize Fleets](customize-fleets.md)
 + [Fleet Auto Scaling](autoscaling.md)
 

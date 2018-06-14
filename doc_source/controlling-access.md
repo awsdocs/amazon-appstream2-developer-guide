@@ -216,7 +216,7 @@ To use AppStream 2\.0 Fleet Auto Scaling, the IAM user accessing fleet creation 
 
 ## IAM Policies and the Amazon S3 Bucket for Home Folders<a name="s3-iam-policy"></a>
 
-Access to the Amazon S3 bucket for Home folders is managed using IAM permissions and policies\.
+Access to the Amazon S3 bucket for home folders is managed using IAM permissions and policies\.
 
 **Topics**
 + [Deleting the Amazon S3 Bucket for Home Folders](#s3-iam-policy-delete)
@@ -243,7 +243,7 @@ AppStream 2\.0 adds an Amazon S3 bucket policy that prevents the accidental dele
 
 ### Restricting Administrator Access to the Amazon S3 Bucket for Home Folders<a name="s3-iam-policy-restricted-access"></a>
 
-By default, administrators who can access the Amazon S3 bucket created by AppStream 2\.0 can view and modify content that is part of users' Home folders\. To restrict administrator access to the S3 bucket containing user files, we recommend applying the S3 bucket access policy based on the following template: 
+By default, administrators who can access the Amazon S3 bucket created by AppStream 2\.0 can view and modify content that is part of users' home folders\. To restrict administrator access to the S3 bucket containing user files, we recommend applying the S3 bucket access policy based on the following template: 
 
 ```
 {
@@ -264,13 +264,13 @@ By default, administrators who can access the Amazon S3 bucket created by AppStr
 }
 ```
 
-This policy allows Home folder S3 bucket access only to the users specified and to the AppStream 2\.0 service\. For every IAM user who should have access, replicate the following line:
+This policy allows home folder S3 bucket access only to the users specified and to the AppStream 2\.0 service\. For every IAM user who should have access, replicate the following line:
 
 ```
 "arn:aws:iam::account:user/IAM-user-name"
 ```
 
-In the following example, the policy restricts access to the Home folder S3 bucket for anyone other than IAM users marymajor and johnstiles, and also restricts access to the AppStream 2\.0 service, in Region us\-west\-2 for account ID 123456789012\.
+In the following example, the policy restricts access to the home folder S3 bucket for anyone other than IAM users marymajor and johnstiles, and also restricts access to the AppStream 2\.0 service, in AWS Region us\-west\-2 for account ID 123456789012\.
 
 ```
 {

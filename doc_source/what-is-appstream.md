@@ -37,7 +37,7 @@ For more information, see [Amazon AppStream 2\.0 Pricing](https://aws.amazon.com
 To get the most out of AppStream 2\.0, be familiar with the following concepts:
 
 **image builder**  
-An *image builder* is a virtual machine that you use to create or modify an image\. You can launch and connect to an image builder by using the AWS Management Console\. After you are connected to an image builder, you can install, add, and test your apps, and then use the image builder to publish an image\.
+An *image builder* is a virtual machine that you use to create an image\. You can launch and connect to an image builder by using the AWS Management Console\. After you are connected to an image builder, you can install, add, and test your apps, and then use the image builder to publish an image\.
 
 **image**  
 An *image* contains applications that are streamed to users\. AWS provides base images that you can use to create images that include your own applications\. 
@@ -46,7 +46,7 @@ An *image* contains applications that are streamed to users\. AWS provides base 
 A *fleet* consists of streaming instances that run the image that you specify\. You can set the desired number of streaming instances for your fleet and configure policies to scale your fleet automatically based on demand\. Note that one user requires one instance\.
 
 **stack**  
-A *stack* consists of a fleet, user access policies, and storage configurations\. You set up a stack to start streaming applications to users\.
+A *stack* consists of an associated fleet, user access policies, and storage configurations\. You set up a stack to start streaming applications to users\.
 
 **user pool**  
 Use the *user pool* to manage users and their assigned stacks\.

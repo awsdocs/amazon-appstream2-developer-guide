@@ -1,10 +1,10 @@
-# Create AppStream 2\.0 Stacks and Fleets<a name="set-up-stacks-fleets"></a>
+# Create AppStream 2\.0 Fleets and Stacks<a name="set-up-stacks-fleets"></a>
 
-To stream your applications, Amazon AppStream 2\.0 requires an environment consisting of a stack, an associated fleet and at least one application image\. This tutorial walks through the steps to set up a stack and a fleet, and how to give users access to the stack\. If you haven't already done so, we recommend that you try the procedures in [Getting Started with Amazon AppStream 2\.0](getting-started.md) first\.
+To stream your applications, Amazon AppStream 2\.0 requires an environment that includes a fleet that is associated with a stack, and at least one application image\. This tutorial describes the steps to set up a fleet and stack, and how to give users access to the stack\. If you haven't already done so, we recommend that you try the procedures in [Getting Started with Amazon AppStream 2\.0](getting-started.md) first\.
 
 If you want to create an image to use, see [Tutorial: Create a Custom Image](tutorial-image-builder.md)\.
 
-If you intend to join a fleet to an Active Directory domain, configure your Active Directory before following the steps below\. For more information, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.
+If you plan to join a fleet to an Active Directory domain, configure your Active Directory domain before completing the following steps\. For more information, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.
 
 **Topics**
 + [Create a Fleet](#set-up-stacks-fleets-create)
@@ -14,7 +14,7 @@ If you intend to join a fleet to an Active Directory domain, configure your Acti
 
 ## Create a Fleet<a name="set-up-stacks-fleets-create"></a>
 
-Set up and create a fleet from which user applications are executed and streamed\.
+Set up and create a fleet from which user applications are launched and streamed\.
 
 **To set up and create a fleet**
 
@@ -56,7 +56,7 @@ Set up and create a fleet from which user applications are executed and streamed
 
 1. Choose **Create**\.
 
-   Fleet provisioning usually takes 15 minutes to finish\. While your fleet is being created and fleet instances are provisioned, the status of your fleets displays as **Starting** in the **Fleets** list\. Choose the **Refresh** icon periodically to update the fleet status until the status is **Running**\. You cannot associate the fleet with a stack and use it for streaming sessions until the status of the fleet is **Running**\.
+   While your fleet is being created and fleet instances are provisioned, the status of your fleets displays as **Starting** in the **Fleets** list\. Choose the **Refresh** icon periodically to update the fleet status until the status is **Running**\. You cannot associate the fleet with a stack and use it for streaming sessions until the status of the fleet is **Running**\.
 
    Optionally, you can apply one or more tags to help manage the fleet\. Choose **Tags**, choose **Add/Edit Tags**, choose **Add Tag**, specify the key and value for the tag, and then choose **Save**\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.
 
@@ -73,14 +73,30 @@ Set up and create a stack to control access to your fleet\.
    + **Description**— Enter a description for the stack \(maximum of 256 characters\)\.
    + **Redirect URL** — Specify a URL to which users are redirected after their streaming sessions end\.
    + **Feedback URL** — Specify a URL to which users are redirected after they click the **Send Feedback** link to submit feedback about their application streaming experience\. If you do not specify a URL, this link is not displayed\.
+   + **Fleet** — Select an existing fleet or create a new one to associate with your stack\.
 
-1. For **Step 2: Enable Storage**, you can enable persistent storage for the stack users by selecting **Enable Home Folders**\. Choose **Review**\.
+1. Choose **Next\.**
 
-1. Choose **Create**\.
+1. For **Step 2: Enable Storage**, you can provide persistent storage for your users by choosing either or both of the following: 
+   + **Enable Home Folders** — Users can save their files to their home folder and access existing files in their home folder during application streaming sessions\. For information about requirements for enabling home folders, see [Enable Home Folders for Your AppStream 2\.0 Users](home-folders.md#enable-home-folders)\.
+   + **Enable Google Drive** — Users can link their Google Drive account to AppStream 2\.0, and during application streaming sessions, they can sign in to their Google Drive account, save files to Google Drive, and access their existing files in Google Drive\. You can enable Google Drive for accounts in G Suite domains only, not for personal Gmail accounts\. 
+**Note**  
+After you select **Enable Google Drive**, type at least one G Suite domain name\. Access to Google Drive during application streaming sessions will be limited to user accounts that are in the domains that you specify\. You can specify up to 10 G Suite domains\. For more information about requirements for enabling Google Drive, see [Enable Google Drive for Your AppStream 2\.0 Users](google-drive.md#enable-google-drive)\.
 
-   The status of your new stack is **Active** when it is available to work with from the console\. 
+1. Choose **Next**\.
 
-   Optionally, you can apply one or more tags to help manage the stack\. Choose **Tags**, choose **Add/Edit Tags**, choose **Add Tag**, specify the key and value for the tag, and then choose **Save**\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.
+1. For **Step 3: User Settings**, select the ways in which your users can transfer data between their streaming session and their local device\. When you're done, choose **Review**: 
+   + **Clipboard** — By default, users can copy and paste data between their local device and streaming applications\. You can limit Clipboard options so that users can paste data to their remote streaming session only or copy data to their local device only, or you can disable Clipboard options entirely\. Note that users can still copy and paste between applications in their streaming session\.
+   + **File transfer** — By default, users can upload and download files between their local device and streaming session\. You can limit file transfer options so that users can upload files to their streaming session only or download files to their local device only, or you can disable file transfer entirely\. 
+   + **Print to local device** — By default, users can print to their local device from within a streaming application\. When they choose **Print** in the application, they can download a \.pdf file that they can print to a local printer\. You can disable this option to prevent users from printing to a local device\.
+**Note**  
+These settings affect only whether users can use AppStream 2\.0 data transfer features\. If your image provides access to a browser, network printer, or other remote resource, your users might be able to transfer data to or from their streaming session in other ways\.
+
+1. For **Step 4: Review**, confirm the details for the stack\. To change the configuration for any section, choose **Edit **and make the needed changes\. After you finish reviewing the configuration details, choose **Create**\. 
+
+After the service sets up resources, the **Stacks** page appears\. The status of your new stack appears as **Active** when it is ready to use\. 
+
+Optionally, you can apply one or more tags to help manage the stack\. Choose **Tags**, choose **Add/Edit Tags**, choose **Add Tag**, specify the key and value for the tag, and then choose **Save**\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.
 
 ## Provide Access to Users<a name="set-up-stacks-fleets-add"></a>
 

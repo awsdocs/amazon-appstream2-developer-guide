@@ -72,7 +72,7 @@ Using the private image created in the previous step, create an Active Directory
 
 1. Review the fleet configuration and choose **Create**\.
 
-1. Complete the remaining steps in [Create AppStream 2\.0 Stacks and Fleets](set-up-stacks-fleets.md) so that your fleet is associated with a stack and running\.
+1. Complete the remaining steps in [Create AppStream 2\.0 Fleets and Stacks](set-up-stacks-fleets.md) so that your fleet is associated with a stack and running\.
 
 ## Step 4: Configure SAML 2\.0<a name="active-directory-setup-saml"></a>
 

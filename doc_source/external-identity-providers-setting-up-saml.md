@@ -21,7 +21,7 @@ Complete the following prerequisites before configuring your SAML 2\.0 connectio
 
 1. Use the AppStream 2\.0 management console to create an AppStream 2\.0 stack\. You need the stack name to create the IAM policy and to configure your IdP integration with AppStream 2\.0, as described later in this topic\.
 
-   You can create an AppStream 2\.0 stack by using the AppStream 2\.0 management console, AWS CLI, or AppStream 2\.0 API\. For more information, see [Create AppStream 2\.0 Stacks and Fleets](set-up-stacks-fleets.md)\.
+   You can create an AppStream 2\.0 stack by using the AppStream 2\.0 management console, AWS CLI, or AppStream 2\.0 API\. For more information, see [Create AppStream 2\.0 Fleets and Stacks](set-up-stacks-fleets.md)\.
 
 ## Step 1: Create a SAML Identity Provider in AWS IAM<a name="external-identity-providers-create-saml-provider"></a>
 
