@@ -70,7 +70,7 @@ The following example uses session context to launch a specific website using Go
    ```
    aws appstream create-streaming-url --stack-name session-context-test-stack \ 
    --fleet-name session-context-test-fleet \
-   --user-id username –validity 10000 \
+   --user-id username --validity 10000 \
    --application-id chrome --session-context "www.google.com"
    ```
 
