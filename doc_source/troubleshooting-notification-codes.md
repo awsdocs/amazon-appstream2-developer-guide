@@ -1,6 +1,6 @@
 # Troubleshooting Notification Codes<a name="troubleshooting-notification-codes"></a>
 
-The following are notification codes and resolution steps for notifications you may see while setting up and using Amazon AppStream 2\.0\. These notifications can be found in the **Notifications** tab in the AppStream 2\.0 console, after selecting an image builder or fleet\. Fleet notifications can also be obtained using the AppStream 2\.0 API operation [DescribeFleets](http://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeFleets.html), or using the [describe\-fleets](http://docs.aws.amazon.com/cli/latest/reference/appstream/describe-fleets.html) CLI command\.
+The following are notification codes and resolution steps for notifications you may see while setting up and using Amazon AppStream 2\.0\. These notifications can be found in the **Notifications** tab in the AppStream 2\.0 console, after selecting an image builder or fleet\. Fleet notifications can also be obtained using the AppStream 2\.0 API operation [DescribeFleets](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeFleets.html), or using the [describe\-fleets](https://docs.aws.amazon.com/cli/latest/reference/appstream/describe-fleets.html) CLI command\.
 
 ## Active Directory Domain Join<a name="troubleshooting-notification-codes-ad"></a>
 
@@ -45,3 +45,7 @@ The following are notification codes and resolution steps for codes you might en
 **DOMAIN\_JOIN\_ERROR\_FILE\_NOT\_FOUND**  
 **Message**: The system cannot find the file specified\.  
 **Resolution**: This error occurs when an invalid organizational unit \(OU\) distinguished name is provided\. The distinguished name must start with **OU=**\. Validate the OU distinguished name and try again\. For more information, see [Finding the Organizational Unit Distinguished Name](active-directory-admin.md#active-directory-oudn)\.
+
+**DOMAIN\_JOIN\_INTERNAL\_SERVICE\_ERROR**  
+**Message**: The account already exists\.  
+**Resolution**: The service account specified in the directory configuration does not have permissions to create the computer object or reuse an existing one\. Validate the permissions and start the image builder or fleet\. For more information, see [Granting Permissions to Create and Manage Active Directory Computer Objects](active-directory-admin.md#active-directory-permissions)\.

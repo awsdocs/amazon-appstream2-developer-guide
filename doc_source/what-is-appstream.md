@@ -37,10 +37,10 @@ For more information, see [Amazon AppStream 2\.0 Pricing](https://aws.amazon.com
 To get the most out of AppStream 2\.0, be familiar with the following concepts:
 
 **image builder**  
-An *image builder* is a virtual machine that you use to create an image\. You can launch and connect to an image builder by using the AWS Management Console\. After you are connected to an image builder, you can install, add, and test your apps, and then use the image builder to publish an image\.
+An *image builder* is a virtual machine that you use to create an image\. You can launch and connect to an image builder by using the AppStream 2\.0 console\. After you connect to an image builder, you can install, add, and test your applications, and then use the image builder to create an image\. You can launch new image builders by using private images that you own\.
 
 **image**  
-An *image* contains applications that are streamed to users\. AWS provides base images that you can use to create images that include your own applications\. 
+An *image* contains applications that you can stream to your users, and default Windows and application settings to enable your users to get started with their applications quickly\. AWS provides base images that you can use to create images that include your own applications\. AWS provides base images that you can use to create images that include your own applications\. After you create an image, you can't change it\. To add other applications, update existing applications, or change image settings, you must create a new image\. You can copy your images to other AWS Regions or share them with other AWS accounts in the same Region\. 
 
 **fleet**  
 A *fleet* consists of streaming instances that run the image that you specify\. You can set the desired number of streaming instances for your fleet and configure policies to scale your fleet automatically based on demand\. Note that one user requires one instance\.
@@ -53,7 +53,7 @@ Use the *user pool* to manage users and their assigned stacks\.
 
 ## How to Get Started<a name="what-is-how-to-start"></a>
 
-If you are using AppStream 2\.0 for the first time, you can use the **Try it Now **feature or follow the [Getting Started with Amazon AppStream 2\.0](getting-started.md) tutorial \(both are available in the AppStream 2\.0 console\)\.
+If you are using AppStream 2\.0 for the first time, you can use the **Try it Now **feature or follow the [Get Started with Amazon AppStream 2\.0: Set Up With Sample Applications](getting-started.md) tutorial \(both are available in the AppStream 2\.0 console\)\.
 + **Try It Now **provides you with a free trial experience that allows you to easily start desktop applications from your desktop browser\. 
 + The Getting Started tutorial enables you to set up application streaming by using sample applications or your own applications\. If you decide to start by using sample applications, you can always add your own applications later\.
 
@@ -86,10 +86,10 @@ When you use the service for the first time, AppStream 2\.0 creates an [AWS Iden
 You can work with AppStream 2\.0 using any of the following interfaces:
 
 **AWS Management Console**  
-The console is a browser\-based interface to manage AppStream 2\.0 resources\. For more information, see [Getting Started with Amazon AppStream 2\.0](getting-started.md)\.
+The console is a browser\-based interface to manage AppStream 2\.0 resources\. For more information, see [Get Started with Amazon AppStream 2\.0: Set Up With Sample Applications](getting-started.md)\.
 
 **AWS command line tools**  
-AWS provides two sets of command line tools: the [AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/) \(AWS CLI\) and the [AWS Tools for Windows PowerShell](http://docs.aws.amazon.com/powershell/latest/userguide/)\. To use the AWS CLI to run AppStream 2\.0 commands, see [Amazon AppStream 2\.0 Command Line Reference](http://docs.aws.amazon.com/cli/latest/reference/appstream/)\.
+AWS provides two sets of command line tools: the [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/) \(AWS CLI\) and the [AWS Tools for Windows PowerShell](https://docs.aws.amazon.com/powershell/latest/userguide/)\. To use the AWS CLI to run AppStream 2\.0 commands, see [Amazon AppStream 2\.0 Command Line Reference](https://docs.aws.amazon.com/cli/latest/reference/appstream/)\.
 
 **AWS SDKs**  
 You can access AppStream 2\.0 from a variety of programming languages\. The SDKs automatically take care of tasks such as the following:  

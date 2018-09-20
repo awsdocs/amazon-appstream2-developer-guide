@@ -1,69 +1,24 @@
-# Tutorial: Create a Custom Image<a name="tutorial-image-builder"></a>
+# Tutorial: Create a Custom AppStream 2\.0 Image<a name="tutorial-image-builder"></a>
 
-Before you can stream your applications, Amazon AppStream 2\.0 requires at least one image that you create by using an image builder\. This tutorial describes how to create custom images by using an image builder\.
-
-**Important**  
-After you create an image builder and it is running, your account may incur nominal charges\. For more information, see [AppStream 2\.0 Pricing](https://aws.amazon.com/appstream2/pricing/)\.
+This tutorial describes how to create a custom Amazon AppStream 2\.0 image that contains applications you can stream to your users, and default application and Windows settings to enable your users to get started with their applications quickly\. To complete this tutorial, you must already have an image builder\. If you don't have an image builder, see [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md)\.
 
 **Important**  
-This tutorial contains details that apply to the latest base image release\. For more information, see [Amazon AppStream 2\.0 Windows Image Version History](base-image-version-history.md)\.  
+This tutorial includes information that applies to the latest base image release\. For more information, see [AppStream 2\.0 Base Image Version History](base-image-version-history.md)\.  
 If you are using images that are created from base images dated before 2017\-07\-24, you can view a compatible version of this tutorial by downloading the PDF file [appstream2\-dg\-2017\-07\-23\.pdf](http://awsdocs.s3.amazonaws.com/AppStream2/appstream2-dg-2017-07-23.pdf)\. 
 
 **Topics**
-+ [Step 1: Create an Image Builder](#tutorial-image-builder-create)
-+ [Step 2: Install Applications on the Image Builder](#tutorial-image-builder-install)
-+ [Step 3: Create an AppStream 2\.0 Application Catalog](#tutorial-image-builder-add)
-+ [Step 4: Create Default Application and Windows Settings](#tutorial-image-builder-create-default-app-settings)
-+ [Step 5: Test Applications](#tutorial-image-builder-test-applications)
-+ [Step 6: Optimize Applications](#tutorial-image-builder-optimize)
-+ [Step 7: Finish Creating Your Image](#tutorial-image-builder-create-image)
-+ [Step 8 \(Optional\): Tag and Copy an Image](#tutorial-image-builder-tag-copy)
-+ [Step 9: Clean Up](#tutorial-image-builder-finish)
++ [Step 1: Install Applications on the Image Builder](#tutorial-image-builder-install)
++ [Step 2: Create an AppStream 2\.0 Application Catalog](#tutorial-image-builder-add)
++ [Step 3: Create Default Application and Windows Settings](#tutorial-image-builder-create-default-app-settings)
++ [Step 4: Test Applications](#tutorial-image-builder-test-applications)
++ [Step 5: Optimize Applications](#tutorial-image-builder-optimize)
++ [Step 6: Finish Creating Your Image](#tutorial-image-builder-create-image)
++ [Step 7 \(Optional\): Tag and Copy an Image](#tutorial-image-builder-tag-copy)
++ [Step 8: Clean Up](#tutorial-image-builder-finish)
 
-## Step 1: Create an Image Builder<a name="tutorial-image-builder-create"></a>
+## Step 1: Install Applications on the Image Builder<a name="tutorial-image-builder-install"></a>
 
-In this step, create a new image builder so that you can add applications and create images for streaming\.
-
-**To create an image builder for adding applications**
-
-1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
-
-1. You can launch the image builder in the following ways: 
-   + If a welcome screen appears displaying two options \(**Try it now** and **Get started**\), choose **Get started**, **Custom set up**\. 
-
-     For information about these two options, see [Amazon AppStream 2\.0 FAQs](https://aws.amazon.com/appstream2/faqs/)\.
-   + If a welcome screen does not appear, choose **Quick links** in the left navigation pane, then **Custom set up**\. 
-   + Alternatively, choose **Images** in the left navigation pane, then the **Image Builder** tab, **Launch Image Builder**\.
-
-1. For **Step 1: Choose Image**, choose a base image\. If you are launching the image builder for the first time, you can use one of the latest base images released by AWS \(selected by default\)\. For a list of the latest versions of base images released by AWS, see [Amazon AppStream 2\.0 Windows Image Version History](base-image-version-history.md)\. If you have already created images, or you want to update applications in an existing image, you can select one of your existing images\. Be sure to select an image that aligns with the instance family that you need\. For more information, see [AppStream 2\.0 Instance Families](instance-types.md)\.
-
-   Choose **Next**\.
-
-1. For **Step 2: Configure Image Builder**, configure the image builder by accepting the default values or providing inputs for the following fields:   
-**Name**  
-Type a unique name identifier for the image builder\.  
-**Instance Type**  
-Select the instance type for the image builder\. Choose a type that matches the performance requirements of the applications that you plan to install\. For more information, see [AppStream 2\.0 Instance Families](instance-types.md)\.  
-The AppStream 2\.0 agent software runs on your streaming instances, enabling your users to connect to and stream their applications\. Starting December 7, 2017, your streaming instances can be automatically updated with the latest AppStream 2\.0 agent software\. This capability helps to ensure that your image builder includes the latest features, performance improvements, and security updates that are available from AWS\.   
-You can enable automatic updates of the AppStream 2\.0 agent by creating a new image from any base image published by AWS on or after December 7, 2017\. If the image from which you are launching your image builder is not using the latest version of the AppStream 2\.0 agent, we recommend that you select the option to launch your image builder with the latest agent\. This option is not displayed if you are already using the latest base image from AWS or if you are using a custom image that uses the latest version of the agent\. 
-
-   Choose **Next**\.
-
-1. Do the following:
-   + For **Step 3: Configure Network**, choose a virtual private cloud \(VPC\) subnet in which to launch your image builder\. Your image builder has access to any of the network resources that are accessible from within this VPC subnet\. 
-   + For internet access on the image builder, choose **Default Internet Access**, select a VPC that has public subnets on your default VPC, and then select one of the public subnets listed for **Subnet**\. If you are controlling internet access using a NAT gateway, leave **Default Internet Access** unselected and use the VPC with the NAT gateway\. For more information, see [Network Settings for Amazon AppStream 2\.0 ](managing-network.md)\. 
-   + For **Security group\(s\)**, select up to five security groups to associate with this image builder\. If needed, choose **Create new security group**\. If you do not choose a security group, the image builder is associated with the default security group for your VPC\. For more information, see [Security Groups](managing-network.md#managing-network-security-groups)\.
-   + For **Active Directory Domain \(Optional\)**, expand this section to choose which Active Directory and organizational unit in which to place your streaming instance computer objects\. Ensure that the selected network access settings enable DNS resolvability and communication with your directory\. For more information, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.
-
-1. Choose **Review** and confirm the details for the image builder\. To change the configuration for any section, choose **Edit** and make the needed changes\. After you finish reviewing the configuration details, choose **Launch**\. 
-
-After the service prepares the needed resources, the image builder instance list appears\. The status of your new image builder appears as **Running** when the image builder is ready to use\.
-
-Optionally, you can apply one or more tags to help manage the image builder\. Choose **Tags**, choose **Add/Edit Tags**, choose **Add Tag**, specify the key and value for the tag, and then choose **Save**\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.
-
-## Step 2: Install Applications on the Image Builder<a name="tutorial-image-builder-install"></a>
-
-In this step, connect to the image builder that you created and launched, then install your applications on the image builder\.
+In this step, you connect an image builder and install your applications on the image builder\.
 
 **Important**  
 To complete this step, you must log into the image builder with the local **Administrator** account or a domain user account that has local administrator permissions\. 
@@ -84,7 +39,7 @@ Download and install applications only from sites that you trust\.
 
    If an application requires the Windows operating system restart, let it do so\. Before the operating system restarts, you are disconnected from your image builder\. After the restart is complete, connect to the image builder again, then finish installing the application\.
 
-## Step 3: Create an AppStream 2\.0 Application Catalog<a name="tutorial-image-builder-add"></a>
+## Step 2: Create an AppStream 2\.0 Application Catalog<a name="tutorial-image-builder-add"></a>
 
 In this step, create an AppStream 2\.0 application catalog by specifying applications \(*\.exe*\), batch scripts \(*\.bat*\), and application shortcuts \(*\.lnk*\) for your image\. For each application that you plan to stream, you can specify the name, display name, executable file to launch, and icon to display\. If you choose an application shortcut, these values are prepopulated for you\.
 
@@ -103,14 +58,9 @@ To complete this step, you must be logged into the image builder with the local 
 
 1. Repeat steps 2 and 3 for each application in Image Assistant and confirm that the applications appear on the **Add Apps** tab\. When you're done, choose **Next** to continue using Image Assistant to create your image\.
 
-## Step 4: Create Default Application and Windows Settings<a name="tutorial-image-builder-create-default-app-settings"></a>
+## Step 3: Create Default Application and Windows Settings<a name="tutorial-image-builder-create-default-app-settings"></a>
 
-In this step, you create default application and Windows settings for your AppStream 2\.0 users\. Doing this enables your users to get started with applications quickly during their AppStream 2\.0 streaming sessions, without the need to create or configure these settings themselves\. For example, you can create and configure:
-+ Application preferences, including a browser home page, toolbar customizations, and security settings\.
-+ Application data settings, including browser bookmarks and connection profiles\.
-+ Windows experience settings, including displaying file name extensions and hidden folders\.
-
-Additionally, you can modify or disable Internet Explorer security settings such as Enhanced Security Configuration \(ESC\)\. For more information, see [Disable Internet Explorer Enhanced Security Configuration](customize-fleets.md#customize-fleets-disable-ie-esc)\.
+In this step, you create default application and Windows settings for your AppStream 2\.0 users\. Doing this enables your users to get started with applications quickly during their AppStream 2\.0 streaming sessions, without the need to create or configure these settings themselves\.
 
 **Important**  
 To complete this step, you must be logged into the image builder with the local **Template User** account or a domain user account that does not have local administrator permissions\. 
@@ -145,7 +95,7 @@ To complete this step, you must be logged into the image builder with the local 
 
 1. When you're done, choose **Next** to continue creating your image\.
 
-## Step 5: Test Applications<a name="tutorial-image-builder-test-applications"></a>
+## Step 4: Test Applications<a name="tutorial-image-builder-test-applications"></a>
 
 In this step, verify that the applications you've added open correctly and perform as expected\. To do so, start a new Windows session as a user who has the same permissions as your users\. 
 
@@ -178,7 +128,7 @@ If your image builder is new and no users have settings on the image builder, th
 
 1. Choose **Next** to continue creating your image\.
 
-## Step 6: Optimize Applications<a name="tutorial-image-builder-optimize"></a>
+## Step 5: Optimize Applications<a name="tutorial-image-builder-optimize"></a>
 
 In this step, Image Assistant opens your applications one after another, identifies their launch dependencies, and performs optimizations to ensure that applications launch quickly\. These are required steps that are performed on all applications in the list\.
 
@@ -192,7 +142,7 @@ In this step, Image Assistant opens your applications one after another, identif
 
 1. When you're done, the next tab in Image Assistant, **5\. Configure Image**, automatically displays\. 
 
-## Step 7: Finish Creating Your Image<a name="tutorial-image-builder-create-image"></a>
+## Step 6: Finish Creating Your Image<a name="tutorial-image-builder-create-image"></a>
 
 In this step, choose an image name and finish creating your image\. 
 
@@ -200,7 +150,7 @@ In this step, choose an image name and finish creating your image\.
 
 1. Type a unique image name, an image display name, a description if you want, and choose **Next**\. The name you choose cannot begin with "Amazon," "AWS," or "AppStream\." When you're done, choose **Next**\.
 **Note**  
-If you choose a base image that is published by AWS on or after December 7, 2017, the option **Always use the latest agent version** appears, selected by default\. We recommend that you leave this option selected so that streaming instances that are launched from the image always use the latest version of the agent\. If you disable this option, you cannot enable it after you finish creating the image\. For information about the latest release of the AppStream 2\.0 agent, see [Amazon AppStream 2\.0 Agent Version History](agent-software-versions.md)\.
+If you choose a base image that is published by AWS on or after December 7, 2017, the option **Always use the latest agent version** appears, selected by default\. We recommend that you leave this option selected so that streaming instances that are launched from the image always use the latest version of the agent\. If you disable this option, you cannot enable it after you finish creating the image\. For information about the latest release of the AppStream 2\.0 agent, see [AppStream 2\.0 Agent Version History](agent-software-versions.md)\.
 
 1. In **6\. Review**, verify the image details\. To make changes, choose **Previous** to navigate to the appropriate Image Assistant tab, make your changes, and then proceed through the steps in Image Assistant as needed\.
 
@@ -217,9 +167,9 @@ If you choose a base image that is published by AWS on or after December 7, 2017
     To continue creating images, start the image builder and connect to it from the console, or create a new image builder\.
 
 **Note**  
-To change your image, such as add other applications or update existing applications, you must create a new image\. To do so, restart and reconnect to the image builder, make your changes, and then repeat the Image Assistant process to create a new image that includes the changes\.
+After you create an image, you can't change it\. To add other applications, update existing applications, or change image settings, you must start and reconnect to the image builder that you used to create the image, or, if you deleted that image builder, launch a new image builder builder that is based on your image\. Then, make your changes and create a new image\. 
 
-## Step 8 \(Optional\): Tag and Copy an Image<a name="tutorial-image-builder-tag-copy"></a>
+## Step 7 \(Optional\): Tag and Copy an Image<a name="tutorial-image-builder-tag-copy"></a>
 
 After you create an image, you can apply one or more tags to help manage the image\. You can also copy the image within the same region or to a new region within the same AWS account\. Copying a source image results in an identical but distinct destination image\. AWS does not copy any user\-defined tags, however\. Also, you can only copy custom images that you create, not the base images that are provided by AWS\. 
 
@@ -255,7 +205,7 @@ Copying an image across geographically diverse regions enables you to stream app
 
    The new image first appears with a status of **Copying** in the image registry of your console\. After the image is successfully created, the status of the image changes to **Available**, which means that you can use the image to launch a stack and stream your applications\. 
 
-## Step 9: Clean Up<a name="tutorial-image-builder-finish"></a>
+## Step 8: Clean Up<a name="tutorial-image-builder-finish"></a>
 
 Finally, stop your running image builders to free up resources and avoid unintended charges to your account\. We recommend stopping any unused, running image builders\. For more information, see [AppStream 2\.0 Pricing](https://aws.amazon.com/appstream2/pricing/)\.
 

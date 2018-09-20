@@ -9,7 +9,7 @@ You can:
 + Quickly identify a specific resource based on the tags that you've assigned to it
 + Identify and control AWS costs
 
-For example, you can identify and group AppStream 2\.0 fleets that are in different environments \(such as Development or Production\) or that are assigned to different business units \(such as HR or Marketing\)\. You can then track the associated AWS costs for these fleets on a detailed level\. To do this, sign up to get your AWS account bill with tag key values included\. For more information about setting up a cost allocation report with tags, see [Monthly Cost Allocation Report](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/configurecostallocreport.html) in the *AWS Billing and Cost Management User Guide*\. 
+For example, you can identify and group AppStream 2\.0 fleets that are in different environments \(such as Development or Production\) or that are assigned to different business units \(such as HR or Marketing\)\. You can then track the associated AWS costs for these fleets on a detailed level\. To do this, sign up to get your AWS account bill with tag key values included\. For more information about setting up a cost allocation report with tags, see [Monthly Cost Allocation Report](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/configurecostallocreport.html) in the *AWS Billing and Cost Management User Guide*\. 
 
 **Topics**
 + [Tagging Basics](#tagging-introduction)
@@ -64,9 +64,9 @@ If you're using the AppStream 2\.0 API, an AWS SDK or the AWS Command Line Inter
 
 | Task | AWS CLI | API Action | 
 | --- | --- | --- | 
-| Add or overwrite one or more tags for a resource\. | [tag\-resource](http://docs.aws.amazon.com/cli/latest/reference/appstream/tag-resource.html)  |  [TagResource](http://docs.aws.amazon.com/appstream2/latest/APIReference/API_TagResource.html)  | 
-| Remove one or more tags for a resource\. | [untag\-resource](http://docs.aws.amazon.com/cli/latest/reference/appstream/untag-resource.html) |  [UntagResource](http://docs.aws.amazon.com/appstream2/latest/APIReference/API_UntagResource.html)  | 
-| List one or more tags for a resource\. |  [list\-tags\-for\-resource](http://docs.aws.amazon.com/cli/latest/reference/appstream/list-tags-for-resource.html)  |  [ListTagsForResource](http://docs.aws.amazon.com/appstream2/latest/APIReference/API_ListTagsForResource.html)  | 
+| Add or overwrite one or more tags for a resource\. | [tag\-resource](https://docs.aws.amazon.com/cli/latest/reference/appstream/tag-resource.html)  |  [TagResource](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_TagResource.html)  | 
+| Remove one or more tags for a resource\. | [untag\-resource](https://docs.aws.amazon.com/cli/latest/reference/appstream/untag-resource.html) |  [UntagResource](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UntagResource.html)  | 
+| List one or more tags for a resource\. |  [list\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/appstream/list-tags-for-resource.html)  |  [ListTagsForResource](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_ListTagsForResource.html)  | 
 
 When you use the AppStream 2\.0 API, an AWS SDK, or AWS CLI actions to add, edit, remove, or list tags for an AppStream 2\.0 resource, specify the resource by using its Amazon Resource Name \(ARN\)\. An ARN uniquely identifies an AWS resource and uses the following general syntax\.
 
@@ -86,7 +86,7 @@ The type of resource\. You can tag the following AppStream 2\.0 resource types: 
 ***resourceName***  
 The name of the resource\.
 
-For example, you can obtain the ARN for an AppStream 2\.0 fleet by using the AWS CLI [describe\-fleets ](http://docs.aws.amazon.com/cli/latest/reference/appstream/describe-fleets.html)command\. Copy the following command\.
+For example, you can obtain the ARN for an AppStream 2\.0 fleet by using the AWS CLI [describe\-fleets ](https://docs.aws.amazon.com/cli/latest/reference/appstream/describe-fleets.html)command\. Copy the following command\.
 
 ```
 aws appstream describe-fleets
@@ -98,7 +98,7 @@ For an environment that contains a single fleet named `TestFleet`, the ARN for t
 "Arn": "arn:aws:appstream:us-east-1:123456789012:fleet/TestFleet"
 ```
 
-After you obtain the ARN for this resource, you can add two tags by using the [tag\-resource](http://docs.aws.amazon.com/cli/latest/reference/appstream/tag-resource.html) command: 
+After you obtain the ARN for this resource, you can add two tags by using the [tag\-resource](https://docs.aws.amazon.com/cli/latest/reference/appstream/tag-resource.html) command: 
 
 ```
 aws appstream tag-resource --resource arn:awsappstream:us-east-1:123456789012:fleet/TestFleet --tags Environment=Test,Department=IT

@@ -21,7 +21,7 @@ Limit the inbound range on the management network interface to 198\.19\.0\.0/16\
 Under normal circumstances, AppStream 2\.0 correctly configures these ports for your streaming instances\. If any security or firewall software is installed on a streaming instance that blocks any of these ports, the streaming instance may not function correctly or may be unreachable\.
 
 ## Customer Network Interface Ports<a name="primary_ports"></a>
-+ For internet connectivity, the following ports must be open to all destinations\. If you are using a modified or custom security group, you need to add the required rules manually\. For more information, see [Security Group Rules](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html#SecurityGroupRules) in the *Amazon VPC User Guide*\. 
++ For internet connectivity, the following ports must be open to all destinations\. If you are using a modified or custom security group, you need to add the required rules manually\. For more information, see [Security Group Rules](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules) in the *Amazon VPC User Guide*\. 
   + TCP 80 \(HTTP\)
   + TCP 443 \(HTTPS\)
 + If you join your streaming instances to a directory, the following ports must be open between your AppStream 2\.0 VPC and your directory controllers\. 

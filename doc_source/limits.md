@@ -14,5 +14,6 @@ The following table lists the limits for each AppStream 2\.0 resource\. Where no
 | Fleet instances  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/limits.html)  | 
 | Image builder instances  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/limits.html)  | 
 | Images | 5 | 
+| Number of AWS accounts an image can be shared with | 100 | 
 | Concurrent image copies | 2 per destination region | 
 | Image copies \(per month\) | 20 | 

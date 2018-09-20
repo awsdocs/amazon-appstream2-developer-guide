@@ -19,6 +19,6 @@ The following table summarizes the available instance families and provides the 
 | Graphics Pro | Uses NVIDIA Tesla M60 GPUs and provide a high\-performance, workstation\-like experience for graphics applications that use DirectX, OpenGL, OpenCL, or CUDA\. | Graphics\-Pro\-Image\-Builder\-MM\-DD\-YYYY | 
 
 For more information, see the following:
-+ [Amazon AppStream 2\.0 Windows Image Version History](base-image-version-history.md)
++ [AppStream 2\.0 Base Image Version History](base-image-version-history.md)
 + [Amazon AppStream 2\.0 Service Limits](limits.md)
 + [AppStream 2\.0 Pricing](https://aws.amazon.com/appstream2/pricing/)

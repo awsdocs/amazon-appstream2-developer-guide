@@ -1,11 +1,12 @@
-# AppStream 2\.0 Images<a name="managing-images"></a>
+# Images<a name="managing-images"></a>
 
-An Amazon AppStream 2\.0 image contains applications that can be streamed to users\. The image is used to launch streaming instances that are part of an AppStream 2\.0 fleet\. All images available to you are listed under the **Image Registry** section in the AWS Management Console\. Note that the image's instance family must align with the instance type you need\. For more information, see [AppStream 2\.0 Instance Families](instance-types.md)\.
+You can create Amazon AppStream 2\.0 images that contain applications you can stream to your users and default Windows and application settings to enable your users to get started with those applications quickly\. However, after you create an image, you can't change it\. To add other applications, update existing applications, or change image settings, you must start and reconnect to the image builder that you used to create the image\. If you deleted that image builder, launch a new image builder that is based on your image\. Then make your changes and create a new image\. For more information, see [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md) and [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
 
-The images in your image registry are differentiated by these visibility attributes:
-+ **Public Images** — Base images that are made available by AWS to help you create images with your own applications\.
-+ **Private Images** — Images that are created and owned by you\.
+Images that are available to you are listed in the **Image Registry** in the AppStream 2\.0 console\. They are categorized as public, private, or shared\. You can use any of these image types to launch an image builder and set up an AppStream 2\.0 fleet\. Shared images are owned by other AWS accounts and shared with you\. Permissions set on images that are shared with you may limit what you can do with those images\. For more information, see [Administer Your Amazon AppStream 2\.0 Images](administer-images.md)\.
 
-You can use either public or private images to launch an image builder and set up your AppStream 2\.0 fleet\. For more information, see [Tutorial: Create a Custom Image](tutorial-image-builder.md)\.
-
-You can also delete your private images\. Note that a private image cannot be deleted if there are active fleets using it\. You must stop all associated fleets before deleting the image\.
+**Topics**
++ [Default Application and Windows Settings and Application Launch Performance](customizing-appstream-images.md)
++ [Manage AppStream 2\.0 Agent Versions](base-images-agent.md)
++ [AppStream 2\.0 Agent Version History](agent-software-versions.md)
++ [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)
++ [Administer Your Amazon AppStream 2\.0 Images](administer-images.md)

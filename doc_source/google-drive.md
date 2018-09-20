@@ -1,9 +1,14 @@
 # Enable and Administer Google Drive for Your AppStream 2\.0 Users<a name="google-drive"></a>
 
-AppStream 2\.0 supports persistent storage for your users with Google Drive and home folders\. You can enable one or both options as needed for your organization\. When you enable Google Drive for an AppStream 2\.0 stack, end users of the stack can link their Google Drive account to AppStream 2\.0\. After their account is linked to AppStream 2\.0, your users can sign into their Google Drive account and access their Google Drive folder during application streaming sessions\. Any changes that your users make to files or folders in their Google Drive during application streaming sessions are automatically backed up and synchronized so that they are available to users outside their streaming session\. 
+Amazon AppStream 2\.0 supports the following persistent storage options for users in your organization: 
++ Google Drive for G Suite
++ OneDrive for Business
++ Home folders
+
+You can enable one or more options for your organization\. When you enable Google Drive for G Suite for an AppStream 2\.0 stack, users of the stack can link their Google Drive for G Suite account to AppStream 2\.0\. Then they can sign into their Google Drive for G Suite account and access their Google Drive folder during application streaming sessions\. Any changes that they make to files or folders in Google Drive during those sessions are automatically backed up and synchronized, so that they are available to users outside of their streaming sessions\. 
 
 **Important**  
-You can enable Google Drive for accounts in G Suite domains only, not for personal Gmail accounts\.
+You can enable Google Drive for G Suite for accounts in your G Suite domains only, but not for personal Gmail accounts\.
 
 **Topics**
 + [Enable Google Drive for Your AppStream 2\.0 Users](#enable-google-drive)
@@ -13,8 +18,11 @@ You can enable Google Drive for accounts in G Suite domains only, not for person
 ## Enable Google Drive for Your AppStream 2\.0 Users<a name="enable-google-drive"></a>
 
 Before enabling Google Drive, you must do the following:
-+ Make sure that the stack on which you enable Google Drive is associated with a fleet based on an image that uses a version of the AppStream 2\.0 agent released on or after May 31, 2018\. For more information, see [Amazon AppStream 2\.0 Agent Version History](agent-software-versions.md)\. The fleet must also have access to the internet\.
-+ Add Amazon AppStream 2\.0 as a trusted app in one or more G Suite domains\. You can enable Google Drive for up to 10 G Suite domains\.
++ Have an active G Suite account with a valid organizational domain and user accounts in the domain to use with AppStream 2\.0\.
++ Configure an AppStream 2\.0 stack with an associated fleet\. 
+
+   The fleet must use an image that uses a version of the AppStream 2\.0 agent released on or after May 31, 2018\. For more information, see [AppStream 2\.0 Agent Version History](agent-software-versions.md)\. The fleet must also have access to the internet\.
++ Add Amazon AppStream 2\.0 as a trusted app in one or more domains associated with your G Suite account\. You can enable Google Drive for up to 10 domains\.
 
 Follow these steps to add Amazon AppStream 2\.0 as a trusted app in your G Suite domains\.
 
@@ -54,7 +62,7 @@ Follow these steps to add Amazon AppStream 2\.0 as a trusted app in your G Suite
 Follow these steps to enable Google Drive for your AppStream 2\.0 users\.
 
 **To enable Google Drive while creating a stack**
-+ Follow the steps in [Create a Stack](set-up-stacks-fleets.md#set-up-stacks-fleets-install), and ensure that **Enable Google Drive** is selected and that you have specified at least one G Suite domain\.
++ Follow the steps in [Create a Stack](set-up-stacks-fleets.md#set-up-stacks-fleets-install), make sure that **Enable Google Drive** is selected, and that you have specified at least one organizational domain associated with your G Suite account\.
 
 **To enable Google Drive for an existing stack**
 
@@ -62,19 +70,19 @@ Follow these steps to enable Google Drive for your AppStream 2\.0 users\.
 
 1. In the left navigation pane, choose **Stacks**, and select the stack for which to enable Google Drive\.
 
-1. Below the stacks list, choose **Storage** and select **Enable Google Drive**\.
+1. Below the stacks list, choose **Storage** and select **Enable Google Drive for G Suite**\.
 
-1. In the **Enable Google Drive** dialog box, in **G Suite domain name**, type the name of at least one G Suite domain\. To specify another domain, choose **Add another domain**, and type the name of the G Suite domain\.
+1. In the **Enable Google Drive for G Suite** dialog box, in **G Suite domain name**, type the name of at least one organizational domain that is associated with your G Suite account\. To specify another domain, choose **Add another domain**, and type the name of the domain\.
 
-1. After you finish adding G Suite domain names, choose **Enable**\.
+1. After you add domain names, choose **Enable**\.
 
 ## Disable Google Drive for Your AppStream 2\.0 Users<a name="disable-google-drive"></a>
 
 You can disable Google Drive for a stack without losing user content that is already stored on Google Drive\. Disabling Google Drive for a stack has the following effects:
-+ For any users who are connected to active streaming sessions for the stack, an error message displays during the session to inform these users that they do not have permissions to access their Google Drive\. 
++ Users who are connected to active streaming sessions for the stack receive an error message\. They are informed that they do not have permissions to access their Google Drive\. 
 + Any new sessions that use the stack with Google Drive disabled do not display Google Drive\. 
-+ Disabling Google Drive for one stack does not disable it for other stacks\. Only the specific stack for which Google Drive is disabled is affected\.
-+ Even if Google Drive is disabled for all stacks, AppStream 2\.0 does not delete the user content\.
++ Only the specific stack for which Google Drive is disabled is affected\.
++ Even if Google Drive is disabled for all stacks, AppStream 2\.0 does not delete the user content stored in their Google Drive\.
 
 Follow these steps to disable Google Drive for an existing stack\.
 
@@ -84,41 +92,46 @@ Follow these steps to disable Google Drive for an existing stack\.
 
 1. In the left navigation pane, choose **Stacks**, and select the stack for which to disable Google Drive\.
 
-1. Below the stacks list, choose **Storage** and clear **Enable Google Drive**\.
+1. Below the stacks list, choose **Storage**, and clear the **Enable Google Drive for G Suite** option\.
 
-1. In the **Disable Google Drive** dialog box, type `CONFIRM` \(case\-sensitive\) to confirm your choice, then choose **Disable**\.
+1. In the **Disable Google Drive for G Suite** dialog box, type `CONFIRM` \(case\-sensitive\) to confirm your choice, then choose **Disable**\.
+
+   When users of the stack start their next AppStream 2\.0 streaming session, they can no longer access their Google Drive folder from within that session and future sessions\.
 
 ## Provide Your AppStream 2\.0 Users with Guidance for Working with Google Drive<a name="google-drive-end-user"></a>
 
-To help your users understand how to work with Google Drive, you can provide them with the following information\. 
+To help your users understand how to work with Google Drive, you can provide them with the information described in this section\. 
 
 **Guidance for Users**
 
-When you add your Google Drive account to AppStream 2\.0 and you are signed in to an AppStream 2\.0 streaming session, you can do the following with your Google Drive:
-+ Open and edit files and folders that you store in your Google Drive\. Content that is stored in your Google Drive is specific to you and cannot be accessed by other users unless you choose to share it\.
-+ Upload and download files between your local computer and your Google Drive\. Any changes that you make to files and folders in your Google Drive during a streaming session are automatically backed up and synchronized so that they are available to you when you sign in to your Google account and access Google Drive outside your streaming session\.
-+ When you are working in an application, you can access files and folders that are stored in your Google Drive by choosing **File Open** from the application interface and browsing to the file or folder that you want to open\. To save changes to a file that you are working in to your Google Drive, choose **File Save** from the application interface and browse to the location in your home folder where you want to save the file\. 
-+ You can also access your Google Drive by choosing **My Files** from the web view session toolbar\.
+When you add your Google Drive account to AppStream 2\.0 and you are signed in to an AppStream 2\.0 streaming session, you can do the following in Google Drive:
++ Open and edit files and folders that you store in Google Drive\. Content that is stored in your Google Drive is specific to you\. Other users cannot access your content unless you choose to share it\.
++ Upload and download files between your local computer and Google Drive\. Any changes that you make to your files and folders in Google Drive during a streaming session are automatically backed up and synchronized\. They are available to you when you sign in to your Google Drive account and access Google Drive outside of your streaming session\.
++ When you are working in an application, you can access your files and folders that are stored in Google Drive\. Choose **File**, **Open** from the application interface and browse to the file or folder that you want to open\. To save your changes in a file to your Google Drive, choose **File**, **Save** from the application and browse to the location in Google Drive where you want to save the file\. 
++ You can also access Google Drive by choosing **My Files** from the web view session toolbar\.
 
 **To add your Google Drive account to AppStream 2\.0**
 
-To access your Google Drive during AppStream 2\.0 streaming sessions, you must first add your Coogle Drive account to AppStream 2\.0\. 
+To access your Google Drive during AppStream 2\.0 streaming sessions, you must first add your Google Drive account to AppStream 2\.0\. 
 
 1. In the AppStream 2\.0 web view session, choose the **My Files** icon at the top left of your browser\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/AppStream2-WebView-MyFolders2.png)
 
-1. In the **My Files** dialog box, choose **Add Google Drive**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/AddGoogleDrive3.png)
+1. In the **My Files** dialog box, choose **Add Storage**\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/AddStorage.png)
+
+1. Choose **Google Drive**\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/AddGoogleDrive1.png)
 
 1. Choose the domain for your Google Drive account\.   
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/ChooseGSuiteDomain.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/LoginAccounts.png)
 
-1. The **Sign in with Google** dialog box displays\. Enter the user name and password for your Google Drive account when prompted\. 
+1. The **Sign in with Google** dialog box displays\. Type the user name and password for your Google Drive account when prompted\. 
 
 1. After your Google Drive account is added to AppStream 2\.0, your Google Drive folder displays in **My Files**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/GoogleDriveAdded.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/AddGoogleDrive2.png)
 
-1. To work with files and folders in your Google Drive, choose the **Google Drive** folder and browse to a folder or file as needed\. If you do not want to work with files in your Google Drive during this streaming session, close the **My Files** dialog box\. 
+1. To work with your files and folders in Google Drive, choose the **Google Drive** folder and browse to the file or folder you want\. If you do not want to work with files in Google Drive during this streaming session, close the **My Files** dialog box\. 
 
 **To upload and download files between your local computer and your Google Drive**
 

@@ -1,6 +1,6 @@
-# Amazon AppStream 2\.0 Windows Image Version History<a name="base-image-version-history"></a>
+# AppStream 2\.0 Base Image Version History<a name="base-image-version-history"></a>
 
-AWS publishes base images to help you create images that include your own applications\. Base images include the latest Windows operating system and the AppStream 2\.0 agent software\. For information about the latest AppStream 2\.0 software, see [Amazon AppStream 2\.0 Agent Version History](agent-software-versions.md)\.
+AWS publishes base images to help you create images that include your own applications\. Base images include the latest Windows operating system and the AppStream 2\.0 agent software\. For information about the latest AppStream 2\.0 software, see [AppStream 2\.0 Agent Version History](agent-software-versions.md)\.
 
 The following are the latest images:
 + **Base** — Base\-Image\-Builder\-06\-12\-2018

@@ -16,7 +16,7 @@ The following are possible issues you might have while setting up and using Acti
 
 Image builders and fleet instances can take up to 25 minutes to move into a ready state and become available\. If your instances are taking longer than 25 minutes to become available, in Active Directory, verify whether new computer objects were created in the correct organizational units \(OUs\)\. If there are new objects, the streaming instances will be available soon\. If the objects aren't there, check the directory configuration details in your AppStream 2\.0 Directory Config: Directory name \(the fully qualified domain name of the directory, service account username and password, and the OU distinguished name\. 
 
-Image builder and fleet errors are displayed in the AppStream 2\.0 console on the **Notifications** tab for the fleet or image builder\. Fleet errors are also available using the AppStream 2\.0 API via the [DescribeFleets](http://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeFleets.html) operation, or the CLI command [describe\-fleets](http://docs.aws.amazon.com/cli/latest/reference/appstream/describe-fleets.html)\.
+Image builder and fleet errors are displayed in the AppStream 2\.0 console on the **Notifications** tab for the fleet or image builder\. Fleet errors are also available using the AppStream 2\.0 API via the [DescribeFleets](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeFleets.html) operation, or the CLI command [describe\-fleets](https://docs.aws.amazon.com/cli/latest/reference/appstream/describe-fleets.html)\.
 
 ## My users aren't able to log in with the SAML application\.<a name="troubleshooting-active-directory-2"></a>
 
@@ -56,7 +56,7 @@ The Active Directory domain to use with AppStream 2\.0 must be accessible throug
    nslookup yourdomain.exampleco.com
    ```
 
-   Successful name resolution returns a valid IP address\. If you are unable to resolve your FQDN, you may need to update your VPC DNS servers by using a DHCP option set for your domain\. Then, come back to this step\. For more information, see [DHCP Options Sets](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html) in the *Amazon VPC User Guide*\.
+   Successful name resolution returns a valid IP address\. If you are unable to resolve your FQDN, you may need to update your VPC DNS servers by using a DHCP option set for your domain\. Then, come back to this step\. For more information, see [DHCP Options Sets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html) in the *Amazon VPC User Guide*\.
 
 1. If the FQDN resolves, validate connectivity by using the following `telnet` command\.
 

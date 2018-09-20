@@ -1,4 +1,4 @@
-# Network Settings for Amazon AppStream 2\.0<a name="managing-network"></a>
+# Networking, Access, and Security for Amazon AppStream 2\.0<a name="managing-network"></a>
 
 The following sections contain information about enabling users to connnect to AppStream 2\.0 streaming instances and enabling your AppStream 2\.0 fleets and image builders to access network resources and the internet\.
 
@@ -37,45 +37,45 @@ AppStream 2\.0 creates as many elastic network interfaces as the maximum desired
 
 ### Image Builders<a name="managing-network-guidelines-image-builders"></a>
 
-You can choose one subnet while launching an image builder\. Ensure the subnet accessibility of the network resources, with which your applications may interact\. The typical resources required for the successful execution of your apps may include licensing servers, database servers, file servers, and so on\.
+When you launch an image builder, you choose the subnet and security groups to use\. Make sure that the subnet and security groups provide access to the network resources that your applications require\. Typical network resources required by applications may include licensing servers, database servers, file servers, and application servers\.
 
 ## Security Groups<a name="managing-network-security-groups"></a>
 
-You can provide additional access control to your VPC from streaming instances in a fleet or an image builder in Amazon AppStream 2\.0 by associating them with VPC security groups\. Security groups that belong to your VPC allow you to control the network traffic between AppStream 2\.0 streaming instances and VPC resources such as license servers, file servers, and database servers\. For more information, see [Security Groups for your VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html) in the *Amazon VPC User Guide*\.
+You can provide additional access control to your VPC from streaming instances in a fleet or an image builder in Amazon AppStream 2\.0 by associating them with VPC security groups\. Security groups that belong to your VPC allow you to control the network traffic between AppStream 2\.0 streaming instances and VPC resources such as license servers, file servers, and database servers\. For more information, see [Security Groups for your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html) in the *Amazon VPC User Guide*\.
 
-The rules that you define for your VPC security group are applied when the security group is associated with a fleet or image builder\. The security group rules determine what network traffic is allowed from your streaming instances\. For more information, see [Security Group Rules](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html#SecurityGroupRules) in the *Amazon VPC User Guide*\.
+The rules that you define for your VPC security group are applied when the security group is associated with a fleet or image builder\. The security group rules determine what network traffic is allowed from your streaming instances\. For more information, see [Security Group Rules](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules) in the *Amazon VPC User Guide*\.
 
-You can associate up to five security groups while launching a new image builder or while creating a new fleet\. You can also associate security groups to an existing fleet or change the security groups of a fleet\. For more information, see [Working with Security Groups](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html#WorkingWithSecurityGroups) in the *Amazon VPC User Guide*\.
+You can associate up to five security groups while launching a new image builder or while creating a new fleet\. You can also associate security groups to an existing fleet or change the security groups of a fleet\. For more information, see [Working with Security Groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#WorkingWithSecurityGroups) in the *Amazon VPC User Guide*\.
 
-If you don't select a security group, your image builder or fleet is associated with the default security group for your VPC\. For more information, see [Default Security Group for Your VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html#DefaultSecurityGroup) in the *Amazon VPC User Guide*\.
+If you don't select a security group, your image builder or fleet is associated with the default security group for your VPC\. For more information, see [Default Security Group for Your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#DefaultSecurityGroup) in the *Amazon VPC User Guide*\.
 
 Use these additional considerations when using security groups with AppStream 2\.0\.
-+ All end user data, such as internet traffic, Home folder data, or application communication with VPC resources, are affected by the security groups associated with the streaming instance\.
++ All end user data, such as internet traffic, home folder data, or application communication with VPC resources, are affected by the security groups associated with the streaming instance\.
 + Streaming pixel data is not affected by security groups\.
 + If you have enabled default internet access for your fleet or image builder, the rules of the associated security groups must allow internet access\.
 
 You can create or edit rules for your security groups or create new security groups using the Amazon VPC console\. 
-+ **To associate security groups with an image builder** — Follow the instructions at [Step 1: Create an Image Builder](tutorial-image-builder.md#tutorial-image-builder-create)\.
++ **To associate security groups with an image builder** — Follow the instructions at [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md)\.
 + **To associate security groups with a fleet**
   + *While creating the fleet* — Follow the instructions at [Create a Fleet](set-up-stacks-fleets.md#set-up-stacks-fleets-create)\.
   + *For an existing fleet* — Edit the fleet settings using the AWS Management Console\.
 
 You can also associate security groups to your fleets using the AWS CLI and SDKs\.
-+ **AWS CLI** — Use the [create\-fleet](http://docs.aws.amazon.com/cli/latest/reference/appstream/create-fleet.html) and [update\-fleet](http://docs.aws.amazon.com/cli/latest/reference/appstream/update-fleet.html) commands\.
-+ **AWS SDKs** — Use the [CreateFleet](http://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateFleet.html) and [UpdateFleet](http://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateFleet.html) API operations\.
++ **AWS CLI** — Use the [create\-fleet](https://docs.aws.amazon.com/cli/latest/reference/appstream/create-fleet.html) and [update\-fleet](https://docs.aws.amazon.com/cli/latest/reference/appstream/update-fleet.html) commands\.
++ **AWS SDKs** — Use the [CreateFleet](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateFleet.html) and [UpdateFleet](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateFleet.html) API operations\.
 
-For more information, see the [AWS Command Line Interface User Guide](http://docs.aws.amazon.com/cli/latest/userguide/) and [Tools for Amazon Web Services](https://aws.amazon.com/tools/)\.
+For more information, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/) and [Tools for Amazon Web Services](https://aws.amazon.com/tools/)\.
 
 ## Home Folders and VPC Endpoints<a name="managing-network-vpce-iam-policy"></a>
 
-To support home folders on a private network, AppStream 2\.0 needs access permissions to the VPC endpoint\. To enable AppStream 2\.0 access to your private Amazon S3 endpoint, attach a custom policy, as defined below, to your VPC endpoint for Amazon S3\. For more information about private Amazon S3 endpoints, see [VPC Endpoints](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html) and [Endpoints for Amazon S3](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints-s3.html) in the *Amazon VPC User Guide*\.
+To support home folders and application settings persistence on a private network, AppStream 2\.0 needs access permissions to the VPC endpoint\. To enable AppStream 2\.0 access to your private Amazon S3 endpoint, attach a custom policy, as defined below, to your VPC endpoint for Amazon S3\. For more information about private Amazon S3 endpoints, see [VPC Endpoints](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html) and [Endpoints for Amazon S3](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-s3.html) in the *Amazon VPC User Guide*\.
 
 ```
 {
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "Allow-AppStream-to-access-specific-bucket",
+      "Sid": "Allow-AppStream-to-access-home-folder-and-application-settings",
       "Effect": "Allow",
       "Principal": {
         "AWS": "arn:aws:sts::account-id-without-hyphens:assumed-role/AmazonAppStreamServiceAccess/AppStream2.0"
@@ -88,7 +88,10 @@ To support home folders on a private network, AppStream 2\.0 needs access permis
         "s3:GetObjectVersion",
         "s3:DeleteObjectVersion"
       ],
-      "Resource": "arn:aws:s3:::appstream2-36fb080bb8-*"
+      "Resource": [
+        "arn:aws:s3:::appstream2-36fb080bb8-*",
+        "arn:aws:s3:::appstream-app-settings-*"
+      ]
     }
   ]
 }

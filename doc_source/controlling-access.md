@@ -12,7 +12,7 @@ The AmazonAppStreamReadOnlyAccess managed policy is available for users who requ
 + [Checking for the AmazonAppStreamServiceAccess Service Role and Policies](#controlling-access-checking-for-iam-service-access)
 + [Checking for the ApplicationAutoScalingForAmazonAppStreamAccess Service Role and Policies](#controlling-access-checking-for-iam-autoscaling)
 + [Application Auto Scaling Required IAM Permissions](#autoscaling-iam-policy)
-+ [IAM Policies and the Amazon S3 Bucket for Home Folders](#s3-iam-policy)
++ [IAM Policies and the Amazon S3 Bucket for Home Folders and Application Settings Persistence](#s3-iam-policy)
 
 ## IAM Service Roles Required for Managing AppStream 2\.0 Resources<a name="controlling-access-iam-service-role"></a>
 
@@ -214,17 +214,19 @@ To use AppStream 2\.0 Fleet Auto Scaling, the IAM user accessing fleet creation 
 }
 ```
 
-## IAM Policies and the Amazon S3 Bucket for Home Folders<a name="s3-iam-policy"></a>
+## IAM Policies and the Amazon S3 Bucket for Home Folders and Application Settings Persistence<a name="s3-iam-policy"></a>
 
-Access to the Amazon S3 bucket for home folders is managed using IAM permissions and policies\.
+To manage access to the Amazon S3 bucket for home folders and application settings persistence, use IAM permissions and policies\.
 
 **Topics**
-+ [Deleting the Amazon S3 Bucket for Home Folders](#s3-iam-policy-delete)
-+ [Restricting Administrator Access to the Amazon S3 Bucket for Home Folders](#s3-iam-policy-restricted-access)
++ [Deleting the Amazon S3 Bucket for Home Folders and Application Settings Persistence](#s3-iam-policy-delete)
++ [Restricting Administrator Access to the Amazon S3 Bucket for Home Folders and Application Settings Persistence](#s3-iam-policy-restricted-access)
 
-### Deleting the Amazon S3 Bucket for Home Folders<a name="s3-iam-policy-delete"></a>
+### Deleting the Amazon S3 Bucket for Home Folders and Application Settings Persistence<a name="s3-iam-policy-delete"></a>
 
-AppStream 2\.0 adds an Amazon S3 bucket policy that prevents the accidental deletion of the S3 bucket, shown at the end of this section\. You must delete the S3 bucket policy first, and then you can delete the S3 bucket\. For more information, see [Deleting or Emptying a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/dev/delete-or-empty-bucket.html) in the *Amazon Simple Storage Service Developer Guide*\.
+AppStream 2\.0 adds an Amazon S3 bucket policy to the buckets that it creates to prevent them from being accidentally deleted\. To delete an S3 bucket, you must first delete the S3 bucket policy\. Following are the bucket policies that you must delete for home folders and application settings persistence\.
+
+**Home folders policy**
 
 ```
 {
@@ -241,9 +243,28 @@ AppStream 2\.0 adds an Amazon S3 bucket policy that prevents the accidental dele
 }
 ```
 
-### Restricting Administrator Access to the Amazon S3 Bucket for Home Folders<a name="s3-iam-policy-restricted-access"></a>
+**Application settings persistence policy**
 
-By default, administrators who can access the Amazon S3 bucket created by AppStream 2\.0 can view and modify content that is part of users' home folders\. To restrict administrator access to the S3 bucket containing user files, we recommend applying the S3 bucket access policy based on the following template: 
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PreventAccidentalDeletionOfBucket",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:DeleteBucket",
+      "Resource": "arn:aws:s3:::appstream-app-settings-region-code-account-id-without-hyphens-unique-identifier"
+     }
+   ]
+}
+```
+
+ For more information, see [Deleting or Emptying a Bucket](https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-or-empty-bucket.html) in the *Amazon Simple Storage Service Developer Guide*\.
+
+### Restricting Administrator Access to the Amazon S3 Bucket for Home Folders and Application Settings Persistence<a name="s3-iam-policy-restricted-access"></a>
+
+By default, administrators who can access the Amazon S3 buckets created by AppStream 2\.0 can view and modify content that is part of users' home folders and persistent application settings\. To restrict administrator access to the S3 buckets that contain user files, we recommend applying the S3 bucket access policy based on the following template: 
 
 ```
 {
@@ -258,19 +279,19 @@ By default, administrators who can access the Amazon S3 bucket created by AppStr
     ]
   },
     "Action": "s3:*",
-    "Resource": "arn:aws:s3:::appstream2-36fb080bb8-region-account"
+    "Resource": "arn:aws:s3:::home-folder-or-application-settings-persistence-s3-bucket-region-account"
   }
  ]
 }
 ```
 
-This policy allows home folder S3 bucket access only to the users specified and to the AppStream 2\.0 service\. For every IAM user who should have access, replicate the following line:
+This policy allows S3 bucket access only to the users specified and to the AppStream 2\.0 service\. For every IAM user who should have access, replicate the following line:
 
 ```
 "arn:aws:iam::account:user/IAM-user-name"
 ```
 
-In the following example, the policy restricts access to the home folder S3 bucket for anyone other than IAM users marymajor and johnstiles, and also restricts access to the AppStream 2\.0 service, in AWS Region us\-west\-2 for account ID 123456789012\.
+In the following example, the policy restricts access to the home folder S3 bucket for anyone other than IAM users marymajor and johnstiles\. It also allows access to the AppStream 2\.0 service, in AWS Region US West \(Oregon\) for account ID 123456789012\.
 
 ```
 {

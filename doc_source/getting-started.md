@@ -1,4 +1,4 @@
-# Getting Started with Amazon AppStream 2\.0<a name="getting-started"></a>
+# Get Started with Amazon AppStream 2\.0: Set Up With Sample Applications<a name="getting-started"></a>
 
 To stream your applications, Amazon AppStream 2\.0 requires an environment that includes a fleet that is associated with a stack, and at least one application image\. This tutorial describes how to configure a sample AppStream 2\.0 environment for application streaming and give users access to that stream\.
 
@@ -28,7 +28,7 @@ Before you can stream your applications, you need to set up a stack, choose an i
 
 1.  Choose **Next**\.
 
-1. For **Step 2: Choose Image**, choose an image, and then choose **Next**\. The sample image contains pre\-installed open source applications for evaluation purposes\. For more information, see [Amazon AppStream 2\.0 Windows Image Version History](base-image-version-history.md)\.
+1. For **Step 2: Choose Image**, choose an image, and then choose **Next**\. The sample image contains pre\-installed open source applications for evaluation purposes\. For more information, see [AppStream 2\.0 Base Image Version History](base-image-version-history.md)\.
 
 1. For **Step 3: Configure Fleet**, we recommend that you keep the default values and choose **Next**\. You can change most of these values after fleet creation\.
    + **Choose instance type** — Choose the instance type that matches the performance requirements of your applications\. All streaming instances in your fleet launch with the instance type that you select\. For more information, see [AppStream 2\.0 Instance Families](instance-types.md)\.
@@ -40,18 +40,27 @@ Before you can stream your applications, you need to set up a stack, choose an i
    + **Minimum capacity** — Choose a minimum number of instances for your fleet based on the minimum number of expected concurrent users\. Every unique user session is served by an instance\. For example, to have your stack support 100 concurrent users during low demand, specify a minimum capacity of 100\. This ensures that 100 instances are running even if there are fewer than 100 users\.
    + **Maximum capacity** — Choose a maximum number of instances for your fleet based on the maximum number of expected concurrent users\. Every unique user session is served by an instance\. For example, to have your stack support 500 concurrent users during high demand, specify a maximum capacity of 500\. This ensures that up to 500 instances can be created on demand\.
 
-1. For **Step 4: Configure Network**, choose a VPC and two subnets with access to the network resources that your application needs, and then choose **Next**\. If you don't have a VPC or subnets, you can create them using the links provided and then click the refresh icons\. For **Security groups**, you can select up to five security groups\. Otherwise, the default security group is used\. For more information, see [Network Settings for Amazon AppStream 2\.0 ](managing-network.md)\.
+1. For **Step 4: Configure Network**, choose an Amazon VPC and two subnets with access to the network resources that your application needs, and then choose **Next**\. If you don't have a VPC or subnets, you can create them using the links provided and then click the refresh icons\. For **Security groups**, you can select up to five security groups\. Otherwise, the default security group is used\. For more information, see [Networking, Access, and Security for Amazon AppStream 2\.0](managing-network.md)\.
 
-1. For **Step 5: Enable Storage**, do the following, then choose **Next**\. 
+1. For **Step 5: Enable Storage**, choose one or more of the following, then choose **Next**\. 
    + **Enable Home Folders** — By default, this setting is enabled\. Keep the default setting\. For information about requirements for enabling home folders, see [Enable Home Folders for Your AppStream 2\.0 Users](home-folders.md#enable-home-folders)\.
-   + **Enable Google Drive** — Optionally, you can also enable users to link their Google Drive account to AppStream 2\.0\. You can enable Google Drive for accounts in G Suite domains only, not for personal Gmail accounts\. For information about requirements for enabling Google Drive, see [Enable Google Drive for Your AppStream 2\.0 Users](google-drive.md#enable-google-drive)\.
+   + **Enable Google Drive** — Optionally, you can enable users to link their Google Drive for G Suite account to AppStream 2\.0\. You can enable Google Drive for accounts in G Suite domains only, not for personal Gmail accounts\. For information about requirements for enabling Google Drive, see [Enable Google Drive for Your AppStream 2\.0 Users](google-drive.md#enable-google-drive)\.
+   + **Enable OneDrive **— Optionally, you can enable users to link their OneDrive for Business account to AppStream 2\.0\. You can enable OneDrive for accounts in OneDrive domains only, not for personal accounts\. For information about requirements for enabling OneDrive, see [Enable OneDrive for Your AppStream 2\.0 Users](onedrive.md#enable-onedrive)\.
 
-1. For **Step 6: User Settings**, select the ways in which your users can transfer data between their streaming session and their local device\. When you're done, choose **Review**: 
-   + **Clipboard** — By default, users can copy and paste data between their local device and streaming applications\. You can limit Clipboard options so that users can paste data to their remote streaming session only or copy data to their local device only, or you can disable Clipboard options entirely\. Note that users can still copy and paste between applications in their streaming session\.
-   + **File transfer** — By default, users can upload and download files between their local device and streaming session\. You can limit file transfer options so that users can upload files to their streaming session only or download files to their local device only, or you can disable file transfer entirely\. 
+1. For **Step 6: User Settings**, select the ways in which your users can transfer data between their streaming session and their local device\. Then, choose whether to enable application settings persistence\. When you're done, choose **Review**:
+
+   **Clipboard, file transfer, and print to local device permissions options**:
+   + **Clipboard** — By default, users can copy and paste data between their local device and streaming applications\. You can limit Clipboard options so that users can paste data to their remote streaming session only or copy data to their local device only\. You can also disable Clipboard options entirely\. Note that users can still copy and paste between applications in their streaming session\.
+   + **File transfer** — By default, users can upload and download files between their local device and streaming session\. You can limit file transfer options so that users can upload files to their streaming session only or download files to their local device only\. You can also disable file transfer entirely\. 
    + **Print to local device** — By default, users can print to their local device from within a streaming application\. When they choose **Print** in the application, they can download a \.pdf file that they can print to a local printer\. You can disable this option to prevent users from printing to a local device\.
 **Note**  
 These settings affect only whether users can use AppStream 2\.0 data transfer features\. If your image provides access to a browser, network printer, or other remote resource, your users might be able to transfer data to or from their streaming session in other ways\.
+
+   **Application settings persistence options**:
+   + **Enable Application Settings Persistence** — Users' application customizations and Windows settings are automatically saved after each streaming session and applied during the next session\. These settings are saved to an Amazon Simple Storage Service \(Amazon S3\) bucket in your account, within the AWS Region in which application settings persistence is enabled\.
+   + **Settings Group** — The settings group determines which saved application settings are used for a streaming session from this stack\. If the same settings group is applied to another stack, both stacks use the same application settings\. By default, the settings group value is the name of the stack\.
+**Note**  
+For information about requirements for enabling and administering application settings persistence, see [Enable Application Settings Persistence for Your AppStream 2\.0 Users](app-settings-persistence.md)\.
 
 1. For **Step 7: Review**, confirm the details for the stack\. To change the configuration for any section, choose **Edit **and make the needed changes\. After you finish reviewing the configuration details, choose **Create**\. 
 
@@ -76,7 +85,7 @@ After you create a stack, each user needs an active URL for access\. The AppStre
 ## Resources<a name="getting-started-next"></a>
 
 For more information, see the following:
-+ Learn how to use the AppStream 2\.0 image builder to add your own applications and create images that you can stream to your users\. For more information, see [Tutorial: Create a Custom Image](tutorial-image-builder.md)\.
++ Learn how to use the AppStream 2\.0 image builder to add your own applications and create images that you can stream to your users\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
 + Provide persistent storage for your session users by using AppStream 2\.0 home folders and Google Drive\. For more information, see [Enable Persistent Storage for Your AppStream 2\.0 Users](persistent-storage.md)\.
 + Integrate your AppStream 2\.0 streaming resources with your Microsoft Active Directory environment\. For more information, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.
 + Control who has access to your AppStream 2\.0 streaming instances\. For more information, see [Controlling Access to Amazon AppStream 2\.0 with IAM Policies and Service Roles](controlling-access.md), [Manage Access Using the AppStream 2\.0 User Pool](user-pool.md) and [Single Sign\-on Access to AppStream 2\.0 Using SAML 2\.0](external-identity-providers.md)\.

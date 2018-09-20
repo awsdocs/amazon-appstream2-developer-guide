@@ -18,7 +18,7 @@ The following are possible issues you might have while using Amazon AppStream 2\
 
 ## I cannot connect to the internet from my image builder\.<a name="troubleshooting-01"></a>
 
-Image builders cannot communicate to the internet by default\. To resolve this issue, launch your image builder in a VPC subnet that has internet access\. You can enable internet access from your VPC subnet using a [NAT gateway](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html)\. Alternatively, you can configure an internet gateway in your VPC, and attach an Elastic IP address to your image builder\. For more information, see [Network Settings for Amazon AppStream 2\.0 ](managing-network.md)\.
+Image builders cannot communicate to the internet by default\. To resolve this issue, launch your image builder in a VPC subnet that has internet access\. You can enable internet access from your VPC subnet using a [NAT gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)\. Alternatively, you can configure an internet gateway in your VPC, and attach an Elastic IP address to your image builder\. For more information, see [Networking, Access, and Security for Amazon AppStream 2\.0](managing-network.md)\.
 
 ## When I tried installing my application, I see an error that the operating system version is not supported\.<a name="troubleshooting-02"></a>
 

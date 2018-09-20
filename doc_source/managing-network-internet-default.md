@@ -2,24 +2,24 @@
 
 AppStream 2\.0 can provide your fleets with a default internet connection by using your Amazon VPC public subnet\. This subnet has a route to the internet through an internet gateway\. 
 
-AppStream 2\.0 enables internet connectivity by associating an [Elastic IP address](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html) to the network interface that is attached from the streaming instance to your VPC public subnet\. You can have a VPC with a public subnet in several ways:
+AppStream 2\.0 enables internet connectivity by associating an [Elastic IP address](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html) to the network interface that is attached from the streaming instance to your VPC public subnet\. You can have a VPC with a public subnet in several ways:
 
 **Default VPC**  
-Your AWS account, if it was created after 2013\-12\-04, has a default VPC that has public subnets\. You can use this default VPC to enable internet access from your streaming instances\. For more information, see [Default VPC and Default Subnets](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html) in the *Amazon VPC User Guide*\.
+Your AWS account, if it was created after 2013\-12\-04, has a default VPC that has public subnets\. You can use this default VPC to enable internet access from your streaming instances\. For more information, see [Default VPC and Default Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html) in the *Amazon VPC User Guide*\.
 
 **New VPC**  
-If your AWS account was created before 2013\-12\-04 or to manage a new VPC, you can create a new VPC with a public subnet using the VPC creation wizard\. For more information, see [Implementation of VPC with a single public subnet](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Scenario1.html#VPC_Scenario1_Implementation) in the *Amazon VPC User Guide*\. 
+If your AWS account was created before 2013\-12\-04 or to manage a new VPC, you can create a new VPC with a public subnet using the VPC creation wizard\. For more information, see [Implementation of VPC with a single public subnet](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario1.html#VPC_Scenario1_Implementation) in the *Amazon VPC User Guide*\. 
 
 **Existing VPC**  
 To use an existing VPC that does not have a public subnet, you can add a new public subnet using the following steps\.  
 
 **To add a new public subnet to an existing VPC**
 
-1. Follow the steps in [Creating a Subnet](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Internet_Gateway.html#Add_IGW_Create_Subnet) in the *Amazon VPC User Guide*, using the existing VPC you intend to use with AppStream 2\.0\.
+1. Follow the steps in [Creating a Subnet](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html#Add_IGW_Create_Subnet) in the *Amazon VPC User Guide*, using the existing VPC you intend to use with AppStream 2\.0\.
 
-1. To add an internet gateway to your VPC, follow the steps in [Attaching an Internet Gateway](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Internet_Gateway.html#Add_IGW_Attach_Gateway) in the *Amazon VPC User Guide*\.
+1. To add an internet gateway to your VPC, follow the steps in [Attaching an Internet Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html#Add_IGW_Attach_Gateway) in the *Amazon VPC User Guide*\.
 
-1. To configure your subnets to route internet traffic through the internet gateway, follow the steps in [Creating a Custom Route Table](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Internet_Gateway.html#Add_IGW_Routing) in the *Amazon VPC User Guide*\. Use IPv4 format \(`0.0.0.0/0`\) for **Destination**\.
+1. To configure your subnets to route internet traffic through the internet gateway, follow the steps in [Creating a Custom Route Table](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html#Add_IGW_Routing) in the *Amazon VPC User Guide*\. Use IPv4 format \(`0.0.0.0/0`\) for **Destination**\.
 
 ## Enabling Internet Access for a Fleet<a name="managing-network-internet-dia-fleet"></a>
 
@@ -45,7 +45,7 @@ After you have a public subnet available on a VPC, you can enable internet acces
 
 1. Choose a subnet for **Subnet 1** and, if desired, **Subnet 2**\. Choose **Update**\.
 
-You can test internet connectivity by starting your fleet, creating a stack, associating the fleet to a stack, and browsing the internet within a streaming session for stack\. For more information, see [Create AppStream 2\.0 Fleets and Stacks](set-up-stacks-fleets.md)\.
+You can test internet connectivity by starting your fleet, creating a stack, associating the fleet to a stack, and browsing the internet within a streaming session for stack\. For more information, see [Create an AppStream 2\.0 Fleet and Stack](set-up-stacks-fleets.md)\.
 
 ## Enabling Internet Access for an Image Builder<a name="managing-network-internet-dia-image-builder"></a>
 
@@ -53,10 +53,10 @@ After you have a public subnet available on a VPC, and can enable internet acces
 
 **To enable internet access for an image builder**
 
-1. Follow the instructions at [Step 1: Create an Image Builder](tutorial-image-builder.md#tutorial-image-builder-create) up to the **Network Access** section\.
+1. Follow the instructions at [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md) up to the **Network Access** section\.
 
 1. Choose **Default Internet Access**\.
 
 1. If **Subnet** is empty, select a subnet\.
 
-1. Continue with the instructions at [Step 1: Create an Image Builder](tutorial-image-builder.md#tutorial-image-builder-create)\.
+1. Continue with the instructions at [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md)\.

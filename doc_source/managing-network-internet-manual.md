@@ -1,10 +1,10 @@
 # Enabling Internet Access Using a NAT Gateway<a name="managing-network-internet-manual"></a>
 
-You can control internet access for your users using an advanced networking configuration such as NAT gateways\. To manage your own VPC and VPC NAT gateway, launch your AppStream 2\.0 image builders and fleets in private VPC subnets that provide a route to the internet\. Use the instructions below to quickly create a network setup for enabling internet access\. For more information, see [NAT Gateways](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html) and [VPC with Public and Private Subnets \(NAT\)](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Scenario2.html) in the *Amazon VPC User Guide*\.
+You can control internet access for your users using an advanced networking configuration such as NAT gateways\. To manage your own VPC and VPC NAT gateway, launch your AppStream 2\.0 image builders and fleets in private VPC subnets that provide a route to the internet\. Use the instructions below to quickly create a network setup for enabling internet access\. For more information, see [NAT Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html) and [VPC with Public and Private Subnets \(NAT\)](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html) in the *Amazon VPC User Guide*\.
 
 **To create and configure a new VPC to use with a VPC NAT gateway**
 
-1. Navigate to [Implementing VPC with Public and Private Subnets \(NAT\)](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Scenario2.html#VPC_Scenario2_Implementation) in the *Amazon VPC User Guide*, and follow the steps given in the section **To create a VPC**, leaving out the optional IPv6 step\.
+1. Navigate to [Implementing VPC with Public and Private Subnets \(NAT\)](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html#VPC_Scenario2_Implementation) in the *Amazon VPC User Guide*, and follow the steps given in the section **To create a VPC**, leaving out the optional IPv6 step\.
 
 1. For **Availability Zone**, leave the public subnet zone as the default, and select a specific zone for the private subnet\. Make a note of the zones you chose\.
 
@@ -24,11 +24,11 @@ You can control internet access for your users using an advanced networking conf
 
 **To add a NAT gateway to an existing VPC**
 
-1. Follow the instructions in [Creating a NAT Gateway](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html#nat-gateway-creating) in the *Amazon VPC User Guide*\.
+1. Follow the instructions in [Creating a NAT Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating) in the *Amazon VPC User Guide*\.
 
-1. To update the route tables of your private subnets and route internet traffic through the NAT gateway, follow the instructions in [Updating Your Route Table](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html#nat-gateway-create-route) in the *Amazon VPC User Guide*\.
+1. To update the route tables of your private subnets and route internet traffic through the NAT gateway, follow the instructions in [Updating Your Route Table](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-create-route) in the *Amazon VPC User Guide*\.
 
-1. Check your VPC to be sure it has at least one private subnet and, if needed, create a new private subnet\. For more information, see [Creating a Subnet](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Internet_Gateway.html#Add_IGW_Create_Subnet) in the *Amazon VPC User Guide*\.
+1. Check your VPC to be sure it has at least one private subnet and, if needed, create a new private subnet\. For more information, see [Creating a Subnet](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html#Add_IGW_Create_Subnet) in the *Amazon VPC User Guide*\.
 
 ## Enabling Internet Access for a Fleet Using a NAT Gateway<a name="managing-network-internet-manual-fleet"></a>
 
@@ -64,10 +64,10 @@ After you have a NAT gateway available on a VPC, and can enable internet access 
 
 **To enable internet access for an image builder using a NAT gateway**
 
-1. Follow the instructions at [Step 1: Create an Image Builder](tutorial-image-builder.md#tutorial-image-builder-create), up to the **Network Access** section\.
+1. Follow the instructions at [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md), up to the **Network Access** section\.
 
 1. Choose the VPC with a NAT gateway\.
 
 1. If **Subnet** is empty, select a subnet\.
 
-1. Continue with the instructions at [Step 1: Create an Image Builder](tutorial-image-builder.md#tutorial-image-builder-create)\.
+1. Continue with the instructions at [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md)\.

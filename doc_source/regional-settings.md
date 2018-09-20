@@ -13,7 +13,7 @@ If users change regional settings during their streaming sessions, the changes a
 
 ## Enable Regional Settings for Your AppStream 2\.0 Users<a name="regional-settings-enable"></a>
 
-To enable users to configure regional settings for a given stack during their AppStream 2\.0 streaming sessions, your stack must be associated with a fleet based on an image that uses a version of the AppStream 2\.0 agent released on or after June 6, 2018\. For more information, see [Amazon AppStream 2\.0 Agent Version History](agent-software-versions.md)\. Additionally, your image must have Windows PowerShell 5\.1 or later installed\. Images created from AppStream 2\.0 base images published on or after June 12, 2018 meet both criteria\. Images created from AppStream 2\.0 base images published before June 12, 2018 do not have Windows PowerShell 5\.1 by default\.
+To enable users to configure regional settings for a given stack during their AppStream 2\.0 streaming sessions, your stack must be associated with a fleet based on an image that uses a version of the AppStream 2\.0 agent released on or after June 6, 2018\. For more information, see [AppStream 2\.0 Agent Version History](agent-software-versions.md)\. Additionally, your image must have Windows PowerShell 5\.1 or later installed\. Images created from AppStream 2\.0 base images published on or after June 12, 2018 meet both criteria\. Images created from AppStream 2\.0 base images published before June 12, 2018 do not have Windows PowerShell 5\.1 by default\.
 
 **To update an existing image to include Windows PowerShell 5\.1**
 
@@ -49,7 +49,7 @@ To enable users to configure regional settings for a given stack during their Ap
 
    1. In **Image name,** choose the new image to use for the fleet\.
 
-For more information about using image builders to create images, see [Tutorial: Create a Custom Image](tutorial-image-builder.md)\.
+For more information about using image builders to create images, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
 
 ## Provide Your AppStream 2\.0 Users with Guidance for Working with Regional Settings<a name="regional-settings-end-user"></a>
 

@@ -2,7 +2,7 @@
 
 Fleet Auto Scaling allows you to automatically change the size of your AppStream 2\.0 fleet to match the supply of available instances to user demand\. Because each instance in a fleet can be used by only one user at a time, the size of your fleet determines the number of users who can stream concurrently\. You can define scaling policies that adjust the size of your fleet automatically based on a variety of utilization metrics, and optimize the number of available instances to match user demand\. You can also choose to turn off automatic scaling and make the fleet run at a fixed size\.
 
-AppStream 2\.0 scaling is provided by Application Auto Scaling\. For more information, see the [Application Auto Scaling API Reference](http://docs.aws.amazon.com/autoscaling/application/APIReference/)\.
+AppStream 2\.0 scaling is provided by Application Auto Scaling\. For more information, see the [Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/)\.
 
 Before you can use Fleet Auto Scaling, Application Auto Scaling needs permissions to access Amazon CloudWatch alarms and AppStream 2\.0 fleets\. For more information, see [IAM Service Roles Required for Managing AppStream 2\.0 Resources](controlling-access.md#controlling-access-iam-service-role) and [Application Auto Scaling Required IAM Permissions](controlling-access.md#autoscaling-iam-policy)\.
 
@@ -75,7 +75,7 @@ The fixed fleet has constant capacity based on the value that you specified as *
 
 ## Managing Fleet Scaling Using the AWS CLI<a name="autoscaling-cli"></a>
 
-You can set up and manage fleet scaling using the AWS Command Line Interface \(CLI\)\. Before running scaling policy commands, you must register your fleet as a scalable target\. Use the following [register\-scalable\-target](http://docs.aws.amazon.com/cli/latest/reference/application-autoscaling/register-scalable-target.html) command:
+You can set up and manage fleet scaling using the AWS Command Line Interface \(CLI\)\. Before running scaling policy commands, you must register your fleet as a scalable target\. Use the following [register\-scalable\-target](https://docs.aws.amazon.com/cli/latest/reference/application-autoscaling/register-scalable-target.html) command:
 
 ```
 aws application-autoscaling register-scalable-target
@@ -95,7 +95,7 @@ aws application-autoscaling register-scalable-target
 
 This CLI example sets up a scaling policy that scales out a fleet by 25% if Utilization >= 75%\.
 
-The following [put\-scaling\-policy](http://docs.aws.amazon.com/cli/latest/reference/application-autoscaling/put-scaling-policy.html) command defines a utilization\-based scaling policy:
+The following [put\-scaling\-policy](https://docs.aws.amazon.com/cli/latest/reference/application-autoscaling/put-scaling-policy.html) command defines a utilization\-based scaling policy:
 
 ```
 aws application-autoscaling put-scaling-policy --cli-input-json file://scale-out-utilization.json
@@ -203,9 +203,9 @@ aws cloudwatch put-metric-alarm
 
 ### Example 3: Change the Fleet Capacity Based on a Schedule<a name="autoscaling-cli-schedule"></a>
 
-Changing your fleet capacity based on a schedule allows you to scale your fleet capacity in response to predictable changes in demand\. For example, at the start of a work day, you might expect a certain number of users to request streaming connections at one time\. To change your fleet capacity based on a schedule, you can use the Application Auto Scaling [PutScheduledAction](http://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScheduledAction.html) API action or the [put\-scheduled\-action](http://docs.aws.amazon.com/cli/latest/reference/application-autoscaling/put-scheduled-action.html) CLI command\.
+Changing your fleet capacity based on a schedule allows you to scale your fleet capacity in response to predictable changes in demand\. For example, at the start of a work day, you might expect a certain number of users to request streaming connections at one time\. To change your fleet capacity based on a schedule, you can use the Application Auto Scaling [PutScheduledAction](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScheduledAction.html) API action or the [put\-scheduled\-action](https://docs.aws.amazon.com/cli/latest/reference/application-autoscaling/put-scheduled-action.html) CLI command\.
 
-Before changing your fleet capacity, you can list your current fleet capacity by using the AppStream 2\.0 [describe\-fleets](http://docs.aws.amazon.com/cli/latest/reference/appstream/describe-fleets.html) CLI command\.
+Before changing your fleet capacity, you can list your current fleet capacity by using the AppStream 2\.0 [describe\-fleets](https://docs.aws.amazon.com/cli/latest/reference/appstream/describe-fleets.html) CLI command\.
 
 ```
 aws appstream describe-fleets --name fleetname
@@ -236,7 +236,7 @@ aws application-autoscaling put-scheduled-action --service-namespace appstream \
 --scalable-dimension appstream:fleet:DesiredCapacity
 ```
 
-To confirm that the scheduled action to change your fleet capacity was successfully created, run the [describe\-scheduled\-actions](http://docs.aws.amazon.com/cli/latest/reference/application-autoscaling/describe-scheduled-actions.html) command\.
+To confirm that the scheduled action to change your fleet capacity was successfully created, run the [describe\-scheduled\-actions](https://docs.aws.amazon.com/cli/latest/reference/application-autoscaling/describe-scheduled-actions.html) command\.
 
 ```
 aws application-autoscaling describe-scheduled-actions --service-namespace appstream --resource-id fleet/fleetname
@@ -264,4 +264,4 @@ If the scheduled action was successfully created, the JSON output appears simila
 }
 ```
 
-To learn more about creating scheduled actions by using the Application Auto Scaling CLI commands or API actions, see the [application\-autoscaling](http://docs.aws.amazon.com/cli/latest/reference/application-autoscaling/application-autoscaling.html) section of the AWS CLI Command Reference and [Application Auto Scaling API Reference](http://docs.aws.amazon.com/autoscaling/application/APIReference/)\.
+To learn more about creating scheduled actions by using the Application Auto Scaling CLI commands or API actions, see the [application\-autoscaling](https://docs.aws.amazon.com/cli/latest/reference/application-autoscaling/application-autoscaling.html) section of the AWS CLI Command Reference and [Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/)\.

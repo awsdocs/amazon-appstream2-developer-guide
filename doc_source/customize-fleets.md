@@ -1,4 +1,4 @@
-# Customize AppStream 2\.0 Fleets<a name="customize-fleets"></a>
+# Customize an AppStream 2\.0 Fleet to Optimize Your Users' Application Streaming Experience<a name="customize-fleets"></a>
 
 By customizing AppStream 2\.0 fleet instances, you can define specific aspects of your AppStream 2\.0 environment to optimize your users' application streaming experience\. For example, you can persist environment variables to dynamically pass settings across applications and set default file associations that are applied to all of your users\. At a high level, customizing a fleet instance includes the following tasks: 
 + Connecting to an image builder and customizing it as needed\.
@@ -56,7 +56,7 @@ This procedure applies only to system environment variables, not user environmen
 
 1. On the image builder desktop, open Image Assistant\.
 
-1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom Image](tutorial-image-builder.md)\.
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
 
    The changes to the system environment variables persist across your fleet instances and are available to streaming sessions launched from those instances\. 
 **Note**  
@@ -88,7 +88,7 @@ Follow these steps to change user environment variables across your fleet instan
 
 1. On the image builder desktop, open Image Assistant\.
 
-1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom Image](tutorial-image-builder.md)\.
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
 
 ### Create an Environment Variable That is Limited in Scope<a name="customize-fleets-environment-variable-limited-scope"></a>
 
@@ -135,7 +135,7 @@ If the application path includes spaces, the entire string must be encapsulated 
 
 1. If you created multiple scripts, repeat steps 8 and 9 for each script\.
 
-1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom Image](tutorial-image-builder.md)\.
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
 
    The environment variable and specific value are now available for processes that are run from the script\. Other processes cannot access this variable and value\. 
 
@@ -177,7 +177,7 @@ The associations for application file extensions are set on a per\-user basis an
 
 1. On the image builder desktop, open Image Assistant\.
 
-1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom Image](tutorial-image-builder.md)\.
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
 
    The file associations that you configured are applied to the fleet instances and user streaming sessions that are launched from those instances\. 
 
@@ -261,7 +261,7 @@ Internet Explorer Enhanced Security Configuration \(ESC\) places servers and Int
 
 1. On the image builder desktop, open Image Assistant\.
 
-1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom Image](tutorial-image-builder.md)\.
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
 
 ## Change the Default Internet Explorer Home Page for Users' Streaming Sessions<a name="customize-fleets-change-ie-homepage"></a>
 
@@ -366,4 +366,4 @@ Follow these steps to use the Template User account to change the default Intern
 
 1. On the image builder desktop, open Image Assistant\.
 
-1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom Image](tutorial-image-builder.md)\.
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.

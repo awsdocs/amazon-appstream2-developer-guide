@@ -12,7 +12,7 @@ To use Active Directory with AppStream 2\.0, you must first register your direct
 
 The Directory Config object that you create in AppStream 2\.0 will be used in later steps\.
 
-If you are using the AWS SDK, you can use the [CreateDirectoryConfig](http://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateDirectoryConfig.html) operation\. If you are using the AWS CLI, you can use the [create\-directory\-config](http://docs.aws.amazon.com/cli/latest/reference/appstream/create-directory-config.html) command\.
+If you are using the AWS SDK, you can use the [CreateDirectoryConfig](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateDirectoryConfig.html) operation\. If you are using the AWS CLI, you can use the [create\-directory\-config](https://docs.aws.amazon.com/cli/latest/reference/appstream/create-directory-config.html) command\.
 
 **To create a Directory Config object by using the AppStream 2\.0 console**
 
@@ -40,9 +40,9 @@ Next, using the AppStream 2\.0 image builder, create a new image with Active Dir
 
 **To create an image for launching domain\-joined fleets**
 
-1. Follow the procedures in [Tutorial: Create a Custom Image](tutorial-image-builder.md)\.
+1. Follow the procedures in [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
 
-1. For the base image selection step, use an AWS base image released on or after July 24, 2017\. For a current list of released AWS images, see [Amazon AppStream 2\.0 Windows Image Version History](base-image-version-history.md)\.
+1. For the base image selection step, use an AWS base image released on or after July 24, 2017\. For a current list of released AWS images, see [AppStream 2\.0 Base Image Version History](base-image-version-history.md)\.
 
 1. For **Step 3: Configure Network**, select a VPC and subnets with network connectivity to your Active Directory environment\. Select the security groups that are set up to allow access to your directory through your VPC subnets\.
 
@@ -54,7 +54,7 @@ Next, using the AppStream 2\.0 image builder, create a new image with Active Dir
 
 1. Log in to the image builder in Administrator mode or as a directory user with local administrator permissions\. For more information, see [Granting Local Administrator Rights on Image Builders](active-directory-admin.md#active-directory-image-builder-local-admin)\.
 
-1. Complete the steps in [Tutorial: Create a Custom Image](tutorial-image-builder.md) to install applications and create a new image\.
+1. Complete the steps in [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md) to install applications and create a new image\.
 
 ## Step 3: Create a Domain\-Joined Fleet<a name="active-directory-setup-fleet"></a>
 
@@ -72,7 +72,7 @@ Using the private image created in the previous step, create an Active Directory
 
 1. Review the fleet configuration and choose **Create**\.
 
-1. Complete the remaining steps in [Create AppStream 2\.0 Fleets and Stacks](set-up-stacks-fleets.md) so that your fleet is associated with a stack and running\.
+1. Complete the remaining steps in [Create an AppStream 2\.0 Fleet and Stack](set-up-stacks-fleets.md) so that your fleet is associated with a stack and running\.
 
 ## Step 4: Configure SAML 2\.0<a name="active-directory-setup-saml"></a>
 
