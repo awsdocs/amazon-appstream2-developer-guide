@@ -111,9 +111,12 @@ Optionally, you can apply one or more tags to help manage the stack\. Choose **T
 
 ## Provide Access to Users<a name="set-up-stacks-fleets-add"></a>
 
-After you create a stack with an associated fleet, you can provide access to users through the AppStream 2\.0 user pool\. For more information, see [User Pool Administration](user-pool-admin.md)\.
+After you create a stack with an associated fleet, you can provide access to users through the AppStream 2\.0 user pool, SAML 2\.0 \[single sign\-on \(SSO\)\], or the AppStream 2\.0 API\. For more information, see [User Pool Administration](user-pool-admin.md) and [Single Sign\-on Access to AppStream 2\.0 Using SAML 2\.0](external-identity-providers.md)\. 
 
-Note that user pool users cannot be assigned to stacks with fleets that are joined to an Active Directory domain\.
+**Note**  
+Users in the AppStream 2\.0 user pool can't be assigned to stacks with fleets that are joined to an Active Directory domain\.
+
+After you provide your users with access to AppStream 2\.0, they can start AppStream 2\.0 streaming sessions by using a web browser or by using the AppStream 2\.0 client application for a supported device\. If you provide access to users through the AppStream 2\.0 user pool, they must use a web browser for streaming sessions\. If you use SAML 2\.0 or the AppStream 2\.0 API, you can make the AppStream 2\.0 client available to them\. The AppStream 2\.0 client is a native application that is designed for users who require additional functionality during their AppStream 2\.0 streaming sessions\. For more information, see [The AppStream 2\.0 Client](client-application.md)\.
 
 ## Clean Up Resources<a name="set-up-stacks-fleets-finish"></a>
 

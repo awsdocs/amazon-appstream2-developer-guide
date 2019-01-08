@@ -1,7 +1,7 @@
 # Amazon AppStream 2.0 Developer Guide
 
 -----
-*****Copyright &copy; 2018 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -25,6 +25,7 @@ Amazon's trademarks and trade dress may not be used in
 + [Image Builders](managing-image-builders.md)
    + [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md)
    + [Image Builder Actions](managing-image-builders-actions.md)
+   + [Instance Metadata for AppStream 2.0 Image Builders](user-instance-metadata-image-builders.md)
    + [AppStream 2.0 Base Image Version History](base-image-version-history.md)
 + [Images](managing-images.md)
    + [Default Application and Windows Settings and Application Launch Performance](customizing-appstream-images.md)
@@ -36,6 +37,7 @@ Amazon's trademarks and trade dress may not be used in
    + [AppStream 2.0 Instance Families](instance-types.md)
    + [Create an AppStream 2.0 Fleet and Stack](set-up-stacks-fleets.md)
    + [Customize an AppStream 2.0 Fleet to Optimize Your Users' Application Streaming Experience](customize-fleets.md)
+   + [Update an AppStream 2.0 Fleet with a New Image](update-fleets-new-image.md)
    + [Fleet Auto Scaling for Amazon AppStream 2.0](autoscaling.md)
 + [Add Your Custom Branding to Amazon AppStream 2.0](branding.md)
 + [Enable Persistent Storage for Your AppStream 2.0 Users](persistent-storage.md)
@@ -46,7 +48,14 @@ Amazon's trademarks and trade dress may not be used in
    + [How Application Settings Persistence Works](how-it-works-app-settings-persistence.md)
    + [Enabling Application Settings Persistence](enabling-app-settings-persistence.md)
    + [Administer the VHDs for Your Users' Application Settings](administer-app-settings-vhds.md)
-+ [Enable Regional Settings for Your AppStream 2.0 Users](regional-settings.md)
++ [Enable Regional Settings for Your AppStream 2.0 Users](configure-regional-settings-admins-users.md)
+   + [Configure Default Regional Settings for Your AppStream 2.0 Users](configure-default-regional-settings.md)
+   + [Enable Your AppStream 2.0 Users to Configure Their Regional Settings](regional-settings.md)
++ [Manage App Entitlement with the Dynamic Application Framework](manage-app-entitlement.md)
+   + [Example API Operations Work Flow for the Dynamic Application Framework](manage-app-entitlement-sample-api-workflow.md)
+   + [Use the AppStream 2.0 Dynamic Application Framework to Build a Dynamic App Provider](build-dynamic-app-provider.md)
+   + [Enable and Test Dynamic App Providers](enable-test-dynamic-app-providers.md)
+   + [Third-Party Dynamic App Providers](third-party-dynamic-app-providers.md)
 + [Manage Access Using the AppStream 2.0 User Pool](user-pool.md)
    + [User Pool Administration](user-pool-admin.md)
 + [Single Sign-on Access to AppStream 2.0 Using SAML 2.0](external-identity-providers.md)
@@ -58,6 +67,13 @@ Amazon's trademarks and trade dress may not be used in
    + [Tutorial: Setting Up Active Directory](active-directory-directory-setup.md)
    + [AppStream 2.0 Active Directory Administration](active-directory-admin.md)
    + [More Info](active-directory-more-info.md)
++ [The AppStream 2.0 Client](client-application.md)
+   + [System Requirements and AppStream 2.0 Feature Support](client-system-requirements-feature-support.md)
+   + [Install and Configure the AppStream 2.0 Client](install-configure-client.md)
+   + [Qualify USB Devices for Use with Streaming Applications](qualify-usb-devices.md)
+   + [Use the AppStream 2.0 Client to Start a Streaming Session](use-client-start-streaming-session.md)
+   + [Share a USB Device with an AppStream 2.0 Streaming Session](share-usb-devices-with-session.md)
+   + [Redirect a Streaming Session from the Web Browser to the AppStream 2.0 Client](redirect-streaming-session-from-web-to-client.md)
 + [Monitoring Amazon AppStream 2.0 Resources](monitoring.md)
 + [Controlling Access to Amazon AppStream 2.0 with IAM Policies and Service Roles](controlling-access.md)
 + [Tagging Your Amazon AppStream 2.0 Resources](tagging-basic.md)

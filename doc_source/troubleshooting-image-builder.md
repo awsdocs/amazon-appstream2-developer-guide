@@ -5,6 +5,8 @@ The following are possible issues you might have while using Amazon AppStream 2\
 **Topics**
 + [I cannot connect to the internet from my image builder\.](#troubleshooting-01)
 + [When I tried installing my application, I see an error that the operating system version is not supported\.](#troubleshooting-02)
++ [I want to use a Windows PowerShell script to open my applications\.](#use-powershell-launch-application)
++ [I want to make ClickOnce applications available to users\.](#clickonce-applications)
 + [When I connect to my image builder, I see a login screen asking me to enter Ctrl\+Alt\+Delete to log in\. However, my local machine intercepts the key strokes\.](#troubleshooting-03)
 + [When I switched between admin and test modes, I saw a request for a password\. I don't know how to get a password\.](#troubleshooting-04)
 + [I get an error when I add my installed application\.](#troubleshooting-05)
@@ -23,6 +25,45 @@ Image builders cannot communicate to the internet by default\. To resolve this i
 ## When I tried installing my application, I see an error that the operating system version is not supported\.<a name="troubleshooting-02"></a>
 
 Only applications that can be installed on Windows Server 2012 R2 can be added to an AppStream 2\.0 image\. Check if your application is supported on Microsoft Windows Server 2012 R2\.
+
+## I want to use a Windows PowerShell script to open my applications\.<a name="use-powershell-launch-application"></a>
+
+You can use Windows PowerShell scripts to open your applications in the fleet instance\. You may want to do this to configure the application or environment before the application opens\. To launch a Windows PowerShell script for your application, specify the PowerShell \.exe file in Image Assistant\. Navigate to C:\\Windows\\System32\\WindowsPowerShell\\v1\.0\\powershell\.exe, and specify the following launch parameters: 
+
+\-file "C:\\Path\\To\\PowerShell\\Script\.ps1"
+
+**Note**  
+To allow the specified script to open the application, you must override the PowerShell script execution policy\. To do so, add **\-ExecutionPolicy Bypass** to the launch parameter\.
+
+## I want to make ClickOnce applications available to users\.<a name="clickonce-applications"></a>
+
+To make a ClickOnce application available to your AppStream 2\.0 users, you must install the application on your image builder first as an Administrator, and then as a Template User\. Because ClickOnce applications require a user\-specific installation, you must install your application as a Template User to enable users to launch the application from fleet instances\. To install the ClickOnce application as an Administrator and then as a Template User, perform these steps\.
+
+1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
+
+1. In the left navigation pane, choose **Images**, **Image Builder**\.
+
+1. In the list, select the image builder that you want to use, and log into it as an Administrator\.
+
+1. Create a batch file that calls the appref\-ms file within the user profile\. Use the %APPDATA% environment variable to replace C:\\Users\\username\\AppData\\Roaming\. Following is an example batch file call:
+
+   ```
+   explorer "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Company\ClickOnce.appref-ms"
+   ```
+
+1. On the image builder desktop, open Image Assistant\. 
+
+1. On the **Configure Apps** page, choose **Switch user**\.
+
+1. On the **Local User** tab, choose **Template User**\.
+
+1. After you log in as a Template User, install the application again\. 
+
+1. On the image builder desktop, open Image Assistant\.
+
+1. On the **Configure Apps** page, open the ClickOnce application to verify that it functions correctly\. After you finish testing, choose **Switch user**\.
+
+1. Log back in as an Administrator and perform the necessary steps in Image Assistant to finish creating your image\.
 
 ## When I connect to my image builder, I see a login screen asking me to enter Ctrl\+Alt\+Delete to log in\. However, my local machine intercepts the key strokes\.<a name="troubleshooting-03"></a>
 

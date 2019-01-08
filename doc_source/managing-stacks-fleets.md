@@ -8,6 +8,7 @@ With Amazon AppStream 2\.0, you create fleet instances and stacks as part of the
 + [Instance Families](instance-types.md)
 + [Create a Fleet and Stack](set-up-stacks-fleets.md)
 + [Customize a Fleet](customize-fleets.md)
++ [Update a Fleet with a New Image](update-fleets-new-image.md)
 + [Fleet Auto Scaling](autoscaling.md)
 
 ## Fleet Type<a name="fleet-types"></a>

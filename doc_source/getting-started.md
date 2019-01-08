@@ -70,17 +70,26 @@ For information about requirements for enabling and administering application se
 
 ## Step 2: Provide Access to Users<a name="getting-started-access"></a>
 
-After you create a stack, each user needs an active URL for access\. The AppStream 2\.0 User Pool feature enables you to create and manage users, using a permanent login portal URL\. For more information, see [Manage Access Using the AppStream 2\.0 User Pool](user-pool.md)\. To quickly test application streaming without setting up users, create a temporary URL as shown below\.
+After you create a stack with an associated fleet, you can provide access to users through the AppStream 2\.0 user pool, SAML 2\.0 \[single sign\-on \(SSO\)\], or the AppStream 2\.0 API\. For more information, see [User Pool Administration](user-pool-admin.md) and [Single Sign\-on Access to AppStream 2\.0 Using SAML 2\.0](external-identity-providers.md)\. 
+
+**Note**  
+Users in the AppStream 2\.0 user pool can't be assigned to stacks with fleets that are joined to an Active Directory domain\.
+
+For this getting started exercise, you can use the AppStream 2\.0 user pool\. This access method enables you to create and manage users by using a permanent login portal URL\. To quickly test application streaming without setting up users, complete the following steps to create a temporary URL\.
 
 **To provide access to users with a temporary URL**
 
-1. In the navigation pane, choose **Stacks**\. Select the radio button for the stack, and then choose **Actions**, **Create Streaming URL**\.
+1. In the navigation pane, choose **Stacks**\. Select the stack, and then choose **Actions**, **Create Streaming URL**\.
 
-1. For **User id**, type the user ID\. Select an expiration time, which determines how long the generated URL is valid\.
+1. For **User id**, type the user ID\. Choose an expiration time, which determines how long the generated URL is valid\.
 
 1. To view the user ID and URL, choose **Get URL**\.
 
 1. To copy the link to the clipboard, choose **Copy Link**\. 
+
+After you provide your users with access to AppStream 2\.0, they can start AppStream 2\.0 streaming sessions\. If you provide access through the AppStream 2\.0 user pool, they must use a web browser for streaming sessions\. 
+
+If you plan to use SAML 2\.0 \[single sign\-on \(SSO\)\] or the AppStream 2\.0 API to provide access to your users, you can make the AppStream 2\.0 client available to them\. The AppStream 2\.0 client is a native application that is designed for users who require additional functionality during their AppStream 2\.0 streaming sessions\. For more information, see [The AppStream 2\.0 Client](client-application.md)\.
 
 ## Resources<a name="getting-started-next"></a>
 

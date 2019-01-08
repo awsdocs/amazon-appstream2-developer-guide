@@ -7,8 +7,14 @@ For notification about these updates, you can subscribe to the Amazon AppStream 
 
 | Change | Description | Date | 
 | --- |--- |--- |
-| [Documentation update: Image sharing](https://docs.aws.amazon.com/appstream2/latest/developerguide/administer-images.html) | Created "Administer Your AppStream 2\.0 Images" and updated other content as needed\. | September 12, 2018 | 
+| [Documentation update: Default regional settings](https://docs.aws.amazon.com/appstream2/latest/developerguide/configure-default-regional-settings.html) | Created "Configure Default Regional Settings for Your AppStream 2\.0 Users" and updated other content as needed\. | December 13, 2018 | 
+| [Documentation update: Dynamic application framework](https://docs.aws.amazon.com/appstream2/latest/developerguide/manage-app-entitlement.html) | Created "Manage App Entitlement" and updated other content as needed\. | December 7, 2018 | 
+| [AppStream 2\.0 agent update](https://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html) | Adds support for using the AppStream 2\.0 dynamic application framework to build a dynamic app provider\. Also adds support for using a Japanese keyboard with web clients that run Windows\. | December 4, 2018 | 
+| [Documentation update: AppStream 2\.0 client](https://docs.aws.amazon.com/appstream2/latest/developerguide/client-application.html) | Created "The AppStream 2\.0 Client" and updated other content as needed\. | November 20, 2018 | 
+| [AppStream 2\.0 agent update](https://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html) | Adds support for launching streaming sessions using the AppStream 2\.0 Windows client | November 14, 2018 | 
+| [Documentation update: Image sharing](https://docs.aws.amazon.com/appstream2/latest/developerguide/administer-images.html) | Created "Administer Your AppStream 2\.0 Images" and updated other content as needed\. | September 14, 2018 | 
 | [Documentation update: Application settings persistence](https://docs.aws.amazon.com/appstream2/latest/developerguide/app-settings-persistence.html) | Created "Enable Application Settings Persistence for Your AppStream 2\.0 Users" and updated other content as needed\. | September 5, 2018 | 
+| [AppStream 2\.0 agent update](https://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html) | Adds support for application settings persistence  | August 29, 2018 | 
 | [Documentation update: OneDrive support](https://docs.aws.amazon.com/appstream2/latest/developerguide/onedrive.html) | Created "Enable and Administer OneDrive for Your AppStream 2\.0 Users" and updated other content as needed\. | July 31, 2018 | 
 | [AppStream 2\.0 agent update](https://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html) | Adds support for OneDrive persistent storage | July 26, 2018 | 
 | [AppStream 2\.0 agent update](https://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html) | Resolves an issue with optimizing images for application launch\. | June 19, 2018 | 

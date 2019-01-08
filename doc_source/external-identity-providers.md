@@ -6,7 +6,7 @@ This feature offers your users the convenience of one\-click access to their App
 
 ## Example Authentication Workflow<a name="external-identity-providers-example"></a>
 
-The following diagram illustrates the authentication flow between AppStream 2\.0 and a third\-party IdP\. In this example, the administrator has set up a sign\-in page to access AppStream 2\.0, called `applications.exampleco.com`\. The webpage uses a SAML 2\.0–compliant federation service to trigger a sign\-on request\. The administrator has also set up a user to allow access to AppStream 2\.0\.
+The following diagram illustrates the authentication flow between AppStream 2\.0 and a third\-party identity provider \(IdP\)\. In this example, the administrator has set up a sign\-in page to access AppStream 2\.0, called `applications.exampleco.com`\. The webpage uses a SAML 2\.0–compliant federation service to trigger a sign\-on request\. The administrator has also set up a user to allow access to AppStream 2\.0\.
 
 ![\[Amazon AppStream 2.0 SAML diagram\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/aas2-saml.png)
 
@@ -22,4 +22,4 @@ The following diagram illustrates the authentication flow between AppStream 2\.0
 
 1. Using the authentication token from AWS, AppStream 2\.0 authorizes the user and presents applications to the browser\.
 
-From the user's perspective, the process happens transparently: The user starts at your organization's internal portal and lands at an AppStream 2\.0 application portal, without ever having to supply any AWS credentials\.
+From the user's perspective, this process happens transparently\. The user starts at your organization's internal portal and is automatically redirected to an AppStream 2\.0 application portal without being required to enter AWS credentials\.

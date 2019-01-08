@@ -15,6 +15,8 @@ For certain fleet customizations, in Active Directory environments, you might ne
 + [Set Google Chrome as the Default Browser for Users' Streaming Sessions](#customize-fleets-set-chrome-default-browser)
 + [Disable Internet Explorer Enhanced Security Configuration](#customize-fleets-disable-ie-esc)
 + [Change the Default Internet Explorer Home Page for Users' Streaming Sessions](#customize-fleets-change-ie-homepage)
++ [Use the AppStream 2\.0 Template User Account to Change the Default Internet Explorer Home Page](#customize-fleets-change-ie-homepage-template-user)
++ [User and Instance Metadata for AppStream 2\.0 Fleets](#customize-fleets-user-instance-metadata)
 
 ## Persist Environment Variables<a name="customize-fleets-persist-environment-variables"></a>
 
@@ -159,7 +161,7 @@ The associations for application file extensions are set on a per\-user basis an
 
 1. At the command prompt, type the following command to export the image builder file associations as an XML file, and then press ENTER: 
 
-   `dism.exe/online/export-DefaultAppAssociations:c:\default_associations.xml`
+   `dism.exe /online /export-DefaultAppAssociations:c:\default_associations.xml`
 
    If you receive an error message stating that you cannot service a running 64\-bit operating system with a 32\-bit version of DISM, close the command prompt window\. Open File Explorer, browse to C:\\Windows\\System32, right\-click cmd\.exe, choose **Run as Administrator**, and run the command again\.
 
@@ -269,7 +271,6 @@ You can use Group Policy to change the default Internet Explorer home page for u
 
 **Topics**
 + [Use Group Policy to Change the Default Internet Explorer Home Page](#customize-fleets-change-ie-homepage-group-policy)
-+ [Use the AppStream 2\.0 Template User Account to Change the Default Internet Explorer Home Page](#customize-fleets-change-ie-homepage-template-user)
 
 ### Use Group Policy to Change the Default Internet Explorer Home Page<a name="customize-fleets-change-ie-homepage-group-policy"></a>
 
@@ -339,7 +340,7 @@ To enable your users to choose the **Use Default** button in their Internet Expl
 
 1. Choose **OK** and close the GPMC\.
 
-### Use the AppStream 2\.0 Template User Account to Change the Default Internet Explorer Home Page<a name="customize-fleets-change-ie-homepage-template-user"></a>
+## Use the AppStream 2\.0 Template User Account to Change the Default Internet Explorer Home Page<a name="customize-fleets-change-ie-homepage-template-user"></a>
 
 Follow these steps to use the Template User account to change the default Internet Explorer home page\. 
 
@@ -367,3 +368,21 @@ Follow these steps to use the Template User account to change the default Intern
 1. On the image builder desktop, open Image Assistant\.
 
 1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
+
+## User and Instance Metadata for AppStream 2\.0 Fleets<a name="customize-fleets-user-instance-metadata"></a>
+
+AppStream 2\.0 fleet instances have user and instance metadata available through Windows environment variables\. You can use the following environment variables in your applications and scripts to modify your environment based on the fleet instance details\.
+
+
+| Environment Variable | Context | Description | 
+| --- | --- | --- | 
+| AppStream\_Stack\_Name | User | The name of the stack that the streaming session started from\. | 
+| AppStream\_User\_Access\_Mode | User | The access mode that the user is using to stream\. The values are custom, userpool, or saml\. | 
+| AppStream\_Session\_Reservation\_DateTime | User | The date and time when the user’s streaming session started\. | 
+| AppStream\_UserName | User | The user name for the user\. | 
+| AppStream\_Session\_ID | User | The session identifier for the user's streaming session\. | 
+| APPSTREAM\_SESSION\_CONTEXT | Machine | The session context that was provided when the streaming URL was created\.  This environment variable is only available when you use the AppStream 2\.0 CreateStreamingURL API action with the SessionContext parameter\. | 
+| AppStream\_Image\_Arn | Machine | The ARN of the image that was used to create the streaming instance\. | 
+| AppStream\_Instance\_Type | Machine | The instance type of the streaming instance\. For example, stream\.standard\.medium\. | 
+| AppStream\_Resource\_Type | Machine | The type of AppStream 2\.0 resource\. The value is either fleet or imagebuilder\. | 
+| AppStream\_Resource\_Name | Machine | The name of the fleet\. | 

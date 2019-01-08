@@ -7,8 +7,15 @@ To use the latest AppStream 2\.0 agent software, you need to rebuild your images
 The following table describes the latest updates that are available in released versions of the AppStream 2\.0 agent\.
 
 
-| Amazon AppStream 2\.0 agent version | Description | 
+| Amazon AppStream 2\.0 agent version | Changes | 
 | --- | --- | 
+| 12\-19\-2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
+| 12\-17\-2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
+| 12\-04\-2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
+| 11\-14\-2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
+| 10\-30\-2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
+| 10\-24\-2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
+| 10\-01\-2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
 | 08\-29\-2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
 | 07\-26\-2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
 | 06\-19\-2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
