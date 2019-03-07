@@ -56,7 +56,7 @@ The following example uses session context to launch a specific website by using
    For images released on or after 09\-05\-2017, use the following script:
 
    ```
-   for /f "tokens=* usebackq" %%f in ('C:\Scripts\SessionContextRetriever.exe') do (
+   for /f "tokens=* usebackq" %%f in (`C:\Scripts\SessionContextRetriever.exe`) do (
    set var=%%f
    )
    chrome.exe %var%
