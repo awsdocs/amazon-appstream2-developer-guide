@@ -22,7 +22,12 @@ Set up and create a fleet from which user applications are launched and streamed
 
 1. Choose **Get Started** if you are new to the console, or **Fleets** from the left navigation pane\. Choose **Create Fleet**\.
 
-1. For **Step 1: Provide Fleet Details**, provide a fleet name, optional display name, and optional description\. Choose **Next**\.
+1. For **Step 1: Provide Fleet Details**, type a unique name identifier for the fleet\. Optionally, you can also specify the following: 
+   + **Display Name** — Type a name to display for the fleet \(maximum of 100 characters\)\.
+   + **Description** — Type a description for the fleet \(maximum of 256 characters\)\.
+   + **Tags** — Choose **Add Tag**, and type the key and value for the tag\. To add more tags, repeat this step\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.
+
+1. Choose **Next**\.
 
 1. For **Step 2: Choose an Image**, choose an image that meets your needs and then choose **Next**\.
 
@@ -58,8 +63,6 @@ Set up and create a fleet from which user applications are launched and streamed
 
    While your fleet is being created and fleet instances are provisioned, the status of your fleets displays as **Starting** in the **Fleets** list\. Choose the **Refresh** icon periodically to update the fleet status until the status is **Running**\. You cannot associate the fleet with a stack and use it for streaming sessions until the status of the fleet is **Running**\.
 
-   Optionally, you can apply one or more tags to help manage the fleet\. Choose **Tags**, choose **Add/Edit Tags**, choose **Add Tag**, specify the key and value for the tag, and then choose **Save**\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.
-
 ## Create a Stack<a name="set-up-stacks-fleets-install"></a>
 
 Set up and create a stack to control access to your fleet\.
@@ -68,12 +71,13 @@ Set up and create a stack to control access to your fleet\.
 
 1. In the left navigation pane, choose **Stacks**, and then choose **Create Stack**\.
 
-1. For **Step 1: Stack Details**, provide a stack name\. Optionally, you can provide the following:
-   + **Display name** — Enter a name to display for the stack \(maximum of 100 characters\)\.
-   + **Description**— Enter a description for the stack \(maximum of 256 characters\)\.
+1. For **Step 1: Stack Details**, type a unique name identifier for the stack Optionally, you can specify the following:
+   + **Display name** — Type a name to display for the stack \(maximum of 100 characters\)\.
+   + **Description**— Type a description for the stack \(maximum of 256 characters\)\.
    + **Redirect URL** — Specify a URL to which users are redirected after their streaming sessions end\.
    + **Feedback URL** — Specify a URL to which users are redirected after they click the **Send Feedback** link to submit feedback about their application streaming experience\. If you do not specify a URL, this link is not displayed\.
    + **Fleet** — Select an existing fleet or create a new one to associate with your stack\.
+   + **Tags** — Choose **Add Tag**, and type the key and value for the tag\. To add more tags, repeat this step\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.
 
 1. Choose **Next\.**
 
@@ -106,8 +110,6 @@ For information about requirements for enabling and administering application se
 1. For **Step 4: Review**, confirm the details for the stack\. To change the configuration for any section, choose **Edit **and make the needed changes\. After you finish reviewing the configuration details, choose **Create**\. 
 
 After the service sets up resources, the **Stacks** page appears\. The status of your new stack appears as **Active** when it is ready to use\. 
-
-Optionally, you can apply one or more tags to help manage the stack\. Choose **Tags**, choose **Add/Edit Tags**, choose **Add Tag**, specify the key and value for the tag, and then choose **Save**\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.
 
 ## Provide Access to Users<a name="set-up-stacks-fleets-add"></a>
 

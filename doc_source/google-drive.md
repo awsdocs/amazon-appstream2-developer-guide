@@ -54,6 +54,7 @@ Follow these steps to add Amazon AppStream 2\.0 as a trusted app in your G Suite
 | us\-east\-1 \(N\.Virginia\) | 266080779488\-15n5q5nkiclp6m524qibnmhmbsg0hk92\.apps\.googleusercontent\.com | 
 | us\-west\-2 \(Oregon\) | 1026466167591\-i4jmemrggsjomp9tnkkcs5tniggfiujb\.apps\.googleusercontent\.com | 
 | ap\-northeast\-1 \(Tokyo\) | 922579247628\-qpl9kpihg3hu5dul2lphbjs4qbg6mjm2\.apps\.googleusercontent\.com  | 
+| ap\-northeast\-2 \(Seoul\) | 562383781419\-am1i2dnvt050tmdltsvr36i8l2js40dj\.apps\.googleusercontent\.com  | 
 | ap\-southeast\-1 \(Singapore\) | 856871139998\-4eia2n1db5j6gtv4c1rdte1fh1gec8vs\.apps\.googleusercontent\.com | 
 | ap\-southeast\-2 \(Sydney\) | 151535156524\-b889372osskprm4dt1clpm53mo3m9omp\.apps\.googleusercontent\.com  | 
 | eu\-central\-1 \(Frankfurt\) | 643727794574\-1se5360a77i84je9j3ap12obov1ib76q\.apps\.googleusercontent\.com | 

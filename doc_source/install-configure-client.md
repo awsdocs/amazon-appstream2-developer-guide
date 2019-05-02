@@ -52,7 +52,7 @@ If you plan to download and install the client for your users, first download th
 
 To install and configure the AppStream 2\.0 client for your users, download the installation files\.
 
-1. Download the Enterprise Deployment Tool from [AppStream 2\.0 Enterprise Deployment Tool\.](https://clients.amazonappstream.com/installers/windows/AmazonAppStreamClient_EnterpriseSetup_1.0.320.zip)
+1. Download the Enterprise Deployment Tool from [AppStream 2\.0 supported clients\.](https://clients.amazonappstream.com)
 
 1. Navigate to the location where you downloaded the tool, right\-click the **AmazonAppStreamClient\_EnterpriseSetup\_<version>** folder, and choose **Extract All**\. The folder contains the following two installation programs:
    + AmazonAppStreamClientSetup\_<version>\.msi
@@ -67,7 +67,6 @@ To run this script, you must be logged into the applicable computer with the loc
 
 ```
 Start-Process msiexec.exe -Wait -ArgumentList '/i AmazonAppStreamClientSetup_<version>.msi /quiet'
- $ArgumentList
 
 Start-Process AmazonAppStreamUsbDriverSetup_<version>.exe -Wait -ArgumentList '/quiet'
 ```
@@ -88,7 +87,11 @@ The values are case\-sensitive\.
 | AcceptedEULAVersion | HKCU\\Software\\Amazon\\Appstream Client | String | The version of EULA that is accepted\. If the current version of the AppStream 2\.0 client EULA is different than the version of the EULA that is accepted, users are prompted to accept the current version of the EULA\. | 1\.0 | 
 | DiagnosticInfoCollectionAllowed | HKCU\\Software\\Amazon\\Appstream Client | String | Set this value to true to enable AppStream 2\.0 to automatically send diagnostic logs from the AppStream 2\.0 client to AppStream 2\.0\. | true / false | 
 | USBDriverOptIn | HKCU\\Software\\Amazon\\Appstream Client | String | Set this value to true to enable AppStream 2\.0 to automatically update the USB driver that is used to pass USB drivers to AppStream 2\.0\. | true / false | 
-| StartUrl | HKLM\\Software\\Amazon\\Appstream Client | String | Set this value to configure the URL that automatically launches when your users open the AppStream 2\.0 client\. | Valid URL \(for example, https://www\.example\.com\) | 
+| StartUrl | HKLM\\Software\\Amazon\\Appstream Client | String | Set this value to a URL that is pre\-populated when your users open the AppStream 2\.0 client\. The URL must use a certificate that is trusted by the device\. The certificate must contain a Subject Alternative Name \(SAN\) that includes the URL's domain name\. | Valid URL \(for example, https://www\.example\.com\) | 
+
+### Configure the AppStream 2\.0 Client through Group Policy<a name="configure-client-with-adm-template-group-policy"></a>
+
+You can use the ADM template that is provided in the AppStream 2\.0 client Enterprise Deployment Tool to configure the client through Group Policy\. To learn how to load ADM templates into the Group Policy Management Console, see [Recommendations for managing Group Policy administrative template \(\.adm\) files](https://support.microsoft.com/en-us/help/816662/recommendations-for-managing-group-policy-administrative-template-adm) in the Microsoft documentation\.
 
 ### Run a PowerShell Script to Create Registry Keys and Set User Preferences<a name="create-regkeys-configure-user-preference-settings"></a>
 
@@ -99,7 +102,7 @@ You must set the following entries for each user\.
 
 ```
 $registryPath="HKCU:\Software\Amazon\AppStream Client"
-New-Item -Path "HKCU:\Software\Amazon" -Name "AppStream Client"
+New-Item -Path "HKCU:\Software\Amazon" -Name "AppStream Client" -Force
 New-ItemProperty -Path $registryPath -Name "EULAAccepted" -Value "true" -PropertyType String -Force | Out-Null
 New-ItemProperty -Path $registryPath -Name "AcceptedEULAVersion" -Value "1.0" -PropertyType String -Force | Out-Null
 New-ItemProperty -Path $registryPath -Name "DiagnosticInfoCollectionAllowed" -Value "true" -PropertyType String -Force | Out-Null
@@ -108,14 +111,14 @@ New-ItemProperty -Path $registryPath -Name "USBDriverOptIn" -Value "true" -Prope
 
 ### Run a PowerShell Script to Set the Start URL<a name="set-start-url"></a>
 
-To set a start URL, run the following PowerShell script\. Replace the **StartUrl** value with a URL for your organization\.
+To set a start URL, run the following PowerShell script\. Replace the **StartUrl** value with a URL for your identity provider \(IdP\)\. The URL must use a certificate that is trusted by the device\. The certificate must contain a SAN that includes the URL's domain name\.
 
 **Note**  
 To run this script, you must be logged into the applicable computer with the local **Administrator **account\. You can also run the script remotely under the **System** account on startup\. 
 
 ```
 $registryPath="HKLM:\Software\Amazon\AppStream Client"
-New-Item -Path "HKLM:\Software\Amazon" -Name "AppStream Client"
+New-Item -Path "HKLM:\Software\Amazon" -Name "AppStream Client" -Force
 
 New-ItemProperty -Path $registryPath -Name "StartUrl" -Value "https://www.example.com" -PropertyType String -Force | Out-Null
 ```

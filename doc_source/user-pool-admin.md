@@ -20,6 +20,7 @@ You must enter a valid and unique email address for each new user within a Regio
 When you create a new user, be aware of the following:
 + You can enable or disable a user, but you cannot delete a user by using the AppStream 2\.0 console\. To delete a user, you must use the [DeleteUser](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteUser.html) API action\.
 + You cannot change the email address, first name, or last name for a user that you have already created\. To change this information for a user, disable the user\. Then, recreate the user \(as a new user\) and specify the updated information as needed\. 
++ Users' email addresses are case\-sensitive\. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays\.
 + You can assign one or more stacks to the user after the user is created\.
 
 **To create a new user**

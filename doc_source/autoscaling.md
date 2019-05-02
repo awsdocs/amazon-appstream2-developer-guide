@@ -1,22 +1,35 @@
 # Fleet Auto Scaling for Amazon AppStream 2\.0<a name="autoscaling"></a>
 
-Fleet Auto Scaling allows you to automatically change the size of your AppStream 2\.0 fleet to match the supply of available instances to user demand\. Because each instance in a fleet can be used by only one user at a time, the size of your fleet determines the number of users who can stream concurrently\. You can define scaling policies that adjust the size of your fleet automatically based on a variety of utilization metrics, and optimize the number of available instances to match user demand\. You can also choose to turn off automatic scaling and make the fleet run at a fixed size\.
+Fleet Auto Scaling lets you change the size of your AppStream 2\.0 fleet automatically to match the supply of available instances to user demand\. Because one user requires one fleet instance, the size of your fleet determines the number of users who can stream concurrently\. You can define scaling policies that adjust the size of your fleet automatically based on a variety of utilization metrics, and optimize the number of available instances to match user demand\. You can also choose to turn off automatic scaling and make the fleet run at a fixed size\.
+
+**Note**  
+Before you can use Fleet Auto Scaling, Application Auto Scaling needs permissions to access Amazon CloudWatch alarms and AppStream 2\.0 fleets\. For more information, see [IAM Service Roles Required for Managing AppStream 2\.0 Resources](controlling-access.md#controlling-access-iam-service-role) and [Application Auto Scaling Required IAM Permissions](controlling-access.md#autoscaling-iam-policy)\.
 
 AppStream 2\.0 scaling is provided by Application Auto Scaling\. For more information, see the [Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/)\.
 
-Before you can use Fleet Auto Scaling, Application Auto Scaling needs permissions to access Amazon CloudWatch alarms and AppStream 2\.0 fleets\. For more information, see [IAM Service Roles Required for Managing AppStream 2\.0 Resources](controlling-access.md#controlling-access-iam-service-role) and [Application Auto Scaling Required IAM Permissions](controlling-access.md#autoscaling-iam-policy)\.
+For step\-by\-step guidance for working with AppStream 2\.0 Fleet Auto Scaling, see [Scaling Your Desktop Application Streams with Amazon AppStream 2\.0](http://aws.amazon.com/blogs/compute/scaling-your-desktop-application-streams-with-amazon-appstream-2-0/) in the *AWS Compute Blog*\.
 
-For a walk\-through of AppStream 2\.0 scaling, see [Scaling Your Desktop Application Streams with Amazon AppStream 2\.0](http://aws.amazon.com/blogs/compute/scaling-your-desktop-application-streams-with-amazon-appstream-2-0/) in the *AWS Compute Blog*\.
+The following topics provide information to help you understand and use AppStream 2\.0 Fleet Auto Scaling\. 
+
+**Topics**
++ [Scaling Concepts](#autoscaling-concepts)
++ [Managing Fleet Scaling Using the Console](#autoscaling-console)
++ [Managing Fleet Scaling Using the AWS CLI](#autoscaling-cli)
 
 ## Scaling Concepts<a name="autoscaling-concepts"></a>
 
-To use Application Auto Scaling effectively, there are a few terms and concepts that you should be familiar with and understand\.
+To use Fleet Auto Scaling effectively, you must understand the following terms and concepts\.
 
 **Minimum Capacity**  
-The minimum size of the fleet\. Scaling policies do not scale your fleet below this value\. For example, if you specify 2, your fleet will never have less than 2 instances available\. Note that if **Desired Capacity** \(set by editing **Fleet Details** and not **Scaling Policies**\) is set below the value of **Minimum Capacity** and a scale\-out activity is triggered, Application Auto Scaling scales the **Desired Capacity** value up to the value of **Minimum Capacity** and then continues to scale out as required, based on the scaling policy\. However, in this example, a scale\-in activity does not adjust **Desired Capacity**, because it is already below the **Minimum Capacity** value\.
+The minimum number of fleet instances\. The number of fleet instances can't be below this value, and scaling policies will not scale your fleet below this value\. For example, if you set the minimum capacity for a fleet to 2, your fleet will never have less than 2 instances\.
 
 **Maximum Capacity**  
-The maximum size of the fleet\. Scaling policies do not scale your fleet above this value\. For example, if you specify 10, your fleet will never have more than 10 instances available\. Note that if **Desired Capacity** \(set by editing **Fleet Details** and not **Scaling Policies**\) is set above the value of **Maximum Capacity** and a scale\-in activity is triggered, Application Auto Scaling scales **Desired Capacity** down to the value of **Maximum Capacity** and then continues to scale in as required, based on the scaling policy\. However, in this example, a scale\-out activity does not adjust **Desired Capacity**, because it is already above the **Maximum Capacity** value\.
+The maximum number of fleet instances\. The number of fleet instances can't be above this value, and scaling policies will not scale your fleet above this value\. For example, if you set the maximum capacity for a fleet to 10, your fleet will never have more than 10 instances\.
+
+**Desired Capacity**  
+The total number of fleet instances that are either running or pending\. This value represents the total number of concurrent streaming sessions that your fleet can support in a steady state\. To set the value for **Desired Capacity**, edit **Fleet Details**\. We do not recommend changing the **Desired Capacity** value manually when you use **Scaling Policies**\.   
+If the value of **Desired Capacity** is set below the value of **Minimum Capacity** and a scale\-out activity is triggered, Application Auto Scaling scales the **Desired Capacity** value up to the value of **Minimum Capacity** and then continues to scale out as required, based on the scaling policy\. However, in this case, a scale\-in activity does not adjust **Desired Capacity**, because it is already below the **Minimum Capacity** value\.   
+If the value of **Desired Capacity** is set above the value of **Maximum Capacity** and a scale\-in activity is triggered, Application Auto Scaling scales the **Desired Capacity** value down to the value of **Maximum Capacity** and then continues to scale in as required, based on the scaling policy\. However, in this case, a scale\-out activity does not adjust **Desired Capacity**, because it is already above the **Maximum Capacity** value\.
 
 **Scaling Policy Action**  
 The action that scaling policies perform on your fleet when the **Scaling Policy Condition** is met\. You can choose an action based on **% capacity** or **number of instance\(s\)**\. For example, if **Desired Capacity** is 4 and **Scaling Policy Action** is set to "Add 25% capacity", **Desired Capacity** is increased by 25% to 5 when **Scaling Policy Condition** is met\.
@@ -25,17 +38,17 @@ The action that scaling policies perform on your fleet when the **Scaling Policy
 The condition that triggers the action set in **Scaling Policy Action**\. This condition includes a scaling policy metric, a comparison operator, and a threshold\. For example, to scale a fleet if the utilization of the fleet is greater than 50%, your scaling policy condition should be "If Capacity Utilization > 50%"\.
 
 **Scaling Policy Metric**  
-This is the metric on which your scaling policy is based\. The following metrics are available for scaling policies:    
+Your scaling policy is based on this metric\. The following metrics are available for scaling policies:    
 **Capacity Utilization**  
-Percentage of instances in a fleet that are being used\. You can use this metric to scale your fleet based on usage of the fleet\. For example, **Scaling Policy Condition**: "If Capacity Utilization < 25%" perform **Scaling Policy Action**: "Remove 25 % capacity"\.  
+The percentage of instances in a fleet that are being used\. You can use this metric to scale your fleet based on usage of the fleet\. For example, **Scaling Policy Condition**: "If Capacity Utilization < 25%" perform **Scaling Policy Action**: "Remove 25 % capacity"\.  
 **Available Capacity**  
-Number of instances in your fleet that are available for user sessions\. You can use this metric to maintain a buffer in your capacity available for users to start streaming sessions\. For example, **Scaling Policy Condition**: "If Available Capacity < 5" perform **Scaling Policy Action**: "Add 5 instance\(s\)"\.  
+The number of instances in your fleet that are available for user sessions\. You can use this metric to maintain a buffer in your capacity available for users to start streaming sessions\. For example, **Scaling Policy Condition**: "If Available Capacity < 5" perform **Scaling Policy Action**: "Add 5 instance\(s\)"\.  
 **Insufficient Capacity Error**  
-Number of session requests rejected due to lack of capacity\. You can use this metric to provision new instances for users that are unable to get sessions because of lack of capacity\. For example, **Scaling Policy Condition**: "If Insufficient Capacity Error > 0" perform **Scaling Policy Action**: "Add 1 instance\(s\)"\.
+The number of session requests rejected due to lack of capacity\. You can use this metric to provision new instances for users that are unable to get sessions because of lack of capacity\. For example, **Scaling Policy Condition**: "If Insufficient Capacity Error > 0" perform **Scaling Policy Action**: "Add 1 instance\(s\)"\.
 
 ## Managing Fleet Scaling Using the Console<a name="autoscaling-console"></a>
 
-You can set up and manage fleet scaling using the AWS Management Console in two ways: during fleet creation, or anytime using the **Fleets** tab\. Two default scaling policies are associated with newly created fleets after launch and can be edited via the console from the **Scaling Policies** tab\. For more information, see [Create a Fleet](set-up-stacks-fleets.md#set-up-stacks-fleets-create)\.
+You can set up and manage fleet scaling by using the AppStream 2\.0 console in either of the following two ways: During fleet creation, or any time, by using the **Fleets** tab\. Two default scaling policies are associated with newly created fleets after launch\. You can edit these policies on the **Scaling Policies** tab in the AppStream 2\.0 console\. For more information, see [Create a Fleet](set-up-stacks-fleets.md#set-up-stacks-fleets-create)\.
 
 For user environments that vary in number, define scaling policies to control how scaling responds to demand\. If you expect a fixed number of users or have other reasons for disabling scaling, you can set your fleet with a fixed number of instances\.
 
@@ -264,4 +277,6 @@ If the scheduled action was successfully created, the JSON output appears simila
 }
 ```
 
-To learn more about creating scheduled actions by using the Application Auto Scaling CLI commands or API actions, see the [application\-autoscaling](https://docs.aws.amazon.com/cli/latest/reference/application-autoscaling/application-autoscaling.html) section of the AWS CLI Command Reference and [Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/)\.
+To learn more about creating scheduled actions by using the Application Auto Scaling CLI commands or API actions, see the following two resources:
++  [Scheduled Scaling for Application Auto Scaling](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html) in the *Application Auto Scaling User Guide*
++ The [application\-autoscaling](https://docs.aws.amazon.com/cli/latest/reference/application-autoscaling/application-autoscaling.html) section of the *AWS CLI Command Referenc*e and [Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/)

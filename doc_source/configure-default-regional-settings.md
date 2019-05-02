@@ -246,9 +246,7 @@ When you create a stack in the AppStream 2\.0 console, in **Step 3: User Setting
 
 This section describes key points to keep in mind when configuring Japanese language settings for your AppStream 2\.0 users\.
 
-### AppStream 2\.0 Client<a name="special-considerations-as2-cient"></a>
-
-Currently, the AppStream 2\.0 client does not support Japanese as an input method\. However, Japanese is supported as an input method when accessing AppStream 2\.0 streaming sessions using a compatible browser\. For more information about the AppStream 2\.0 client, see [The AppStream 2\.0 Client](client-application.md)\.
+### <a name="special-considerations-as2-cient"></a>
 
 ### AWS CLI<a name="special-considerations-japanese-language-AWS-CLI"></a>
 

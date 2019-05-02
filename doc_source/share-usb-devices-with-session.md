@@ -19,3 +19,5 @@ To use a USB device with streaming applications, you must share the device with 
    Your USB device is now available for use with your streaming applications\.
 **Important**  
 USB devices can't be simultaneously used between local and remote applications\. So after you share a USB device with a streaming session, you can't use it with applications on your local computer\. To use your USB device on your local computer, switch the **Share** toggle key next to the name of the USB device that you want to use locally\. This disables sharing with the streaming session\. 
+
+1. You can also enable your USB device to automatically connect when a new streaming session starts\. To do so, select the option next to the toggle key for the USB device that you want to connect\. After you enable this option, when your next streaming session starts, the USB device is automatically connected\. 

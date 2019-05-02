@@ -6,12 +6,12 @@ The AppStream 2\.0 user pool provides a simplified way to manage access to appli
 Stacks can't be assigned to users in the user pool if the stacks are associated with a fleet that is joined to an Active Directory domain\. 
 
 The AppStream 2\.0 user pool provides the following key features:
-+ Users can access application stacks through a persistent URL and login credentials by using their email address and a password that they choose\.
++ Users can access application stacks through a persistent URL and login credentials by using their email address and a password that they choose\. 
++ Users' email addresses are case\-sensitive\. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays\.
 + You can assign multiple stacks to users\. Doing so enables AppStream 2\.0 to display multiple application catalogs to users when they log in\.
 + When you create new users, a welcome email is automatically sent to them\. The email includes instructions, a login portal link, and a temporary password for connecting to the login portal\.
 + After you create users, they are enabled unless you specifically disable them\.
 + You can control which users have access to which application stacks, or disable access completely\.
-+ Users can start AppStream 2\.0 streaming sessions by using a web browser\. Currently, the AppStream 2\.0 client is not supported for users in the user pool\.
 
 ## User Pool End User Experience<a name="user-pool-end-user"></a>
 
@@ -44,6 +44,8 @@ If users forget their password, follow these steps to connect to the login porta
 1. Choose **Forgot Password?**\.
 
 1. Type the email address that you used to create the user in the user pool, and choose **Next**\.
+
+   Your email address is case\-sensitive\. During login, if your email address doesn't use the same capitalization as the email address specified when your user pool account was created, a "user does not exist" error message displays\.
 
 1. Check your email for the password reset request message\. If you are having difficulty finding the email, check your spam email folder\. Type the verification code from the email in **Verification Code**\.
 **Note**  

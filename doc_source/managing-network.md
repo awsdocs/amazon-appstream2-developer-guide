@@ -3,10 +3,11 @@
 The following sections contain information about enabling users to connnect to AppStream 2\.0 streaming instances and enabling your AppStream 2\.0 fleets and image builders to access network resources and the internet\.
 
 **Contents**
-+ [Port Requirements for User Connections to Amazon AppStream 2\.0](appstream2-port-requirements-users.md)
++ [User Connections to Amazon AppStream 2\.0](appstream2-port-requirements-users.md)
+  + [Bandwidth Recommendations](appstream2-port-requirements-users.md#bandwidth-recommendations-user-connections)
   + [Ports for AppStream 2\.0 User Devices](appstream2-port-requirements-users.md#client-application-ports)
   + [Whitelisted Domains](appstream2-port-requirements-users.md#whitelisted_ports)
-+ [Port Requirements for Amazon AppStream 2\.0 Connections to Network Resources and the Internet](appstream2-port-requirements-appstream2.md)
++ [Amazon AppStream 2\.0 Connections to Your VPC](appstream2-port-requirements-appstream2.md)
   + [Network Interfaces](appstream2-port-requirements-appstream2.md#network-interfaces)
   + [Management Network Interface IP Address Range and Ports](appstream2-port-requirements-appstream2.md#management_ports)
   + [Customer Network Interface Ports](appstream2-port-requirements-appstream2.md#primary_ports)

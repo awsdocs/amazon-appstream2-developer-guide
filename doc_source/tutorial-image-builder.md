@@ -12,7 +12,7 @@ If you are using images that are created from base images dated before 2017\-07\
 + [Step 3: Create Default Application and Windows Settings](#tutorial-image-builder-create-default-app-settings)
 + [Step 4: Test Applications](#tutorial-image-builder-test-applications)
 + [Step 5: Optimize Applications](#tutorial-image-builder-optimize)
-+ [Step 6: Finish Creating Your Image](#tutorial-image-builder-create-image)
++ [Step 6: Finish Creating Your Image](#tutorial-image-builder-finish-create-image)
 + [Step 7 \(Optional\): Tag and Copy an Image](#tutorial-image-builder-tag-copy)
 + [Step 8: Clean Up](#tutorial-image-builder-finish)
 
@@ -142,13 +142,15 @@ In this step, Image Assistant opens your applications one after another, identif
 
 1. When you're done, the next tab in Image Assistant, **5\. Configure Image**, automatically displays\. 
 
-## Step 6: Finish Creating Your Image<a name="tutorial-image-builder-create-image"></a>
+## Step 6: Finish Creating Your Image<a name="tutorial-image-builder-finish-create-image"></a>
 
 In this step, choose an image name and finish creating your image\. 
 
 **To create the image**
 
-1. Type a unique image name, an image display name, a description if you want, and choose **Next**\. The name you choose cannot begin with "Amazon," "AWS," or "AppStream\." When you're done, choose **Next**\.
+1. Type a unique image name, and an optional image display name and description\. The image name cannot begin with "Amazon," "AWS," or "AppStream\." 
+
+   You can also add one or more tags to the image\. To do so, choose **Add Tag**, and type the key and value for the tag\. To add more tags, repeat this step\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\. When you're done, choose **Next**\.
 **Note**  
 If you choose a base image that is published by AWS on or after December 7, 2017, the option **Always use the latest agent version** appears, selected by default\. We recommend that you leave this option selected so that streaming instances that are launched from the image always use the latest version of the agent\. If you disable this option, you cannot enable it after you finish creating the image\. For information about the latest release of the AppStream 2\.0 agent, see [AppStream 2\.0 Agent Version History](agent-software-versions.md)\.
 
@@ -171,12 +173,12 @@ After you create an image, you can't change it\. To add other applications, upda
 
 ## Step 7 \(Optional\): Tag and Copy an Image<a name="tutorial-image-builder-tag-copy"></a>
 
-After you create an image, you can apply one or more tags to help manage the image\. You can also copy the image within the same region or to a new region within the same AWS account\. Copying a source image results in an identical but distinct destination image\. AWS does not copy any user\-defined tags, however\. Also, you can only copy custom images that you create, not the base images that are provided by AWS\. 
+You can add one or more tags to an image during image creation or after you create an image\. You can also copy the image within the same Region or to a new Region within the same AWS account\. Copying a source image results in an identical but distinct destination image\. AWS does not copy any user\-defined tags, however\. Also, you can only copy custom images that you create, not the base images that are provided by AWS\. 
 
 **Note**  
-You can copy up to two images at the same time to a destination\. If the destination to which you are copying an image is at the image limit, you receive an error\. To copy the image in this case, you must first remove images from the destination\. After the destination is below the image limit, initiate the image copy from the source region\. For more information, see [Amazon AppStream 2\.0 Service Limits](limits.md)\.
+You can copy up to two images at the same time to a destination\. If the destination to which you are copying an image is at the image limit, you receive an error\. To copy the image in this case, you must first remove images from the destination\. After the destination is below the image limit, initiate the image copy from the source Region\. For more information, see [Amazon AppStream 2\.0 Service Limits](limits.md)\.
 
-**To add tags to an image**
+**To add tags to an existing image**
 
 1. In the navigation pane, choose **Images**, **Image Registry**\. 
 

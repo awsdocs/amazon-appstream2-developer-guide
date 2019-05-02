@@ -118,7 +118,15 @@ The format of the relay state URL is as follows:
 https://relay-state-region-endoint?stack=stackname&accountId=aws-account-id-without-hyphens
 ```
 
-Construct your relay state URL from your AWS account ID, stack name, and the relay state endpoint associated with the region in which your stack is located\.
+Construct your relay state URL from your AWS account ID, stack name, and the relay state endpoint associated with the Region in which your stack is located\.
+
+Optionally, you can specify the name of the application that you want to launch automatically\. To find the application name, select the image in the AppStream 2\.0 console, choose the **Applications** tab, and note the name that displays in the **Application Name** column\. Alternatively, if you haven't yet created the image, connect to the image builder where you installed the application, and open Image Assistant\. The names of applications display in the **Add Apps** tab\.
+
+```
+https://relay-state-region-endoint?stack=stackname&accountId=aws-account-id-without-hyphens&app=application-name-to-launch
+```
+
+The following table lists the relay state endpoints for the Regions where AppStream 2\.0 is available\.
 
 
 | Region | Relay state endpoint | 
@@ -126,6 +134,7 @@ Construct your relay state URL from your AWS account ID, stack name, and the rel
 | us\-east\-1 \(N\.Virginia\) | https://appstream2\.us\-east\-1\.aws\.amazon\.com/saml | 
 | us\-west\-2 \(Oregon\) | https://appstream2\.us\-west\-2\.aws\.amazon\.com/saml | 
 | ap\-northeast\-1 \(Tokyo\) | https://appstream2\.ap\-northeast\-1\.aws\.amazon\.com/saml | 
+| ap\-northeast\-2 \(Seoul\) | https://appstream2\.ap\-northeast\-2\.aws\.amazon\.com/saml | 
 | ap\-southeast\-1 \(Singapore\) | https://appstream2\.ap\-southeast\-1\.aws\.amazon\.com/saml | 
 | ap\-southeast\-2 \(Sydney\) | https://appstream2\.ap\-southeast\-2\.aws\.amazon\.com/saml | 
 | eu\-central\-1 \(Frankfurt\) | https://appstream2\.eu\-central\-1\.aws\.amazon\.com/saml | 

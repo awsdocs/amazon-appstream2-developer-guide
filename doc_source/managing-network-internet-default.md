@@ -1,8 +1,10 @@
 # Enabling Internet Access Using a Public Subnet<a name="managing-network-internet-default"></a>
 
+We recommend that you enable internet access by following the instructions in [Enabling Internet Access Using a NAT Gateway](managing-network-internet-manual.md)\. When you enable internet access as described in this topic, a public IP address is attached to the instance that can be directly reached from the internet\.
+
 AppStream 2\.0 can provide your fleets with a default internet connection by using your Amazon VPC public subnet\. This subnet has a route to the internet through an internet gateway\. 
 
-AppStream 2\.0 enables internet connectivity by associating an [Elastic IP address](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html) to the network interface that is attached from the streaming instance to your VPC public subnet\. You can have a VPC with a public subnet in several ways:
+AppStream 2\.0 enables internet connectivity by associating an [Elastic IP address](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html) to the network interface that is attached from the streaming instance to your VPC public subnet\. An Elastic IP address is a public IPv4 address that is reachable from the internet\. For this reason, we recommend that you use a NAT gateway to provide internet access to your AppStream 2\.0 instances\. You can have a VPC with a public subnet in several ways:
 
 **Default VPC**  
 Your AWS account, if it was created after 2013\-12\-04, has a default VPC that has public subnets\. You can use this default VPC to enable internet access from your streaming instances\. For more information, see [Default VPC and Default Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html) in the *Amazon VPC User Guide*\.
@@ -27,7 +29,7 @@ After you have a public subnet available on a VPC, you can enable internet acces
 
 **To enable internet access at fleet creation**
 
-1. Follow the instructions at [Create a Fleet](set-up-stacks-fleets.md#set-up-stacks-fleets-create) up to the **Network access** section\.
+1. Follow the instructions in [Create a Fleet](set-up-stacks-fleets.md#set-up-stacks-fleets-create) up to the **Network access** section\.
 
 1. Choose **Default Internet Access**\.
 

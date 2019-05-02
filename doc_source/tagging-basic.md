@@ -14,7 +14,8 @@ For example, you can identify and group AppStream 2\.0 fleets that are in differ
 **Topics**
 + [Tagging Basics](#tagging-introduction)
 + [Tag Restrictions](#tag-restrictions)
-+ [Working with Tags in the AppStream 2\.0 Console](#basic-tagging-console)
++ [Adding Tags during Resource Creation in the AppStream 2\.0 Console](#basic-tagging-resource-creation-console)
++ [Adding, Editing, and Deleting Tags for Existing Resources in the AppStream 2\.0 Console](#basic-tagging-console)
 + [Working with Tags by Using the AppStream 2\.0 API, an AWS SDK, or AWS CLI](#basic-tagging-API-SDK-CLI)
 
 ## Tagging Basics<a name="tagging-introduction"></a>
@@ -32,11 +33,19 @@ If you plan to set up a monthly cost allocation report to track AWS costs for Ap
 + The maximum value length is 256 Unicode characters in UTF\-8\.
 + Tag keys and values are case\-sensitive\.
 + Do not use the "aws:" prefix in your tag names or values because it is a system tag that is reserved for AWS use\. You cannot edit or delete tag names or values with this prefix\. Tags with this prefix do not count against your tags per resource limit\.
-+ You can only use the following special characters: \+ \- = \. \_ : / @\.
++ Generally allowed characters are: letters, numbers, and spaces representable in UTF\-8, and the following special characters: \+ \- = \. \_ : / @\.
 + Although you can share the same key and value across multiple resources, you cannot have duplicate keys on the same resource\.
-+ Tags can only be added to resources that are already created \(you cannot specify tags on resource creation\)\.
++ You can add tags for resources during resource creation\. You can also add, edit, and delete tags for resources that are already created\.
 
-## Working with Tags in the AppStream 2\.0 Console<a name="basic-tagging-console"></a>
+## Adding Tags during Resource Creation in the AppStream 2\.0 Console<a name="basic-tagging-resource-creation-console"></a>
+
+When you create a resource in the AppStream 2\.0 console, you can add one or more tags to manage the resource\. For more information, see the following topics:
++ Image builders — [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md), step 4
++ Images — [Step 6: Finish Creating Your Image](tutorial-image-builder.md#tutorial-image-builder-finish-create-image), step 1
++ Fleets — [Create a Fleet](set-up-stacks-fleets.md#set-up-stacks-fleets-create), step 3
++ Stacks — [Create a Stack](set-up-stacks-fleets.md#set-up-stacks-fleets-install), step 2
+
+## Adding, Editing, and Deleting Tags for Existing Resources in the AppStream 2\.0 Console<a name="basic-tagging-console"></a>
 
 You can add, edit, and delete tags for existing resources by using the AppStream 2\.0 console\. 
 
@@ -44,14 +53,14 @@ You can add, edit, and delete tags for existing resources by using the AppStream
 
 1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
 
-1. From the navigation bar, select the region that contains the resource for which you want to add, edit, or delete tags\. 
+1. From the navigation bar, select the Region that contains the resource for which you want to add, edit, or delete tags\. 
 
 1. In the navigation pane, select the resource type\. The resource type can be an image builder, image, fleet, or stack\.
 
 1. Select the resource from the resource list\. 
 
 1. Choose **Tags**, **Add/Edit Tags**, and then do one or more of the following:
-   + To add a tag, choose **Add Tag**, and then specify the key and value for each tag\.
+   + To add a tag, choose **Add Tag**, and type the key and value for each tag\.
    + To edit a tag, modify the key and value for the tag as needed\.
    + To delete a tag, choose the **Delete** icon \(X\) for the tag\.
 
@@ -59,16 +68,28 @@ You can add, edit, and delete tags for existing resources by using the AppStream
 
 ## Working with Tags by Using the AppStream 2\.0 API, an AWS SDK, or AWS CLI<a name="basic-tagging-API-SDK-CLI"></a>
 
-If you're using the AppStream 2\.0 API, an AWS SDK or the AWS Command Line Interface \(CLI\), you can use the following AppStream 2\.0 actions to add, edit, remove, or list tags for your resources: 
+If you're using the AppStream 2\.0 API, an AWS SDK, or the AWS Command Line Interface \(AWS CLI\), you can use the following AppStream 2\.0 operations with the `tags` parameter to add tags when you create new resources\. 
+
+**Note**  
+You can use spaces in tag keys and values\. To indicate a space when you use the AWS CLI, use "\\s" \(without the quotation marks\)\.
 
 
-| Task | AWS CLI | API Action | 
+| Task | AWS CLI | API Operation | 
 | --- | --- | --- | 
-| Add or overwrite one or more tags for a resource\. | [tag\-resource](https://docs.aws.amazon.com/cli/latest/reference/appstream/tag-resource.html)  |  [TagResource](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_TagResource.html)  | 
-| Remove one or more tags for a resource\. | [untag\-resource](https://docs.aws.amazon.com/cli/latest/reference/appstream/untag-resource.html) |  [UntagResource](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UntagResource.html)  | 
-| List one or more tags for a resource\. |  [list\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/appstream/list-tags-for-resource.html)  |  [ListTagsForResource](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_ListTagsForResource.html)  | 
+| Add one or more tags for a new fleet | [create\-fleet](https://docs.aws.amazon.com/cli/latest/reference/appstream/create-fleet.html)  |  [CreateFleet](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateFleet.html#AppStream2-CreateFleet-request-Tags)  | 
+| Add one or more tags for a new image builder | [create\-imagebuilder](https://docs.aws.amazon.com/cli/latest/reference/appstream/create-imagebuilder.html) |  [CreateImageBuilder](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateImageBuilder.html#AppStream2-CreateImageBuilder-request-Tags)  | 
+| Add one or more tags for a new stack |  [create\-stack](https://docs.aws.amazon.com/cli/latest/reference/appstream/create-stack.html)  |  [CreateStack](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStack.html#AppStream2-CreateStack-request-Tags)  | 
 
-When you use the AppStream 2\.0 API, an AWS SDK, or AWS CLI actions to add, edit, remove, or list tags for an AppStream 2\.0 resource, specify the resource by using its Amazon Resource Name \(ARN\)\. An ARN uniquely identifies an AWS resource and uses the following general syntax\.
+You can use the following AppStream 2\.0 operations to add, edit, remove, or list tags for existing resources: 
+
+
+| Task | AWS CLI | API Operation | 
+| --- | --- | --- | 
+| Add or overwrite one or more tags for a resource | [tag\-resource](https://docs.aws.amazon.com/cli/latest/reference/appstream/tag-resource.html)  |  [TagResource](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_TagResource.html)  | 
+| Remove one or more tags for a resource | [untag\-resource](https://docs.aws.amazon.com/cli/latest/reference/appstream/untag-resource.html) |  [UntagResource](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UntagResource.html)  | 
+| List one or more tags for a resource |  [list\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/appstream/list-tags-for-resource.html)  |  [ListTagsForResource](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_ListTagsForResource.html)  | 
+
+When you use the AppStream 2\.0 API, an AWS SDK, or AWS CLI actions to add, edit, remove, or list tags for an existing AppStream 2\.0 resource, specify the resource by using its Amazon Resource Name \(ARN\)\. An ARN uniquely identifies an AWS resource and uses the following general syntax\.
 
 ```
 arn:aws:appstream:region:account:resourceType/resourceName

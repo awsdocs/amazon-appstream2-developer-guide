@@ -6,9 +6,11 @@ The following are possible general issues you might have while using Amazon AppS
 + [SAML federation is not working\. The user is not authorized to view AppStream 2\.0 applications\.](#troubleshooting-13)
 + [After federating from an ADFS portal, my streaming session doesn't start\. I am getting the error "Sorry connection went down"\.](#troubleshooting-adfs-upn)
 + [I get an invalid redirect URI error\.](#troubleshooting-14)
++ [My image builders and fleets never reach the running state\. My DNS servers are in a Simple AD directory\.](#fleets-image-builders-dont-run-simple-ad)
 + [My stack's home folders aren't working correctly\.](#troubleshooting-s3-failures)
 + [My users can't access their home folder directory from one of our applications\.](#alternate-path-accessing-home-folders)
 + [I've enabled application settings persistence for my users, but their persistent application settings aren't being saved or loaded\.](#app-settings-save-load-failure)
++ [I've enabled app settings persistence for my users, but for certain streaming apps, my users’ passwords aren’t persisting across sessions\.](#app-settings-passwords-not-persisting)
 + [Google Chrome data is filling the VHD file that contains my users' persistent application settings\. This is preventing their settings from persisting\. How can I manage the Chrome profile?](#chrome-filling-up-app-settings-VHD)
 + [My users can’t copy and paste between their local device and their streaming session\.](#copy-paste-doesnt-work)
 + [Some keyboard shortcuts aren’t working for users during their streaming sessions\.](#keyboard-shortcuts-dont-work)
@@ -24,6 +26,12 @@ Set the claim rule's **Incoming Claim Type** for the **NameID** SAML attribute t
 ## I get an invalid redirect URI error\.<a name="troubleshooting-14"></a>
 
 This error occurs due to a malformed or invalid AppStream 2\.0 stack relay state URL\. Make sure that the relay state configured in your federation setup is the same as the stack relay state that is displayed in the stack details through the AppStream 2\.0 console\. If they are the same and the problem still persists, contact AWS Support\. For more information, see [Single Sign\-on Access to AppStream 2\.0 Using SAML 2\.0](external-identity-providers.md)\.
+
+## My image builders and fleets never reach the running state\. My DNS servers are in a Simple AD directory\.<a name="fleets-image-builders-dont-run-simple-ad"></a>
+
+AppStream 2\.0 relies on the DNS servers within your VPC to return a non\-existent domain \(NXDOMAIN\) response for local domain names that don’t exist\. This enables the AppStream 2\.0\-managed network interface to communicate with the management servers\. 
+
+When you create a directory with Simple AD, AWS Directory Service creates two domain controllers that also function as DNS servers on your behalf\. Because the domain controllers don't provide the NXDOMAIN response, they can't be used with AppStream 2\.0\.
 
 ## My stack's home folders aren't working correctly\.<a name="troubleshooting-s3-failures"></a>
 
@@ -56,6 +64,14 @@ To resolve this issue, follow these steps:
      If you can’t delete this directory, identify the file in the directory that is preventing it from being deleted and the application that created the file\. Then contact the application vendor for information about how to change the file permissions or move the file\.
 
      If you can delete this directory, contact AWS Support for further guidance to resolve this issue\.
+
+## I've enabled app settings persistence for my users, but for certain streaming apps, my users’ passwords aren’t persisting across sessions\.<a name="app-settings-passwords-not-persisting"></a>
+
+This issue occurs when:
++ Users are streaming applications such as Microsoft Outlook, which use the [Microsoft Data Protection API](https://docs.microsoft.com/en-us/windows/desktop/seccng/cng-dpapi)\.
++ App settings persistence is enabled for streaming instances that are not joined to Active Directory domains\. 
+
+In cases where a streaming instance is not joined to an Active Directory domain, the Windows user, PhotonUser, is different on each fleet instance\. Due to the way in which the DPAPI security model works, users' passwords don’t persist for applications that use DPAPI in this scenario\. In cases where streaming instances are joined to an Active Directory domain and the user is a domain user, the Windows user name is that of the logged in user, and users’ passwords persist for applications that use DPAPI\.
 
 ## Google Chrome data is filling the VHD file that contains my users' persistent application settings\. This is preventing their settings from persisting\. How can I manage the Chrome profile?<a name="chrome-filling-up-app-settings-VHD"></a>
 

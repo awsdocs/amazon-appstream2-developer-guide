@@ -1,0 +1,5 @@
+# AppStream 2\.0 Compliance<a name="compliance"></a>
+
+The AWS Health Insurance Portability and Accountability Act \(HIPAA\) compliance program includes Amazon AppStream 2\.0 as a HIPAA Eligible Service\. If you have an executed Business Associate Addendum \(BAA\) with AWS, you can use AppStream 2\.0 to help build your HIPAA\-compliant applications\. For more information, see the following resources\.
++ [HIPAA Compliance](https://aws.amazon.com/compliance/hipaa-compliance/) — Provides general information and answers to frequently asked questions about HIPAA compliance on AWS\.
++ [Architecting for HIPAA Security and Compliance on Amazon Web Services](https://d0.awsstatic.com/whitepapers/compliance/AWS_HIPAA_Compliance_Whitepaper.pdf) — Provides information about how to use AWS to create HIPAA\-compliant applications\. The paper focuses on the HIPAA Privacy and Security Rules for protecting Protected Health Information \(PHI\), how to use AWS to encrypt data in transit and at rest, and how AWS features can be used to meet HIPAA requirements for auditing, back\-ups, and disaster recovery\. 

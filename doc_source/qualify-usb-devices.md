@@ -24,7 +24,7 @@ To qualify your USB devices so that they can be used with streaming applications
 
 1. Choose **File**, **Open**, and open the following file: C:\\ProgramData\\Amazon\\Photon\\DCV\\usb\_device\_whitelist\.txt\. You can also whitelist an entire category of devices or all devices from a specific manufacturer by using wildcard expressions in the usb\_device\_whitelist\.txt file\. 
 
-1. Copy the filter string from your local computer to the image builder, add it to **usb\_device\_whitelist\.txt**, and save the file\. 
+1. Copy the filter string from your local computer to the image builder, add it to **usb\_device\_whitelist\.txt**, and save the file\. You can configure USB devices to connect automatically when a new streaming session starts\. By default, this feature is disabled for all USB devices\. To enable this feature, append ",1" at the end of the filter string that you copy for a device\. 
 
 1. Disconnect from your image builder, restart it, and reconnect to it by using the AppStream 2\.0 client application\. 
 

@@ -23,6 +23,10 @@ After you launch an image builder and it is running, your account may incur nomi
 1. For **Step 2: Configure Image Builder**, configure the image builder by accepting the default values or providing inputs for the following fields:   
 **Name**  
 Type a unique name identifier for the image builder\.  
+**Display name \(optional\)**  
+Type a name to display for the image builder \(maximum of 100 characters\)\.  
+**Tags \(optional\)**  
+Choose **Add Tag**, and type the key and value for the tag\. To add more tags, repeat this step\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.  
 **Instance Type**  
 Select the instance type for the image builder\. Choose a type that matches the performance requirements of the applications that you plan to install\. For more information, see [AppStream 2\.0 Instance Families](instance-types.md)\.  
 **AppStream 2\.0 Agent **  
@@ -43,8 +47,6 @@ You can enable automatic updates of the AppStream 2\.0 agent by creating a new i
 1. After you finish reviewing the configuration details, choose **Launch**\. If an error message notifies you that you don’t have sufficient limits to create the image builder, submit a limit increase request through the AWS Support Center\. For more information, see [Amazon AppStream 2\.0 Service Limits](limits.md)\.
 
 1. During the image builder creation process, the status of the image builder displays as **Pending **while AppStream 2\.0 prepares the necessary resources\. Click the **Refresh** icon periodically to update the image builder status\. After the status changes to** Running**, the image builder is ready to use and you can create a custom image\.
-
-   Optionally, you can apply one or more tags to help manage the image builder\. Choose **Tags**, choose **Add/Edit Tags**, choose **Add Tag**, specify the key and value for the tag, and then choose **Save**\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.
 
 **Next Steps**
 

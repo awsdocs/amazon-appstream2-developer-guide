@@ -11,6 +11,7 @@ Available images are listed in the **Image Registry** in the AppStream 2\.0 cons
 + [Copy an Image That You Own to Another AWS Region](#copy-image-different-region)
 + [Share an Image That You Own With Another AWS Account](#share-image-with-another-account)
 + [Stop Sharing an Image That You Own](#stop-sharing-image-with-all-accounts)
++ [Keep Your AppStream 2\.0 Image Up\-to\-Date](#keep-image-updated)
 
 ## Delete a Private Image<a name="delete-private-image"></a>
 
@@ -120,3 +121,14 @@ Follow these steps to stop sharing an image that you own with any other AWS acco
 1. In the **Edit image permissions** dialog box, in the row for all AWS accounts that the image is shared with, choose the X icon to the right of the **Use for fleet **option\.
 
 1. Choose **Update image sharing permissions**\.
+
+## Keep Your AppStream 2\.0 Image Up\-to\-Date<a name="keep-image-updated"></a>
+
+AppStream 2\.0 provides an automated way to update your image builder with newer AppStream 2\.0 agent software\. Doing so enables you to create a new image whenever a new version of the agent is released\. You can then test the image before updating your production fleets\. For more information about how to manage the AppStream 2\.0 agent software, see [Manage AppStream 2\.0 Agent Versions](base-images-agent.md)\. 
+
+You are responsible for installing and maintaining the updates for the Windows operating system, your applications, and their dependencies\. To keep your AppStream 2\.0 image updated with the latest Windows operating system updates, do one of the following:
++ Install your applications on the latest base image each time a new image is released\.
++ Install the updates for the Windows operating system, your applications, and their dependencies on an existing image builder\.
++ Install the updates for the Windows operating system, your applications, and their dependencies on a new image builder from an existing image\.
+
+After you create a new image with the latest Windows operating system, applications and their dependencies, and the AppStream 2\.0 agent software, test the image on a development fleet\. After you verify that your applications work as expected, update your production fleet with the new image\.

@@ -4,7 +4,12 @@ Persistent application settings are saved to a Virtual Hard Disk \(VHD\) file\. 
 
 When the streaming session ends, the VHD is unmounted and uploaded to an Amazon S3 bucket within your account\. The bucket is created when you enable persistent application settings for the first time for a stack in an AWS Region\. The bucket is unique to your AWS account and the Region\. The VHD is encrypted in transit using Amazon S3 SSL endpoints, and at rest using Amazon S3\-managed encryption keys\.
 
-The VHD is mounted to the streaming instance in both C:\\Users\\%username% and D:\\%username%\. If your instance is not joined to an Active Directory domain, the Windows user name is PhotonUser\. If your instance is joined to an Active Directory domain, the Windows user name is that of the logged in user\. AppStream 2\.0 automatically saves all files and folders in this path, except for the following folders:
+The VHD is mounted to the streaming instance in both C:\\Users\\%username% and D:\\%username%\. If your instance is not joined to an Active Directory domain, the Windows user name is PhotonUser\. If your instance is joined to an Active Directory domain, the Windows user name is that of the logged in user\. 
+
+**Important**  
+AppStream 2\.0 supports applications that rely on the [Microsoft Data Protection API](https://docs.microsoft.com/en-us/windows/desktop/seccng/cng-dpapi) only when the streaming instance is joined to a Microsoft Active Directory domain\. In cases where a streaming instance is not joined to an Active Directory domain, the Windows user, PhotonUser, is different on each fleet instance\. Due to the way in which the DPAPI security model works, users' passwords don’t persist for applications that use DPAPI in this scenario\. In cases where streaming instances are joined to an Active Directory domain and the user is a domain user, the Windows user name is that of the logged in user, and users’ passwords persist for applications that use DPAPI\.
+
+AppStream 2\.0 automatically saves all files and folders in this path, except for the following folders:
 + Contacts
 + Desktop
 + Documents

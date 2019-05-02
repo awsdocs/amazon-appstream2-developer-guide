@@ -10,3 +10,4 @@ Images that are available to you are listed in the **Image Registry** in the App
 + [AppStream 2\.0 Agent Version History](agent-software-versions.md)
 + [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)
 + [Administer Your Amazon AppStream 2\.0 Images](administer-images.md)
++ [Use Session Scripts to Manage Your AppStream 2\.0 Users' Streaming Experience](use-session-scripts.md)

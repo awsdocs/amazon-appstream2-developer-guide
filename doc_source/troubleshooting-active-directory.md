@@ -9,7 +9,6 @@ The following are possible issues you might have while setting up and using Acti
 + [My user Group Policy objects aren't applying successfully\.](#troubleshooting-active-directory-4)
 + [My AppStream 2\.0 streaming instances aren't joining the Active Directory domain\.](#troubleshooting-active-directory-5)
 + [User login is taking a long time to complete on a domain\-joined streaming session\.](#troubleshooting-active-directory-6)
-+ [The changes I made in the image builder aren't reflected in end user streaming sessions\.](#troubleshooting-active-directory-7)
 + [My users can't access a domain resource in a domain\-joined streaming session but they can access the resource from a domain\-joined image builder\.](#troubleshooting-active-directory-8)
 
 ## My image builders and fleet instances are stuck in the PENDING state\.<a name="troubleshooting-active-directory-1"></a>
@@ -70,19 +69,15 @@ If you were not able to manually join the EC2 instance to your domain, but were 
 
 ## User login is taking a long time to complete on a domain\-joined streaming session\.<a name="troubleshooting-active-directory-6"></a>
 
-AppStream 2\.0 performs a Windows login action after the end user provides their domain password, and then launches the application after successful authentication\. The login and launch time is impacted by many variables, such as network contention to the domain controllers or time taken to apply group policies to the streaming instance\. If domain authentication takes too long to complete, try the following actions\.
-+ Minimize the network latency from your AppStream 2\.0 region to your domain controllers by choosing the correct domain controllers\. For example, if your fleet is in us\-east\-1, use domain controllers with high bandwidth and low latency to us\-east\-1 through Active Directory Sites and Services zone mappings\. For more information, see [Active Directory Sites and Services](https://technet.microsoft.com/en-us/library/cc730868.aspx) in the Microsoft documentation\.
-+ Ensure that your group policies and user login scripts don't take prohibitively long to apply or execute\.
+AppStream 2\.0 performs a Windows login action after users provide their domain password\. After successful authentication, AppStream 2\.0 launches the application\. The login and launch times are impacted by many variables, such as network contention for the domain controllers or the time it takes to apply Group Policy settings to the streaming instance\. If domain authentication takes too long to complete, try performing the following actions\.
++ Minimize the network latency from your AppStream 2\.0 Region to your domain controllers by choosing the correct domain controllers\. For example, if your fleet is in us\-east\-1, use domain controllers with high bandwidth and low latency to us\-east\-1 through Active Directory Sites and Services zone mappings\. For more information, see [Active Directory Sites and Services](https://technet.microsoft.com/en-us/library/cc730868.aspx) in the Microsoft documentation\.
++ Ensure that your Group Policy settings and user login scripts don't take prohibitively long to apply or run\.
 
-If your login to AppStream 2\.0 fails after 3 minutes with a message "An unknown error occurred," validate that your group policies are not restricting third\-party credential providers\. There are two policies that block AppStream 2\.0 from authenticating your domain users:
-+ **Computer Configuration > Administrative Templates > Windows Components > Windows Logon Options > Disable or Enable software Secure Attention Sequence** — This policy should be set to **Enabled** for **Services**\.
+If your login to AppStream 2\.0 fails with the message "An unknown error occurred," verify the configuration of the following Group Policy settings\. If required, update these settings as follows so that they don't block AppStream 2\.0 from authenticating and logging in your domain users\.
++ **Computer Configuration > Administrative Templates > Windows Components > Windows Logon Options > Disable or Enable software Secure Attention Sequence** — Set this to **Enabled** for **Services**\.
 + **Computer Configuration > Administrative Templates > System > Logon > Exclude credential providers** — Ensure that the following CLSID is *not* listed: `e7c1bab5-4b49-4e64-a966-8d99686f8c7c`
-
-## The changes I made in the image builder aren't reflected in end user streaming sessions\.<a name="troubleshooting-active-directory-7"></a>
-
-User\-specific settings in the image builder are saved in the specific user profile, and do not persist to the streaming instances\. Examples include drive mounting, wallpaper changes, browser customizations, or Internet Explorer customizations\. You need to manage these settings using the Microsoft Active Directory Group Policy settings that are applied to the OUs under which your streaming instances are created\. 
-
-To quickly test whether your Group Policy settings are applied to the end user, connect to your image builder, login as a domain user and test the experience\. For more information, see [Group Policy for Beginners](https://technet.microsoft.com/en-us/library/hh147307.aspx) in the Microsoft documentation\.
++ **Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Security Options > Interactive Logon > Interactive Logon: Message text for users attempting to log on** — Set this to **Not defined**\.
++ **Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Security Options > Interactive Logon > Interactive Logon: Message title for users attempting to log on** — Set this to **Not defined**\.
 
 ## My users can't access a domain resource in a domain\-joined streaming session but they can access the resource from a domain\-joined image builder\.<a name="troubleshooting-active-directory-8"></a>
 

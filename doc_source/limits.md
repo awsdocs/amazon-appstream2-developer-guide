@@ -11,10 +11,12 @@ The following table lists the limits for each AppStream 2\.0 resource\. Where no
 | --- | --- | 
 | Stacks | 5 | 
 | Fleets | 5 | 
-| Fleet instances  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/limits.html)  | 
+| Fleet instances\* |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/limits.html)  | 
 | Image builder instances  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/limits.html)  | 
 | Images | 5 | 
 | Number of AWS accounts an image can be shared with | 100 | 
 | Concurrent image copies | 2 per destination Region | 
 | Image copies \(per month\) | 20 | 
 | Users in the user pool | 50 | 
+
+\*For fleet instances that have default internet access enabled, the limit is 100\. For information about enabling default internet access for a fleet, see [Enabling Internet Access Using a Public Subnet](managing-network-internet-default.md)\. 

@@ -20,11 +20,12 @@ Before you can stream your applications, you need to set up a stack, choose an i
 
 1. Choose **Get Started** if you are new to the console, or **Quick Links** from the left navigation menu\. Choose **Set up with sample apps**\.
 
-1. For **Step 1: Stack Details**, keep the default stack name or enter your own\. Optionally, you can provide the following: 
-   + **Display name** — Enter a name to display for the stack \(maximum of 100 characters\)\.
+1. For **Step 1: Stack Details**, keep the default stack name or enter your own\. Optionally, you can specify the following: 
+   + **Display name** — Type a name to display for the stack \(maximum of 100 characters\)\.
    + **Description**— Keep the default description or enter your own \(maximum of 256 characters\)\.
    + **Redirect URL** — Specify a URL to which users are redirected after their streaming sessions end\.
    + **Feedback URL** — Specify a URL to which users are redirected after they click the Send Feedback link to submit feedback about their application streaming experience\. If you do not specify a URL, this link is not displayed\.
+   + **Tags** — Choose **Add Tag**, and type the key and value for the tag\. To add more tags, repeat this step as needed\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.
 
 1.  Choose **Next**\.
 
