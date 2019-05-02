@@ -66,11 +66,10 @@ After you download the AppStream 2\.0 client installation files, run the followi
 To run this script, you must be logged into the applicable computer with the local **Administrator** account\. You can also run the script remotely under the **System** account on startup\.
 
 ```
-$ArgumentList = '/i AmazonAppStreamClientSetup_<version>.msi /quiet'
-Start-Process msiexec.exe -Wait -ArgumentList $ArgumentList
+Start-Process msiexec.exe -Wait -ArgumentList '/i AmazonAppStreamClientSetup_<version>.msi /quiet'
+ $ArgumentList
 
-Start-Process AmazonAppStreamUsbDriverSetup_<version>.exe ` 
--Wait -ArgumentList '/quiet'
+Start-Process AmazonAppStreamUsbDriverSetup_<version>.exe -Wait -ArgumentList '/quiet'
 ```
 
 ## Configure the AppStream 2\.0 Client for Your Users<a name="configure-client"></a>
