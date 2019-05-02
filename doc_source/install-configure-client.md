@@ -52,7 +52,7 @@ If you plan to download and install the client for your users, first download th
 
 To install and configure the AppStream 2\.0 client for your users, download the installation files\.
 
-1. Download the Enterprise Deployment Tool from [AppStream 2\.0 supported clients\.](https://clients.amazonappstream.com)
+1. Download the Enterprise Deployment Tool from [AppStream 2\.0 Enterprise Deployment Tool\.](https://clients.amazonappstream.com/installers/windows/AmazonAppStreamClient_EnterpriseSetup_1.0.320.zip)
 
 1. Navigate to the location where you downloaded the tool, right\-click the **AmazonAppStreamClient\_EnterpriseSetup\_<version>** folder, and choose **Extract All**\. The folder contains the following two installation programs:
    + AmazonAppStreamClientSetup\_<version>\.msi
@@ -66,11 +66,11 @@ After you download the AppStream 2\.0 client installation files, run the followi
 To run this script, you must be logged into the applicable computer with the local **Administrator** account\. You can also run the script remotely under the **System** account on startup\.
 
 ```
-Start-Process msiexec.exe -Wait -ArgumentList '/i 
-AmazonAppStreamClientSetup_<version>.msi /quiet'
+$ArgumentList = '/i AmazonAppStreamClientSetup_<version>.msi /quiet'
+Start-Process msiexec.exe -Wait -ArgumentList $ArgumentList
 
-Start-Process AmazonAppStreamUsbDriverSetup_<version>.exe -Wait -ArgumentList
-'/quiet'
+Start-Process AmazonAppStreamUsbDriverSetup_<version>.exe ` 
+-Wait -ArgumentList '/quiet'
 ```
 
 ## Configure the AppStream 2\.0 Client for Your Users<a name="configure-client"></a>
