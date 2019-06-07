@@ -12,8 +12,3 @@ The following topics provide information to help you and your users install and 
 **Topics**
 + [System Requirements and AppStream 2\.0 Feature Support](client-system-requirements-feature-support.md)
 + [Install and Configure the AppStream 2\.0 Client](install-configure-client.md)
-+ [Qualify USB Devices for Use with Streaming Applications](qualify-usb-devices.md)
-+ [Use the AppStream 2\.0 Client to Start a Streaming Session](use-client-start-streaming-session.md)
-+ [Share a USB Device with an AppStream 2\.0 Streaming Session](share-usb-devices-with-session.md)
-+ [Redirect a Streaming Session from the Web Browser to the AppStream 2\.0 Client](redirect-streaming-session-from-web-to-client.md)
-+ [AppStream 2\.0 Client Version History](client-release-versions.md)

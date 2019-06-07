@@ -25,7 +25,7 @@ C:\\\\Scripts\\\\Myscript\.bat
 If you don't use a double backslash, an error displays to notify you that the \.json file is incorrectly formatted\.
 
 **Note**  
-When your scripts complete successfully, they must return a value of 0\. If your scripts return a value other than 0, AppStream 2\.0 will display the error message to the user\. 
+When your scripts complete successfully, they must return a value of 0\. If your scripts return a value other than 0, AppStream 2\.0 displays the error message to the user\. 
 
 When you run scripts before streaming sessions begin and the AppStream 2\.0 dynamic application framework is not enabled, the following process occurs:
 
@@ -188,7 +188,7 @@ The session scripts to run in the appropriate session event based on the name of
 The maximum duration of the session scripts in seconds\.  
 **Type**: Integer  
 **Required**: No  
-**Constraints:** The maximum duration is 60 seconds\. If the session scripts don't complete within this duration, they continue to run\. However, the session actions continue processing\.
+**Constraints:** The maximum duration is 60 seconds\. If the session scripts don't complete within this duration, they will be stopped\. If you require a script to continue running, launch it as a separate process\.
 
 ***Executables***  
 The details for the session scripts to run\.  

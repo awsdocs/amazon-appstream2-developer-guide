@@ -29,9 +29,8 @@ AppStream 2\.0 users' devices require outbound access on port 443 \(TCP\), and i
 
 ## Whitelisted Domains<a name="whitelisted_ports"></a>
 
-For AppStream 2\.0 users to access streaming instances, you must whitelist the following domains on the network from which users initiate access to the streaming instances\.
+For AppStream 2\.0 users to access streaming instances, you must whitelist the following domain on the network from which users initiate access to the streaming instances\.
 + Session Gateway: \*\.amazonappstream\.com
-+ CloudFront: \*\.cloudfront\.net
 
 One or more of the following domains must be whitelisted to enable user authentication\. You must whitelist the domains that correspond to the Regions where AppStream 2\.0 is deployed\. 
 

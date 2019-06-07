@@ -9,7 +9,11 @@ The following topics describe how to install and configure the AppStream 2\.0 cl
 **Topics**
 + [Have Your Users Install the AppStream 2\.0 Client Themselves](#user-install-client)
 + [Install the AppStream 2\.0 Client for Your Users](#install-client-configure-settings)
-+ [Configure the AppStream 2\.0 Client for Your Users](#configure-client)
++ [Qualify USB Devices for Use with Streaming Applications](qualify-usb-devices.md)
++ [Use the AppStream 2\.0 Client to Start a Streaming Session](use-client-start-streaming-session.md)
++ [Share a USB Device with an AppStream 2\.0 Streaming Session](share-usb-devices-with-session.md)
++ [Redirect a Streaming Session from the Web Browser to the AppStream 2\.0 Client](redirect-streaming-session-from-web-to-client.md)
++ [AppStream 2\.0 Client Version History](client-release-versions.md)
 
 ## Have Your Users Install the AppStream 2\.0 Client Themselves<a name="user-install-client"></a>
 
@@ -52,7 +56,7 @@ If you plan to download and install the client for your users, first download th
 
 To install and configure the AppStream 2\.0 client for your users, download the installation files\.
 
-1. Download the Enterprise Deployment Tool from [AppStream 2\.0 supported clients\.](https://clients.amazonappstream.com)
+1. On the bottom right of the [AppStream 2\.0 supported clients](https://clients.amazonappstream.com) page, select the **Enterprise Deployment Tool** link\. This link opens a \.zip file that contains the required files for the latest version of the tool\.
 
 1. Navigate to the location where you downloaded the tool, right\-click the **AmazonAppStreamClient\_EnterpriseSetup\_<version>** folder, and choose **Extract All**\. The folder contains the following two installation programs:
    + AmazonAppStreamClientSetup\_<version>\.msi
@@ -66,12 +70,12 @@ After you download the AppStream 2\.0 client installation files, run the followi
 To run this script, you must be logged into the applicable computer with the local **Administrator** account\. You can also run the script remotely under the **System** account on startup\.
 
 ```
-Start-Process msiexec.exe -Wait -ArgumentList '/i AmazonAppStreamClientSetup_<version>.msi /quiet'
+Start-Process msiexec.exe -Wait -ArgumentList  '/i AmazonAppStreamClientSetup_<version>.msi /quiet'
 
-Start-Process AmazonAppStreamUsbDriverSetup_<version>.exe -Wait -ArgumentList '/quiet'
+Start-Process AmazonAppStreamUsbDriverSetup_<version>.exe -Wait -ArgumentList  '/quiet'
 ```
 
-## Configure the AppStream 2\.0 Client for Your Users<a name="configure-client"></a>
+### Configure the AppStream 2\.0 Client for Your Users<a name="configure-client"></a>
 
 Before your users can start using the AppStream 2\.0 client, they must accept the End\-User License Agreement \(EULA\) and choose whether to enable diagnostic logging and USB driver updates\. Alternatively, you can define these preferences on behalf of your users\. By default, when users open the AppStream 2\.0 client, they can only enter URLs that include the AppStream 2\.0 domain\. However, you can set custom URLs by using the **StartUrl** registry value\. For example, you can set this value to the URL for your organization's login portal\. That way, users can sign into AppStream 2\.0 by using their existing credentials\. 
 
@@ -89,11 +93,11 @@ The values are case\-sensitive\.
 | USBDriverOptIn | HKCU\\Software\\Amazon\\Appstream Client | String | Set this value to true to enable AppStream 2\.0 to automatically update the USB driver that is used to pass USB drivers to AppStream 2\.0\. | true / false | 
 | StartUrl | HKLM\\Software\\Amazon\\Appstream Client | String | Set this value to a URL that is pre\-populated when your users open the AppStream 2\.0 client\. The URL must use a certificate that is trusted by the device\. The certificate must contain a Subject Alternative Name \(SAN\) that includes the URL's domain name\. | Valid URL \(for example, https://www\.example\.com\) | 
 
-### Configure the AppStream 2\.0 Client through Group Policy<a name="configure-client-with-adm-template-group-policy"></a>
+#### Configure the AppStream 2\.0 Client through Group Policy<a name="configure-client-with-adm-template-group-policy"></a>
 
 You can use the ADM template that is provided in the AppStream 2\.0 client Enterprise Deployment Tool to configure the client through Group Policy\. To learn how to load ADM templates into the Group Policy Management Console, see [Recommendations for managing Group Policy administrative template \(\.adm\) files](https://support.microsoft.com/en-us/help/816662/recommendations-for-managing-group-policy-administrative-template-adm) in the Microsoft documentation\.
 
-### Run a PowerShell Script to Create Registry Keys and Set User Preferences<a name="create-regkeys-configure-user-preference-settings"></a>
+#### Run a PowerShell Script to Create Registry Keys and Set User Preferences<a name="create-regkeys-configure-user-preference-settings"></a>
 
 To create the registry keys and set values for user preferences for the AppStream 2\.0 client, run the following PowerShell script\.
 
@@ -109,7 +113,7 @@ New-ItemProperty -Path $registryPath -Name "DiagnosticInfoCollectionAllowed" -Va
 New-ItemProperty -Path $registryPath -Name "USBDriverOptIn" -Value "true" -PropertyType String -Force | Out-Null
 ```
 
-### Run a PowerShell Script to Set the Start URL<a name="set-start-url"></a>
+#### Run a PowerShell Script to Set the Start URL<a name="set-start-url"></a>
 
 To set a start URL, run the following PowerShell script\. Replace the **StartUrl** value with a URL for your identity provider \(IdP\)\. The URL must use a certificate that is trusted by the device\. The certificate must contain a SAN that includes the URL's domain name\.
 

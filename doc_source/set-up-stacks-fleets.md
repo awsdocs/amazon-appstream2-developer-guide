@@ -37,11 +37,15 @@ Set up and create a fleet from which user applications are launched and streamed
 
    1. For **Fleet type**, choose the fleet type that suits your use case\. The fleet type determines its immediate availability and how you pay for it\.
 
-   1. For **Maximum session duration** — Choose the maximum amount of time that a streaming session can remain active\. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected\. After this time elapses, the instance is terminated and replaced by a new instance\.
+   1. For **Maximum session duration in minutes** — Choose the maximum amount of time that a streaming session can remain active\. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected\. After this time elapses, the instance is terminated and replaced by a new instance\.
 
-   1. For **Disconnect timeout**, choose the time that a streaming session should remain active after users disconnect\. If users try to reconnect to the streaming instance after a disconnection or network interruption within this time interval, they are connected to the previous session\. Otherwise, they are connected to a new session with a new instance\. If you associate a stack with a fleet for which a redirect URL is specified, after users’ streaming sessions end, the users are redirected to that URL\.
+   1. For **Disconnect timeout in minutes**, choose the amount of time that a streaming session remains active after users disconnect\. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session\. Otherwise, they are connected to a new session with a new streaming instance\. If you associate a stack with a fleet for which a redirect URL is specified, after users’ streaming sessions end, the users are redirected to that URL\.
 
       If a user ends the session by choosing **End Session** on the streaming session toolbar, the disconnect timeout does not apply\. Instead, the user is prompted to save any open documents, and then immediately disconnected from the streaming instance\. The instance the user was using is then terminated\. 
+
+   1. For **Idle disconnect timeout in minutes**, choose the amount of time that users can be idle \(inactive\) before they are disconnected from their streaming session and the **Disconnect timeout in minutes** time interval begins\. Users are notified before they are disconnected due to inactivity\. If they try to reconnect to the streaming session before the time interval specified in **Disconnect timeout in minutes** has elapsed, they are connected to their previous session\. Otherwise, they are connected to a new session with a new streaming instance\. Setting this value to 0 disables it\. When this value is disabled, users are not disconnected due to inactivity\.
+**Note**  
+Users are considered idle when they stop providing keyboard or mouse input during their streaming session\. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity\. If users continue to be idle after the time interval in **Idle disconnect timeout in minutes** elapses, they are disconnected\. 
 
    1. For **Minimum capacity**, choose a minimum number of instances for your fleet based on the minimum number of expected concurrent users\.
 
