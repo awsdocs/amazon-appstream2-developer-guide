@@ -43,7 +43,7 @@ If your AppStream 2\.0 environment includes applications that render elements, y
 
 1. On the image builder desktop, open Image Assistant\.
 
-1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
 ## I need to persist environment variables across my fleet instances\.<a name="troubleshooting-persist-environment-variables"></a>
 

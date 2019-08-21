@@ -1,4 +1,4 @@
-# Amazon AppStream 2.0 Developer Guide
+# Amazon AppStream 2.0 Administration Guide
 
 -----
 *****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
@@ -18,7 +18,12 @@ Amazon's trademarks and trade dress may not be used in
 + [Setting Up for Amazon AppStream 2.0](setting-up.md)
 + [Get Started with Amazon AppStream 2.0: Set Up With Sample Applications](getting-started.md)
 + [Networking, Access, and Security for Amazon AppStream 2.0](managing-network.md)
-   + [User Connections to Amazon AppStream 2.0](appstream2-port-requirements-users.md)
+   + [User Connections to Amazon AppStream 2.0](user-connections-to-appstream2.md)
+      + [Bandwidth Recommendations](bandwidth-recommendations-user-connections.md)
+      + [Ports for AppStream 2.0 User Devices](client-application-ports.md)
+      + [Whitelisted Domains](whitelisted_ports.md)
+      + [Creating and Streaming From Interface VPC Endpoints](creating-streaming-from-interface-vpc-endpoints.md)
+   + [Access AppStream 2.0 API Operations and CLI Commands Through an Interface VPC Endpoint](access-api-cli-through-interface-vpc-endpoint.md)
    + [Amazon AppStream 2.0 Connections to Your VPC](appstream2-port-requirements-appstream2.md)
    + [Enabling Internet Access Using a Public Subnet](managing-network-internet-default.md)
    + [Enabling Internet Access Using a NAT Gateway](managing-network-internet-manual.md)
@@ -31,8 +36,9 @@ Amazon's trademarks and trade dress may not be used in
    + [Default Application and Windows Settings and Application Launch Performance](customizing-appstream-images.md)
    + [Manage AppStream 2.0 Agent Versions](base-images-agent.md)
    + [AppStream 2.0 Agent Version History](agent-software-versions.md)
-   + [Tutorial: Create a Custom AppStream 2.0 Image](tutorial-image-builder.md)
+   + [Tutorial: Create a Custom AppStream 2.0 Image by Using the AppStream 2.0 Console](tutorial-image-builder.md)
    + [Administer Your Amazon AppStream 2.0 Images](administer-images.md)
+   + [Create Your AppStream 2.0 Image Programmatically by Using the Image Assistant CLI Operations](programmatically-create-image.md)
    + [Use Session Scripts to Manage Your AppStream 2.0 Users' Streaming Experience](use-session-scripts.md)
 + [Fleets and Stacks](managing-stacks-fleets.md)
    + [AppStream 2.0 Instance Families](instance-types.md)
@@ -77,7 +83,8 @@ Amazon's trademarks and trade dress may not be used in
          + [Use the AppStream 2.0 Client to Start a Streaming Session](use-client-start-streaming-session.md)
          + [Share a USB Device with an AppStream 2.0 Streaming Session](share-usb-devices-with-session.md)
          + [Redirect a Streaming Session from the Web Browser to the AppStream 2.0 Client](redirect-streaming-session-from-web-to-client.md)
-         + [AppStream 2.0 Client Version History](client-release-versions.md)
+         + [Enable File System Redirection for Your AppStream 2.0 Users](enable-file-system-redirection.md)
+      + [AppStream 2.0 Client Version History](client-release-versions.md)
    + [Touchscreen Devices](using-touchscreen-devices.md)
 + [Tagging Your Amazon AppStream 2.0 Resources](tagging-basic.md)
 + [Monitoring and Reporting](configure-monitoring-reporting.md)

@@ -12,6 +12,7 @@ Available images are listed in the **Image Registry** in the AppStream 2\.0 cons
 + [Share an Image That You Own With Another AWS Account](#share-image-with-another-account)
 + [Stop Sharing an Image That You Own](#stop-sharing-image-with-all-accounts)
 + [Keep Your AppStream 2\.0 Image Up\-to\-Date](#keep-image-updated)
++ [Programmatically Create a New Image](#create-image-programmatically)
 
 ## Delete a Private Image<a name="delete-private-image"></a>
 
@@ -132,3 +133,7 @@ You are responsible for installing and maintaining the updates for the Windows o
 + Install the updates for the Windows operating system, your applications, and their dependencies on a new image builder from an existing image\.
 
 After you create a new image with the latest Windows operating system, applications and their dependencies, and the AppStream 2\.0 agent software, test the image on a development fleet\. After you verify that your applications work as expected, update your production fleet with the new image\.
+
+## Programmatically Create a New Image<a name="create-image-programmatically"></a>
+
+You can create AppStream 2\.0 images programmatically by connecting to an image builder and using the Image Assistant command line interface \(CLI\) operations\. For more information, see [Create Your AppStream 2\.0 Image Programmatically by Using the Image Assistant CLI Operations](programmatically-create-image.md)\. 

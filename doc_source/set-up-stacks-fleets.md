@@ -2,7 +2,7 @@
 
 To stream your applications, Amazon AppStream 2\.0 requires an environment that includes a fleet that is associated with a stack, and at least one application image\. This tutorial describes the steps to set up a fleet and stack, and how to give users access to the stack\. If you haven't already done so, we recommend that you try the procedures in [Get Started with Amazon AppStream 2\.0: Set Up With Sample Applications](getting-started.md) first\.
 
-If you want to create an image to use, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
+If you want to create an image to use, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
 If you plan to join a fleet to an Active Directory domain, configure your Active Directory domain before completing the following steps\. For more information, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.
 
@@ -75,13 +75,17 @@ Set up and create a stack to control access to your fleet\.
 
 1. In the left navigation pane, choose **Stacks**, and then choose **Create Stack**\.
 
-1. For **Step 1: Stack Details**, type a unique name identifier for the stack Optionally, you can specify the following:
+1. For **Step 1: Stack Details**, Under **Stack details**, type a unique name identifier for the stack\. Optionally, you can specify the following:
    + **Display name** — Type a name to display for the stack \(maximum of 100 characters\)\.
    + **Description**— Type a description for the stack \(maximum of 256 characters\)\.
    + **Redirect URL** — Specify a URL to which users are redirected after their streaming sessions end\.
    + **Feedback URL** — Specify a URL to which users are redirected after they click the **Send Feedback** link to submit feedback about their application streaming experience\. If you do not specify a URL, this link is not displayed\.
    + **Fleet** — Select an existing fleet or create a new one to associate with your stack\.
    + **Tags** — Choose **Add Tag**, and type the key and value for the tag\. To add more tags, repeat this step\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.
+
+1. For **Step 1: Stack Details**, under **Network Access Endpoints \(Optional\)**, you can create a private link, which is an [interface VPC endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html) \(interface endpoint\), in your virtual private cloud \(VPC\)\. To start creating the interface endpoint, select ** Create PrivateLink**\. Selecting this link opens the VPC console\. To finish creating the endpoint, follow steps 3 through 6 in *To create an interface endpoint*, in [Creating and Streaming From Interface VPC Endpoints](creating-streaming-from-interface-vpc-endpoints.md)\. 
+
+   After you create the interface endpoint, you can use it to keep streaming traffic within your VPC\.
 
 1. Choose **Next\.**
 
@@ -99,8 +103,10 @@ After you select **Enable OneDrive**, type the name of least one organizational 
 1. For **Step 3: User Settings**, select the ways in which your users can transfer data between their streaming session and their local device\. Then, choose whether to enable application settings persistence\. When you're done, choose **Review**\. 
 
    **Clipboard, file transfer, and print to local device permissions options**:
-   + **Clipboard** — By default, users can copy and paste data between their local device and streaming applications\. You can limit Clipboard options so that users can paste data to their remote streaming session only or copy data to their local device only\. You can also disable Clipboard options entirely\. Note that users can still copy and paste between applications in their streaming session\.
+   + **Clipboard** — By default, users can copy and paste data between their local device and streaming applications\. You can limit Clipboard options so that users can paste data to their remote streaming session only or copy data to their local device only\. You can also disable Clipboard options entirely\. Users can still copy and paste between applications in their streaming session\.
    + **File transfer** — By default, users can upload and download files between their local device and streaming session\. You can limit file transfer options so that users can upload files to their streaming session only or download files to their local device only\. You can also disable file transfer entirely\. 
+**Important**  
+If your users require AppStream 2\.0 file system redirection to access local drives and folders during their streaming sessions, you must enable both file upload and download\. To use file system redirection, your users must have AppStream 2\.0 client version 1\.0\.480 or later installed\. For more information, see [Enable File System Redirection for Your AppStream 2\.0 Users](enable-file-system-redirection.md)\.
    + **Print to local device** — By default, users can print to their local device from within a streaming application\. When they choose **Print** in the application, they can download a \.pdf file that they can print to a local printer\. You can disable this option to prevent users from printing to a local device\.
 **Note**  
 These settings affect only whether users can use AppStream 2\.0 data transfer features\. If your image provides access to a browser, network printer, or other remote resource, your users might be able to transfer data to or from their streaming session in other ways\.

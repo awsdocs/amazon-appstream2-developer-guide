@@ -2,9 +2,17 @@
 
 The following are notification codes and resolution steps for notifications you may see while setting up and using Amazon AppStream 2\.0\. These notifications can be found in the **Notifications** tab in the AppStream 2\.0 console, after selecting an image builder or fleet\. Fleet notifications can also be obtained using the AppStream 2\.0 API operation [DescribeFleets](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DescribeFleets.html), or using the [describe\-fleets](https://docs.aws.amazon.com/cli/latest/reference/appstream/describe-fleets.html) CLI command\.
 
+## Active Directory Internal Service<a name="troubleshooting-notification-codes-ad-internal"></a>
+
+Following is a notification code and resolution steps for an internal service error that you might encounter while setting up and using Active Directory with Amazon AppStream 2\.0\. 
+
+**INTERNAL\_SERVICE\_ERROR**  
+**Message**: The user name or password is incorrect\.  
+**Resolution**: This error may occur when the computer object that was created in the Microsoft Active Directory domain for the resource was deleted or disabled\. You can resolve this error by enabling the computer object in the Active Directory domain, then starting the resource again\. You may also need to reset the computer object account in the Active Directory domain\. If you continue to encounter this error, contact AWS Support\. For more information, see [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.
+
 ## Active Directory Domain Join<a name="troubleshooting-notification-codes-ad"></a>
 
-The following are notification codes and resolution steps for codes you might encounter while setting up and using Active Directory with Amazon AppStream 2\.0\. 
+The following are notification codes and resolution steps for issues with domain join that you might encounter while setting up and using Active Directory with Amazon AppStream 2\.0\. 
 
 **DOMAIN\_JOIN\_ERROR\_ACCESS\_DENIED**  
 **Message**: Access is denied\.  
@@ -32,7 +40,7 @@ The following are notification codes and resolution steps for codes you might en
 
 **DOMAIN\_JOIN\_ERROR\_NO\_SUCH\_DOMAIN**  
 **Message**: The specified domain either does not exist or could not be contacted\.  
-**Resolution**: The streaming instance was unable to contact your Active Directory domain\. To ensure network connectivity, confirm your VPC, subnet, and security group settings\. For more information, see [My AppStream 2\.0 streaming instances aren't joining the Active Directory domain\.](troubleshooting-active-directory.md#troubleshooting-active-directory-5)\.
+**Resolution**: The streaming instance was unable to contact your Active Directory domain\. To ensure network connectivity, confirm your VPC, subnet, and security group settings\. For more information, see [My AppStream 2\.0 streaming instances aren't joining the Active Directory domain\.](troubleshooting-active-directory.md#troubleshooting-active-directory-5)
 
 **DOMAIN\_JOIN\_NERR\_WORKSTATION\_NOT\_STARTED**  
 **Message**: The Workstation service has not been started\.  

@@ -1,16 +1,25 @@
 # Document History for Amazon AppStream 2\.0<a name="doc-history"></a>
 + **API version:** 2016\-12\-01
 
-The following table describes important additions to the AppStream 2\.0 service \(including [AppStream 2\.0 base image](base-image-version-history.html), [AppStream 2\.0 agent](agent-software-versions.html), and [AppStream 2\.0 client ](client-release-versions.html) releases\) and to the *Amazon AppStream 2\.0 Developer Guide* documentation from June 4, 2018 onward\. We also update the documentation frequently to address the feedback that you send us\.
+The following table describes important additions to the AppStream 2\.0 service \(including [AppStream 2\.0 base image](base-image-version-history.html), [AppStream 2\.0 agent](agent-software-versions.html), and [AppStream 2\.0 client ](client-release-versions.html) releases\) and to the *Amazon AppStream 2\.0 Administration Guide* documentation from June 4, 2018 onward\. We also update the documentation frequently to address the feedback that you send us\.
 
 For notification about these updates, you can subscribe to the Amazon AppStream 2\.0 RSS feed\.
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Documentation update: AppStream 2\.0 file system redirection](https://docs.aws.amazon.com/appstream2/latest/developerguide/enable-file-system-redirection.html) | Created "Enable File System Redirection for Your AppStream 2\.0 Users" and updated other content as needed\. | August 20, 2019 | 
+| [Documentation update: Interface VPC Endpoints](https://docs.aws.amazon.com/appstream2/latest/developerguide/creating-streaming-from-interface-vpc-endpoints.html) | Created "Creating and Streaming From Interface VPC Endpoints\." Also created "Access AppStream 2\.0 API Operations and CLI Commands Through an Interface VPC Endpoint" and updated other content as needed\. | August 19, 2019 | 
+| [AppStream 2\.0 client update: version 1\.0\.480](https://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html) | Adds support for AppStream 2\.0 file system redirection | August 14, 2019 | 
+| [AppStream 2\.0 agent update](https://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html) | Adds support for AppStream 2\.0 file system redirection | August 8, 2019 | 
+| [Documentation update: Programmatic AppStream 2\.0 image creation](https://docs.aws.amazon.com/appstream2/latest/developerguide/programmatically-create-image-using-apis.html) | Created "Create Your AppStream 2\.0 Image Programmatically" and updated other content as needed\. | August 1, 2019 | 
+| [AppStream 2\.0 agent update](https://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html) | Adds support for creating AppStream 2\.0 images programmatically | July 26, 2019 | 
+| [Documentation update: Support for Windows Server 2016 and Windows Server 2019 base images](https://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html) | Updated "AppStream 2\.0 Base Image Version History" and other content as needed\. | June 28, 2019 | 
+| [AppStream 2\.0 agent update](https://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html) | Adds support for Windows Server 2016 and Windows Server 2019 base images\. | June 19, 2019 | 
+| [AppStream 2\.0 base image update ](https://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html) | Adds support for Windows Server 2016 and Windows Server 2019 | June 10, 2019 | 
 | [AppStream 2\.0 base image update ](https://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html) | Includes Microsoft Windows updates up to May 14, 2019 | May 28, 2019 | 
 | [Documentation update: AppStream 2\.0 Usage Reports](https://docs.aws.amazon.com/appstream2/latest/developerguide/configure-usage-reports.html) | Created "AppStream 2\.0 Usage Reports" and updated other content as needed\. | May 21, 2019 | 
 | [Documentation update: Support for disconnecting idle users](https://docs.aws.amazon.com/appstream2/latest/developerguide/set-up-stacks-fleets.html) | Updated "Create a Fleet" in "Create an AppStream 2\.0 Fleet and Stack\." | May 17, 2019 | 
-| [AppStream 2\.0 client update: version 1\.0\.407](https://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html) | Adds support for configuring the amount of time that users can be idle \(inactive\) before they are disconnected from their streaming session\.  | May 16, 2019 | 
+| [AppStream 2\.0 client update: version 1\.0\.407](https://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html) | Adds support for configuring the amount of time that users can be idle \(inactive\) before they are disconnected from their streaming session | May 16, 2019 | 
 | [AppStream 2\.0 agent update](https://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html) | Adds support for configuring the amount of time that users can be idle \(inactive\) before they are disconnected from their streaming session\. Also adds support for subscribing to AppStream 2\.0 usage reports\. | May 7, 2019 | 
 | [AppStream 2\.0 base image update ](https://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html) | Includes Microsoft Windows updates up to April 20, 2019; AWS CLI version 1\.16\.126; and NVIDIA Graphics Driver 412\.16 for Graphics Pro instances | April 29, 2019 | 
 | [Documentation update: Logging AppStream 2\.0 API Calls with AWS CloudTrail](https://docs.aws.amazon.com/appstream2/latest/developerguide/logging-using-cloudtrail.html) | Created "Logging AppStream 2\.0 API Calls with AWS CloudTrail\." | April 25, 2019 | 
@@ -43,7 +52,7 @@ For notification about these updates, you can subscribe to the Amazon AppStream 
 
 ## Earlier Updates<a name="earlier-doc-history"></a>
 
-The following table describes important additions to the AppStream 2\.0 service and the *Amazon AppStream 2\.0 Developer Guide* documentation before June 4, 2018\.
+The following table describes important additions to the AppStream 2\.0 service and the *Amazon AppStream 2\.0 Administration Guide* documentation before June 4, 2018\.
 
 **Note**  
 Individual AppStream 2\.0 base image and AppStream 2\.0 agent releases are not included in this table\. For information about these releases, see [AppStream 2\.0 Base Image Version History](base-image-version-history.md) and [AppStream 2\.0 Agent Version History](agent-software-versions.md)\.
@@ -69,4 +78,4 @@ Individual AppStream 2\.0 base image and AppStream 2\.0 agent releases are not i
 | [ Fleet management](managing-stacks-fleets.html) | Created "Amazon AppStream 2\.0 Fleets and Stacks" and updated other content as needed\. | February 22, 2017 | 
 | [ SAML 2\.0 support](external-identity-providers.html) | Created "Single Sign\-on Access to AppStream 2\.0 Using SAML 2\.0" and updated other content as needed\. | February 15, 2017 | 
 | [ Image builders](managing-image-builders.html) | Created "AppStream 2\.0 Image Builders" and updated other content as needed\. | January 19, 2017 | 
-| [ Initial documentation release](what-is-appstream.html) | Created the initial release of the Amazon AppStream 2\.0 Developer Guide\. | December 01, 2016 | 
+| [ Initial documentation release](what-is-appstream.html) | Created the initial release of the Amazon AppStream 2\.0 Administration Guide\. | December 01, 2016 | 

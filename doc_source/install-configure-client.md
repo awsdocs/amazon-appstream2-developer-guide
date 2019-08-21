@@ -13,7 +13,7 @@ The following topics describe how to install and configure the AppStream 2\.0 cl
 + [Use the AppStream 2\.0 Client to Start a Streaming Session](use-client-start-streaming-session.md)
 + [Share a USB Device with an AppStream 2\.0 Streaming Session](share-usb-devices-with-session.md)
 + [Redirect a Streaming Session from the Web Browser to the AppStream 2\.0 Client](redirect-streaming-session-from-web-to-client.md)
-+ [AppStream 2\.0 Client Version History](client-release-versions.md)
++ [Enable File System Redirection for Your AppStream 2\.0 Users](enable-file-system-redirection.md)
 
 ## Have Your Users Install the AppStream 2\.0 Client Themselves<a name="user-install-client"></a>
 
@@ -77,7 +77,7 @@ Start-Process AmazonAppStreamUsbDriverSetup_<version>.exe -Wait -ArgumentList  
 
 ### Configure the AppStream 2\.0 Client for Your Users<a name="configure-client"></a>
 
-Before your users can start using the AppStream 2\.0 client, they must accept the End\-User License Agreement \(EULA\) and choose whether to enable diagnostic logging and USB driver updates\. Alternatively, you can define these preferences on behalf of your users\. By default, when users open the AppStream 2\.0 client, they can only enter URLs that include the AppStream 2\.0 domain\. However, you can set custom URLs by using the **StartUrl** registry value\. For example, you can set this value to the URL for your organization's login portal\. That way, users can sign into AppStream 2\.0 by using their existing credentials\. 
+Before your users can start using the AppStream 2\.0 client, they must accept the End\-User License Agreement \(EULA\) and choose whether to enable diagnostic logging and USB driver updates\. Alternatively, you can define these preferences on behalf of your users\. By default, when users open the AppStream 2\.0 client, they can enter only URLs that include the AppStream 2\.0 domain\. However, you can set custom URLs by using the **StartUrl** registry value\. For example, you can set this value to the URL for your organization's login portal\. That way, users can sign into AppStream 2\.0 by using their existing credentials\. 
 
 The following table lists the registry values that you can use to customize the AppStream 2\.0 client experience for your users\. 
 
@@ -91,11 +91,14 @@ The values are case\-sensitive\.
 | AcceptedEULAVersion | HKCU\\Software\\Amazon\\Appstream Client | String | The version of EULA that is accepted\. If the current version of the AppStream 2\.0 client EULA is different than the version of the EULA that is accepted, users are prompted to accept the current version of the EULA\. | 1\.0 | 
 | DiagnosticInfoCollectionAllowed | HKCU\\Software\\Amazon\\Appstream Client | String | Set this value to true to enable AppStream 2\.0 to automatically send diagnostic logs from the AppStream 2\.0 client to AppStream 2\.0\. | true / false | 
 | USBDriverOptIn | HKCU\\Software\\Amazon\\Appstream Client | String | Set this value to true to enable AppStream 2\.0 to automatically update the USB driver that is used to pass USB drivers to AppStream 2\.0\. | true / false | 
+| HardwareRenderingEnabled | HKCU\\Software\\Amazon\\Appstream Client | String | Set this value to true to enable hardware rendering in the AppStream 2\.0 client\. | true / false | 
+| FileRedirectionCustomDefaultFolders | HKCU\\Software\\Amazon\\Appstream Client | String | Set this value to include at least one folder path for file system redirection\. Separate multiple folder paths by using '\|'\. By default, the following folder paths are specified: %USERPROFILE%\\Desktop\|%USERPROFILE%\\Documents\|%USERPROFILE%\\Downloads | Valid folder path | 
 | StartUrl | HKLM\\Software\\Amazon\\Appstream Client | String | Set this value to a URL that is pre\-populated when your users open the AppStream 2\.0 client\. The URL must use a certificate that is trusted by the device\. The certificate must contain a Subject Alternative Name \(SAN\) that includes the URL's domain name\. | Valid URL \(for example, https://www\.example\.com\) | 
+| AutoUpdateDisabled | HKLM\\Software\\Amazon\\Appstream Client | String | Set this value to true to disable automatic updates of the AppStream 2\.0 client\. | true / false | 
 
 #### Configure the AppStream 2\.0 Client through Group Policy<a name="configure-client-with-adm-template-group-policy"></a>
 
-You can use the ADM template that is provided in the AppStream 2\.0 client Enterprise Deployment Tool to configure the client through Group Policy\. To learn how to load ADM templates into the Group Policy Management Console, see [Recommendations for managing Group Policy administrative template \(\.adm\) files](https://support.microsoft.com/en-us/help/816662/recommendations-for-managing-group-policy-administrative-template-adm) in the Microsoft documentation\.
+You can use the ADM template that is provided in the AppStream 2\.0 client Enterprise Deployment Tool to configure the client through Group Policy\. To learn how to load ADM templates into the Group Policy Management Console, see [Recommendations for managing Group Policy administrative template \(\.adm\) files](https://support.microsoft.com/en-us/help/816662/recommendations-for-managing-group-policy-administrative-template-adm) in the Microsoft Support documentation\.
 
 #### Run a PowerShell Script to Create Registry Keys and Set User Preferences<a name="create-regkeys-configure-user-preference-settings"></a>
 
@@ -111,6 +114,8 @@ New-ItemProperty -Path $registryPath -Name "EULAAccepted" -Value "true" -Propert
 New-ItemProperty -Path $registryPath -Name "AcceptedEULAVersion" -Value "1.0" -PropertyType String -Force | Out-Null
 New-ItemProperty -Path $registryPath -Name "DiagnosticInfoCollectionAllowed" -Value "true" -PropertyType String -Force | Out-Null
 New-ItemProperty -Path $registryPath -Name "USBDriverOptIn" -Value "true" -PropertyType String -Force | Out-Null
+New-ItemProperty -Path $registryPath -Name "HardwareRenderingEnabled" -Value "true" -PropertyType String -Force | Out-Null
+New-ItemProperty -Path $registryPath -Name "FileRedirectionCustomDefaultFolders" -Value "%USERPROFILE%\Desktop|%USERPROFILE%\Documents|%USERPROFILE%\Downloads" -PropertyType String -Force | Out-Null
 ```
 
 #### Run a PowerShell Script to Set the Start URL<a name="set-start-url"></a>
@@ -125,4 +130,18 @@ $registryPath="HKLM:\Software\Amazon\AppStream Client"
 New-Item -Path "HKLM:\Software\Amazon" -Name "AppStream Client" -Force
 
 New-ItemProperty -Path $registryPath -Name "StartUrl" -Value "https://www.example.com" -PropertyType String -Force | Out-Null
+```
+
+#### Run a PowerShell Script to Disable Automatic Updates<a name="disable-automatic-updates-client"></a>
+
+To disable automatic updates for the AppStream 2\.0 client, run the following PowerShell script\.
+
+**Note**  
+To run this script, you must be logged into the applicable computer with the local **Administrator **account\. You can also run the script remotely under the **System** account on startup\. 
+
+```
+$registryPath="HKLM:\Software\Amazon\AppStream Client"
+New-Item -Path "HKLM:\Software\Amazon" -Name "AppStream Client" -Force
+
+New-ItemProperty -Path $registryPath -Name "AutoUpdateDisabled" -Value "True" -PropertyType String -Force | Out-Null
 ```

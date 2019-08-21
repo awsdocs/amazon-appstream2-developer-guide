@@ -40,7 +40,7 @@ Next, using the AppStream 2\.0 image builder, create a new image with Active Dir
 
 **To create an image for launching domain\-joined fleets**
 
-1. Follow the procedures in [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
+1. Follow the procedures in [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
 1. For the base image selection step, use an AWS base image released on or after July 24, 2017\. For a current list of released AWS images, see [AppStream 2\.0 Base Image Version History](base-image-version-history.md)\.
 
@@ -54,7 +54,7 @@ Next, using the AppStream 2\.0 image builder, create a new image with Active Dir
 
 1. Log in to the image builder in Administrator mode or as a directory user with local administrator permissions\. For more information, see [Granting Local Administrator Rights on Image Builders](active-directory-admin.md#active-directory-image-builder-local-admin)\.
 
-1. Complete the steps in [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md) to install applications and create a new image\.
+1. Complete the steps in [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md) to install applications and create a new image\.
 
 ## Step 3: Create a Domain\-Joined Fleet<a name="active-directory-setup-fleet"></a>
 

@@ -11,12 +11,12 @@ The following table summarizes the available instance families and provides the 
 
 | Instance Family | Description | Base Image Name | 
 | --- | --- | --- | 
-| General Purpose | Basic computing resources for running web browsers and most business applications\. | Base\-Image\-Builder\-MM\-DD\-YYYY | 
-| Memory Optimized | Optimized for memory\-intensive applications that process large amounts of data\. | Base\-Image\-Builder\-MM\-DD\-YYYY | 
-| Compute Optimized | Optimized for compute\-bound applications that benefit from high performance processors\. | Base\-Image\-Builder\-MM\-DD\-YYYY | 
-| Graphics Design | Uses AMD FirePro S7150x2 Server GPUs and AMD Multiuser GPU technology to support graphics applications that use DirectX, OpenGL, or OpenCL\. | Graphics\-Design\-Image\-Builder\-MM\-DD\-YYYY | 
-| Graphics Desktop | Uses NVIDIA GRID K520 GPU to support applications that beneﬁt from or require graphics acceleration\. This instance family supports DirectX, OpenGL, OpenCL, and CUDA\. | Graphics\-Desktop\-Image\-Builder\-MM\-DD\-YYYY | 
-| Graphics Pro | Uses NVIDIA Tesla M60 GPUs and provide a high\-performance, workstation\-like experience for graphics applications that use DirectX, OpenGL, OpenCL, or CUDA\. | Graphics\-Pro\-Image\-Builder\-MM\-DD\-YYYY | 
+| General Purpose | Basic computing resources for running web browsers and most business applications\. | AppStream\-WinServer\-OperatingSystemVersion\-MM\-DD\-YYYY | 
+| Memory Optimized | Optimized for memory\-intensive applications that process large amounts of data\. | AppStream\-WinServer\-OperatingSystemVersion\-MM\-DD\-YYYY | 
+| Compute Optimized | Optimized for compute\-bound applications that benefit from high performance processors\. | AppStream\-WinServer\-OperatingSystemVersion\-MM\-DD\-YYYY | 
+| Graphics Design | Uses AMD FirePro S7150x2 Server GPUs and AMD Multiuser GPU technology to support graphics applications that use DirectX, OpenGL, or OpenCL\. | AppStream\-Graphics\-Design\-WinServer2012R2\-MM\-DD\-YYYY | 
+| Graphics Desktop | Uses NVIDIA GRID K520 GPU to support applications that beneﬁt from or require graphics acceleration\. This instance family supports DirectX, OpenGL, OpenCL, and CUDA\. *This instance family is deprecated and therefore no longer available\.*  | Graphics\-Desktop\-Image\-Builder\-MM\-DD\-YYYY  | 
+| Graphics Pro | Uses NVIDIA Tesla M60 GPUs and provide a high\-performance, workstation\-like experience for graphics applications that use DirectX, OpenGL, OpenCL, or CUDA\. | AppStream\-Graphics\-Pro\-OperatingSystemVersion\-MM\-DD\-YYYY | 
 
 For more information, see the following:
 + [AppStream 2\.0 Base Image Version History](base-image-version-history.md)

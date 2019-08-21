@@ -1,7 +1,7 @@
 # Configure Default Regional Settings for Your AppStream 2\.0 Users<a name="configure-default-regional-settings"></a>
 
 In AppStream 2\.0, users can configure their streaming sessions to use settings that are specific to their location or language\. For more information, see [Enable Your AppStream 2\.0 Users to Configure Their Regional Settings](regional-settings.md)\. You can also configure your fleets to use default settings that are specific to your users’ location or language\. In particular, you can apply the following Windows settings to your fleets:
-+ **Time Zone** — Determines the system time used by Windows and any applications that rely on the operating system time\. 
++ **Time Zone** — Determines the system time used by Windows and any applications that rely on the operating system time\. AppStream 2\.0 makes available the same options for this setting as Windows Server 2012 R2, Windows Server 2016, and Windows Server 2019\. 
 + **Display Language** — Determines the display language used by the Windows operating system and certain Windows applications\.
 + **System Locale** — Determines the code pages \(ANSI, MS\-DOS, and Macintosh\) and bitmap font files that Windows uses for non\-Unicode applications in different languages\.
 + **User Locale** \(also known as culture\) — Determines the conventions used by Windows and any applications that query the Windows culture when formatting dates, numbers, or currencies or when sorting strings\. 
@@ -42,7 +42,7 @@ Currently, AppStream 2\.0 supports only **UTC** and **\(UTC\+9:00\) Osaka, Sappo
 
 1. If required, configure additional default regional or language settings\. Otherwise, on the image builder desktop, open Image Assistant and install and configure applications for streaming\. 
 
-1. After you finish configuring your image builder, follow the necessary steps in Image Assistant to finish creating your image\. For information about how to create an image, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\. 
+1. After you finish configuring your image builder, follow the necessary steps in Image Assistant to finish creating your image\. For information about how to create an image, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\. 
 
 1. Do one of the following:
    + Create a new fleet and choose your new image for the fleet\. For more information, see [Create an AppStream 2\.0 Fleet and Stack](set-up-stacks-fleets.md)\.
@@ -97,7 +97,7 @@ Currently, AppStream 2\.0 supports only **English \(United States\)** and **Japa
 
 1. In Step 2 of the Image Assistant process, choose **Save settings**\.
 
-1. Follow the necessary steps in Image Assistant to finish creating your image\. For information about how to create an image, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For information about how to create an image, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
 1. Do one of the following:
    + Create a new fleet and choose your new image for the fleet\. For information, see [Create an AppStream 2\.0 Fleet and Stack](set-up-stacks-fleets.md)\.
@@ -140,7 +140,7 @@ Currently, AppStream 2\.0 supports only **English \(United States\) **and **Japa
 
 1. While Windows restarts, the AppStream 2\.0 login prompt displays\. Wait for 10 minutes before you log in to the image builder again\. Otherwise, you may receive an error\. After 10 minutes, you can log in as **Administrator**\.
 
-1. If required, configure additional default regional or language settings\. Otherwise, on the image builder desktop, open Image Assistant and install and configure applications for streaming\. After you finish configuring your image builder, follow the necessary steps in Image Assistant to finish creating your image\. For information about how to create an image, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\. 
+1. If required, configure additional default regional or language settings\. Otherwise, on the image builder desktop, open Image Assistant and install and configure applications for streaming\. After you finish configuring your image builder, follow the necessary steps in Image Assistant to finish creating your image\. For information about how to create an image, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\. 
 
 1. Do one of the following:
    + Create a new fleet and choose your new image for the fleet\. For more information, see [Create an AppStream 2\.0 Fleet and Stack](set-up-stacks-fleets.md)\.
@@ -179,7 +179,7 @@ Currently, AppStream 2\.0 supports only **English \(United States\) **and **Japa
 
 1. In Step 2 of the Image Assistant process, choose **Save settings**\.
 
-1. Follow the necessary steps in Image Assistant to finish creating your image\. For information about how to create an image, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For information about how to create an image, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
 1. Do one of the following:
    + Create a new fleet and choose your new image for the fleet\. For more information, see [Create an AppStream 2\.0 Fleet and Stack](set-up-stacks-fleets.md)\.
@@ -225,7 +225,7 @@ Currently, AppStream 2\.0 supports only **English \(United States\)** and **Japa
 
 1. In Step 2 of the Image Assistant process, choose **Save settings**\.
 
-1. Follow the necessary steps in Image Assistant to finish creating your image\. For information about how to create an image, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For information about how to create an image, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
 1. Do one of the following:
    + Create a new fleet and choose your new image for the fleet\. For information, see [Create an AppStream 2\.0 Fleet and Stack](set-up-stacks-fleets.md)\.

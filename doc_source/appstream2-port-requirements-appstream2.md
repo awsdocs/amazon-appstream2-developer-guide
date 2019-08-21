@@ -14,7 +14,7 @@ AppStream 2\.0 selects the IP address for the management network interface from 
 
 The management network interface IP address range is 198\.19\.0\.0/16\. The following ports must be open on the management network interface of all streaming instances:
 + Inbound TCP on port 8300\. This is used for establishment of the streaming connection\.
-+ Inbound TCP on port 8443\. This is used for management of the streaming instance by AppStream 2\.0\.
++ Inbound TCP on ports 8000 and 8443\. These are used for management of the streaming instance by AppStream 2\.0\.
 
 Limit the inbound range on the management network interface to 198\.19\.0\.0/16\.
 

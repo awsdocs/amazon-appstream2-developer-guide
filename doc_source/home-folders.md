@@ -25,7 +25,7 @@ As an administrator, use the applicable path if you configure your applications 
 Before enabling home folders, you must do the following:
 + Check that you have the correct AWS Identity and Access Management \(IAM\) permissions for Amazon S3 actions\. For more information, see [IAM Policies and the Amazon S3 Bucket for Home Folders and Application Settings Persistence](controlling-access.md#s3-iam-policy)\.
 + Use an image that was created from an AWS base image released on or after May 18, 2017\. For a current list of released AWS images, see [AppStream 2\.0 Base Image Version History](base-image-version-history.md)\.
-+ Enable network connectivity to Amazon S3 from your virtual private cloud \(VPC\) by configuring internet access or a VPC endpoint for Amazon S3\. For more information, see [Networking, Access, and Security for Amazon AppStream 2\.0](managing-network.md) and [Home Folders and VPC Endpoints](managing-network.md#managing-network-vpce-iam-policy)\.
++ Enable network connectivity to Amazon S3 from your virtual private cloud \(VPC\) by configuring internet access or a VPC endpoint for Amazon S3\. For more information, see [Networking, Access, and Security for Amazon AppStream 2\.0](managing-network.md) and [Using Amazon S3 VPC Endpoints for Home Folders and Application Settings Persistence](managing-network.md#managing-network-vpce-iam-policy)\.
 
 You can enable or disable home folders while creating a stack \(see [Create a Stack](set-up-stacks-fleets.md#set-up-stacks-fleets-install)\), or after the stack is created by using the AWS Management Console for AppStream 2\.0, AWS SDK, or AWS CLI\. For each AWS Region, home folders are backed up by an Amazon S3 bucket\.
 

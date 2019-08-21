@@ -15,7 +15,6 @@ For certain fleet customizations, in Active Directory environments, you might ne
 + [Set Google Chrome as the Default Browser for Users' Streaming Sessions](#customize-fleets-set-chrome-default-browser)
 + [Disable Internet Explorer Enhanced Security Configuration](#customize-fleets-disable-ie-esc)
 + [Change the Default Internet Explorer Home Page for Users' Streaming Sessions](#customize-fleets-change-ie-homepage)
-+ [Use the AppStream 2\.0 Template User Account to Change the Default Internet Explorer Home Page](#customize-fleets-change-ie-homepage-template-user)
 + [User and Instance Metadata for AppStream 2\.0 Fleets](#customize-fleets-user-instance-metadata)
 
 ## Persist Environment Variables<a name="customize-fleets-persist-environment-variables"></a>
@@ -58,7 +57,7 @@ This procedure applies only to system environment variables, not user environmen
 
 1. On the image builder desktop, open Image Assistant\.
 
-1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
    The changes to the system environment variables persist across your fleet instances and are available to streaming sessions launched from those instances\. 
 **Note**  
@@ -90,7 +89,7 @@ Follow these steps to change user environment variables across your fleet instan
 
 1. On the image builder desktop, open Image Assistant\.
 
-1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
 ### Create an Environment Variable That is Limited in Scope<a name="customize-fleets-environment-variable-limited-scope"></a>
 
@@ -137,7 +136,7 @@ If the application path includes spaces, the entire string must be encapsulated 
 
 1. If you created multiple scripts, repeat steps 8 and 9 for each script\.
 
-1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
    The environment variable and specific value are now available for processes that are run from the script\. Other processes cannot access this variable and value\. 
 
@@ -145,15 +144,16 @@ If the application path includes spaces, the entire string must be encapsulated 
 
 The associations for application file extensions are set on a per\-user basis and so are not automatically applied to all users who launch AppStream 2\.0 streaming sessions\. For example, if you set Adobe Reader as the default application for \.pdf files on your image builder, this change is not applied to your users\. 
 
+**Note**  
+The following steps must be performed on an image builder that is joined an Active Directory domain\. In addition, your fleet must be joined to an Active Directory domain\. Otherwise, the default file associations that you set are not applied\.
+
 **To set default file associations for your users**
 
 1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
 
 1. Choose the image builder on which to set default file associations, verify that it is in the **Running** state, and choose **Connect**\.
 
-1. Log in to the image builder by doing either of the following:
-   + If your image builder is not joined to an Active Directory domain, on the **Local User** tab, choose **Administrator**\.
-   + If your image builder is joined to an Active Directory domain, choose the **Directory User** tab, specify the credentials for a domain user account that has local administrator permissions on the image builder, then choose **Log in**\.
+1. Choose the **Directory User** tab, specify the credentials for a domain user account that has local administrator permissions on the image builder, then choose **Log in**\.
 
 1. Set default file associations as needed\.
 
@@ -165,21 +165,37 @@ The associations for application file extensions are set on a per\-user basis an
 
    If you receive an error message stating that you cannot service a running 64\-bit operating system with a 32\-bit version of DISM, close the command prompt window\. Open File Explorer, browse to C:\\Windows\\System32, right\-click cmd\.exe, choose **Run as Administrator**, and run the command again\.
 
-1. Open Local Group Policy Editor by opening the command prompt as an administrator, typing `gpedit.msc`, and then pressing ENTER\.
+1. You can use either Local Group Policy Editor or the GPMC to set a default associations configuration file:
+   + Local Group Policy Editor:
 
-1. In the console tree, under **Computer Configuration**, expand **Administrative Templates**, **Windows Components**, and then choose **File Explorer**\. 
+     On your image builder, open the command prompt as an administrator, type `gpedit.msc`, and then press ENTER\. 
+
+     In the console tree, under **Computer Configuration**, expand **Administrative Templates**, **Windows Components**, and then choose **File Explorer**\.
+   + GPMC: 
+
+     In your directory or on a domain controller, open the command prompt as an administrator, type `gpmc.msc`, and then press ENTER\.
+
+     In the left console tree, select the OU in which you want to create a new GPO, or use an existing GPO, and then do either of the following:
+     + Create a new GPO by opening the context \(right\-click\) menu and choosing **Create a GPO in this domain, Link it here**\. For **Name**, provide a descriptive name for this GPO\.
+     + Select an existing GPO\.
+
+     Open the context menu for the GPO, and choose **Edit**\.
+
+     Under **User Configuration**, expand **Policies**, **Administrative Templates**, **Windows Components**, and then choose **File Explorer**\. 
 
 1. Double\-click **Set a default associations configuration file**\.
 
-1. In the **Set a default associations configuration file properties** dialog box, choose **Enabled**, and enter this path: `c:\default_associations.xml`\.
+1. In the **Set a default associations configuration file properties** dialog box, choose **Enabled**, and do one of the following:
+   + If you are using Local Group Policy Editor, enter this path: `c:\default_associations.xml`\. 
+   + If you are using the GPMC, enter a network path\. For example, `\\networkshare\default_associations.xml`\.
 
 1. Choose **Apply**, **OK**\.
 
-1. Close Local Group Policy Editor\.
+1. Close Local Group Policy Editor or the GPMC\.
 
 1. On the image builder desktop, open Image Assistant\.
 
-1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
    The file associations that you configured are applied to the fleet instances and user streaming sessions that are launched from those instances\. 
 
@@ -209,12 +225,12 @@ By default, new user accounts for Microsoft Windows have Internet Explorer set a
 
 1. Continue installing and configuring applications as needed\. 
 
-   Users who are connected to streaming sessions launched from those fleet instances have Google Chrome as the default browser for http:// and https:// connections\. The users’ existing application preferences for opening files with \.htm and \.html extensions are not changed\.
+   Users who are connected to streaming sessions launched from those fleet instances have Google Chrome as the default browser for http:// and https:// connections\. The users' existing application preferences for opening files with \.htm and \.html extensions are not changed\.
 
 ## Disable Internet Explorer Enhanced Security Configuration<a name="customize-fleets-disable-ie-esc"></a>
 
 Internet Explorer Enhanced Security Configuration \(ESC\) places servers and Internet Explorer in a configuration that limits exposure to the internet\. However, this configuration can impact the AppStream 2\.0 end user experience\. Users who are connected to AppStream 2\.0 streaming sessions may find that websites do not display or perform as expected when: 
-+ Internet Explorer ESC is enabled on fleet instances from which users’ streaming sessions are launched
++ Internet Explorer ESC is enabled on fleet instances from which users' streaming sessions are launched
 + Users run Internet Explorer during their streaming sessions
 + Applications use Internet Explorer to load data
 
@@ -263,7 +279,7 @@ Internet Explorer Enhanced Security Configuration \(ESC\) places servers and Int
 
 1. On the image builder desktop, open Image Assistant\.
 
-1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
 ## Change the Default Internet Explorer Home Page for Users' Streaming Sessions<a name="customize-fleets-change-ie-homepage"></a>
 
@@ -271,6 +287,7 @@ You can use Group Policy to change the default Internet Explorer home page for u
 
 **Topics**
 + [Use Group Policy to Change the Default Internet Explorer Home Page](#customize-fleets-change-ie-homepage-group-policy)
++ [Use the AppStream 2\.0 Template User Account to Change the Default Internet Explorer Home Page](#customize-fleets-change-ie-homepage-template-user)
 
 ### Use Group Policy to Change the Default Internet Explorer Home Page<a name="customize-fleets-change-ie-homepage-group-policy"></a>
 
@@ -340,7 +357,7 @@ To enable your users to choose the **Use Default** button in their Internet Expl
 
 1. Choose **OK** and close the GPMC\.
 
-## Use the AppStream 2\.0 Template User Account to Change the Default Internet Explorer Home Page<a name="customize-fleets-change-ie-homepage-template-user"></a>
+### Use the AppStream 2\.0 Template User Account to Change the Default Internet Explorer Home Page<a name="customize-fleets-change-ie-homepage-template-user"></a>
 
 Follow these steps to use the Template User account to change the default Internet Explorer home page\. 
 
@@ -367,7 +384,7 @@ Follow these steps to use the Template User account to change the default Intern
 
 1. On the image builder desktop, open Image Assistant\.
 
-1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
 ## User and Instance Metadata for AppStream 2\.0 Fleets<a name="customize-fleets-user-instance-metadata"></a>
 
@@ -378,7 +395,7 @@ AppStream 2\.0 fleet instances have user and instance metadata available through
 | --- | --- | --- | 
 | AppStream\_Stack\_Name | User | The name of the stack that the streaming session started from\. | 
 | AppStream\_User\_Access\_Mode | User | The access mode that the user is using to stream\. The values are custom, userpool, or saml\. | 
-| AppStream\_Session\_Reservation\_DateTime | User | The date and time when the user’s streaming session started\. | 
+| AppStream\_Session\_Reservation\_DateTime | User | The date and time when the user's streaming session started\. | 
 | AppStream\_UserName | User | The user name for the user\. | 
 | AppStream\_Session\_ID | User | The session identifier for the user's streaming session\. | 
 | APPSTREAM\_SESSION\_CONTEXT | Machine | The session context that was provided when the streaming URL was created\.  This environment variable is only available when you use the AppStream 2\.0 CreateStreamingURL API action with the SessionContext parameter\. | 

@@ -1,4 +1,4 @@
-# Tutorial: Create a Custom AppStream 2\.0 Image<a name="tutorial-image-builder"></a>
+# Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console<a name="tutorial-image-builder"></a>
 
 This tutorial describes how to create a custom Amazon AppStream 2\.0 image that contains applications you can stream to your users, and default application and Windows settings to enable your users to get started with their applications quickly\. To complete this tutorial, you must already have an image builder\. If you don't have an image builder, see [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md)\.
 

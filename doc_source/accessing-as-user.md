@@ -14,8 +14,9 @@ The AppStream 2\.0 client is a native application that is designed for users who
 + Require support for multiple monitors
 + Use their USB devices with applications streamed through AppStream 2\.0
 + Use keyboard shortcuts during their streaming sessions
++ Require seamless access to local drives and folders during their streaming sessions
 
-For more information, see [The AppStream 2\.0 Client](client-application.md)\.
+For more information, see [System Requirements and AppStream 2\.0 Feature Support](client-system-requirements-feature-support.md) and [Install and Configure the AppStream 2\.0 Client](install-configure-client.md)\.
 
 ## Gesture and Keyboard Support<a name="touchscreen-device-support"></a>
 

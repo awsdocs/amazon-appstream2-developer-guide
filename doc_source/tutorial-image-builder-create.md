@@ -29,6 +29,9 @@ Type a name to display for the image builder \(maximum of 100 characters\)\.
 Choose **Add Tag**, and type the key and value for the tag\. To add more tags, repeat this step\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.  
 **Instance Type**  
 Select the instance type for the image builder\. Choose a type that matches the performance requirements of the applications that you plan to install\. For more information, see [AppStream 2\.0 Instance Families](instance-types.md)\.  
+**Network Access Points \(Optional\)**  
+You can create a private link, which is an [interface VPC endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html) \(interface endpoint\), in your virtual private cloud \(VPC\)\. To start creating the interface endpoint, select **Create PrivateLink**\. Selecting this link opens the VPC console\. To finish creating the endpoint, follow steps 3 through 6 in *To create an interface endpoint*, in [Creating and Streaming From Interface VPC Endpoints](creating-streaming-from-interface-vpc-endpoints.md)\.  
+After you create the interface endpoint, you can use it to keep streaming traffic within your VPC\.  
 **AppStream 2\.0 Agent **  
 This section displays only if you are not using the latest base image from AWS or a custom image that uses the latest version of the agent\.  
 The AppStream 2\.0 agent software runs on your streaming instances, enabling your users to connect to and stream their applications\. Starting December 7, 2017, your streaming instances can be automatically updated with the latest AppStream 2\.0 agent software\. This capability helps to ensure that your image builder includes the latest features, performance improvements, and security updates that are available from AWS\.   
@@ -50,4 +53,4 @@ You can enable automatic updates of the AppStream 2\.0 agent by creating a new i
 
 **Next Steps**
 
-Next, install and configure your applications for streaming, and then create an image by creating a snapshot of the image builder instance\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
+Next, install and configure your applications for streaming, and then create an image by creating a snapshot of the image builder instance\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.

@@ -44,58 +44,58 @@ service ApplicationCatalogService
 
 ```
 namespace csharp AppStream.ApplicationCatalogService.Model
-            
+
 struct AddApplicationsRequest
 {
-1: required string userSid;
-2: required list Application applications;
+    1: required string userSid;
+    2: required list<Application> applications;
 }
-            
+
 struct AddApplicationsResponse
 {
 }
-            
+
 struct RemoveApplicationsRequest
 {
-1: required string userSid; 
-2: required list string applicationIds;
+    1: required string userSid; 
+    2: required list<string> applicationIds;
 }
-            
+
 struct RemoveApplicationsResponse
 {
 }
-            
+
 struct ClearApplicationsRequest
 {
-1: required string userSid; 
+    1: required string userSid; 
 }
-            
+
 struct ClearApplicationsResponse
 {
 }
-            
+
 struct Application
 {
-1: required string id;
-2: required string displayName;
-3: required string launchPath;
-4: required string iconData;
-5: string launchParams;
-6: string workingDirectory;
+    1: required string id;
+    2: required string displayName;
+    3: required string launchPath;
+    4: required string iconData;
+    5: string launchParams;
+    6: string workingDirectory;
 }
-            
+
 exception AppStreamClientException
 {
-1: string errorMessage,
-2: ErrorCode errorCode
+    1: string errorMessage,
+    2: ErrorCode errorCode
 }
-            
+	  
 exception AppStreamServerException
 {
-1: string errorMessage,
-2: ErrorCode errorCode
+    1: string errorMessage,
+    2: ErrorCode errorCode
 }
-            
+
 enum ErrorCode
 {
 }

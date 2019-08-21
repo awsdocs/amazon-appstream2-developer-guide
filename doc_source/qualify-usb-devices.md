@@ -32,6 +32,6 @@ To qualify your USB devices so that they can be used with streaming applications
 
 1. To use the USB device in an AppStream 2\.0 session, you must share the device with the session first\. For more information, see [Share a USB Device with an AppStream 2\.0 Streaming Session](share-usb-devices-with-session.md)\. After you finish testing, you can provide the information in the *Guidance for Users* section of this topic to your users\.
 
-1. If the USB device works with the image builder as expected, create an image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
+1. If the USB device works with the image builder as expected, create an image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
 1. After you finish creating the image, update your AppStream 2\.0 fleet to use the new image\.

@@ -64,6 +64,6 @@ After you enable your dynamic app provider on an image builder, you can test the
 
 1. Choose **Administrator**, and log back into the image builder\.
 
-1. Follow the necessary steps in Image Assistant to finish creating your image\. For information about how to create an image, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
+1. Follow the necessary steps in Image Assistant to finish creating your image\. For information about how to create an image, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
    AppStream 2\.0 automatically optimizes the agents that are specified in the **Agents\.json** configuration file\.

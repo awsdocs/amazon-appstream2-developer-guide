@@ -1,15 +1,40 @@
 # Enable Your AppStream 2\.0 Users to Configure Their Regional Settings<a name="regional-settings"></a>
 
 Users can configure their Amazon AppStream 2\.0 streaming sessions to use settings that are specific to their location or language\. In particular, users can configure the following settings:
-+ **Time zone** — Determines the system time used by Windows and any applications that rely on the operating system time\. AppStream 2\.0 makes available the same options for this setting as Windows Server 2012 R2\.
-+ **Locale** \(also known as culture\) — Determines the conventions used by Windows and any applications that query the Windows culture when formatting dates, numbers, or currencies or when sorting strings\. AppStream 2\.0 supports the following locales: Chinese \(Simplified and Traditional\), Dutch, English, French, German, Italian, Japanese, Korean, Portuguese, Spanish, and Thai\.
++ **Time zone** — Determines the system time used by Windows and any applications that rely on the operating system time\. AppStream 2\.0 makes available the same options for this setting as the Windows Server version used in your fleet\.
++ **Locale** \(also known as culture\) — Determines the conventions used by Windows and any applications that query the Windows culture when formatting dates, numbers, or currencies or when sorting strings\. For a list of locales that AppStream 2\.0 supports, see [Supported Locales](#supported-locales)\.
 + **Input method** — Determines the keystroke combinations that can be used to input characters in another language\.
 
-If users change regional settings during their streaming sessions, the changes are applied to any future streaming sessions in the same AWS Region\. 
+If users change regional settings during their streaming sessions, the changes are applied to any future streaming sessions in the same AWS Region\.
 
 **Topics**
++ [Supported Locales](#supported-locales)
 + [Enable Regional Settings for Your AppStream 2\.0 Users](#regional-settings-enable)
 + [Provide Your AppStream 2\.0 Users with Guidance for Working with Regional Settings](#regional-settings-end-user)
+
+## Supported Locales<a name="supported-locales"></a>
+
+AppStream 2\.0 supports the following locales:
+
+
+| Locale | Language culture name | 
+| --- | --- | 
+| Chinese \(Simplified, China\) | zh\-CN | 
+| Chinese \(Simplified, Singapore\) | zh\-SG | 
+| Chinese \(Traditional, Taiwan\) | zh\-TW | 
+| Dutch \(The Netherlands\) | nl\-NL | 
+| English \(Australia\) | en\-AU | 
+| English \(Canada\) | en\-CA | 
+| English \(United Kingdom\) | en\-GB | 
+| English \(United States\) | en\-US | 
+| French \(France\) | fr\-FR | 
+| German \(Germany\) | de\-DE | 
+| Italian \(Italy\) | it\-IT | 
+| Japanese \(Japan\) | ja\-JP | 
+| Korean \(Korea\) | ko\-KR | 
+| Portuguese \(Brazil\) | pt\-BR | 
+| Spanish \(Spain, International Sort\)  | es\-ES | 
+| Thai \(Thailand\) | th\-TH | 
 
 ## Enable Regional Settings for Your AppStream 2\.0 Users<a name="regional-settings-enable"></a>
 
@@ -49,7 +74,7 @@ To enable users to configure regional settings for a given stack during their Ap
 
    1. In **Image name,** choose the new image to use for the fleet\.
 
-For more information about using image builders to create images, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
+For more information about using image builders to create images, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
 ## Provide Your AppStream 2\.0 Users with Guidance for Working with Regional Settings<a name="regional-settings-end-user"></a>
 

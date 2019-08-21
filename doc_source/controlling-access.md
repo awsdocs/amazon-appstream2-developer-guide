@@ -65,6 +65,7 @@ The format for this permissions policy is as follows:
       "Effect": "Allow",
       "Action": [
         "ec2:DescribeVpcs",
+        "ec2:DescribeVpcEndpoints",
         "ec2:DescribeSubnets",
         "ec2:DescribeAvailabilityZones",
         "ec2:CreateNetworkInterface",

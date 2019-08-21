@@ -1,12 +1,16 @@
 # Networking, Access, and Security for Amazon AppStream 2\.0<a name="managing-network"></a>
 
-The following sections contain information about enabling users to connnect to AppStream 2\.0 streaming instances and enabling your AppStream 2\.0 fleets and image builders to access network resources and the internet\.
+The following topics provide information about enabling users to connnect to AppStream 2\.0 streaming instances and enabling your AppStream 2\.0 fleets and image builders to access network resources and the internet\.
 
 **Contents**
-+ [User Connections to Amazon AppStream 2\.0](appstream2-port-requirements-users.md)
-  + [Bandwidth Recommendations](appstream2-port-requirements-users.md#bandwidth-recommendations-user-connections)
-  + [Ports for AppStream 2\.0 User Devices](appstream2-port-requirements-users.md#client-application-ports)
-  + [Whitelisted Domains](appstream2-port-requirements-users.md#whitelisted_ports)
++ [User Connections to Amazon AppStream 2\.0](user-connections-to-appstream2.md)
+  + [Bandwidth Recommendations](bandwidth-recommendations-user-connections.md)
+  + [Ports for AppStream 2\.0 User Devices](client-application-ports.md)
+  + [Whitelisted Domains](whitelisted_ports.md)
+  + [Creating and Streaming From Interface VPC Endpoints](creating-streaming-from-interface-vpc-endpoints.md)
++ [Access AppStream 2\.0 API Operations and CLI Commands Through an Interface VPC Endpoint](access-api-cli-through-interface-vpc-endpoint.md)
+  + [Create an Interface Endpoint to Access AppStream 2\.0 API Operations and CLI Commands](access-api-cli-through-interface-vpc-endpoint.md#access-api-cli-through-interface-vpc-endpoint-create-interface-endpoint)
+  + [Use an Interface Endpoint to Access AppStream 2\.0 API Operations and CLI Commands](access-api-cli-through-interface-vpc-endpoint.md#how-to-access-api-cli-through-interface-interface-endpoint)
 + [Amazon AppStream 2\.0 Connections to Your VPC](appstream2-port-requirements-appstream2.md)
   + [Network Interfaces](appstream2-port-requirements-appstream2.md#network-interfaces)
   + [Management Network Interface IP Address Range and Ports](appstream2-port-requirements-appstream2.md#management_ports)
@@ -15,7 +19,7 @@ The following sections contain information about enabling users to connnect to A
   + [Fleets](#managing-network-guidelines-fleets)
   + [Image Builders](#managing-network-guidelines-image-builders)
 + [Security Groups](#managing-network-security-groups)
-+ [Home Folders and VPC Endpoints](#managing-network-vpce-iam-policy)
++ [Using Amazon S3 VPC Endpoints for Home Folders and Application Settings Persistence](#managing-network-vpce-iam-policy)
 + [Enabling Internet Access Using a Public Subnet](managing-network-internet-default.md)
   + [Enabling Internet Access for a Fleet](managing-network-internet-default.md#managing-network-internet-dia-fleet)
   + [Enabling Internet Access for an Image Builder](managing-network-internet-default.md#managing-network-internet-dia-image-builder)
@@ -67,9 +71,9 @@ You can also associate security groups to your fleets using the AWS CLI and SDKs
 
 For more information, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/) and [Tools for Amazon Web Services](https://aws.amazon.com/tools/)\.
 
-## Home Folders and VPC Endpoints<a name="managing-network-vpce-iam-policy"></a>
+## Using Amazon S3 VPC Endpoints for Home Folders and Application Settings Persistence<a name="managing-network-vpce-iam-policy"></a>
 
-To support home folders and application settings persistence on a private network, AppStream 2\.0 needs access permissions to the VPC endpoint\. To enable AppStream 2\.0 access to your private Amazon S3 endpoint, attach a custom policy, as defined below, to your VPC endpoint for Amazon S3\. For more information about private Amazon S3 endpoints, see [VPC Endpoints](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html) and [Endpoints for Amazon S3](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-s3.html) in the *Amazon VPC User Guide*\.
+To support home folders and application settings persistence on a private network, AppStream 2\.0 needs access permissions to the Amazon S3 VPC endpoint\. To enable AppStream 2\.0 access to your private S3 endpoint, attach a custom policy, as defined below, to your VPC endpoint for Amazon S3\. For more information about private Amazon S3 endpoints, see [VPC Endpoints](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html) and [Endpoints for Amazon S3](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-s3.html) in the *Amazon VPC User Guide*\.
 
 ```
 {

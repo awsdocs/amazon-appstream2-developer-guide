@@ -27,9 +27,13 @@ Before you can stream your applications, you need to set up a stack, choose an i
    + **Feedback URL** — Specify a URL to which users are redirected after they click the Send Feedback link to submit feedback about their application streaming experience\. If you do not specify a URL, this link is not displayed\.
    + **Tags** — Choose **Add Tag**, and type the key and value for the tag\. To add more tags, repeat this step as needed\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.
 
+1. For **Step 1: Stack Details**, under **Network Access Endpoints \(Optional\)**, you can create a private link, which is an [interface VPC endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html) \(interface endpoint\), in your virtual private cloud \(VPC\)\. To start creating the interface endpoint, select ** Create PrivateLink**\. Selecting this link opens the VPC console\. To finish creating the endpoint, follow steps 3 through 6 in *To create an interface endpoint*, in [Creating and Streaming From Interface VPC Endpoints](creating-streaming-from-interface-vpc-endpoints.md)\. 
+
+   After you create the interface endpoint, you can use it to keep streaming traffic within your VPC\.
+
 1.  Choose **Next**\.
 
-1. For **Step 2: Choose Image**, choose an image, and then choose **Next**\. The sample image contains pre\-installed open source applications for evaluation purposes\. For more information, see [AppStream 2\.0 Base Image Version History](base-image-version-history.md)\.
+1. For **Step 2: Choose Image**, a sample image is already selected\. The image contains pre\-installed open\-source applications for evaluation purposes\. Choose **Next**\.
 
 1. For **Step 3: Configure Fleet**, we recommend that you keep the default values and choose **Next**\. You can change most of these values after fleet creation\.
    + **Choose instance type** — Choose the instance type that matches the performance requirements of your applications\. All streaming instances in your fleet launch with the instance type that you select\. For more information, see [AppStream 2\.0 Instance Families](instance-types.md)\.
@@ -54,8 +58,10 @@ Users are considered idle when they stop providing keyboard or mouse input durin
 1. For **Step 6: User Settings**, select the ways in which your users can transfer data between their streaming session and their local device\. Then, choose whether to enable application settings persistence\. When you're done, choose **Review**:
 
    **Clipboard, file transfer, and print to local device permissions options**:
-   + **Clipboard** — By default, users can copy and paste data between their local device and streaming applications\. You can limit Clipboard options so that users can paste data to their remote streaming session only or copy data to their local device only\. You can also disable Clipboard options entirely\. Note that users can still copy and paste between applications in their streaming session\.
+   + **Clipboard** — By default, users can copy and paste data between their local device and streaming applications\. You can limit Clipboard options so that users can paste data to their remote streaming session only or copy data to their local device only\. You can also disable Clipboard options entirely\. Users can still copy and paste between applications in their streaming session\.
    + **File transfer** — By default, users can upload and download files between their local device and streaming session\. You can limit file transfer options so that users can upload files to their streaming session only or download files to their local device only\. You can also disable file transfer entirely\. 
+**Important**  
+If your users require AppStream 2\.0 file system redirection to access local drives and folders during their streaming sessions, you must enable both file upload and download\. To use file system redirection, your users must have AppStream 2\.0 client version 1\.0\.480 or later installed\. For more information, see [Enable File System Redirection for Your AppStream 2\.0 Users](enable-file-system-redirection.md)\.
    + **Print to local device** — By default, users can print to their local device from within a streaming application\. When they choose **Print** in the application, they can download a \.pdf file that they can print to a local printer\. You can disable this option to prevent users from printing to a local device\.
 **Note**  
 These settings affect only whether users can use AppStream 2\.0 data transfer features\. If your image provides access to a browser, network printer, or other remote resource, your users might be able to transfer data to or from their streaming session in other ways\.
@@ -98,7 +104,7 @@ If you plan to use SAML 2\.0 \[single sign\-on \(SSO\)\] or the AppStream 2\.0 A
 ## Resources<a name="getting-started-next"></a>
 
 For more information, see the following:
-+ Learn how to use the AppStream 2\.0 image builder to add your own applications and create images that you can stream to your users\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image](tutorial-image-builder.md)\.
++ Learn how to use the AppStream 2\.0 image builder to add your own applications and create images that you can stream to your users\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 + Provide persistent storage for your session users by using AppStream 2\.0 home folders and Google Drive\. For more information, see [Enable Persistent Storage for Your AppStream 2\.0 Users](persistent-storage.md)\.
 + Integrate your AppStream 2\.0 streaming resources with your Microsoft Active Directory environment\. For more information, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.
 + Control who has access to your AppStream 2\.0 streaming instances\. For more information, see [Controlling Access to Amazon AppStream 2\.0 with IAM Policies and Service Roles](controlling-access.md), [Manage Access Using the AppStream 2\.0 User Pool](user-pool.md) and [Single Sign\-on Access to AppStream 2\.0 Using SAML 2\.0](external-identity-providers.md)\.

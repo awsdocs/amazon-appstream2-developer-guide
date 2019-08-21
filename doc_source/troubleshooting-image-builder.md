@@ -17,6 +17,7 @@ The following are possible issues you might have while using Amazon AppStream 2\
 + [My application is missing a command line parameter when launching\.](#troubleshooting-10)
 + [I am unable to use my image with a fleet after installing an antivirus application\.](#troubleshooting-11)
 + [My image creation failed\.](#troubleshooting-12)
++ [The Image Assistant `create-image` operation failed with an error message that access to the PrewarmManifest\.txt is denied](#create-image-cli-operation-fails)
 
 ## I cannot connect to the internet from my image builder\.<a name="troubleshooting-01"></a>
 
@@ -24,7 +25,7 @@ Image builders cannot communicate to the internet by default\. To resolve this i
 
 ## When I tried installing my application, I see an error that the operating system version is not supported\.<a name="troubleshooting-02"></a>
 
-Only applications that can be installed on Windows Server 2012 R2 can be added to an AppStream 2\.0 image\. Check if your application is supported on Microsoft Windows Server 2012 R2\.
+Only applications that can be installed on Windows Server 2012 R2, Windows Server 2016, and Windows Server 2019 can be added to an AppStream 2\.0 image\. Check if your application is supported on one of these three operating systems, as applicable for your image builder\.
 
 ## I want to use a Windows PowerShell script to open my applications\.<a name="use-powershell-launch-application"></a>
 
@@ -110,3 +111,9 @@ You can install any tools, including antivirus programs, on your AppStream 2\.0 
 ## My image creation failed\.<a name="troubleshooting-12"></a>
 
 Verify that you did not make any changes to AppStream 2\.0 services before starting the image creation\. Try creating your image again; if it fails, contact AWS Support\. For more information, see [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.
+
+## The Image Assistant `create-image` operation failed with an error message that access to the PrewarmManifest\.txt is denied<a name="create-image-cli-operation-fails"></a>
+
+The application optimization manifest was created with elevated privileges\. To create the image, do either of the following, and then try again:
++ Run the Image Assistant command line interface \(CLI\) executable file \(Image\-Assistant\.exe\) with administrator privileges\.
++ Delete the application optimization manifest file\.
