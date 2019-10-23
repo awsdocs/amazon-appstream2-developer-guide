@@ -85,9 +85,13 @@ After you create a stack with an associated fleet, you can provide access to use
 **Note**  
 Users in the AppStream 2\.0 user pool can't be assigned to stacks with fleets that are joined to an Active Directory domain\.
 
-For this getting started exercise, you can use the AppStream 2\.0 user pool\. This access method enables you to create and manage users by using a permanent login portal URL\. To quickly test application streaming without setting up users, complete the following steps to create a temporary URL\.
+For this getting started exercise, you can use the AppStream 2\.0 user pool\. This access method enables you to create and manage users by using a permanent login portal URL\. To quickly test application streaming without setting up users, complete the following steps to create a temporary URL, also known as a streaming URL\. 
 
 **To provide access to users with a temporary URL**
+
+1. In the navigation pane, choose **Fleets**\.
+
+1. In the list of fleets, choose the fleet that is associated with the stack for which you want to create a streaming URL\. Verify that the status of the fleet is **Running**\.
 
 1. In the navigation pane, choose **Stacks**\. Select the stack, and then choose **Actions**, **Create Streaming URL**\.
 
@@ -107,6 +111,6 @@ For more information, see the following:
 + Learn how to use the AppStream 2\.0 image builder to add your own applications and create images that you can stream to your users\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 + Provide persistent storage for your session users by using AppStream 2\.0 home folders and Google Drive\. For more information, see [Enable Persistent Storage for Your AppStream 2\.0 Users](persistent-storage.md)\.
 + Integrate your AppStream 2\.0 streaming resources with your Microsoft Active Directory environment\. For more information, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.
-+ Control who has access to your AppStream 2\.0 streaming instances\. For more information, see [Controlling Access to Amazon AppStream 2\.0 with IAM Policies and Service Roles](controlling-access.md), [Manage Access Using the AppStream 2\.0 User Pool](user-pool.md) and [Single Sign\-on Access to AppStream 2\.0 Using SAML 2\.0](external-identity-providers.md)\.
++ Control who has access to your AppStream 2\.0 streaming instances\. For more information, see [Manage Access with IAM](controlling-access.md), [Manage Access Using the AppStream 2\.0 User Pool](user-pool.md) and [Single Sign\-on Access to AppStream 2\.0 Using SAML 2\.0](external-identity-providers.md)\.
 + Monitor your AppStream 2\.0 resources by using Amazon CloudWatch\. For more information, see [AppStream 2\.0 Metrics and Dimensions](monitoring.md#monitoring-with-cloudwatch)\.
 + Troubleshoot your AppStream 2\.0 streaming experience\. For more information, see [Troubleshooting](troubleshooting.md)\.

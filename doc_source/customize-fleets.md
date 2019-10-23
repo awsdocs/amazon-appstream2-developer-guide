@@ -12,7 +12,6 @@ For certain fleet customizations, in Active Directory environments, you might ne
 **Topics**
 + [Persist Environment Variables](#customize-fleets-persist-environment-variables)
 + [Set Default File Associations for Your Users](#customize-fleets-set-default-file-associations)
-+ [Set Google Chrome as the Default Browser for Users' Streaming Sessions](#customize-fleets-set-chrome-default-browser)
 + [Disable Internet Explorer Enhanced Security Configuration](#customize-fleets-disable-ie-esc)
 + [Change the Default Internet Explorer Home Page for Users' Streaming Sessions](#customize-fleets-change-ie-homepage)
 + [User and Instance Metadata for AppStream 2\.0 Fleets](#customize-fleets-user-instance-metadata)
@@ -76,6 +75,8 @@ Follow these steps to change user environment variables across your fleet instan
 1. Choose the image builder on which to change user environment variables, verify that it is in the **Running** state, and choose **Connect**\.
 
 1. On the **Local User** tab, choose **Template User**\. 
+
+   **Template User** lets you create default application and Windows settings for your users\. For more information, see "Creating Default Application and Windows Settings for Your AppStream 2\.0 Users" in [Default Application and Windows Settings and Application Launch Performance](customizing-appstream-images.md)\.
 
 1. On the image builder, choose the Windows **Start** button, **Control Panel**, **User Accounts**\. 
 
@@ -145,7 +146,7 @@ If the application path includes spaces, the entire string must be encapsulated 
 The associations for application file extensions are set on a per\-user basis and so are not automatically applied to all users who launch AppStream 2\.0 streaming sessions\. For example, if you set Adobe Reader as the default application for \.pdf files on your image builder, this change is not applied to your users\. 
 
 **Note**  
-The following steps must be performed on an image builder that is joined an Active Directory domain\. In addition, your fleet must be joined to an Active Directory domain\. Otherwise, the default file associations that you set are not applied\.
+The following steps must be performed on an image builder that is joined to an Active Directory domain\. In addition, your fleet must be joined to an Active Directory domain\. Otherwise, the default file associations that you set are not applied\.
 
 **To set default file associations for your users**
 
@@ -199,34 +200,6 @@ The following steps must be performed on an image builder that is joined an Acti
 
    The file associations that you configured are applied to the fleet instances and user streaming sessions that are launched from those instances\. 
 
-## Set Google Chrome as the Default Browser for Users' Streaming Sessions<a name="customize-fleets-set-chrome-default-browser"></a>
-
-By default, new user accounts for Microsoft Windows have Internet Explorer set as the default browser\. Follow these steps to set Google Chrome as the default browser for your fleet instances\.
-
-**To set Google Chrome as the default browser for fleet instances**
-
-1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
-
-1. Choose the image builder on which to set Chrome as the default browser, verify that it is in the **Running** state, and choose **Connect**\.
-
-1. Log in to the image builder by doing either of the following:
-   + If your image builder is not joined to an Active Directory domain, on the **Local User** tab, choose **Administrator**\.
-   + If your image builder is joined to an Active Directory domain, choose the **Directory User** tab, specify the credentials for a domain user account that has local administrator permissions on the image builder, then choose **Log in**\.
-
-1. On the image builder desktop, start Image Assistant\.
-
-1. Choose **\+ Add App**, navigate to the location where Chrome is installed \(for example, C:\\Program Files \(x86\)\\Google\\Chrome\\Application\\\), and select chrome\.exe\. 
-
-1. In the **App Launch Settings** dialog box, in **Launch Parameters**, enter the following: 
-
-   `--make-default-browser-for-user --no-first-run`
-
-1. Choose **Save**\.
-
-1. Continue installing and configuring applications as needed\. 
-
-   Users who are connected to streaming sessions launched from those fleet instances have Google Chrome as the default browser for http:// and https:// connections\. The users' existing application preferences for opening files with \.htm and \.html extensions are not changed\.
-
 ## Disable Internet Explorer Enhanced Security Configuration<a name="customize-fleets-disable-ie-esc"></a>
 
 Internet Explorer Enhanced Security Configuration \(ESC\) places servers and Internet Explorer in a configuration that limits exposure to the internet\. However, this configuration can impact the AppStream 2\.0 end user experience\. Users who are connected to AppStream 2\.0 streaming sessions may find that websites do not display or perform as expected when: 
@@ -278,6 +251,8 @@ Internet Explorer Enhanced Security Configuration \(ESC\) places servers and Int
    + If your image builder is joined to an Active Directory domain, choose the **Directory User** tab, and log in with the same domain user account that you used in step 4\.
 
 1. On the image builder desktop, open Image Assistant\.
+
+1. In **Step 2\. Configure Apps**, choose **Save settings**\.
 
 1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
@@ -398,7 +373,7 @@ AppStream 2\.0 fleet instances have user and instance metadata available through
 | AppStream\_Session\_Reservation\_DateTime | User | The date and time when the user's streaming session started\. | 
 | AppStream\_UserName | User | The user name for the user\. | 
 | AppStream\_Session\_ID | User | The session identifier for the user's streaming session\. | 
-| APPSTREAM\_SESSION\_CONTEXT | Machine | The session context that was provided when the streaming URL was created\.  This environment variable is only available when you use the AppStream 2\.0 CreateStreamingURL API action with the SessionContext parameter\. | 
+| APPSTREAM\_SESSION\_CONTEXT | Machine | The session context that was provided when the streaming URL was created\.  This environment variable is only available after the first application launch\. | 
 | AppStream\_Image\_Arn | Machine | The ARN of the image that was used to create the streaming instance\. | 
 | AppStream\_Instance\_Type | Machine | The instance type of the streaming instance\. For example, stream\.standard\.medium\. | 
 | AppStream\_Resource\_Type | Machine | The type of AppStream 2\.0 resource\. The value is either fleet or imagebuilder\. | 

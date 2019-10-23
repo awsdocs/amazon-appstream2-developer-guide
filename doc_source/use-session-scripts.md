@@ -262,7 +262,10 @@ The registry key values are as follows:
   + GoogleDrive
   + OneDrive
 
-Each storage connector registry key contains a MountStatus DWORD value\. The possible values for MountStatus are as follows:
+Each storage connector registry key contains a **MountStatus** DWORD value\. The following table lists the possible values for **MountStatus**\.
+
+**Note**  
+To view these registry keys, you must have Microsoft \.NET Framework version 4\.7\.2 or later installed on your image\.
 
 
 | Value | Description | 
@@ -271,6 +274,7 @@ Each storage connector registry key contains a MountStatus DWORD value\. The pos
 | 1 | Storage connector mounting is in progress | 
 | 2 | Storage connector mounted successfully | 
 | 3 | Storage connector mounting failed | 
+| 4 | Storage connector mounting is enabled, but not mounted yet | 
 
 ## Enable Amazon S3 Bucket Storage for Session Script Logs<a name="enable-S3-bucket-storage-session-script-logs"></a>
 
@@ -294,7 +298,7 @@ For example, if you specify session scripts in an image in the US West \(Oregon\
 appstream-logs-us-west-2-1234567890123-abcdefg
 ```
 
-Disabling session scripts does not delete any log files stored in the S3 bucket\. To permanently delete log files, you or another administrator with adequate permissions must do so by using the Amazon S3 console or API\. AppStream 2\.0 adds a bucket policy that prevents accidental deletion of the bucket\. For more information, see *IAM Policies and the Amazon S3 Bucket for Application Settings Persistence* in [Controlling Access to Amazon AppStream 2\.0 with IAM Policies and Service Roles](controlling-access.md)\.
+Disabling session scripts does not delete any log files stored in the S3 bucket\. To permanently delete log files, you or another administrator with adequate permissions must do so by using the Amazon S3 console or API\. AppStream 2\.0 adds a bucket policy that prevents accidental deletion of the bucket\. For more information, see *IAM Policies and the Amazon S3 Bucket for Application Settings Persistence* in [Manage Access with IAM](controlling-access.md)\.
 
 When session scripts are enabled, a unique folder is created for each streaming session that is started\. 
 

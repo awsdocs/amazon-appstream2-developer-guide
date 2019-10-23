@@ -32,36 +32,25 @@ Set up and create a fleet from which user applications are launched and streamed
 1. For **Step 2: Choose an Image**, choose an image that meets your needs and then choose **Next**\.
 
 1. For **Step 3: Configure Fleet**, do the following:
+   + For **Choose instance type**, choose the instance type that meets the performance requirements of your applications\.
+   + For **Fleet type**, choose the fleet type that suits your use case\. The fleet type determines its immediate availability and how you pay for it\.
+   + For **Maximum session duration in minutes** — Choose the maximum amount of time that a streaming session can remain active\. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected\. After this time elapses, the instance is terminated and replaced by a new instance\.
+   + For **Disconnect timeout in minutes**, choose the amount of time that a streaming session remains active after users disconnect\. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session\. Otherwise, they are connected to a new session with a new streaming instance\. If you associate a stack with a fleet for which a redirect URL is specified, after users’ streaming sessions end, the users are redirected to that URL\.
 
-   1. For **Choose instance type**, choose the instance type that meets the performance requirements of your applications\.
-
-   1. For **Fleet type**, choose the fleet type that suits your use case\. The fleet type determines its immediate availability and how you pay for it\.
-
-   1. For **Maximum session duration in minutes** — Choose the maximum amount of time that a streaming session can remain active\. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected\. After this time elapses, the instance is terminated and replaced by a new instance\.
-
-   1. For **Disconnect timeout in minutes**, choose the amount of time that a streaming session remains active after users disconnect\. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session\. Otherwise, they are connected to a new session with a new streaming instance\. If you associate a stack with a fleet for which a redirect URL is specified, after users’ streaming sessions end, the users are redirected to that URL\.
-
-      If a user ends the session by choosing **End Session** on the streaming session toolbar, the disconnect timeout does not apply\. Instead, the user is prompted to save any open documents, and then immediately disconnected from the streaming instance\. The instance the user was using is then terminated\. 
-
-   1. For **Idle disconnect timeout in minutes**, choose the amount of time that users can be idle \(inactive\) before they are disconnected from their streaming session and the **Disconnect timeout in minutes** time interval begins\. Users are notified before they are disconnected due to inactivity\. If they try to reconnect to the streaming session before the time interval specified in **Disconnect timeout in minutes** has elapsed, they are connected to their previous session\. Otherwise, they are connected to a new session with a new streaming instance\. Setting this value to 0 disables it\. When this value is disabled, users are not disconnected due to inactivity\.
+     If a user ends the session by choosing **End Session** on the streaming session toolbar, the disconnect timeout does not apply\. Instead, the user is prompted to save any open documents, and then immediately disconnected from the streaming instance\. The instance the user was using is then terminated\. 
+   + For **Idle disconnect timeout in minutes**, choose the amount of time that users can be idle \(inactive\) before they are disconnected from their streaming session and the **Disconnect timeout in minutes** time interval begins\. Users are notified before they are disconnected due to inactivity\. If they try to reconnect to the streaming session before the time interval specified in **Disconnect timeout in minutes** has elapsed, they are connected to their previous session\. Otherwise, they are connected to a new session with a new streaming instance\. Setting this value to 0 disables it\. When this value is disabled, users are not disconnected due to inactivity\.
 **Note**  
 Users are considered idle when they stop providing keyboard or mouse input during their streaming session\. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity\. If users continue to be idle after the time interval in **Idle disconnect timeout in minutes** elapses, they are disconnected\. 
-
-   1. For **Minimum capacity**, choose a minimum number of instances for your fleet based on the minimum number of expected concurrent users\.
-
-   1. For **Maximum capacity**, choose a maximum number of instances for your fleet based on the maximum number of expected concurrent users\.
-
-   1. For **Scaling details**, specify the scaling policies that AppStream 2\.0 uses to increase and decrease the capacity of your fleet\. Note that the size of your fleet is limited by the minimum and maximum capacity that you specified\. For more information, see [Fleet Auto Scaling for Amazon AppStream 2\.0](autoscaling.md)\.
+   + For **Minimum capacity**, choose a minimum number of instances for your fleet based on the minimum number of expected concurrent users\.
+   + For **Maximum capacity**, choose a maximum number of instances for your fleet based on the maximum number of expected concurrent users\.
+   + For **IAM role \(Advanced\)**, optionally, from the **IAM role** list, select an IAM role in your AWS account that can be accessed from the fleet\. When you apply an IAM role from your account to an AppStream 2\.0 fleet instance, you can make AWS API requests from the fleet instance without manually managing AWS credentials\. For more information, see [Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2\.0 Streaming Instances](using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.md)\.
+   + For **Scaling details**, specify the scaling policies that AppStream 2\.0 uses to increase and decrease the capacity of your fleet\. Note that the size of your fleet is limited by the minimum and maximum capacity that you specified\. For more information, see [Fleet Auto Scaling for Amazon AppStream 2\.0](autoscaling.md)\.
 
 1. For **Step 4: Configure Network**, do the following:
-
-   1. To add internet access for fleet instances in a VPC with a public subnet, choose **Default Internet Access**\. If you are providing internet access using a NAT gateway, leave **Default Internet Access** unselected\. For more information, see [Networking, Access, and Security for Amazon AppStream 2\.0](managing-network.md)\.
-
-   1. Choose a VPC and two subnets with access to the network resources that your application needs\. If you don't have a VPC or subnets, you can create them using the links provided and then click the refresh icons\.
-
-   1. For **Security groups**, select up to five security groups to associate with this fleet\. Otherwise, the default security group for the VPC is used\. If you need to create a security group, use the link provided and then click the refresh icon\.
-
-   1. For **Active Directory Domain \(Optional\)**, choose the Active Directory and organizational unit \(OU\) for your streaming instance computer objects\. Ensure that the network access settings you selected enable DNS resolvability and communication with your directory\. For more information, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.
+   + To add internet access for fleet instances in a VPC with a public subnet, choose **Default Internet Access**\. If you are providing internet access using a NAT gateway, leave **Default Internet Access** unselected\. For more information, see [Networking, Access, and Security for Amazon AppStream 2\.0](managing-network.md)\.
+   + Choose a VPC and two subnets with access to the network resources that your application needs\. If you don't have a VPC or subnets, you can create them using the links provided and then click the refresh icons\.
+   + For **Security groups**, select up to five security groups to associate with this fleet\. Otherwise, the default security group for the VPC is used\. If you need to create a security group, use the link provided and then click the refresh icon\.
+   + For **Active Directory Domain \(Optional\)**, choose the Active Directory and organizational unit \(OU\) for your streaming instance computer objects\. Ensure that the network access settings you selected enable DNS resolvability and communication with your directory\. For more information, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.
 
 1. Choose **Create**\.
 

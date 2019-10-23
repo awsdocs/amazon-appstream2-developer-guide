@@ -126,16 +126,17 @@ Optionally, you can specify the name of the application that you want to launch 
 https://relay-state-region-endoint?stack=stackname&accountId=aws-account-id-without-hyphens&app=application-name-to-launch
 ```
 
-The following table lists the relay state endpoints for the Regions where AppStream 2\.0 is available\.
+The following table lists the relay state endpoints for the Regions where AppStream 2\.0 is available\. If you want your users to stream using a FIPS\-compliant connection, you must use a FIPS\-compliant endpoint\. For more information about FIPS endpoints, see [Protecting Data in Transit with FIPS Endpoints](protecting-data-in-transit-FIPS-endpoints.md)\.
 
 
 | Region | Relay state endpoint | 
 | --- | --- | 
-| us\-east\-1 \(N\.Virginia\) | https://appstream2\.us\-east\-1\.aws\.amazon\.com/saml | 
-| us\-west\-2 \(Oregon\) | https://appstream2\.us\-west\-2\.aws\.amazon\.com/saml | 
-| ap\-northeast\-1 \(Tokyo\) | https://appstream2\.ap\-northeast\-1\.aws\.amazon\.com/saml | 
-| ap\-northeast\-2 \(Seoul\) | https://appstream2\.ap\-northeast\-2\.aws\.amazon\.com/saml | 
-| ap\-southeast\-1 \(Singapore\) | https://appstream2\.ap\-southeast\-1\.aws\.amazon\.com/saml | 
-| ap\-southeast\-2 \(Sydney\) | https://appstream2\.ap\-southeast\-2\.aws\.amazon\.com/saml | 
-| eu\-central\-1 \(Frankfurt\) | https://appstream2\.eu\-central\-1\.aws\.amazon\.com/saml | 
-| eu\-west\-1 \(Ireland\) | https://appstream2\.eu\-west\-1\.aws\.amazon\.com/saml | 
+| US East \(N\. Virginia\) | `https://appstream2.us-east-1.aws.amazon.com/saml` \(FIPS\) `https://appstream2-fips.us-east-1.aws.amazon.com/saml`  | 
+| US West \(Oregon\) | `https://appstream2.us-west-2.aws.amazon.com/saml` \(FIPS\) `https://appstream2-fips.us-west-2.aws.amazon.com/saml`  | 
+| Asia Pacific \(Seoul\) | https://appstream2\.ap\-northeast\-2\.aws\.amazon\.com/saml | 
+| Asia Pacific \(Singapore\) | https://appstream2\.ap\-southeast\-1\.aws\.amazon\.com/saml | 
+| Asia Pacific \(Sydney\) | https://appstream2\.ap\-southeast\-2\.aws\.amazon\.com/saml | 
+| Asia Pacific \(Tokyo\) | https://appstream2\.ap\-northeast\-1\.aws\.amazon\.com/saml | 
+| EU \(Frankfurt\) | https://appstream2\.eu\-central\-1\.aws\.amazon\.com/saml | 
+| EU \(Ireland\) | https://appstream2\.eu\-west\-1\.aws\.amazon\.com/saml | 
+| AWS GovCloud \(US\-West\) | `https://appstream2.us-gov-west-1.amazonaws-us-gov.com/saml` \(FIPS\) `https://appstream2-fips.us-gov-west-1.amazonaws-us-gov.com/saml` For more information about using AppStream 2\.0 in AWS GovCloud \(US\-West\), see [Amazon AppStream 2\.0](https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-appstream2.html) in the *AWS GovCloud \(US\) User Guide*\.  | 

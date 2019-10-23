@@ -50,7 +50,7 @@ aws appstream describe-fleets --endpoint-url <vpc-endpoint-id>.api.appstream.<aw
 The following example shows how to specify the DNS name of the interface endpoint when you instantiate the AppStream 2\.0 Boto3 Python client:
 
 ```
-appstream2client = boto3.client('appstream',region_name='<aws-region>',endpoint_url='' <vpc-endpoint-id>.api.appstream.<aws-region>.vpce.amazonaws.com'
+appstream2client = boto3.client('appstream',region_name='<aws-region>',endpoint_url='<vpc-endpoint-id>.api.appstream.<aws-region>.vpce.amazonaws.com'
 ```
 
 Subsequent commands using the `appstream2client` object automatically use the interface endpoint that you specified\.

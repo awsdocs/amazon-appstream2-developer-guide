@@ -28,7 +28,7 @@ For example, if you enable application settings persistence for stacks in the US
 appstream-app-settings-us-west-2-1234567890123-abcdefg
 ```
 
-Disabling application settings persistence does not delete any VHDs stored in the S3 bucket\. To permanently delete settings VHDs, you or another administrator with adequate permissions must do so by using the Amazon S3 console or API\. AppStream 2\.0 adds a bucket policy that prevents accidental deletion of the bucket\. For more information, see *IAM Policies and the Amazon S3 Bucket for Application Settings Persistence* in [Controlling Access to Amazon AppStream 2\.0 with IAM Policies and Service Roles](controlling-access.md)\.
+Disabling application settings persistence does not delete any VHDs stored in the S3 bucket\. To permanently delete settings VHDs, you or another administrator with adequate permissions must do so by using the Amazon S3 console or API\. AppStream 2\.0 adds a bucket policy that prevents accidental deletion of the bucket\. For more information, see *IAM Policies and the Amazon S3 Bucket for Application Settings Persistence* in [Manage Access with IAM](controlling-access.md)\.
 
 When application settings persistence is enabled, a unique folder is created for each settings group to store the settings VHD\. The hierarchy of the folder in the S3 bucket depends on how the user launches a streaming session, as described in the following section\.
 

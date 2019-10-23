@@ -37,7 +37,7 @@ To complete this step, you must log into the image builder with the local **Admi
 **Note**  
 Download and install applications only from sites that you trust\.
 
-   If an application requires the Windows operating system restart, let it do so\. Before the operating system restarts, you are disconnected from your image builder\. After the restart is complete, connect to the image builder again, then finish installing the application\.
+   If an application requires the Windows operating system to restart, let it do so\. Before the operating system restarts, you are disconnected from your image builder\. After the restart is complete, connect to the image builder again, then finish installing the application\.
 
 ## Step 2: Create an AppStream 2\.0 Application Catalog<a name="tutorial-image-builder-add"></a>
 

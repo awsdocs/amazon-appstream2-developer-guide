@@ -5,7 +5,7 @@ You can join your Amazon AppStream 2\.0 fleets and image builders to domains in 
 By joining AppStream 2\.0 to your Active Directory domain, you can:
 + Allow your users and applications to access Active Directory resources such as printers and file shares from streaming sessions\.
 + Use Group Policy settings that are available in the Group Policy Management Console \(GPMC\) to define the end user experience\.
-+ Stream applications such as Microsoft SharePoint or Microsoft Outlook that require users to be authenticated using their Active Directory login credentials\.
++ Stream applications that require users to be authenticated using their Active Directory login credentials\.
 + Apply your enterprise compliance and security policies to your AppStream 2\.0 streaming instances\.
 
 **Topics**

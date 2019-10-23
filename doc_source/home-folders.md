@@ -23,7 +23,7 @@ As an administrator, use the applicable path if you configure your applications 
 ## Enable Home Folders for Your AppStream 2\.0 Users<a name="enable-home-folders"></a>
 
 Before enabling home folders, you must do the following:
-+ Check that you have the correct AWS Identity and Access Management \(IAM\) permissions for Amazon S3 actions\. For more information, see [IAM Policies and the Amazon S3 Bucket for Home Folders and Application Settings Persistence](controlling-access.md#s3-iam-policy)\.
++ Check that you have the correct AWS Identity and Access Management \(IAM\) permissions for Amazon S3 actions\. For more information, see [Using IAM Policies to Manage Administrator Access to the Amazon S3 Bucket for Home Folders and Application Settings Persistence](s3-iam-policy.md)\.
 + Use an image that was created from an AWS base image released on or after May 18, 2017\. For a current list of released AWS images, see [AppStream 2\.0 Base Image Version History](base-image-version-history.md)\.
 + Enable network connectivity to Amazon S3 from your virtual private cloud \(VPC\) by configuring internet access or a VPC endpoint for Amazon S3\. For more information, see [Networking, Access, and Security for Amazon AppStream 2\.0](managing-network.md) and [Using Amazon S3 VPC Endpoints for Home Folders and Application Settings Persistence](managing-network.md#managing-network-vpce-iam-policy)\.
 
@@ -91,7 +91,7 @@ For example, if you enable home folders for stacks in the US West \(Oregon\) Reg
 appstream2-36fb080bb8-us-west-2-123456789012
 ```
 
-As mentioned earlier, disabling home folders for stacks does not delete any user content stored in the Amazon S3 bucket\. To permanently delete user content, an administrator with adequate access must do so from the Amazon S3 console\. AppStream 2\.0 adds a bucket policy that prevents accidental deletion of the bucket\. For more information, see [IAM Policies and the Amazon S3 Bucket for Home Folders and Application Settings Persistence](controlling-access.md#s3-iam-policy)\. 
+As mentioned earlier, disabling home folders for stacks does not delete any user content stored in the Amazon S3 bucket\. To permanently delete user content, an administrator with adequate access must do so from the Amazon S3 console\. AppStream 2\.0 adds a bucket policy that prevents accidental deletion of the bucket\. For more information, see [Using IAM Policies to Manage Administrator Access to the Amazon S3 Bucket for Home Folders and Application Settings Persistence](s3-iam-policy.md)\. 
 
 #### Additional Resources<a name="home-folders-admin-additional"></a>
 

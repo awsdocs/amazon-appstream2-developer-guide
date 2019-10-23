@@ -1,9 +1,11 @@
 # User Pool Administration<a name="user-pool-admin"></a>
 
-To create and manage users in the user pool, sign in to the AppStream 2\.0 console for the AWS Region you want and choose **User Pool** in the left navigation pane\. The User Pool dashboard supports bulk operations on a list of users for some actions\. You can select multiple users on which to perform the same action from the **Actions** list\. Bulk user creation or disable is not supported\. Users in the user pool are created and managed on a per\-Region basis\.
+To create and manage users in the user pool, sign in to the AppStream 2\.0 console for the AWS Region you want and choose **User Pool** in the left navigation pane\. The User Pool dashboard supports bulk operations on a list of users for some actions\. You can select multiple users on which to perform the same action from the **Actions** list\. Users in the user pool are created and managed on a per\-Region basis\.
+
+AppStream 2\.0 does not support bulk user creation or disable\. However, you can use Amazon Cognito with the [CreateStreamingURL](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStreamingURL.html) API action to manage access efficiently for multiple users\. Amazon Cognito user pools let you quickly create your own directory to sign up and sign in users\. In addition, you can use Amazon Cognito user pools to store user profiles\. For information about how to integrate AppStream 2\.0 with your Cognito User Pool, see the [Create a SaaS Portal with Amazon AppStream 2\.0](https://aws.amazon.com/appstream2/getting-started/isv-workshops/saas/) project\.
 
 **Note**  
-AppStream 2\.0 sends email to users on your behalf when a new user is created or a user is assigned to a stack\. To ensure the email is delivered, add `no-reply@accounts.aws-region-code.amazonappstream.com` to your whitelist, where `aws-region-code` is a valid AWS Region code in which you are working\. If users are having difficulty finding the emails, ask them to check their "spam" email folder\.
+AppStream 2\.0 sends email to users on your behalf when a new user is created or a user is assigned to a stack\. To ensure the email is delivered, add `no-reply@accounts.aws-region-code.amazonappstream.com` to your allow list, where `aws-region-code` is a valid AWS Region code in which you are working\. If users are having difficulty finding the emails, ask them to check their "spam" email folder\.
 
 **Topics**
 + [Creating a User](#user-pool-admin-create)

@@ -276,7 +276,7 @@ To use any of these queries, perform the following steps\.
 
 1. Open the Athena console at [https://console\.aws\.amazon\.com/athena/](https://console.aws.amazon.com/athena/)\.
 
-1. Choose **Saved Queries**\. The five queries noted before this procedure should display\. The name of each query begins with "AS2\." For example, "AS2\_users\_per\_app\_curr\_no\."
+1. Choose **Saved Queries**\. The five queries noted before this procedure should display\. The name of each query begins with "AS2\." For example, "AS2\_users\_per\_app\_curr\_mo\."
 
 1. To run a query, choose the query name rather than the option next to the name\.
 

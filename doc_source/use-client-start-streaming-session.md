@@ -11,7 +11,7 @@ In the AppStream 2\.0 client sign\-in page, enter the streaming URL that you cre
 
 **SAML 2\.0**
 
-If you use SAML 2\.0 to federate your users to an AppStream 2\.0 stack, you must create a registry value to configure the AppStream 2\.0 client with a pre\-populated URL whenever the client is launched\. The URL must use a certificate that is trusted by the device\. The certificate must contain a Subject Alternative Name \(SAN\) that includes the URL's domain name\. For more information, see [Run a PowerShell Script to Install the AppStream 2\.0 Client](install-configure-client.md#configure-start-url-remotely-use-powershell) 
+If you use SAML 2\.0 to federate your users to an AppStream 2\.0 stack, you must create a registry value to configure the AppStream 2\.0 client with a pre\-populated URL whenever the client is launched\. The URL must use a certificate that is trusted by the device\. The certificate must contain a Subject Alternative Name \(SAN\) that includes the URL's domain name\. For more information, see [Set the Start URL for AppStream 2\.0 Client Users](install-configure-client.md#set-start-url) 
 
 **User pool**
 

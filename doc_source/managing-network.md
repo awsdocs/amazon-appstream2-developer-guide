@@ -6,7 +6,7 @@ The following topics provide information about enabling users to connnect to App
 + [User Connections to Amazon AppStream 2\.0](user-connections-to-appstream2.md)
   + [Bandwidth Recommendations](bandwidth-recommendations-user-connections.md)
   + [Ports for AppStream 2\.0 User Devices](client-application-ports.md)
-  + [Whitelisted Domains](whitelisted_ports.md)
+  + [Allowed Domains](allowed-domains.md)
   + [Creating and Streaming From Interface VPC Endpoints](creating-streaming-from-interface-vpc-endpoints.md)
 + [Access AppStream 2\.0 API Operations and CLI Commands Through an Interface VPC Endpoint](access-api-cli-through-interface-vpc-endpoint.md)
   + [Create an Interface Endpoint to Access AppStream 2\.0 API Operations and CLI Commands](access-api-cli-through-interface-vpc-endpoint.md#access-api-cli-through-interface-vpc-endpoint-create-interface-endpoint)
@@ -26,6 +26,10 @@ The following topics provide information about enabling users to connnect to App
 + [Enabling Internet Access Using a NAT Gateway](managing-network-internet-manual.md)
   + [Enabling Internet Access for a Fleet Using a NAT Gateway](managing-network-internet-manual.md#managing-network-internet-manual-fleet)
   + [Enabling Internet Access for an Image Builder Using a NAT Gateway](managing-network-internet-manual.md#managing-network-internet-manual-image-builder)
++ [Protecting Data in Transit with FIPS Endpoints](protecting-data-in-transit-FIPS-endpoints.md)
+  + [FIPS Endpoints for Administrative Use](protecting-data-in-transit-FIPS-endpoints.md#FIPS-for-administrative-use)
+  + [FIPS Endpoints for User Streaming Sessions](protecting-data-in-transit-FIPS-endpoints.md#FIPS-for-user-streaming-sessions)
+  + [Exceptions](protecting-data-in-transit-FIPS-endpoints.md#FIPS-exceptions)
 
 ## Network Setup Guidelines<a name="managing-network-guidelines"></a>
 

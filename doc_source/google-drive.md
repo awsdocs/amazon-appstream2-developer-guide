@@ -51,14 +51,15 @@ Follow these steps to add Amazon AppStream 2\.0 as a trusted app in your G Suite
 
 | Region | Amazon AppStream 2\.0 OAuth client ID | 
 | --- | --- | 
-| us\-east\-1 \(N\.Virginia\) | 266080779488\-15n5q5nkiclp6m524qibnmhmbsg0hk92\.apps\.googleusercontent\.com | 
-| us\-west\-2 \(Oregon\) | 1026466167591\-i4jmemrggsjomp9tnkkcs5tniggfiujb\.apps\.googleusercontent\.com | 
-| ap\-northeast\-1 \(Tokyo\) | 922579247628\-qpl9kpihg3hu5dul2lphbjs4qbg6mjm2\.apps\.googleusercontent\.com  | 
-| ap\-northeast\-2 \(Seoul\) | 562383781419\-am1i2dnvt050tmdltsvr36i8l2js40dj\.apps\.googleusercontent\.com  | 
-| ap\-southeast\-1 \(Singapore\) | 856871139998\-4eia2n1db5j6gtv4c1rdte1fh1gec8vs\.apps\.googleusercontent\.com | 
-| ap\-southeast\-2 \(Sydney\) | 151535156524\-b889372osskprm4dt1clpm53mo3m9omp\.apps\.googleusercontent\.com  | 
-| eu\-central\-1 \(Frankfurt\) | 643727794574\-1se5360a77i84je9j3ap12obov1ib76q\.apps\.googleusercontent\.com | 
-| eu\-west\-1 \(Ireland\) | 599492309098\-098muc7ofjfo9vua5rm5u9q2k3mlok3j\.apps\.googleusercontent\.com  | 
+| US East \(N\. Virginia\) | 266080779488\-15n5q5nkiclp6m524qibnmhmbsg0hk92\.apps\.googleusercontent\.com | 
+| US West \(Oregon\) | 1026466167591\-i4jmemrggsjomp9tnkkcs5tniggfiujb\.apps\.googleusercontent\.com | 
+| Asia Pacific \(Seoul\) | 562383781419\-am1i2dnvt050tmdltsvr36i8l2js40dj\.apps\.googleusercontent\.com  | 
+| Asia Pacific \(Singapore\) | 856871139998\-4eia2n1db5j6gtv4c1rdte1fh1gec8vs\.apps\.googleusercontent\.com | 
+| Asia Pacific \(Sydney\) | 151535156524\-b889372osskprm4dt1clpm53mo3m9omp\.apps\.googleusercontent\.com  | 
+| Asia Pacific \(Tokyo\) | 922579247628\-qpl9kpihg3hu5dul2lphbjs4qbg6mjm2\.apps\.googleusercontent\.com  | 
+| EU \(Frankfurt\) | 643727794574\-1se5360a77i84je9j3ap12obov1ib76q\.apps\.googleusercontent\.com | 
+| EU \(Ireland\) | 599492309098\-098muc7ofjfo9vua5rm5u9q2k3mlok3j\.apps\.googleusercontent\.com  | 
+| AWS GovCloud \(US\-West\) | `996065833880-litfkb2vfd7c65nt7s24r7t8le5bc9bl.apps.googleusercontent.com` For more information about using AppStream 2\.0 in AWS GovCloud \(US\-West\), see [Amazon AppStream 2\.0](https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-appstream2.html) in the *AWS GovCloud \(US\) User Guide*\. | 
 
 Follow these steps to enable Google Drive for your AppStream 2\.0 users\.
 

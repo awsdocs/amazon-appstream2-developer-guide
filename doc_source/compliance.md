@@ -5,6 +5,7 @@ The following sections provide information about Amazon AppStream 2\.0 complianc
 **Topics**
 + [Health Insurance Portability and Accountability Act \(HIPAA\)](#hipaa-appstream)
 + [Payment Card Industry Data Security Standard \(PCI DSS\)](#pci-dss-appstream)
++ [FIPS 140\-2 Compliance](#fips-appstream)
 
 ## Health Insurance Portability and Accountability Act \(HIPAA\)<a name="hipaa-appstream"></a>
 
@@ -15,3 +16,9 @@ The AWS Health Insurance Portability and Accountability Act \(HIPAA\) compliance
 ## Payment Card Industry Data Security Standard \(PCI DSS\)<a name="pci-dss-appstream"></a>
 
 AppStream 2\.0 is PCI compliant and conforms to the PCI DSS\. PCI DSS is a proprietary information security standard administered by the PCI Security Standards Council, which was founded by American Express, Discover Financial Services, JCB International, MasterCard Worldwide, and Visa Inc\. PCI DSS applies to all entities that store, process, or transmit cardholder data \(CHD\) and/or sensitive authentication data \(SAD\) including merchants, processors, acquirers, issuers, and service providers\. The PCI DSS is mandated by the card brands and administered by the Payment Card Industry Security Standards Council\. For more information, see [PCI DSS Compliance](https://aws.amazon.com/compliance/pci-dss-level-1-faqs)\.
+
+## FIPS 140\-2 Compliance<a name="fips-appstream"></a>
+
+The Federal Information Processing Standard \(FIPS\) Publication 140\-2 is a US government security standard that specifies security requirements for cryptographic modules that protect sensitive information\. AppStream 2\.0 administrators and users can communicate with the service through a FIPS\-compliant connection by using a FIPS\-compliant endpoint \(FIPS endpoint\)\. AppStream 2\.0 offers FIPS endpoints in all United States AWS Regions where AppStream 2\.0 is available\. For more information, see the following resources\.
++ [ Federal Information Processing Standard \(FIPS\) 140\-2 ](https://aws.amazon.com/compliance/fips/) — Provides general information and answers to frequently asked questions about FIPS compliance on AWS\.
++ [Protecting Data in Transit with FIPS Endpoints](protecting-data-in-transit-FIPS-endpoints.md) — Provides information about how to use AppStream 2\.0 FIPS endpoints for administrative use or streaming\.

@@ -1,9 +1,9 @@
-# Whitelisted Domains<a name="whitelisted_ports"></a>
+# Allowed Domains<a name="allowed-domains"></a>
 
-For AppStream 2\.0 users to access streaming instances, you must whitelist the following domain on the network from which users initiate access to the streaming instances\.
+For AppStream 2\.0 users to access streaming instances, you must allow the following domain on the network from which users initiate access to the streaming instances\.
 + Session Gateway: \*\.amazonappstream\.com
 
-One or more of the following domains must be whitelisted to enable user authentication\. You must whitelist the domains that correspond to the Regions where AppStream 2\.0 is deployed\. 
+One or more of the following domains must be allowed to enable user authentication\. You must allow the domains that correspond to the Regions where AppStream 2\.0 is deployed\. 
 
 
 | Region | Domain | 

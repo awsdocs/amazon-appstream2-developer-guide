@@ -8,7 +8,7 @@
 ## Prerequisites for Enabling Application Settings Persistence<a name="prerequisites-app-settings-persistence"></a>
 
 To enable application settings persistence, you must first do the following:
-+ Check that you have the correct AWS Identity and Access Management \(IAM\) permissions for Amazon S3 actions\. For more information, see the *IAM Policies and the Amazon S3 Bucket for Home Folders* section in [Controlling Access to Amazon AppStream 2\.0 with IAM Policies and Service Roles](controlling-access.md)\.
++ Check that you have the correct AWS Identity and Access Management \(IAM\) permissions for Amazon S3 actions\. For more information, see the *IAM Policies and the Amazon S3 Bucket for Home Folders* section in [Manage Access with IAM](controlling-access.md)\.
 + Use an image that was created from a base image published by AWS on or after December 7, 2017\. For a current list of released AWS base images, see [AppStream 2\.0 Base Image Version History](base-image-version-history.md)\.
 + Associate the stack on which you plan to enable this feature with a fleet based on an image that uses a version of the AppStream 2\.0 agent released on or after August 29, 2018\. For more information, see [AppStream 2\.0 Agent Version History](agent-software-versions.md)\.
 + Enable network connectivity to Amazon S3 from your virtual private cloud \(VPC\) by configuring internet access or a VPC endpoint for Amazon S3\. For more information, see the *Home Folders and VPC Endpoints* section in [Networking, Access, and Security for Amazon AppStream 2\.0](managing-network.md)\.
