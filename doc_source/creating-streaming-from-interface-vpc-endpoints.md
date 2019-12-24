@@ -1,15 +1,15 @@
-# Creating and Streaming From Interface VPC Endpoints<a name="creating-streaming-from-interface-vpc-endpoints"></a>
+# Creating and Streaming from Interface VPC Endpoints<a name="creating-streaming-from-interface-vpc-endpoints"></a>
 
-An [interface VPC endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html) \(interface endpoint\) enables you to connect to services such as AppStream 2\.0 that are powered by AWS PrivateLink\. You can use an interface endpoint in your AWS account to keep streaming traffic within a virtual private cloud \(VPC\) that you specify\. When you use the VPC with an AWS Direct Connect or AWS Virtual Private Network \(VPN\) tunnel, you can keep the streaming traffic within your network\. 
+You can use an interface VPC endpoint in your AWS account to restrict all network traffic between your Amazon VPC and AppStream 2\.0 to the Amazon network\. After you create this endpoint, you configure your AppStream 2\.0 stack or image builder to use it\. 
 
 **Prerequisites**
 
-To use interface endpoints, you must meet the following prerequisites:
+Before you set up interface VPC endpoints for AppStream 2\.0, be aware of the following prerequisites:
 + Internet connectivity is required to authenticate users and deliver the web assets that AppStream 2\.0 requires to function\. The streaming interface endpoint maintains the streaming traffic within your VPC\. Streaming traffic includes pixel, USB, user input, audio, clipboard, file upload and download, and printer traffic\. To allow this traffic, you must allow the domains listed in [Allowed Domains](allowed-domains.md)\.
 + The network to which your users' devices are connected must be able to route traffic to the interface endpoint\.
 + The security groups that are associated with the interface endpoint must allow inbound access to port 443 \(TCP\) and ports 1400\-1499 \(TCP\) from the IP address range from which your users connect\.
 + The network access control list for the subnets must allow outbound traffic from ephemeral network ports 1024\-65535 \(TCP\) to the IP address range from which your users connect\.
-+ You must have an IAM permissions policy in your AWS account that provides permissions to perform the `ec2:DescribeVpcEndpoints` API action\. By default, this permission is defined in the IAM policy that is attached to the AmazonAppStreamServiceAccess role\. If you have the required permissions, this service role is automatically created by AppStream 2\.0, with the required IAM policies attached, when you get started with the AppStream 2\.0 service in an AWS Region\. For more information, see [Manage Access with IAM](controlling-access.md)\.
++ You must have an IAM permissions policy in your AWS account that provides permissions to perform the `ec2:DescribeVpcEndpoints` API action\. By default, this permission is defined in the IAM policy that is attached to the AmazonAppStreamServiceAccess role\. If you have the required permissions, this service role is automatically created by AppStream 2\.0, with the required IAM policies attached, when you get started with the AppStream 2\.0 service in an AWS Region\. For more information, see [Identity and Access Management for Amazon AppStream 2\.0](controlling-access.md)\.
 
 **To create an interface endpoint**
 

@@ -7,6 +7,11 @@ For notification about these updates, you can subscribe to the Amazon AppStream 
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [AppStream 2\.0 client update: version 1\.0\.525 ](https://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html) | Resolves a DPI issue that causes the mouse cursor to point to the wrong location when a user clicks on an application during a streaming session | December 12, 2019 | 
+| [AppStream 2\.0 base image update](https://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html) | Includes security updates up to December 12, 2019; AWS CLI version 1\.16\.284; and Amazon SSM Agent version 2\.3\.760\.0 | December 12, 2019 | 
+| [Documentation update: Support for AppStream 2\.0 z1d\-based instances](https://docs.aws.amazon.com/appstream2/latest/developerguide/instance-types.html) | Updated "AppStream 2\.0 Instance Families\." | November 21, 2019 | 
+| [AppStream 2\.0 agent update](https://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html) | AppStream 2\.0 assemblies are now signed, including executables and installer packages | November 13, 2019 | 
+| [Documentation update: Embedded AppStream 2\.0 streaming sessions](https://docs.aws.amazon.com/appstream2/latest/developerguide/embed-streaming-sessions.html) | Created "Embed AppStream 2\.0 Streaming Sessions" and updated other content as needed\. | November 1, 2019 | 
 | [AppStream 2\.0 client update: version 1\.0\.511](https://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html) | Adds support for up to 4 monitors and provides other enhancements | October 16, 2019 | 
 | [Documentation update: New region — AWS GovCloud \(US\-West\)](https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-appstream2.html) | Created [Amazon AppStream 2\.0](https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-appstream2.html) in the *AWS GovCloud \(US\) User Guide* and updated the relay state endpoint table in "Setting Up SAML" and other content as needed\.  | October 9, 2019 | 
 | [AppStream 2\.0 agent update](https://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html) | Modifies the AppStream 2\.0 storage connector to no longer bypass the system proxy server | October 8, 2019 | 

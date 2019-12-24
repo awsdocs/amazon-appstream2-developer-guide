@@ -298,7 +298,7 @@ For example, if you specify session scripts in an image in the US West \(Oregon\
 appstream-logs-us-west-2-1234567890123-abcdefg
 ```
 
-Disabling session scripts does not delete any log files stored in the S3 bucket\. To permanently delete log files, you or another administrator with adequate permissions must do so by using the Amazon S3 console or API\. AppStream 2\.0 adds a bucket policy that prevents accidental deletion of the bucket\. For more information, see *IAM Policies and the Amazon S3 Bucket for Application Settings Persistence* in [Manage Access with IAM](controlling-access.md)\.
+Disabling session scripts does not delete any log files stored in the S3 bucket\. To permanently delete log files, you or another administrator with adequate permissions must do so by using the Amazon S3 console or API\. AppStream 2\.0 adds a bucket policy that prevents accidental deletion of the bucket\. For more information, see *IAM Policies and the Amazon S3 Bucket for Application Settings Persistence* in [Identity and Access Management for Amazon AppStream 2\.0](controlling-access.md)\.
 
 When session scripts are enabled, a unique folder is created for each streaming session that is started\. 
 

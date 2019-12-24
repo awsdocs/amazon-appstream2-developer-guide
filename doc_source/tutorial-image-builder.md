@@ -176,7 +176,7 @@ After you create an image, you can't change it\. To add other applications, upda
 You can add one or more tags to an image during image creation or after you create an image\. You can also copy the image within the same Region or to a new Region within the same AWS account\. Copying a source image results in an identical but distinct destination image\. AWS does not copy any user\-defined tags, however\. Also, you can only copy custom images that you create, not the base images that are provided by AWS\. 
 
 **Note**  
-You can copy up to two images at the same time to a destination\. If the destination to which you are copying an image is at the image limit, you receive an error\. To copy the image in this case, you must first remove images from the destination\. After the destination is below the image limit, initiate the image copy from the source Region\. For more information, see [Amazon AppStream 2\.0 Service Limits](limits.md)\.
+You can copy up to two images at the same time to a destination\. If the destination to which you are copying an image is at the image limit, you receive an error\. To copy the image in this case, you must first remove images from the destination\. After the destination is below the image quota \(also referred to as limit\), initiate the image copy from the source Region\. For more information, see [Amazon AppStream 2\.0 Service Quotas](limits.md)\.
 
 **To add tags to an existing image**
 

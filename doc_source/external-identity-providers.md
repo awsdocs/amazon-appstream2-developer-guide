@@ -1,4 +1,4 @@
-# Single Sign\-on Access to AppStream 2\.0 Using SAML 2\.0<a name="external-identity-providers"></a>
+# Single Sign\-on Access \(SAML 2\.0\)<a name="external-identity-providers"></a>
 
 Amazon AppStream 2\.0 supports identity federation to AppStream 2\.0 stacks through Security Assertion Markup Language 2\.0 \(SAML 2\.0\)\. You can use an identity provider \(IdP\) that supports SAML 2\.0—such as Active Directory Federation Services \(AD FS\) in Windows Server, Ping One Federation Server, or Okta—to provide an onboarding flow for your AppStream 2\.0 users\. 
 

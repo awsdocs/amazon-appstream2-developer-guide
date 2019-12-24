@@ -25,7 +25,7 @@ As an administrator, use the applicable path if you configure your applications 
 Before enabling home folders, you must do the following:
 + Check that you have the correct AWS Identity and Access Management \(IAM\) permissions for Amazon S3 actions\. For more information, see [Using IAM Policies to Manage Administrator Access to the Amazon S3 Bucket for Home Folders and Application Settings Persistence](s3-iam-policy.md)\.
 + Use an image that was created from an AWS base image released on or after May 18, 2017\. For a current list of released AWS images, see [AppStream 2\.0 Base Image Version History](base-image-version-history.md)\.
-+ Enable network connectivity to Amazon S3 from your virtual private cloud \(VPC\) by configuring internet access or a VPC endpoint for Amazon S3\. For more information, see [Networking, Access, and Security for Amazon AppStream 2\.0](managing-network.md) and [Using Amazon S3 VPC Endpoints for Home Folders and Application Settings Persistence](managing-network.md#managing-network-vpce-iam-policy)\.
++ Enable network connectivity to Amazon S3 from your virtual private cloud \(VPC\) by configuring internet access or a VPC endpoint for Amazon S3\. For more information, see [Networking and Access for Amazon AppStream 2\.0](managing-network.md) and [Using Amazon S3 VPC Endpoints for Home Folders and Application Settings Persistence](managing-network-vpce-iam-policy.md)\.
 
 You can enable or disable home folders while creating a stack \(see [Create a Stack](set-up-stacks-fleets.md#set-up-stacks-fleets-install)\), or after the stack is created by using the AWS Management Console for AppStream 2\.0, AWS SDK, or AWS CLI\. For each AWS Region, home folders are backed up by an Amazon S3 bucket\.
 
@@ -129,7 +129,7 @@ For sessions created using SAML federation, the user folder structure is as foll
 bucket-name/user/federated/user-id-SHA-256-hash/
 ```
 
-In this case, `user-id-SHA-256-hash` is the folder name created using a lowercase SHA\-256 hash hexadecimal string generated from the `NameID` SAML attribute value passed in the SAML federation request\. To differentiate users who have the same name but belong to two different domains, send the SAML request with `NameID` in the format `domainname\username`\. For more information, see [Single Sign\-on Access to AppStream 2\.0 Using SAML 2\.0](external-identity-providers.md)\.
+In this case, `user-id-SHA-256-hash` is the folder name created using a lowercase SHA\-256 hash hexadecimal string generated from the `NameID` SAML attribute value passed in the SAML federation request\. To differentiate users who have the same name but belong to two different domains, send the SAML request with `NameID` in the format `domainname\username`\. For more information, see [Single Sign\-on Access \(SAML 2\.0\)](external-identity-providers.md)\.
 
 The following example folder structure applies to session access using SAML federation with `NameID` SAMPLEDOMAIN\\testuser, account ID 123456789012 in the US West \(Oregon\) Region:
 

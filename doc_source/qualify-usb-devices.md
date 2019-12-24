@@ -6,27 +6,39 @@ To qualify your USB devices so that they can be used with streaming applications
 
 1. Connect the USB device that you want to qualify to your computer\.
 
-1. Navigate to C:\\Users\\<logged\-in\-user>\\AppData\\Local\\AppStreamClient, and double\-click **dcvusblist\.exe**\.
+1. Navigate to **C:\\Users\\<logged\-in\-user>\\AppData\\Local\\AppStreamClient**, and double\-click **dcvusblist\.exe**\.
 
 1. In the **DCV \- USB devices** dialog box, the list of USB devices that are connected to your local computer displays\. The **Filter** column displays the filter string for every USB device\. Right\-click the list entry for a USB device that you want to enable, and choose **Copy filter string**\. 
 
-1. On your desktop, choose the Windows **Start** button, and search for Notepad\. Double\-click Notepad to open a new file, copy the filter string to the file, and save it\. Later, you'll use the filter string to qualify the USB device\.
+1. On your desktop, choose the Windows **Start** button, and search for Notepad\. Double\-click **Notepad** to open a new file, copy the filter string to the file, and save it\. Later, you'll use the filter string to qualify the USB device\.
 
 1. Launch a new image builder\. For more information, see [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md)\.
 
-1. Create a streaming URL for your image builder, and use it to connect to the image builder with the AppStream 2\.0 client\. 
+1. After your image builder is in the **Running** state, perform the following steps to create a streaming URL and connect to the image builder by using the AppStream 2\.0 client\.
 
-1. Log in as **Administrator**\. 
+   1. With your image builder selected in the list, choose **Actions**, **Create streaming URL**\.
 
-1. If your USB device requires you to install drivers before you use it, download and install the drivers on the image builder\. For example, if you use the Connexion 3D mouse, you must download and install the required Connexion drivers on the image builder\. 
+   1. In the **Create streaming URL** dialog box, choose **Copy link**, and copy and paste the web address into a separate file for later use\. You'll use this URL to reconnect to the image builder in step 12\.
+
+   1. Choose **Launch in Client**\.
+
+   1. If the **Launch Application** dialog box displays and prompts you to choose the application to use when opening the link, choose **Amazon AppStream**, **Open link**\. To prevent this dialog box from displaying the next time you perform this step to connect to an image builder, select the **Remember my choice for amazonappstream links** check box\.
+
+   1. If the AppStream 2\.0 client displays links to the AWS Customer Agreement, AWS Service Terms, and the AWS Privacy Notice, and third\-party notices, review this information, and then choose **Finish**\. 
+
+   1. If the client sign in page displays, the web address field is prepopulated with the streaming URL\. Choose **Connect**\. 
+
+   1. If prompted, log in to the image builder as **Administrator**\. 
+
+1. After you are connected to the image builder, if your USB device requires you to install drivers before you use it, download and install the drivers on the image builder\. For example, if you use the Connexion 3D mouse, you must download and install the required Connexion drivers on the image builder\. 
 
 1. On your image builder desktop, choose the Windows **Start** button, and search for Notepad\. Right\-click **Notepad**, and choose **Run as Administrator**\.
 
-1. Choose **File**, **Open**, and open the following file: C:\\ProgramData\\Amazon\\Photon\\DCV\\usb\_device\_whitelist\.txt\. You can also allow an entire category of devices or all devices from a specific manufacturer by using wildcard expressions in the usb\_device\_whitelist\.txt file\. 
+1. Choose **File**, **Open**, and open the following file: **C:\\ProgramData\\Amazon\\Photon\\DCV\\usb\_device\_whitelist\.txt**\. You can also allow an entire category of devices or all devices from a specific manufacturer by using wildcard expressions in the **usb\_device\_whitelist\.txt** file\. 
 
 1. Copy the filter string from your local computer to the image builder\. The filter string for a specific USB device is a comma\-separated string of the following fields: **Name**, **Base Class**, **SubClass**, **Protocol**, **ID Vendor**, **ID Product**, **Support Autoshare**, and **Skip Reset**\. For detailed information about these strings, see the next section, [Working with USB Device Filter Strings](#USB-device-filter-strings)\.
 
-1. Disconnect from your image builder, restart it, and reconnect to it by using the AppStream 2\.0 client application\. 
+1. Disconnect from your image builder, restart it, and reconnect to it by using the AppStream 2\.0 client\. To do so, open the AppStream 2\.0 and paste the streaming URL that you created in step 7 into the client sign in web address field, and choose **Connect**\.
 
 1. On the image builder, test your USB device to confirm that it works as expected\.
 

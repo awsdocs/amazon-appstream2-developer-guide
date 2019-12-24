@@ -1,13 +1,13 @@
-# Amazon AppStream 2\.0 Service Limits<a name="limits"></a>
+# Amazon AppStream 2\.0 Service Quotas<a name="limits"></a>
 
-By default, AWS limits the resources that you can create and the number of users who can use the service\. To request a limit increase, use the [AppStream 2\.0 Limits form](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-appstream2)\.
+By default, AWS sets quotas \(also referred to as limits\) for the resources that you can create and the number of users who can use the service\. To request a quota increase, use the [AppStream 2\.0 Limits form](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-appstream2)\.
 
-The following table lists the limits for each AppStream 2\.0 resource\. Where no default limit is listed for a specific [instance family](instance-types.md) or instance type, the limit is 0\.
+The following table lists the quotas for each AppStream 2\.0 resource\. Where no default quota is listed for a specific [instance family](instance-types.md) or instance type, the quota is 0\.
 
 
-**Default Limits Per AWS Region Per Account**  
+**Default Quotas Per AWS Region Per Account**  
 
-| Resource | Default Limit | 
+| Resource | Default Quota | 
 | --- | --- | 
 | Stacks | 5 | 
 | Fleets | 5 | 
@@ -19,4 +19,4 @@ The following table lists the limits for each AppStream 2\.0 resource\. Where no
 | Image copies \(per month\) | 20 | 
 | Users in the user pool | 50 | 
 
-\*For fleet instances that have default internet access enabled, the limit is 100\. For information about enabling default internet access for a fleet, see [Enabling Internet Access Using a Public Subnet](managing-network-internet-default.md)\. 
+\*For fleet instances that have default internet access enabled, the quota is 100\. For information about enabling default internet access for a fleet, see [Configure a New or Existing VPC with a Public Subnet](managing-network-default-internet-access.md)\. 

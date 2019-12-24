@@ -5,11 +5,11 @@ The AppStream 2\.0 agent is software that runs on your streaming instances and e
 The following procedures describe how to manage AppStream 2\.0 agent versions\.
 
 **Topics**
-+ [Create an Image That Always Uses the Latest Version of the AppStream 2\.0 Agent \(Recommended\)](#create-image-that-always-uses-latest-agent)
++ [Create an Image That Always Uses the Latest Version of the AppStream 2\.0 Agent](#create-image-that-always-uses-latest-agent)
 + [Create an Image That Uses a Specific Version of the AppStream 2\.0 Agent](#create-image-that-uses-specific-agent)
 + [Create an Image That Uses a Newer Version of the AppStream 2\.0 Agent](#create-image-that-uses-newer-agent)
 
-## Create an Image That Always Uses the Latest Version of the AppStream 2\.0 Agent \(Recommended\)<a name="create-image-that-always-uses-latest-agent"></a>
+## Create an Image That Always Uses the Latest Version of the AppStream 2\.0 Agent<a name="create-image-that-always-uses-latest-agent"></a>
 
 When your images are configured to always use the latest AppStream 2\.0 agent version, your streaming instances are automatically updated with the latest features, performance improvements, and security updates that are available from AWS\.
 

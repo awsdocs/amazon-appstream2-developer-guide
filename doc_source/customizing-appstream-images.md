@@ -23,7 +23,7 @@ Additionally, you can modify or disable Internet Explorer security settings, suc
 
 When you create an image, AppStream 2\.0 requires that you optimize the launch performance of your applications for your users' streaming sessions\. When your applications are opened during this process, make sure that they use the initial components required by your users\. Doing so ensures that these components are captured by the optimization process\. In some cases, not all of the files required for the optimizations are detected\. Examples of such files would be plug\-ins or components that aren't opened in the image builder\. To ensure that all of the files needed for your application are captured, you can include them in the optimization manifest\. Adding files to the optimization manifest may increase the time it takes for fleet instances to be created and made available for users\. Doing so, however, reduces the time it takes for the application to be launched the first time on the fleet instance\.
 
-To optimize all the files in a folder, open the command prompt as an administrator and use the following PowerShell command: 
+To optimize all the files in a folder, open PowerShell as an administrator and use the following PowerShell command: 
 
 ```
 dir -path "C:\Path\To\Folder\To\Optimize" -Recurse -ErrorAction SilentlyContinue | %{$_.FullName} | Out-File "C:\ProgramData\Amazon\Photon\Prewarm\PrewarmManifest.txt" -encoding UTF8 -append

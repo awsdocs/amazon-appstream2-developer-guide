@@ -1,6 +1,8 @@
 # Using IAM Policies to Manage Administrator Access to Application Auto Scaling<a name="autoscaling-iam-policy"></a>
 
-To use AppStream 2\.0 Fleet Auto Scaling, the IAM user accessing fleet creation and scaling settings must have appropriate permissions for the services that support dynamic scaling\. AppStream 2\.0 requires the following permissions:
+Automatic scaling for fleets is made possible by a combination of the AppStream 2\.0, Amazon CloudWatch, and Application Auto Scaling APIs\. AppStream 2\.0 fleets are created with AppStream 2\.0, alarms are created with CloudWatch, and scaling policies are created with Application Auto Scaling\.
+
+In addition to having the permissions defined in the [AmazonAppStreamFullAccess](managed-policies-required-to-access-appstream-resources.md) policy, the IAM user that accesses fleet scaling settings must have the required permissions for the services that support dynamic scaling\. IAM users must have permissions to use the actions shown in the following example policy\. 
 
 ```
 {
@@ -18,7 +20,7 @@ To use AppStream 2\.0 Fleet Auto Scaling, the IAM user accessing fleet creation 
           "cloudwatch:EnableAlarmActions",
           "cloudwatch:ListMetrics",
           "cloudwatch:PutMetricAlarm",
-          "iam:passrole",
+          "iam:PassRole",
           "iam:ListRoles"
       ],
       "Resource": "*"
@@ -26,3 +28,5 @@ To use AppStream 2\.0 Fleet Auto Scaling, the IAM user accessing fleet creation 
   ]
 }
 ```
+
+You can also create your own IAM policies to set more specific permissions for calls to the Application Auto Scaling API\. For more information, see [Authentication and Access Control](https://docs.aws.amazon.com/autoscaling/application/userguide/auth-and-access-control.html) in the *Application Auto Scaling User Guide*\.

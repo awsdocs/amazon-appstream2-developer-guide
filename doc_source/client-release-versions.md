@@ -7,6 +7,7 @@ For more information about the client, see [The AppStream 2\.0 Client](client-ap
 
 | Client version | Release date | Changes | 
 | --- | --- | --- | 
+| 1\.0\.525 | 12\-12\-2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
 | 1\.0\.511 | 10\-16\-2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
 | 1\.0\.499 | 09\-26\-2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
 | 1\.0\.480 | 08\-20\-2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 

@@ -27,7 +27,7 @@ Before you can stream your applications, you need to set up a stack, choose an i
    + **Feedback URL** — Specify a URL to which users are redirected after they click the Send Feedback link to submit feedback about their application streaming experience\. If you do not specify a URL, this link is not displayed\.
    + **Tags** — Choose **Add Tag**, and type the key and value for the tag\. To add more tags, repeat this step as needed\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.
 
-1. For **Step 1: Stack Details**, under **Network Access Endpoints \(Optional\)**, you can create a private link, which is an [interface VPC endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html) \(interface endpoint\), in your virtual private cloud \(VPC\)\. To start creating the interface endpoint, select ** Create PrivateLink**\. Selecting this link opens the VPC console\. To finish creating the endpoint, follow steps 3 through 6 in *To create an interface endpoint*, in [Creating and Streaming From Interface VPC Endpoints](creating-streaming-from-interface-vpc-endpoints.md)\. 
+1. For **Step 1: Stack Details**, under **Network Access Endpoints \(Optional\)**, you can create a private link, which is an [interface VPC endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html) \(interface endpoint\), in your virtual private cloud \(VPC\)\. To start creating the interface endpoint, select ** Create PrivateLink**\. Selecting this link opens the VPC console\. To finish creating the endpoint, follow steps 3 through 6 in *To create an interface endpoint*, in [Creating and Streaming from Interface VPC Endpoints](creating-streaming-from-interface-vpc-endpoints.md)\. 
 
    After you create the interface endpoint, you can use it to keep streaming traffic within your VPC\.
 
@@ -48,7 +48,7 @@ Users are considered idle when they stop providing keyboard or mouse input durin
    + **Minimum capacity** — Choose a minimum number of instances for your fleet based on the minimum number of expected concurrent users\. Every unique user session is served by an instance\. For example, to have your stack support 100 concurrent users during low demand, specify a minimum capacity of 100\. This ensures that 100 instances are running even if there are fewer than 100 users\.
    + **Maximum capacity** — Choose a maximum number of instances for your fleet based on the maximum number of expected concurrent users\. Every unique user session is served by an instance\. For example, to have your stack support 500 concurrent users during high demand, specify a maximum capacity of 500\. This ensures that up to 500 instances can be created on demand\.
 
-1. For **Step 4: Configure Network**, choose an Amazon VPC and two subnets with access to the network resources that your application needs, and then choose **Next**\. If you don't have a VPC or subnets, you can create them using the links provided and then click the refresh icons\. For **Security groups**, you can select up to five security groups\. Otherwise, the default security group is used\. For more information, see [Networking, Access, and Security for Amazon AppStream 2\.0](managing-network.md)\.
+1. For **Step 4: Configure Network**, choose an Amazon VPC and two subnets with access to the network resources that your application needs, and then choose **Next**\. If you don't have a VPC or subnets, you can create them using the links provided and then click the refresh icons\. For **Security groups**, you can select up to five security groups\. Otherwise, the default security group is used\. For more information, see [Networking and Access for Amazon AppStream 2\.0](managing-network.md)\.
 
 1. For **Step 5: Enable Storage**, choose one or more of the following, then choose **Next**\. 
    + **Enable Home Folders** — By default, this setting is enabled\. Keep the default setting\. For information about requirements for enabling home folders, see [Enable Home Folders for Your AppStream 2\.0 Users](home-folders.md#enable-home-folders)\.
@@ -80,7 +80,7 @@ For information about requirements for enabling and administering application se
 
 ## Step 2: Provide Access to Users<a name="getting-started-access"></a>
 
-After you create a stack with an associated fleet, you can provide access to users through the AppStream 2\.0 user pool, SAML 2\.0 \[single sign\-on \(SSO\)\], or the AppStream 2\.0 API\. For more information, see [User Pool Administration](user-pool-admin.md) and [Single Sign\-on Access to AppStream 2\.0 Using SAML 2\.0](external-identity-providers.md)\. 
+After you create a stack with an associated fleet, you can provide access to users through the AppStream 2\.0 user pool, SAML 2\.0 \[single sign\-on \(SSO\)\], or the AppStream 2\.0 API\. For more information, see [User Pool Administration](user-pool-admin.md) and [Single Sign\-on Access \(SAML 2\.0\)](external-identity-providers.md)\. 
 
 **Note**  
 Users in the AppStream 2\.0 user pool can't be assigned to stacks with fleets that are joined to an Active Directory domain\.
@@ -111,6 +111,6 @@ For more information, see the following:
 + Learn how to use the AppStream 2\.0 image builder to add your own applications and create images that you can stream to your users\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 + Provide persistent storage for your session users by using AppStream 2\.0 home folders and Google Drive\. For more information, see [Enable Persistent Storage for Your AppStream 2\.0 Users](persistent-storage.md)\.
 + Integrate your AppStream 2\.0 streaming resources with your Microsoft Active Directory environment\. For more information, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.
-+ Control who has access to your AppStream 2\.0 streaming instances\. For more information, see [Manage Access with IAM](controlling-access.md), [Manage Access Using the AppStream 2\.0 User Pool](user-pool.md) and [Single Sign\-on Access to AppStream 2\.0 Using SAML 2\.0](external-identity-providers.md)\.
++ Control who has access to your AppStream 2\.0 streaming instances\. For more information, see [Identity and Access Management for Amazon AppStream 2\.0](controlling-access.md), [AppStream 2\.0 User Pools](user-pool.md) and [Single Sign\-on Access \(SAML 2\.0\)](external-identity-providers.md)\.
 + Monitor your AppStream 2\.0 resources by using Amazon CloudWatch\. For more information, see [AppStream 2\.0 Metrics and Dimensions](monitoring.md#monitoring-with-cloudwatch)\.
 + Troubleshoot your AppStream 2\.0 streaming experience\. For more information, see [Troubleshooting](troubleshooting.md)\.

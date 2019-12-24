@@ -28,7 +28,7 @@ For example, if you enable application settings persistence for stacks in the US
 appstream-app-settings-us-west-2-1234567890123-abcdefg
 ```
 
-Disabling application settings persistence does not delete any VHDs stored in the S3 bucket\. To permanently delete settings VHDs, you or another administrator with adequate permissions must do so by using the Amazon S3 console or API\. AppStream 2\.0 adds a bucket policy that prevents accidental deletion of the bucket\. For more information, see *IAM Policies and the Amazon S3 Bucket for Application Settings Persistence* in [Manage Access with IAM](controlling-access.md)\.
+Disabling application settings persistence does not delete any VHDs stored in the S3 bucket\. To permanently delete settings VHDs, you or another administrator with adequate permissions must do so by using the Amazon S3 console or API\. AppStream 2\.0 adds a bucket policy that prevents accidental deletion of the bucket\. For more information, see *IAM Policies and the Amazon S3 Bucket for Application Settings Persistence* in [Identity and Access Management for Amazon AppStream 2\.0](controlling-access.md)\.
 
 When application settings persistence is enabled, a unique folder is created for each settings group to store the settings VHD\. The hierarchy of the folder in the S3 bucket depends on how the user launches a streaming session, as described in the following section\.
 
@@ -70,9 +70,9 @@ To reset a user's application settings, you must find and delete the VHD and ass
 
 1. Locate the folder that contains the VHD\. For more information about how to navigate the S3 bucket folder structure, see *Amazon S3 Bucket Storage* earlier in this topic\.
 
-1. In the **Name** list, select the check box next to the VHD, choose **More**, and then choose **Delete**\.
+1. In the **Name** list, select the check box next to the VHD and the REG, choose **More**, and then choose **Delete**\.
 
-1. In the **Delete objects** dialog box, verify that the VHD is listed, and then choose **Delete**\. 
+1. In the **Delete objects** dialog box, verify that the VHD and the REG are listed, and then choose **Delete**\. 
 
 The next time the user streams from a fleet on which application settings persistence is enabled with the applicable settings group, a new application settings VHD is created\. This VHD is saved to the S3 bucket at the end of the session\.
 

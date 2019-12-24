@@ -1,4 +1,4 @@
-# Ports for AppStream 2\.0 User Devices<a name="client-application-ports"></a>
+# IP Address and Port Requirements for AppStream 2\.0 User Devices<a name="client-application-ports"></a>
 
 AppStream 2\.0 users' devices require outbound access on port 443 \(TCP\), and if you are using DNS servers for domain name resolution, port 53 \(UDP\)\.
 + Port 443 is used for HTTPS communication between AppStream 2\.0 users' devices and streaming instances\. Typically, when end users browse the web during streaming sessions, the web browser randomly selects a source port in the high range for streaming traffic\. You must ensure that return traffic to this port is allowed\.

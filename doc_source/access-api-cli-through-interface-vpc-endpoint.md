@@ -1,9 +1,9 @@
 # Access AppStream 2\.0 API Operations and CLI Commands Through an Interface VPC Endpoint<a name="access-api-cli-through-interface-vpc-endpoint"></a>
 
-You can connect directly to AppStream 2\.0 API operations or command line interface \(CLI\) commands through an [interface VPC endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html) \(interface endpoint\) in your virtual private cloud \(VPC\) instead of connecting over the internet\. When you use an interface endpoint, communication between your VPC and AppStream 2\.0 is conducted entirely and securely within the AWS network\.
+If you use Amazon Virtual Private Cloud to host your AWS resources, you can connect directly to AppStream 2\.0 API operations or command line interface \(CLI\) commands through an [interface VPC endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html) \(interface endpoint\) in your virtual private cloud \(VPC\) instead of connecting over the internet\. Interface endpoints are powered by AWS PrivateLink, a technology that lets you keep streaming traffic within a VPC that you specify by using private IP addresses\. When you use an interface endpoint, communication between your VPC and AppStream 2\.0 is conducted entirely and securely within the AWS network\.
 
 **Note**  
-This topic describes how to access the AppStream 2\.0 API operations and CLI commands through an interface endpoint\. For information about how to create and stream from AppStream 2\.0 interface endpoints, see [Creating and Streaming From Interface VPC Endpoints](creating-streaming-from-interface-vpc-endpoints.md)\.
+This topic describes how to access the AppStream 2\.0 API operations and CLI commands through an interface endpoint\. For information about how to create and stream from AppStream 2\.0 interface endpoints, see [Creating and Streaming from Interface VPC Endpoints](creating-streaming-from-interface-vpc-endpoints.md)\.
 
 **Prerequisites**
 

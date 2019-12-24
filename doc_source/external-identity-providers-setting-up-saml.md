@@ -137,6 +137,6 @@ The following table lists the relay state endpoints for the Regions where AppStr
 | Asia Pacific \(Singapore\) | https://appstream2\.ap\-southeast\-1\.aws\.amazon\.com/saml | 
 | Asia Pacific \(Sydney\) | https://appstream2\.ap\-southeast\-2\.aws\.amazon\.com/saml | 
 | Asia Pacific \(Tokyo\) | https://appstream2\.ap\-northeast\-1\.aws\.amazon\.com/saml | 
-| EU \(Frankfurt\) | https://appstream2\.eu\-central\-1\.aws\.amazon\.com/saml | 
-| EU \(Ireland\) | https://appstream2\.eu\-west\-1\.aws\.amazon\.com/saml | 
+| Europe \(Frankfurt\) | https://appstream2\.eu\-central\-1\.aws\.amazon\.com/saml | 
+| Europe \(Ireland\) | https://appstream2\.eu\-west\-1\.aws\.amazon\.com/saml | 
 | AWS GovCloud \(US\-West\) | `https://appstream2.us-gov-west-1.amazonaws-us-gov.com/saml` \(FIPS\) `https://appstream2-fips.us-gov-west-1.amazonaws-us-gov.com/saml` For more information about using AppStream 2\.0 in AWS GovCloud \(US\-West\), see [Amazon AppStream 2\.0](https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-appstream2.html) in the *AWS GovCloud \(US\) User Guide*\.  | 

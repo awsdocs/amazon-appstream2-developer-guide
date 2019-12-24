@@ -159,6 +159,38 @@ Even if you do not enable automatic updates for your antivirus software, the ant
 
 AppStream 2\.0 Windows Server 2012 R2 base images do not include any antivirus software\. On AppStream 2\.0 Windows Server 2016 and Windows Server 2019 base images published on or after September 10, 2019, Windows Defender is not enabled by default\. On AppStream 2\.0 Windows Server 2016 and Windows Server 2019 base images published on June 24, 2019, Windows Defender is enabled by default\.
 
+**To enable Windows Defender manually**
+
+If Windows Defender is not enabled on your base image, you can enable it manually\. To do so, complete the following steps\.
+
+1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
+
+1. In the left navigation pane, choose **Images**, **Image Builder**\. 
+
+1. Choose the image builder on which to enable Windows Defender, verify that it is in the **Running** state, and choose **Connect**\. 
+
+1. Log in to the image builder with the local **Administrator** account or with a domain user account that has local administrator permissions\.
+
+1. Open Registry Editor\.
+
+1. Navigate to the following location in the registry: **HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\DisableAntiSpyware**\. 
+
+1. To edit this registry key, double\-click it, or right\-click the registry key, and choose **Modify**\.
+
+1. In the **Edit DWORD \(32\-bit\) Value** dialog box, in **Value data**, change **1** to **0**\.
+
+1. Choose **OK**\.
+
+1. Close Registry Editor\.
+
+1. Open the Microsoft Management Console \(MMC\) **Services** snap\-in \(`services.msc`\)\.
+
+1. In the list of services, do either of the following:
+   + Right\-click **Windows Defender Antivirus Service**, and choose **Start**\.
+   + Double\-click **Windows Defender Antivirus Service**, choose **Start** in the properties dialog box, and then choose **OK**\.
+
+1. Close the **Services** snap\-in\.
+
 ## Programmatically Create a New Image<a name="create-image-programmatically"></a>
 
 You can create AppStream 2\.0 images programmatically by connecting to an image builder and using the Image Assistant command line interface \(CLI\) operations\. For more information, see [Create Your AppStream 2\.0 Image Programmatically by Using the Image Assistant CLI Operations](programmatically-create-image.md)\. 
