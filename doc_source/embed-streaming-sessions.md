@@ -126,7 +126,7 @@ The following sections provide information about how to configure your webpage t
 1. On the webpage where you plan to embed the AppStream 2\.0 streaming session, import the **appstream\-embed\.js** file into the webpage by adding the following code:
 
    ```
-   <script type>="text/javascript" src="./appstream_embed.js"> </script>
+   <script type="text/javascript" src="./appstream_embed.js"> </script>
    ```
 
 1. Next, create an empty container div\. The ID of the div that you set is passed into the AppStream 2\.0 embed constructor\. It's then used to inject an iframe for the streaming session\. To create the div, add the following code:
