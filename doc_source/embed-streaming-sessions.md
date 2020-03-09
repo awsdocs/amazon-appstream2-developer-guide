@@ -35,7 +35,9 @@ Consider the following recommendations and usage notes for embedded AppStream 2\
 
 ## Step 1: Specify a Host Domain for Embedded AppStream 2\.0 Streaming Sessions<a name="specify-host-domain-embedded-streaming-sessions"></a>
 
-To embed an AppStream 2\.0 streaming session in a webpage, first update your stack to specify the domain to host the embedded streaming session\. This a security measure to ensure that only authorized website domains can embed AppStream 2\.0 streaming sessions\. To do so, use any of the following methods:
+To embed an AppStream 2\.0 streaming session in a webpage, first update your stack to specify the domain to host the embedded streaming session\. This a security measure to ensure that only authorized website domains can embed AppStream 2\.0 streaming sessions\. AppStream 2\.0 adds the domain or domains that you specify to the **Content\-Security\-Policy** \(CSP\) header\. For more information, see [Content Security Policy \(CSP\)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) in the Mozilla [MDN Web Docs](https://developer.mozilla.org/en-US/) documentation\.
+
+To update your stack to specify the domain to host the embedded streaming session, use any of the following methods:
 + The AppStream 2\.0 console
 + The `EmbedHostDomains` API action 
 + The `embed-host-domains` AWS command line interface \(AWS CLI\) command
@@ -51,6 +53,8 @@ To specify a host domain by using the AppStream 2\.0 console, perform the follow
 1. Expand **Embed AppStream 2\.0 \(Optional\)**\.
 
 1. In **Host Domains**, specify a valid domain\. For example: **training\.example\.com**\.
+**Note**  
+Embedded streaming sessions are only supported over HTTPS \[TCP port 443\]\.
 
 1. Choose **Update**\.
 
@@ -89,7 +93,7 @@ To avoid embedded AppStream 2\.0 streaming sessions from being blocked in this s
    https://content.training.example.com/authenticate?parameters=authenticationcode
    ```
 **Note**  
-When you create a custom domain, you can use the domain for embedded AppStream 2\.0 streaming sessions only in the AWS Region for which it was configured\. If you plan to support custom domains in multiple Regions, create a custom domain for each applicable Region\.
+When you create a custom domain, you can use the domain for embedded AppStream 2\.0 streaming sessions only in the AWS Region for which it was configured\. If you plan to support custom domains in multiple Regions, create a custom domain for each applicable Region\. Also, embedded streaming sessions are only supported over HTTPS \[TCP port 443\]\.
 
 1. Add **appstream\-custom\-url\-domain** to the header of the webpage that will host the embedded streaming sessions\. For the header value, use the domain that your reverse proxy displays to users\. For example:
 
@@ -119,7 +123,7 @@ The following sections provide information about how to configure your webpage t
 **Topics**
 + [Import the appstream\-embed JavaScript File](#import-embed-javascript-file)
 + [Initialize and Configure the `AppStream.Embed` Interface Object](#initialize-configure-embed-interface-object)
-+ [Examples for Hiding the Entire AppStream 2\.0 Toolbar or Specific Toolbar Buttons](#examples-hiding-toolbar-buttons)
++ [Examples for Hiding Items in the AppStream 2\.0 User Interface](#examples-hiding-user-interface-items)
 
 ### Import the appstream\-embed JavaScript File<a name="import-embed-javascript-file"></a>
 
@@ -162,18 +166,19 @@ The streaming URL that you created by using the AppStream 2\.0 console, the [Cre
 ***userInterfaceConfig***  
 The configuration that generates the initial state of the user interface elements\. The configuration is a key\-value pair\.   
 The key, `AppStream.Embed.Options.HIDDEN_ELEMENTS`, specifies the user interface objects that are initially hidden when the embedded AppStream 2\.0 streaming session is initialized\. Later, you can return both hidden and visible objects by using the `getInterfaceState` parameter\.  
-The value is an array of constants \(toolbar buttons\)\. For a list of constants that you can use, see [Constants for `HIDDEN_ELEMENTS`](#constants-hidden-elements)\.  
+The value is an array of constants \(toolbar buttons\)\. For a list of constants that you can use, see [Working with `HIDDEN_ELEMENTS`](#constants-hidden-elements)\.  
 **Type**: Map \(*key*:*value*\)  
 **Required**: No
 
-### Examples for Hiding the Entire AppStream 2\.0 Toolbar or Specific Toolbar Buttons<a name="examples-hiding-toolbar-buttons"></a>
+### Examples for Hiding Items in the AppStream 2\.0 User Interface<a name="examples-hiding-user-interface-items"></a>
 
-The following examples show how to hide one or more buttons on the AppStream 2\.0 toolbar from users during their embedded AppStream 2\.0 streaming sessions\.
+The examples in this section show how to hide items in the AppStream 2\.0 user interface from users during their embedded AppStream 2\.0 streaming sessions\.
 
 **Topics**
 + [Example 1: Hide the entire AppStream 2\.0 toolbar](#example-hide-the-entire-tooolbar)
 + [Example 2: Hide a specific button on the AppStream 2\.0 toolbar](#example-hide-a-specific-toolbar-button)
-+ [Example 3: Hide multiple buttons on the AppStream 2\.0 toolbar](#example-hide-muliple-buttons)
++ [Example 3: Hide multiple buttons on the AppStream 2\.0 toolbar](#example-hide-multiple-toolbar-buttons)
++ [Example 4: Hide a specific button on the AppStream 2\.0 toolbar and an icon on touch\-enabled devices](#example-hide-toolbar-button-touchscreen-device-icon)
 
 #### Example 1: Hide the entire AppStream 2\.0 toolbar<a name="example-hide-the-entire-tooolbar"></a>
 
@@ -197,9 +202,9 @@ var appstreamOptions = {
  };
 ```
 
-#### Example 3: Hide multiple buttons on the AppStream 2\.0 toolbar<a name="example-hide-muliple-buttons"></a>
+#### Example 3: Hide multiple buttons on the AppStream 2\.0 toolbar<a name="example-hide-multiple-toolbar-buttons"></a>
 
-You can display the AppStream 2\.0 toolbar, while preventing users from accessing more than one toolbar button during embedded streaming sessions\. To do so, specify the constants for the buttons that you want to hide\. The following code uses the `AppStream.Embed.Elements.END_SESSION_BUTTON` and `AppStream.Embed.Elements.FULLSCREEN_BUTTON` constants to hide the End Session and Fullscreen buttons\. 
+You can display the AppStream 2\.0 toolbar, while preventing users from accessing more than one toolbar button during embedded streaming sessions\. To do so, specify the constants for the buttons that you want to hide\. The following code uses the `AppStream.Embed.Elements.END_SESSION_BUTTON` and `AppStream.Embed.Elements.FULLSCREEN_BUTTON` constants to hide the **End Session** and **Fullscreen** buttons\. 
 
 **Note**  
 Separate each constant with a comma, with no preceding or following space\.
@@ -211,21 +216,35 @@ var appstreamOptions = {
  };
 ```
 
+#### Example 4: Hide a specific button on the AppStream 2\.0 toolbar and an icon on touch\-enabled devices<a name="example-hide-toolbar-button-touchscreen-device-icon"></a>
+
+In addition to hiding one or more specific buttons on the AppStream 2\.0 toolbar, you can hide specific icons on touch\-enabled devices during embedded streaming sessions\. To do so, specify constants for the toolbar buttons that you want to hide, and strings for the touch\-enabled device icons that you want to hide\. The following code uses the `AppStream.Embed.Elements.FULLSCREEN_BUTTON` constant to hide the **Fullscreen** button\. In addition, the code uses the `keyboardShortcutsButton` string to hide the Fn keyboard shortcut icon on touch\-enabled devices\. 
+
+**Note**  
+Separate the constant and string with a comma, with no preceding or following space\.
+
+```
+var appstreamOptions = {
+     sessionURL: 'https://appstream2.region.aws.amazon.com/authenticate?parameters=authenticationcode... (https://appstream2.region.aws.amazon.com/#/)',
+     userInterfaceConfig:{[AppStream.Embed.Options.HIDDEN_ELEMENTS]:[AppStream.Embed.Elements.FULLSCREEN_BUTTON,'keyboardShortcutsButton']}
+ };
+```
+
 ## Constants, Functions, and Events for Embedded AppStream 2\.0 Streaming Sessions<a name="constants-functions-events-embedded-sessions"></a>
 
 The following topics provide reference information for constants, functions, and events that you can use to configure embedded AppStream 2\.0 streaming sessions\.
 
 **Topics**
-+ [Constants for `HIDDEN_ELEMENTS`](#constants-hidden-elements)
++ [Working with `HIDDEN_ELEMENTS`](#constants-hidden-elements)
 + [Functions for the `AppStream.Embed` Object](#functions-embed-object)
 + [Events for Embedded AppStream 2\.0 Streaming Sessions](#events-embedded-streaming-sessions)
 + [Examples for Adding Event Listeners and Ending an Embedded AppStream 2\.0 Streaming Session](#examples-add-event-listeners-end-embedded-streaming-session)
 
 The following AppStream 2\.0 user interface elements can be passed into the `HIDDEN_ELEMENTS` configuration option when an embedded AppStream 2\.0 streaming session is initialized\.
 
-### Constants for `HIDDEN_ELEMENTS`<a name="constants-hidden-elements"></a>
+### Working with `HIDDEN_ELEMENTS`<a name="constants-hidden-elements"></a>
 
-The following AppStream 2\.0 user interface elements can be passed into the `HIDDEN_ELEMENTS` configuration option when an embedded AppStream 2\.0 streaming session is initialized\. 
+The following AppStream 2\.0 user interface elements can be passed as constants into the `HIDDEN_ELEMENTS` configuration option when an embedded AppStream 2\.0 streaming session is initialized\. 
 
 ```
 AppStream.Embed.Elements.TOOLBAR
@@ -245,6 +264,15 @@ AppStream.Embed.Elements.REGIONAL_SETTINGS_BUTTON
 AppStream.Embed.Elements.FULLSCREEN_BUTTON
 AppStream.Embed.Elements.END_SESSION_BUTTON
 ```
+
+The following three elements can be passed as strings into HIDDEN\_ELEMENTS, rather than as constants\.
+
+
+| String | Description | 
+| --- | --- | 
+| 'adminCommandsButton' | When you are connected to an AppStream 2\.0 image builder, the Admin Commands button displays on the top right corner of the session toolbar\. Passing this string into HIDDEN\_ELEMENTS hides the Admin Commands button\. | 
+| 'softKeyboardButton' | During AppStream 2\.0 streaming sessions on touch\-enabled devices, users can tap the keyboard icon on the AppStream 2\.0 toolbar to display the on\-screen keyboard\. Passing this string into HIDDEN\_ELEMENTS hides the keyboard icon\. | 
+| 'keyboardShortcutsButton' | During AppStream 2\.0 streaming sessions on touch\-enabled devices, users can tap the Fn icon to display keyboard shortcuts\. Passing this string into HIDDEN\_ELEMENTS hides the Fn icon\. | 
 
 ### Functions for the `AppStream.Embed` Object<a name="functions-embed-object"></a>
 
@@ -276,7 +304,7 @@ The following table lists the events that can be triggered during embedded AppSt
 
 ### Examples for Adding Event Listeners and Ending an Embedded AppStream 2\.0 Streaming Session<a name="examples-add-event-listeners-end-embedded-streaming-session"></a>
 
-The following examples show how to do the following:
+The examples in this section show how to do the following:
 + Add event listeners for embedded AppStream 2\.0 streaming sessions\.
 + Programmatically end an embedded AppStream 2\.0 streaming session\.
 

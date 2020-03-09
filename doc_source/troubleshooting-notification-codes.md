@@ -47,7 +47,7 @@ The following are notification codes and resolution steps for issues with domain
 **Resolution**: An error occurred starting the Workstation service\. Ensure that the service is enabled in your image\. If you continue to encounter this error, contact AWS Support\. For more information, see [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.
 
 **DOMAIN\_JOIN\_ERROR\_NOT\_SUPPORTED**  
-**Message**: The request is not supported\. This error is returned if a remote computer was specified in the lpServer parameter and this call is not supported on the remote computer\.  
+**Message**: The request is not supported\. This error is returned if a remote computer was specified in the `lpServer` parameter and this call is not supported on the remote computer\.  
 **Resolution**: Contact AWS Support for assistance\. For more information, see [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.
 
 **DOMAIN\_JOIN\_ERROR\_FILE\_NOT\_FOUND**  
@@ -56,4 +56,6 @@ The following are notification codes and resolution steps for issues with domain
 
 **DOMAIN\_JOIN\_INTERNAL\_SERVICE\_ERROR**  
 **Message**: The account already exists\.  
-**Resolution**: The service account specified in the directory configuration does not have permissions to create the computer object or reuse an existing one\. Validate the permissions and start the image builder or fleet\. For more information, see [Granting Permissions to Create and Manage Active Directory Computer Objects](active-directory-admin.md#active-directory-permissions)\.
+**Resolution**: This error can occur in either of the following scenarios:  
++ The service account specified in the directory configuration does not have permissions to create the computer object or reuse an existing one\. If this is the case, validate the permissions and start the image builder or fleet\. For more information, see [Granting Permissions to Create and Manage Active Directory Computer Objects](active-directory-admin.md#active-directory-permissions)\.
++ After AppStream 2\.0 creates the computer object, the object is moved from the OU in which it was created\. In this case, the first image builder or fleet is created successfully, but any new image builder or fleet that uses the computer object fails\. When Active Directory searches for the computer object in the specified OU and detects that an object with the same name exists elsewhere in the domain, the domain join does not succeed\. 

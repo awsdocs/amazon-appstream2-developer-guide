@@ -1,6 +1,6 @@
 # AppStream 2\.0 Instance Families<a name="instance-types"></a>
 
-Amazon AppStream 2\.0 users stream applications from stacks created by an administrator\. Each stack is associated with a fleet\. When you create a fleet, the instance type that you specify determines the hardware of the host computers used for your fleet\. Each instance type offers different compute, memory, and GPU capabilities\. Instance types are grouped into *instance families* based on these capabilities\.
+Amazon AppStream 2\.0 users stream applications from stacks that you create\. Each stack is associated with a fleet\. When you create a fleet, the instance type that you specify determines the hardware of the host computers used for your fleet\. Each instance type offers different compute, memory, and GPU capabilities\. Instance types are grouped into *instance families* based on these capabilities\. For hardware specifications and pricing information, see [AppStream 2\.0 Pricing](https://aws.amazon.com/appstream2/pricing/)\.
 
 When you create a fleet or image builder, you must select an image that is compatible with the instance family on which you intend to run your fleet\.
 + When launching a new image builder, you are presented with a list of the images in your image registry\. Select the appropriate base image\.

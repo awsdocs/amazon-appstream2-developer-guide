@@ -1,6 +1,6 @@
 # Networking and Access for Amazon AppStream 2\.0<a name="managing-network"></a>
 
-The following topics provide information about enabling users to connect to AppStream 2\.0 streaming instances and enabling your AppStream 2\.0 fleets and image builders to access network resources and the internet\.
+The following topics provide information about enabling users to connect to AppStream 2\.0 streaming instances \(fleet instances\) and enabling your AppStream 2\.0 fleets and image builders to access network resources and the internet\.
 
 **Topics**
 + [Internet Access](internet-access.md)

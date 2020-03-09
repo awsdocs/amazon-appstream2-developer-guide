@@ -18,7 +18,6 @@ As an administrator, use the applicable path if you configure your applications 
 **Topics**
 + [Enable Home Folders for Your AppStream 2\.0 Users](#enable-home-folders)
 + [Administer Your Home Folders](#home-folders-admin)
-+ [Provide Your AppStream 2\.0 Users with Guidance for Working with Home Folders](#home-folders-end-user)
 
 ## Enable Home Folders for Your AppStream 2\.0 Users<a name="enable-home-folders"></a>
 
@@ -30,6 +29,9 @@ Before enabling home folders, you must do the following:
 You can enable or disable home folders while creating a stack \(see [Create a Stack](set-up-stacks-fleets.md#set-up-stacks-fleets-install)\), or after the stack is created by using the AWS Management Console for AppStream 2\.0, AWS SDK, or AWS CLI\. For each AWS Region, home folders are backed up by an Amazon S3 bucket\.
 
 The first time you enable home folders for an AppStream 2\.0 stack in an AWS Region, the service creates an Amazon S3 bucket in your account in that same Region\. The same bucket is used to store the content of home folders for all users and all stacks in that Region\. For more information, see [Amazon S3 Bucket Storage](#home-folders-s3)\.
+
+**Note**  
+For guidance that you can provide your users to help them get started with using home folders during AppStream 2\.0 streaming sessions, see [Use Home Folders](home-folders-end-user.md)\.
 
 **To enable home folders while creating a stack**
 + Follow the steps in [Create a Stack](set-up-stacks-fleets.md#set-up-stacks-fleets-install), and make sure that **Enable Home Folders** is selected\.
@@ -162,29 +164,3 @@ Use the following command to disable home folders for an existing stack\. This c
 ```
 aws appstream update-stack –name ExistingStack –-delete-storage-connectors
 ```
-
-## Provide Your AppStream 2\.0 Users with Guidance for Working with Home Folders<a name="home-folders-end-user"></a>
-
-To help your users understand how to work with home folders, you can provide them with the following information\. 
-
-**Guidance for Users**
-
-When you are signed in to an AppStream 2\.0 streaming session, you can use your home folder, as follows: 
-+ Open and edit files and folders that you store in your home folder\. Content that is stored in your home folder is specific to you and cannot be accessed by other users\.
-+ Upload and download files between your local computer and your home folder\. AppStream 2\.0 continuously checks for the most recently modified files and folders and backs them up to your home folder\.
-+ When you are working in an application, you can access files and folders that are stored in your home folder\. Choose **File Open** from the application and browse to the file or folder that you want to open\. To save your changes in a file to your home folder, choose **File Save** from the application interface, and browse to the location in your home folder where you want to save the file\. 
-+ You can also access your home folder by choosing **My Files** from the web view session toolbar\.
-**Note**  
-If your home folder doesn't appear, view your home folder files by browsing to the following directory in File Explorer: C:\\Users\\PhotonUser\\My Files\\Home Folder\. 
-
-**To upload and download files between your local computer and your home folder**
-
-1. In the AppStream 2\.0 web view session, choose the **My Files** icon at the top left of your browser\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/AppStream2-WebView-MyFolders2.png)
-
-1. Navigate to an existing folder, or choose **Add Folder** to create a new folder\.
-
-1. When the folder that you want is displayed, do one of the following: 
-   + To upload a file to the folder, select the file that you want to upload, and choose **Upload**\.
-   + To download a file from the folder, select the file that you want to download, choose the down arrow to the right of the file name, and choose **Download**\.   
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/home-folder-new.png)

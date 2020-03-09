@@ -63,7 +63,7 @@ To resolve this issue, follow these steps:
 
      If you can’t delete this directory, identify the file in the directory that is preventing it from being deleted and the application that created the file\. Then contact the application vendor for information about how to change the file permissions or move the file\.
 
-     If you can delete this directory, contact AWS Support for further guidance to resolve this issue\.
+     If you can delete this directory, contact AWS Support for further guidance to resolve this issue\. For more information, see [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.
 
 ## I've enabled app settings persistence for my users, but for certain streaming apps, my users’ passwords aren’t persisting across sessions\.<a name="app-settings-passwords-not-persisting"></a>
 

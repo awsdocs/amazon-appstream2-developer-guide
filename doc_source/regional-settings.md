@@ -7,10 +7,12 @@ Users can configure their Amazon AppStream 2\.0 streaming sessions to use settin
 
 If users change regional settings during their streaming sessions, the changes are applied to any future streaming sessions in the same AWS Region\.
 
+**Note**  
+For guidance that you can provide your users to help them get started with configuring their regional settings, see [Configure Regional Settings](regional-settings-end-user.md)\.
+
 **Topics**
 + [Supported Locales](#supported-locales)
 + [Enable Regional Settings for Your AppStream 2\.0 Users](#regional-settings-enable)
-+ [Provide Your AppStream 2\.0 Users with Guidance for Working with Regional Settings](#regional-settings-end-user)
 
 ## Supported Locales<a name="supported-locales"></a>
 
@@ -75,21 +77,3 @@ To enable users to configure regional settings for a given stack during their Ap
    1. In **Image name,** choose the new image to use for the fleet\.
 
 For more information about using image builders to create images, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
-
-## Provide Your AppStream 2\.0 Users with Guidance for Working with Regional Settings<a name="regional-settings-end-user"></a>
-
-To help your users understand how to work with regional settings during their streaming sessions, you can provide them with the following information\. 
-
-**Guidance for Users**
-
-You can configure regional settings so that your AppStream 2\.0 streaming sessions use settings that are specific to your location or language\. Changes that you make during your streaming session are applied to future streaming sessions\. 
-
-**To configure regional settings for your AppStream 2\.0 streaming sessions**
-
-1. In your AppStream 2\.0 session, in the top left area, choose the **Settings** icon, and then choose **Regional settings**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/regional-settings-menu-item.png)
-
-1. In the **Regional settings** dialog box, set the following options as needed\. When you're done, choose **Save**\.
-   + **Time zone** — Determines the system time used by Windows and any applications that rely on the operating system time\. 
-   + **Locale** \(also known as culture\) — Determines how Windows displays numbers, currency, time, and dates\. AppStream 2\.0 supports the following locales: Chinese \(Simplified and Traditional\), Dutch, English, French, German, Italian, Japanese, Korean, Portuguese, Spanish, and Thai\.
-   + **Input method** — Determines the keystroke combinations that can be used to input characters in another language\. 

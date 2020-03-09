@@ -49,7 +49,11 @@ Do not choose either of the two SAML 2\.0 access methods \(**Allow programmatic 
 
 1. Review your SAML 2\.0 trust information, confirming the correct trusted entity and condition, and then choose **Next: Permissions**\. 
 
-1. On the **Attach permissions policies** page, choose **Next: Review**\. You create and embed an inline policy for this role later\. 
+1. On the **Attach permissions policies** page, choose **Next: Tags**\.
+
+1. \(Optional\) Type a key and value for each tag that you want to add\. For more information, see [Tagging IAM Users and Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html)\. 
+
+1. When you're done, choose **Next: Review**\. You create and embed an inline policy for this role later\.
 
 1. For **Role name**, type a name that helps you identify the purpose of this role\. Because various entities might reference the role, you cannot edit the name of the role after it has been created\.
 
@@ -59,33 +63,35 @@ Do not choose either of the two SAML 2\.0 access methods \(**Allow programmatic 
 
 ## Step 3: Embed an Inline Policy for the IAM Role<a name="external-identity-providers-embed-inline-policy-for-IAM-role"></a>
 
-Next, embed an inline IAM policy for the role that you created\. When you embed an inline policy, the permissions in the policy cannot be inadvertently attached to the wrong principal entity\. The inline policy provides federated users with access to the AppStream 2\.0 stack that you created\. For information about how to embed the inline policy in JSON, see [Create a Policy on the JSON Tab](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html#access_policies_create-json-editor)\. 
+Next, embed an inline IAM policy for the role that you created\. When you embed an inline policy, the permissions in the policy cannot be inadvertently attached to the wrong principal entity\. The inline policy provides federated users with access to the AppStream 2\.0 stack that you created\.
 
-As you follow the steps in the procedure for embedding an inline policy for a user or role, note that you’ll create a policy on the **JSON** tab\. To do this, copy and paste the following JSON policy into the JSON window and modify the resource by entering your AWS Region Code, account ID, and stack name\. In the following policy, `"Action": "appstream:Stream"` is the action that provides your AppStream 2\.0 users with permissions to connect to streaming sessions on the stack that you created\. 
+1. In the details for the IAM role that you created, choose the **Permissions** tab, and then choose **Add inline policy**\. The Create policy wizard starts\.
 
-```
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": "appstream:Stream",
-      "Resource": "arn:aws:appstream:REGION-CODE:ACCOUNT-ID-WITHOUT-HYPHENS:stack/STACK-NAME",
-      "Condition": {
-          "StringEquals": {
-              "appstream:userId": "${saml:sub}",
-              "saml:sub_type": "persistent"
-          }
-        }
-    }
-  ]
-}
-```
+1. In **Create policy**, choose the **JSON** tab\.
 
-Choose a value for *REGION\-CODE* that corresponds to the AWS Region where your AppStream 2\.0 stack exists\. Replace *STACK\-NAME* with the name of the stack\. Note that this value is case\-sensitive, so the case in the stack name that you specify in this policy must match the case in the AppStream 2\.0 stack name as it appears in the **Stacks** dashboard of the AppStream 2\.0 management console\. 
+1. Copy and paste the following JSON policy into the JSON window and modify the resource by entering your AWS Region Code, account ID, and stack name\. In the following policy, `"Action": "appstream:Stream"` is the action that provides your AppStream 2\.0 users with permissions to connect to streaming sessions on the stack that you created\. 
 
-**Note**  
-After you copy and paste the JSON policy, you may see an error message that indicates the validation failed\. Ignore the error and continue with policy creation\. You may also see an error on the **Review policy** page that indicates the policy does not grant any permissions\. Ignore this error\. The JSON policy is valid and provides the needed permissions\.
+   ```
+   {
+     "Version": "2012-10-17",
+     "Statement": [
+       {
+         "Effect": "Allow",
+         "Action": "appstream:Stream",
+         "Resource": "arn:aws:appstream:REGION-CODE:ACCOUNT-ID-WITHOUT-HYPHENS:stack/STACK-NAME",
+         "Condition": {
+             "StringEquals": {
+                 "appstream:userId": "${saml:sub}"           
+             }
+           }
+       }
+     ]
+   }
+   ```
+
+   Choose a value for *REGION\-CODE* that corresponds to the AWS Region where your AppStream 2\.0 stack exists\. Replace *STACK\-NAME* with the name of the stack\. Note that this value is case\-sensitive, so the case in the stack name that you specify in this policy must match the case in the AppStream 2\.0 stack name as it appears in the **Stacks** dashboard of the AppStream 2\.0 management console\. 
+
+1. When you're done, choose **Review policy**\. The [Policy Validator](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html) reports any syntax errors\. 
 
 ## Step 4: Configure Your SAML\-Based IdP<a name="external-identity-providers-config-idp"></a>
 

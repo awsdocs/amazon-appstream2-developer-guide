@@ -19,4 +19,4 @@ The following table lists the quotas for each AppStream 2\.0 resource\. Where no
 | Image copies \(per month\) | 20 | 
 | Users in the user pool | 50 | 
 
-\*For fleet instances that have default internet access enabled, the quota is 100\. For information about enabling default internet access for a fleet, see [Configure a New or Existing VPC with a Public Subnet](managing-network-default-internet-access.md)\. 
+\*For fleets that have **Default Internet Access** enabled, the quota is 100 fleet instances\. If your deployment must support more than 100 concurrent users, use the [NAT gateway configuration](managing-network-internet-NAT-gateway.md) instead\. For more information about enabling internet access for a fleet, see [Internet Access](internet-access.md)\.

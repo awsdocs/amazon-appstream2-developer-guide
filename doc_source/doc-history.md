@@ -7,7 +7,13 @@ For notification about these updates, you can subscribe to the Amazon AppStream 
 
 | Change | Description | Date | 
 | --- |--- |--- |
-| [AppStream 2\.0 client update: version 1\.0\.525 ](https://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html) | Resolves a DPI issue that causes the mouse cursor to point to the wrong location when a user clicks on an application during a streaming session | December 12, 2019 | 
+| [AppStream 2\.0 client update: version 1\.1\.136](https://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html) | Adds support for defining trusted subdomains for user connections in a DNS TXT record, and provides other enhancements and fixes | March 5, 2020 | 
+| [Documentation update: Support for native application mode](https://docs.aws.amazon.com/appstream2/latest/developerguide/feature-support-native-application-mode.html) | Created "Native application mode" and updated other content as needed\. | February 28, 2020 | 
+| [AppStream 2\.0 client update: version 1\.1\.129](https://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html) | Adds support for native application mode and provides other enhancements and fixes | February 28, 2020 | 
+| [AppStream 2\.0 agent update](https://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html) | Adds support for native application mode | February 19, 2020 | 
+| [AppStream 2\.0 agent update](https://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html) | Resolves multiple issues | January 13, 2020 | 
+| [Documentation update: Enhanced the documentation for security in AppStream 2\.0](https://docs.aws.amazon.com/appstream2/latest/developerguide/security.html) | Created "Security in Amazon AppStream 2\.0" and updated other content as needed\. | December 23, 2019 | 
+| [AppStream 2\.0 client update: version 1\.0\.525](https://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html) | Resolves a DPI issue that causes the mouse cursor to point to the wrong location when a user clicks on an application during a streaming session | December 12, 2019 | 
 | [AppStream 2\.0 base image update](https://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html) | Includes security updates up to December 12, 2019; AWS CLI version 1\.16\.284; and Amazon SSM Agent version 2\.3\.760\.0 | December 12, 2019 | 
 | [Documentation update: Support for AppStream 2\.0 z1d\-based instances](https://docs.aws.amazon.com/appstream2/latest/developerguide/instance-types.html) | Updated "AppStream 2\.0 Instance Families\." | November 21, 2019 | 
 | [AppStream 2\.0 agent update](https://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html) | AppStream 2\.0 assemblies are now signed, including executables and installer packages | November 13, 2019 | 

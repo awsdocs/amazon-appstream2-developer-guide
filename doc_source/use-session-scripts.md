@@ -44,7 +44,7 @@ When you run scripts before streaming sessions begin and the AppStream 2\.0 dyna
      For information about application settings persistence, see [Enable Application Settings Persistence for Your AppStream 2\.0 Users](app-settings-persistence.md)\.
    + If application settings persistence is not enabled, the Windows user is already logged in\.
 
-1. Your session scripts start\. If persistent storage is enabled for your users, storage connector mounting also starts\. For information about persistent storage, see [Enable Persistent Storage for Your AppStream 2\.0 Users](persistent-storage.md)\.
+1. Your session scripts start\. If persistent storage is enabled for your users, storage connector mounting also starts\. For information about persistent storage, see [Enable and Administer Persistent Storage for Your AppStream 2\.0 Users](persistent-storage.md)\.
 **Note**  
 The storage connector mount doesn't need to complete for the streaming session to start\. If the session scripts complete before the storage connector mount completes, the streaming session starts\.   
 For information about monitoring the mount status of storage connectors, see [Use Storage Connectors with Session Scripts](#use-storage-connectors-with-session-scripts)\.

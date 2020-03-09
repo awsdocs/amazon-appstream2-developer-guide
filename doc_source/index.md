@@ -1,7 +1,7 @@
 # Amazon AppStream 2.0 Administration Guide
 
 -----
-*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2020 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -60,10 +60,10 @@ Amazon's trademarks and trade dress may not be used in
    + [More Info](active-directory-more-info.md)
 + [Add Your Custom Branding to Amazon AppStream 2.0](branding.md)
 + [Embed AppStream 2.0 Streaming Sessions](embed-streaming-sessions.md)
-+ [Enable Persistent Storage for Your AppStream 2.0 Users](persistent-storage.md)
++ [Enable and Administer Persistent Storage for Your AppStream 2.0 Users](persistent-storage.md)
    + [Enable and Administer Home Folders for Your AppStream 2.0 Users](home-folders.md)
    + [Enable and Administer Google Drive for Your AppStream 2.0 Users](google-drive.md)
-   + [Enable and Administer OneDrive for Your AppStream 2.0 Users](onedrive.md)
+   + [Enable and Administer OneDrive for Business for Your AppStream 2.0 Users](onedrive.md)
 + [Enable Application Settings Persistence for Your AppStream 2.0 Users](app-settings-persistence.md)
    + [How Application Settings Persistence Works](how-it-works-app-settings-persistence.md)
    + [Enabling Application Settings Persistence](enabling-app-settings-persistence.md)
@@ -76,17 +76,20 @@ Amazon's trademarks and trade dress may not be used in
    + [Use the AppStream 2.0 Dynamic Application Framework to Build a Dynamic App Provider](build-dynamic-app-provider.md)
    + [Enable and Test Dynamic App Providers](enable-test-dynamic-app-providers.md)
    + [Third-Party Dynamic App Providers](third-party-dynamic-app-providers.md)
-+ [Accessing AppStream 2.0 as a User](accessing-as-user.md)
-   + [The AppStream 2.0 Client](client-application.md)
-      + [System Requirements and AppStream 2.0 Feature Support](client-system-requirements-feature-support.md)
++ [Provide Your Users with Access to AppStream 2.0](accessing-as-user.md)
+   + [Provide Access Through a Web Browser](access-through-web-browser-admin.md)
+   + [Provide Access Through the AppStream 2.0 Client for Windows](client-application.md)
+      + [System Requirements and Feature Support](client-system-requirements-feature-support.md)
       + [Install and Configure the AppStream 2.0 Client](install-configure-client.md)
+         + [Have Your Users Install the AppStream 2.0 Client Themselves](user-install-client.md)
+         + [Install the AppStream 2.0 Client And Customize the Client Experience for Your Users](install-client-configure-settings.md)
+         + [Update the AppStream 2.0 Enterprise Deployment Tool, Client, and USB Driver Manually](update-enterprise-deployment-tool-client-usb-driver-manually.md)
          + [Qualify USB Devices for Use with Streaming Applications](qualify-usb-devices.md)
          + [Use the AppStream 2.0 Client to Start a Streaming Session](use-client-start-streaming-session.md)
          + [Share a USB Device with an AppStream 2.0 Streaming Session](share-usb-devices-with-session.md)
          + [Redirect a Streaming Session from the Web Browser to the AppStream 2.0 Client](redirect-streaming-session-from-web-to-client.md)
          + [Enable File System Redirection for Your AppStream 2.0 Users](enable-file-system-redirection.md)
       + [AppStream 2.0 Client Version History](client-release-versions.md)
-   + [Touchscreen Devices](using-touchscreen-devices.md)
 + [Tagging Your Amazon AppStream 2.0 Resources](tagging-basic.md)
 + [Monitoring and Reporting](configure-monitoring-reporting.md)
    + [Monitoring Amazon AppStream 2.0 Resources](monitoring.md)
@@ -134,4 +137,13 @@ Amazon's trademarks and trade dress may not be used in
    + [Troubleshooting Active Directory Domain Join](troubleshooting-active-directory.md)
    + [Troubleshooting Notification Codes](troubleshooting-notification-codes.md)
 + [Amazon AppStream 2.0 Service Quotas](limits.md)
++ [Guidance for AppStream 2.0 Users](user-guidance.md)
+   + [AppStream 2.0 Access Methods and Clients](clients-access-methods-user.md)
+      + [Web Browser Access](web-browser-user.md)
+      + [AppStream 2.0 Client Application for Windows](client-application-windows-user.md)
+   + [File Storage Options](file-folder-storage-user.md)
+      + [Use Home Folders](home-folders-end-user.md)
+      + [Use Google Drive](google-drive-end-user.md)
+      + [Use OneDrive for Business](onedrive-end-user.md)
+   + [Configure Regional Settings](regional-settings-end-user.md)
 + [Document History for Amazon AppStream 2.0](doc-history.md)

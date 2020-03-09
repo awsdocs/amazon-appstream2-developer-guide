@@ -1,6 +1,6 @@
 # Qualify USB Devices for Use with Streaming Applications<a name="qualify-usb-devices"></a>
 
-To qualify your USB devices so that they can be used with streaming applications, perform these steps\. 
+To qualify your users' USB devices so that the devices can be used with streaming applications, perform these steps\. 
 
 1. If you haven't already done so, install the AppStream 2\.0 client\. For information, see [Install and Configure the AppStream 2\.0 Client](install-configure-client.md)\.
 
@@ -42,7 +42,7 @@ To qualify your USB devices so that they can be used with streaming applications
 
 1. On the image builder, test your USB device to confirm that it works as expected\.
 
-1. To use the USB device in an AppStream 2\.0 session, you must share the device with the session first\. For more information, see [Share a USB Device with an AppStream 2\.0 Streaming Session](share-usb-devices-with-session.md)\. After you finish testing, you can provide the information in the *Guidance for Users* section of this topic to your users\.
+1. Before your users can use the USB device in an AppStream 2\.0 session, they must share the device with their session first\. After you finish testing, for guidance that you can provide your users to help them perform this task, see [USB Devices](client-application-windows-user.md#share-usb-devices-with-session-user)\.
 
 1. If the USB device works with the image builder as expected, create an image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
@@ -50,7 +50,7 @@ To qualify your USB devices so that they can be used with streaming applications
 
 ## Working with USB Device Filter Strings<a name="USB-device-filter-strings"></a>
 
-This section describes the filter strings available for qualifying USB devices for AppStream 2\.0 streaming sessions and provides guidance for working with these strings\. The following filter strings are available:
+This section describes the filter strings that are available for qualifying USB devices for AppStream 2\.0 streaming sessions\. It also provides guidance for working with these strings\. The following filter strings are available:
 + **Name** — By default, the value for this filter string is the name of the device\. You can optionally specify your own value\.
 + **Base Class**,**SubClass**,**Protocol** — The USB class code for the device\. For more information, see [Defined Class Codes](https://www.usb.org/defined-class-codes)\.
 + **ID Vendor \(VID\)** — A unique identifier that is assigned by the USB organization to the manufacturer of the USB device\.

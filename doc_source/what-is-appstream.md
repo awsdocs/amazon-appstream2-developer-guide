@@ -43,13 +43,13 @@ An *image builder* is a virtual machine that you use to create an image\. You ca
 An *image* contains applications that you can stream to your users, and default Windows and application settings to enable your users to get started with their applications quickly\. AWS provides base images that you can use to create images that include your own applications\. After you create an image, you can't change it\. To add other applications, update existing applications, or change image settings, you must create a new image\. You can copy your images to other AWS Regions or share them with other AWS accounts in the same Region\. 
 
 **fleet**  
-A *fleet* consists of streaming instances that run the image that you specify\. You can set the desired number of streaming instances for your fleet and configure policies to scale your fleet automatically based on demand\. Note that one user requires one instance\.
+A *fleet* consists of fleet instances \(also known as streaming instances\) that run the image that you specify\. You can set the desired number of streaming instances for your fleet and configure policies to scale your fleet automatically based on demand\. Note that one user requires one instance\.
 
 **stack**  
 A *stack* consists of an associated fleet, user access policies, and storage configurations\. You set up a stack to start streaming applications to users\.
 
 **streaming instance**  
-A *streaming instance* is an EC2 instance that is made available to a single user for streaming\.
+A *streaming instance* \(also known as a fleet instance\) is an EC2 instance that is made available to a single user for application streaming\.
 
 **user pool**  
 Use the *user pool* to manage users and their assigned stacks\.

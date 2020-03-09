@@ -35,6 +35,7 @@ The following table describes all released images\.
 
 | Release | Image | Changes | 
 | --- | --- | --- | 
+| 01\-13\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html)  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html)  | 
 | 12\-12\-2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html)  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html)  | 
 | 09\-18\-2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html)  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html)  | 
 | 09\-05\-2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html)  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html)  | 

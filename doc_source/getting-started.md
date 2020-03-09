@@ -103,13 +103,13 @@ For this getting started exercise, you can use the AppStream 2\.0 user pool\. Th
 
 After you provide your users with access to AppStream 2\.0, they can start AppStream 2\.0 streaming sessions\. If you provide access through the AppStream 2\.0 user pool, they must use a web browser for streaming sessions\. 
 
-If you plan to use SAML 2\.0 \[single sign\-on \(SSO\)\] or the AppStream 2\.0 API to provide access to your users, you can make the AppStream 2\.0 client available to them\. The AppStream 2\.0 client is a native application that is designed for users who require additional functionality during their AppStream 2\.0 streaming sessions\. For more information, see [The AppStream 2\.0 Client](client-application.md)\.
+If you plan to use SAML 2\.0 \[single sign\-on \(SSO\)\] or the AppStream 2\.0 API to provide access to your users, you can make the AppStream 2\.0 client available to them\. The AppStream 2\.0 client is a native application that is designed for users who require additional functionality during their AppStream 2\.0 streaming sessions\. For more information, see [Provide Access Through the AppStream 2\.0 Client for Windows](client-application.md)\.
 
 ## Resources<a name="getting-started-next"></a>
 
 For more information, see the following:
 + Learn how to use the AppStream 2\.0 image builder to add your own applications and create images that you can stream to your users\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
-+ Provide persistent storage for your session users by using AppStream 2\.0 home folders and Google Drive\. For more information, see [Enable Persistent Storage for Your AppStream 2\.0 Users](persistent-storage.md)\.
++ Provide persistent storage for your session users by using AppStream 2\.0 home folders and Google Drive\. For more information, see [Enable and Administer Persistent Storage for Your AppStream 2\.0 Users](persistent-storage.md)\.
 + Integrate your AppStream 2\.0 streaming resources with your Microsoft Active Directory environment\. For more information, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.
 + Control who has access to your AppStream 2\.0 streaming instances\. For more information, see [Identity and Access Management for Amazon AppStream 2\.0](controlling-access.md), [AppStream 2\.0 User Pools](user-pool.md) and [Single Sign\-on Access \(SAML 2\.0\)](external-identity-providers.md)\.
 + Monitor your AppStream 2\.0 resources by using Amazon CloudWatch\. For more information, see [AppStream 2\.0 Metrics and Dimensions](monitoring.md#monitoring-with-cloudwatch)\.

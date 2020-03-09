@@ -133,7 +133,7 @@ The list of applications that the request applies to\.
 Describes the application metadata required to display and launch the application\. The application identifier must be unique and not in conflict with other applications specified through the API operation or the image\.
 
 ***id***  
-The identifier of the application being specified\.  
+The identifier of the application being specified\. This value, which corresponds to the `application_name` value in an AppStream 2\.0 applications report, is provided when a user launches the application\. When you enable [usage reports](enable-usage-reports.md), for each day that users launch at least one application during their streaming sessions, AppStream 2\.0 exports an applications report to your Amazon S3 bucket\. For more information about applications reports, see [Applications Report Fields](usage-reports-fields.md#usage-reports-fields-applications-reports)\.  
 **Type**: String  
 **Required**: Yes  
 **Length constraints:** Minimum length of 1, maximum length of 512 characters\.

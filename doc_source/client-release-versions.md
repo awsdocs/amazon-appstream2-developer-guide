@@ -2,11 +2,13 @@
 
 The AppStream 2\.0 client is a native application that is designed for users who require additional functionality during their AppStream 2\.0 streaming sessions\. The following table describes the latest updates that are available in released versions of the AppStream 2\.0 client\.
 
-For more information about the client, see [The AppStream 2\.0 Client](client-application.md)\.
+For more information about the client, see [Provide Access Through the AppStream 2\.0 Client for Windows](client-application.md)\.
 
 
 | Client version | Release date | Changes | 
 | --- | --- | --- | 
+| 1\.1\.136 | 03\-05\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
+| 1\.1\.129 | 02\-28\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
 | 1\.0\.525 | 12\-12\-2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
 | 1\.0\.511 | 10\-16\-2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
 | 1\.0\.499 | 09\-26\-2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 

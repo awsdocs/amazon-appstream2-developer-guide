@@ -1,9 +1,55 @@
-# Touchscreen Devices<a name="using-touchscreen-devices"></a>
+# Web Browser Access<a name="web-browser-user"></a>
 
-AppStream 2\.0 supports gestures on touch\-enabled iPads, Android tablets, and Windows devices\. All touch events are passed through to the streaming session and handled according to Windows conventions\. Examples of supported touch gestures include long\-tap to right\-click, swipe to scroll, pinch to zoom, and two\-finger rotation for supporting applications\.
+The following information will help you get started with using a web browser to connect to AppStream 2\.0 and stream applications\.
 
-**Note**  
-To enable support for gestures on touch\-enabled devices, your AppStream 2\.0 image must use a version of the AppStream 2\.0 agent released on or after March 7, 2019\. For more information, see [AppStream 2\.0 Agent Version History](agent-software-versions.md)\. 
+**Topics**
++ [Requirements](#web-browser-requirements-user)
++ [Setup](#web-browser-setup-user)
++ [Connect to AppStream 2\.0](#web-browser-start-streaming-session-user)
++ [Monitors and Display Resolution](#web-browser-monitors-display-resolution-user)
++ [Touchscreen Devices](#using-touchscreen-devices-user)
+
+## Requirements<a name="web-browser-requirements-user"></a>
+
+You can connect to AppStream 2\.0 from any location by using an HTML5\-capable web browser\. Supported browsers include the following:
++ Google Chrome
++ Mozilla Firefox
++ Safari
++ Microsoft Edge
++ Microsoft Internet Explorer version 11 or later
+
+## Setup<a name="web-browser-setup-user"></a>
+
+No browser extensions or plugins are required to use AppStream 2\.0 in a web browser\. 
+
+## Connect to AppStream 2\.0<a name="web-browser-start-streaming-session-user"></a>
+
+To connect to AppStream 2\.0 and start an application streaming session, perform these steps\.
+
+1. If you received a welcome email that notifies you to start accessing your apps using AppStream 2\.0, open the email and click the **Login page** link\.
+
+1. The AppStream 2\.0 sign\-in page opens in your browser\.
+
+1. Type your email address and the temporary password that was provided in the email, and choose **Log in**\.
+
+1. When prompted, type a new password, confirm it, and then choose **Set Password**\.
+
+1. The AppStream 2\.0 application portal opens, displaying applications that your administrator has made available to you for streaming\.
+
+1. Click an application to start it\.
+
+## Monitors and Display Resolution<a name="web-browser-monitors-display-resolution-user"></a>
+
+You can use dual monitors for application streaming sessions that are started on the following web browsers:
++ Google Chrome
++ Mozilla Firefox
++ Safari
+
+For browser\-based streaming sessions on dual monitors, a maximum display resolution of 2560x1440 pixels is supported per monitor\. If you require more than two monitors, or a display resolution that is greater than 2560x1440 pixels per monitor, you must use the AppStream 2\.0 client\.
+
+## Touchscreen Devices<a name="using-touchscreen-devices-user"></a>
+
+AppStream 2\.0 supports gestures on touch\-enabled iPads, Android tablets, and Windows devices\. Examples of supported touch gestures include long\-tap to right\-click, swipe to scroll, pinch to zoom, and two\-finger rotation for supporting applications\.
 
 To display the on\-screen keyboard on an iPad or Android tablet, tap the keyboard icon on the AppStream 2\.0 toolbar\. The keyboard icon turns blue, and you can use the on\-screen keyboard to input text within the streaming application\. Tap the keyboard icon again to hide the on\-screen keyboard\.
 

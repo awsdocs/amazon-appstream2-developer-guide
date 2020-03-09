@@ -3,8 +3,7 @@
 This tutorial describes how to create a custom Amazon AppStream 2\.0 image that contains applications you can stream to your users, and default application and Windows settings to enable your users to get started with their applications quickly\. To complete this tutorial, you must already have an image builder\. If you don't have an image builder, see [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md)\.
 
 **Important**  
-This tutorial includes information that applies to the latest base image release\. For more information, see [AppStream 2\.0 Base Image Version History](base-image-version-history.md)\.  
-If you are using images that are created from base images dated before 2017\-07\-24, you can view a compatible version of this tutorial by downloading the PDF file [appstream2\-dg\-2017\-07\-23\.pdf](http://awsdocs.s3.amazonaws.com/AppStream2/appstream2-dg-2017-07-23.pdf)\. 
+This tutorial includes information that applies to the latest base image release\. For more information, see [AppStream 2\.0 Base Image Version History](base-image-version-history.md)\.
 
 **Topics**
 + [Step 1: Install Applications on the Image Builder](#tutorial-image-builder-install)
