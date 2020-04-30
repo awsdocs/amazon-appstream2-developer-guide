@@ -37,4 +37,4 @@ AppStream 2\.0 supports gestures on touch\-enabled iPads, Android tablets, and W
 **Note**  
 To enable support for gestures on touch\-enabled devices, your AppStream 2\.0 image must use a version of the AppStream 2\.0 agent released on or after March 7, 2019\. For more information, see [AppStream 2\.0 Agent Version History](agent-software-versions.md)\. 
 
-For guidance that you can provide your users to help them get started with using touch\-enabled devices during their AppStream 2\.0 streaming sessions, see [Touchscreen Devices](web-browser-user.md#using-touchscreen-devices-user)\.
+For guidance that you can provide your users to help them get started with touch\-enabled devices during their AppStream 2\.0 streaming sessions, see [Touchscreen Devices](web-browser-user.md#using-touchscreen-devices-user)\.

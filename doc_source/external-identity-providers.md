@@ -20,6 +20,8 @@ The following diagram illustrates the authentication flow between AppStream 2\.0
 
 1. The user's browser posts the SAML assertion to the AWS Sign\-In SAML endpoint \(`https://signin.aws.amazon.com/saml`\)\. AWS Sign\-In receives the SAML request, processes the request, authenticates the user, and forwards the authentication token to AppStream 2\.0\.
 
+   For information about working with SAML in AWS GovCloud \(US\-West\), see [AWS Identity and Access Management](https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-iam.html) in the *AWS GovCloud \(US\) User Guide*\.
+
 1. Using the authentication token from AWS, AppStream 2\.0 authorizes the user and presents applications to the browser\.
 
 From the user's perspective, this process happens transparently\. The user starts at your organization's internal portal and is automatically redirected to an AppStream 2\.0 application portal without being required to enter AWS credentials\.

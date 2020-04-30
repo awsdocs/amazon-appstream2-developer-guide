@@ -2,7 +2,7 @@
 
 Your users can start AppStream 2\.0 streaming sessions by using the AppStream 2\.0 client application for a supported device or by using a web browser\.
 
-The AppStream 2\.0 client is a native application that is designed for users who require additional functionality during their AppStream 2\.0 streaming sessions\. This client is suitable for users who:
+The AppStream 2\.0 client is a native application that is designed for users who require the following functionality during their AppStream 2\.0 streaming sessions:
 + Require support for more than two monitors or 4K resolution\.
 + Use their USB devices with applications streamed through AppStream 2\.0\.
 + Use keyboard shortcuts during their streaming sessions\.

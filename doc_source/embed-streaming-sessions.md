@@ -178,7 +178,6 @@ The examples in this section show how to hide items in the AppStream 2\.0 user i
 + [Example 1: Hide the entire AppStream 2\.0 toolbar](#example-hide-the-entire-tooolbar)
 + [Example 2: Hide a specific button on the AppStream 2\.0 toolbar](#example-hide-a-specific-toolbar-button)
 + [Example 3: Hide multiple buttons on the AppStream 2\.0 toolbar](#example-hide-multiple-toolbar-buttons)
-+ [Example 4: Hide a specific button on the AppStream 2\.0 toolbar and an icon on touch\-enabled devices](#example-hide-toolbar-button-touchscreen-device-icon)
 
 #### Example 1: Hide the entire AppStream 2\.0 toolbar<a name="example-hide-the-entire-tooolbar"></a>
 
@@ -213,20 +212,6 @@ Separate each constant with a comma, with no preceding or following space\.
 var appstreamOptions = {
      sessionURL: 'https://appstream2.region.aws.amazon.com/authenticate?parameters=authenticationcode... (https://appstream2.region.aws.amazon.com/#/)',
      userInterfaceConfig:{[AppStream.Embed.Options.HIDDEN_ELEMENTS]:[AppStream.Embed.Elements.END_SESSION_BUTTON,AppStream.Embed.Elements.FULLSCREEN_BUTTON]}
- };
-```
-
-#### Example 4: Hide a specific button on the AppStream 2\.0 toolbar and an icon on touch\-enabled devices<a name="example-hide-toolbar-button-touchscreen-device-icon"></a>
-
-In addition to hiding one or more specific buttons on the AppStream 2\.0 toolbar, you can hide specific icons on touch\-enabled devices during embedded streaming sessions\. To do so, specify constants for the toolbar buttons that you want to hide, and strings for the touch\-enabled device icons that you want to hide\. The following code uses the `AppStream.Embed.Elements.FULLSCREEN_BUTTON` constant to hide the **Fullscreen** button\. In addition, the code uses the `keyboardShortcutsButton` string to hide the Fn keyboard shortcut icon on touch\-enabled devices\. 
-
-**Note**  
-Separate the constant and string with a comma, with no preceding or following space\.
-
-```
-var appstreamOptions = {
-     sessionURL: 'https://appstream2.region.aws.amazon.com/authenticate?parameters=authenticationcode... (https://appstream2.region.aws.amazon.com/#/)',
-     userInterfaceConfig:{[AppStream.Embed.Options.HIDDEN_ELEMENTS]:[AppStream.Embed.Elements.FULLSCREEN_BUTTON,'keyboardShortcutsButton']}
  };
 ```
 

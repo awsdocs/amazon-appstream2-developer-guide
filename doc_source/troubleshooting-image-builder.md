@@ -21,7 +21,7 @@ The following are possible issues you might have while using Amazon AppStream 2\
 
 ## I cannot connect to the internet from my image builder\.<a name="troubleshooting-01"></a>
 
-Image builders cannot communicate to the internet by default\. To resolve this issue, launch your image builder in a VPC subnet that has internet access\. You can enable internet access from your VPC subnet using a [NAT gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)\. Alternatively, you can configure an internet gateway in your VPC, and attach an Elastic IP address to your image builder\. For more information, see [Networking and Access for Amazon AppStream 2\.0](managing-network.md)\.
+Image builders cannot communicate to the internet by default\. To resolve this issue, launch your image builder in a VPC subnet that has internet access\. You can enable internet access from your VPC subnet using a [NAT gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)\. Or, you can configure an internet gateway in your VPC, and attach an Elastic IP address to your image builder\. For more information, see [Networking and Access for Amazon AppStream 2\.0](managing-network.md)\.
 
 ## When I tried installing my application, I see an error that the operating system version is not supported\.<a name="troubleshooting-02"></a>
 
@@ -29,7 +29,7 @@ Only applications that can be installed on Windows Server 2012 R2, Windows Serve
 
 ## I want to use a Windows PowerShell script to open my applications\.<a name="use-powershell-launch-application"></a>
 
-You can use Windows PowerShell scripts to open your applications in the fleet instance\. You may want to do this to configure the application or environment before the application opens\. To launch a Windows PowerShell script for your application, specify the PowerShell \.exe file in Image Assistant\. Navigate to C:\\Windows\\System32\\WindowsPowerShell\\v1\.0\\powershell\.exe, and specify the following launch parameters: 
+You can use Windows PowerShell scripts to open your applications in the fleet instance\. You might want to do this to configure the application or environment before the application opens\. To launch a Windows PowerShell script for your application, specify the PowerShell \.exe file in Image Assistant\. Navigate to `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe`, and specify the following launch parameters: 
 
 \-file "C:\\Path\\To\\PowerShell\\Script\.ps1"
 
@@ -46,7 +46,7 @@ To make a ClickOnce application available to your AppStream 2\.0 users, you must
 
 1. In the list, select the image builder that you want to use, and log into it as an Administrator\.
 
-1. Create a batch file that calls the appref\-ms file within the user profile\. Use the %APPDATA% environment variable to replace C:\\Users\\username\\AppData\\Roaming\. Following is an example batch file call:
+1. Create a batch file that calls the `appref-ms` file within the user profile\. Use the %APPDATA% environment variable to replace C:\\Users\\username\\AppData\\Roaming\. Here is an example batch file call:
 
    ```
    explorer "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Company\ClickOnce.appref-ms"
@@ -64,15 +64,15 @@ To make a ClickOnce application available to your AppStream 2\.0 users, you must
 
 1. On the **Configure Apps** page, open the ClickOnce application to verify that it functions correctly\. After you finish testing, choose **Switch user**\.
 
-1. Log back in as an Administrator and perform the necessary steps in Image Assistant to finish creating your image\.
+1. Log back in as an Administrator and perform the required steps in Image Assistant to finish creating your image\.
 
 ## When I connect to my image builder, I see a login screen asking me to enter Ctrl\+Alt\+Delete to log in\. However, my local machine intercepts the key strokes\.<a name="troubleshooting-03"></a>
 
-Your client may intercept certain key combinations locally instead of sending them to the image builder session\. To reliably send the **Ctrl\+Alt\+Delete** key combination to the image builder, choose **Admin Commands**, **Send Ctrl\+Alt\+Delete**\. The **Admin Commands** menu is available on the top right corner of the image builder session toolbar\.
+Your client might intercept certain key combinations locally instead of sending them to the image builder session\. To reliably send the Ctrl\+Alt\+Delete key combination to the image builder, choose **Admin Commands**, **Send Ctrl\+Alt\+Delete**\. The **Admin Commands** menu is available on the top right corner of the image builder session toolbar\.
 
 ## When I switched between admin and test modes, I saw a request for a password\. I don't know how to get a password\.<a name="troubleshooting-04"></a>
 
-AppStream 2\.0 usually logs you into the user mode that you choose automatically\. On some occasions, the switch may not happen automatically\. If a password is requested, choose **Admin Commands**, **Log me in**\. This sends a one\-time password, securely, to your image builder and pastes it into the **Password** field\.
+AppStream 2\.0 usually logs you into the user mode that you choose automatically\. On some occasions, the switch might not happen automatically\. If a password is requested, choose **Admin Commands**, **Log me in**\. This sends a one\-time password, securely, to your image builder and pastes it into the **Password** field\.
 
 ## I get an error when I add my installed application\.<a name="troubleshooting-05"></a>
 
@@ -82,15 +82,15 @@ Check if your application is installed under the `C:\Users` folder hierarchy\. A
 
 ## I accidentally quit a background service on the image builder and got disconnected\. I am now unable to connect to that image builder\.<a name="troubleshooting-06"></a>
 
-Try stopping the image builder, restarting it and connecting to it again\. If the problem persists, you must launch \(create\) a new image builder\. Do not stop any background services running on the image builder instance\. Doing so may interrupt your image builder session or interfere with the image creation\.
+Try stopping the image builder, restarting it and connecting to it again\. If the problem persists, you must launch \(create\) a new image builder\. Do not stop any background services running on the image builder instance\. Doing so might interrupt your image builder session or interfere with the image creation\.
 
 ## The application fails to launch in test mode\.<a name="troubleshooting-07"></a>
 
-Check if your application requires elevated user privileges or any special permissions that are usually available only to an administrator\. The **Image Builder Test** mode has the same limited permissions on the image builder instance as your end users have on an AppStream 2\.0 test fleet\. If your applications require elevated permissions, they do not launch in the **Image Builder Test** mode\.
+Check if your application requires elevated user privileges or any special permissions that are usually available only to an administrator\. The Image Builder Test mode has the same limited permissions on the image builder instance as your end users have on an AppStream 2\.0 test fleet\. If your applications require elevated permissions, they do not launch in the Image Builder Test mode\.
 
 ## The application could not connect to a network resource in my VPC\.<a name="troubleshooting-08"></a>
 
-Check if the image builder was launched in the correct VPC subnet\. You may also need to verify that the route tables in your VPC are configured to allow a connection\.
+Check if the image builder was launched in the correct VPC subnet\. You might also need to verify that the route tables in your VPC are configured to allow a connection\.
 
 ## I customized my image builder desktop, but my changes are not available when connecting to a session after launching a fleet from the image I created\.<a name="troubleshooting-09"></a>
 
@@ -106,7 +106,7 @@ If the launch parameters must be computed on the fly, you can launch your applic
 
 ## I am unable to use my image with a fleet after installing an antivirus application\.<a name="troubleshooting-11"></a>
 
-You can install any tools, including antivirus programs, on your AppStream 2\.0 stack by using the image builder before creating an image\. However, these programs should not block any network ports or stop any processes that are used by the AppStream 2\.0 service\. We recommend testing your application in **Image Builder Test** mode before creating an image and attempting to use it with a fleet\.
+You can install any tools, including antivirus programs, on your AppStream 2\.0 stack by using the image builder before creating an image\. However, these programs should not block any network ports or stop any processes that are used by the AppStream 2\.0 service\. We recommend testing your application in Image Builder Test mode before creating an image and attempting to use it with a fleet\.
 
 ## My image creation failed\.<a name="troubleshooting-12"></a>
 

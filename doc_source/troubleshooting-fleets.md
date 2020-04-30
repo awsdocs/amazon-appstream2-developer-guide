@@ -22,17 +22,17 @@ If your AppStream 2\.0 environment includes applications that render elements, y
 
 1. Log in to the image builder by doing either of the following:
    + If your image builder is not joined to an Active Directory domain, on the **Local User** tab, choose **Template User**\.
-   + If your image builder is joined to an Active Directory domain, choose the **Directory User** tab, enter the credentials for a domain user that does not have local administrator permissions on the image builder, then choose **Log in**\.
+   + If your image builder is joined to an Active Directory domain, choose the **Directory User** tab, enter the credentials for a domain user who does not have local administrator permissions on the image builder, and then choose **Log in**\.
 
 1. Open Internet Explorer and reset your settings by doing the following:
 
    1. In the upper right area of the Internet Explorer browser window, choose the **Tools** icon, then choose **Internet options**\.
 
-   1. Choose the **Advanced **tab, then choose **Reset**\.
+   1. Choose the **Advanced** tab, and then choose **Reset**\.
 
    1. When prompted to confirm your choice, choose **Reset** again\.
 
-   1. When the **Reset Internet Explorer Settings** message displays, choose **Close**\.
+   1. When the **Reset Internet Explorer Settings** message is displayed, choose **Close**\.
 
 1. In the upper right area of the image builder desktop, choose **Admin Commands**, **Switch User**\.   
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/admin-commands-switch-user.png)
@@ -43,7 +43,7 @@ If your AppStream 2\.0 environment includes applications that render elements, y
 
 1. On the image builder desktop, open Image Assistant\.
 
-1. Follow the necessary steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
+1. Follow the required steps in Image Assistant to finish creating your image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
 ## I need to persist environment variables across my fleet instances\.<a name="troubleshooting-persist-environment-variables"></a>
 

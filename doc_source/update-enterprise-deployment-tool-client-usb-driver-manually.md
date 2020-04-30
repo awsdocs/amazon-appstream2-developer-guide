@@ -3,7 +3,7 @@
 By default, the AppStream 2\.0 client and USB driver are updated automatically when a new client version is released\. However, if you used the Enterprise Deployment Tool to install the AppStream 2\.0 client for your users and you disabled automatic updates, you must update the AppStream 2\.0 Enterprise Deployment Tool, client, and USB driver manually\. To do so, perform the following steps to run the required PowerShell commands on users’ computers\. 
 
 **Note**  
-To run these commands, you must either be logged into the applicable computer as Administrator, or you can run the script remotely under the SYSTEM account on startup\.
+To run these commands, you must either be logged in to the applicable computer as Administrator, or you can run the script remotely under the SYSTEM account on startup\.
 
 1. Uninstall the AppStream 2\.0 Enterprise Deployment Tool silently:
 

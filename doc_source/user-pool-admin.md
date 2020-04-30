@@ -64,7 +64,7 @@ Stacks can't be assigned to users if the stacks are associated with a fleet that
 
 ## Unassigning Stacks from Users<a name="user-pool-admin-unassigning"></a>
 
-You can unassign a stack from one or more users in the user pool\. After a stack is unassigned from users, they can't launch applications from the stack\.
+You can unassign a stack from one or more users in the user pool\. After a stack is unassigned from users, they can't launch applications from the stack\. If users are connected when you unassign the stack, their sessions remain active until the session cookie expires \(about one hour\)\.
 
 **To unassign a stack from users**
 

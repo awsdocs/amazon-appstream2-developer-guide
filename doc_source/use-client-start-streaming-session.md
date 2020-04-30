@@ -13,13 +13,12 @@ In the AppStream 2\.0 client sign\-in page, users enter the streaming URL that y
 
 **SAML 2\.0**
 
-If you use SAML 2\.0 to federate your users to an AppStream 2\.0 stack, you must create a registry value to configure the AppStream 2\.0 client with a pre\-populated URL whenever the client is launched\. The URL must use a certificate that is trusted by the device\. The certificate must contain a Subject Alternative Name \(SAN\) that includes the URL's domain name\. For more information, see [Set the StartURL Registry Value for AppStream 2\.0 Client Users](install-client-configure-settings.md#set-start-url-registry-value)\.
+If you use SAML 2\.0 to federate your users to an AppStream 2\.0 stack, you must create a registry value to configure the AppStream 2\.0 client with a prepopulated URL whenever the client is launched\. The URL must use a certificate that is trusted by the device\. The certificate must contain a Subject Alternative Name \(SAN\) that includes the URL's domain name\. For more information, see [Set the StartURL Registry Value for AppStream 2\.0 Client Users](install-client-configure-settings.md#set-start-url-registry-value)\.
 
 **User pool**
 
 In the AppStream 2\.0 client sign\-in page, users enter the URL that was provided in your welcome email, and then choose **Connect**\. 
 
-**Note**  
-For step\-by\-step guidance that you can provide your users to help them with connecting to AppStream 2\.0 and starting a streaming session, see the following topics:  
- [Connect by Using a Web Browser](web-browser-user.md#web-browser-start-streaming-session-user)
-[Connect by Using the AppStream 2\.0 Client for Windows](client-application-windows-user.md#client-application-windows-start-streaming-session-user)
+For step\-by\-step guidance that you can provide your users to help them with connecting to AppStream 2\.0 and starting a streaming session, see the following topics:
++  [Connect by Using a Web Browser](web-browser-user.md#web-browser-start-streaming-session-user)
++ [Connect by Using the AppStream 2\.0 Client for Windows](client-application-windows-user.md#client-application-windows-start-streaming-session-user)

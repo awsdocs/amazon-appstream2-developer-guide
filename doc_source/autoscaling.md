@@ -161,7 +161,7 @@ aws cloudwatch put-metric-alarm
 --period 300 \
 --threshold 75 \
 --comparison-operator GreaterThanThreshold \
---dimensions "Name=FleetName,Value=fleetname" \
+--dimensions "Name=Fleet,Value=fleetname" \
 --evaluation-periods 1 --unit Percent \
 --alarm-actions "arn:aws:autoscaling:your-region-code:account-number-without-hyphens:scalingPolicy:policyid:resource/appstream/fleet/fleetname:policyName/policyname"
 ```
@@ -216,7 +216,7 @@ aws cloudwatch put-metric-alarm
 --period 300 \
 --threshold 0 \
 --comparison-operator GreaterThanThreshold \
---dimensions "Name=FleetName,Value=fleetname" \
+--dimensions "Name=Fleet,Value=fleetname" \
 --evaluation-periods 1 --unit Count \
 --alarm-actions "arn:aws:autoscaling:your-region-code:account-number-without-hyphens:scalingPolicy:policyid:resource/appstream/fleet/fleetname:policyName/policyname"
 ```
@@ -271,7 +271,7 @@ aws cloudwatch put-metric-alarm
 --period 120 \
 --threshold 25 \
 --comparison-operator LessThanOrEqualToThreshold \
---dimensions "Name=FleetName,Value=fleetname" \
+--dimensions "Name=Fleet,Value=fleetname" \
 --evaluation-periods 10 --unit Percent \
 --alarm-actions "arn:aws:autoscaling:your-region-code:account-number-without-hyphens:scalingPolicy:policyid:resource/appstream/fleet/fleetname:policyName/policyname"
 ```
@@ -300,7 +300,10 @@ The current fleet capacity will appear similar to the following output \(shown i
 }
 ```
 
-Then, use the `put-scheduled-action` command to create a scheduled action to change your fleet capacity\. For example, the following command changes the minimum capacity to 3 and the maximum capacity to 5 every day at 9:00 AM\.
+Then, use the `put-scheduled-action` command to create a scheduled action to change your fleet capacity\. For example, the following command changes the minimum capacity to 3 and the maximum capacity to 5 every day at 9:00 AM UTC\.
+
+**Note**  
+For cron expressions, specify when to perform the action in UTC\. For more information, see [Cron Expressions](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions)\.
 
 ```
 aws application-autoscaling put-scheduled-action --service-namespace appstream \
