@@ -12,6 +12,7 @@ The following topics describe how to install and configure the AppStream 2\.0 cl
 + [Update the AppStream 2\.0 Enterprise Deployment Tool, Client, and USB Driver Manually](update-enterprise-deployment-tool-client-usb-driver-manually.md)
 + [Qualify USB Devices for Use with Streaming Applications](qualify-usb-devices.md)
 + [Use the AppStream 2\.0 Client to Start a Streaming Session](use-client-start-streaming-session.md)
-+ [Share a USB Device with an AppStream 2\.0 Streaming Session](share-usb-devices-with-session.md)
++ [Enable Users to Share a USB Device with an AppStream 2\.0 Streaming Session](share-usb-devices-with-session.md)
 + [Redirect a Streaming Session from the Web Browser to the AppStream 2\.0 Client](redirect-streaming-session-from-web-to-client.md)
 + [Enable File System Redirection for Your AppStream 2\.0 Users](enable-file-system-redirection.md)
++ [Enable Local Printer Redirection](enable-local-printer-redirection.md)

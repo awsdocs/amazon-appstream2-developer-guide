@@ -9,6 +9,7 @@ AppStream 2\.0 sends email to users on your behalf when a new user is created or
 
 **Topics**
 + [Creating a User](#user-pool-admin-create)
++ [Deleting a User](#user-pool-admin-deleting-user)
 + [Assigning Stacks to Users](#user-pool-admin-assigning)
 + [Unassigning Stacks from Users](#user-pool-admin-unassigning)
 + [Disabling Users](#user-pool-admin-disabling)
@@ -20,7 +21,6 @@ AppStream 2\.0 sends email to users on your behalf when a new user is created or
 You must enter a valid and unique email address for each new user within a Region\. However, you can reuse an email address for a new user in another Region\.
 
 When you create a new user, be aware of the following:
-+ You can enable or disable a user, but you cannot delete a user by using the AppStream 2\.0 console\. To delete a user, you must use the [DeleteUser](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteUser.html) API action\.
 + You cannot change the email address, first name, or last name for a user that you have already created\. To change this information for a user, disable the user\. Then, recreate the user \(as a new user\) and specify the updated information as needed\. 
 + Users' email addresses are case\-sensitive\. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays\.
 + You can assign one or more stacks to the user after the user is created\.
@@ -40,6 +40,10 @@ When you create a new user, be aware of the following:
 After users are created, AppStream 2\.0 sends them a welcome email\. This email includes the login portal link, the login email address to be used, and a temporary password\. By browsing to the login portal and typing their temporary password, users can set a permanent password to access their applications\. 
 
 By default, the new user's status is **Enabled**, meaning you can assign one or more stacks to the user or perform other administrative actions\.
+
+## Deleting a User<a name="user-pool-admin-deleting-user"></a>
+
+You can enable or disable a user, but you cannot delete a user by using the AppStream 2\.0 console\. To delete a user, you must use the [DeleteUser](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_DeleteUser.html) API action\.
 
 ## Assigning Stacks to Users<a name="user-pool-admin-assigning"></a>
 

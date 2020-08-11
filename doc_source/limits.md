@@ -13,6 +13,7 @@ The following table lists the quotas for each AppStream 2\.0 resource\. Where no
 | Fleets | 10 | 
 | Fleet instances\* |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/limits.html)  | 
 | Image builder instances  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/limits.html)  | 
+| Image builders \(total\) | 10 | 
 | Images | 10 | 
 | Number of AWS accounts an image can be shared with | 100 | 
 | Concurrent image copies | 2 per destination Region | 

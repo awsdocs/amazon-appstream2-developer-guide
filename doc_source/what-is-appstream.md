@@ -49,7 +49,7 @@ A *fleet* consists of fleet instances \(also known as streaming instances\) that
 A *stack* consists of an associated fleet, user access policies, and storage configurations\. You set up a stack to start streaming applications to users\.
 
 **streaming instance**  
-A *streaming instance* \(also known as a fleet instance\) is an EC2 instance that is made available to a single user for application streaming\.
+A *streaming instance* \(also known as a fleet instance\) is an EC2 instance that is made available to a single user for application streaming\. After the user’s session completes, the instance is terminated by EC2\.
 
 **user pool**  
 Use the *user pool* to manage users and their assigned stacks\.

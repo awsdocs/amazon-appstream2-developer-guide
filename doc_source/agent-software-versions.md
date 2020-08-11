@@ -9,6 +9,9 @@ The following table describes the latest updates that are available in released 
 
 | Amazon AppStream 2\.0 agent version | Changes | 
 | --- | --- | 
+| 07\-30\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
+| 05\-27\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
+| 04\-20\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
 | 02\-19\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
 | 01\-13\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
 | 11\-13\-2019 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 

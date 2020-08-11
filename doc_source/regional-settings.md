@@ -58,7 +58,7 @@ To enable users to configure regional settings for a given stack during their Ap
 
 1. At the PowerShell command prompt, type the command `$PSVersionTable` to determine the version of Windows PowerShell that is installed on your image builder\. If your image builder does not include Windows PowerShell 5\.1 or later, use the following steps to install it\.
 
-1. Open a web browser and follow the steps in [Install and Configure WMF 5\.1](https://docs.microsoft.com/en-us/powershell/wmf/5.1/install-configure) in the Microsoft documentation, making sure that you download the Windows Management Framework \(WMF\) 5\.1 package for Windows Server 2012 R2\. WMF 5\.1 includes Windows PowerShell 5\.1\.
+1. Open a web browser and follow the steps in [Install and Configure WMF 5\.1](https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/wmf/setup/install-configure?view=powershell-7) in the Microsoft documentation, making sure that you download the Windows Management Framework \(WMF\) 5\.1 package for Windows Server 2012 R2\. WMF 5\.1 includes Windows PowerShell 5\.1\.
 
 1. At the end of the WMF 5\.1 installation process, the installer prompts you to restart your computer\. Choose** Restart Now** to restart the image builder\.
 

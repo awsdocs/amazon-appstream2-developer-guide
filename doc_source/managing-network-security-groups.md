@@ -4,7 +4,7 @@ You can provide additional access control to your VPC from streaming instances i
 
 The rules that you define for your VPC security group are applied when the security group is associated with a fleet or image builder\. The security group rules determine what network traffic is allowed from your streaming instances\. For more information, see [Security Group Rules](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules) in the *Amazon VPC User Guide*\.
 
-You can associate up to five security groups while launching a new image builder or while creating a new fleet\. You can also associate security groups to an existing fleet or change the security groups of a fleet\. For more information, see [Working with Security Groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#WorkingWithSecurityGroups) in the *Amazon VPC User Guide*\.
+You can associate up to five security groups while launching a new image builder or while creating a new fleet\. You can also associate security groups with an existing fleet or change the security groups for a fleet \(to change security groups for a fleet, you must first stop the fleet\)\. For more information, see [Working with Security Groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#WorkingWithSecurityGroups) in the *Amazon VPC User Guide*\.
 
 If you don't select a security group, your image builder or fleet is associated with the default security group for your VPC\. For more information, see [Default Security Group for Your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#DefaultSecurityGroup) in the *Amazon VPC User Guide*\.
 

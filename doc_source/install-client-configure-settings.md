@@ -13,6 +13,7 @@ The following sections describe how to install the AppStream 2\.0 client and cus
 + [Choose Whether to Disable Automatic Client Updates](#disable-automatic-updates-client)
 + [Choose Whether to Disable On\-Demand Diagnostic Log Uploads](#disable-on-demand-diagnostic-log-uploads)
 + [Choose Whether to Disable Native Application Mode](#disable-native-application-mode-client)
++ [Choose Whether to Disable Local Printer Redirection](#disable-local-printer-redirection-client)
 + [Configure Additional AppStream 2\.0 Client Settings for Your Users](#configure-client)
 + [Using Group Policy to Customize AppStream 2\.0 Client Experience](#configure-client-with-adm-template-group-policy)
 
@@ -76,7 +77,7 @@ You can configure the AppStream 2\.0 client to connect to URLs in trusted domain
 
 You can specify a list of trusted domains in a comma\-separated format\. Add this list as a registry value to the AppStream 2\.0 `TrustedDomains` HKLM registry key\. We recommend that you create this registry key and specify the list of trusted domains when you install the AppStream 2\.0 client or, if you are using Microsoft Active Directory, through Group Policy\. That way, your users can connect to a URL in any trusted domain immediately after the client is installed\.
 
-After the AppStream 2\.0 client is installed, you can run the following PowerShell script to create this registry key, or you can use the administrative template that is included in the AppStream 2\.0 client Enterprise Deployment Tool to configure the client through Group Policy\.
+After the AppStream 2\.0 client is installed, you can run the following PowerShell script to create this registry key\. Or, you can use the administrative template that is included in the AppStream 2\.0 client Enterprise Deployment Tool to configure the client through Group Policy\.
 
 Replace the `TrustedDomains` value with a comma\-separated list for one or more of your organizational or IdP domains\. The certificate used by the trusted domain webpage must contain a SAN that includes the URL's domain\. For example, if your trusted domain includes \*\.example\.com, and users specify https://appstream\.example\.com, the SSL certificate must have a SAN that includes appstream\.example\.com\.
 
@@ -144,7 +145,7 @@ New-ItemProperty -Path $registryPath -Name "DnsTxtRecordQueryDisabled" -Value "t
 
 ## Choose Whether to Disable Automatic Client Updates<a name="disable-automatic-updates-client"></a>
 
-By default, when a new version of the AppStream 2\.0 client is available, the client updates automatically to the latest version\. However, you can disable automatic updates by setting the value for the `AutoUpdateDisabled` registry key to `true`\. You can create this registry key when you install the AppStream 2\.0 client\. That way, the client is not updated automatically whenever a new version is available\. 
+By default, when a new version of the AppStream 2\.0 client is available, the client updates automatically to the latest version\. You can disable automatic updates by setting the value for the `AutoUpdateDisabled` registry key to `true`\. You can create this registry key when you install the AppStream 2\.0 client\. That way, the client is not updated automatically whenever a new version is available\. 
 
 After the AppStream 2\.0 client is installed, you can run the following PowerShell script to create this registry key\. Or, you can use the administrative template that is included in the AppStream 2\.0 client Enterprise Deployment Tool to configure the client through Group Policy\.
 
@@ -162,7 +163,7 @@ New-ItemProperty -Path $registryPath -Name "AutoUpdateDisabled" -Value "True" -P
 
 By default, the AppStream 2\.0 client allows users to upload diagnostic logs and minidumps on demand to AppStream 2\.0 \(AWS\)\. In addition, if an exception occurs or the AppStream 2\.0 client stops responding, users are prompted to choose whether they want to upload the minidump and associated logs\. For more information about on\-demand diagnostic logging, see [Automatic and On\-Demand Diagnostic Log Uploads](client-system-requirements-feature-support.md#feature-support-diagnostic-log-upload)\.
 
-You can configure the `UserUploadOfClientLogsAllowed` registry value to disable these behaviors by setting the registry value to `false`\. You can create this HKLM registry key when you install the AppStream 2\.0 client\.
+You can disable these behaviors by setting the value for the `UserUploadOfClientLogsAllowed` registry key to `false`\. You can create this HKLM registry key when you install the AppStream 2\.0 client\.
 
 After the AppStream 2\.0 client is installed, you can run the following PowerShell script to create this registry key\. Or, you can use the administrative template that is included in the AppStream 2\.0 client Enterprise Deployment Tool to configure the client through Group Policy\.
 
@@ -178,7 +179,7 @@ New-ItemProperty -Path $registryPath -Name "UserUploadOfClientLogsAllowed" -Valu
 
 ## Choose Whether to Disable Native Application Mode<a name="disable-native-application-mode-client"></a>
 
-By default, the AppStream 2\.0 client can run in either classic mode or native application mode\. However, you can configure the `NativeAppModeDisabled` registry value to disable native application mode by setting its value to `true`\. You can create this HKLM registry key when you install the AppStream 2\.0 client\. If the value is set to `true`, the client runs in classic mode only\. For information about native application mode, see [Native Application Mode](client-system-requirements-feature-support.md#feature-support-native-application-mode)\.
+By default, the AppStream 2\.0 client can run in either classic mode or native application mode\. You can disable native application mode by setting the value for the `NativeAppModeDisabled` registry key to `true`\. You can create this HKLM registry key when you install the AppStream 2\.0 client\. If the value is set to `true`, the client runs in classic mode only\. For information about native application mode, see [Native Application Mode](client-system-requirements-feature-support.md#feature-support-native-application-mode)\.
 
 After the AppStream 2\.0 client is installed, you can run the following PowerShell script to create this registry key\. Or, you can use the administrative template that is included in the AppStream 2\.0 client Enterprise Deployment Tool to configure the client through Group Policy\.
 
@@ -190,6 +191,22 @@ $registryPath="HKLM:\Software\Amazon\AppStream Client"
 New-Item -Path "HKLM:\Software\Amazon" -Name "AppStream Client" -Force
 
 New-ItemProperty -Path $registryPath -Name "NativeAppModeDisabled" -Value "True" -PropertyType String -Force | Out-Null
+```
+
+## Choose Whether to Disable Local Printer Redirection<a name="disable-local-printer-redirection-client"></a>
+
+By default, the AppStream 2\.0 client enables users to redirect print jobs from their streaming applications to a printer that is connected to their local computer\. You can disable local printer redirection by setting the value for the `PrinterRedirectionDisabled` registry key to `true`\. You can create this HKLM registry key when you install the AppStream 2\.0 client\. If the value is set to `true`, the client does not redirect print jobs from users’ streaming applications to a printer that is connected to their local computer\.
+
+After you install the AppStream 2\.0 client, you can run the following PowerShell script to create this registry key\. 
+
+**Note**  
+To run this script, you must be logged in to the applicable computer with Administrator permissions\. You can also run the script remotely under the System account on startup\. 
+
+```
+$registryPath="HKLM:\Software\Amazon\AppStream Client"
+New-Item -Path "HKLM:\Software\Amazon" -Name "AppStream Client" -Force
+
+New-ItemProperty -Path $registryPath -Name "PrinterRedirectionDisabled" -Value "True" -PropertyType String -Force | Out-Null
 ```
 
 ## Configure Additional AppStream 2\.0 Client Settings for Your Users<a name="configure-client"></a>

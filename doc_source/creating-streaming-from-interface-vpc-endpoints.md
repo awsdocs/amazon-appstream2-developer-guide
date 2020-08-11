@@ -27,6 +27,8 @@ Before you set up interface VPC endpoints for AppStream 2\.0, be aware of the fo
    + For **VPC**, choose a VPC in which to create the interface endpoint\. You can choose a different VPC than the VPC with AppStream 2\.0 resources\.
    + For **Subnets**, choose the subnets \(Availability Zones\) in which to create the endpoint network interfaces\. We recommend that you choose subnets in at least two Availability Zones\.
    + Ensure that the **Enable Private DNS Name** check box is selected\. 
+**Note**  
+If your users use a network proxy to access streaming instances, disable any proxy caching on the domain and DNS names that are associated with the private endpoint\.
    + For **Security group**, choose the security groups to associate with the endpoint network interfaces\. 
 **Note**  
 The security groups must provide inbound access to the ports from the IP address range from which your users connect\.
@@ -43,9 +45,9 @@ While your interface endpoint is being created, the status of the endpoint in th
 
 1. In the navigation pane, choose **Stacks**, and then choose the stack that you want\.
 
-1. Choose the **Network Access Endpoints** tab, and then choose **Edit**\.
+1. Choose the **VPC Endpoints** tab, and then choose **Edit**\.
 
-1. In the **Edit Network Access Endpoint** dialog box, for **Streaming Endpoint**, choose the endpoint through which you want to stream traffic\.
+1. In the **Edit VPC Endpoint** dialog box, for **Streaming Endpoint**, choose the endpoint through which to stream traffic\.
 
 1. Choose **Update**\.
 

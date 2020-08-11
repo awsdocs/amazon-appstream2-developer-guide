@@ -12,32 +12,16 @@ The AppStream 2\.0 client requires the following:
 + An AppStream 2\.0 image that uses the latest AppStream 2\.0 agent or agent versions published on or after November 14, 2018\. For information about AppStream 2\.0 agent versions, see [AppStream 2\.0 Agent Version History](agent-software-versions.md)\.
 
 **Note**  
-We recommend an internet connection for AppStream 2\.0 client installation\. In some cases, the client can't be installed on a PC that is not connected to the internet, or USB devices might not work with applications streamed from AppStream 2\.0\. For more information, see [Troubleshooting the AppStream 2\.0 Client](troubleshooting-client.md)\.
+We recommend an internet connection for AppStream 2\.0 client installation\. In some cases, the client can't be installed on a PC that is not connected to the internet, or USB devices might not work with applications streamed from AppStream 2\.0\. For more information, see [Troubleshooting AppStream 2\.0 User Issues](troubleshooting-client.md)\.
 
-## Feature Support<a name="client-feature-support"></a>
+## Feature and Device Support<a name="client-feature-support"></a>
 
-The AppStream 2\.0 client supports the following features\.
+The AppStream 2\.0 client supports the following features and peripheral devices\.
 
 **Topics**
-+ [Multiple Monitors \(up to 2K Resolution\)](#feature-support-multiple-monitors-2K)
-+ [Multiple Monitors \(up to 4K Resolution\)](#feature-support-multiple-monitors-4K)
-+ [USB Devices Qualified by AppStream 2\.0](#feature-support-USB-devices-qualified)
 + [Native Application Mode](#feature-support-native-application-mode)
 + [Automatic and On\-Demand Diagnostic Log Uploads](#feature-support-diagnostic-log-upload)
-+ [Keyboard Shortcuts](#feature-support-keyboard-shortcuts)
-+ [Relative Mouse Offset](#feature-support-relative-mouse-offset)
-
-### Multiple Monitors \(up to 2K Resolution\)<a name="feature-support-multiple-monitors-2K"></a>
-
-The following AppStream 2\.0 instance types support up to 4 monitors and a maximum display resolution of 2560x1440 pixels per monitor: General Purpose, Memory Optimized, Compute Optimized, Graphics Design, and Graphics Pro\.
-
-### Multiple Monitors \(up to 4K Resolution\)<a name="feature-support-multiple-monitors-4K"></a>
-
-The following AppStream 2\.0 instance types support up to 2 monitors and a maximum display resolution of 4096x2160 pixels per monitor: Graphics Design and Graphics Pro\.
-
-### USB Devices Qualified by AppStream 2\.0<a name="feature-support-USB-devices-qualified"></a>
-
-All categories of the Connexion 3D Mouse are already qualified by AppStream 2\.0\. By default, all USB devices are disabled\. To enable your users to use other USB devices with AppStream 2\.0, you must qualify the devices\. For more information, see [Qualify USB Devices for Use with Streaming Applications](qualify-usb-devices.md)\.
++ [Peripheral Devices](#feature-support-peripheral-devices)
 
 ### Native Application Mode<a name="feature-support-native-application-mode"></a>
 
@@ -76,10 +60,52 @@ If you require more control over logging, you can disable automatic logging and 
 
  For guidance that you can provide your users to help them perform these tasks, see [Logging](client-application-windows-user.md#client-application-windows-how-to-enable-diagnostic-logging-user)\.
 
-### Keyboard Shortcuts<a name="feature-support-keyboard-shortcuts"></a>
+### Peripheral Devices<a name="feature-support-peripheral-devices"></a>
+
+The AppStream 2\.0 client provides the following support for peripheral devices such as monitors, mice, keyboards, and drawing tablets\.
+
+**Note**  
+With certain exceptions, USB redirection is required for the AppStream 2\.0 client to support USB devices\. When USB redirection is required for a device, the device must be qualified before it can be used with AppStream 2\.0 streaming sessions\. For more information, see [USB Devices Qualified by AppStream 2\.0](#feature-support-USB-devices-qualified)\.
+
+**Topics**
++ [Multiple Monitors \(up to 2K Resolution\)](#feature-support-multiple-monitors-2K)
++ [Multiple Monitors \(up to 4K Resolution\)](#feature-support-multiple-monitors-4K)
++ [USB Devices Qualified by AppStream 2\.0](#feature-support-USB-devices-qualified)
++ [Drawing Tablets](#feature-support-drawing-tablets)
++ [Keyboard Shortcuts](#feature-support-keyboard-shortcuts)
++ [Relative Mouse Offset](#feature-support-relative-mouse-offset)
+
+#### Multiple Monitors \(up to 2K Resolution\)<a name="feature-support-multiple-monitors-2K"></a>
+
+The following AppStream 2\.0 instance types support up to 4 monitors and a maximum display resolution of 2560x1600 pixels per monitor: General Purpose, Memory Optimized, Compute Optimized, Graphics Design, and Graphics Pro\.
+
+#### Multiple Monitors \(up to 4K Resolution\)<a name="feature-support-multiple-monitors-4K"></a>
+
+The following AppStream 2\.0 instance types support up to 2 monitors and a maximum display resolution of 4096x2160 pixels per monitor: Graphics Design and Graphics Pro\.
+
+#### USB Devices Qualified by AppStream 2\.0<a name="feature-support-USB-devices-qualified"></a>
+
+With certain exceptions, USB redirection is required for the AppStream 2\.0 client to support USB devices\. When USB redirection is required for a device, you must qualify it before your users can use the device during their AppStream 2\.0 streaming sessions\.
+
+For drawing tablets, USB redirection might not be required\. However, if your users are streaming an application such as the Gnu Image Manipulation Program \(GIMP\), which requires USB redirection to support pressure sensitivity, you must qualify the device\. For step\-by\-step guidance, see [Qualify USB Devices for Use with Streaming Applications](qualify-usb-devices.md)\.
+
+#### Drawing Tablets<a name="feature-support-drawing-tablets"></a>
+
+Drawing tablets, also known as pen tablets, are computer input devices that let users draw with a stylus \(pen\)\. With AppStream 2\.0, your users can connect a drawing tablet, such as a Wacom drawing tablet, to their local computer and use the tablet with their streaming applications\.
+
+Following are requirements and considerations for enabling your users to use drawing tablets with their streaming applications\.
++ To enable your users to use this feature, you must configure your AppStream 2\.0 fleet to use an image that runs Windows Server 2019\.
++ To use this feature, users must access AppStream 2\.0 by using the AppStream 2\.0 client, or through the Google Chrome or Mozilla Firefox browsers only\.
++ Streaming applications must support Windows Ink technology\. For more information, see [Pen interactions and Windows Ink in Windows apps](https://docs.microsoft.com/en-us/windows/uwp/design/input/pen-and-stylus-interactions)\.
++ Some applications, such GIMP, must detect drawing tablets on the streaming instance to support pressure sensitivity\. If this is the case, your users must use the AppStream 2\.0 client to access AppStream 2\.0 and stream these applications\. In addition, you must qualify your users' drawing tablets, and users must share their drawing tablets with AppStream 2\.0 every time they start a new streaming session\.
++ This feature is not supported on Chromebooks\.
+
+To get started with using drawing tablets during application streaming sessions, users connect their drawing tablet to their local computer with USB, share the device with AppStream 2\.0 if required for pressure sensitivity detection, and then use the AppStream 2\.0 client or a [supported web browser](access-through-web-browser-admin.md#drawing-tablet-support-web-access-admin) to start an AppStream 2\.0 streaming session\.
+
+#### Keyboard Shortcuts<a name="feature-support-keyboard-shortcuts"></a>
 
 Most operating system keyboard shortcuts are supported\. Supported keyboard shortcuts include Alt \+ Tab, Clipboard shortcuts \(Ctrl \+ X, Ctrl \+ C, Ctrl\+ V\), Esc, and Alt \+ F4
 
-### Relative Mouse Offset<a name="feature-support-relative-mouse-offset"></a>
+#### Relative Mouse Offset<a name="feature-support-relative-mouse-offset"></a>
 
 This feature can be used with applications such as Minecraft\.

@@ -14,7 +14,7 @@ The following recommendations can help you configure your VPC more effectively a
   The NAT gateway lets the streaming instances in your private subnets connect to the internet or other AWS services\. However, it prevents the internet from initiating a connection with those instances\. In addition, unlike configurations that use the **Default Internet Access** option for enabling internet access, the NAT configuration supports more than 100 fleet instances\. For more information, see [Configure a VPC with Private Subnets and a NAT Gateway](managing-network-internet-NAT-gateway.md)\.
 
 **Elastic Network Interfaces**
-+ AppStream 2\.0 creates as many [elastic network interfaces](https://docs.aws.amazon.com/vpc/latest/userguide/using-enis) \(network interfaces\) as the maximum desired capacity of your fleet\. By default, the limit for network interfaces per Region is 5000\. 
++ AppStream 2\.0 creates as many [elastic network interfaces](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ElasticNetworkInterfaces.html) \(network interfaces\) as the maximum desired capacity of your fleet\. By default, the limit for network interfaces per Region is 5000\. 
 
   When planning capacity for very large deployments, for example, thousands of streaming instances, consider the number of EC2 instances that are also used in the same Region\.
 

@@ -7,4 +7,4 @@ If your organization has deployed antivirus software that prevents users from ru
 
 After users install the client, if you plan to let your users use USB devices during their AppStream 2\.0 streaming sessions, the following requirements must be met: 
 + You must qualify the USB devices that can be used with AppStream 2\.0\. For more information, see [Qualify USB Devices for Use with Streaming Applications](qualify-usb-devices.md)\.
-+ After their devices are qualified, your users must share the devices with AppStream 2\.0 every time they start a new streaming session\. For guidance that you can provide your users to them complete this task, see [USB Devices](client-application-windows-user.md#share-usb-devices-with-session-user)\.
++ After their devices are qualified, your users must share the devices with AppStream 2\.0 every time they start a new streaming session\. For guidance that you can provide your users to them complete this task, see [USB Devices](client-application-windows-user.md#client-application-share-usb-devices-with-session-user)\.

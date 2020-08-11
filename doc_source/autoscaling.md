@@ -160,7 +160,7 @@ aws cloudwatch put-metric-alarm
 --statistic Average \
 --period 300 \
 --threshold 75 \
---comparison-operator GreaterThanThreshold \
+--comparison-operator GreaterThanOrEqualToThreshold \
 --dimensions "Name=Fleet,Value=fleetname" \
 --evaluation-periods 1 --unit Percent \
 --alarm-actions "arn:aws:autoscaling:your-region-code:account-number-without-hyphens:scalingPolicy:policyid:resource/appstream/fleet/fleetname:policyName/policyname"
@@ -245,7 +245,7 @@ The contents of the file `scale-in-capacity.json` are as follows:
         "StepAdjustments": [
             {
                 "MetricIntervalUpperBound": 0,
-                "ScalingAdjustment": 25
+                "ScalingAdjustment": -25
             }
         ],
         "Cooldown": 360

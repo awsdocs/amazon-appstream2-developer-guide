@@ -20,22 +20,24 @@ Before you can stream your applications, you need to set up a stack, choose an i
 
 1. Choose **Get Started** if you are new to the console, or **Quick Links** from the left navigation menu\. Choose **Set up with sample apps**\.
 
-1. For **Step 1: Stack Details**, keep the default stack name or enter your own\. Optionally, you can specify the following: 
-   + **Display name** — Type a name to display for the stack \(maximum of 100 characters\)\.
+1. For **Step 1: Stack Details**, keep the default stack name or enter your own\. Optionally, you can do the following:
+   + **Display name** — Enter a name to display for the stack \(maximum of 100 characters\)\.
    + **Description**— Keep the default description or enter your own \(maximum of 256 characters\)\.
    + **Redirect URL** — Specify a URL to which users are redirected after their streaming sessions end\.
-   + **Feedback URL** — Specify a URL to which users are redirected after they click the Send Feedback link to submit feedback about their application streaming experience\. If you do not specify a URL, this link is not displayed\.
+   + **Feedback URL** — Specify a URL to which users are redirected after they click the **Send Feedback** link to submit feedback about their application streaming experience\. If you do not specify a URL, this link is not displayed\.
    + **Tags** — Choose **Add Tag**, and type the key and value for the tag\. To add more tags, repeat this step as needed\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.
+   + **VPC Endpoints \(Advanced\)** — You can create a private link, which is an [interface VPC endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html) \(interface endpoint\), in your virtual private cloud \(VPC\)\. To start creating the interface endpoint, select ** Create VPC Endpoint**\. Selecting this link opens the VPC console\. To finish creating the endpoint, follow steps 3 through 6 in *To create an interface endpoint*, in [Creating and Streaming from Interface VPC Endpoints](creating-streaming-from-interface-vpc-endpoints.md)\. 
 
-1. For **Step 1: Stack Details**, under **Network Access Endpoints \(Optional\)**, you can create a private link, which is an [interface VPC endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html) \(interface endpoint\), in your virtual private cloud \(VPC\)\. To start creating the interface endpoint, select ** Create PrivateLink**\. Selecting this link opens the VPC console\. To finish creating the endpoint, follow steps 3 through 6 in *To create an interface endpoint*, in [Creating and Streaming from Interface VPC Endpoints](creating-streaming-from-interface-vpc-endpoints.md)\. 
-
-   After you create the interface endpoint, you can use it to keep streaming traffic within your VPC\.
+     After you create the interface endpoint, you can use it to keep streaming traffic within your VPC\.
+   + **Embed AppStream 2\.0 \(Optional\)** — To embed an AppStream 2\.0 streaming session in a webpage, specify the domain to host the embedded streaming session\. Embedded streaming sessions are only supported over HTTPS \[TCP port 443\]\. 
+**Note**  
+You must meet prerequisites and perform additional steps to configure embedded AppStream 2\.0 streaming sessions\. For more information, see [Embed AppStream 2\.0 Streaming Sessions](embed-streaming-sessions.md)\.
 
 1.  Choose **Next**\.
 
 1. For **Step 2: Choose Image**, a sample image is already selected\. The image contains pre\-installed open\-source applications for evaluation purposes\. Choose **Next**\.
 
-1. For **Step 3: Configure Fleet**, we recommend that you keep the default values and choose **Next**\. You can change most of these values after fleet creation\.
+1. For **Step 3: Configure Fleet**, we recommend that you keep any default values that are provided\. You can change most of these values after fleet creation\.
    + **Choose instance type** — Choose the instance type that matches the performance requirements of your applications\. All streaming instances in your fleet launch with the instance type that you select\. For more information, see [AppStream 2\.0 Instance Families](instance-types.md)\.
    + **Fleet type** — Choose the fleet type that suits your use case\. The fleet type determines its immediate availability and how you pay for it\.
    + **Maximum session duration in minutes** — Choose the maximum amount of time that a streaming session can remain active\. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected\. After this time elapses, the instance is terminated and replaced by a new instance\. 
@@ -47,8 +49,26 @@ Before you can stream your applications, you need to set up a stack, choose an i
 Users are considered idle when they stop providing keyboard or mouse input during their streaming session\. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity\. If users continue to be idle after the time interval in **Idle disconnect timeout in minutes** elapses, they are disconnected\.
    + **Minimum capacity** — Choose a minimum number of instances for your fleet based on the minimum number of expected concurrent users\. Every unique user session is served by an instance\. For example, to have your stack support 100 concurrent users during low demand, specify a minimum capacity of 100\. This ensures that 100 instances are running even if there are fewer than 100 users\.
    + **Maximum capacity** — Choose a maximum number of instances for your fleet based on the maximum number of expected concurrent users\. Every unique user session is served by an instance\. For example, to have your stack support 500 concurrent users during high demand, specify a maximum capacity of 500\. This ensures that up to 500 instances can be created on demand\.
+   + **Scaling details** — Specify the scaling policies that AppStream 2\.0 uses to increase and decrease the capacity of your fleet\. Note that the size of your fleet is limited by the minimum and maximum capacity that you specified\. For more information, see [Fleet Auto Scaling for Amazon AppStream 2\.0](autoscaling.md)\.
+   + **IAM role \(Advanced\)** — When you apply an IAM role from your account to an AppStream 2\.0 fleet instance, you can make AWS API requests from the fleet instance without manually managing AWS credentials\. To apply an IAM role, do either of the following:
+     + To use an existing IAM role in your AWS account, choose the role that you want to use from the **IAM role** list\. The role must must be accessible from the fleet instance\. For more information, see [Configuring an Existing IAM Role to Use With AppStream 2\.0 Streaming Instances](using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.md#configuring-existing-iam-role-to-use-with-streaming-instances)\.
+     + To create a new IAM role, choose **Create new IAM role** and follow the steps in [How to Create an IAM Role to Use With AppStream 2\.0 Streaming Instances](using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.md#how-to-create-iam-role-to-use-with-streaming-instances)\.
 
-1. For **Step 4: Configure Network**, choose an Amazon VPC and two subnets with access to the network resources that your application needs, and then choose **Next**\. If you don't have a VPC or subnets, you can create them using the links provided and then click the refresh icons\. For **Security groups**, you can select up to five security groups\. Otherwise, the default security group is used\. For more information, see [Networking and Access for Amazon AppStream 2\.0](managing-network.md)\.
+1. Choose **Next**\.
+
+1. For **Step 4: Configure Network**, a default VPC is provided\. This VPC includes a default public subnet in each Availability Zone and an internet gateway that is attached to your VPC\. The VPC also includes a default security group\. To use the default VPC configuration, do the following:
+   + Keep the **Default Internet Access** check box selected\.
+
+     When **Default Internet Access** is enabled, a maximum of 100 fleet instances is supported\. If your deployment must support more than 100 concurrent users, use the [NAT gateway configuration](managing-network-internet-NAT-gateway.md) instead\.
+   + For **VPC**, keep the default VPC selected for your AWS Region\.
+
+     The default VPC name uses the following format: `vpc-`*vpc\-id*` (No_default_value_Name)`\.
+   + For **Subnet 1** and **Subnet 2**, keep the default public subnets selected\.
+
+     The default subnet names use the following format: `subnet-`*subnet\-id*` | (`*IPv4 CIDR block*`) | Default in` *availability\-zone*\.
+   + For **Security groups**, keep the default security group selected\.
+
+     The default security group name uses the following format: `sg-`*security\-group\-id*`-default`\.
 
 1. For **Step 5: Enable Storage**, choose one or more of the following, then choose **Next**\. 
    + **Enable Home Folders** — By default, this setting is enabled\. Keep the default setting\. For information about requirements for enabling home folders, see [Enable Home Folders for Your AppStream 2\.0 Users](home-folders.md#enable-home-folders)\.
@@ -74,9 +94,9 @@ For information about requirements for enabling and administering application se
 
 1. For **Step 7: Review**, confirm the details for the stack\. To change the configuration for any section, choose **Edit **and make the needed changes\. After you finish reviewing the configuration details, choose **Create**\. 
 
-1. After the service sets up resources, the **Stacks** page appears\. The status of your new stack appears as **Active** when it is ready to use\. 
+1. In the pricing acknowledgement dialog box, select the acknowledgement check box, and choose **Create**\.
 
-   Optionally, you can apply one or more tags to help manage the stack\. Choose **Tags**, choose **Add/Edit Tags**, choose **Add Tag**, specify the key and value for the tag, and then choose **Save**\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.
+1. After the service sets up resources, the **Stacks** page appears\. The status of your new stack appears as **Active** when it is ready to use\. 
 
 ## Step 2: Provide Access to Users<a name="getting-started-access"></a>
 

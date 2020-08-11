@@ -10,7 +10,7 @@
 
 When you enable application settings persistence, your users’ application customizations and Windows settings are automatically saved to a Virtual Hard Disk \(VHD\) file that is stored in an Amazon S3 bucket created in your AWS account\. For every AWS Region, AppStream 2\.0 creates a bucket in your account that is unique to your account and the Region\. All application settings configured by your users are stored in the bucket for that Region\.
 
-You do not need to perform any configuration tasks to manage these S3 buckets; they are fully managed by the AppStream 2\.0 service\. The VHD file that is stored in each bucket is encrypted in transit using Amazon S3's SSL endpoints and at rest using Amazon S3\-managed encryption keys\. The buckets are named in a specific format as follows:
+You do not need to perform any configuration tasks to manage these S3 buckets; they are fully managed by the AppStream 2\.0 service\. The VHD file that is stored in each bucket is encrypted in transit using Amazon S3's SSL endpoints and at rest using [AWS Managed CMKs](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk)\. The buckets are named in a specific format as follows:
 
 ```
 appstream-app-settings-region-code-account-id-without-hyphens-random-identifier

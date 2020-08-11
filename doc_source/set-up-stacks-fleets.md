@@ -32,7 +32,7 @@ Set up and create a fleet from which user applications are launched and streamed
 1. For **Step 2: Choose an Image**, choose an image that meets your needs and then choose **Next**\.
 
 1. For **Step 3: Configure Fleet**, do the following:
-   + For **Choose instance type**, choose the instance type that meets the performance requirements of your applications\.
+   + For **Choose instance type**, choose the instance type that meets the performance requirements of your applications\. All streaming instances in your fleet launch with the instance type that you select\. For more information, see [AppStream 2\.0 Instance Families](instance-types.md)\.
    + For **Fleet type**, choose the fleet type that suits your use case\. The fleet type determines its immediate availability and how you pay for it\.
    + For **Maximum session duration in minutes** — Choose the maximum amount of time that a streaming session can remain active\. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected\. After this time elapses, the instance is terminated and replaced by a new instance\. The maximum session duration that you can set in the AppStream 2\.0 console is 5760 minutes \(96 hours\)\.
    + For **Disconnect timeout in minutes**, choose the amount of time that a streaming session remains active after users disconnect\. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session\. Otherwise, they are connected to a new session with a new streaming instance\. If you associate a stack with a fleet for which a redirect URL is specified, after users’ streaming sessions end, the users are redirected to that URL\.
@@ -43,10 +43,12 @@ Set up and create a fleet from which user applications are launched and streamed
 Users are considered idle when they stop providing keyboard or mouse input during their streaming session\. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity\. If users continue to be idle after the time interval in **Idle disconnect timeout in minutes** elapses, they are disconnected\. 
    + For **Minimum capacity**, choose a minimum number of instances for your fleet based on the minimum number of expected concurrent users\.
    + For **Maximum capacity**, choose a maximum number of instances for your fleet based on the maximum number of expected concurrent users\.
-   + **IAM role \(Advanced\)**: When you apply an IAM role from your account to an AppStream 2\.0 fleet instance, you can make AWS API requests from the fleet instance without manually managing AWS credentials\. To apply an IAM role, do either of the following:
+   + For **Scaling details \(Advanced\)**, specify the scaling policies that AppStream 2\.0 uses to increase and decrease the capacity of your fleet\. Note that the size of your fleet is limited by the minimum and maximum capacity that you specified\. For more information, see [Fleet Auto Scaling for Amazon AppStream 2\.0](autoscaling.md)\.
+   + For **IAM role \(Advanced\)**, when you apply an IAM role from your account to an AppStream 2\.0 fleet instance, you can make AWS API requests from the fleet instance without manually managing AWS credentials\. To apply an IAM role, do either of the following:
      + To use an existing IAM role in your AWS account, choose the role that you want to use from the **IAM role** list\. The role must must be accessible from the fleet instance\. For more information, see [Configuring an Existing IAM Role to Use With AppStream 2\.0 Streaming Instances](using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.md#configuring-existing-iam-role-to-use-with-streaming-instances)\.
      + To create a new IAM role, choose **Create new IAM role** and follow the steps in [How to Create an IAM Role to Use With AppStream 2\.0 Streaming Instances](using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.md#how-to-create-iam-role-to-use-with-streaming-instances)\.
-   + For **Scaling details**, specify the scaling policies that AppStream 2\.0 uses to increase and decrease the capacity of your fleet\. Note that the size of your fleet is limited by the minimum and maximum capacity that you specified\. For more information, see [Fleet Auto Scaling for Amazon AppStream 2\.0](autoscaling.md)\.
+
+1. Choose **Next**\.
 
 1. For **Step 4: Configure Network**, do the following:
    + To add internet access for fleet instances in a VPC with a public subnet, choose **Default Internet Access**\. If you are providing internet access by using a NAT gateway, leave **Default Internet Access** unselected\. For more information, see [Internet Access](internet-access.md)\.
@@ -56,9 +58,13 @@ Users are considered idle when they stop providing keyboard or mouse input durin
    + For **Security group\(s\)**, choose up to five security groups to associate with this fleet\. If you don't have your own security group and you don't want to use the default security group, choose the **Create new security group** link to create one\. After you create your subnets in the Amazon VPC console, return to the AppStream 2\.0 console and choose the refresh icon to the left of the **Create new security group** link to display them in the list\. For more information, see [Security Groups in Amazon AppStream 2\.0](managing-network-security-groups.md)\.
    + For **Active Directory Domain \(Optional\)**, choose the Active Directory and organizational unit \(OU\) for your streaming instance computer objects\. Ensure that the network access settings you selected enable DNS resolvability and communication with your directory\. For more information, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.
 
-1. Choose **Create**\.
+1. Choose **Next**\.
 
-   While your fleet is being created and fleet instances are provisioned, the status of your fleets displays as **Starting** in the **Fleets** list\. Choose the **Refresh** icon periodically to update the fleet status until the status is **Running**\. You cannot associate the fleet with a stack and use it for streaming sessions until the status of the fleet is **Running**\.
+1. For **Step 5: Review**, confirm the details for the fleet\. To change the configuration for any section, choose **Edit **and make the needed changes\. After you finish reviewing the configuration details, choose **Create**\. 
+
+1. In the pricing acknowledgement dialog box, select the acknowledgement check box, and choose **Create**\.
+
+1. While your fleet is being created and fleet instances are provisioned, the status of your fleets displays as **Starting** in the **Fleets** list\. Choose the **Refresh** icon periodically to update the fleet status until the status is **Running**\. You cannot associate the fleet with a stack and use it for streaming sessions until the status of the fleet is **Running**\.
 
 ## Create a Stack<a name="set-up-stacks-fleets-install"></a>
 
@@ -68,17 +74,19 @@ Set up and create a stack to control access to your fleet\.
 
 1. In the left navigation pane, choose **Stacks**, and then choose **Create Stack**\.
 
-1. For **Step 1: Stack Details**, Under **Stack details**, type a unique name identifier for the stack\. Optionally, you can specify the following:
-   + **Display name** — Type a name to display for the stack \(maximum of 100 characters\)\.
-   + **Description**— Type a description for the stack \(maximum of 256 characters\)\.
+1. For **Step 1: Stack Details**, Under **Stack details**, type a unique name identifier for the stack\. Optionally, you can do the following:
+   + **Display name** — Enter a name to display for the stack \(maximum of 100 characters\)\.
+   + **Description**— Enter a description for the stack \(maximum of 256 characters\)\.
    + **Redirect URL** — Specify a URL to which users are redirected after their streaming sessions end\.
    + **Feedback URL** — Specify a URL to which users are redirected after they click the **Send Feedback** link to submit feedback about their application streaming experience\. If you do not specify a URL, this link is not displayed\.
    + **Fleet** — Select an existing fleet or create a new one to associate with your stack\.
    + **Tags** — Choose **Add Tag**, and type the key and value for the tag\. To add more tags, repeat this step\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.
+   + **VPC Endpoints \(Advanced\)** — You can create a private link, which is an [interface VPC endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html) \(interface endpoint\), in your virtual private cloud \(VPC\)\. To start creating the interface endpoint, select **Create VPC Endpoint**\. Selecting this link opens the VPC console\. To finish creating the endpoint, follow steps 3 through 6 in *To create an interface endpoint*, in [Creating and Streaming from Interface VPC Endpoints](creating-streaming-from-interface-vpc-endpoints.md)\. 
 
-1. For **Step 1: Stack Details**, under **Network Access Endpoints \(Optional\)**, you can create a private link, which is an [interface VPC endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html) \(interface endpoint\), in your virtual private cloud \(VPC\)\. To start creating the interface endpoint, select ** Create PrivateLink**\. Selecting this link opens the VPC console\. To finish creating the endpoint, follow steps 3 through 6 in *To create an interface endpoint*, in [Creating and Streaming from Interface VPC Endpoints](creating-streaming-from-interface-vpc-endpoints.md)\. 
-
-   After you create the interface endpoint, you can use it to keep streaming traffic within your VPC\.
+     After you create the interface endpoint, you can use it to keep streaming traffic within your VPC\.
+   + **Embed AppStream 2\.0 \(Optional\)** — To embed an AppStream 2\.0 streaming session in a webpage, specify the domain to host the embedded streaming session\. Embedded streaming sessions are only supported over HTTPS \[TCP port 443\]\. 
+**Note**  
+You must meet prerequisites and perform additional steps to configure embedded AppStream 2\.0 streaming sessions\. For more information, see [Embed AppStream 2\.0 Streaming Sessions](embed-streaming-sessions.md)\.
 
 1. Choose **Next\.**
 
@@ -133,11 +141,11 @@ Note that you cannot delete a stack with an associated fleet\.
 
 1. In the navigation pane, choose **Stacks**\.
 
-1. Select the stack and choose **Actions**, **Disassociate Fleet**\.
+1. Select the stack and choose **Actions**, **Disassociate Fleet**\. In the confirmation dialog box, choose **Disassociate\.**
 
-1. From **Stack Details**, open the **Associated Fleet** link to select the fleet\.
+1. In the navigation pane, choose **Fleets**\.
 
-1. Choose **Actions**, **Stop**\. It takes about 5 minutes to stop a fleet\.
+1. Select the fleet that you want to stop, choose **Actions**, and then choose **Stop**\. It takes about 5 minutes to stop a fleet\.
 
 1. When the status of the fleet is **Stopped**, choose **Actions**, **Delete**\.
 

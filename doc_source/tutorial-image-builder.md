@@ -20,7 +20,7 @@ This tutorial includes information that applies to the latest base image release
 In this step, you connect an image builder and install your applications on the image builder\.
 
 **Important**  
-To complete this step, you must log into the image builder with the local **Administrator** account or a domain user account that has local administrator permissions\. 
+To complete this step, you must log into the image builder with the local **Administrator** account or a domain user account that has local administrator permissions\. Do not rename or delete the local built\-in **Administrator** account\. If you rename or delete this account, the image creation will fail\. 
 
 **To install applications on the image builder**
 

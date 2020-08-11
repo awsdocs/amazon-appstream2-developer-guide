@@ -15,7 +15,7 @@ When you enable [application settings persistence](how-it-works-app-settings-per
 + Logging configuration of Amazon S3 buckets\.
 + Security checks for Amazon S3 buckets that have open access permissions\.
 + Fault tolerance checks for Amazon S3 buckets that don't have versioning enabled, or have versioning suspended\. 
-For more information, see [AWS Trusted Advisor](https://docs.aws.amazon.com/awssupport/latestuser/getting-started.html#trusted-advisor) in the *AWS Support User Guide*\.
+For more information, see [AWS Trusted Advisor](https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html) in the *AWS Support User Guide*\.
 
 **Amazon S3 Access Logs**  
 If your users have application settings data or home folders data stored in Amazon S3 buckets, consider viewing Amazon S3 server access logs to monitor access\. These logs provide detailed records about requests that are made to a bucket\. Server access logs are useful for many applications\. For example, access log information can be useful in security and access audits\. For more information, see [Amazon S3 Server Access Logging](https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerLogs.html) in the *Amazon Simple Storage Service Developer Guide*\.

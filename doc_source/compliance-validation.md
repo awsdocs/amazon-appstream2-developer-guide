@@ -1,16 +1,10 @@
 # Compliance Validation for Amazon AppStream 2\.0<a name="compliance-validation"></a>
 
-Third\-party auditors assess the security and compliance of Amazon AppStream 2\.0 as part of multiple AWS compliance programs\. AppStream 2\.0 compliance, certifications, and accreditations include the following:
-+ [Health Insurance Portability and Accountability Act \(HIPAA\)](https://aws.amazon.com/compliance/hipaa-compliance/)
-+ [Health Information Trust Alliance Common Security Framework \(HITRUST CSF\)](https://aws.amazon.com/compliance/hitrust/)
-+ [ Federal Information Processing Standard \(FIPS\) 140\-2 ](https://aws.amazon.com/compliance/fips/)
+Third\-party auditors assess the security and compliance of Amazon AppStream 2\.0 as part of multiple AWS compliance programs\. These include the following: [SOC](https://aws.amazon.com/compliance/soc-faqs/), [PCI](https://aws.amazon.com/compliance/pci-dss-level-1-faqs), [ISO](https://aws.amazon.com/compliance/iso-certified/), [FedRAMP](https://aws.amazon.com/compliance/fedramp/), [HIPAA](https://aws.amazon.com/compliance/hipaa-compliance/), [MTCS](https://aws.amazon.com/compliance/aws-multitiered-cloud-security-standard-certification/), [ENS High](https://aws.amazon.com/compliance/esquema-nacional-de-seguridad/), [HITRUST CSF](https://aws.amazon.com/compliance/hitrust/), [VPAT](https://aws.amazon.com/compliance/vpat/), and others\.
 
-  For information about how to use AppStream 2\.0 FIPS endpoints for administrative use or streaming, see [Protecting Data in Transit with FIPS Endpoints](protecting-data-in-transit-FIPS-endpoints.md)\.
-+ [Payment Card Industry Data Security Standard \(PCI DSS\)](https://aws.amazon.com/compliance/pci-dss-level-1-faqs)
-+ [AWS System and Organization Controls \(SOC\) Reports](https://aws.amazon.com/compliance/soc-faqs/)
-+ [International Organization for Standardization \(ISO\)](https://aws.amazon.com/compliance/iso-certified/)
-+ [Undergoing Third\-Party Organization \(3PAO\) assessment for FedRAMP Moderate and FedRAMP High](https://aws.amazon.com/compliance/fedramp/)
-+ [Undergoing assessment for Department of Defense \(DoD\) Cloud Computing Security Requirements Guide \(SRG\)](https://aws.amazon.com/compliance/dod/)
+**Note**  
+AppStream 2\.0 supports [FIPS 140\-2](https://aws.amazon.com/compliance/fips/)\. For information about how to use AppStream 2\.0 FIPS endpoints for administrative use or streaming, see [Protecting Data in Transit with FIPS Endpoints](protecting-data-in-transit-FIPS-endpoints.md)\.  
+AppStream 2\.0 is also undergoing assessment for the [Department of Defense \(DoD\) Cloud Computing Security Requirements Guide \(SRG\)](https://aws.amazon.com/compliance/dod/)\.
 
 For a list of AWS services in scope of specific compliance programs, see [AWS Services in Scope by Compliance Program](http://aws.amazon.com/compliance/services-in-scope/)\. For general information, see [AWS Compliance Programs](http://aws.amazon.com/compliance/programs/)\.
 

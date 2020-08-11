@@ -20,7 +20,16 @@ Currently, AppStream 2\.0 supports English and Japanese only for these language 
 
 ## Specify a Default Time Zone<a name="configure-default-time-zone"></a>
 
-To specify a default time zone to be used in your users’ streaming sessions, perform the following steps\.
+To specify a default time zone to be used in your users’ streaming sessions, perform the steps in either of the following two procedures\.
+
+**Topics**
++ [Specify a Default Time Zone \(Windows Server 2012 R2\)](#configure-default-time-zone)
++ [Specify a Default Time Zone \(Windows Server 2016 and Windows Server 2019\)](#configure-default-time-zone-2016-2019)
+
+**Note**  
+Currently, AppStream 2\.0 supports only **UTC** and **\(UTC\+9:00\) Osaka, Sapporo, Tokyo**\.
+
+### Specify a Default Time Zone \(Windows Server 2012 R2\)<a name="configure-default-time-zone"></a>
 
 1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
 
@@ -33,12 +42,57 @@ To specify a default time zone to be used in your users’ streaming sessions, p
 1. Choose **Clock, Language, and Region**, then **Date and Time**, then **Change time zone**\.
 
 1. In the **Time zone** list, choose a time zone, and choose **OK**\.
-**Note**  
-Currently, AppStream 2\.0 supports only **UTC** and **\(UTC\+9:00\) Osaka, Sapporo, Tokyo**\.
 
 1. To apply any change to the time zone setting, restart your image builder\. To do so, choose the Windows **Start** button, and choose **Windows PowerShell**\. In PowerShell, use the restart\-computer cmdlet\.
 
 1. While Windows restarts, the AppStream 2\.0 login prompt displays\. Wait for 10 minutes before you log in to the image builder again\. Otherwise, you may receive an error\. After 10 minutes, you can log in as **Administrator**\.
+
+1. If required, configure additional default regional or language settings\. Otherwise, on the image builder desktop, open Image Assistant and install and configure applications for streaming\. 
+
+1. After you finish configuring your image builder, follow the necessary steps in Image Assistant to finish creating your image\. For information about how to create an image, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\. 
+
+1. Do one of the following:
+   + Create a new fleet and choose your new image for the fleet\. For more information, see [Create an AppStream 2\.0 Fleet and Stack](set-up-stacks-fleets.md)\.
+   + Update an existing fleet to use the new image\.
+
+1. Associate your fleet with the stack that is assigned to the users for whom you are configuring the default settings\. 
+
+   The default time zone setting that you configured is applied to the fleet instances and user streaming sessions that are launched from those instances\.
+
+### Specify a Default Time Zone \(Windows Server 2016 and Windows Server 2019\)<a name="configure-default-time-zone-2016-2019"></a>
+
+1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
+
+1. In the left navigation pane, choose **Images**, **Image Builder**\.
+
+1. Choose the image builder that you want to use, choose **Connect**, and log in as **Administrator**\. 
+
+1. On the image builder desktop, choose the Windows **Start** button, and choose **Control Panel**\.
+
+1. Specify the default time zone by using PowerShell or the Windows user interface:
+   + **PowerShell**
+     + Open PowerShell and run the following command: 
+
+       ```
+       Run Set-TimeZone -Id "Tokyo Standard Time"
+       ```
+**Note**  
+To run this command, you must be logged in to the applicable computer as **Administrator**\.
+   + **Windows user interface**
+
+     1. On the image builder desktop, choose the Windows **Start** button, and type **timedate\.cpl** to open the **Date and Time **control panel item\.
+
+     1. Right\-click the **Date and Time** icon, and choose **Run as administrator**\.
+
+     1. When prompted by User Account Control to choose whether you want to allow the app to make changes to your device, choose **Yes**\.
+
+     1. Choose **Change time zone**\.
+
+     1. In the **Time zone** list, choose a time zone, and choose **OK**\.
+
+1. To apply any change to the time zone setting, restart your image builder\. To do so, choose the Windows **Start** button, and choose **Windows PowerShell**\. In PowerShell, use the restart\-computer cmdlet\.
+
+1. While Windows restarts, the AppStream 2\.0 login prompt displays\. Wait for 10 minutes before you log in to the image builder again\. Otherwise, you might receive an error\. After 10 minutes, you can log in as **Administrator**\.
 
 1. If required, configure additional default regional or language settings\. Otherwise, on the image builder desktop, open Image Assistant and install and configure applications for streaming\. 
 
