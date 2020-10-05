@@ -41,7 +41,7 @@ The Active Directory domain to use with AppStream 2\.0 must be accessible throug
 
 1. Launch an Amazon EC2 instance in the same VPC, subnet, and security groups that you use with AppStream 2\.0\.
 
-1. Manually join the EC2 instance to your Active Directory domain using the FQDN \(for example, `yourdomain.exampleco.com`\) with the service account that you intend to use with AppStream 2\.0\. Use the following command in a Windows PowerShell console:
+1. Manually join the EC2 instance to your Active Directory domain by using the FQDN \(for example, `yourdomain.example.com`\) with the service account that you intend to use with AppStream 2\.0\. Use the following command in a Windows PowerShell console:
 
    ```
    netdom join computer /domain:FQDN /OU:path /ud:user /pd:password

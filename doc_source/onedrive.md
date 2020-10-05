@@ -21,7 +21,7 @@ Before enabling OneDrive, you must do the following:
 + Have an active Microsoft Office 365 or OneDrive for Business account with a valid organizational domain and user accounts in the domain to use with AppStream 2\.0\. 
 + Configure an AppStream 2\.0 stack with an associated fleet\.
 
-   The fleet must use an image that uses a version of the AppStream 2\.0 agent released on or after July 26, 2018\. For more information, see [AppStream 2\.0 Agent Version History](agent-software-versions.md)\. The fleet must also have access to the internet\.
+   The fleet must use an image that uses a version of the AppStream 2\.0 agent released on or after July 26, 2018\. For more information, see [AppStream 2\.0 Agent Release Notes](agent-software-versions.md)\. The fleet must also have access to the internet\.
 
 Follow these steps to enable OneDrive for your AppStream 2\.0 users\.
 

@@ -41,10 +41,7 @@ The following table describes the fields included in AppStream 2\.0 sessions rep
 | domain\_joined | Indicates whether the AppStream 2\.0 streaming instance was joined to an Active Directory domain at session launch\. For more information, see [Using Active Directory with AppStream 2\.0](active-directory.md)\.  Possible values: Y \| N  | 
 | max\_session\_duration | The maximum allowed duration of the session in seconds\. | 
 | session\_type | The session type\. Possible values: ALWAYS\_ON \| ON\_DEMAND | 
-| schedule | The frequency that reports are generated\. Possible value: DAILY | 
-| year | The year of the report\.  | 
-| month | The month of the report\.  | 
-| day | The day of the report\.  | 
+| stream\_view | The stream view\. Possible values: APPLICATION \| DESKTOP | 
 
 ## Applications Report Fields<a name="usage-reports-fields-applications-reports"></a>
 

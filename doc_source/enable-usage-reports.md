@@ -58,6 +58,6 @@ Each application launch is described in a single record in an applications repor
 + A user chooses the application from the application catalog when launching a new streaming session\.
 + A user chooses the application from the application catalog list during a streaming session\.
 
-The applications report doesn’t include applications that are launched in other ways\. For example, if you provide users with access to Windows Explorer or PowerShell, and users use those tools to launch applications directly, or if another program or script launches an application, those application launches are not included in the applications report\.
+The applications report doesn’t include applications that are launched in other ways\. For example, if you provide users with access to Windows Explorer, PowerShell, or the Windows desktop **Start** menu, and users use those tools to launch applications directly, or if another program or script launches an application, those application launches are not included in the applications report\.
 
 Applications reports are generated daily according to UTC time within 24 hours of the close of the day that is the subject of the report\. If a session spans more than one day, applications launched during the session are reflected in the applications report corresponding to the day in which the session ends\. For information about the data included in applications reports, see [Applications Report Fields](usage-reports-fields.md#usage-reports-fields-applications-reports)\. 

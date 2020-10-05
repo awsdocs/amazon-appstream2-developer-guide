@@ -7,6 +7,8 @@ For notification about these updates, you can subscribe to the Amazon AppStream 
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [AppStream 2\.0 agent update](https://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html) | Resolves multiple issues | September 1, 2020 | 
+| [AppStream 2\.0 client update: version 1\.1\.195](https://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html) | Improves local drive and folder sharing when file redirection is used, and provides other enhancements and fixes\.  | August 18, 2020 | 
 | [Documentation update: Support for local printer redirection](https://docs.aws.amazon.com/appstream2/latest/developerguide/client-system-requirements-feature-support.html) | Created the *Enable Local Printer Redirection* section in "System Requirements and Feature Support" and updated other content as needed\. | August 7, 2020 | 
 | [AppStream 2\.0 agent update](https://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html) | Adds support for local printer redirection to the AppStream 2\.0 client for Windows and resolves multiple issues | July 30, 2020 | 
 | [AppStream 2\.0 base image update](https://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html) | Updates for Base, Graphics Design, Graphics G4, Graphics Pro: Includes Microsoft Windows updates up to June 9, 2020; AWS CLI version 1\.18\.86; and Amazon SSM Agent version 2\.3\.1319\.0 | July 16, 2020 | 
@@ -27,7 +29,7 @@ For notification about these updates, you can subscribe to the Amazon AppStream 
 | [AppStream 2\.0 base image update](https://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html) | Adds support for Graphics g4dn instances \(Windows Server 2016, Windows Server 2019\); also includes Microsoft Windows updates up to February 11, 2020; AWS CLI version 1\.17\.5; and Amazon SSM Agent version 2\.3\.842\.0 | March 5, 2020 | 
 | [Documentation update: Support for native application mode](https://docs.aws.amazon.com/appstream2/latest/developerguide/client-system-requirements-feature-support.html) | Created the *Native application mode* section in "System Requirements and Feature Support" and updated other content as needed\. | February 28, 2020 | 
 | [AppStream 2\.0 client update: version 1\.1\.129](https://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html) | Adds support for native application mode and provides other enhancements and fixes | February 28, 2020 | 
-| [AppStream 2\.0 agent update](https://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html) | Adds support for native application mode | February 19, 2020 | 
+| [AppStream 2\.0 agent update](https://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html) | Adds support for native application mode and the **Desktop** stream view | February 19, 2020 | 
 | [AppStream 2\.0 base image update](https://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html) | Updates for Graphics Design: Adds support for Windows Server 2019, with Microsoft Windows updates up to November 12, 2019 | January 13, 2020 | 
 | [AppStream 2\.0 agent update](https://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html) | Resolves multiple issues | January 13, 2020 | 
 | [Documentation update: Enhanced the documentation for security in AppStream 2\.0](https://docs.aws.amazon.com/appstream2/latest/developerguide/security.html) | Created "Security in Amazon AppStream 2\.0" and updated other content as needed\. | December 23, 2019 | 
@@ -94,7 +96,7 @@ For notification about these updates, you can subscribe to the Amazon AppStream 
 The following table describes important additions to the AppStream 2\.0 service and the *Amazon AppStream 2\.0 Administration Guide* documentation before June 4, 2018\.
 
 **Note**  
-Individual AppStream 2\.0 base image and AppStream 2\.0 agent releases are not included in this table\. For information about these releases, see [AppStream 2\.0 Base Image Version History](base-image-version-history.md) and [AppStream 2\.0 Agent Version History](agent-software-versions.md)\.
+Individual AppStream 2\.0 base image and AppStream 2\.0 agent releases are not included in this table\. For information about these releases, see [AppStream 2\.0 Base Image Release Notes](base-image-version-history.md) and [AppStream 2\.0 Agent Release Notes](agent-software-versions.md)\.
 
 
 | Change | Description | Date | 

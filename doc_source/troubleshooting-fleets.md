@@ -3,10 +3,56 @@
 The following are possible issues that might occur when users connect to streaming sessions launched from fleet instances\.
 
 **Topics**
++ [I tried to increase my fleet capacity, but the update isn't taking effect\.](#troubleshooting-fleet-scale-up-policy-not-working-quota-limit-exceeded)
 + [My applications won't work correctly unless I use the Internet Explorer defaults\. How do I restore the Internet Explorer default settings?](#troubleshooting-restore-ie-defaults)
 + [I need to persist environment variables across my fleet instances\.](#troubleshooting-persist-environment-variables)
 + [I want to change the default Internet Explorer home page for my users\.](#troubleshooting-change-homepage)
 + [When my users end a streaming session and then start a new one, they see a message that says no streaming resources are available\.](#troubleshooting-no-resources-available-new-streaming-session)
+
+## I tried to increase my fleet capacity, but the update isn't taking effect\.<a name="troubleshooting-fleet-scale-up-policy-not-working-quota-limit-exceeded"></a>
+
+You can increase your fleet capacity in either of the two following ways:
++ Manually, by increasing the **Minimum capacity** value on the **Scaling Policies **tab for the fleet in the AppStream 2\.0 console\.
++ Automatically, by configuring a fleet scaling policy that manages your capacity for the fleet\.
+
+If your manual modification or scaling policy exceeds your current AppStream 2\.0 quota for your fleet instance type and size, the new values will not take effect\. If you experience this issue, you can use the AWS Command Line Interface \(CLI\) [describe\-scaling\-activities](https://docs.aws.amazon.com/cli/latest/reference/application-autoscaling/describe-scaling-activities.html) command to verify whether your capacity request exceeds your quota for the applicable fleet instance type and size\. This command uses the following format:
+
+```
+aws application-autoscaling describe-scaling-activities
+  --service-namespace appstream \
+  --resource-id fleet/fleetname \
+```
+
+For example, the following command provides information for the **TestFleet** fleet in the **us\-west\-2** AWS Region\.
+
+```
+aws application-autoscaling describe-scaling-activities --service-namespace appstream --resource-id fleet/TestFleet --region us-west-2
+```
+
+The following JSON output shows that a scaling policy for **TestFleet** with a **Minimum capacity** value of 150 was set\. This value exceeds the limit \(quota\) for **TestFleet**, which is 100, so the new scaling policy doesn’t take effect\. In the output, the **StatusMessage** parameter provides detailed information about the cause of the error, including the fleet instance type \(in this case, stream\.standard\.medium\), and the current quota, which is 100\.
+
+**Note**  
+AppStream 2\.0 instance type and size quotas are per AWS account, per AWS Region\. If you have multiple fleets in the same Region that use the same instance type and size, the total number of instances in all fleets in that Region must be less than or equal to the applicable quota\.
+
+```
+{
+    "ScalingActivities": [
+        {
+            "ActivityId": "id",
+            "ServiceNamespace": "appstream",
+            "ResourceId": "fleet/TestFleet",
+            "ScalableDimension": "appstream:fleet:DesiredCapacity",
+            "Description": "Setting desired capacity to 150.",
+            "Cause": "minimum capacity was set to 150",
+            "StartTime": 1596828816.136,
+            "EndTime": 1596828816.646,
+            "StatusCode": "Failed",
+            "StatusMessage": "Failed to set desired capacity to 150. Reason: The Instance type 'stream.standard.medium' capacity limit for fleet TestFleet' was exceeded. Requested: 150, Limit: 100 (Service: AmazonAppStream; Status Code: 400; Error Code: LimitExceededException; Request ID: id; Proxy: null)."
+```
+
+If you run the `describe-scaling-activities` command and the output indicates that your capacity request exceeds your current quota, you can resolve the issue by:
++ Changing your capacity request to a value that doesn’t exceed your quota\.
++ Requesting a quota increase\. To request a quota increase, use the [AppStream 2\.0 Limits form](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-appstream2)\.
 
 ## My applications won't work correctly unless I use the Internet Explorer defaults\. How do I restore the Internet Explorer default settings?<a name="troubleshooting-restore-ie-defaults"></a>
 

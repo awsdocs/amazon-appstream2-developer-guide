@@ -20,6 +20,6 @@ The following table summarizes the available instance families and provides the 
 | Graphics G4 | Uses NVIDIA T4 GPUs to support graphics intensive applications\. | AppStream\-Graphics\-G4dn\-OperatingSystemVersion\-MM\-DD\-YYYY  | 
 
 For more information, see the following:
-+ [AppStream 2\.0 Base Image Version History](base-image-version-history.md)
++ [AppStream 2\.0 Base Image Release Notes](base-image-version-history.md)
 + [Amazon AppStream 2\.0 Service Quotas](limits.md)
 + [AppStream 2\.0 Pricing](https://aws.amazon.com/appstream2/pricing/)

@@ -20,7 +20,7 @@ Before enabling Google Drive, you must do the following:
 + Have an active G Suite account with a valid organizational domain and user accounts in the domain to use with AppStream 2\.0\.
 + Configure an AppStream 2\.0 stack with an associated fleet\. 
 
-   The fleet must use an image that uses a version of the AppStream 2\.0 agent released on or after May 31, 2018\. For more information, see [AppStream 2\.0 Agent Version History](agent-software-versions.md)\. The fleet must also have access to the internet\.
+   The fleet must use an image that uses a version of the AppStream 2\.0 agent released on or after May 31, 2018\. For more information, see [AppStream 2\.0 Agent Release Notes](agent-software-versions.md)\. The fleet must also have access to the internet\.
 + Add Amazon AppStream 2\.0 as a trusted app in one or more domains associated with your G Suite account\. You can enable Google Drive for up to 10 domains\.
 
 Follow these steps to add Amazon AppStream 2\.0 as a trusted app in your G Suite domains\.
@@ -33,17 +33,23 @@ Follow these steps to add Amazon AppStream 2\.0 as a trusted app in your G Suite
 
 1. Choose the main menu in the upper left of the window \(to the left of the **Google Admin** title\), then choose **Security**, **Settings**\.
 
-1. Choose **API Permissions**\.
+1. Choose **App access control**\.
 
-1. At the bottom of the **API Access** list, choose the **Trusted Apps** link\.
+1. At the top of the page, in the **Overview** section, choose **MANAGE THIRD\-PARTY APP ACCESS**\.
 
-1. Choose the **Whitelist an App** \[plus sign \(\+\) icon\] in the bottom right of the window\. 
+1. Choose **Configure new app**, and then choose **OAuth App Name Or Client ID**\.
 
-1. In the **Add APP to Trusted List** dialog box, do the following\. When you're done, choose **Add**:
-   + For **Select App Type**, choose **Web Application**\.
-   + For **OAuth2 Client ID**, type the Amazon AppStream 2\.0 OAuth client ID for your AWS Region\. For a list of client IDs, see the table that follows this procedure\.
+1. Enter the Amazon AppStream 2\.0 OAuth client ID for your AWS Region, and then choose **SEARCH**\. For a list of client IDs, see the table that follows this procedure\.
 
-1. Confirm that Amazon AppStream 2\.0 appears in the list of trusted apps\.
+1. In the search results, choose Amazon AppStream 2\.0, and then choose **Select**\.
+
+1. In the **Client ID** page, under **OAuth Client ID**, verify that the correct ID appears in the list, and then select the check box to the left of the ID\.
+
+1. On the lower right of the page, choose **SELECT**\.
+
+1. Under **App access**, choose **Trusted: Can access all Google services**, and then choose **CONFIGURE**\.
+
+1. Verify that the Amazon AppStream 2\.0 app, with the correct OAuth ID, appears in the list of connected apps\.
 
 
 **Amazon AppStream 2\.0 OAuth2 client IDs**  

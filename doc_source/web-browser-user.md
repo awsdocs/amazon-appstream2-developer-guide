@@ -9,6 +9,7 @@ The following information helps you use a web browser to connect to AppStream 2\
 + [Monitors and Display Resolution](#web-browser-monitors-display-resolution-user)
 + [Touchscreen Devices](#web-browser-using-touchscreen-devices-user)
 + [Drawing Tablets](#web-browser-drawing-tablets-user)
++ [Relative Mouse Offset](#web-browser-relative-mouse-offset-web-access-user)
 + [Troubleshooting](#web-browser-troubleshooting-user)
 
 ## Requirements<a name="web-browser-requirements-user"></a>
@@ -33,7 +34,7 @@ Follow these steps to connect to AppStream 2\.0 and start an application streami
 
 1. If you received a welcome email that notifies you to start accessing your apps using AppStream 2\.0, open the email, and then click the **Login page** link\.
 
-1. In the AppStream 2\.0 sign\-in page, enter your email address and the temporary password that was provided in the email, and then choose **Log in**\.
+1. Enter your email address and the temporary password that was provided in the email, and then choose **Log in**\.
 
 1. When prompted, enter a new password, confirm it, and then choose **Set Password**\.
 
@@ -82,10 +83,16 @@ Drawing tablets, also known as pen tablets, are computer input devices that let 
 Following are requirements and considerations for using drawing tablets with your streaming applications\.
 + To use this feature, you must connect to AppStream 2\.0 through the Google Chrome or Mozilla Firefox browsers only, or by using the [AppStream 2\.0 client](client-application-windows-user.md)\.
 + The applications that you stream must support Windows Ink technology\. For more information, see [Pen interactions and Windows Ink in Windows apps](https://docs.microsoft.com/en-us/windows/uwp/design/input/pen-and-stylus-interactions)\.
-+ Depending on the streaming applications that you use, your drawing tablet might require USB redirection to function as expected\. This is because some applications, such as GIMP, require USB redirection to support pressure sensitivity\. If this is the case for your streaming applications, you must connect to AppStream 2\.0 by using the AppStream 2\.0 client, and share the drawing tablet with your streaming session\. For information about how to share USB devices with your streaming session, see [USB Devices](client-application-windows-user.md#client-application-share-usb-devices-with-session-user)\.
++ Depending on the streaming applications that you use, your drawing tablet might require USB redirection to function as expected\. This is because some applications, such as GIMP, require USB redirection to support pressure sensitivity\. If this is the case for your streaming applications, you must connect to AppStream 2\.0 by using the AppStream 2\.0 client, and share the drawing tablet with your streaming session\. For information about how to share USB devices with your streaming session, see [USB Devices](client-application-windows-user.md#client-application-windows-share-usb-devices-with-session-user)\.
 + This feature is not supported on Chromebooks\.
 
 To get started with using a drawing tablet during your application streaming sessions, connect your drawing tablet to your local computer with USB, share the device with AppStream 2\.0 if required for pressure sensitivity detection, and then start an AppStream 2\.0 streaming session\. You can use a supported web browser or the AppStream 2\.0 client, if it is installed, to start a streaming session\.
+
+## Relative Mouse Offset<a name="web-browser-relative-mouse-offset-web-access-user"></a>
+
+By default, during a streaming session, AppStream 2\.0 transmits information about mouse movements by using absolute coordinates and rendering the mouse movements locally\. For graphics\-intensive applications, such as computer\-aided design \(CAD\)/computer\-aided manufacturing \(CAM\) software or video games, mouse performance improves when relative mouse mode is enabled\. Relative mouse mode uses relative coordinates, which represent how far the mouse moved since the last frame, rather than the absolute x\-y coordinate values within a window or screen\. When you enable relative mouse mode, AppStream 2\.0 renders the mouse movements remotely\.
+
+You can enable this feature during an AppStream 2\.0 streaming session by pressing Ctrl\+Shift\+F8\.
 
 ## Troubleshooting<a name="web-browser-troubleshooting-user"></a>
 

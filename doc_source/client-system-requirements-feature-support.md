@@ -1,4 +1,4 @@
-# System Requirements and Feature Support<a name="client-system-requirements-feature-support"></a>
+# System Requirements and Feature Support \(AppStream 2\.0 Client\)<a name="client-system-requirements-feature-support"></a>
 
 This topic provides information to help you understand the requirements for the AppStream 2\.0 client and supported features\.
 
@@ -6,10 +6,11 @@ This topic provides information to help you understand the requirements for the 
 
 The AppStream 2\.0 client requires the following:
 + Operating system — Windows 7, Windows 8, or Windows 10 \(32\-bit or 64\-bit\)
++ Microsoft Visual C\+\+ 2015 Redistributable or later\. For information about the latest Visual C\+\+ redistributable packages for Visual Studio 2015, 2017, and 2019, see [The latest supported Visual C\+\+ downloads](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) in the Microsoft Support documentation\.
 + RAM — 2 GB minimum
 + Hard drive space — 200 MB minimum
 + Local administrator rights — Used if you want to install the AppStream 2\.0 USB driver for USB driver support\.
-+ An AppStream 2\.0 image that uses the latest AppStream 2\.0 agent or agent versions published on or after November 14, 2018\. For information about AppStream 2\.0 agent versions, see [AppStream 2\.0 Agent Version History](agent-software-versions.md)\.
++ An AppStream 2\.0 image that uses the latest AppStream 2\.0 agent or agent versions published on or after November 14, 2018\. For information about AppStream 2\.0 agent versions, see [AppStream 2\.0 Agent Release Notes](agent-software-versions.md)\.
 
 **Note**  
 We recommend an internet connection for AppStream 2\.0 client installation\. In some cases, the client can't be installed on a PC that is not connected to the internet, or USB devices might not work with applications streamed from AppStream 2\.0\. For more information, see [Troubleshooting AppStream 2\.0 User Issues](troubleshooting-client.md)\.
@@ -31,9 +32,12 @@ If you want your users to connect to AppStream 2\.0 in classic mode only, you ca
 
 For more information about native application mode and classic mode, and for guidance that you can provide to your users, see [AppStream 2\.0 Client Connection Modes](client-application-windows-user.md#client-application-windows-connection-modes-user)\.
 
+**Note**  
+Native application mode is not available if your fleet is enabled for the **Desktop** stream view\. For information about how to configure the **Desktop** stream view, see [Create a Fleet](set-up-stacks-fleets.md#set-up-stacks-fleets-create)\.
+
 **Requirements**
 
-To enable this feature for your users, you must use an image that uses a [version of the AppStream 2\.0 agent](agent-software-versions.md) released on or after February 19, 2020\. In addition, version 1\.1\.129 or later of the AppStream 2\.0 client must be installed on your users' PCs\. For more information about client versions, see [AppStream 2\.0 Client Version History](client-release-versions.md)\.
+To enable this feature for your users, you must use an image that uses a [version of the AppStream 2\.0 agent](agent-software-versions.md) released on or after February 19, 2020\. In addition, version 1\.1\.129 or later of the AppStream 2\.0 client must be installed on your users' PCs\. For more information about client versions, see [AppStream 2\.0 Client Release Notes](client-release-versions.md)\.
 
 If AppStream 2\.0 client version 1\.1\.129 or later is installed on your users' PC, but you are not using an image that uses an agent version released on or after February 19, 2020, the client falls back to classic mode even if native application mode is selected\.
 
@@ -100,7 +104,7 @@ Following are requirements and considerations for enabling your users to use dra
 + Some applications, such GIMP, must detect drawing tablets on the streaming instance to support pressure sensitivity\. If this is the case, your users must use the AppStream 2\.0 client to access AppStream 2\.0 and stream these applications\. In addition, you must qualify your users' drawing tablets, and users must share their drawing tablets with AppStream 2\.0 every time they start a new streaming session\.
 + This feature is not supported on Chromebooks\.
 
-To get started with using drawing tablets during application streaming sessions, users connect their drawing tablet to their local computer with USB, share the device with AppStream 2\.0 if required for pressure sensitivity detection, and then use the AppStream 2\.0 client or a [supported web browser](access-through-web-browser-admin.md#drawing-tablet-support-web-access-admin) to start an AppStream 2\.0 streaming session\.
+To get started with using drawing tablets during application streaming sessions, users connect their drawing tablet to their local computer with USB, share the device with AppStream 2\.0 if required for pressure sensitivity detection, and then use the AppStream 2\.0 client or a [supported web browser](requirements-and-features-web-browser-admin.md#drawing-tablet-support-web-access-admin) to start an AppStream 2\.0 streaming session\.
 
 #### Keyboard Shortcuts<a name="feature-support-keyboard-shortcuts"></a>
 
@@ -108,4 +112,6 @@ Most operating system keyboard shortcuts are supported\. Supported keyboard shor
 
 #### Relative Mouse Offset<a name="feature-support-relative-mouse-offset"></a>
 
-This feature can be used with applications such as Minecraft\.
+By default, during users' streaming sessions, AppStream 2\.0 transmits information about mouse movements to the streaming instance by using absolute coordinates and rendering the mouse movements locally\. For graphics\-intensive applications, such as computer\-aided design \(CAD\)/computer\-aided manufacturing \(CAM\) software or video games, mouse performance improves when relative mouse mode is enabled\. Relative mouse mode uses relative coordinates, which represent how far the mouse moved since the last frame, rather than the absolute x\-y coordinate values within a window or screen\. When relative mouse mode is enabled, AppStream 2\.0 renders the mouse movements remotely\.
+
+Users can enable this feature during their AppStream 2\.0 streaming sessions by pressing Ctrl\+Shift\+F8, or by choosing **Relative Mouse Position \[Ctrl\+Shift\+F8\]** from the **Settings** menu in the top\-left area of the AppStream 2\.0 session window\.

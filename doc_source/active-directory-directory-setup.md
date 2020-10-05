@@ -42,7 +42,7 @@ Next, using the AppStream 2\.0 image builder, create a new image with Active Dir
 
 1. Follow the procedures in [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
-1. For the base image selection step, use an AWS base image released on or after July 24, 2017\. For a current list of released AWS images, see [AppStream 2\.0 Base Image Version History](base-image-version-history.md)\.
+1. For the base image selection step, use an AWS base image released on or after July 24, 2017\. For a current list of released AWS images, see [AppStream 2\.0 Base Image Release Notes](base-image-version-history.md)\.
 
 1. For **Step 3: Configure Network**, select a VPC and subnets with network connectivity to your Active Directory environment\. Select the security groups that are set up to allow access to your directory through your VPC subnets\.
 

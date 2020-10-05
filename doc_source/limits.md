@@ -20,4 +20,6 @@ The following table lists the quotas for each AppStream 2\.0 resource\. Where no
 | Image copies \(per month\) | 20 | 
 | Users in the user pool | 50 | 
 
-\*For fleets that have **Default Internet Access** enabled, the quota is 100 fleet instances\. If your deployment must support more than 100 concurrent users, use the [NAT gateway configuration](managing-network-internet-NAT-gateway.md) instead\. For more information about enabling internet access for a fleet, see [Internet Access](internet-access.md)\.
+\*AppStream 2\.0 instance type and size quotas are per AWS account, per AWS Region\. If you have multiple fleets in the same Region that use the same instance type and size, the total number of instances in all fleets in that Region must be less than or equal to the applicable quota\.
+
+For fleets that have **Default Internet Access** enabled, the quota is 100 fleet instances\. If your deployment must support more than 100 concurrent users, use the [NAT gateway configuration](managing-network-internet-NAT-gateway.md) instead\. For more information about enabling internet access for a fleet, see [Internet Access](internet-access.md)\.

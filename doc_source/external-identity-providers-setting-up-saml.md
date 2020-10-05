@@ -135,6 +135,8 @@ Construct your relay state URL from your AWS account ID, stack name, and the rel
 
 Optionally, you can specify the name of the application that you want to launch automatically\. To find the application name, select the image in the AppStream 2\.0 console, choose the **Applications** tab, and note the name that displays in the **Application Name** column\. Alternatively, if you haven't yet created the image, connect to the image builder where you installed the application, and open Image Assistant\. The names of applications display in the **Add Apps** tab\.
 
+ If your fleet is enabled for the **Desktop** stream view, you can also choose to launch directly to the operating system desktop\. To do so, specify **Desktop** at end of the relay state URL, after **&app=**\.
+
 ```
 https://relay-state-region-endpoint?stack=stackname&accountId=aws-account-id-without-hyphens&app=application-name-to-launch
 ```

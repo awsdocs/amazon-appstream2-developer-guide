@@ -9,11 +9,12 @@ The following information helps you use the AppStream 2\.0 client for Windows to
 + [Connect to AppStream 2\.0](#client-application-windows-start-streaming-session-user)
 + [How to Access Files on Your Local Computer](#client-application-windows-file-system-redirection)
 + [How to Redirect Print Jobs to a Local Printer](#client-application-windows-local-printer-redirection)
-+ [USB Devices](#client-application-share-usb-devices-with-session-user)
-+ [Drawing Tablets](#client-application-drawing-tablets-user)
-+ [Monitors and Display Resolution](#client-application-monitors-display-resolution-user)
++ [USB Devices](#client-application-windows-share-usb-devices-with-session-user)
++ [Drawing Tablets](#client-application-windows-drawing-tablets-user)
++ [Relative Mouse Offset](#client-application-windows-relative-mouse-offset-web-access-user)
++ [Monitors and Display Resolution](#client-application-windows-monitors-display-resolution-user)
 + [Logging](#client-application-windows-how-to-enable-diagnostic-logging-user)
-+ [Troubleshooting](#client-application-troubleshooting-user)
++ [Troubleshooting](#client-application-windows-troubleshooting-user)
 
 ## Features<a name="client-application-windows-features-user"></a>
 
@@ -22,12 +23,14 @@ The AppStream 2\.0 client for Windows is an application that you install on your
 + Use your USB devices with applications streamed through AppStream 2\.0\.
 + Use keyboard shortcuts during your streaming sessions\.
 + Access your local drives and folders during your streaming sessions\.
++ Redirect print jobs from your streaming application to a printer that is connected to your local computer\.
 + Interact with your remote streaming applications in much the same way as you interact with locally installed applications\.
 
 ## Requirements<a name="client-application-windows-requirements-user"></a>
 
 The AppStream 2\.0 client for Windows must be installed on a PC that meets the following requirements:
 + Operating system — Windows 7, Windows 8, or Windows 10 \(32\-bit or 64\-bit\)
++ Microsoft Visual C\+\+ 2015 Redistributable or later\. For information about the latest Visual C\+\+ redistributable packages for Visual Studio 2015, 2017, and 2019, see [The latest supported Visual C\+\+ downloads](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) in the Microsoft Support documentation\.
 + RAM — 2 GB minimum
 + Hard drive space — 200 MB minimum
 
@@ -97,7 +100,7 @@ Follow these steps to connect to AppStream 2\.0 and start an application streami
 
 1. If your AppStream 2\.0 administrator has provided you with a web address \(URL\) to use to connect to AppStream 2\.0 for application streaming, enter the URL, and choose **Connect**\. 
 
-If you want to use your USB devices with streaming applications, you must first share your device with AppStream 2\.0\. For more information, see [USB Devices](#client-application-share-usb-devices-with-session-user)\.
+If you want to use your USB devices with streaming applications, you must first share your device with AppStream 2\.0\. For more information, see [USB Devices](#client-application-windows-share-usb-devices-with-session-user)\.
 
 ### How to Switch AppStream 2\.0 Connection Modes<a name="client-application-windows-how-to-switch-connection-modes-user"></a>
 
@@ -208,11 +211,11 @@ To use AppStream 2\.0 printer redirection, you must have the AppStream 2\.0 clie
 
 1. In the **Print** dialog box, a list of available local printers is displayed\. Choose the local printer that you want to use, and then proceed with printing\.
 
-## USB Devices<a name="client-application-share-usb-devices-with-session-user"></a>
+## USB Devices<a name="client-application-windows-share-usb-devices-with-session-user"></a>
 
 With certain exceptions, USB redirection is required for the AppStream 2\.0 client to support USB devices\. When USB redirection is required for a device, you must share the device with AppStream 2\.0 every time you start a new streaming session\. 
 
-If you are using a drawing tablet, USB redirection might not be required to use it with AppStream 2\.0\. However, if you are streaming an application such as the Gnu Image Manipulation Program \(GIMP\), which requires USB redirection to support pressure sensitivity, you must share your drawing tablet with AppStream 2\.0\. For information about drawing tablets, see [Drawing Tablets](#client-application-drawing-tablets-user)\.
+If you are using a drawing tablet, USB redirection might not be required to use it with AppStream 2\.0\. However, if you are streaming an application such as the Gnu Image Manipulation Program \(GIMP\), which requires USB redirection to support pressure sensitivity, you must share your drawing tablet with AppStream 2\.0\. For information about drawing tablets, see [Drawing Tablets](#client-application-windows-drawing-tablets-user)\.
 
 **To share a USB device with AppStream 2\.0**
 
@@ -230,7 +233,7 @@ USB devices can't be simultaneously used between local and remote applications\.
 
 1. You can also enable your USB device to automatically connect when a new streaming session starts\. To do so, select the option next to the toggle key for the USB device that you want to connect\. After you enable this option, when your next streaming session starts, the USB device is connected automatically\. 
 
-## Drawing Tablets<a name="client-application-drawing-tablets-user"></a>
+## Drawing Tablets<a name="client-application-windows-drawing-tablets-user"></a>
 
 Drawing tablets, also known as pen tablets, are computer input devices that let you draw with a stylus \(pen\)\. With AppStream 2\.0, you can connect a drawing tablet, such as a Wacom drawing tablet, to your local computer and use the tablet with your streaming applications\. 
 
@@ -242,7 +245,13 @@ Following are requirements and considerations for using drawing tablets with you
 
 To get started with using a drawing tablet during your application streaming sessions, connect your drawing tablet to your local computer with USB, share the device with AppStream 2\.0 if required for pressure sensitivity detection, and then start an AppStream 2\.0 streaming session\. You can use the AppStream 2\.0 client or a [supported web browser](web-browser-user.md) to start a streaming session\.
 
-## Monitors and Display Resolution<a name="client-application-monitors-display-resolution-user"></a>
+## Relative Mouse Offset<a name="client-application-windows-relative-mouse-offset-web-access-user"></a>
+
+By default, during a streaming session, AppStream 2\.0 transmits information about mouse movements by using absolute coordinates and rendering the mouse movements locally\. For graphics\-intensive applications, such as computer\-aided design \(CAD\)/computer\-aided manufacturing \(CAM\) software or video games, mouse performance improves when relative mouse mode is enabled\. Relative mouse mode uses relative coordinates, which represent how far the mouse moved since the last frame, rather than the absolute x\-y coordinate values within a window or screen\. When you enable relative mouse mode, AppStream 2\.0 renders the mouse movements remotely\.
+
+You can enable this feature during an AppStream 2\.0 streaming session by pressing Ctrl\+Shift\+F8, or by choosing **Relative Mouse Position \[Ctrl\+Shift\+F8\]** from the **Settings **menu in the top\-left area of the AppStream 2\.0 session window\.
+
+## Monitors and Display Resolution<a name="client-application-windows-monitors-display-resolution-user"></a>
 
 The AppStream 2\.0 client supports the following:
 + Multiple monitors \(up to 2K resolution\) — Up to 4 monitors and a maximum display resolution of 2560x1600 pixels per monitor
@@ -278,7 +287,7 @@ The following procedures describe how to send log files before you sign in to an
 
 1. In the upper right of the AppStream 2\.0 session window, choose the **Profiles** icon, and then choose **Send Diagnostic Logs**\. 
 
-## Troubleshooting<a name="client-application-troubleshooting-user"></a>
+## Troubleshooting<a name="client-application-windows-troubleshooting-user"></a>
 
 If issues occur when you use the AppStream 2\.0 client for Windows, your AppStream 2\.0 client ID and version number can help your administrator with troubleshooting\. The following sections describe how to find the client ID and client version number\. 
 
@@ -286,6 +295,6 @@ If issues occur when you use the AppStream 2\.0 client for Windows, your AppStre
 
 The AppStream 2\.0 client ID uniquely identifies your device\. This ID is created when you install the AppStream 2\.0 client for Windows\. To find your client ID, open the AppStream 2\.0 client\. On the bottom left of the client sign\-in page, choose the **Client Options** link\. The client ID is displayed at the top of the **AppStream 2\.0 Client Options** dialog box\. You can use your mouse to select the client ID, and then copy it to your clipboard by using your keyboard or mouse\.
 
-### How to find the AppStream 2\.0 client version number<a name="client-application-troubleshooting-find-client-version-number-user"></a>
+### How to find the AppStream 2\.0 client version number<a name="client-application-windows-troubleshooting-find-client-version-number-user"></a>
 
 AppStream 2\.0 periodically releases new client versions to add features and functionality or resolve issues\. To find the version of the AppStream 2\.0 client that you have installed, open the AppStream 2\.0 client\. On the bottom of the client sign\-in page, choose the **About Amazon AppStream 2\.0** link\. The client version is displayed below the Amazon AppStream 2\.0 logo\.

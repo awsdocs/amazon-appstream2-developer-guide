@@ -1,11 +1,11 @@
-# AppStream 2\.0 Base Image Version History<a name="base-image-version-history"></a>
+# AppStream 2\.0 Base Image Release Notes<a name="base-image-version-history"></a>
 
 Amazon AppStream 2\.0 provides base images to help you create images that include your own applications\. Base images are Amazon Machine Images \(AMIs\) that contain software configurations specific to the Windows platform\. For AppStream 2\.0, each base image includes the AppStream 2\.0 agent and the latest version of one of the following Microsoft Windows operating systems:
 + Windows Server 2012 R2 — Available on the following image types: Base, Graphics Design, Graphics G4, Graphics Pro, and Sample apps
 + Windows Server 2016 Base — Available on the following image types: Base, Graphics Design, Graphics G4, and Graphics Pro
 + Windows Server 2019 Base — Available on the following image types: Base, Graphics G4, and Graphics Pro
 
-You are responsible for installing and maintaining the updates for the Windows operating system, your applications, and their dependencies\. For more information, see "Keep Your AppStream 2\.0 Image Up\-to\-Date" in [Administer Your Amazon AppStream 2\.0 Images](administer-images.md)\. For information about the latest AppStream 2\.0 software, see [AppStream 2\.0 Agent Version History](agent-software-versions.md)\.
+You are responsible for installing and maintaining the updates for the Windows operating system, your applications, and their dependencies\. For more information, see "Keep Your AppStream 2\.0 Image Up\-to\-Date" in [Administer Your Amazon AppStream 2\.0 Images](administer-images.md)\. For information about the latest AppStream 2\.0 software, see [AppStream 2\.0 Agent Release Notes](agent-software-versions.md)\.
 
 The following table lists the latest released images\.
 

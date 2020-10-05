@@ -7,7 +7,7 @@ Images that are available to you are listed in the **Image Registry** in the App
 **Topics**
 + [Default Application and Windows Settings and Application Launch Performance](customizing-appstream-images.md)
 + [Manage AppStream 2\.0 Agent Versions](base-images-agent.md)
-+ [AppStream 2\.0 Agent Version History](agent-software-versions.md)
++ [AppStream 2\.0 Agent Release Notes](agent-software-versions.md)
 + [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)
 + [Administer Your Amazon AppStream 2\.0 Images](administer-images.md)
 + [Create Your AppStream 2\.0 Image Programmatically by Using the Image Assistant CLI Operations](programmatically-create-image.md)

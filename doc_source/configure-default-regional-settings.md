@@ -14,7 +14,7 @@ Currently, AppStream 2\.0 supports English and Japanese only for these language 
 + [Specify a Default Display Language](#configure-default-dsiplay-language)
 + [Specify a Default System Locale](#configure-default-system-locale)
 + [Specify a Default User Locale](#configure-default-user-locale)
-+ [Specify a Default Input Method](#configure-default-display-language)
++ [Specify a Default Input Method](#configure-default-input-method)
 + [Special Considerations for Application Settings Persistence](#special-considerations-app-settings-persistence)
 + [Special Considerations for Japanese Language Settings](#special-considerations-japanese-language-settings)
 
@@ -246,7 +246,7 @@ Currently, AppStream 2\.0 supports only **English \(United States\) **and **Japa
 **Note**  
 Your users can change their user locale from the default setting that you configured to any one of 11 different supported locales\. To do so, they can configure their regional settings during application streaming sessions, as described in [Enable Your AppStream 2\.0 Users to Configure Their Regional Settings](regional-settings.md)\. Also, if a user previously selected a user locale when streaming from any fleet instance in the same Region, that user\-specified setting automatically overrides any default user locale setting that you specify through your image builder\.
 
-## Specify a Default Input Method<a name="configure-default-display-language"></a>
+## Specify a Default Input Method<a name="configure-default-input-method"></a>
 
 To specify a default input method to be used in your users’ streaming sessions, perform the following steps\.
 

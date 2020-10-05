@@ -14,4 +14,4 @@ When you launch an image builder, you choose:
 + [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md)
 + [Image Builder Actions](managing-image-builders-actions.md)
 + [Instance Metadata for AppStream 2\.0 Image Builders](user-instance-metadata-image-builders.md)
-+ [AppStream 2\.0 Base Image Version History](base-image-version-history.md)
++ [AppStream 2\.0 Base Image Release Notes](base-image-version-history.md)

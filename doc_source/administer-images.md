@@ -1,7 +1,7 @@
 # Administer Your Amazon AppStream 2\.0 Images<a name="administer-images"></a>
 
 Available images are listed in the **Image Registry** in the AppStream 2\.0 console, and categorized by visibility as follows: 
-+ **Public** — Base images that are owned and made available by AWS\. Base images include the latest Windows operating system and the AppStream 2\.0 agent software\. You can use these base images to create new images that include your own applications\. For information about the base images released by AWS, see [AppStream 2\.0 Base Image Version History](base-image-version-history.md)\. 
++ **Public** — Base images that are owned and made available by AWS\. Base images include the latest Windows operating system and the AppStream 2\.0 agent software\. You can use these base images to create new images that include your own applications\. For information about the base images released by AWS, see [AppStream 2\.0 Base Image Release Notes](base-image-version-history.md)\. 
 + **Private** — Images that you create and own, and that you have not shared with other AWS accounts\. 
 + **Shared with others** — Images that you create and own, and that you have shared with one or more AWS accounts in the same AWS Region\. When you share an image with another AWS account, you can specify whether the image can be used for an image builder \(to create a new image\), for a fleet, or both\.
 + **Shared with me** — Images that are created and owned by another AWS account in the same AWS Region, and that are shared with your AWS account\. Depending on the permissions that the owner provided when sharing the image with your account, you can use this image for image builders, for fleets, or both\.

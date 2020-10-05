@@ -3,7 +3,7 @@
 This tutorial describes how to create a custom Amazon AppStream 2\.0 image that contains applications you can stream to your users, and default application and Windows settings to enable your users to get started with their applications quickly\. To complete this tutorial, you must already have an image builder\. If you don't have an image builder, see [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md)\.
 
 **Important**  
-This tutorial includes information that applies to the latest base image release\. For more information, see [AppStream 2\.0 Base Image Version History](base-image-version-history.md)\.
+This tutorial includes information that applies to the latest base image release\. For more information, see [AppStream 2\.0 Base Image Release Notes](base-image-version-history.md)\.
 
 **Topics**
 + [Step 1: Install Applications on the Image Builder](#tutorial-image-builder-install)
@@ -151,7 +151,7 @@ In this step, choose an image name and finish creating your image\.
 
    You can also add one or more tags to the image\. To do so, choose **Add Tag**, and type the key and value for the tag\. To add more tags, repeat this step\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\. When you're done, choose **Next**\.
 **Note**  
-If you choose a base image that is published by AWS on or after December 7, 2017, the option **Always use the latest agent version** appears, selected by default\. We recommend that you leave this option selected so that streaming instances that are launched from the image always use the latest version of the agent\. If you disable this option, you cannot enable it after you finish creating the image\. For information about the latest release of the AppStream 2\.0 agent, see [AppStream 2\.0 Agent Version History](agent-software-versions.md)\.
+If you choose a base image that is published by AWS on or after December 7, 2017, the option **Always use the latest agent version** appears, selected by default\. We recommend that you leave this option selected so that streaming instances that are launched from the image always use the latest version of the agent\. If you disable this option, you cannot enable it after you finish creating the image\. For information about the latest release of the AppStream 2\.0 agent, see [AppStream 2\.0 Agent Release Notes](agent-software-versions.md)\.
 
 1. In **6\. Review**, verify the image details\. To make changes, choose **Previous** to navigate to the appropriate Image Assistant tab, make your changes, and then proceed through the steps in Image Assistant as needed\.
 

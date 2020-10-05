@@ -9,11 +9,13 @@ The following are possible general issues you might have while using Amazon AppS
 + [My image builders and fleets never reach the running state\. My DNS servers are in a Simple AD directory\.](#fleets-image-builders-dont-run-simple-ad)
 + [My stack's home folders aren't working correctly\.](#troubleshooting-s3-failures)
 + [My users can't access their home folder directory from one of our applications\.](#alternate-path-accessing-home-folders)
++ [I removed or replaced a file in a user’s home folder in Amazon S3, but my users don’t see the changes in their home folder on the fleet instance during their streaming sessions\.](#removed-replaced-folder-in-s3-users-dont-see-changes-on-fleet-instance)
 + [I've enabled application settings persistence for my users, but their persistent application settings aren't being saved or loaded\.](#app-settings-save-load-failure)
 + [I've enabled app settings persistence for my users, but for certain streaming apps, my users’ passwords aren’t persisting across sessions\.](#app-settings-passwords-not-persisting)
 + [Google Chrome data is filling the VHD file that contains my users' persistent application settings\. This is preventing their settings from persisting\. How can I manage the Chrome profile?](#chrome-filling-up-app-settings-VHD)
 + [My users can’t copy and paste between their local device and their streaming session\.](#copy-paste-doesnt-work)
 + [Some keyboard shortcuts aren’t working for users during their streaming sessions\.](#keyboard-shortcuts-dont-work)
++ [The Japanese language input method doesn't work for my users during their streaming sessions](#japanese-language-input-method-doesnt-work-for-users)
 
 ## SAML federation is not working\. The user is not authorized to view AppStream 2\.0 applications\.<a name="troubleshooting-13"></a>
 
@@ -48,6 +50,20 @@ For more information, see the [Amazon Simple Storage Service Console User Guide]
 Some applications do not recognize the redirect that displays the home folder as a top\-level folder in File Explorer\. If this is the case, your users can access their home folder from within an application during a streaming session by choosing **File Open** from the application interface and browsing to either of the following directories: 
 + Non\-domain\-joined: C:\\Users\\PhotonUser\\My Files\\Home Folder
 + Domain\-joined: C:\\Users\\%username%\\My Files\\Home Folder
+
+## I removed or replaced a file in a user’s home folder in Amazon S3, but my users don’t see the changes in their home folder on the fleet instance during their streaming sessions\.<a name="removed-replaced-folder-in-s3-users-dont-see-changes-on-fleet-instance"></a>
+
+Differences between content that is stored in a user’s home folder in an S3 bucket and content that is available to a user on a fleet instance during their streaming sessions may be due to the way in which home folder content stored in Amazon S3 buckets is synchronized with home folder content stored on AppStream 2\.0 fleet instances\. 
+
+At the beginning of a user’s AppStream 2\.0 streaming session, AppStream 2\.0 catalogs the user’s home folder files stored in the Amazon S3 bucket for your AWS account and Region\. When a user uses a streaming application to open a file in their home folder on their fleet instance, AppStream 2\.0 downloads the file to the fleet instance\. 
+
+Changes that a user makes to files on a fleet instance during their active streaming session are uploaded to their home folder in the S3 bucket every few seconds, or at the end of the user’s streaming session\. 
+
+If a user opens a file in their home folder on a fleet instance during a streaming session and then closes the file without making any changes or saving the file, and you remove the file from that user’s home folder in an S3 bucket during the streaming session, the file is removed from the fleet instance if the user refreshes the folder\. If the user modifies the file and saves the file locally, the file remains available to the user on the fleet instance during their current streaming session\. The file is also uploaded to the S3 bucket again\. However, the file may or may not be available to the user on the fleet instance during their next streaming session\. 
+
+The availability of the file on the fleet instance during a user’s next streaming session depends on whether the user changed the file on the fleet instance before or after you changed the file in the S3 bucket\.
+
+For more information, see [Home Folder Content Synchronization](home-folders.md#home-folders-content-synchronization)\.
 
 ## I've enabled application settings persistence for my users, but their persistent application settings aren't being saved or loaded\.<a name="app-settings-save-load-failure"></a>
 
@@ -114,3 +130,49 @@ This issue is due to the following limitations on users’ local computers:
 + The keyboard shortcuts are filtered by the operating system that is running on users’ local computers and not propagated to the browsers on which users are accessing AppStream 2\.0\. This behavior applies to the Windows Win\+L and Ctrl\+Alt\+Del keyboard shortcuts and Mac Ctrl\+F3 keyboard shortcut\.
 + When used with web applications, some keyboard shortcuts are filtered by the browser and don’t generate an event for the web applications\. As a result, the web applications can’t respond to the keyboard shortcuts typed by users\. 
 + The keyboard shortcuts are translated by the browser before a keyboard event is generated and so are not translated correctly\. For example, Alt key combinations and Option key combinations on Mac computers are translated as if they are Alt Graph key combinations on Windows\. When this occurs, the results are not as the users intend when they use these key combinations\. 
+
+## The Japanese language input method doesn't work for my users during their streaming sessions<a name="japanese-language-input-method-doesnt-work-for-users"></a>
+
+To enable your users to use the Japanese language input method during their AppStream 2\.0 streaming sessions, do the following:
++ Configure your fleet to use the Japanese input method\. To do so, enable the Japanese input method on your image builder when you create an image, and then configure your fleet to use the image\. For more information, see [Specify a Default Input Method](configure-default-regional-settings.md#configure-default-input-method)\. Doing so enables AppStream 2\.0 to automatically configure your image to use a Japanese keyboard\. For more information, see [Japanese Keyboards](configure-default-regional-settings.md#special-considerations-japanese-language-keyboards)\.
++ Ensure that the Japanese input method is also enabled on the user's local computer\. 
+
+If the fleet instance and the user’s local computer don't use the same language input method, the mismatch might result in unexpected keyboard inputs on the fleet instance during the user’s streaming sessions\. For example, if the fleet instance uses the Japanese input method and the user’s local computer uses the English input method, during a streaming session, the local computer will send keys to the fleet instance that have different key mappings than the fleet instance\. 
+
+To verify whether the Japanese input method is enabled for a fleet instance, enable the **Desktop** stream view for the fleet\. For more information, see Step 6 in [Create a Fleet](set-up-stacks-fleets.md#set-up-stacks-fleets-create)\.
+
+### Windows Keyboard Shortcuts<a name="japanese-language-input-method-windows-keyboard-shortcuts"></a>
+
+Following are Windows keyboard shortcuts for switching Japanese input modes and for Japanese conversions\. For these keyboard shortcuts to work, the AppStream 2\.0 streaming session must be active\.
+
+**Windows keyboard shortcuts for switching Japanese input modes**
+
+
+| Keyboard shortcut | Description | 
+| --- | --- | 
+|  半角/全角/漢字 \(Hankaku/Zenkaku/Kanji\) Or Alt\+`  |  Switches the input mode between alphanumeric and Japanese mode  | 
+|  無変換 \(Muhenkan\)  |  Converts characters to Hiragana, full\-width Katakana, and half\-width Katakana in sequence  | 
+|  カタカナ/ひらがな/ローマ字 \(Katakana/Hiragana/Romaji\)  |  Changes the input mode to Hiragana  | 
+|  Shift\+カタカナ/ひらがな/ローマ字 \(Katakana/Hiragana/Romaji\)  |  Changes the input mode to Katakana  | 
+|  Alt\+カタカナ/ひらがな/ローマ字  \(Katakana/Hiragana/Romaji\)  |  Switches the input mode between Japanese Romaji and Japanese Kana  | 
+
+**Windows keyboard shortcuts for Japanese conversions**
+
+
+| Keyboard shortcut | Description | 
+| --- | --- | 
+|  変換 \(Henkan\) \+ Space  |  Lists conversion options  | 
+|  F6  |  Converts to Hiragana  | 
+|  F7  |  Converts to full\-width Katakana  | 
+|  F8  |  Converts to half\-width Katakana  | 
+|  F9  |  Converts to full\-width Romaji  | 
+|  F10  |  Converts to half\-width Romaji  | 
+
+### Mac Keyboard Shortcuts<a name="japanese-language-input-method-mac-keyboard-shortcuts"></a>
+
+For information about Mac keyboard shortcuts for switching Japanese input methods and for Japanese conversions, see the following articles in the Mac Support documentation\.
+
+**Note**  
+Because AppStream 2\.0 streaming sessions run on Windows instances, Mac users might experience different key mappings\.
++ Keyboard shortcuts for switching Japanese input methods — [Set up and switch to a Japanese input source on Mac](https://support.apple.com/guide/japanese-input-method/set-up-and-switch-to-japanese-jpim10267/mac)
++ Keyboard short link cuts for Japanese conversions — [Keyboard shortcuts for Japanese conversions on Mac](https://support.apple.com/guide/japanese-input-method/keyboard-shortcuts-jpim10263/6.2.1/mac)

@@ -16,7 +16,7 @@ After you launch an image builder and it is running, your account may incur nomi
    + If a welcome screen does not appear, choose **Quick links** in the left navigation pane, then **Custom set up**\. 
    + Alternatively, choose **Images** in the left navigation pane, then the **Image Builder** tab, **Launch Image Builder**\.
 
-1. For **Step 1: Choose Image**, choose a base image\. If you are launching the image builder for the first time, you can use one of the latest base images released by AWS \(selected by default\)\. For a list of the latest versions of base images released by AWS, see [AppStream 2\.0 Base Image Version History](base-image-version-history.md)\. If you have already created images, or you want to update applications in an existing image, you can select one of your existing images\. Be sure to select an image that aligns with the instance family that you need\. For more information, see [AppStream 2\.0 Instance Families](instance-types.md)\.
+1. For **Step 1: Choose Image**, choose a base image\. If you are launching the image builder for the first time, you can use one of the latest base images released by AWS \(selected by default\)\. For a list of the latest versions of base images released by AWS, see [AppStream 2\.0 Base Image Release Notes](base-image-version-history.md)\. If you have already created images, or you want to update applications in an existing image, you can select one of your existing images\. Be sure to select an image that aligns with the instance family that you need\. For more information, see [AppStream 2\.0 Instance Families](instance-types.md)\.
 
    Choose **Next**\.
 

@@ -33,7 +33,7 @@ The IAM role that you want to use with an AppStream 2\.0 image builder or fleet 
 + The IAM role must be in the same AWS account as the AppStream 2\.0 streaming instance\.
 + The IAM role cannot be a service role\.
 + The trust relationship policy that is attached to the IAM role must include the AppStream 2\.0 service as the principal\. A *principal* is an entity in AWS that can perform actions and access resources\. The policy must also include the `sts:AssumeRole` action\. This policy configuration defines AppStream 2\.0 as a trusted entity\.
-+ If you are applying the IAM role to an image builder, the image builder must run a version of the AppStream 2\.0 agent released on or after September 3, 2019\. If you are applying the IAM role to a fleet, the fleet must use an image use an image that uses a version of the agent released on or after the same date\. For more information, see [AppStream 2\.0 Agent Version History](agent-software-versions.md)\. 
++ If you are applying the IAM role to an image builder, the image builder must run a version of the AppStream 2\.0 agent released on or after September 3, 2019\. If you are applying the IAM role to a fleet, the fleet must use an image use an image that uses a version of the agent released on or after the same date\. For more information, see [AppStream 2\.0 Agent Release Notes](agent-software-versions.md)\. 
 
 **To enable the AppStream 2\.0 service principal to assume an existing IAM role**
 

@@ -1,4 +1,4 @@
-# AppStream 2\.0 Agent Version History<a name="agent-software-versions"></a>
+# AppStream 2\.0 Agent Release Notes<a name="agent-software-versions"></a>
 
 The Amazon AppStream 2\.0 agent software runs on your streaming instances, enabling end users to connect to and start their streaming applications\. Starting December 7, 2017, your streaming instances can be automatically updated with the latest features, performance improvements, and security updates that are available from AWS\. Before December 7, 2017, agent updates were included with new base image releases\. 
 
@@ -9,6 +9,7 @@ The following table describes the latest updates that are available in released 
 
 | Amazon AppStream 2\.0 agent version | Changes | 
 | --- | --- | 
+| 09\-01\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
 | 07\-30\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
 | 05\-27\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
 | 04\-20\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 

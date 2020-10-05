@@ -1,8 +1,8 @@
 # Protecting Data in Transit with FIPS Endpoints<a name="protecting-data-in-transit-FIPS-endpoints"></a>
 
- By default, when you communicate with the AppStream 2\.0 service, whether as an administrator using the AppStream 2\.0 console, the AWS Command Line Interface \(AWS CLI\), or an AWS SDK, or as a user streaming from an image builder or a fleet instance, all data in transit is encrypted using SSL\.
+By default, when you communicate with the AppStream 2\.0 service, whether as an administrator using the AppStream 2\.0 console, the AWS Command Line Interface \(AWS CLI\), or an AWS SDK, or as a user streaming from an image builder or a fleet instance, all data in transit is encrypted using SSL\.
 
-Alternatively, AppStream 2\.0 offers FIPS\-compliant endpoints \(FIPS endpoints\) in all United States AWS Regions where AppStream 2\.0 is available\. When you use a FIPS endpoint, all data in transit is encrypted using cryptographic standards that comply with Federal Information Processing Standard \(FIPS\) 140\-2\. For information about FIPS endpoints, including a list of AppStream 2\.0 endpoints, see [Federal Information Processing Standard \(FIPS\) 140\-2](https://aws.amazon.com/compliance/fips)\.
+If you require FIPS 140\-2 validated cryptographic modules when accessing AWS through a command line interface or an API, use a FIPS endpoint\. AppStream 2\.0 offers FIPS endpoints in all United States AWS Regions where AppStream 2\.0 is available\. When you use a FIPS endpoint, all data in transit is encrypted using cryptographic standards that comply with Federal Information Processing Standard \(FIPS\) 140\-2\. For information about FIPS endpoints, including a list of AppStream 2\.0 endpoints, see [Federal Information Processing Standard \(FIPS\) 140\-2](https://aws.amazon.com/compliance/fips)\.
 
 ## FIPS Endpoints for Administrative Use<a name="FIPS-for-administrative-use"></a>
 
