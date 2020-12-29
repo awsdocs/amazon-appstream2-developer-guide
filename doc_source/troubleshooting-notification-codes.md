@@ -56,6 +56,23 @@ The following are notification codes and resolution steps for issues with domain
 
 **DOMAIN\_JOIN\_INTERNAL\_SERVICE\_ERROR**  
 **Message**: The account already exists\.  
-**Resolution**: This error can occur in either of the following scenarios:  
+**Resolution**: This error can occur in the following scenarios:  
 + The service account specified in the directory configuration does not have permissions to create the computer object or reuse an existing one\. If this is the case, validate the permissions and start the image builder or fleet\. For more information, see [Granting Permissions to Create and Manage Active Directory Computer Objects](active-directory-admin.md#active-directory-permissions)\.
 + After AppStream 2\.0 creates the computer object, it is moved from the OU in which it was created\. In this case, the first image builder or fleet is created successfully, but any new image builder or fleet that uses the computer object fails\. When Active Directory searches for the computer object in the specified OU and detects that an object with the same name exists elsewhere in the domain, the domain join is not successful\. 
++ The name of the OU specified in the AppStream 2\.0 Directory Config includes spaces\. In this case, when a fleet or image builder attempts to rejoin the Active Directory domain, AppStream 2\.0 cannot cycle the computer objects correctly and the domain rejoin does not succeed\. To resolve this issue for a fleet, do the following:
+
+  1. Stop the fleet\.
+
+  1. Edit the Active Directory domain settings for the fleet to remove the Directory Config and Directory OU to which the fleet is joined\. For more information, see [Step 3: Create a Domain\-Joined Fleet](active-directory-directory-setup.md#active-directory-setup-fleet)\.
+
+  1. Update the AppStream 2\.0 Directory Config to specify an OU that doesn't contain spaces\. For more information, see [Step 1: Create a Directory Config Object](active-directory-directory-setup.md#active-directory-setup-config)\.
+
+  1. Edit the Active Directory domain settings for the fleet to specify the Directory Config with the updated Directory OU\.
+
+  To resolve this issue for an image builder, do the following:
+
+  1. Delete the image builder\.
+
+  1. Update the AppStream 2\.0 Directory Config to specify an OU that doesn't contain spaces\. For more information, see [Step 1: Create a Directory Config Object](active-directory-directory-setup.md#active-directory-setup-config)\.
+
+  1. Create a new image builder and specify the Directory Config with the updated Directory OU\. For more information, see [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md)\.

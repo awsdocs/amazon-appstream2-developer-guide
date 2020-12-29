@@ -1,6 +1,6 @@
 # Troubleshooting Active Directory Domain Join<a name="troubleshooting-active-directory"></a>
 
-The following are possible issues you might have while setting up and using Active Directory with Amazon AppStream 2\.0\. For help troubleshooting notification codes, see [Troubleshooting Notification Codes](troubleshooting-notification-codes.md)\.
+The following are issues that might occur when you set up and use Active Directory with Amazon AppStream 2\.0\. For help troubleshooting notification codes, see [Troubleshooting Notification Codes](troubleshooting-notification-codes.md)\.
 
 **Topics**
 + [My image builders and fleet instances are stuck in the PENDING state\.](#troubleshooting-active-directory-1)

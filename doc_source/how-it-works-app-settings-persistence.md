@@ -22,7 +22,7 @@ AppStream 2\.0 automatically saves all files and folders in this path, except fo
 + Searches
 + Videos
 
-Files and folders created outside of these folders are saved within the VHD and synced to Amazon S3\. The default VHD maximum size is 1GB\. The size of the saved VHD is the total size of the files and folders that it contains\. AppStream 2\.0 automatically saves the HKEY\_CURRENT\_USER registry hive for the user\.
+Files and folders created outside of these folders are saved within the VHD and synced to Amazon S3\. The default VHD maximum size is 1GB\. The size of the saved VHD is the total size of the files and folders that it contains\. AppStream 2\.0 automatically saves the HKEY\_CURRENT\_USER registry hive for the user\. For new users \(users whose profiles don't exist in Amazon S3\), AppStream 2\.0 creates the initial profile by using the default profile\. This profile is created in the following location on the image builder: C:\\users\\default\.
 
 **Note**  
 The entire VHD must be downloaded to the streaming instance before a streaming session can begin\. For this reason, a VHD that contains a large amount of data can delay the start of the streaming session\. For more information, see [Best Practices for Enabling Application Settings Persistence](enabling-app-settings-persistence.md#best-practices-app-settings-persistence)\.

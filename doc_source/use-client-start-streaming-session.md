@@ -7,7 +7,7 @@ After you install the AppStream 2\.0 client on your users' local computers, they
 In the AppStream 2\.0 client sign\-in page, users enter the streaming URL that you created as the web address, and then choose **Connect**\. To create a streaming URL, use one of the following methods:
 + AppStream 2\.0 console
 + The [CreateStreamingURL](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStreamingURL.html) API action 
-+ The [create\-streaming\-url](https://docs.aws.amazon.com/cli/latest/reference/appstream;create-streaming-url.html) AWS CLI command
++ The [create\-streaming\-url](https://docs.aws.amazon.com/cli/latest/reference/appstream/create-streaming-url.html) AWS CLI command
 
 **SAML 2\.0**
 

@@ -1,6 +1,6 @@
 # Troubleshooting Fleets<a name="troubleshooting-fleets"></a>
 
-The following are possible issues that might occur when users connect to streaming sessions launched from fleet instances\.
+The following are issues that might occur when users connect to Amazon AppStream 2\.0 streaming sessions launched from fleet instances\.
 
 **Topics**
 + [I tried to increase my fleet capacity, but the update isn't taking effect\.](#troubleshooting-fleet-scale-up-policy-not-working-quota-limit-exceeded)

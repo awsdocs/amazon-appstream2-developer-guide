@@ -35,7 +35,7 @@ AppStream 2\.0 lets you optimize the launch performance of your applications for
 **Note**  
 If you onboard application optimization manifests by using both the Image Assistant CLI operations and the Image Assistant GUI, the manifests are merged\.
 
-Following is an example of an application optimization manifest file named C:\\path\\to\\application\-optimization\-manifest\.txt:
+Following is an example of an application optimization manifest file:
 
 ```
 C:\Program Files (x86)\Notepad++\autoCompletion
@@ -139,7 +139,7 @@ The absolute path to the icon for the application\. The path must point to a val
 **`--working-directory` \(string\)**  
 The initial working directory for the application when the application is launched\.
 
-**`--optimization-manifest` \(string\)**  
+**`--absolute-manifest-path` \(string\)**  
 The path to a new line\-delimited text file\. The file specifies the absolute paths of the files to optimize before the fleet instance is made available to a user for streaming\. The path must point to a valid text file\.
 
 **Message output**

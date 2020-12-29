@@ -1,6 +1,6 @@
 # Manage AppStream 2\.0 Agent Versions<a name="base-images-agent"></a>
 
-The AppStream 2\.0 agent is software that runs on your streaming instances and enables users to stream applications\. When you create a new image, the **Always use latest agent version** option is selected by default\. When this option is selected, new image builders or fleet instances that are launched from your image always use the latest AppStream 2\.0 agent version\. We recommend that you leave this option selected\. In some cases, however, you may want to control agent updates to ensure compatibility\.
+The AppStream 2\.0 agent is software that runs on your streaming instances and enables users to stream applications\. When you create a new image, the **Always use latest agent version** option is selected by default\. When this option is selected, new image builders or fleet instances that are launched from your image always use the latest AppStream 2\.0 agent version\. You might want to control agent updates to ensure compatibility with your software or to qualify the updated environment before you deploy it for your end users\.
 
 The following procedures describe how to manage AppStream 2\.0 agent versions\.
 
@@ -11,7 +11,10 @@ The following procedures describe how to manage AppStream 2\.0 agent versions\.
 
 ## Create an Image That Always Uses the Latest Version of the AppStream 2\.0 Agent<a name="create-image-that-always-uses-latest-agent"></a>
 
-When your images are configured to always use the latest AppStream 2\.0 agent version, your streaming instances are automatically updated with the latest features, performance improvements, and security updates that are available from AWS\.
+When your images are configured to always use the latest AppStream 2\.0 agent version, your streaming instances are automatically updated with the latest features, performance improvements, and security updates that are available from AWS when a new agent version is released\.
+
+**Note**  
+In some cases, a new AppStream 2\.0 agent version might conflict with your software\. We recommend that you qualify the new AppStream 2\.0 agent version before deploying it to your production fleets\.
 
 **To create an image that always uses the latest version of the AppStream 2\.0 agent**
 

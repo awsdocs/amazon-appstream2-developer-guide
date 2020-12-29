@@ -9,15 +9,30 @@ You can enable one or more options for your organization\. When you enable home 
 
 Files and folders are encrypted in transit using Amazon S3's SSL endpoints\. Files and folders are encrypted at rest using Amazon S3\-managed encryption keys\. 
 
-**Note**  
-Home folders are stored on fleet instances in the following default locations:  
-Non\-domain\-joined instances: C:\\Users\\PhotonUser\\My Files\\Home Folder
-Domain\-joined instances: C:\\Users\\%username%\\My Files\\Home Folder
+Home folders are stored on fleet instances in the following default locations:
++ Non\-domain\-joined instances: C:\\Users\\PhotonUser\\My Files\\Home Folder
++ Domain\-joined instances: C:\\Users\\%username%\\My Files\\Home Folder
+
 As an administrator, use the applicable path if you configure your applications to save to the home folder\. In some cases, your users may not be able to find their home folder because some applications do not recognize the redirect that displays the home folder as a top\-level folder in File Explorer\. If this is the case, your users can access their home folder by browsing to the same directory in File Explorer\.
 
 **Topics**
++ [Files and Directories Associated with Compute\-Intensive Applications](#storage-solutions-files-directories-associated-with-compute-intensive-applications)
 + [Enable Home Folders for Your AppStream 2\.0 Users](#enable-home-folders)
 + [Administer Your Home Folders](#home-folders-admin)
+
+## Files and Directories Associated with Compute\-Intensive Applications<a name="storage-solutions-files-directories-associated-with-compute-intensive-applications"></a>
+
+During AppStream 2\.0 streaming sessions, saving large files and directories associated with compute\-intensive applications to persistent storage can take longer than saving files and directories required for basic productivity applications\. For example, it might take longer for applications to save a large amount of data or frequently modify the same files than it would to save files created by applications that perform a single write action\. It might also take longer to save many small files\.
+
+If your users save files and directories associated with compute\-intensive applications and AppStream 2\.0 persistent storage options aren't performing as expected, we recommend that you use a Server Message Block \(SMB\) solution such as Amazon FSx for Windows File Server or an AWS Storage Gateway file gateway\. Following are examples of files and directories associated with compute\-intensive applications that are more suitable for use with these SMB solutions:
++ Workspace folders for integrated development environments \(IDEs\)
++ Local database files
++ Scratch space folders created by graphics simulation applications
+
+For more information, see:
++  [https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html)
++ [Using Amazon FSx with Amazon AppStream 2\.0 ](https://aws.amazon.com/blogs/desktop-and-application-streaming/using-amazon-fsx-with-amazon-appstream-2-0/)
++ [File gateways](https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#file-gateway-concepts) in the *AWS Storage Gateway User Guide*
 
 ## Enable Home Folders for Your AppStream 2\.0 Users<a name="enable-home-folders"></a>
 

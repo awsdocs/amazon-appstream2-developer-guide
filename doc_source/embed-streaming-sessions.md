@@ -255,9 +255,9 @@ The following three elements can be passed as strings into HIDDEN\_ELEMENTS, rat
 
 | String | Description | 
 | --- | --- | 
-| 'adminCommandsButton' | When you are connected to an AppStream 2\.0 image builder, the Admin Commands button displays on the top right corner of the session toolbar\. Passing this string into HIDDEN\_ELEMENTS hides the Admin Commands button\. | 
+| 'adminCommandsButton' | When you are connected to an AppStream 2\.0 image builder, the Admin Commands button displays on the top right corner of the AppStream 2\.0 toolbar\. Passing this string into HIDDEN\_ELEMENTS hides the Admin Commands button\. | 
 | 'softKeyboardButton' | During AppStream 2\.0 streaming sessions on touch\-enabled devices, users can tap the keyboard icon on the AppStream 2\.0 toolbar to display the on\-screen keyboard\. Passing this string into HIDDEN\_ELEMENTS hides the keyboard icon\. | 
-| 'keyboardShortcutsButton' | During AppStream 2\.0 streaming sessions on touch\-enabled devices, users can tap the Fn icon to display keyboard shortcuts\. Passing this string into HIDDEN\_ELEMENTS hides the Fn icon\. | 
+| 'keyboardShortcutsButton' | During AppStream 2\.0 streaming sessions on touch\-enabled devices, users can tap the Fn icon on the AppStream 2\.0 toolbar to display keyboard shortcuts\. Passing this string into HIDDEN\_ELEMENTS hides the Fn icon\. | 
 
 ### Functions for the `AppStream.Embed` Object<a name="functions-embed-object"></a>
 

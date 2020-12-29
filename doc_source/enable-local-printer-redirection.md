@@ -1,6 +1,6 @@
 # Enable Local Printer Redirection for Your AppStream 2\.0 Users<a name="enable-local-printer-redirection"></a>
 
-With local printer redirection, your AppStream 2\.0 users can redirect print jobs from their streaming application to a printer that is connected to their local computer\. You don't need a printer driver installed on the AppStream 2\.0 streaming instance to enable users to print documents during their streaming sessions\. 
+With local printer redirection, your AppStream 2\.0 users can redirect print jobs from their streaming application to a printer that is connected to their local computer, including any network printers that the users have mapped\. You don't need a printer driver installed on the AppStream 2\.0 streaming instance to enable users to print documents during their streaming sessions\. 
 
 ## Prerequisites for Local Printer Redirection<a name="local-printer-redirection-prerequisites"></a>
 

@@ -5,6 +5,7 @@ Your users can start AppStream 2\.0 streaming sessions by using the AppStream 2\
 The AppStream 2\.0 client is a native application that is designed for users who require the following functionality during their AppStream 2\.0 streaming sessions:
 + Require support for more than two monitors or 4K resolution\.
 + Use their USB devices with applications streamed through AppStream 2\.0\.
++ Use their local webcam for video conferencing within their streaming sessions\.
 + Use keyboard shortcuts during their streaming sessions\.
 + Require seamless access to local drives and folders during their streaming sessions\.
 + Require the ability to redirect print jobs from their streaming application to a printer that is connected to their local computer\.

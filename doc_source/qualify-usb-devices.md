@@ -42,7 +42,7 @@ To qualify your users' USB devices so that the devices can be used with streamin
 
 1. On the image builder, test your USB device to confirm that it works as expected\.
 
-1. Before your users can use the USB device in an AppStream 2\.0 session, they must first share the device with their session\. For guidance that you can provide your users to help them perform this task, see [USB Devices](client-application-windows-user.md#client-application-windows-share-usb-devices-with-session-user)\.
+1. Before your users can use the USB device in an AppStream 2\.0 session, they must first share the device with their session\. For guidance that you can provide your users to help them perform this task, see [USB Devices](client-application-windows-user.md#client-application-windows-how-to-share-usb-devices-user)\.
 
 1. If the USB device works with the image builder as expected, create an image\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 

@@ -51,4 +51,4 @@ C\_Users\_janedoe\_Downloads \(\\\\ExampleCorp\-123456\) \(H:\)
 
 ## Provide Your AppStream 2\.0 Users with Guidance for Working with File System Redirection<a name="end-user-guidance-file-system-redirection"></a>
 
-To help your users understand how to work with file redirection during their streaming sessions, you can provide them with the information in [How to Access Files on Your Local Computer](client-application-windows-user.md#client-application-windows-file-system-redirection)\. 
+To help your users understand how to work with file redirection during their streaming sessions, you can provide them with the information in [Local File Access](client-application-windows-user.md#client-application-windows-file-system-redirection)\. 

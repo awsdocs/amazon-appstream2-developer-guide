@@ -11,3 +11,5 @@ You can enable one or more options for your organization\. As an AppStream 2\.0 
 + [Enable and Administer Home Folders for Your AppStream 2\.0 Users](home-folders.md)
 + [Enable and Administer Google Drive for Your AppStream 2\.0 Users](google-drive.md)
 + [Enable and Administer OneDrive for Business for Your AppStream 2\.0 Users](onedrive.md)
+
+For troubleshooting information, see [Troubleshooting Persistent Storage Issues](troubleshooting-persistent-storage.md)\.

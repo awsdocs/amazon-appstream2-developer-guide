@@ -1,6 +1,6 @@
 # Troubleshooting AppStream 2\.0 User Issues<a name="troubleshooting-client"></a>
 
-The following are possible issues that might occur for AppStream 2\.0 users\.
+The following are possible issues that might occur when your users use the AppStream 2\.0 client\.
 
 **Topics**
 + [My users' AppStream 2\.0 client installations fail, and they're getting a message stating that \.NET Framework 4\.6 is required\.](#troubleshooting-client-no-internet-net-framework-462-fails)

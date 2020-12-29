@@ -17,7 +17,7 @@ One or more of the following domains must be allowed to enable user authenticati
 | Asia Pacific \(Tokyo\) | appstream2\.ap\-northeast\-1\.aws\.amazon\.com | 
 | Europe \(Frankfurt\) | appstream2\.eu\-central\-1\.aws\.amazon\.com | 
 | Europe \(Ireland\) | appstream2\.eu\-west\-1\.aws\.amazon\.com | 
-| AWS GovCloud \(US\-West\) | appstream2\.us\-gov\-west\-2\.amazonaws\-us\-gov\.com | 
+| AWS GovCloud \(US\-West\) | appstream2\.us\-gov\-west\-1\.amazonaws\-us\-gov\.com | 
 
 **Note**  
 If your users use a network proxy to access streaming instances, disable any proxy caching for the user auth domains in the table and the session gateway, \*\.amazonappstream\.com\.

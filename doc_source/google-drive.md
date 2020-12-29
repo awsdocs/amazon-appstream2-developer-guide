@@ -31,11 +31,11 @@ Follow these steps to add Amazon AppStream 2\.0 as a trusted app in your G Suite
 
 1. Choose **Dashboard**\.
 
-1. Choose the main menu in the upper left of the window \(to the left of the **Google Admin** title\), then choose **Security**, **Settings**\.
+1. Choose the main menu in the upper left of the window \(to the left of the **Google Admin** title\), then choose **Security**, **API controls**\.
 
-1. Choose **App access control**\.
+1. At the top of the page, in the **App access control** section, choose **MANAGE THIRD\-PARTY APP ACCESS**\.
 
-1. At the top of the page, in the **Overview** section, choose **MANAGE THIRD\-PARTY APP ACCESS**\.
+1. At the top of the page, ensure that **APPS** is selected\.
 
 1. Choose **Configure new app**, and then choose **OAuth App Name Or Client ID**\.
 

@@ -22,7 +22,7 @@ AppStream 2\.0 is not supported on devices that have screen resolutions smaller 
 
 ## Feature and Device Support<a name="feature-support-web-access-admin"></a>
 
-AppStream 2\.0 supports the following features and peripheral devices when accessed through a web browser\.
+AppStream 2\.0 provides the following feature and peripheral device support for users who access AppStream 2\.0 through a web browser\.
 
 **Topics**
 + [Dual\-Monitor Support](#dual-monitor-support-web-access-admin)
@@ -32,12 +32,14 @@ AppStream 2\.0 supports the following features and peripheral devices when acces
 
 ### Dual\-Monitor Support<a name="dual-monitor-support-web-access-admin"></a>
 
-AppStream 2\.0 provides dual\-monitor support for streaming sessions that are started on the following web browsers:
+AppStream 2\.0 supports the use of multiple monitors during streaming sessions, including monitors that have different resolutions\. To help ensure an optimal streaming experience, we recommend that users who have monitors with different resolutions set the display scale for their monitors to 100 percent\. 
+
+Dual monitors are supported for streaming sessions that are started on the following web browsers:
 + Google Chrome
 + Mozilla Firefox
 + Safari
 
-For browser\-based streaming sessions on dual monitors, a maximum display resolution of 2560x1440 pixels is supported per monitor\. If your users require more than two monitors, or a display resolution that is greater than 2560x1440 pixels per monitor, the AppStream 2\.0 client is available\.
+For browser\-based streaming sessions on dual monitors, a maximum display resolution of 2560x1600 pixels is supported per monitor\. If your users require more than two monitors, or a display resolution that is greater than 2560x1600 pixels per monitor, the AppStream 2\.0 client is available\.
 
 **Note**  
 Dual monitors are not supported on mobile devices or for embedded AppStream 2\.0 streaming sessions\. 
@@ -70,4 +72,6 @@ To get started with using drawing tablets during application streaming sessions,
 
 By default, during users' streaming sessions, AppStream 2\.0 transmits information about mouse movements to the streaming instance by using absolute coordinates and rendering the mouse movements locally\. For graphics\-intensive applications, such as computer\-aided design \(CAD\)/computer\-aided manufacturing \(CAM\) software or video games, mouse performance improves when relative mouse mode is enabled\. Relative mouse mode uses relative coordinates, which represent how far the mouse moved since the last frame, rather than the absolute x\-y coordinate values within a window or screen\. When relative mouse mode is enabled, AppStream 2\.0 renders the mouse movements remotely\.
 
-Users can enable this feature during their AppStream 2\.0 streaming sessions by pressing Ctrl\+Shift\+F8\.
+Users can enable this feature during their AppStream 2\.0 streaming sessions by doing either of the following:
++ Windows: Pressing Ctrl\+Shift\+F8
++ Mac: Pressing Control\+Fn\+Shift\+F8

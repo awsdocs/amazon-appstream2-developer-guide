@@ -139,6 +139,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Troubleshooting Fleets](troubleshooting-fleets.md)
    + [Troubleshooting Active Directory Domain Join](troubleshooting-active-directory.md)
    + [Troubleshooting AppStream 2.0 User Issues](troubleshooting-client.md)
+   + [Troubleshooting Persistent Storage Issues](troubleshooting-persistent-storage.md)
    + [Troubleshooting Notification Codes](troubleshooting-notification-codes.md)
 + [Amazon AppStream 2.0 Service Quotas](limits.md)
 + [Guidance for AppStream 2.0 Users](user-guidance.md)

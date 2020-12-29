@@ -17,7 +17,7 @@ We recommend an internet connection for AppStream 2\.0 client installation\. In 
 
 ## Feature and Device Support<a name="client-feature-support"></a>
 
-The AppStream 2\.0 client supports the following features and peripheral devices\.
+The AppStream 2\.0 client supports the following features and devices\.
 
 **Topics**
 + [Native Application Mode](#feature-support-native-application-mode)
@@ -39,7 +39,7 @@ Native application mode is not available if your fleet is enabled for the **Desk
 
 To enable this feature for your users, you must use an image that uses a [version of the AppStream 2\.0 agent](agent-software-versions.md) released on or after February 19, 2020\. In addition, version 1\.1\.129 or later of the AppStream 2\.0 client must be installed on your users' PCs\. For more information about client versions, see [AppStream 2\.0 Client Release Notes](client-release-versions.md)\.
 
-If AppStream 2\.0 client version 1\.1\.129 or later is installed on your users' PC, but you are not using an image that uses an agent version released on or after February 19, 2020, the client falls back to classic mode even if native application mode is selected\.
+If AppStream 2\.0 client version 1\.1\.129 or later is installed on your users' computer, but you are not using an image that uses an agent version released on or after February 19, 2020, the client falls back to classic mode even if native application mode is selected\.
 
 **Known Issues**
 
@@ -66,32 +66,54 @@ If you require more control over logging, you can disable automatic logging and 
 
 ### Peripheral Devices<a name="feature-support-peripheral-devices"></a>
 
-The AppStream 2\.0 client provides the following support for peripheral devices such as monitors, mice, keyboards, and drawing tablets\.
+The AppStream 2\.0 client provides the following support for peripheral devices such as monitors, webcams, mice, keyboards, and drawing tablets\.
 
 **Note**  
-With certain exceptions, USB redirection is required for the AppStream 2\.0 client to support USB devices\. When USB redirection is required for a device, the device must be qualified before it can be used with AppStream 2\.0 streaming sessions\. For more information, see [USB Devices Qualified by AppStream 2\.0](#feature-support-USB-devices-qualified)\.
+With certain exceptions, USB redirection is required for the AppStream 2\.0 client to support USB devices\. When USB redirection is required for a device, the device must be qualified before it can be used with AppStream 2\.0 streaming sessions\. For more information, see [USB Redirection](#feature-support-USB-devices-qualified)\.
 
 **Topics**
-+ [Multiple Monitors \(up to 2K Resolution\)](#feature-support-multiple-monitors-2K)
-+ [Multiple Monitors \(up to 4K Resolution\)](#feature-support-multiple-monitors-4K)
-+ [USB Devices Qualified by AppStream 2\.0](#feature-support-USB-devices-qualified)
++ [Multiple Monitors](#feature-support-multiple-monitors)
++ [Real\-Time Audio\-Video](#feature-support-real-time-av)
++ [USB Redirection](#feature-support-USB-devices-qualified)
 + [Drawing Tablets](#feature-support-drawing-tablets)
 + [Keyboard Shortcuts](#feature-support-keyboard-shortcuts)
 + [Relative Mouse Offset](#feature-support-relative-mouse-offset)
 
-#### Multiple Monitors \(up to 2K Resolution\)<a name="feature-support-multiple-monitors-2K"></a>
+#### Multiple Monitors<a name="feature-support-multiple-monitors"></a>
+
+AppStream 2\.0 supports the use of multiple monitors during streaming sessions, including monitors that have different resolutions\. To help ensure an optimal streaming experience, we recommend that users who have monitors with different resolutions set the display scale for their monitors to 100 percent\.
+
+**Note**  
+For AppStream 2\.0 streaming sessions that use [native application mode](#feature-support-native-application-mode), monitors with up to 2K resolution are supported\. If higher\-resolution monitors are used for streaming sessions, the AppStream 2\.0 client falls back to classic mode\. In this scenario, the AppStream 2\.0 classic mode streaming view occupies 2K of the screen, and the remaining portion of the screen is black\.
+
+##### Multiple Monitors \(up to 2K Resolution\)<a name="feature-support-multiple-monitors-2K"></a>
 
 The following AppStream 2\.0 instance types support up to 4 monitors and a maximum display resolution of 2560x1600 pixels per monitor: General Purpose, Memory Optimized, Compute Optimized, Graphics Design, and Graphics Pro\.
 
-#### Multiple Monitors \(up to 4K Resolution\)<a name="feature-support-multiple-monitors-4K"></a>
+##### Multiple Monitors \(up to 4K Resolution\)<a name="feature-support-multiple-monitors-4K"></a>
 
-The following AppStream 2\.0 instance types support up to 2 monitors and a maximum display resolution of 4096x2160 pixels per monitor: Graphics Design and Graphics Pro\.
+The following AppStream 2\.0 instance types support up to 2 monitors with a maximum display resolution of 4096x2160 pixels per monitor: Graphics Design and Graphics Pro\. 
 
-#### USB Devices Qualified by AppStream 2\.0<a name="feature-support-USB-devices-qualified"></a>
+**Note**  
+Non\-graphics instance types \(General Purpose, Memory Optimized, and Compute Optimized\) support a maximum display resolution of 2560x1600 pixels per monitor\.
 
-With certain exceptions, USB redirection is required for the AppStream 2\.0 client to support USB devices\. When USB redirection is required for a device, you must qualify it before your users can use the device during their AppStream 2\.0 streaming sessions\.
+#### Real\-Time Audio\-Video<a name="feature-support-real-time-av"></a>
 
-For drawing tablets, USB redirection might not be required\. However, if your users are streaming an application such as the Gnu Image Manipulation Program \(GIMP\), which requires USB redirection to support pressure sensitivity, you must qualify the device\. For step\-by\-step guidance, see [Qualify USB Devices for Use with Streaming Applications](qualify-usb-devices.md)\.
+AppStream 2\.0 supports real\-time audio\-video \(AV\) by redirecting local webcam video input to AppStream 2\.0 streaming sessions\. This capability enables your users to use their local webcam for video and audio conferencing within an AppStream 2\.0 streaming session\. With real\-time AV and support for real\-time audio, your users can collaborate by using familiar video and audio conferencing applications without having to leave their AppStream 2\.0 streaming session\.
+
+When a user starts a video conference from within an AppStream 2\.0 streaming session, AppStream 2\.0 compresses the webcam video and microphone audio input locally before transmitting this data over a secure channel to a streaming instance\. During their streaming sessions, users can enable audio and video input by using the AppStream 2\.0 toolbar\. If users have more than one webcam \(for example, if they have a USB webcam that is connected to their local computer and a built\-in webcam\), they can also choose which webcam to use during their streaming session\.
+
+To enable this feature for your users, you must:
++ Use an AppStream 2\.0 image that uses a version of the AppStream 2\.0 agent released on or after December 17, 2020\.
++ Ensure that version 1\.1\.257 or later of the AppStream 2\.0 client is installed on your users' computers\. To use this feature, users must connect to their streaming session by using the AppStream 2\.0 client\.
+
+  For guidance that you can provide to your users to help them use real\-time AV, see [Video and Audio Conferencing](client-application-windows-user.md#client-application-windows-how-to-use-local-webcam-user)\.
+
+Local webcam video input redirection is already enabled by default when the AppStream 2\.0 client is installed\. Because USB redirection isn't used for this feature, you don't need to qualify webcams, and users don't need to share these devices with AppStream 2\.0 to use them during streaming sessions\.
+
+#### USB Redirection<a name="feature-support-USB-devices-qualified"></a>
+
+USB redirection is required for most local USB devices to be used during AppStream 2\.0 streaming sessions\. When USB redirection is required, you must [qualify the device](qualify-usb-devices.md) before your users can use it during their AppStream 2\.0 streaming sessions\. After you qualify the device, users must [share the device with AppStream 2\.0](client-application-windows-user.md#client-application-windows-how-to-share-usb-devices-user)\. With USB redirection, during AppStream 2\.0 streaming sessions, users' devices are not accessible for use with local applications\. In other cases, USB devices are already enabled for use with AppStream 2\.0 and no further configuration is required\.
 
 #### Drawing Tablets<a name="feature-support-drawing-tablets"></a>
 
@@ -101,7 +123,7 @@ Following are requirements and considerations for enabling your users to use dra
 + To enable your users to use this feature, you must configure your AppStream 2\.0 fleet to use an image that runs Windows Server 2019\.
 + To use this feature, users must access AppStream 2\.0 by using the AppStream 2\.0 client, or through the Google Chrome or Mozilla Firefox browsers only\.
 + Streaming applications must support Windows Ink technology\. For more information, see [Pen interactions and Windows Ink in Windows apps](https://docs.microsoft.com/en-us/windows/uwp/design/input/pen-and-stylus-interactions)\.
-+ Some applications, such GIMP, must detect drawing tablets on the streaming instance to support pressure sensitivity\. If this is the case, your users must use the AppStream 2\.0 client to access AppStream 2\.0 and stream these applications\. In addition, you must qualify your users' drawing tablets, and users must share their drawing tablets with AppStream 2\.0 every time they start a new streaming session\.
++ Some applications, such GIMP, must detect drawing tablets on the streaming instance to support pressure sensitivity\. If this is the case, your users must use the AppStream 2\.0 client to access AppStream 2\.0 and stream these applications\. In addition, you must qualify your users' drawing tablets, and users must share their drawing tablets with AppStream 2\.0 every time they start a new streaming session\. For more information, see [Qualify USB Devices for Use with Streaming Applications](qualify-usb-devices.md)\.
 + This feature is not supported on Chromebooks\.
 
 To get started with using drawing tablets during application streaming sessions, users connect their drawing tablet to their local computer with USB, share the device with AppStream 2\.0 if required for pressure sensitivity detection, and then use the AppStream 2\.0 client or a [supported web browser](requirements-and-features-web-browser-admin.md#drawing-tablet-support-web-access-admin) to start an AppStream 2\.0 streaming session\.
@@ -114,4 +136,6 @@ Most operating system keyboard shortcuts are supported\. Supported keyboard shor
 
 By default, during users' streaming sessions, AppStream 2\.0 transmits information about mouse movements to the streaming instance by using absolute coordinates and rendering the mouse movements locally\. For graphics\-intensive applications, such as computer\-aided design \(CAD\)/computer\-aided manufacturing \(CAM\) software or video games, mouse performance improves when relative mouse mode is enabled\. Relative mouse mode uses relative coordinates, which represent how far the mouse moved since the last frame, rather than the absolute x\-y coordinate values within a window or screen\. When relative mouse mode is enabled, AppStream 2\.0 renders the mouse movements remotely\.
 
-Users can enable this feature during their AppStream 2\.0 streaming sessions by pressing Ctrl\+Shift\+F8, or by choosing **Relative Mouse Position \[Ctrl\+Shift\+F8\]** from the **Settings** menu in the top\-left area of the AppStream 2\.0 session window\.
+Users can enable this feature during their AppStream 2\.0 streaming sessions by doing either of the following:
++ Pressing Ctrl\+Shift\+F8
++ Choosing **Relative Mouse Position \[Ctrl\+Shift\+F8\]** from the **Settings **menu on the AppStream 2\.0 toolbar in the top left area of their streaming session window\. This method works when they use classic mode or **Desktop View**\.

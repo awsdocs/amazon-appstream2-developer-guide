@@ -7,12 +7,13 @@ The following information helps you use the AppStream 2\.0 client for Windows to
 + [Requirements](#client-application-windows-requirements-user)
 + [Setup](#client-application-windows-installation-user)
 + [Connect to AppStream 2\.0](#client-application-windows-start-streaming-session-user)
-+ [How to Access Files on Your Local Computer](#client-application-windows-file-system-redirection)
-+ [How to Redirect Print Jobs to a Local Printer](#client-application-windows-local-printer-redirection)
-+ [USB Devices](#client-application-windows-share-usb-devices-with-session-user)
-+ [Drawing Tablets](#client-application-windows-drawing-tablets-user)
-+ [Relative Mouse Offset](#client-application-windows-relative-mouse-offset-web-access-user)
 + [Monitors and Display Resolution](#client-application-windows-monitors-display-resolution-user)
++ [USB Devices](#client-application-windows-how-to-share-usb-devices-user)
++ [Local File Access](#client-application-windows-file-system-redirection)
++ [Printer Redirection](#client-application-windows-local-printer-redirection)
++ [Video and Audio Conferencing](#client-application-windows-how-to-use-local-webcam-user)
++ [Drawing Tablets](#client-application-windows-drawing-tablets-user)
++ [Relative Mouse Offset](#client-application-windows-relative-mouse-offset-user)
 + [Logging](#client-application-windows-how-to-enable-diagnostic-logging-user)
 + [Troubleshooting](#client-application-windows-troubleshooting-user)
 
@@ -21,9 +22,10 @@ The following information helps you use the AppStream 2\.0 client for Windows to
 The AppStream 2\.0 client for Windows is an application that you install on your Windows PC\. This application provides additional capabilities that are not available when you access AppStream 2\.0 by using a web browser\. For example, the AppStream 2\.0 client lets you do the following:
 + Use more than two monitors or 4K resolution\.
 + Use your USB devices with applications streamed through AppStream 2\.0\.
-+ Use keyboard shortcuts during your streaming sessions\.
 + Access your local drives and folders during your streaming sessions\.
 + Redirect print jobs from your streaming application to a printer that is connected to your local computer\.
++ Use your local webcam for video and audio conferencing within your streaming sessions\.
++ Use keyboard shortcuts during your streaming sessions\.
 + Interact with your remote streaming applications in much the same way as you interact with locally installed applications\.
 
 ## Requirements<a name="client-application-windows-requirements-user"></a>
@@ -60,7 +62,7 @@ Contact your network administrator if nothing happens when you double\-click the
 
 1. When a message notifies you that the USB driver installation is complete, choose **Close**\. 
 
-   The AppStream 2\.0 sign\-in page opens\. For information about how to connect to AppStream 2\.0 and start an application streaming session, see [How to Connect to AppStream 2\.0](#client-application-windows-how-to-connect-user)\.
+   The AppStream 2\.0 sign\-in page opens\. For information about how to connect to AppStream 2\.0 and start an application streaming session, see [Connect to AppStream 2\.0](#client-application-windows-how-to-connect-user)\.
 
 ## Connect to AppStream 2\.0<a name="client-application-windows-start-streaming-session-user"></a>
 
@@ -68,7 +70,7 @@ After the AppStream 2\.0 client for Windows is installed on your PC, you can use
 
 ### AppStream 2\.0 Client Connection Modes<a name="client-application-windows-connection-modes-user"></a>
 
-The AppStream 2\.0 client provides two connection modes: *Native application mode* and *classic mode*\. The connection mode that you choose determines the options that are available to you during application streaming, and how your streaming applications function and display\.
+The AppStream 2\.0 client provides two connection modes: *Native application mode* and *classic mode*\. The connection mode that you choose determines the options that are available to you during application streaming, and how your streaming applications function and display\. In addition, **Desktop view** is also available, if your administrator has enabled it\.
 
 **Native application mode**
 
@@ -86,7 +88,11 @@ When you connect to AppStream 2\.0 in classic mode, the AppStream 2\.0 Applicati
 
 If your administrator has not disabled native application mode, you can switch from classic mode to native application mode\. For more information, see [How to Switch AppStream 2\.0 Connection Modes](#client-application-windows-how-to-switch-connection-modes-user)\.
 
-### How to Connect to AppStream 2\.0<a name="client-application-windows-how-to-connect-user"></a>
+**Desktop view**
+
+When you connect to AppStream 2\.0 and choose **Desktop view**, AppStream 2\.0 provides a standard Windows desktop view for your streaming session\. The icons of applications that are available for you to stream appear on the Windows desktop\. In addition, the AppStream 2\.0 toolbar, which enables you to configure settings for your streaming session, appears in the top left area of your streaming session window\.
+
+### Connect to AppStream 2\.0<a name="client-application-windows-how-to-connect-user"></a>
 
 Follow these steps to connect to AppStream 2\.0 and start an application streaming session\.
 
@@ -100,7 +106,7 @@ Follow these steps to connect to AppStream 2\.0 and start an application streami
 
 1. If your AppStream 2\.0 administrator has provided you with a web address \(URL\) to use to connect to AppStream 2\.0 for application streaming, enter the URL, and choose **Connect**\. 
 
-If you want to use your USB devices with streaming applications, you must first share your device with AppStream 2\.0\. For more information, see [USB Devices](#client-application-windows-share-usb-devices-with-session-user)\.
+If you want to use your USB devices with streaming applications, you must first share your device with AppStream 2\.0\. For more information, see [USB Devices](#client-application-windows-how-to-share-usb-devices-user)\.
 
 ### How to Switch AppStream 2\.0 Connection Modes<a name="client-application-windows-how-to-switch-connection-modes-user"></a>
 
@@ -120,7 +126,40 @@ Follow these steps to switch from classic mode to native application mode\.
 
 1. When you switch from classic mode back to native application mode, the AppStream 2\.0 session window closes and the AppStream 2\.0 Application Launcher window opens\. Any application that you are streaming in classic mode opens in a separate window\.
 
-## How to Access Files on Your Local Computer<a name="client-application-windows-file-system-redirection"></a>
+## Monitors and Display Resolution<a name="client-application-windows-monitors-display-resolution-user"></a>
+
+AppStream 2\.0 supports the use of multiple monitors during streaming sessions, including monitors that have different resolutions\. To help ensure an optimal streaming experience, we recommend that you set the display scale for your monitors to 100 percent if you use multiple monitors\.
+
+The AppStream 2\.0 client supports multiple monitors with the following display resolutions:
++ Multiple monitors \(up to 2K resolution\) — Up to 4 monitors with a maximum display resolution of 2560x1600 pixels per monitor
++ Multiple monitors \(4K resolution\) — Up to 2 monitors with a maximum display resolution of 4096x2160 pixels per monitor
+
+**Note**  
+If you are connected to an AppStream 2\.0 streaming session using native application mode, you can use monitors with up to 2K resolution\. If you use higher\-resolution monitors, the AppStream 2\.0 client falls back to classic mode\. In this case, the AppStream 2\.0 classic mode streaming view occupies 2K of the screen, and the remaining portion of the screen is black\.
+
+## USB Devices<a name="client-application-windows-how-to-share-usb-devices-user"></a>
+
+With certain exceptions, USB redirection is required for the AppStream 2\.0 client to support USB devices\. When USB redirection is required for a device, you must share the device with AppStream 2\.0 every time you start a new streaming session\. 
+
+If you are using a drawing tablet, USB redirection might not be required to use it with AppStream 2\.0\. However, if you are streaming an application such as the Gnu Image Manipulation Program \(GIMP\), which requires USB redirection to support pressure sensitivity, you must share your drawing tablet with AppStream 2\.0\. For information about drawing tablets, see [Drawing Tablets](#client-application-windows-drawing-tablets-user)\.
+
+**To share a USB device with AppStream 2\.0**
+
+1. Use the AppStream 2\.0 client to start a streaming session\.
+
+1. In the top left area, choose the **Settings** icon, and then choose **USB Devices**\.
+
+1. If your USB device is connected to your computer, the USB device name appears in the dialog box\. If your USB device is not detected, contact your AppStream 2\.0 administrator for assistance\.
+
+1. Switch the **Share** toggle key next to the name of the USB device that you want to share with the streaming session\.
+
+   Your USB device is now available for use with your streaming applications\.
+**Important**  
+USB devices can't be simultaneously used between local and remote applications\. So after you share a USB device with a streaming session, you can't use it with applications on your local computer\. To use your USB device on your local computer, switch the **Share** toggle key next to the name of the USB device that you want to use locally\. This disables sharing with the streaming session\. 
+
+1. You can also enable your USB device to automatically connect when a new streaming session starts\. To do so, select the option next to the toggle key for the USB device that you want to connect\. After you enable this option, when your next streaming session starts, the USB device is connected automatically\. 
+
+## Local File Access<a name="client-application-windows-file-system-redirection"></a>
 
 AppStream 2\.0 file redirection lets you access files on your local computer from your AppStream 2\.0 streaming session\. To use file redirection, open the AppStream 2\.0 client, connect to a streaming session, and choose the drives and folders that you want to share\. After you share a local drive or folder, you can access all files in the shared drive or folder from your streaming session\. You can stop sharing local drives and folders at any time\.
 
@@ -188,9 +227,9 @@ You can delete local drives and folders that you add to the **Share your local d
 1. Select the local drive or folder that you want to delete, and then choose **Delete**, **Save my configuration**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/AppStream2-Client-Local-Drive-Folders-SpecificFolderAdded-Delete.png)
 
-## How to Redirect Print Jobs to a Local Printer<a name="client-application-windows-local-printer-redirection"></a>
+## Printer Redirection<a name="client-application-windows-local-printer-redirection"></a>
 
-AppStream 2\.0 local printer redirection lets you access printers that are connected to your local computer from your AppStream 2\.0 streaming session\. That way, you can redirect print jobs from your streaming application to a local printer\. 
+AppStream 2\.0 local printer redirection lets you access printers that are connected to your local computer from your AppStream 2\.0 streaming session\. That way, you can redirect print jobs from your streaming application to a local printer, or to a network printer that you have mapped\. 
 
 **Important**  
 To use AppStream 2\.0 printer redirection, you must have the AppStream 2\.0 client installed on your local computer, and you must use the client to connect to a streaming session\. Printer redirection is not available when you connect to AppStream 2\.0 by using a web browser\.
@@ -211,27 +250,49 @@ To use AppStream 2\.0 printer redirection, you must have the AppStream 2\.0 clie
 
 1. In the **Print** dialog box, a list of available local printers is displayed\. Choose the local printer that you want to use, and then proceed with printing\.
 
-## USB Devices<a name="client-application-windows-share-usb-devices-with-session-user"></a>
+## Video and Audio Conferencing<a name="client-application-windows-how-to-use-local-webcam-user"></a>
 
-With certain exceptions, USB redirection is required for the AppStream 2\.0 client to support USB devices\. When USB redirection is required for a device, you must share the device with AppStream 2\.0 every time you start a new streaming session\. 
+AppStream 2\.0 real\-time audio\-video \(AV\) redirects your local webcam video input to AppStream 2\.0 streaming sessions\. That way, you can use your local webcam for video and audio conferencing within your AppStream 2\.0 streaming session\.
 
-If you are using a drawing tablet, USB redirection might not be required to use it with AppStream 2\.0\. However, if you are streaming an application such as the Gnu Image Manipulation Program \(GIMP\), which requires USB redirection to support pressure sensitivity, you must share your drawing tablet with AppStream 2\.0\. For information about drawing tablets, see [Drawing Tablets](#client-application-windows-drawing-tablets-user)\.
+If you have more than one webcam \(for example, if you have a USB webcam that is connected to your local computer and a built\-in webcam\), you can choose which webcam to use within your streaming session\.
 
-**To share a USB device with AppStream 2\.0**
-
-1. Use the AppStream 2\.0 client to start a streaming session\.
-
-1. In the top left area, choose the **Settings** icon, and then choose **USB Devices**\.
-
-1. If your USB device is connected to your computer, the USB device name appears in the dialog box\. If your USB device is not detected, contact your AppStream 2\.0 administrator for assistance\.
-
-1. Switch the **Share** toggle key next to the name of the USB device that you want to share with the streaming session\.
-
-   Your USB device is now available for use with your streaming applications\.
 **Important**  
-USB devices can't be simultaneously used between local and remote applications\. So after you share a USB device with a streaming session, you can't use it with applications on your local computer\. To use your USB device on your local computer, switch the **Share** toggle key next to the name of the USB device that you want to use locally\. This disables sharing with the streaming session\. 
+To use your local webcam within an AppStream 2\.0 streaming session, you must have the AppStream 2\.0 client installed on your local computer, and you must use the client to connect to the streaming session\. You cannot use your local webcam within a streaming session when you connect to AppStream 2\.0 by using a web browser\.
 
-1. You can also enable your USB device to automatically connect when a new streaming session starts\. To do so, select the option next to the toggle key for the USB device that you want to connect\. After you enable this option, when your next streaming session starts, the USB device is connected automatically\. 
+**To use a local webcam within an AppStream 2\.0 streaming session**
+
+1. Open the AppStream 2\.0 client and connect to a streaming session\.
+
+1. In the AppStream 2\.0 toolbar in the top left of your session window, do either of the following: 
+   + If the video icon has a diagonal line through it \(as shown in the following screenshot\), this indicates that the AppStream 2\.0 real\-time AV feature is available for use but no webcams are attached to your streaming session\. Choose the video icon to attach one or more webcams\.   
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/Webcam-available-1.png)
+   + If the video icon does not have a diagonal line through it \(as shown in the following screenshot\), one or more webcams are already attached to your streaming session\. Skip this step and proceed to the next step\.   
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/Webcam-attached-2.png)
+
+1. To display the names of the webcams that are attached to your streaming session, choose the downward arrow next to the video icon\. If you have more than one webcam \(for example, if you have a USB webcam that is connected to your laptop and a built\-in webcam\), a check mark appears next to the name of the webcam that is selected for use for video conferencing within your streaming session\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/Webcam1-selected-3.png)
+
+1. To use the selected webcam for video conferencing within your AppStream 2\.0 streaming session, start the video conferencing application that you want to use\. When the webcam is active \(being used for video conferencing within your streaming session\), the video icon is red\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/Webcam1-selected-cameras-streaming-4.png)
+
+**Note**  
+If you have more than one webcam and want to change the one that you use for streaming within an AppStream 2\.0 session, you must first detach your webcams from the session\. For more information, see the next procedure\.
+
+**To change the local webcam to use within an AppStream 2\.0 streaming session**
+
+1. Within your AppStream 2\.0 streaming session, in the AppStream 2\.0 toolbar in the top left of your session window, do either of the following: 
+   + If the video icon does not have a diagonal line through it \(as shown in the following screenshot\), this indicates that the AppStream 2\.0 real\-time AV feature is available for use and that webcams are still attached to your streaming session\. Choose the video icon to detach the webcams\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/Webcam-attached-2.png)
+   + If the video icon has a diagonal line through it \(as shown in the following screenshot\), your webcams are already detached from your streaming session\. Skip this step and proceed to the next step\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/Webcam-available-1.png)
+
+1. Display the names of your webcams by choosing the downward arrow next to the video icon, then select the name of the webcam that you want to use\.
+**Note**  
+You must select the name of the webcam you want to use\. If you select the check mark next to the name of the webcam you want to use, the webcam won't change\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/Webcam2-selected-5.png)
+
+1. Choose the video icon to reattach the webcams to your AppStream 2\.0 streaming session\.   
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/Webcam-2-selected-cameras-reattached-6.png)
 
 ## Drawing Tablets<a name="client-application-windows-drawing-tablets-user"></a>
 
@@ -245,17 +306,13 @@ Following are requirements and considerations for using drawing tablets with you
 
 To get started with using a drawing tablet during your application streaming sessions, connect your drawing tablet to your local computer with USB, share the device with AppStream 2\.0 if required for pressure sensitivity detection, and then start an AppStream 2\.0 streaming session\. You can use the AppStream 2\.0 client or a [supported web browser](web-browser-user.md) to start a streaming session\.
 
-## Relative Mouse Offset<a name="client-application-windows-relative-mouse-offset-web-access-user"></a>
+## Relative Mouse Offset<a name="client-application-windows-relative-mouse-offset-user"></a>
 
 By default, during a streaming session, AppStream 2\.0 transmits information about mouse movements by using absolute coordinates and rendering the mouse movements locally\. For graphics\-intensive applications, such as computer\-aided design \(CAD\)/computer\-aided manufacturing \(CAM\) software or video games, mouse performance improves when relative mouse mode is enabled\. Relative mouse mode uses relative coordinates, which represent how far the mouse moved since the last frame, rather than the absolute x\-y coordinate values within a window or screen\. When you enable relative mouse mode, AppStream 2\.0 renders the mouse movements remotely\.
 
-You can enable this feature during an AppStream 2\.0 streaming session by pressing Ctrl\+Shift\+F8, or by choosing **Relative Mouse Position \[Ctrl\+Shift\+F8\]** from the **Settings **menu in the top\-left area of the AppStream 2\.0 session window\.
-
-## Monitors and Display Resolution<a name="client-application-windows-monitors-display-resolution-user"></a>
-
-The AppStream 2\.0 client supports the following:
-+ Multiple monitors \(up to 2K resolution\) — Up to 4 monitors and a maximum display resolution of 2560x1600 pixels per monitor
-+ Multiple monitors \(4K resolution\) — Up to 2 monitors and a maximum display resolution of 4096x2160 pixels per monitor
+You can enable this feature during an AppStream 2\.0 streaming session in either of the following ways:
++ Pressing Ctrl\+Shift\+F8
++ Choosing **Relative Mouse Position \[Ctrl\+Shift\+F8\]** from the **Settings **menu on the AppStream 2\.0 toolbar in the top left area of your streaming session window\. This method works when you use classic mode or **Desktop View**\.
 
 ## Logging<a name="client-application-windows-how-to-enable-diagnostic-logging-user"></a>
 

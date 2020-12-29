@@ -7,6 +7,7 @@ For more information about the client, see [Provide Access Through the AppStream
 
 | Client version | Release date | Changes | 
 | --- | --- | --- | 
+| 1\.1\.257 | 12\-28\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
 | 1\.1\.195 | 08\-18\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
 | 1\.1\.179 | 07\-08\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
 | 1\.1\.160 | 04\-28\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 

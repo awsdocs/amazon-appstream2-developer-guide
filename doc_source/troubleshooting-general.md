@@ -1,6 +1,6 @@
 # General Troubleshooting<a name="troubleshooting-general"></a>
 
-The following are possible general issues you might have while using Amazon AppStream 2\.0\.
+The following are general issues that might occur when you use Amazon AppStream 2\.0\.
 
 **Topics**
 + [SAML federation is not working\. The user is not authorized to view AppStream 2\.0 applications\.](#troubleshooting-13)

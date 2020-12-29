@@ -26,7 +26,10 @@ If you are using the AWS SDK, you can use the [CreateDirectoryConfig](https://do
 
 1. For **Password** and **Confirm Password**, type the directory password for the specified account\.
 
-1. For **Organizational Unit \(OU\)**, type the distinguished name of at least one OU for streaming instance computer objects\. The default Computers container is not an OU and cannot be used by AppStream 2\.0\. For more information, see [Finding the Organizational Unit Distinguished Name](active-directory-admin.md#active-directory-oudn)\.
+1. For **Organizational Unit \(OU\)**, type the distinguished name of at least one OU for streaming instance computer objects\. 
+**Note**  
+The OU name can't contain spaces\. If you specify an OU name that contains spaces, when a fleet or image builder attempts to rejoin the Active Directory domain, AppStream 2\.0 cannot cycle the computer objects correctly and the domain rejoin does not succeed\. For information about how to troubleshoot this issue, see the *DOMAIN\_JOIN\_INTERNAL\_SERVICE\_ERROR* topic for "The account already exists" message in [Active Directory Domain Join](troubleshooting-notification-codes.md#troubleshooting-notification-codes-ad)\.  
+In addition, the default Computers container is not an OU and cannot be used by AppStream 2\.0\. For more information, see [Finding the Organizational Unit Distinguished Name](active-directory-admin.md#active-directory-oudn)\.
 
 1. To add more than one OU, select the plus sign \(**\+**\) next to **Organizational Unit \(OU\)**\. To remove OUs, choose the **x** icon\.
 

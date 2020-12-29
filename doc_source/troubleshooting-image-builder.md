@@ -1,6 +1,6 @@
 # Troubleshooting Image Builders<a name="troubleshooting-image-builder"></a>
 
-The following are possible issues you might have while using Amazon AppStream 2\.0 image builders\.
+The following are issues that might occur when you use Amazon AppStream 2\.0 image builders\.
 
 **Topics**
 + [I cannot connect to the internet from my image builder\.](#troubleshooting-01)
