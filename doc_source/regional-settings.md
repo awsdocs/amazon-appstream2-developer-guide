@@ -52,7 +52,11 @@ To enable users to configure regional settings for a given stack during their Ap
 
    1. If you are prompted to update the AppStream 2\.0 agent when you launch the image builder, select the check box, and then choose **Start**\.
 
-1. Once your new image builder is running, connect to it and log in with a user account that has local administrator permissions\. 
+1. After your image builder is running, connect to it and sign in with a user account that has local administrator permissions\. To do so, do either of the following: 
+   + [Use the AppStream 2\.0 console](managing-image-builders-connect.md#managing-image-builders-connect-console) \(for web connections only\)
+   + [Create a streaming URL](managing-image-builders-connect.md#managing-image-builders-connect-streaming-URL) \(for web or AppStream 2\.0 client connections\)
+**Note**  
+If the image builder that you want to connect to is joined to an Active Directory domain and your organization requires smart card sign in, you must create a streaming URL and use the AppStream 2\.0 client for the connection\. For information about smart card sign in, see [Smart Cards](client-system-requirements-feature-support.md#feature-support-USB-devices-qualified-smart-cards)\.
 
 1. From the image builder desktop, open Windows PowerShell\. Choose the Windows **Start** button, and then choose **Windows PowerShell**\. 
 

@@ -7,6 +7,7 @@ The following information helps you use a web browser to connect to AppStream 2\
 + [Setup](#web-browser-setup-user)
 + [Connect to AppStream 2\.0](#web-browser-start-streaming-session-user)
 + [Monitors and Display Resolution](#web-browser-monitors-display-resolution-user)
++ [USB Devices](#web-browser-usb-devices-user)
 + [Touchscreen Devices](#web-browser-using-touchscreen-devices-user)
 + [Drawing Tablets](#web-browser-drawing-tablets-user)
 + [Relative Mouse Offset](#web-browser-relative-mouse-offset-web-access-user)
@@ -32,13 +33,35 @@ No browser extensions or plugins are required to use AppStream 2\.0 in a web bro
 
 Follow these steps to connect to AppStream 2\.0 and start an application streaming session\.
 
-1. If you received a welcome email that notifies you to start accessing your apps using AppStream 2\.0, open the email, and then click the **Login page** link\.
+1. If your administrator requires you to sign in first through your organization's sign\-in page, complete the tasks in this step\.
 
-1. Enter your email address and the temporary password that was provided in the email, and then choose **Log in**\.
+   If your administrator doesn't require you to sign in through your organization's sign\-in page, skip the tasks in this step and proceed to step 2\.
 
-1. When prompted, enter a new password, confirm it, and then choose **Set Password**\.
+   1. Navigate to your organizational sign\-in page and enter your domain credentials when prompted\.
 
-1. When the AppStream 2\.0 application portal opens, displaying applications that your administrator has made available to you for streaming, click an application to start it\.
+   1. After you sign in, you are redirected to a page that displays one or more applications that are available for your AppStream 2\.0 streaming session\. **Desktop View** is also available, if enabled by your administrator\.
+
+   1. Choose an application or, if available, **Desktop View**\.
+
+1. If your administrator doesn't require you to sign in first through your organization's sign\-in page, do either of the following:
+   + If this is the first time that you've used AppStream 2\.0 and you receive a welcome email that notifies you to start accessing your applications using AppStream 2\.0:
+
+     1. Open the email, and then select the **Login page** link\.
+
+     1. Enter your email address and the temporary password that was provided in the email, and then choose **Log in**\.
+
+     1. When prompted, enter a new password, confirm it, and then choose **Set Password**\.
+
+     1. After a few moments, the AppStream 2\.0 portal opens, displaying one or more applications that are available for your AppStream 2\.0 streaming session\. **Desktop View** is also available, if enabled by your administrator\.
+
+     1. Choose an application or, if available, **Desktop View**\.
+   + If this isn't the first time that you've used AppStream 2\.0 and your administrator has provided you with the web address \(URL\) for the AppStream 2\.0 portal:
+
+     1. Enter the URL provided by your administrator to navigate to the AppStream 2\.0 portal\.
+
+     1. Enter your password when prompted, and choose **Connect**\.
+
+     1. After a few moments, the AppStream 2\.0 portal opens, displaying one or more applications that are available for your AppStream 2\.0 streaming session\. **Desktop View** is also available, if enabled by your administrator\.
 
 ## Monitors and Display Resolution<a name="web-browser-monitors-display-resolution-user"></a>
 
@@ -50,6 +73,10 @@ You can use dual monitors for application streaming sessions that are started on
 + Safari
 
 For browser\-based streaming sessions on dual monitors, a maximum display resolution of 2560x1600 pixels is supported per monitor\. If you require more than two monitors, or a display resolution that is greater than 2560x1600 pixels per monitor, you must use the AppStream 2\.0 client\.
+
+## USB Devices<a name="web-browser-usb-devices-user"></a>
+
+USB devices are not supported for browser\-based AppStream 2\.0 streaming sessions\. To use your USB devices with applications streamed through AppStream 2\.0, you must use the AppStream 2\.0 client\. For more information, see [AppStream 2\.0 Client Application for Windows](client-application-windows-user.md)\.
 
 ## Touchscreen Devices<a name="web-browser-using-touchscreen-devices-user"></a>
 

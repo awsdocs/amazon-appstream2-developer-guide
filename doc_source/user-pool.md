@@ -1,12 +1,6 @@
 # AppStream 2\.0 User Pools<a name="user-pool"></a>
 
-The AppStream 2\.0 user pool provides a simplified way to manage access to applications for your users through a persistent portal for each AWS Region\. This feature is a built\-in alternative to user management through [Active Directory](active-directory.md) and [SAML 2\.0 federation](external-identity-providers.md)\. 
-
-**Note**  
-By default, AppStream 2\.0 user pools support a maximum of 50 users\. For deployments that must support 100 or more AppStream 2\.0 users, we recommend using SAML 2\.0\. 
-
-**Note**  
-Stacks can't be assigned to users in the user pool if the stacks are associated with a fleet that is joined to an Active Directory domain\. 
+The AppStream 2\.0 user pool provides a simplified way to manage access to applications for your users through a persistent portal for each AWS Region\. This feature is a built\-in alternative to user management through [Active Directory](active-directory.md) and [SAML 2\.0 federation](external-identity-providers.md)\. Stacks can't be assigned to users in the user pool if the stacks are associated with a fleet that is joined to an Active Directory domain\.
 
 The AppStream 2\.0 user pool provides the following key features:
 + Users can access application stacks through a persistent URL and login credentials by using their email address and a password that they choose\. 

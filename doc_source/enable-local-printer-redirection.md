@@ -11,9 +11,9 @@ To ensure that your users can use local printer redirection, you must:
 
 ## How to Enable or Disable Local Printer Redirection<a name="how-to-enable-disable-local-printer-redirection"></a>
 
-By default, local printer redirection is enabled when the AppStream 2\.0 client is installed\. However, if local printer redirection is not enabled on the stack that your users access for streaming sessions, perform the following steps to enable it\. 
+By default, local printer redirection is enabled when the AppStream 2\.0 client is installed\. However, if local printer redirection is not enabled on the stack that your users access for streaming sessions, you can enable it in the AppStream 2\.0 console by performing the following steps\. 
 
-**To enable local printer redirection**
+**To enable local printer redirection by using the AppStream 2\.0 console**
 
 1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
 
@@ -21,14 +21,17 @@ By default, local printer redirection is enabled when the AppStream 2\.0 client 
 
 1. Choose the stack for which you want to enable local printer redirection\.
 
-1. Choose the **User Settings** tab, and then expand the **Clipboard, file transfer, and local print permissions** section\.
+1. Choose the **User Settings** tab, and then expand the **Clipboard, file transfer, print to local device, and authentication permissions** section\.
 
 1. For **Print to local device**, verify that **Enabled** is selected\. If not, choose **Edit**, and then choose **Enabled**\.
 
 1. Choose **Update**\.
 
+Alternatively, you can enable local printer redirection by using the AppStream 2\.0 API, an AWS SDK, or the AWS Command Line Interface \(AWS CLI\)\.
+
 **To disable local printer redirection**
 
-You can disable local printer redirection in either of the following ways:
-+ During client installation on managed devices\.
-+ By using the AppStream 2\.0 console or an AWS SDK to disable this option on an AppStream 2\.0 stack\.
+You can disable local printer redirection in any of the following ways:
++ During client installation on managed devices\. For more information, see [Choose Whether to Disable Local Printer Redirection](install-client-configure-settings.md#disable-local-printer-redirection-client)\.
++ By using the AppStream 2\.0 console to disable this option on an AppStream 2\.0 stack\.
++ By using the AppStream 2\.0 API, an AWS SDK, or the AWS Command Line Interface \(AWS CLI\) to disable this option on an AppStream 2\.0 stack\.

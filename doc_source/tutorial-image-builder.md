@@ -20,17 +20,15 @@ This tutorial includes information that applies to the latest base image release
 In this step, you connect an image builder and install your applications on the image builder\.
 
 **Important**  
-To complete this step, you must log into the image builder with the local **Administrator** account or a domain user account that has local administrator permissions\. Do not rename or delete the local built\-in **Administrator** account\. If you rename or delete this account, the image creation will fail\. 
+To complete this step, you must log into the image builder with the local **Administrator** account or a domain user account that has local administrator permissions\. Do not rename or delete the local built\-in **Administrator** account\. If you rename or delete this account, the image creation will fail\.
 
 **To install applications on the image builder**
 
-1. In the left navigation pane, choose **Images**, **Image Builder**\.
-
-1. Choose the image builder to use, verify that it is in the **Running** state, and choose **Connect**\. For this step to work, you may need to configure your browser to allow pop\-ups from https://stream\.<aws\-region>\.amazonappstream\.com/\.
-
-1. Log in to the image builder by doing either of the following:
-   + If your image builder is not joined to an Active Directory domain, on the **Local User** tab, choose **Administrator**\.
-   + If your image builder is joined to an Active Directory domain and you require access to resources that are managed by Active Directory to install your applications, choose the **Directory User** tab, type the credentials for a domain user account that has local administrator permissions on the image builder, then choose **Log in**\. 
+1. Connect to the image builder by doing either of the following: 
+   + [Use the AppStream 2\.0 console](managing-image-builders-connect.md#managing-image-builders-connect-console) \(for web connections only\)
+   + [Create a streaming URL](managing-image-builders-connect.md#managing-image-builders-connect-streaming-URL) \(for web or AppStream 2\.0 client connections\)
+**Note**  
+If the image builder that you want to connect to is joined to an Active Directory domain and your organization requires smart card sign in, you must create a streaming URL and use the AppStream 2\.0 client for the connection\. For information about smart card sign in, see [Smart Cards](client-system-requirements-feature-support.md#feature-support-USB-devices-qualified-smart-cards)\.
 
 1. Install applications from an application website or other download source\. Install the applications you want before proceeding to the next step\. 
 **Note**  

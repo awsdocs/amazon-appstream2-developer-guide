@@ -75,16 +75,23 @@ Users are considered idle when they stop providing keyboard or mouse input durin
    + **Enable Google Drive** — Optionally, you can enable users to link their Google Drive for G Suite account to AppStream 2\.0\. You can enable Google Drive for accounts in G Suite domains only, not for personal Gmail accounts\. For information about requirements for enabling Google Drive, see [Enable Google Drive for Your AppStream 2\.0 Users](google-drive.md#enable-google-drive)\.
    + **Enable OneDrive **— Optionally, you can enable users to link their OneDrive for Business account to AppStream 2\.0\. You can enable OneDrive for accounts in OneDrive domains only, not for personal accounts\. For information about requirements for enabling OneDrive, see [Enable OneDrive for Your AppStream 2\.0 Users](onedrive.md#enable-onedrive)\.
 
-1. For **Step 6: User Settings**, select the ways in which your users can transfer data between their streaming session and their local device\. Then, choose whether to enable application settings persistence\. When you're done, choose **Review**:
+1. For **Step 6: User Settings**, configure the following settings\. When you're done, choose **Review**:
 
-   **Clipboard, file transfer, and print to local device permissions options**:
+   **Clipboard, file transfer, print to local device, and authentication permissions options**:
    + **Clipboard** — By default, users can copy and paste data between their local device and streaming applications\. You can limit Clipboard options so that users can paste data to their remote streaming session only or copy data to their local device only\. You can also disable Clipboard options entirely\. Users can still copy and paste between applications in their streaming session\.
    + **File transfer** — By default, users can upload and download files between their local device and streaming session\. You can limit file transfer options so that users can upload files to their streaming session only or download files to their local device only\. You can also disable file transfer entirely\. 
 **Important**  
 If your users require AppStream 2\.0 file system redirection to access local drives and folders during their streaming sessions, you must enable both file upload and download\. To use file system redirection, your users must have AppStream 2\.0 client version 1\.0\.480 or later installed\. For more information, see [Enable File System Redirection for Your AppStream 2\.0 Users](enable-file-system-redirection.md)\.
    + **Print to local device** — By default, users can print to their local device from within a streaming application\. When they choose **Print** in the application, they can download a \.pdf file that they can print to a local printer\. You can disable this option to prevent users from printing to a local device\.
+   + **Password sign in for Active Directory** — Users can enter their Active Directory domain password to sign in to an AppStream 2\.0 streaming instance that is joined to an Active Directory domain\. 
+
+     You can also enable **Smart card sign in for Active Directory**\. At least one authentication method must be enabled\.
+   + **Smart card sign in for Active Directory** — Users can use a smart card reader and smart card connected to their local computer to sign in to an AppStream 2\.0 streaming instance that is joined to an Active Directory domain\.
+
+     You can also enable **Password sign in for Active Directory**\. At least one authentication method must be enabled\.
 **Note**  
-These settings affect only whether users can use AppStream 2\.0 data transfer features\. If your image provides access to a browser, network printer, or other remote resource, your users might be able to transfer data to or from their streaming session in other ways\.
+**Clipboard, file transfer, and print to local device settings** — These settings control only whether users can use AppStream 2\.0 data transfer features\. If your image provides access to a browser, network printer, or other remote resource, your users might be able to transfer data to or from their streaming session in other ways\.  
+**Authentication settings** — These settings control only the authentication method that can be used for Windows sign in to an AppStream 2\.0 streaming instance \(fleet or image builder\)\. They do not control the authentication method that can be used for in\-session authentication, after a user signs in to a streaming instance\. For information about configuration requirements for using smart cards for Windows sign in and in\-session authentication, see [Smart Cards](client-system-requirements-feature-support.md#feature-support-USB-devices-qualified-smart-cards)\.
 
    **Application settings persistence options**:
    + **Enable Application Settings Persistence** — Users' application customizations and Windows settings are automatically saved after each streaming session and applied during the next session\. These settings are saved to an Amazon Simple Storage Service \(Amazon S3\) bucket in your account, within the AWS Region in which application settings persistence is enabled\.

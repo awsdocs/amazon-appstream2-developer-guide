@@ -1,7 +1,7 @@
 # Amazon AppStream 2.0 Administration Guide
 
 -----
-*****Copyright &copy; 2020 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2021 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -35,6 +35,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Allowed Domains](allowed-domains.md)
 + [Image Builders](managing-image-builders.md)
    + [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md)
+   + [Connect to an Image Builder](managing-image-builders-connect.md)
    + [Image Builder Actions](managing-image-builders-actions.md)
    + [Instance Metadata for AppStream 2.0 Image Builders](user-instance-metadata-image-builders.md)
    + [AppStream 2.0 Base Image Release Notes](base-image-version-history.md)

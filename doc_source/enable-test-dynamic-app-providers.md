@@ -11,11 +11,11 @@ Third\-party dynamic app providers may modify the configuration file during inst
 
 **To enable dynamic app providers**
 
-1. In the left navigation pane, choose **Images**, **Image Builder**\.
-
-1. Choose an image builder that is joined to a Microsoft Active Directory domain\. Verify that the image builder is in the **Running** state, and choose **Connect**\.
-
-1. When prompted, choose **Administrator**\.
+1. Connect to the image builder that you want to use and sign in with a domain user account that has local administrator permissions on the image builder\. To do so, do either of the following: 
+   + [Use the AppStream 2\.0 console](managing-image-builders-connect.md#managing-image-builders-connect-console) \(for web connections only\)
+   + [Create a streaming URL](managing-image-builders-connect.md#managing-image-builders-connect-streaming-URL) \(for web or AppStream 2\.0 client connections\)
+**Note**  
+If your organization requires smart card sign in, you must create a streaming URL and use the AppStream 2\.0 client for the connection\. For information about smart card sign in, see [Smart Cards](client-system-requirements-feature-support.md#feature-support-USB-devices-qualified-smart-cards)\.
 
 1. Navigate to C:\\ProgramData\\Amazon\\AppStream\\AppCatalogHelper\\DynamicAppCatalog\\, and open the **Agents\.json** configuration file\.
 
@@ -48,11 +48,11 @@ After you enable your dynamic app provider on an image builder, you can test the
 **To test dynamic app providers**
 
 1. Do one of the following: 
-   + If you are already logged on as an Administrator to the image builder on which you enabled dynamic app providers, you must switch to an account that does not have local administrator permissions on the image builder\. To do so, in the upper right corner of the image builder session toolbar, choose **Admin Commands**, **Switch User**\.   
+   + If you are already connected to the image builder on which you enabled dynamic app providers and you are logged on as** Administrator,** you must switch to an account that does not have local administrator permissions on the image builder\. To do so, in the upper right corner of the image builder session toolbar, choose **Admin Commands**, **Switch User**\.   
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/admin-commands-switch-user.png)
-   + If you are not already logged on to the image builder, in the left navigation pane, choose **Images**, **Image Builder**\. Choose the image builder on which you enabled your dynamic app providers\. Verify that the image builder is in the **Running** state, and choose **Connect**\.
-
-1. When prompted, choose **Directory User**, and log on with a domain user account that does not have local administrator permissions on the image builder\. 
+   + If you are not already connected to the image builder, connect by either [using the AppStream 2\.0 console](managing-image-builders-connect.md#managing-image-builders-connect-console) \(for web connections only\) or [creating a streaming URL](managing-image-builders-connect.md#managing-image-builders-connect-streaming-URL) \(for web or AppStream 2\.0 client connections\)\.
+**Note**  
+When you are prompted to sign in, choose **Directory User**, and sign in with a domain user account that does not have local administrator permissions on the image builder\. 
 
 1. On the image builder desktop, open Image Assistant, if it is not already open\. 
 

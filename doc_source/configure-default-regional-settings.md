@@ -31,11 +31,11 @@ Currently, AppStream 2\.0 supports only **UTC** and **\(UTC\+9:00\) Osaka, Sappo
 
 ### Specify a Default Time Zone \(Windows Server 2012 R2\)<a name="configure-default-time-zone"></a>
 
-1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
-
-1. In the left navigation pane, choose **Images**, **Image Builder**\.
-
-1. Choose the image builder that you want to use, choose **Connect**, and log in as **Administrator**\. 
+1. Connect to the image builder that you want to use and sign in with a user account that has local administrator permissions\. To do so, do either of the following: 
+   + [Use the AppStream 2\.0 console](managing-image-builders-connect.md#managing-image-builders-connect-console) \(for web connections only\)
+   + [Create a streaming URL](managing-image-builders-connect.md#managing-image-builders-connect-streaming-URL) \(for web or AppStream 2\.0 client connections\)
+**Note**  
+If the image builder that you want to connect to is joined to an Active Directory domain and your organization requires smart card sign in, you must create a streaming URL and use the AppStream 2\.0 client for the connection\. For information about smart card sign in, see [Smart Cards](client-system-requirements-feature-support.md#feature-support-USB-devices-qualified-smart-cards)\.
 
 1. On the image builder desktop, choose the Windows **Start** button, and choose **Control Panel**\.
 
@@ -61,11 +61,11 @@ Currently, AppStream 2\.0 supports only **UTC** and **\(UTC\+9:00\) Osaka, Sappo
 
 ### Specify a Default Time Zone \(Windows Server 2016 and Windows Server 2019\)<a name="configure-default-time-zone-2016-2019"></a>
 
-1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
-
-1. In the left navigation pane, choose **Images**, **Image Builder**\.
-
-1. Choose the image builder that you want to use, choose **Connect**, and log in as **Administrator**\. 
+1. Connect to the image builder that you want to use and sign in with a user account that has local administrator permissions\. To do so, do either of the following: 
+   + [Use the AppStream 2\.0 console](managing-image-builders-connect.md#managing-image-builders-connect-console) \(for web connections only\)
+   + [Create a streaming URL](managing-image-builders-connect.md#managing-image-builders-connect-streaming-URL) \(for web or AppStream 2\.0 client connections\)
+**Note**  
+If the image builder that you want to connect to is joined to an Active Directory domain and your organization requires smart card sign in, you must create a streaming URL and use the AppStream 2\.0 client for the connection\. For information about smart card sign in, see [Smart Cards](client-system-requirements-feature-support.md#feature-support-USB-devices-qualified-smart-cards)\.
 
 1. On the image builder desktop, choose the Windows **Start** button, and choose **Control Panel**\.
 
@@ -111,18 +111,18 @@ Your users can change their time zone from the default setting that you configur
 
 ## Specify a Default Display Language<a name="configure-default-dsiplay-language"></a>
 
-There are two ways to specify the default display language for your users’ streaming sessions\. Use the AppStream 2\.0 default application and Windows settings feature, or configure your image builder while logged in as Administrator\.
+There are two ways to specify the default display language for your users’ streaming sessions\. Use the AppStream 2\.0 default application and Windows settings feature, or configure your image builder while signed in with a user account that has local administrator permissions\. The procedure in this section describes how to specify a default display language by using the AppStream 2\.0 default application and Windows settings feature\.
 
 **Note**  
 Changing the display language in Windows also automatically changes the user locale and input method to match the language and region of the display language\. If you want all three settings to match, you do not need to separately change the user locale or input method\.
 
-To specify a default display language by using the AppStream 2\.0 default application and Windows settings feature, perform the following steps\.
+1. Connect to the image builder that you want to use and sign in with the **Template User** account\. To do so, do either of the following: 
+   + [Use the AppStream 2\.0 console](managing-image-builders-connect.md#managing-image-builders-connect-console) \(for web connections only\)
+   + [Create a streaming URL](managing-image-builders-connect.md#managing-image-builders-connect-streaming-URL) \(for web or AppStream 2\.0 client connections\)
+**Note**  
+If the image builder that you want to connect to is joined to an Active Directory domain and your organization requires smart card sign in, you must create a streaming URL and use the AppStream 2\.0 client for the connection\. For information about smart card sign in, see [Smart Cards](client-system-requirements-feature-support.md#feature-support-USB-devices-qualified-smart-cards)\.
 
-1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
-
-1. In the left navigation pane, choose **Images**, **Image Builder**\.
-
-1. Choose the image builder that you want to use, choose **Connect**, and log in as **Template User**\. 
+   **Template User** lets you create default application and Windows settings for your users\. For more information, see "Creating Default Application and Windows Settings for Your AppStream 2\.0 Users" in [Default Application and Windows Settings and Application Launch Performance](customizing-appstream-images.md)\.
 
 1. On the image builder desktop, choose the Windows **Start** button, and choose **Control Panel**\.
 
@@ -170,11 +170,11 @@ Your users can change their user locale and input method from the default settin
 
 To specify a default system locale for your users’ streaming sessions, perform the following steps\.
 
-1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
-
-1. In the left navigation pane, choose **Images**, **Image Builder**\.
-
-1. Choose the image builder that you want to use, choose **Connect**, and log in as **Administrator**\. 
+1.  Connect to the image builder that you want to use and sign in with a user account that has local administrator permissions\. To do so, do either of the following:
+   + [Use the AppStream 2\.0 console](managing-image-builders-connect.md#managing-image-builders-connect-console) \(for web connections only\)
+   + [Create a streaming URL](managing-image-builders-connect.md#managing-image-builders-connect-streaming-URL) \(for web or AppStream 2\.0 client connections\)
+**Note**  
+If the image builder that you want to connect to is joined to an Active Directory domain and your organization requires smart card sign in, you must create a streaming URL and use the AppStream 2\.0 client for the connection\. For information about smart card sign in, see [Smart Cards](client-system-requirements-feature-support.md#feature-support-USB-devices-qualified-smart-cards)\.
 
 1. On the image builder desktop, choose the Windows **Start** button, and choose **Control Panel**\.
 
@@ -211,11 +211,11 @@ To specify a default user locale for your users’ streaming sessions, perform t
 **Note**  
 If you plan to configure the display language and you want the user locale and display language to match, you do not need to change the user locale\. Changing the display language automatically changes the user locale to match\.
 
-1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
-
-1. In the left navigation pane, choose **Images**, **Image Builder**\.
-
-1. Choose the image builder that you want to use, choose **Connect**, and log in as **Administrator**\. 
+1.  Connect to the image builder that you want to use and sign in with a user account that has local administrator permissions\. To do so, do either of the following:
+   + [Use the AppStream 2\.0 console](managing-image-builders-connect.md#managing-image-builders-connect-console) \(for web connections only\)
+   + [Create a streaming URL](managing-image-builders-connect.md#managing-image-builders-connect-streaming-URL) \(for web or AppStream 2\.0 client connections\)
+**Note**  
+If the image builder that you want to connect to is joined to an Active Directory domain and your organization requires smart card sign in, you must create a streaming URL and use the AppStream 2\.0 client for the connection\. For information about smart card sign in, see [Smart Cards](client-system-requirements-feature-support.md#feature-support-USB-devices-qualified-smart-cards)\.
 
 1. On the image builder desktop, choose the Windows **Start** button, and choose **Control Panel**\.
 
@@ -253,11 +253,11 @@ To specify a default input method to be used in your users’ streaming sessions
 **Note**  
 If you plan to configure the display language, and you want the input method and display language to match, you do not need to change the input method\. Changing the display language in Windows also automatically changes the user locale and input method to match the language and region of the display language\. If you want all three settings to match, you do not need to separately change the user locale or input method\.
 
-1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
-
-1. In the left navigation pane, choose **Images**, **Image Builder**\.
-
-1. Choose the image builder that you want to use, choose **Connect**, and log in as **Administrator**\. 
+1.  Connect to the image builder that you want to use and sign in with a user account that has local administrator permissions\. To do so, do either of the following:
+   + [Use the AppStream 2\.0 console](managing-image-builders-connect.md#managing-image-builders-connect-console) \(for web connections only\)
+   + [Create a streaming URL](managing-image-builders-connect.md#managing-image-builders-connect-streaming-URL) \(for web or AppStream 2\.0 client connections\)
+**Note**  
+If the image builder that you want to connect to is joined to an Active Directory domain and your organization requires smart card sign in, you must create a streaming URL and use the AppStream 2\.0 client for the connection\. For information about smart card sign in, see [Smart Cards](client-system-requirements-feature-support.md#feature-support-USB-devices-qualified-smart-cards)\.
 
 1. On the image builder desktop, choose the Windows **Start** button, and choose **Control Panel**\.
 

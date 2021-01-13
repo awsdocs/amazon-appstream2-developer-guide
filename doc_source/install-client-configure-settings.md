@@ -14,6 +14,7 @@ The following sections describe how to install the AppStream 2\.0 client and cus
 + [Choose Whether to Disable On\-Demand Diagnostic Log Uploads](#disable-on-demand-diagnostic-log-uploads)
 + [Choose Whether to Disable Native Application Mode](#disable-native-application-mode-client)
 + [Choose Whether to Disable Local Printer Redirection](#disable-local-printer-redirection-client)
++ [Choose Whether to Disable Smart Card Redirection](#disable-local-smart-card-support-client)
 + [Configure Additional AppStream 2\.0 Client Settings for Your Users](#configure-client)
 + [Using Group Policy to Customize AppStream 2\.0 Client Experience](#configure-client-with-adm-template-group-policy)
 
@@ -197,7 +198,7 @@ New-ItemProperty -Path $registryPath -Name "NativeAppModeDisabled" -Value "True"
 
 By default, the AppStream 2\.0 client enables users to redirect print jobs from their streaming applications to a printer that is connected to their local computer\. You can disable local printer redirection by setting the value for the `PrinterRedirectionDisabled` registry key to `true`\. You can create this HKLM registry key when you install the AppStream 2\.0 client\. If the value is set to `true`, the client does not redirect print jobs from users’ streaming applications to a printer that is connected to their local computer\.
 
-After you install the AppStream 2\.0 client, you can run the following PowerShell script to create this registry key\. 
+After you install the AppStream 2\.0 client, you can run the following PowerShell script to create this registry key\. Or, you can use the administrative template that is included in the AppStream 2\.0 client Enterprise Deployment Tool to configure the client through Group Policy\.
 
 **Note**  
 To run this script, you must be logged in to the applicable computer with Administrator permissions\. You can also run the script remotely under the System account on startup\. 
@@ -207,6 +208,24 @@ $registryPath="HKLM:\Software\Amazon\AppStream Client"
 New-Item -Path "HKLM:\Software\Amazon" -Name "AppStream Client" -Force
 
 New-ItemProperty -Path $registryPath -Name "PrinterRedirectionDisabled" -Value "True" -PropertyType String -Force | Out-Null
+```
+
+## Choose Whether to Disable Smart Card Redirection<a name="disable-local-smart-card-support-client"></a>
+
+By default, smart card redirection is enabled for the AppStream 2\.0 client\. When this feature is enabled, users can use smart card readers that are connected to their local computers and their smart cards during AppStream 2\.0 streaming sessions without USB redirection\. During AppStream 2\.0 streaming sessions, users' smart card readers and smart cards remain accessible for use with local applications\. The client redirects the smart card API calls from users’ streaming applications to their local smart card\. You can disable smart card redirection by setting the value for the `SmartCardRedirectionDisabled` registry key to `true`\. You can create this HKLM registry key when you install the AppStream 2\.0 client\.
+
+If the value is set to `true`, your users can't use their smart card readers and smart cards during an AppStream 2\.0 streaming session without USB redirection\. In this case, users can't sign in to their streaming applications by using a smart card that is connected to their local computer unless you [qualify the device](qualify-usb-devices.md)\. After you qualify the device, users must [share the device with AppStream 2\.0](client-application-windows-user.md#client-application-windows-how-to-share-usb-devices-user)\. When smart card redirection is disabled, during users' AppStream 2\.0 streaming sessions, their smart card readers and smart cards are not accessible for use with local applications\. 
+
+After you install the AppStream 2\.0 client, you can run the following PowerShell script to create this registry key\. Or, you can use the administrative template that is included in the AppStream 2\.0 client Enterprise Deployment Tool to configure the client through Group Policy\. 
+
+**Note**  
+To run this script, you must be logged in to the applicable computer with Administrator permissions\. You can also run the script remotely under the System account on startup\. 
+
+```
+$registryPath="HKLM:\Software\Amazon\AppStream Client"
+New-Item -Path "HKLM:\Software\Amazon" -Name "AppStream Client" -Force
+
+New-ItemProperty -Path $registryPath -Name "SmartCardRedirectionDisabled" -Value "True" -PropertyType String -Force | Out-Null
 ```
 
 ## Configure Additional AppStream 2\.0 Client Settings for Your Users<a name="configure-client"></a>

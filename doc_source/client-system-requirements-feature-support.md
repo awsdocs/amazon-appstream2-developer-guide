@@ -69,12 +69,12 @@ If you require more control over logging, you can disable automatic logging and 
 The AppStream 2\.0 client provides the following support for peripheral devices such as monitors, webcams, mice, keyboards, and drawing tablets\.
 
 **Note**  
-With certain exceptions, USB redirection is required for the AppStream 2\.0 client to support USB devices\. When USB redirection is required for a device, the device must be qualified before it can be used with AppStream 2\.0 streaming sessions\. For more information, see [USB Redirection](#feature-support-USB-devices-qualified)\.
+With certain exceptions, USB redirection is required for the AppStream 2\.0 client to support USB devices\. And in most cases, when USB redirection is required for a device, you must qualify the device before it can be used with AppStream 2\.0 streaming sessions\. For more information, see [USB Redirection](#feature-support-USB-devices-USB-redirection)\.
 
 **Topics**
 + [Multiple Monitors](#feature-support-multiple-monitors)
 + [Real\-Time Audio\-Video](#feature-support-real-time-av)
-+ [USB Redirection](#feature-support-USB-devices-qualified)
++ [USB Devices](#feature-support-USB-devices-qualified)
 + [Drawing Tablets](#feature-support-drawing-tablets)
 + [Keyboard Shortcuts](#feature-support-keyboard-shortcuts)
 + [Relative Mouse Offset](#feature-support-relative-mouse-offset)
@@ -103,17 +103,118 @@ AppStream 2\.0 supports real\-time audio\-video \(AV\) by redirecting local webc
 
 When a user starts a video conference from within an AppStream 2\.0 streaming session, AppStream 2\.0 compresses the webcam video and microphone audio input locally before transmitting this data over a secure channel to a streaming instance\. During their streaming sessions, users can enable audio and video input by using the AppStream 2\.0 toolbar\. If users have more than one webcam \(for example, if they have a USB webcam that is connected to their local computer and a built\-in webcam\), they can also choose which webcam to use during their streaming session\.
 
-To enable this feature for your users, you must:
-+ Use an AppStream 2\.0 image that uses a version of the AppStream 2\.0 agent released on or after December 17, 2020\.
-+ Ensure that version 1\.1\.257 or later of the AppStream 2\.0 client is installed on your users' computers\. To use this feature, users must connect to their streaming session by using the AppStream 2\.0 client\.
+To configure and test support for real\-time AV, complete the following steps\.
 
-  For guidance that you can provide to your users to help them use real\-time AV, see [Video and Audio Conferencing](client-application-windows-user.md#client-application-windows-how-to-use-local-webcam-user)\.
+**Configure and test support for real\-time AV**
 
-Local webcam video input redirection is already enabled by default when the AppStream 2\.0 client is installed\. Because USB redirection isn't used for this feature, you don't need to qualify webcams, and users don't need to share these devices with AppStream 2\.0 to use them during streaming sessions\.
+1. Create a new image builder or connect to an existing image builder that meets the following requirements:
+   + The image builder must run Windows Server 2016 or Windows Server 2019\.
+   + The image builder must use a version of the AppStream 2\.0 agent released on or after December 17, 2020\.
 
-#### USB Redirection<a name="feature-support-USB-devices-qualified"></a>
+   For information about how to create an image builder, see [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md)\.
 
-USB redirection is required for most local USB devices to be used during AppStream 2\.0 streaming sessions\. When USB redirection is required, you must [qualify the device](qualify-usb-devices.md) before your users can use it during their AppStream 2\.0 streaming sessions\. After you qualify the device, users must [share the device with AppStream 2\.0](client-application-windows-user.md#client-application-windows-how-to-share-usb-devices-user)\. With USB redirection, during AppStream 2\.0 streaming sessions, users' devices are not accessible for use with local applications\. In other cases, USB devices are already enabled for use with AppStream 2\.0 and no further configuration is required\.
+1. Connect to the image builder that you want to use and sign in as Administrator\. To connect to the image builder, do either of the following:
+   + [Use the AppStream 2\.0 console](managing-image-builders-connect.md#managing-image-builders-connect-console) \(for web connections only\)
+   + [Create a streaming URL](managing-image-builders-connect.md#managing-image-builders-connect-streaming-URL) \(for web or AppStream 2\.0 client connections\)
+**Note**  
+If the image builder that you want to connect to is joined to an Active Directory domain and your organization requires smart card sign in, you must create a streaming URL and use the AppStream 2\.0 client for the connection\. For information about smart card sign in, see [Smart Cards](#feature-support-USB-devices-qualified-smart-cards)\.
+
+1. On the image builder, open Registry Editor\. To do so, on the image builder desktop, in the search box on the taskbar, type **regedit**\. Then, select the top result for **Registry Editor**\.
+
+1. Under **HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Amazon\\AppStream\\**, create a new registry value that has the following type, name, and value data:
+   + Registry value type: DWORD
+   + Registry value name: WebcamPermission
+   + Registry value data: 1 \(Hexademical\)
+
+1. After you create the registry value, switch to **Template User** or to a domain user account that does not have administrator permissions on the image builder\. To switch to **Template User**, in the toolbar on the top right of the session window, choose **Admin Commands**, **Switch User**, **Template User**\.
+
+1. Switch back to **Administrator**\.
+
+1. Disconnect from the image builder and create a streaming URL for the image builder\. To do so:
+
+   1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
+
+   1. In the navigation pane, choose **Images**, then choose **Image Builder**\.
+
+   1. Select the image builder from which you just disconnected, and choose **Actions**, **Create streaming URL**\.
+
+   1. Choose **Copy Link** and save the link to a secure and accessible location\. You will use the link in the next step to connect to the image builder\.
+
+1. Using the streaming URL that you just created, connect to the image builder by using the AppStream 2\.0 client\. The client must be version 1\.1\.257 or later\.
+
+1. Test the real\-time AV experience on the image builder by following the steps in [Video and Audio Conferencing](client-application-windows-user.md#client-application-windows-how-to-use-local-webcam-user)\.
+
+1. After you verify that real\-time AV is working as expected, disconnect from your streaming session, reconnect to the image builder and follow the necessary steps in Image Assistant to finish creating your image\. For information about how to create an image, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
+
+After you finish configuring your image builder and creating an image that supports real\-time AV, you can make this feature available to your users\. Ensure that version 1\.1\.257 or later of the AppStream 2\.0 client is installed on your users' computers\.
+
+To use this feature, users must connect to their streaming session by using the AppStream 2\.0 client\. Local webcam video input redirection is already enabled by default when the AppStream 2\.0 client is installed\. Because USB redirection isn't used for this feature, you don't need to qualify webcams, and users don't need to share these devices with AppStream 2\.0 to use them during streaming sessions\. 
+
+For guidance that you can provide to your users to help them use real\-time AV, see [Video and Audio Conferencing](client-application-windows-user.md#client-application-windows-how-to-use-local-webcam-user)\.
+
+#### USB Devices<a name="feature-support-USB-devices-qualified"></a>
+
+The following sections provide information about AppStream 2\.0 support for USB devices\.
+
+**Topics**
++ [USB Redirection](#feature-support-USB-devices-USB-redirection)
++ [Smart Cards](#feature-support-USB-devices-qualified-smart-cards)
+
+##### USB Redirection<a name="feature-support-USB-devices-USB-redirection"></a>
+
+USB redirection is required for most local USB devices to be used during AppStream 2\.0 streaming sessions\. When USB redirection is required, you must [qualify the device](qualify-usb-devices.md) before your users can use it during their AppStream 2\.0 streaming sessions\. After you qualify the device, users must [share the device with AppStream 2\.0](client-application-windows-user.md#client-application-windows-how-to-share-usb-devices-user)\. With USB redirection, during AppStream 2\.0 streaming sessions, users' devices are not accessible for use with local applications\.
+
+In other cases, USB devices are already enabled for use with AppStream 2\.0 and no further configuration is required\. For example, smart card redirection is already enabled by default when the AppStream 2\.0 client is installed\. Because USB redirection isn't used when this feature is enabled, you don't need to qualify smart card readers, and users don't need to share these devices with AppStream 2\.0 to use them during streaming sessions\.
+
+##### Smart Cards<a name="feature-support-USB-devices-qualified-smart-cards"></a>
+
+AppStream 2\.0 supports using a smart card for Windows sign in to Active Directory\-joined streaming instances and in\-session authentication for streaming applications\. Because smart card redirection is enabled by default, users can use smart card readers that are connected to their local computer and their smart cards without USB redirection\.
+
+**Topics**
++ [Windows Sign In and In\-Session Authentication](#feature-support-USB-devices-qualified-smart-cards-windows-signin-in-session-auth)
++ [Smart Card Redirection](#feature-support-USB-devices-qualified-smart-cards-support)
+
+##### Windows Sign In and In\-Session Authentication<a name="feature-support-USB-devices-qualified-smart-cards-windows-signin-in-session-auth"></a>
+
+AppStream 2\.0 supports the use of Active Directory domain passwords or smart cards such as [Common Access Card \(CAC\)](https://www.cac.mil/Common-Access-Card) and [Personal Identity Verification \(PIV\)](https://piv.idmanagement.gov/) smart cards for Windows sign in to AppStream 2\.0 streaming instances \(fleets and image builders\)\. Your users can use smart card readers connected to their local computer and their smart cards to sign in to an AppStream 2\.0 streaming instance that is joined to a Microsoft Active Directory domain\. They can also use their local smart card readers and smart cards to sign in to applications within their streaming session\.
+
+To ensure that your users can use their smart cards for Windows sign in to Active Directory\-joined streaming instances and for in\-session authentication for streaming applications, you must:
++ Use an image that meets the following requirements:
+  + The image must be created from a base image published by AWS on or after December 28, 2020\. For more information, see [AppStream 2\.0 Base Image Release Notes](base-image-version-history.md)\.
+  + The image must use a version of the AppStream 2\.0 agent released on or after January 4, 2021\. For more information, see [AppStream 2\.0 Agent Release Notes](agent-software-versions.md)\.
++ Enable **Smart card sign in for Active Directory** on the AppStream 2\.0 stack that your users access for streaming sessions, as described in this section\.
+**Note**  
+This setting controls only the authentication method that can be used for Windows sign in to an AppStream 2\.0 streaming instance \(fleet or image builder\)\. It doesn't control the authentication method that can be used for in\-session authentication, after a user signs in to a streaming instance\.
++ Ensure that your users have AppStream 2\.0 client version 1\.1\.257 or later installed\. For more information, see [AppStream 2\.0 Client Release Notes](client-release-versions.md)\.
+
+By default, password sign in for Active Directory is enabled on AppStream 2\.0 stacks\. You can enable smart card sign in for Active Directory by performing the following steps in the AppStream 2\.0 console\.
+
+**To enable smart card sign in for Active Directory by using the AppStream 2\.0 console**
+
+1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
+
+1. In the left navigation pane, choose **Stacks**\.
+
+1. Choose the stack for which you want to enable smart card authentication for Active Directory\.
+
+1. Choose the **User Settings** tab, and then expand the **Clipboard, file transfer, print to local device, and authentication permissions** section\.
+
+1. For **Smart card sign in for Active Directory**, choose **Enabled**\.
+
+   You can also enable **Password sign in for Active Directory**, if it's not already enabled\. At least one authentication method must be enabled\.
+
+1. Choose **Update**\.
+
+Alternatively, you can enable smart card sign in for Active Directory by using the AppStream 2\.0 API, an AWS SDK, or the AWS Command Line Interface \(AWS CLI\)\.
+
+##### Smart Card Redirection<a name="feature-support-USB-devices-qualified-smart-cards-support"></a>
+
+When the AppStream 2\.0 client is installed, smart card redirection is enabled by default\. When this feature is enabled, users can use smart card readers that are connected to their local computer and their smart cards during AppStream 2\.0 streaming sessions without USB redirection\. During AppStream 2\.0 streaming sessions, users' smart card readers and smart cards remain accessible for use with local applications\. The AppStream 2\.0 client redirects the smart card API calls from users’ streaming applications to their local smart card\. 
+
+**Note**  
+If your smart card requires middleware software to operate, the middleware software must be installed on both the user’s device, and the AppStream 2\.0 streaming instance\.
+
+You can disable smart card redirection during client installation on managed devices\. For more information, see [Choose Whether to Disable Smart Card Redirection](install-client-configure-settings.md#disable-local-smart-card-support-client)\. If you disable smart card redirection, your users can't use their smart card reader and smart card during an AppStream 2\.0 streaming session without USB redirection\. In this case, you must [qualify the device](qualify-usb-devices.md)\. After you qualify the device, users must [share the device with AppStream 2\.0](client-application-windows-user.md#client-application-windows-how-to-share-usb-devices-user)\. When smart card redirection is disabled, during users' AppStream 2\.0 streaming sessions, their smart card reader and smart card are not accessible for use with local applications\.
 
 #### Drawing Tablets<a name="feature-support-drawing-tablets"></a>
 

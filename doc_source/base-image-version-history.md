@@ -18,18 +18,18 @@ The following table lists the latest released images\.
 | Graphics Pro |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html)  | 
 | Sample apps | Amazon\-AppStream2\-Sample\-Image\-02\-04\-2019 For information about how to access this base image, see [Get Started with Amazon AppStream 2\.0: Set Up With Sample Applications](getting-started.md)\.  | 
 
-The latest base images were released on July 16, 2020\. The following table lists the software components for the latest released base images\.
+The latest base images were released on December 28, 2020\. The following table lists the software components for the latest released base images\.
 
 
 | Component | Version | 
 | --- | --- | 
-| Amazon SSM Agent |  2\.3\.1319\.0  | 
-| Amazon CloudWatch Agent |  1\.3\.48707  | 
+| Amazon SSM Agent |  3\.0\.431\.0  | 
+| Amazon CloudWatch Agent |  1\.3\.50738  | 
 | Amazon WDDM Hook Driver |  1\.0\.0\.56  | 
-| EC2Config service |  v4\.9\.4222\.0 \(Windows Server 2012 R2 only\)  | 
-| AWS Command Line Interface \(AWS CLI\) |  1\.18\.86  | 
+| EC2Config service |  4\.9\.4279 \(Windows Server 2012 R2 only\)  | 
+| AWS Command Line Interface \(AWS CLI\) |  1\.18\.138  | 
 | AMD Driver for Graphics Design instances |  24\.20\.13028\.3002  | 
-| NVIDIA Graphics Driver for Graphics Pro instances |  441\.66  | 
+| NVIDIA Graphics Driver for Graphics Pro instances | 451\.48  | 
 
 **Important**  
 The following public images are deprecated and therefore no longer available from AWS:  
@@ -41,6 +41,7 @@ The following table describes all released base images\.
 
 | Release | Image  | Changes | 
 | --- | --- | --- | 
+| 12\-28\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html)  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html)  | 
 | 07\-16\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html)  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html)  | 
 | 04\-22\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html)  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html)  | 
 | 03\-18\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html)  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/base-image-version-history.html)  | 

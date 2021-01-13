@@ -96,17 +96,38 @@ When you connect to AppStream 2\.0 and choose **Desktop view**, AppStream 2\.0 p
 
 Follow these steps to connect to AppStream 2\.0 and start an application streaming session\.
 
-1. On your local PC where the AppStream 2\.0 client is installed, in the lower left of your screen, choose the Windows search icon on the taskbar, and enter **AppStream** in the Search box\. 
+1. If your administrator requires you to sign in first through your organization's sign\-in page, complete the tasks in this step, then proceed to step 3\.
 
-1. In the search results, select ** Amazon AppStream** to start the AppStream 2\.0 client\. 
+   If your administrator doesn't require you to sign in through your organization's sign\-in page, skip the tasks in this step and proceed to step 2\.
 
-1. On the AppStream 2\.0 sign\-in page, do either of the following:
-   + To use native application mode, keep the **Start in native application mode** check box selected\. 
-   + To use classic mode, clear the **Start in native application mode** check box\. 
+   1. Navigate to your organizational sign\-in page and enter your domain credentials when prompted\.
 
-1. If your AppStream 2\.0 administrator has provided you with a web address \(URL\) to use to connect to AppStream 2\.0 for application streaming, enter the URL, and choose **Connect**\. 
+   1. After you sign in, you are redirected to the AppStream 2\.0 portal, which displays one or more applications that are available for your AppStream 2\.0 streaming session\. **Desktop View** is also available, if enabled by your administrator\.
 
-If you want to use your USB devices with streaming applications, you must first share your device with AppStream 2\.0\. For more information, see [USB Devices](#client-application-windows-how-to-share-usb-devices-user)\.
+   1. Choose an application or, if available, **Desktop View**\.
+
+1. If your administrator doesn't require you to sign in first through your organization's sign\-in page, complete the following steps to start the AppStream 2\.0 client:
+
+   1. On your local computer where the AppStream 2\.0 client is installed, in the lower left of your screen, choose the Windows search icon on the taskbar and enter **AppStream** in the Search box\. 
+
+   1. In the search results, select ** Amazon AppStream** to start the AppStream 2\.0 client\.
+
+   1. On the AppStream 2\.0 client sign\-in page, you can choose whether to use the client in native application mode or classic mode\.
+      + To use native application mode, keep the **Start in native application mode** check box selected\. 
+      +  To use classic mode, clear the **Start in native application mode** check box\.
+
+   1. Do either of the following:
+      + If the client sign\-in page is prepopulated with a web address \(URL\), choose **Connect**\.
+      + If the client sign\-in page is not prepopulated with a URL, enter the URL that your AppStream 2\.0 administrator provided for AppStream 2\.0, and then choose **Connect**\. If you don't know the URL, contact your administrator\.
+
+   1. After a few moments, the AppStream 2\.0 portal opens, displaying one or more applications that are available for your AppStream 2\.0 streaming session\. **Desktop View** is also available, if enabled by your administrator\.
+
+   1. Choose an application or, if available, **Desktop View**\.
+
+1. Depending on the authentication settings that your AppStream 2\.0 administrator enabled, after you choose an application or **Desktop View**, you might be prompted to enter your Active Directory domain credentials to sign in to your AppStream 2\.0 session\. If this is the case, do one of the following:
+   + If your organization has enabled password authentication, enter your Active Directory domain password, and then choose **Password sign in**\.
+   + If your organization has enabled smart card authentication, select **Choose a smart card**, follow the instructions to choose your smart card certificate and enter your smart card PIN, and then choose **Smart card sign in**\.
+   + If your organization has enabled both authentication methods, either enter your Active Directory domain password and choose **Password sign in**, or select **Choose a smart card**, and follow the instructions to complete the smart card sign\-in\.
 
 ### How to Switch AppStream 2\.0 Connection Modes<a name="client-application-windows-how-to-switch-connection-modes-user"></a>
 
@@ -140,6 +161,16 @@ If you are connected to an AppStream 2\.0 streaming session using native applica
 ## USB Devices<a name="client-application-windows-how-to-share-usb-devices-user"></a>
 
 With certain exceptions, USB redirection is required for the AppStream 2\.0 client to support USB devices\. When USB redirection is required for a device, you must share the device with AppStream 2\.0 every time you start a new streaming session\. 
+
+### How to Use a Smart Card During a Streaming Session<a name="client-application-windows-how-to-use-smart-card-during-streaming-session-user"></a>
+
+Depending on the authentication settings that your administrator has enabled, you might need to use a smart card for authentication during an AppStream 2\.0 streaming session\. For example, if you open a browser during your streaming session and navigate to an internal organizational site that requires smart card authentication, you must enter your smart card credentials\. 
+
+By default, smart card redirection is enabled for AppStream 2\.0 streaming sessions, which means that you can use the smart card reader that is attached to your local computer without sharing it with AppStream 2\.0\. During your streaming session, your smart card reader and smart card are available for you to use with local applications, as well as with streaming applications\.
+
+If your administrator has disabled smart card redirection, you must share your smart card reader with AppStream 2\.0\. For more information, see the next section\.
+
+### How to Share a USB Device with AppStream 2\.0<a name="client-application-windows-how-to-share-usb-device-user"></a>
 
 If you are using a drawing tablet, USB redirection might not be required to use it with AppStream 2\.0\. However, if you are streaming an application such as the Gnu Image Manipulation Program \(GIMP\), which requires USB redirection to support pressure sensitivity, you must share your drawing tablet with AppStream 2\.0\. For information about drawing tablets, see [Drawing Tablets](#client-application-windows-drawing-tablets-user)\.
 

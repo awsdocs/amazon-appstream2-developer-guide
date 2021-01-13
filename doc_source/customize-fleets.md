@@ -36,17 +36,13 @@ Follow these steps to change system environment variables across your fleet inst
 
 **To change system environment variables on an image builder**
 
-This procedure applies only to system environment variables, not user environment variables\. To change user environment variables that persist across your fleet instances, follow the steps in the next procedure\.
+This procedure applies only to system environment variables, not user environment variables\. To change user environment variables that persist across your fleet instances, perform the steps in the next procedure\.
 
-1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
-
-1. In the left navigation pane, choose **Images**, **Image Builder**\.
-
-1. Choose the image builder on which to change system environment variables, verify that it is in the **Running** state, and choose **Connect**\.
-
-1. Log in to the image builder by doing either of the following:
-   + If your image builder is not joined to an Active Directory domain, on the **Local User** tab, choose **Administrator**\.
-   + If your image builder is joined to an Active Directory domain, choose the **Directory User** tab, specify the credentials for a domain user account that has local administrator permissions on the image builder, then choose **Log in**\.
+1. Connect to the image builder on which to change system environment variables and sign in with a user account that has local administrator permissions\. To do so, do either of the following: 
+   + [Use the AppStream 2\.0 console](managing-image-builders-connect.md#managing-image-builders-connect-console) \(for web connections only\)
+   + [Create a streaming URL](managing-image-builders-connect.md#managing-image-builders-connect-streaming-URL) \(for web or AppStream 2\.0 client connections\)
+**Note**  
+If the image builder that you want to connect to is joined to an Active Directory domain and your organization requires smart card sign in, you must create a streaming URL and use the AppStream 2\.0 client for the connection\. For information about smart card sign in, see [Smart Cards](client-system-requirements-feature-support.md#feature-support-USB-devices-qualified-smart-cards)\.
 
 1. Choose the Windows **Start** button, open the context \(right\-click\) menu for **Computer**, and then choose **Properties**\.
 
@@ -68,13 +64,11 @@ Follow these steps to change user environment variables across your fleet instan
 
 **To change user environment variables**
 
-1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
-
-1. In the left navigation pane, choose **Images**, **Image Builder**\.
-
-1. Choose the image builder on which to change user environment variables, verify that it is in the **Running** state, and choose **Connect**\.
-
-1. On the **Local User** tab, choose **Template User**\. 
+1. Connect to the image builder on which to change system environment variables and sign in as a **Template User**\. To do so, do either of the following: 
+   + [Use the AppStream 2\.0 console](managing-image-builders-connect.md#managing-image-builders-connect-console) \(for web connections only\)
+   + [Create a streaming URL](managing-image-builders-connect.md#managing-image-builders-connect-streaming-URL) \(for web or AppStream 2\.0 client connections\)
+**Note**  
+If the image builder that you want to connect to is joined to an Active Directory domain and your organization requires smart card sign in, you must create a streaming URL and use the AppStream 2\.0 client for the connection\. For information about smart card sign in, see [Smart Cards](client-system-requirements-feature-support.md#feature-support-USB-devices-qualified-smart-cards)\.
 
    **Template User** lets you create default application and Windows settings for your users\. For more information, see "Creating Default Application and Windows Settings for Your AppStream 2\.0 Users" in [Default Application and Windows Settings and Application Launch Performance](customizing-appstream-images.md)\.
 
@@ -98,15 +92,11 @@ Follow these steps to create an environment variable that is limited in scope to
 
 **To create an environment variable that is limited in scope**
 
-1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
-
-1. In the left navigation pane, choose **Images**, **Image Builder**\.
-
-1. Choose the image builder on which to create an environment variable that is limited in scope, verify that it is in the **Running** state, and choose **Connect**\.
-
-1. Log in to the image builder by doing either of the following:
-   + If your image builder is not joined to an Active Directory domain, on the **Local User** tab, choose **Administrator**\.
-   + If your image builder is joined to an Active Directory domain, choose the **Directory User** tab, specify the credentials for a domain user account that has local administrator permissions on the image builder, then choose **Log in**\.
+1. Connect to the image builder on which to create an environment variable that is limited in scope and sign in with a user account that has local administrator permissions\. To do so, do either of the following: 
+   + [Use the AppStream 2\.0 console](managing-image-builders-connect.md#managing-image-builders-connect-console) \(for web connections only\)
+   + [Create a streaming URL](managing-image-builders-connect.md#managing-image-builders-connect-streaming-URL) \(for web or AppStream 2\.0 client connections\)
+**Note**  
+If the image builder that you want to connect to is joined to an Active Directory domain and your organization requires smart card sign in, you must create a streaming URL and use the AppStream 2\.0 client for the connection\. For information about smart card sign in, see [Smart Cards](client-system-requirements-feature-support.md#feature-support-USB-devices-qualified-smart-cards)\.
 
 1. Create a child folder of C:\\ drive for the script \(for example, C:\\Scripts\)\.
 
@@ -150,11 +140,11 @@ The following steps must be performed on an image builder that is joined to an A
 
 **To set default file associations for your users**
 
-1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
-
-1. Choose the image builder on which to set default file associations, verify that it is in the **Running** state, and choose **Connect**\.
-
-1. Choose the **Directory User** tab, specify the credentials for a domain user account that has local administrator permissions on the image builder, then choose **Log in**\.
+1. Connect to the image builder on which to set default file associations and sign in with a domain user account that has local administrator permissions on the image builder\. To do so, do either of the following: 
+   + [Use the AppStream 2\.0 console](managing-image-builders-connect.md#managing-image-builders-connect-console) \(for web connections only\)
+   + [Create a streaming URL](managing-image-builders-connect.md#managing-image-builders-connect-streaming-URL) \(for web or AppStream 2\.0 client connections\)
+**Note**  
+If your organization requires smart card sign in, you must create a streaming URL and use the AppStream 2\.0 client for the connection\. For information about smart card sign in, see [Smart Cards](client-system-requirements-feature-support.md#feature-support-USB-devices-qualified-smart-cards)\.
 
 1. Set default file associations as needed\.
 
@@ -209,15 +199,11 @@ Internet Explorer Enhanced Security Configuration \(ESC\) places servers and Int
 
 **To disable Internet Explorer Enhanced Security Configuration**
 
-1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
-
-1. In the left navigation pane, choose **Images**, **Image Builder**\.
-
-1. Choose the image builder on which to disable Internet Explorer ESC, verify that it is in the **Running** state, and choose **Connect**\.
-
-1. Log in to the image builder by doing either of the following:
-   + If your image builder is not joined to an Active Directory domain, on the **Local User** tab, choose **Administrator**\.
-   + If your image builder is joined to an Active Directory domain, choose the **Directory User** tab, specify the credentials for a domain user account that has local administrator permissions on the image builder, then choose **Log in**\.
+1. Connect to the image builder on which to disable Internet Explorer ESC and sign in with a user account that has local administrator permissions\. To do so, do either of the following: 
+   + [Use the AppStream 2\.0 console](managing-image-builders-connect.md#managing-image-builders-connect-console) \(for web connections only\)
+   + [Create a streaming URL](managing-image-builders-connect.md#managing-image-builders-connect-streaming-URL) \(for web or AppStream 2\.0 client connections\)
+**Note**  
+If the image builder that you want to connect to is joined to an Active Directory domain and your organization requires smart card sign in, you must create a streaming URL and use the AppStream 2\.0 client for the connection\. For information about smart card sign in, see [Smart Cards](client-system-requirements-feature-support.md#feature-support-USB-devices-qualified-smart-cards)\.
 
 1. On the image builder, disable Internet Explorer ESC by doing the following:
 
@@ -334,19 +320,17 @@ To enable your users to choose the **Use Default** button in their Internet Expl
 
 ### Use the AppStream 2\.0 Template User Account to Change the Default Internet Explorer Home Page<a name="customize-fleets-change-ie-homepage-template-user"></a>
 
-Follow these steps to use the Template User account to change the default Internet Explorer home page\. 
+Follow these steps to use the **Template User** account to change the default Internet Explorer home page\. 
 
 **To change the default Internet Explorer Home page by using the Template User account**
 
-1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
+1. Connect to the image builder on which to change the default Internet Explorer home page and sign in with the **Template User** account\. To do so, do either of the following: 
+   + [Use the AppStream 2\.0 console](managing-image-builders-connect.md#managing-image-builders-connect-console) \(for web connections only\)
+   + [Create a streaming URL](managing-image-builders-connect.md#managing-image-builders-connect-streaming-URL) \(for web or AppStream 2\.0 client connections\)
+**Note**  
+If the image builder that you want to connect to is joined to an Active Directory domain and your organization requires smart card sign in, you must create a streaming URL and use the AppStream 2\.0 client for the connection\. For information about smart card sign in, see [Smart Cards](client-system-requirements-feature-support.md#feature-support-USB-devices-qualified-smart-cards)\.
 
-1. In the left navigation pane, choose **Images**, **Image Builder**\.
-
-1. Choose the image builder on which to change the default Internet Explorer home page, verify that it is in the **Running** state, and choose **Connect**\.
-
-1. Log in to the image builder by doing either of the following:
-   + If your image builder is not joined to an Active Directory domain, on the **Local User** tab, choose **Template User**\.
-   + If your image builder is joined to an Active Directory domain, choose the **Directory User** tab, specify the credentials for a domain user account that does not have local administrator permissions on the image builder, then choose **Log in**\.
+   **Template User** lets you create default application and Windows settings for your users\. For more information, see "Creating Default Application and Windows Settings for Your AppStream 2\.0 Users" in [Default Application and Windows Settings and Application Launch Performance](customizing-appstream-images.md)\.
 
 1. Open Internet Explorer and complete the necessary steps to change the default home page\.
 
