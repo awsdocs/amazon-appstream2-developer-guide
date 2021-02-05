@@ -104,6 +104,10 @@ When you create a custom domain, you can use the domain for embedded AppStream 2
 
    Setting a custom domain and creating a streaming URL that specifies the same domain lets the cookies be saved as first\-party cookies\. For information about how to configure custom domains by using Amazon CloudFront, see [Using Custom Domains with AppStream 2\.0](https://aws.amazon.com/blogs/desktop-and-application-streaming/using-custom-domains-with-amazon-appstream-2-0/)\.
 
+After you set up a custom domain for your embedded AppStream 2\.0 streaming sessions, if your streaming URLs don't redirect to your custom domain, or if your custom domain doesn't display correctly for your users, see the following troubleshooting topics:
++ [I set up a custom domain for my embedded AppStream 2\.0 streaming sessions, but my AppStream 2\.0 streaming URLs aren't redirecting to my custom domain\.](troubleshooting-general.md#embedded-streaming-sessions-streaming-urls-not-redirected-to-custom-domain)
++ [I set up a custom domain for my embedded AppStream 2\.0 streaming sessions, but my custom domain isn't being maintained \(it doesn't display for users\)\.](troubleshooting-general.md#embedded-streaming-sessions-streaming-urls-not-displaying-for-users)
+
 ## Step 3: Download the Embedded AppStream 2\.0 Files<a name="download-embed-files"></a>
 
 To host embedded AppStream 2\.0 streaming sessions, you must download and configure the provided AppStream 2\.0 API JavaScript file\.

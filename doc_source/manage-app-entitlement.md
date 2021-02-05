@@ -9,4 +9,4 @@ This feature requires an AppStream 2\.0 fleet that is joined to a Microsoft Acti
 + [Example API Operations Work Flow for the Dynamic Application Framework](manage-app-entitlement-sample-api-workflow.md)
 + [Use the AppStream 2\.0 Dynamic Application Framework to Build a Dynamic App Provider](build-dynamic-app-provider.md)
 + [Enable and Test Dynamic App Providers](enable-test-dynamic-app-providers.md)
-+ [Third\-Party Dynamic App Providers](third-party-dynamic-app-providers.md)
++ [Additional Resources for Learning About Dynamic App Providers and the Dynamic Application Framework](additional-resources-dynamic-app-providers.md)

@@ -13,7 +13,7 @@ The AppStream 2\.0 client requires the following:
 + An AppStream 2\.0 image that uses the latest AppStream 2\.0 agent or agent versions published on or after November 14, 2018\. For information about AppStream 2\.0 agent versions, see [AppStream 2\.0 Agent Release Notes](agent-software-versions.md)\.
 
 **Note**  
-We recommend an internet connection for AppStream 2\.0 client installation\. In some cases, the client can't be installed on a PC that is not connected to the internet, or USB devices might not work with applications streamed from AppStream 2\.0\. For more information, see [Troubleshooting AppStream 2\.0 User Issues](troubleshooting-client.md)\.
+We recommend an internet connection for AppStream 2\.0 client installation\. In some cases, the client can't be installed on a computer that is not connected to the internet, or USB devices might not work with applications streamed from AppStream 2\.0\. For more information, see [Troubleshooting AppStream 2\.0 User Issues](troubleshooting-user-issues.md)\.
 
 ## Feature and Device Support<a name="client-feature-support"></a>
 
@@ -26,7 +26,7 @@ The AppStream 2\.0 client supports the following features and devices\.
 
 ### Native Application Mode<a name="feature-support-native-application-mode"></a>
 
-Native application mode provides a familiar experience for your users during their AppStream 2\.0 streaming sessions\. When your users connect to AppStream 2\.0 in this mode, they can work with their remote streaming applications in much the same way that they work with applications that are installed on their local PC\. Each streaming application in native application mode opens in its own window, and application icons appear on the taskbar on your users' local PC\.
+Native application mode provides a familiar experience for your users during their AppStream 2\.0 streaming sessions\. When your users connect to AppStream 2\.0 in this mode, they can work with their remote streaming applications in much the same way that they work with applications that are installed on their local computer\. Each streaming application in native application mode opens in its own window, and application icons appear on the taskbar on your users' local PC\.
 
 If you want your users to connect to AppStream 2\.0 in classic mode only, you can configure the `NativeAppModeDisabled` registry value to disable native application mode\. For more information, see [Choose Whether to Disable Native Application Mode](install-client-configure-settings.md#disable-native-application-mode-client)\.
 

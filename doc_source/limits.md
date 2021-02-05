@@ -1,8 +1,10 @@
 # Amazon AppStream 2\.0 Service Quotas<a name="limits"></a>
 
-By default, AWS sets quotas \(also referred to as limits\) for the resources that you can create and the number of users who can use the service\. To request a quota increase, use the [AppStream 2\.0 Limits form](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-appstream2)\.
+AppStream 2\.0 provides different resources that you can use\. AppStream 2\.0 resources include stacks, fleets, images, and image builders\. When you create your AWS account, we set default quotas \(also referred to as limits\) on the number of resources that you can create, and on the number of users who can use the AppStream 2\.0 service\.
 
-The following table lists the quotas for each AppStream 2\.0 resource\. Where no default quota is listed for a specific [instance family](instance-types.md) or instance type, the quota is 0\. To determine which instance types are available in which Regions or Availability Zones, see *Pricing by AWS Region – Always\-On, On\-Demand, and image builder instances* in [AppStream 2\.0 Pricing](https://aws.amazon.com/appstream2/pricing/)\.
+To request a quota increase, you can use the Service Quotas console at [https://console\.aws\.amazon\.com/servicequotas/](https://console.aws.amazon.com/servicequotas/)\. For more information, see [Requesting a quota increase](https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html) in the *Service Quotas User Guide*\.
+
+The following table lists the default quotas for each AppStream 2\.0 resource and for users in the AppStream 2\.0 user pool\. Where no default quota is listed for a specific [instance family](instance-types.md) or instance type, the quota is 0\. To determine which instance types are available in which Regions or Availability Zones, see *Pricing by AWS Region – Always\-On, On\-Demand, and image builder instances* in [AppStream 2\.0 Pricing](https://aws.amazon.com/appstream2/pricing/)\.
 
 
 **Default Quotas Per AWS Region Per Account**  

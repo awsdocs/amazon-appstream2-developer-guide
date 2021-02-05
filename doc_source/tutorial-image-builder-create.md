@@ -25,7 +25,7 @@ After you launch an image builder and it is running, your account may incur nomi
    + **Display name \(optional\)**: Type a name to display for the image builder \(maximum of 100 characters\)\.
    + **Tags \(optional\)**: Choose **Add Tag**, and type the key and value for the tag\. To add more tags, repeat this step\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.
    + **Instance Type**: Select the instance type for the image builder\. Choose a type that matches the performance requirements of the applications that you plan to install\. For more information, see [AppStream 2\.0 Instance Families](instance-types.md)\.
-   + **Network Access Points \(Optional\)**: You can create a private link, which is an [interface VPC endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html) \(interface endpoint\), in your virtual private cloud \(VPC\)\. To start creating the interface endpoint, select **Create PrivateLink**\. Selecting this link opens the VPC console\. To finish creating the endpoint, follow steps 3 through 6 in *To create an interface endpoint*, in [Creating and Streaming from Interface VPC Endpoints](creating-streaming-from-interface-vpc-endpoints.md)\.
+   + **VPC Endpoints \(Advanced\)**: You can create an [interface VPC endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html) \(interface endpoint\), in your virtual private cloud \(VPC\)\. To start creating the interface endpoint, select **Create VPC Endpoint**\. Selecting this link opens the VPC console\. To finish creating the endpoint, follow steps 3 through 6 in *To create an interface endpoint*, in [Creating and Streaming from Interface VPC Endpoints](creating-streaming-from-interface-vpc-endpoints.md)\.
 
      After you create the interface endpoint, you can use it to keep streaming traffic within your VPC\.
    + **AppStream 2\.0 Agent**: This section displays only if you are not using the latest base image from AWS or a custom image that uses the latest version of the agent\.
@@ -50,7 +50,9 @@ After you launch an image builder and it is running, your account may incur nomi
 
 1. Choose **Review** and confirm the details for the image builder\. To change the configuration for any section, choose **Edit** and make the needed changes\.
 
-1. After you finish reviewing the configuration details, choose **Launch**\. If an error message notifies you that you don’t have sufficient quotas \(also referred to as limits\) to create the image builder, submit a quota increase request through the AWS Support Center\. For more information, see [Amazon AppStream 2\.0 Service Quotas](limits.md)\.
+1. After you finish reviewing the configuration details, choose **Launch**\.
+**Note**  
+If an error message notifies you that you don't have sufficient limits \(quotas\) to create the image builder, submit a limit increase request through the Service Quotas console at [https://console\.aws\.amazon\.com/servicequotas/](https://console.aws.amazon.com/servicequotas/)\. For more information, see [Requesting a quota increase](https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html) in the *Service Quotas User Guide*\.
 
 1. During the image builder creation process, the status of the image builder displays as **Pending **while AppStream 2\.0 prepares the necessary resources\. Click the **Refresh** icon periodically to update the image builder status\. After the status changes to** Running**, the image builder is ready to use and you can create a custom image\.
 

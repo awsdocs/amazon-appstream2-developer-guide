@@ -30,7 +30,7 @@ The AppStream 2\.0 client for Windows is an application that you install on your
 
 ## Requirements<a name="client-application-windows-requirements-user"></a>
 
-The AppStream 2\.0 client for Windows must be installed on a PC that meets the following requirements:
+The AppStream 2\.0 client for Windows must be installed on a computer that meets the following requirements:
 + Operating system — Windows 7, Windows 8, or Windows 10 \(32\-bit or 64\-bit\)
 + Microsoft Visual C\+\+ 2015 Redistributable or later\. For information about the latest Visual C\+\+ redistributable packages for Visual Studio 2015, 2017, and 2019, see [The latest supported Visual C\+\+ downloads](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) in the Microsoft Support documentation\.
 + RAM — 2 GB minimum
@@ -299,6 +299,8 @@ To use your local webcam within an AppStream 2\.0 streaming session, you must ha
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/Webcam-available-1.png)
    + If the video icon does not have a diagonal line through it \(as shown in the following screenshot\), one or more webcams are already attached to your streaming session\. Skip this step and proceed to the next step\.   
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/Webcam-attached-2.png)
+**Note**  
+If the video icon doesn't display in the AppStream 2\.0 toolbar, contact your AppStream 2\.0 administrator\. Your administrator might need to perform additional configuration tasks, as described in [Real\-Time Audio\-Video](client-system-requirements-feature-support.md#feature-support-real-time-av)\.
 
 1. To display the names of the webcams that are attached to your streaming session, choose the downward arrow next to the video icon\. If you have more than one webcam \(for example, if you have a USB webcam that is connected to your laptop and a built\-in webcam\), a check mark appears next to the name of the webcam that is selected for use for video conferencing within your streaming session\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/Webcam1-selected-3.png)

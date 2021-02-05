@@ -9,6 +9,8 @@ The following information helps you use a web browser to connect to AppStream 2\
 + [Monitors and Display Resolution](#web-browser-monitors-display-resolution-user)
 + [USB Devices](#web-browser-usb-devices-user)
 + [Touchscreen Devices](#web-browser-using-touchscreen-devices-user)
++ [Function Keys](#web-browser-using-function-keys-user)
++ [Remap the Mac Option and Command Keys](#web-browser-remap-mac-keys-user)
 + [Drawing Tablets](#web-browser-drawing-tablets-user)
 + [Relative Mouse Offset](#web-browser-relative-mouse-offset-web-access-user)
 + [Troubleshooting](#web-browser-troubleshooting-user)
@@ -86,24 +88,57 @@ To display the on\-screen keyboard on an iPad or Android tablet, tap the keyboar
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/CircleKeyboardIconBorder.PNG)
 
-Tap the Fn icon to display a row of Windows\-specific keys and keyboard shortcuts\.
+Tap the Fn icon to display a row of Windows\-specific keys and keyboard shortcuts\. 
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/CircleFnIconBorder.PNG)
 
-Here is an example of how Windows\-specific keys and keyboard shortcuts are displayed when the Fn icon is tapped\. Swipe to the left on the shortcut toolbar to display more keys\.
+For touch\-enabled devices, the *remote keyboard*, which is displayed when you tap the keyboard icon on the AppStream 2\.0 toolbar, is different than the *local keyboard*, the on\-screen keyboard that a touch\-enabled device automatically displays when you tap inside an input control in a locally running application\. During AppStream 2\.0 streaming sessions, you can use the remote keyboard to input text into streaming applications only\. You can display or hide the remote keyboard only by tapping the keyboard icon on the AppStream 2\.0 toolbar\. A blue keyboard icon on the AppStream 2\.0 toolbar indicates that the remote keyboard is active\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/ShortcutRowBorder.PNG)
-
-To use a key combination that includes the Windows Control key, tap the Ctrl key on the shortcut toolbar, and then type any key on either the on\-screen keyboard or the shortcut toolbar\. Tapping the Ctrl key changes the color to blue\. In this case, any other key that you select is interpreted as a key combination that includes the Control key\. 
-
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/ShortcutRowControlKeyHighlightedBorder.PNG)
-
-Tap the Ctrl key again to release it\. For example, to use the keyboard shortcut Ctrl \+ F, tap the Ctrl key on the shortcut toolbar, and then type the f key on the on\-screen keyboard\. Tap the Ctrl key on the shortcut toolbar again to release the Control key\. To use shortcuts that include the Alt or Shift keys, tap the Alt key or the Shift key on the shortcut toolbar in the same way\. You can use the Shift key on the shortcut toolbar only for keyboard shortcuts\. This key doesn't affect the capitalization of keys that you type on the on\-screen keyboard\.
+You can use the local keyboard to input text into elements of the AppStream 2\.0 web portal, including the **My Files** dialog box\. However, you can't use this keyboard to input text into streaming applications\. Also, you can't display or hide it by using the keyboard icon on the AppStream 2\.0 toolbar\.
 
 **Note**  
-The *remote keyboard*, the on\-screen keyboard that is displayed when a user taps the keyboard icon on the AppStream 2\.0 toolbar, is different than the *local keyboard*, the on\-screen keyboard that a touch\-enabled device automatically displays when a user taps inside an input control in a locally running application\. During AppStream 2\.0 streaming sessions, the remote keyboard can be used to input text into streaming applications only\. Users can display or hide the remote keyboard only by tapping the keyboard icon on the AppStream 2\.0 toolbar\. A blue keyboard icon on the AppStream 2\.0 toolbar indicates that the remote keyboard is active\.  
-The local keyboard can be used to input text into elements of the AppStream 2\.0 web portal, including the **My Files** dialog box\. However, this keyboard can't be used to input text into streaming applications\. Also, users can't display or hide it by using the keyboard icon on the AppStream 2\.0 toolbar\.  
-AppStream 2\.0 doesn't display the keyboard icon or the Fn icon when streaming to a Windows device because Windows already provides a way to display an on\-screen keyboard that includes common Windows keys\. To display the on\-screen keyboard on a Windows computer, tap the keyboard icon in the Windows system tray\. If the keyboard icon doesn't appear in the Windows system tray, switch to Windows tablet mode\. Tap the keyboard icon in the Windows system tray again to hide the on\-screen keyboard\.
+To display the on\-screen keyboard on a Windows computer, tap the keyboard icon in the Windows system tray\. If the keyboard icon doesn't appear in the Windows system tray, switch to Windows tablet mode\. Tap the keyboard icon in the Windows system tray again to hide the on\-screen keyboard\.
+
+For more information about function keys, see the next section\.
+
+## Function Keys<a name="web-browser-using-function-keys-user"></a>
+
+You can use keyboard shortcuts during AppStream 2\.0 streaming sessions to enter special keystrokes or key combinations\. To display a row of Windows\-specific keys and keyboard shortcuts during your streaming session, choose the Fn icon\. The Fn icon is displayed in the AppStream 2\.0 toolbar in the top right of your session window\.
+
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/AppStream-Fn-Key-1.png)
+
+Following is an example of how Windows\-specific keys and keyboard shortcuts are displayed when you choose the Fn icon\. If not all keys are displayed, you can scroll to the right or left on the shortcut toolbar to display more keys\.
+
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/AppStream-Fn-Key-2a-Keys-No-Scrollbar.png)
+
+To use a key combination that includes the Windows Control key, choose the Ctrl key on the shortcut toolbar, and then type any key on the shortcut toolbar \(or, if you are using a touch\-enabled device, the on\-screen keyboard\)\. Choosing the Ctrl key changes the color to blue\. In this case, any other key that you select is interpreted as a key combination that includes the Control key\. 
+
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/AppStream-Fn-Key-3-Choose-Ctrl-Key.png)
+
+Choose the Ctrl key again to release it\. For example, to use the keyboard shortcut Ctrl \+ F, choose the Ctrl key on the shortcut toolbar, and then type the f key\. Choose the Ctrl key on the shortcut toolbar again to release the Control key\. To use shortcuts that include the Alt or Shift keys, choose the Alt key or the Shift key on the shortcut toolbar in the same way\. You can use the Shift key on the shortcut toolbar only for keyboard shortcuts\. If you are using a touch\-enabled device, this key doesn't affect the capitalization of keys that you type on the on\-screen keyboard\.
+
+## Remap the Mac Option and Command Keys<a name="web-browser-remap-mac-keys-user"></a>
+
+When you use a device that runs macOS or Mac OS X to connect to AppStream 2\.0, you can remap the Mac Option and Command keys on your keyboard\. 
+
+A *modifier key* modifies the action of another key when you use both keys together\. You can use a modifier key with another key to perform a task such as printing\. A *Meta key* is a special type of modifier key\. You can use a Meta key to temporarily change the function of another key when you use both keys together\.
+
+
+| You can remap this Mac key | To this key during a streaming session | 
+| --- | --- | 
+| Option key ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/mac-option-key.png)  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/web-browser-user.html)  | 
+| Command key ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/mac-command-key.png)  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/web-browser-user.html)  | 
+
+Follow these steps to remap the Mac Option and Command keys during an AppStream 2\.0 streaming session\.
+
+**To remap the Mac Option and Command keys**
+
+1. Use a web browser to connect to AppStream 2\.0\.
+
+1. In the top left of the AppStream 2\.0 toolbar, choose the **Settings** icon, and choose **Keyboard Settings**\.
+
+1. Choose the options that correspond to the keys that you want to remap\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/AppStream-Mac-Key-Remapping-for-Windows.png)
 
 ## Drawing Tablets<a name="web-browser-drawing-tablets-user"></a>
 

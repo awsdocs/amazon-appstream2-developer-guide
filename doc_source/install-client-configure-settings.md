@@ -31,7 +31,7 @@ The Enterprise Deployment Tool includes the AppStream 2\.0 client installation f
 
 ## Install the AppStream 2\.0 Client and USB Driver<a name="run-powershell-script-install-client-usb-driver-silently"></a>
 
-After you download the AppStream 2\.0 client installation files, run the following PowerShell script on users' computers to install the AppStream 2\.0 client and USB driver silently\. 
+After you download the AppStream 2\.0 client installation files, run the following PowerShell script on users' computers to install the AppStream 2\.0 client installation file, AppStreamClient\.exe, and the USB driver silently\. 
 
 **Note**  
 To run this script, you must be logged in to the applicable computer with Administrator permissions\. You can also run the script remotely under the System account on startup\.
@@ -42,7 +42,15 @@ Start-Process msiexec.exe -Wait -ArgumentList  '/i AmazonAppStreamClientSetup_<
 Start-Process AmazonAppStreamUsbDriverSetup_<version>.exe -Wait -ArgumentList  '/quiet'
 ```
 
-After you install the Enterprise Deployment tool on users’ computers, the AppStream 2\.0 client is also installed automatically for current users\. For new users, the client is installed the first time that they log in to their computer\. However, if users uninstall the AppStream 2\.0 client, the client isn’t installed again until you update the AppStream 2\.0 Enterprise Deployment Tool\.
+After you install the Enterprise Deployment Tool on a user's computer, the AppStream 2\.0 client is installed as follows:
+
+1. The AppStream 2\.0 client installation file is copied to the following path on the user's computer: C:\\Program Files \(x86\)\\Amazon AppStream 2\.0 Client Installer\\AppStreamClient\.exe\.
+
+1. The first time the user logs on to their computer after the Enterprise Deployment Tool is installed, the AppStream 2\.0 client is installed\.
+**Note**  
+If the Enterprise Deployment Tool detects that the AppStream 2\.0 Client folder, **AppStreamClient**, already exists in **%localappdata%**, the tool does not install the client\.
+
+If a user uninstalls the AppStream 2\.0 client, the client isn’t installed again until you update the AppStream 2\.0 Enterprise Deployment Tool\.
 
 ## Accessing AppStream 2\.0 with the AppStream 2\.0 Client<a name="access-appstream-with-client"></a>
 

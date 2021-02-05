@@ -45,7 +45,8 @@ To complete this step, you must be logged into the image builder with the local 
 
 **To create an AppStream 2\.0 application catalog**
 
-1. From the image builder desktop, open Image Assistant\. Image Assistant guides you through the image creation process\.
+1. From the image builder desktop, open Image Assistant\. Image Assistant guides you through the image creation process\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/Image-Builder-Desktop-Image-Assistant.png)
 
 1. In **1\. Add Apps**, choose **\+ Add App**, and navigate to the location of the application, script, or shortcut to add\. Choose **Open**\. 
 
@@ -166,7 +167,7 @@ If you choose a base image that is published by AWS on or after December 7, 2017
     To continue creating images, start the image builder and connect to it from the console, or create a new image builder\.
 
 **Note**  
-After you create an image, you can't change it\. To add other applications, update existing applications, or change image settings, you must start and reconnect to the image builder that you used to create the image, or, if you deleted that image builder, launch a new image builder builder that is based on your image\. Then, make your changes and create a new image\. 
+After you create an image, you can't change it\. To add other applications, update existing applications, or change image settings, you must start and reconnect to the image builder that you used to create the image, or, if you deleted that image builder, launch a new image builder that is based on your image\. Then, make your changes and create a new image\. 
 
 ## Step 7 \(Optional\): Tag and Copy an Image<a name="tutorial-image-builder-tag-copy"></a>
 
