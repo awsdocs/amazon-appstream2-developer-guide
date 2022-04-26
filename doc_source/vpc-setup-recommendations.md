@@ -8,7 +8,7 @@ The following recommendations can help you configure your VPC more effectively a
 + Make sure that your VPC configuration can support your fleet scaling needs\. 
 
   As you develop your plan for fleet scaling, keep in mind that one user requires one fleet instance\. Therefore, the size of your fleet determines the number of users who can stream concurrently\. For this reason, for each [instance type](instance-types.md) that you plan to use, make sure that the number of fleet instances that your VPC can support is greater than the number of anticipated concurrent users for the same instance type\.
-+ Make sure that your AppStream 2\.0 account quotas \(also referred to as limits\) are sufficient to support your anticipated demand\. To request a quota increase, use the [AppStream 2\.0 Limits form](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-appstream2)\. For more information about AppStream 2\.0 limits, see [Amazon AppStream 2\.0 Service Quotas](limits.md)\. 
++ Make sure that your AppStream 2\.0 account quotas \(also referred to as limits\) are sufficient to support your anticipated demand\. To request a quota increase, you can use the Service Quotas console at [https://console\.aws\.amazon\.com/servicequotas/](https://console.aws.amazon.com/servicequotas/)\. For information about default AppStream 2\.0 quotas, see [Amazon AppStream 2\.0 Service Quotas](limits.md)\. 
 + If you plan to provide your streaming instances \(fleet instances or image builders\) with access to the internet, we recommend that you configure a VPC with two private subnets for your streaming instances and a NAT gateway in a public subnet\.
 
   The NAT gateway lets the streaming instances in your private subnets connect to the internet or other AWS services\. However, it prevents the internet from initiating a connection with those instances\. In addition, unlike configurations that use the **Default Internet Access** option for enabling internet access, the NAT configuration supports more than 100 fleet instances\. For more information, see [Configure a VPC with Private Subnets and a NAT Gateway](managing-network-internet-NAT-gateway.md)\.
@@ -25,8 +25,8 @@ The following recommendations can help you configure your VPC more effectively a
 + If you are using a VPC with NAT, configure at least one public subnet with a NAT Gateway for internet access, preferably two\. Configure the public subnets in the same Availability Zones where your private subnets reside\. 
 
   To enhance fault tolerance and reduce the chance of insufficient capacity errors for large AppStream 2\.0 fleet deployments, consider extending your VPC configuration into a third Availability Zone\. Include a private subnet, public subnet, and NAT gateway in this additional Availability Zone\.
-**Note**  
-To configure more than two Availability Zones, you can use the [UpdateFleet](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateFleet.html) API action or the [update\-fleet](https://docs.aws.amazon.com/cli/latest/reference/appstream;update-fleet.html) AWS CLI command\.
+
+  To configure more than two Availability Zones, you can use the [UpdateFleet](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_UpdateFleet.html) API action or the [update\-fleet](https://docs.aws.amazon.com/cli/latest/reference/appstream/update-fleet.html) AWS CLI command\.
 
 **Security Groups**
 + Use security groups to provide additional access control to your VPC\. 

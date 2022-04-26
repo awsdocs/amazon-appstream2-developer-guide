@@ -63,7 +63,7 @@ Embedded streaming sessions are only supported over HTTPS \[TCP port 443\]\.
 You must create a streaming URL to authenticate users for embedded AppStream 2\.0 streaming sessions\. SAML 2\.0 and user pools are currently not supported for embedded streaming sessions\. To create a streaming URL, use one of the following methods:
 + AppStream 2\.0 console
 + The [CreateStreamingURL](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStreamingURL.html) API action 
-+ The [create\-streaming\-url](https://docs.aws.amazon.com/cli/latest/reference/appstream;create-streaming-url.html) AWS CLI command
++ The [create\-streaming\-url](https://docs.aws.amazon.com/cli/latest/reference/appstream/create-streaming-url.html) AWS CLI command
 
 ### Configuration Requirements for Using Custom Domains<a name="configuration-requirements-custom-domains"></a>
 
@@ -77,7 +77,7 @@ To avoid embedded AppStream 2\.0 streaming sessions from being blocked in this s
 
    When you configure your custom domain, make sure that the domain is a subdomain of the webpage in which you plan to embed AppStream 2\.0\. For example, if you update your stack to specify **training\.example\.com** as the host domain, you can create a subdomain called **content\.training\.example\.com** for your embedded streaming sessions\.
 
-1. Create a streaming URL for embedded AppStream 2\.0 streaming sessions that uses the same custom subdomain\. To create the streaming URL, use the [CreateStreamingURL](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStreamingURL.html) API action or the [create\-streaming\-url](https://docs.aws.amazon.com/cli/latest/reference/appstream;create-streaming-url.html) AWS CLI command\. You cannot use the AppStream 2\.0 console to create a streaming URL in this scenario\.
+1. Create a streaming URL for embedded AppStream 2\.0 streaming sessions that uses the same custom subdomain\. To create the streaming URL, use the [CreateStreamingURL](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStreamingURL.html) API action or the [create\-streaming\-url](https://docs.aws.amazon.com/cli/latest/reference/appstream/create-streaming-url.html) AWS CLI command\. You cannot use the AppStream 2\.0 console to create a streaming URL in this scenario\.
 
    To create a streaming URL for embedded AppStream 2\.0 streaming sessions, in the URL, replace **appstream2\.***region***\.aws\.amazon\.com** with your own domain\. 
 
@@ -106,7 +106,6 @@ When you create a custom domain, you can use the domain for embedded AppStream 2
 
 After you set up a custom domain for your embedded AppStream 2\.0 streaming sessions, if your streaming URLs don't redirect to your custom domain, or if your custom domain doesn't display correctly for your users, see the following troubleshooting topics:
 + [I set up a custom domain for my embedded AppStream 2\.0 streaming sessions, but my AppStream 2\.0 streaming URLs aren't redirecting to my custom domain\.](troubleshooting-general.md#embedded-streaming-sessions-streaming-urls-not-redirected-to-custom-domain)
-+ [I set up a custom domain for my embedded AppStream 2\.0 streaming sessions, but my custom domain isn't being maintained \(it doesn't display for users\)\.](troubleshooting-general.md#embedded-streaming-sessions-streaming-urls-not-displaying-for-users)
 
 ## Step 3: Download the Embedded AppStream 2\.0 Files<a name="download-embed-files"></a>
 
@@ -163,7 +162,7 @@ In the code, replace *sessionURL* and *userInterfaceConfig* with your own values
 The value specified for *userInterfaceConfig* hides the entire AppStream 2\.0 toolbar\. This value, which is included as an example, is optional\.
 
 ***sessionUrl***  
-The streaming URL that you created by using the AppStream 2\.0 console, the [CreateStreamingURL](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStreamingURL.html) API action, or the [create\-streaming\-url](https://docs.aws.amazon.com/cli/latest/reference/appstream;create-streaming-url.html) AWS CLI command\. This parameter is case\-sensitive\.  
+The streaming URL that you created by using the AppStream 2\.0 console, the [CreateStreamingURL](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStreamingURL.html) API action, or the [create\-streaming\-url](https://docs.aws.amazon.com/cli/latest/reference/appstream/create-streaming-url.html) AWS CLI command\. This parameter is case\-sensitive\.  
 **Type**: String  
 **Required**: Yes
 

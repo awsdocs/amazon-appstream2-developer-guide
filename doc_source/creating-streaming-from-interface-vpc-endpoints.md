@@ -1,6 +1,6 @@
 # Creating and Streaming from Interface VPC Endpoints<a name="creating-streaming-from-interface-vpc-endpoints"></a>
 
-You can use an interface VPC endpoint in your AWS account to restrict all network traffic between your Amazon VPC and AppStream 2\.0 to the Amazon network\. After you create this endpoint, you configure your AppStream 2\.0 stack or image builder to use it\. 
+You can use an interface VPC endpoint in your Amazon Web Services account to restrict all network traffic between your Amazon VPC and AppStream 2\.0 to the Amazon network\. After you create this endpoint, you configure your AppStream 2\.0 stack or image builder to use it\. 
 
 **Prerequisites**
 

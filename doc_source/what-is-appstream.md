@@ -27,23 +27,36 @@ Integrate with your existing Microsoft Active Directory environment\. This enabl
 Configure identity federation, which allows your users to access their applications using their corporate credentials\. You can also allow authenticated access to your IT resources from applications running on AppStream 2\.0\.
 
 **Choose the fleet type that meets your needs**  
-There are two types of fleets:  
-+ Always\-On — Your instances run all the time, even when no users are streaming applications\. Use an Always\-On fleet to provide your users with instant access to their applications\.
-+ On\-Demand — Your instances run only when users are streaming applications\. Idle instances that are available for streaming are in a stopped state\. Use an On\-Demand fleet to optimize your streaming charges and provide your users with access to their applications after a 1\-2 minute wait\.
+These are the types of fleets:  
++ Always\-On — Streaming instances run all the time, even when no users are streaming applications and desktops\. Streaming instances must be provisioned before a user is able to stream\. The number of streaming instances provisioned is managed through auto scaling rules\. For more information, see [Fleet Auto Scaling for Amazon AppStream 2\.0](autoscaling.md)\.
+
+  When your users choose their application or desktop, they will start streaming instantly\. You are charged the running instance fee for all streaming instances, even when no users are streaming\.
++ On\-Demand — Streaming instances run only when users are streaming applications and desktops\. Streaming instances not yet assigned to users are in a stopped state\. Streaming instances must be provisioned before a user is able to stream\. The number of streaming instances provisioned is managed through auto scaling rules\. For more information, see [Fleet Auto Scaling for Amazon AppStream 2\.0](autoscaling.md)\.
+
+  When your users choose their application or desktop, they will start streaming after a 1\-2 minute wait\. You are charged a lower stopped instance fee for streaming instances that are not yet assigned to users, and the running instance fee for streaming instances that are assigned to users\.
++ Elastic — The pool of streaming instances is managed by AppStream 2\.0\. When your users select their application or desktop to launch, they will start streaming after the app block has been downloaded and mounted to a streaming instance\. 
+
+  You are charged the running instance fee for Elastic fleet streaming instances only for the duration of the streaming session, in seconds\.
 For more information, see [Amazon AppStream 2\.0 Pricing](https://aws.amazon.com/appstream2/pricing/)\.
 
 ## Key Concepts<a name="what-is-concepts"></a>
 
 To get the most out of AppStream 2\.0, be familiar with the following concepts:
 
+**application**  
+An *application* contains the information necessary to launch the application that you want to stream to your users\. An application is associated with the resource that contains the files necessary to launch the application, such as an app block or image\.
+
+**app block**  
+An *app block* contains the application files that you want to stream to your users, and the details necessary to configure it\.
+
 **image builder**  
 An *image builder* is a virtual machine that you use to create an image\. You can launch and connect to an image builder by using the AppStream 2\.0 console\. After you connect to an image builder, you can install, add, and test your applications, and then use the image builder to create an image\. You can launch new image builders by using private images that you own\.
 
 **image**  
-An *image* contains applications that you can stream to your users, and default Windows and application settings to enable your users to get started with their applications quickly\. AWS provides base images that you can use to create images that include your own applications\. After you create an image, you can't change it\. To add other applications, update existing applications, or change image settings, you must create a new image\. You can copy your images to other AWS Regions or share them with other AWS accounts in the same Region\. 
+An *image* contains applications that you can stream to your users, and default system and application settings to enable your users to get started with their applications quickly\. AWS provides base images that you can use to create image builders to then create images that include your own applications\. After you create an image, you can't change it\. To add other applications, update existing applications, or change image settings, you must create a new image\. You can copy your images to other AWS Regions or share them with other AWS accounts in the same Region\. your users, and default system and application settings to enable your users to get started with their applications quickly\. 
 
 **fleet**  
-A *fleet* consists of fleet instances \(also known as streaming instances\) that run the image that you specify\. You can set the desired number of streaming instances for your fleet and configure policies to scale your fleet automatically based on demand\. Note that one user requires one instance\.
+A *fleet* consists of fleet instances \(also known as streaming instances\) that run the applications and desktops that you specify\. Note that one user requires one instance\.
 
 **stack**  
 A *stack* consists of an associated fleet, user access policies, and storage configurations\. You set up a stack to start streaming applications to users\.
@@ -53,6 +66,9 @@ A *streaming instance* \(also known as a fleet instance\) is an EC2 instance tha
 
 **user pool**  
 Use the *user pool* to manage users and their assigned stacks\.
+
+**auto scaling rules**  
+*Auto scaling rules* are schedule\-based and usage\-based policies that you can apply to an Always\-On or On\-Demand fleet to automatically manage the number of streaming instances available for users to stream from\.
 
 ## How to Get Started<a name="what-is-how-to-start"></a>
 

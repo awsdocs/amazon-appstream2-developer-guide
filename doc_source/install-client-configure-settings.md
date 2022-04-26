@@ -138,7 +138,7 @@ Keep in mind the following requirements and considerations for creating a DNS TX
 
 By default, when users launch the AppStream 2\.0 and specify a URL that is not an AppStream 2\.0 domain, the client performs a DNS TXT record lookup\. The lookup is performed on the second\-level domain of the URL so that the client can determine whether the domain is included in the `AS2TrustedDomains` list\. This behavior lets users connect to domains that are not specified in the `StartURL` or `TrustedDomains` registry keys, or AppStream 2\.0 domains\.
 
-You can disable this behavior by setting the value for the `DnsTxtRecordQueryDisabled` registry key to `false`\. You can create this registry key when you install the AppStream 2\.0 client\. That way, the client connects only to URLs that are specified by the `StartURL` or `TrustedDomains` registry keys\.
+You can disable this behavior by setting the value for the `DnsTxtRecordQueryDisabled` registry key to `true`\. You can create this registry key when you install the AppStream 2\.0 client\. That way, the client connects only to URLs that are specified by the `StartURL` or `TrustedDomains` registry keys\.
 
 After the AppStream 2\.0 client is installed, you can run the following PowerShell script to create this registry key\. Or, you can use the administrative template that is included in the AppStream 2\.0 client Enterprise Deployment Tool to configure the client through Group Policy\.
 

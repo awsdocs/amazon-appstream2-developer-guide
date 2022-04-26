@@ -9,3 +9,5 @@ AppStream 2\.0 image builder instances have instance metadata available through 
 | AppStream\_Instance\_Type | Machine | The instance type of the streaming instance\. For example, stream\.standard\.medium\. | 
 | AppStream\_Resource\_Type | Machine | The type of AppStream 2\.0 resource\. The value is either fleet or imagebuilder\. | 
 | AppStream\_Resource\_Name | Machine | The name of the image builder\. | 
+
+On Linux image builders, environment variables are exported through the script at **/etc/profile\.d/appstream\_system\_vars\.sh**\. To access the environment variables, you can explicitly source this file in your application\.

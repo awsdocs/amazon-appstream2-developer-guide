@@ -1,6 +1,9 @@
 # Enable Your AppStream 2\.0 Users to Configure Their Regional Settings<a name="regional-settings"></a>
 
-Users can configure their Amazon AppStream 2\.0 streaming sessions to use settings that are specific to their location or language\. In particular, users can configure the following settings:
+**Note**  
+Enabling users to configure regional settings is currently not supported in Linux\-based streaming sessions
+
+Users can configure their Amazon AppStream 2\.0 Windows streaming sessions to use settings that are specific to their location or language\. In particular, users can configure the following settings:
 + **Time zone** — Determines the system time used by Windows and any applications that rely on the operating system time\. AppStream 2\.0 makes available the same options for this setting as the Windows Server version used in your fleet\.
 + **Locale** \(also known as culture\) — Determines the conventions used by Windows and any applications that query the Windows culture when formatting dates, numbers, or currencies or when sorting strings\. For a list of locales that AppStream 2\.0 supports, see [Supported Locales](#supported-locales)\.
 + **Input method** — Determines the keystroke combinations that can be used to input characters in another language\.

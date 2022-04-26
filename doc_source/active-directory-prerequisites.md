@@ -18,9 +18,12 @@ Before you use Microsoft Active Directory domains with AppStream 2\.0, be aware 
 
 ## Domain\-Joined AppStream 2\.0 Streaming Instances<a name="active-directory-prerequisites-streaming-instances"></a>
 
-SAML 2\.0\-based user federation is required for application streaming from domain\-joined fleets\. You cannot launch sessions to domain\-joined instances by using [CreateStreamingURL](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStreamingURL.html) or the AppStream 2\.0 user pool\.
+SAML 2\.0\-based user federation is required for application streaming from domain\-joined Always\-On and On\-Demand fleets\. You cannot launch sessions to domain\-joined instances by using [CreateStreamingURL](https://docs.aws.amazon.com/appstream2/latest/APIReference/API_CreateStreamingURL.html) or the AppStream 2\.0 user pool\.
 
-Also, you must use an image that supports joining image builders and fleets to an Active Directory domain\. All public images published on or after July 24, 2017 support joining an Active Directory domain\. For more information, see [AppStream 2\.0 Base Image Release Notes](base-image-version-history.md) and [Tutorial: Setting Up Active Directory](active-directory-directory-setup.md)\.
+Also, you must use an image that supports joining image builders and fleets to an Active Directory domain\. All public images published on or after July 24, 2017 support joining an Active Directory domain\. For more information, see [AppStream 2\.0 Base Image and Managed Image Update Release Notes](base-image-version-history.md) and [Tutorial: Setting Up Active Directory](active-directory-directory-setup.md)\.
+
+**Note**  
+You can only join Always\-On and On\-Demand fleet streaming instances to an Active Directory domain\.
 
 ## Group Policy Settings<a name="active-directory-prerequisites-group-policy-settings"></a>
 
@@ -35,4 +38,4 @@ Verify your configuration for the following Group Policy settings\. If required,
 AppStream 2\.0 supports the use of Active Directory domain passwords or smart cards such as [Common Access Card \(CAC\)](https://www.cac.mil/Common-Access-Card) and [Personal Identity Verification \(PIV\)](https://piv.idmanagement.gov/) smart cards for Windows sign in to AppStream 2\.0 streaming instances\. For information about how to configure your Active Directory environment to enable smart card sign in by using third\-party certification authorities \(CAs\), see [Guidelines for enabling smart card logon with third\-party certification authorities](https://docs.microsoft.com/en-us/troubleshoot/windows-server/windows-security/enabling-smart-card-logon-third-party-certification-authorities) in the Microsoft documentation\.
 
 **Note**  
-AppStream 2\.0 also supports the use of smart cards for in\-session authentication, after a user signs in to a streaming instance\. This feature is supported only for users who have AppStream 2\.0 client for Windows version \[TBD\] or later installed\. For information about additional requirements, see [Smart Cards](client-system-requirements-feature-support.md#feature-support-USB-devices-qualified-smart-cards)\.
+AppStream 2\.0 also supports the use of smart cards for in\-session authentication after a user signs in to a streaming instance\. This feature is supported only for users who have AppStream 2\.0 client for Windows version 1\.1\.257 or later installed\. For information about additional requirements, see [Smart Cards](client-system-requirements-feature-support.md#feature-support-USB-devices-qualified-smart-cards)\.

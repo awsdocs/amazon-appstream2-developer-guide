@@ -16,7 +16,7 @@ The following sections provide more information about each of these deployment o
 When **Default Internet Access** is enabled, a maximum of 100 fleet instances is supported\. If your deployment must support more than 100 concurrent users, use the [NAT gateway configuration](managing-network-internet-NAT-gateway.md) instead\.
 + [Use the Default VPC, Public Subnet, and Security Group](default-vpc-with-public-subnet.md) — If you are new to AppStream 2\.0 and want to get started using the service, you can launch your fleets and image builders in a default public subnet and enable **Default Internet Access**\. When you enable this option, AppStream 2\.0 uses the internet gateway in your Amazon VPC public subnet to provide the internet connection\. Your streaming instances are assigned a public IP address that is directly accessible from the internet\.
 
-  Default VPCs are available in AWS accounts created after 2013\-12\-04\. 
+  Default VPCs are available in Amazon Web Services accounts created after 2013\-12\-04\. 
 
   The default VPC includes a default public subnet in each Availability Zone and an internet gateway that is attached to your VPC\. The VPC also includes a default security group\.
 **Note**  

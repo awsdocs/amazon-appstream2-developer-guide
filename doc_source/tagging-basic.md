@@ -9,7 +9,7 @@ You can:
 + Quickly identify a specific resource based on the tags that you've assigned to it
 + Identify and control AWS costs
 
-For example, you can identify and group AppStream 2\.0 fleets that are in different environments \(such as Development or Production\) or that are assigned to different business units \(such as HR or Marketing\)\. You can then track the associated AWS costs for these fleets on a detailed level\. To do this, sign up to get your AWS account bill with tag key values included\. For more information about setting up a cost allocation report with tags, see [Monthly Cost Allocation Report](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/configurecostallocreport.html) in the *AWS Billing and Cost Management User Guide*\. 
+For example, you can identify and group AppStream 2\.0 fleets that are in different environments \(such as Development or Production\) or that are assigned to different business units \(such as HR or Marketing\)\. You can then track the associated AWS costs for these fleets on a detailed level\. To do this, sign up to get your Amazon Web Services account bill with tag key values included\. For more information about setting up a cost allocation report with tags, see [Monthly Cost Allocation Report](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/configurecostallocreport.html) in the *AWS Billing User Guide*\. 
 
 **Topics**
 + [Tagging Basics](#tagging-introduction)

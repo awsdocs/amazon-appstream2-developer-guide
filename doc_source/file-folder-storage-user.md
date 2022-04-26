@@ -4,3 +4,5 @@ If your AppStream 2\.0 administrator has enabled it, you can use one or more of 
 + [Home folders](home-folders-end-user.md)
 + [Google Drive](google-drive-end-user.md)
 + [OneDrive for Business](onedrive-end-user.md)
+**Note**  
+Google Drive and OneDrive for Business are currently not supported for Linux\-based streaming instances\.

@@ -76,3 +76,13 @@ The following are notification codes and resolution steps for issues with domain
   1. Update the AppStream 2\.0 Directory Config to specify an OU that doesn't contain spaces\. For more information, see [Step 1: Create a Directory Config Object](active-directory-directory-setup.md#active-directory-setup-config)\.
 
   1. Create a new image builder and specify the Directory Config with the updated Directory OU\. For more information, see [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md)\.
+
+## Image Internal Service<a name="troubleshooting-notification-codes-image"></a>
+
+If you receive an internal service error after you use managed AppStream 2\.0 image updates to initiate an image update, follow these steps\.
+
+**INTERNAL\_SERVICE\_ERROR**  
+**Message**: AppStream 2\.0 could not update image *image\-name*\. Failed to update/install/configure/disable <software name>\. Check your source image and try again\. If this problem persists, contact AWS Support\.  
+**Resolution**: This error can occur when there is an issue with the source image\. Try to update the image again\.  
+If updating again doesn't work, make sure that you're using the latest version of SSM Agent\. For version information, see [AppStream 2\.0 Base Image and Managed Image Update Release Notes](base-image-version-history.md)\. For installation information, see [Manually install SSM Agent on EC2 instances for Windows Server](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-win.html)\.   
+If the error continues to occur, launch an image builder from the image\. For more information, see [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md)\. If you can't launch image builder from the image, there is another issue with the image that needs to be resolved before you can use managed AppStream 2\.0 image updates to update the image\. If you continue to encounter this error, contact AWS Support\. For more information, see [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.

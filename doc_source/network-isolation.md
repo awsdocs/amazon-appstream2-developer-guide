@@ -1,6 +1,6 @@
 # Network Isolation<a name="network-isolation"></a>
 
-A virtual private cloud \(VPC\) is a virtual network in your own logically isolated area in the AWS Cloud\. Use separate VPCs to isolate infrastructure by workload or organizational entity\.
+A virtual private cloud \(VPC\) is a virtual network in your own logically isolated area in the Amazon Web Services Cloud\. Use separate VPCs to isolate infrastructure by workload or organizational entity\.
 
 A subnet is a range of IP addresses in a VPC\. When you launch an instance, you launch it into a subnet in your VPC\. Use subnets to isolate the tiers of your application \(for example, web, application, and database\) within a single VPC\. Use private subnets for your instances if they should not be accessed directly from the internet\.
 

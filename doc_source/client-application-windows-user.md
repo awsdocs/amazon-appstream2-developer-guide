@@ -11,7 +11,7 @@ The following information helps you use the AppStream 2\.0 client for Windows to
 + [USB Devices](#client-application-windows-how-to-share-usb-devices-user)
 + [Local File Access](#client-application-windows-file-system-redirection)
 + [Printer Redirection](#client-application-windows-local-printer-redirection)
-+ [Video and Audio Conferencing](#client-application-windows-how-to-use-local-webcam-user)
++ [Video and Audio Conferencing \(Client for Windows\)](#client-application-windows-how-to-use-local-webcam-user)
 + [Drawing Tablets](#client-application-windows-drawing-tablets-user)
 + [Relative Mouse Offset](#client-application-windows-relative-mouse-offset-user)
 + [Logging](#client-application-windows-how-to-enable-diagnostic-logging-user)
@@ -281,16 +281,13 @@ To use AppStream 2\.0 printer redirection, you must have the AppStream 2\.0 clie
 
 1. In the **Print** dialog box, a list of available local printers is displayed\. Choose the local printer that you want to use, and then proceed with printing\.
 
-## Video and Audio Conferencing<a name="client-application-windows-how-to-use-local-webcam-user"></a>
+## Video and Audio Conferencing \(Client for Windows\)<a name="client-application-windows-how-to-use-local-webcam-user"></a>
 
-AppStream 2\.0 real\-time audio\-video \(AV\) redirects your local webcam video input to AppStream 2\.0 streaming sessions\. That way, you can use your local webcam for video and audio conferencing within your AppStream 2\.0 streaming session\.
+AppStream 2\.0 real\-time audio\-video \(AV\) redirects your local webcam video input to AppStream 2\.0 streaming sessions\. That way, you can use your local devices for video and audio conferencing within your AppStream 2\.0 streaming session\.
 
-If you have more than one webcam \(for example, if you have a USB webcam that is connected to your local computer and a built\-in webcam\), you can choose which webcam to use within your streaming session\.
 
-**Important**  
-To use your local webcam within an AppStream 2\.0 streaming session, you must have the AppStream 2\.0 client installed on your local computer, and you must use the client to connect to the streaming session\. You cannot use your local webcam within a streaming session when you connect to AppStream 2\.0 by using a web browser\.
 
-**To use a local webcam within an AppStream 2\.0 streaming session**
+**To use a local webcam and microphone within an AppStream 2\.0 streaming session**
 
 1. Open the AppStream 2\.0 client and connect to a streaming session\.
 
@@ -300,13 +297,15 @@ To use your local webcam within an AppStream 2\.0 streaming session, you must ha
    + If the video icon does not have a diagonal line through it \(as shown in the following screenshot\), one or more webcams are already attached to your streaming session\. Skip this step and proceed to the next step\.   
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/Webcam-attached-2.png)
 **Note**  
-If the video icon doesn't display in the AppStream 2\.0 toolbar, contact your AppStream 2\.0 administrator\. Your administrator might need to perform additional configuration tasks, as described in [Real\-Time Audio\-Video](client-system-requirements-feature-support.md#feature-support-real-time-av)\.
+If the video icon doesn't display in the AppStream 2\.0 toolbar, contact your AppStream 2\.0 administrator\. Your administrator might need to perform additional configuration tasks, as described in [Real\-Time Audio\-Video \(Client for Windows\)](client-system-requirements-feature-support.md#feature-support-real-time-av)\.
 
 1. To display the names of the webcams that are attached to your streaming session, choose the downward arrow next to the video icon\. If you have more than one webcam \(for example, if you have a USB webcam that is connected to your laptop and a built\-in webcam\), a check mark appears next to the name of the webcam that is selected for use for video conferencing within your streaming session\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/Webcam1-selected-3.png)
 
 1. To use the selected webcam for video conferencing within your AppStream 2\.0 streaming session, start the video conferencing application that you want to use\. When the webcam is active \(being used for video conferencing within your streaming session\), the video icon is red\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/Webcam1-selected-cameras-streaming-4.png)
+
+1. To enable the microphone, choose the microphone icon\.
 
 **Note**  
 If you have more than one webcam and want to change the one that you use for streaming within an AppStream 2\.0 session, you must first detach your webcams from the session\. For more information, see the next procedure\.

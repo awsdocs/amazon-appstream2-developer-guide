@@ -20,19 +20,20 @@ Problems with home folder backup to an S3 bucket can occur in the following scen
 + An administrator deleted the bucket created by the service\.
 + An administrator incorrectly edited the Amazon S3 permissions for the `AmazonAppStreamServiceAccess` service role\.
 
-For more information, see the [Amazon Simple Storage Service Console User Guide](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/) and [Amazon Simple Storage Service Developer Guide](https://docs.aws.amazon.com/AmazonS3/latest/dev/)\.
+For more information, see the [Amazon Simple Storage Service User Guide](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/) and [Amazon Simple Storage Service User Guide](https://docs.aws.amazon.com/AmazonS3/latest/dev/)\.
 
 ## My users can't access their home folder directory from one of our applications\.<a name="alternate-path-accessing-home-folders"></a>
 
 Some applications do not recognize the redirect that displays the home folder as a top\-level folder in File Explorer\. If this is the case, your users can access their home folder from within an application during a streaming session by choosing **File Open** from the application interface and browsing to either of the following directories: 
-+ Non\-domain\-joined: C:\\Users\\PhotonUser\\My Files\\Home Folder
-+ Domain\-joined: C:\\Users\\%username%\\My Files\\Home Folder
++ Non\-domain\-joined Windows instances: C:\\Users\\PhotonUser\\My Files\\Home Folder
++ Domain\-joined Windows instances: C:\\Users\\%username%\\My Files\\Home Folder
++ Linux instances: \~/MyFiles/HomeFolder
 
 ## I removed or replaced a file in a user’s home folder in Amazon S3, but my users don’t see the changes in their home folder on the fleet instance during their streaming sessions\.<a name="removed-replaced-folder-in-s3-users-dont-see-changes-on-fleet-instance"></a>
 
 Differences between content that is stored in a user’s home folder in an S3 bucket and content that is available to a user on a fleet instance during their streaming sessions may be due to the way in which home folder content stored in Amazon S3 buckets is synchronized with home folder content stored on AppStream 2\.0 fleet instances\. 
 
-At the beginning of a user’s AppStream 2\.0 streaming session, AppStream 2\.0 catalogs the user’s home folder files stored in the Amazon S3 bucket for your AWS account and Region\. When a user uses a streaming application to open a file in their home folder on their fleet instance, AppStream 2\.0 downloads the file to the fleet instance\. 
+At the beginning of a user’s AppStream 2\.0 streaming session, AppStream 2\.0 catalogs the user’s home folder files stored in the Amazon S3 bucket for your Amazon Web Services account and Region\. When a user uses a streaming application to open a file in their home folder on their fleet instance, AppStream 2\.0 downloads the file to the fleet instance\. 
 
 Changes that a user makes to files on a fleet instance during their active streaming session are uploaded to their home folder in the S3 bucket every few seconds, or at the end of the user’s streaming session\. 
 

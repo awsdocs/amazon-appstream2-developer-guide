@@ -11,7 +11,8 @@ The following are general issues that might occur when you use Amazon AppStream 
 + [I've enabled application settings persistence for my users, but for certain streaming applications, my users’ passwords aren’t persisting across sessions\.](#app-settings-passwords-not-persisting)
 + [Google Chrome data is filling the VHD file that contains my users' persistent application settings\. This is preventing their settings from persisting\. How can I manage the Chrome profile?](#chrome-filling-up-app-settings-VHD)
 + [I set up a custom domain for my embedded AppStream 2\.0 streaming sessions, but my AppStream 2\.0 streaming URLs aren't redirecting to my custom domain\.](#embedded-streaming-sessions-streaming-urls-not-redirected-to-custom-domain)
-+ [I set up a custom domain for my embedded AppStream 2\.0 streaming sessions, but my custom domain isn't being maintained \(it doesn't display for users\)\.](#embedded-streaming-sessions-streaming-urls-not-displaying-for-users)
++ [I launched an app on a smartcard\-enabled AppStream 2\.0 fleet, and there are a limited number of certificates \(or none\) available to the app for authentication\.](#no-or-limited-certificates-for-authentication-on-smartcard-fleet)
++ [The Certification Propagation service isn't starting on my smartcard\-enabled AppStream 2\.0 fleet\.](#certification-propogation-not-starting-on-smartcard-fleet)
 
 ## SAML federation is not working\. The user is not authorized to view AppStream 2\.0 applications\.<a name="troubleshooting-13"></a>
 
@@ -79,33 +80,110 @@ https://training.example.com/authenticate?parameters=authenticationcode
 
 For more information about configuring custom domains for embedded AppStream 2\.0 streaming sessions, see [Configuration Requirements for Using Custom Domains](embed-streaming-sessions.md#configuration-requirements-custom-domains)\.
 
-## I set up a custom domain for my embedded AppStream 2\.0 streaming sessions, but my custom domain isn't being maintained \(it doesn't display for users\)\.<a name="embedded-streaming-sessions-streaming-urls-not-displaying-for-users"></a>
+## I launched an app on a smartcard\-enabled AppStream 2\.0 fleet, and there are a limited number of certificates \(or none\) available to the app for authentication\.<a name="no-or-limited-certificates-for-authentication-on-smartcard-fleet"></a>
 
-This issue occurs when the reverse proxy that you use to set up your AppStream 2\.0 custom domain doesn't forward the custom header **appstream\-custom\-url\-domain**\. 
+This happens when the application is launched before the [Certificate Propagation](https://docs.microsoft.com/en-us/windows/security/identity-protection/smart-cards/smart-card-certificate-propagation-service) service is in a running state\. 
 
-When this issue occurs, run a network trace\. The trace might show that the streaming URL that uses your custom domain redirects to a URL that follows this format:
+To resolve this issue, use the PowerShell module [Get\-Service](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.1) to query the Certificate Propagation service’s status, and make sure that it's in a running state before launching your application\.
 
-```
-https://random-string.appstream2.region.aws.amazon.com/authenticate?parameters=authenticationcode
-```
-
-For example, rather than **training\.example\.com** displaying in your streaming URL as follows:
+For example, the following script won't launch the application until the Certificate Propagation service is running:
 
 ```
-https://training.example.com/authenticate?parameters=authenticationcode
+$logFile = "$Env:TEMP\AS2\Logging\$(Get-Date -Format "yyyy-MM-dd-HH-mm-ss")_applaunch.log"
+New-Item -path $logfile -ItemType File -Force | Out-Null
+
+Function Write-Log {
+    Param ([string]$message)
+    $stamp = Get-Date -Format "yyyy/MM/dd HH:mm:ss"
+    $logoutput = "$stamp $message"
+    Add-content $logfile -value $logoutput
+}
+
+if (Get-Service -Name "CertPropSvc" | Where-Object -Property Status -eq Running) {
+
+    Write-Log "The Certificate Propagation Service is running. Launching Application..."
+    try {
+        Start-Process -FilePath "Path to Application" -WindowStyle Maximized -ErrorAction Stop
+    }
+    catch {
+        Write-Log "There was an error launching the application: $_"
+        
+    }
+    
+}   
+else {
+
+    do {
+        
+        $status = Get-Service "CertPropSvc" | select-object -ExpandProperty Status
+        Write-Log "The Certificate Propagation service status is currently $status"
+        Start-Sleep -Seconds 2
+
+    
+    } until (Get-Service -Name "CertPropSvc" | Where-Object -Property Status -eq Running)
+    
+    write-log "The Certificate Propagation Service is running. Launching Application..."
+    try {
+        Start-Process -FilePath "Path to Application" -WindowStyle Maximized -ErrorAction Stop
+    }
+    catch {
+        Write-Log "There was an error launching the application: $_"
+        
+    }
+}
 ```
 
-The following URL, which contains a random string, might display for users:
+## The Certification Propagation service isn't starting on my smartcard\-enabled AppStream 2\.0 fleet\.<a name="certification-propogation-not-starting-on-smartcard-fleet"></a>
+
+If the [Certificate Propagation](https://docs.microsoft.com/en-us/windows/security/identity-protection/smart-cards/smart-card-certificate-propagation-service) service isn't starting, the service’s startup type might be set to **Disabled**\. To resolve this, on the AppStream 2\.0 image builder used to create your fleet’s image, launch the Windows Services Microsoft Management Console, and make sure that the startup type of the Certificate Propagation service isn't set to **Disabled**\. 
+
+If the startup type isn't set to **Disabled**, and the service is still not starting on your AppStream 2\.0 fleet, use the PowerShell module [Start\-Service](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/start-service?view=powershell-7.1) to start the Certificate Propagation service when your fleet instance starts\. 
+
+For example, the following PowerShell script will start the service if it detects that it's in a stopped state:
 
 ```
-https://a7c7cace68bef535c93583de4526f359082092651569a7d12aca825b.appstream2.us-west-2.aws.amazon.com/authenticate?parameters=authenticationcode
-```
+$logFile = "C:\AppStream\Logging\$(Get-Date -Format "yyyy-MM-dd-HH-mm-ss")_certpropcheck.log"
+New-Item -path $logfile -ItemType File -Force | Out-Null
 
-To resolve this issue, make sure that the value of the custom header of the webpage that hosts the embedded streaming sessions matches your custom domain name\. For example, if your custom domain name is **training\.example\.com**, the custom header must match this value, as shown in the following example\. 
+Function Write-Log {
+    Param ([string]$message)
+    $stamp = Get-Date -Format "yyyy/MM/dd HH:mm:ss"
+    $logoutput = "$stamp $message"
+    Add-content $logfile -value $logoutput
+}
 
-```
-Header name: appstream-custom-url-domain
-Header value: training.example.com
-```
+if (Get-Service -Name "CertPropSvc" | Where-Object -Property Status -eq Running) {
 
-For more information about configuring custom domains for embedded AppStream 2\.0 streaming sessions, see [Configuration Requirements for Using Custom Domains](embed-streaming-sessions.md#configuration-requirements-custom-domains)\.
+    Write-Log "The Certificate Propagation Service is running. Exiting..."
+    Exit
+}
+else {
+    do {
+
+        if (Get-Service -Name "CertPropSvc" | Where-Object -Property Status -eq Stopped) {
+
+            Write-Log "The Certificate Propagation Service is stopped, attepmting to start..."
+            try {
+                Start-Service -Name "CertPropSvc" -ErrorAction Stop
+                
+            }
+            catch {
+                Write-Log "There was a problem starting the service: $_"
+                break               
+            }
+
+            $status = Get-Service "CertPropSvc" | select-object -ExpandProperty Status
+            Write-Log "The Certificate Propagation service status is currently $status"
+            
+
+        }
+        else {
+        
+            $status = Get-Service "CertPropSvc" | select-object -ExpandProperty Status
+            Write-Log "The Certificate Propagation service status is currently $status"
+            break
+        }
+    
+    } until (Get-Service -Name "CertPropSvc" | Where-Object -Property Status -eq Running)
+}
+```

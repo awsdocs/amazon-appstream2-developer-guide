@@ -1,6 +1,13 @@
 # Qualify USB Devices for Use with Streaming Applications<a name="qualify-usb-devices"></a>
 
-To qualify your users' USB devices so that the devices can be used with streaming applications, perform these steps\. 
+There are two methods for specifying which USB devices your users can redirect into their AppStream 2\.0 streaming instances:
++ You can create the USB device filter strings within the configuration file saved on an image\. This method can only be used with Always\-On and On\-Demand fleets\.
++ You can specify USB device filter strings when you create the fleet, either with the AWS Management Console or with the `CreateFleet` API\. For detailed information about these strings, see the section below\. This method can only be used with Elastic fleets\.
+
+You can create a file on your AppStream 2\.0 image that specifies which USB devices a user can make available for their streaming applications\. To qualify your users' USB devices so that the devices can be used with streaming applications, perform these steps\. 
+
+**Note**  
+For security reasons, only qualify USB devices from approved trusted sources\. Qualifying all generic devices or classes of devices might allow unapproved devices to be used with your streaming applications\.
 
 1. If you haven't already done so, install the AppStream 2\.0 client\. For information, see [Install and Configure the AppStream 2\.0 Client](install-configure-client.md)\.
 
@@ -34,7 +41,7 @@ To qualify your users' USB devices so that the devices can be used with streamin
 
 1. On your image builder desktop, choose the Windows **Start** button, and search for Notepad\. Right\-click **Notepad**, and choose **Run as Administrator**\.
 
-1. Choose **File**, **Open**, and open the following file: `C:\ProgramData\Amazon\Photon\DCV\usb_device_whitelist.txt`\. You can also allow an entire category of devices or all devices from a specific manufacturer by using wildcard expressions in the `usb_device_whitelist.txt` file\. 
+1. Choose **File**, **Open**, and open the following file: `C:\ProgramData\Amazon\Photon\DCV\usb_device_allowlist.txt`\. You can also allow an entire category of devices or all devices from a specific manufacturer by using wildcard expressions in the `usb_device_allowlist.txt` file\. 
 
 1. Copy the filter string from your local computer to the image builder\. The filter string for a specific USB device is a comma\-separated string of the following fields: **Name**, **Base Class**, **SubClass**, **Protocol**, **ID Vendor**, **ID Product**, **Support Autoshare**, and **Skip Reset**\. For detailed information about these strings, see [Working with USB Device Filter Strings](#USB-device-filter-strings)\.
 

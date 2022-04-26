@@ -4,11 +4,21 @@ The Amazon AppStream 2\.0 agent software runs on your streaming instances, enabl
 
 To use the latest AppStream 2\.0 agent software, you need to rebuild your images by using new base images published by AWS on or after December 7, 2017\. When you do this, the option to enable automatic updates of the agent is selected by default in the Image Assistant\. We recommend that you leave this option selected so that any new image builder or fleet instance that is launched from your image always uses the latest version of the agent\. For more information, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
-The following table describes the latest updates that are available in released versions of the AppStream 2\.0 agent\.
+The following table describes the latest updates that are available in released versions of the AppStream 2\.0 agent for Windows instances\.
 
 
 | Amazon AppStream 2\.0 agent version | Changes | 
 | --- | --- | 
+| 03\-14\-2022 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
+| 02\-21\-2022 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
+| 12\-20\-2021 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
+| 10\-19\-2021 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
+| 08\-02\-2021 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
+| 07\-01\-2021 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
+| 06\-25\-2021 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
+| 05\-17\-2021 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
+| 03\-04\-2021 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
+| 12\-17\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
 | 01\-04\-2021 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
 | 12\-17\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
 | 10\-08\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
@@ -46,3 +56,11 @@ The following table describes the latest updates that are available in released 
 | 03\-19\-2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
 | 01\-24\-2018 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
 | 12\-07\-2017 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
+
+The following table describes the latest updates that are available in released versions of the AppStream 2\.0 agent for Linux instances\.
+
+
+| Amazon AppStream 2\.0 agent version | Changes | 
+| --- | --- | 
+| 11\-19\-2021 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 
+| 11\-15\-2021 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/agent-software-versions.html)  | 

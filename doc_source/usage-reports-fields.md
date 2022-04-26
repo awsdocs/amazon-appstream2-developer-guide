@@ -14,7 +14,7 @@ The following table describes the fields included in AppStream 2\.0 sessions rep
 | Field name | Description | 
 | --- | --- | 
 | user\_session\_id | The unique identifier \(ID\) for the session\. | 
-| aws\_account\_id | The AWS account ID\. | 
+| aws\_account\_id | The Amazon Web Services account ID\. | 
 | region | The AWS Region\. | 
 | session\_start\_time | The date and time that the session started\. Format: ISO 8601 \(UTC\) | 
 | session\_end\_time | The date and time that the session ended\. Format: ISO 8601 \(UTC\) | 

@@ -22,6 +22,9 @@ Environment variables enable you to dynamically pass settings across application
 
 Follow the steps in these procedures to make environment variables available across your fleet instances\. 
 
+**Note**  
+The following instructions apply to Windows fleets only\. 
+
 **Topics**
 + [Change System Environment Variables](#customize-fleets-system-environment-variables)
 + [Change User Environment Variables](#customize-fleets-user-environment-variables)
@@ -136,6 +139,9 @@ If the application path includes spaces, the entire string must be encapsulated 
 The associations for application file extensions are set on a per\-user basis and so are not automatically applied to all users who launch AppStream 2\.0 streaming sessions\. For example, if you set Adobe Reader as the default application for \.pdf files on your image builder, this change is not applied to your users\. 
 
 **Note**  
+The following steps apply to Windows fleets only\.
+
+**Note**  
 The following steps must be performed on an image builder that is joined to an Active Directory domain\. In addition, your fleet must be joined to an Active Directory domain\. Otherwise, the default file associations that you set are not applied\.
 
 **To set default file associations for your users**
@@ -197,6 +203,9 @@ Internet Explorer Enhanced Security Configuration \(ESC\) places servers and Int
 + Users run Internet Explorer during their streaming sessions
 + Applications use Internet Explorer to load data
 
+**Note**  
+The following steps apply to Windows fleets only\.
+
 **To disable Internet Explorer Enhanced Security Configuration**
 
 1. Connect to the image builder on which to disable Internet Explorer ESC and sign in with a user account that has local administrator permissions\. To do so, do either of the following: 
@@ -245,6 +254,9 @@ If the image builder that you want to connect to is joined to an Active Director
 ## Change the Default Internet Explorer Home Page for Users' Streaming Sessions<a name="customize-fleets-change-ie-homepage"></a>
 
 You can use Group Policy to change the default Internet Explorer home page for users' streaming sessions\. Alternatively, if you do not have Group Policy in your environment or prefer not to use Group Policy, you can use the AppStream 2\.0 Template User account instead\.
+
+**Note**  
+The following steps apply to Windows fleets only\.
 
 **Topics**
 + [Use Group Policy to Change the Default Internet Explorer Home Page](#customize-fleets-change-ie-homepage-group-policy)
@@ -352,13 +364,19 @@ AppStream 2\.0 fleet instances have user and instance metadata available through
 
 | Environment Variable | Context | Description | 
 | --- | --- | --- | 
-| AppStream\_Stack\_Name | User | The name of the stack that the streaming session started from\. | 
-| AppStream\_User\_Access\_Mode | User | The access mode that the user is using to stream\. The values are custom, userpool, or saml\. | 
+| AppStream\_Stack\_Name | User | The name of the stack from which the streaming session started\. | 
+| AppStream\_User\_Access\_Mode | User | The access mode used to manage user access to the stream\. The available values are custom, userpool, or saml\. | 
 | AppStream\_Session\_Reservation\_DateTime | User | The date and time when the user's streaming session started\. | 
-| AppStream\_UserName | User | The user name for the user\. | 
+| AppStream\_UserName | User | The user name associated with the user\. | 
 | AppStream\_Session\_ID | User | The session identifier for the user's streaming session\. | 
-| APPSTREAM\_SESSION\_CONTEXT | Machine | The session context that was provided when the streaming URL was created\.  This environment variable is only available after the first application launch\. | 
+| APPSTREAM\_SESSION\_CONTEXT | Machine | Contains the parameters passed to your streaming application when a session is started\. For more information, see [Session Context](managing-stacks-fleets.md#managing-stacks-fleets-session-context)\. | 
 | AppStream\_Image\_Arn | Machine | The ARN of the image that was used to create the streaming instance\. | 
-| AppStream\_Instance\_Type | Machine | The instance type of the streaming instance\. For example, stream\.standard\.medium\. | 
-| AppStream\_Resource\_Type | Machine | The type of AppStream 2\.0 resource\. The value is either fleet or imagebuilder\. | 
-| AppStream\_Resource\_Name | Machine | The name of the fleet\. | 
+| AppStream\_Instance\_Type | Machine | The streaming instance's type\. For example, stream\.standard\.medium\. | 
+| AppStream\_Resource\_Type | Machine | The type of AppStream 2\.0 resource\. The value is either fleet or image\-builder\. | 
+| AppStream\_Resource\_Name | Machine | The fleet's name\. | 
+
+On Linux fleet instances, these environment variables are exported through the following profile\.d scripts:
++ **User environment variables** in /etc/profile\.d/appstream\_user\_vars\.sh
++ **System environment variables** in /etc/profile\.d/appstream\_system\_vars\.sh
+
+To access the environment variables, you must explicitly source these files in your applications\.

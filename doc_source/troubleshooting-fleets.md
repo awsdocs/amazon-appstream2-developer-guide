@@ -32,7 +32,7 @@ aws application-autoscaling describe-scaling-activities --service-namespace apps
 The following JSON output shows that a scaling policy for **TestFleet** with a **Minimum capacity** value of 150 was set\. This value exceeds the limit \(quota\) for **TestFleet**, which is 100, so the new scaling policy doesn’t take effect\. In the output, the **StatusMessage** parameter provides detailed information about the cause of the error, including the fleet instance type \(in this case, stream\.standard\.medium\), and the current quota, which is 100\.
 
 **Note**  
-AppStream 2\.0 instance type and size quotas are per AWS account, per AWS Region\. If you have multiple fleets in the same Region that use the same instance type and size, the total number of instances in all fleets in that Region must be less than or equal to the applicable quota\.
+AppStream 2\.0 instance type and size quotas are per Amazon Web Services account, per AWS Region\. If you have multiple fleets in the same Region that use the same instance type and size, the total number of instances in all fleets in that Region must be less than or equal to the applicable quota\.
 
 ```
 {

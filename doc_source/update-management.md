@@ -4,4 +4,6 @@ AppStream 2\.0 provides an automated way to update your image builder with newer
 
 You are responsible for installing and maintaining the updates for the Windows operating system, your applications, and their dependencies\. For more information, see [Keep Your AppStream 2\.0 Image Up\-to\-Date](administer-images.md#keep-image-updated)\.
 
+You can keep your AppStream 2\.0 image up\-to\-date by using managed AppStream 2\.0 image updates\. This update method provides the latest Windows operating system updates and driver updates, and the latest AppStream 2\.0 agent software\. For more information, see [Update an Image by Using Managed AppStream 2\.0 Image Updates](administer-images.md#keep-image-updated-managed-image-updates)\.
+
 To manage updates for applications on your streaming instances, you can use any automatic update services provided\. You can also follow the recommendations for installing updates provided by the application vendor\. 

@@ -2,7 +2,7 @@
 
 Your security credentials identify you to services in AWS and grant you unlimited use of your AWS resources, such as your AppStream 2\.0 resources\. You can use features of AppStream 2\.0 and AWS Identity and Access Management \(IAM\) to allow other users, services, and applications to use your AppStream 2\.0 resources without sharing your security credentials\. 
 
-You can use IAM to control how other users use resources in your AWS account, and you can use security groups to control access to your AppStream 2\.0 streaming instances\. You can allow full use or limited use of your AppStream 2\.0 resources\. 
+You can use IAM to control how other users use resources in your Amazon Web Services account, and you can use security groups to control access to your AppStream 2\.0 streaming instances\. You can allow full use or limited use of your AppStream 2\.0 resources\. 
 
 **Topics**
 + [Network Access to Your Streaming Instance](network-access-to-streaming-instances.md)

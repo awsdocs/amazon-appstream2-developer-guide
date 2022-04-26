@@ -35,7 +35,7 @@ Completing the steps in the following procedure creates an AWS Glue crawler\. Ho
 
 1. On the **Review **page, select the check box next to "I acknowledge that AWS CloudFormation might create IAM resources with custom names," and then choose **Create**\.
 
-   You must have sufficient AWS Glue and AWS Identity and Access Management \(IAM\) permissions to create and run the AWS CloudFormation stack\. If you don't have the required permissions, ask your AWS account administrator either to perform these steps in your account or to grant you the following permissions\.
+   You must have sufficient AWS Glue and AWS Identity and Access Management \(IAM\) permissions to create and run the AWS CloudFormation stack\. If you don't have the required permissions, ask your Amazon Web Services account administrator either to perform these steps in your account or to grant you the following permissions\.
 
    ```
    {
@@ -270,6 +270,8 @@ The AWS CloudFormation template that created the AWS Glue crawlers also created 
 + Average session length per stack
 + Number of sessions per day
 + Total streaming hours per user
+**Note**  
+On\-demand usage charges are rounded up to the next hour for each session\.
 + Distinct users per app
 
 To use any of these queries, perform the following steps\.

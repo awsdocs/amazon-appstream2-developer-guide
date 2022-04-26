@@ -8,18 +8,23 @@ When you create a fleet or image builder, you must select an image that is compa
 
 The following table summarizes the available instance families and provides the base image naming format for each\. Select an instance type from an instance family based on the requirements of the applications that you plan to stream on your fleet, and match the base image according to the following table\.
 
+**Note**  
+If your use case involves real\-time audio\-video \(AV\) or other scenarios that require high frame rates and your display performance isn't as expected, consider scaling up to a larger instance size\.
+
 
 | Instance Family | Description | Base Image Name | 
 | --- | --- | --- | 
-| General Purpose | Basic computing resources for running web browsers and most business applications\. | AppStream\-WinServer\-OperatingSystemVersion\-MM\-DD\-YYYY | 
-| Compute Optimized | Optimized for compute\-bound applications that benefit from high performance processors\. | AppStream\-WinServer\-OperatingSystemVersion\-MM\-DD\-YYYY | 
-| Memory Optimized | Optimized for memory\-intensive applications that process large amounts of data\. If you plan to use AppStream 2\.0 z1d\-based instances, you must provision them from images that were created from AppStream 2\.0 base images published on or after June 12, 2018\.  | AppStream\-WinServer\-OperatingSystemVersion\-MM\-DD\-YYYY | 
+| General Purpose | Basic computing resources for running web browsers and most business applications\. | AppStream\-WinServer\-*OperatingSystemVersion*\-*MM\-DD\-YYYY* AppStream\-AmazonLinux2\-*MM\-DD\-YYYY*  | 
+| Compute Optimized | Optimized for compute\-bound applications that benefit from high performance processors\. | AppStream\-WinServer\-*OperatingSystemVersion*\-*MM\-DD\-YYYY* AppStream\-AmazonLinux2\-*MM\-DD\-YYYY* | 
+| Memory Optimized | Optimized for memory\-intensive applications that process large amounts of data\. If you plan to use AppStream 2\.0 z1d\-based instances, you must provision them from images that were created from AppStream 2\.0 base images published on or after June 12, 2018\.  | AppStream\-WinServer\-*OperatingSystemVersion*\-*MM\-DD\-YYYY* AppStream\-AmazonLinux2\-*MM\-DD\-YYYY*  | 
 | Graphics Desktop | Uses NVIDIA GRID K520 GPU to support applications that beneﬁt from or require graphics acceleration\. This instance family supports DirectX, OpenGL, OpenCL, and CUDA\. *This instance family is deprecated and therefore no longer available\.*  | Graphics\-Desktop\-Image\-Builder\-MM\-DD\-YYYY  | 
 | Graphics Pro | Uses NVIDIA Tesla M60 GPUs and provide a high\-performance, workstation\-like experience for graphics applications that use DirectX, OpenGL, OpenCL, or CUDA\. | AppStream\-Graphics\-Pro\-OperatingSystemVersion\-MM\-DD\-YYYY | 
-| Graphics Design | Uses AMD FirePro S7150x2 Server GPUs and AMD Multiuser GPU technology to support graphics applications that use DirectX, OpenGL, or OpenCL\. | AppStream\-Graphics\-Design\-OperatingSystemVersion\-MM\-DD\-YYYY | 
-| Graphics G4 | Uses NVIDIA T4 GPUs to support graphics intensive applications\. | AppStream\-Graphics\-G4dn\-OperatingSystemVersion\-MM\-DD\-YYYY  | 
+| Graphics Design | Uses AMD FirePro S7150x2 Server GPUs and AMD Multiuser GPU technology to support graphics applications that use DirectX, OpenGL, or OpenCL\.  | AppStream\-Graphics\-Design\-OperatingSystemVersion\-MM\-DD\-YYYY  | 
+| Graphics G4dn | Uses NVIDIA T4 GPUs to support graphics intensive applications\. | AppStream\-Graphics\-G4dn\-OperatingSystemVersion\-MM\-DD\-YYYY  | 
+
+AppStream 2\.0 instances have one 200 GB fixed\-size volume, which is used for the C drive\. Because AppStream 2\.0 is non\-persistent, each instance's volume is immediately deleted after each user session\.
 
 For more information, see the following:
-+ [AppStream 2\.0 Base Image Release Notes](base-image-version-history.md)
++ [AppStream 2\.0 Base Image and Managed Image Update Release Notes](base-image-version-history.md)
 + [Amazon AppStream 2\.0 Service Quotas](limits.md)
 + [AppStream 2\.0 Pricing](https://aws.amazon.com/appstream2/pricing/)

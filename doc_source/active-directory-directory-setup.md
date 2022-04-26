@@ -1,6 +1,9 @@
 # Tutorial: Setting Up Active Directory<a name="active-directory-directory-setup"></a>
 
-To use Active Directory with AppStream 2\.0, you must first register your directory configuration by creating a Directory Config object in AppStream 2\.0\. This object includes the information required to join streaming instances to an Active Directory domain\. You create a Directory Config object by using the AppStream 2\.0 management console, AWS SDK, or AWS CLI\. You can then use your directory configuration to launch domain\-joined fleets and image builders\. 
+To use Active Directory with AppStream 2\.0, you must first register your directory configuration by creating a Directory Config object in AppStream 2\.0\. This object includes the information required to join streaming instances to an Active Directory domain\. You create a Directory Config object by using the AppStream 2\.0 management console, AWS SDK, or AWS CLI\. You can then use your directory configuration to launch domain\-joined Always\-On and On\-Demand fleets and image builders\. 
+
+**Note**  
+You can only join Always\-On and On\-Demand fleet streaming instances to an Active Directory domain\.
 
 **Topics**
 + [Step 1: Create a Directory Config Object](#active-directory-setup-config)
@@ -45,7 +48,7 @@ Next, using the AppStream 2\.0 image builder, create a new image with Active Dir
 
 1. Follow the procedures in [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
-1. For the base image selection step, use an AWS base image released on or after July 24, 2017\. For a current list of released AWS images, see [AppStream 2\.0 Base Image Release Notes](base-image-version-history.md)\.
+1. For the base image selection step, use an AWS base image released on or after July 24, 2017\. For a current list of released AWS images, see [AppStream 2\.0 Base Image and Managed Image Update Release Notes](base-image-version-history.md)\.
 
 1. For **Step 3: Configure Network**, select a VPC and subnets with network connectivity to your Active Directory environment\. Select the security groups that are set up to allow access to your directory through your VPC subnets\.
 
@@ -61,9 +64,9 @@ Next, using the AppStream 2\.0 image builder, create a new image with Active Dir
 
 ## Step 3: Create a Domain\-Joined Fleet<a name="active-directory-setup-fleet"></a>
 
-Using the private image created in the previous step, create an Active Directory domain\-joined fleet for streaming applications\. The domain can be different than the one that you used for the image builder to create the image\.
+Using the private image created in the previous step, create an Active Directory domain\-joined Always\-On or On\-Demand fleet for streaming applications\. The domain can be different than the one that you used for the image builder to create the image\.
 
-**To create a domain\-joined fleet**
+**To create a domain\-joined Always\-On or On\-Demand fleet**
 
 1. Follow the procedures in [Create a Fleet](set-up-stacks-fleets.md#set-up-stacks-fleets-create)\.
 

@@ -1,7 +1,7 @@
 # Administer Your Amazon AppStream 2\.0 Images<a name="administer-images"></a>
 
 Available images are listed in the **Image Registry** in the AppStream 2\.0 console, and categorized by visibility as follows: 
-+ **Public** — Base images that are owned and made available by AWS\. Base images include the latest Windows operating system and the AppStream 2\.0 agent software\. You can use these base images to create new images that include your own applications\. For information about the base images released by AWS, see [AppStream 2\.0 Base Image Release Notes](base-image-version-history.md)\. 
++ **Public** — Base images that are owned and made available by AWS\. Base images include the latest Windows operating system and the AppStream 2\.0 agent software\. You can use these base images to create new images that include your own applications\. For information about the base images released by AWS, see [AppStream 2\.0 Base Image and Managed Image Update Release Notes](base-image-version-history.md)\. 
 + **Private** — Images that you create and own, and that you have not shared with other AWS accounts\. 
 + **Shared with others** — Images that you create and own, and that you have shared with one or more AWS accounts in the same AWS Region\. When you share an image with another AWS account, you can specify whether the image can be used for an image builder \(to create a new image\), for a fleet, or both\.
 + **Shared with me** — Images that are created and owned by another AWS account in the same AWS Region, and that are shared with your AWS account\. Depending on the permissions that the owner provided when sharing the image with your account, you can use this image for image builders, for fleets, or both\.
@@ -34,9 +34,6 @@ You can delete your private images when you no longer need them\. You can't dele
 ## Copy an Image That You Own to Another AWS Region<a name="copy-image-different-region"></a>
 
 You can copy images that you own to another AWS Region\. Using the same image across different AWS Regions can help simplify global deployments of your applications on AppStream 2\.0\. By deploying your applications in the AWS Regions that are geographically closest to your users, you can help provide your users with a more responsive experience\.
-
-**Note**  
-You can have a maximum of two concurrent image copies per AWS account per destination Region\. This is a hard quota \(limit\), which means that you can't request an increase for this limit\. 
 
 **To copy an image that you own to another AWS Region**
 
@@ -129,9 +126,81 @@ Follow these steps to stop sharing an image that you own with any other AWS acco
 
 ## Keep Your AppStream 2\.0 Image Up\-to\-Date<a name="keep-image-updated"></a>
 
+You can keep your AppStream 2\.0 image up\-to\-date by doing either of the following:
++ [Update an Image by Using Managed AppStream 2\.0 Image Updates](#keep-image-updated-managed-image-updates) – This update method provides the latest Windows operating system updates and driver updates, and the latest AppStream 2\.0 agent software\.
++ [Update the AppStream 2\.0 Agent Software by Using Managed AppStream 2\.0 Agent Versions](#keep-image-updated-manage-image-versions) – This update method provides the latest AppStream 2\.0 agent software\.
+
+### Update an Image by Using Managed AppStream 2\.0 Image Updates<a name="keep-image-updated-managed-image-updates"></a>
+
+AppStream 2\.0 provides an automated way to update your image with the latest Windows operating system updates, driver updates, and AppStream 2\.0 agent software\. With managed AppStream 2\.0 image updates, you select the image that you want to update\. AppStream 2\.0 creates an image builder in the same AWS account and Region to install the updates and create the new image\. After the new image is created, you can test it on a pre\-production fleet before updating your production fleets or sharing the image with other AWS accounts\. 
+
+**Note**  
+After your new image is created, you're responsible for maintaining updates for the Windows operating system\. To do so, you can continue using managed AppStream 2\.0 image updates\.  
+You're also responsible for maintaining your applications and their dependencies\. To add other applications, update existing applications, or change image settings, you must start and reconnect to the image builder that you used to create the image\. Or, if you deleted that image builder, launch a new image builder that is based on your image\. Then, make your changes and create a new image\.
+
+#### Prerequisites<a name="keep-image-updated-managed-image-updates-prerequisites"></a>
+
+The following are prerequisites and considerations for working with managed image updates\.
++ Make sure that your AppStream 2\.0 account quotas \(also referred to as limits\) are sufficient to support the creation of a new image builder and a new image\. To request a quota increase, you can use the Service Quotas console at [https://console\.aws\.amazon\.com/servicequotas/](https://console.aws.amazon.com/servicequotas/)\. For information about default AppStream 2\.0 quotas, see [Amazon AppStream 2\.0 Service Quotas](limits.md)\. 
++ You must own the image that you update\. You can't update an image that is shared with you\.
++ When AppStream 2\.0 creates an image builder to install the latest Windows operating system updates, driver updates, and AppStream 2\.0 agent software, and creates the new image, you're charged for the image builder instance while it's updating\.
++ Supported images must be created from a base image released on 2017\-07\-24T00:00:00Z or later\.
++ English and Japanese are supported display languages\. For more information, see [Specify a Default Display Language](configure-default-regional-settings.md#configure-default-dsiplay-language)\.
++ Use the latest version of SSM Agent\. For version information, see [AppStream 2\.0 Base Image and Managed Image Update Release Notes](base-image-version-history.md)\. For installation information, see [Manually install SSM Agent on EC2 instances for Windows Server](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-win.html)\. 
+
+#### How to Update an Image by Using Managed AppStream 2\.0 Image Updates<a name="keep-image-updated-managed-image-updates-how-to-update-image"></a>
+
+To update an AppStream 2\.0 image with the latest patches, driver updates, and AppStream 2\.0 agent software, perform the following steps\.
+
+1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
+
+1. In the navigation pane, choose **Images**, **Image Registry**\. 
+
+1. In the image list, choose the image that you want to update\. Verify that the status of the image is **Available**\.
+
+1. Choose **Actions**, **Update**\.
+
+1. In the **Update image** dialog box, do the following:
+   + For **New image name**, enter an image name that is unique within the AWS account and Region\. The image name can't begin with "Amazon," "AWS," or "AppStream\." 
+   + For **New image display name**, you can optionally enter a name to display for the image\.
+   + For **New image description**, you can optionally provide a description for the image\.
+   + For **Tags**, you can choose **Add Tag**, and type the key and value for the tag\. To add more tags, repeat this step\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\.
+
+1. Choose **Update image**\.
+
+   If your current image is already up to date, a message notifies you\.
+
+1. In the navigation pane, choose **Images**, and then choose **Image Builder**\. 
+
+1. In the list of image builders, verify that a new image builder appears in the **Updating** state\. The name of the image builder includes a random 10\-digit suffix\.
+
+   The image builder is the smallest size in the instance family that you chose for the new image in step 5\. No subnet is specified because the image builder is not attached to your virtual private cloud \(VPC\)\.
+
+1. Choose **Image Registry** and verify that your new image appears in the list\.
+
+   While your image is being created, the image status in the image registry of the console appears as **Creating**\.
+
+1. After your image is created, AppStream 2\.0 performs a qualification process to verify that the image works as expected\. 
+
+   During this time, the image builder, which is also used for this process, appears in the **Image Builder** list with a status of **Pending Qualification**\. 
+
+1. After the qualification process successfully completes, a **Success** message appears at the top of the console and the image status in the image registry appears as **Available**\.
+
+   In addition, the image builder that AppStream 2\.0 created is deleted automatically\.
+**Note**  
+Depending on the volume of Windows operating system updates, it might take several hours for an image update to complete\. If an issue prevents the image from being updated, a red icon with an exclamation point appears next to the image name, and the image status in the image registry appears as **Failed**\. If this occurs, select the image, choose the **Notifications** tab, and review any error notifications\. For more information, see the information in the [Image Internal Service](troubleshooting-notification-codes.md#troubleshooting-notification-codes-image) section of the documentation for troubleshooting notification codes\.  
+If the qualification process is not successful, the image builder that AppStream 2\.0 created is still deleted automatically\.
+
+1. After AppStream 2\.0 creates the new image, test the image on a pre\-production fleet\. After you verify that your applications work as expected, update your production fleet with the new image\.
+
+### Update the AppStream 2\.0 Agent Software by Using Managed AppStream 2\.0 Agent Versions<a name="keep-image-updated-manage-image-versions"></a>
+
 AppStream 2\.0 provides an automated way to update your image builder with newer AppStream 2\.0 agent software\. Doing so enables you to create a new image whenever a new version of the agent is released\. You can then test the image before updating your production fleets\. For more information about how to manage the AppStream 2\.0 agent software, see [Manage AppStream 2\.0 Agent Versions](base-images-agent.md)\. 
 
-You are responsible for installing and maintaining the updates for the Windows operating system, your applications, and their dependencies\. To keep your AppStream 2\.0 image updated with the latest Windows operating system updates, do one of the following:
+**Note**  
+You're responsible for installing and maintaining the updates for the Windows operating system, your applications, and their dependencies\.
+
+To keep your AppStream 2\.0 image updated with the latest Windows operating system updates, do one of the following:
 + Install your applications on the latest base image each time a new image is released\.
 + Install the updates for the Windows operating system, your applications, and their dependencies on an existing image builder\.
 + Install the updates for the Windows operating system, your applications, and their dependencies on a new image builder from an existing image\.

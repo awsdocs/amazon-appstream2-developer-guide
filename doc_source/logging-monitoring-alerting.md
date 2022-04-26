@@ -18,7 +18,7 @@ When you enable [application settings persistence](how-it-works-app-settings-per
 For more information, see [AWS Trusted Advisor](https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html) in the *AWS Support User Guide*\.
 
 **Amazon S3 Access Logs**  
-If your users have application settings data or home folders data stored in Amazon S3 buckets, consider viewing Amazon S3 server access logs to monitor access\. These logs provide detailed records about requests that are made to a bucket\. Server access logs are useful for many applications\. For example, access log information can be useful in security and access audits\. For more information, see [Amazon S3 Server Access Logging](https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerLogs.html) in the *Amazon Simple Storage Service Developer Guide*\.
+If your users have application settings data or home folders data stored in Amazon S3 buckets, consider viewing Amazon S3 server access logs to monitor access\. These logs provide detailed records about requests that are made to a bucket\. Server access logs are useful for many applications\. For example, access log information can be useful in security and access audits\. For more information, see [Amazon S3 Server Access Logging](https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerLogs.html) in the *Amazon Simple Storage Service User Guide*\.
 
 **AppStream 2\.0 Usage Reports**  
 You can subscribe to AppStream 2\.0 usage reports to receive detailed reports about how your users are using the service\. The reports include how long users stream and which applications they launch\. For more information, see [AppStream 2\.0 Usage Reports](configure-usage-reports.md)\. 

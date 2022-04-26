@@ -10,6 +10,8 @@ The following are possible issues that might occur for your users when they use 
 + [Some keyboard shortcuts aren’t working for users during their streaming sessions\.](#keyboard-shortcuts-dont-work)
 + [My users' drawing tablets are not working with the streaming applications I deployed\.](#troubleshooting-client-users-drawing-tablets-not-working)
 + [The Japanese language input method doesn't work for my users during their streaming sessions](#japanese-language-input-method-doesnt-work-for-users)
++ [My user sees an error about reaching the max number of streaming sessions when they try to launch an application from the application catalog\.](#troubleshooting-max-sessions)
++ [My user sees a black screen or the desktop, and their application doesn’t launch on an Elastic fleet\. No error appears\.](#troubleshooting-black-screen)
 
 ## My users' AppStream 2\.0 client installations fail, and they're getting a message stating that \.NET Framework 4\.6 is required\.<a name="troubleshooting-client-no-internet-net-framework-462-fails"></a>
 
@@ -132,3 +134,16 @@ For information about Mac keyboard shortcuts for switching Japanese input method
 Because AppStream 2\.0 streaming sessions run on Windows instances, Mac users might experience different key mappings\.
 + Keyboard shortcuts for switching Japanese input methods — [Set up and switch to a Japanese input source on Mac](https://support.apple.com/guide/japanese-input-method/set-up-and-switch-to-japanese-jpim10267/mac)
 + Keyboard short link cuts for Japanese conversions — [Keyboard shortcuts for Japanese conversions on Mac](https://support.apple.com/guide/japanese-input-method/keyboard-shortcuts-jpim10263/6.2.1/mac)
+
+## My user sees an error about reaching the max number of streaming sessions when they try to launch an application from the application catalog\.<a name="troubleshooting-max-sessions"></a>
+
+With AppStream 2\.0 Elastic fleets, you specify a maximum number of users that can stream concurrently using the max concurrency parameter\. Any user that tries to stream beyond that value receives this error\. To resolve this issue, you can increase the maximum number of concurrent streams, or advise your user to wait for another user to complete their streaming session\.
+
+**Note**  
+You might need to request a limit increase to increase the instance type and size limit\.
+
+## My user sees a black screen or the desktop, and their application doesn’t launch on an Elastic fleet\. No error appears\.<a name="troubleshooting-black-screen"></a>
+
+This can happen if the application launch path is incorrect, and AppStream 2\.0 can't launch the application\. You can validate the application launch path by using Desktop View on the fleet to navigate the root volume\. Validate that the application executable exists at the path specified\.
+
+If you're not able to find the app block's VHD or setup script on the streaming instance, AppStream 2\.0 might not have been able to download them from the S3 bucket\. Validate that the VPC you specified has access to S3\. For more information, see [Using Amazon S3 VPC Endpoints for AppStream 2\.0 Features](managing-network-vpce-iam-policy.md)\.

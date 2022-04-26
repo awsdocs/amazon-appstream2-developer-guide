@@ -5,6 +5,7 @@ This topic provides information to help you understand the requirements for the 
 ## System Requirements and Considerations<a name="client-system-requirements"></a>
 
 The AppStream 2\.0 client requires the following:
++ Follow the principle of least privilege when launching the AppStream 2\.0 client\. The client should only run with the level of privilege required to complete a task\. 
 + Operating system — Windows 7, Windows 8, or Windows 10 \(32\-bit or 64\-bit\)
 + Microsoft Visual C\+\+ 2015 Redistributable or later\. For information about the latest Visual C\+\+ redistributable packages for Visual Studio 2015, 2017, and 2019, see [The latest supported Visual C\+\+ downloads](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) in the Microsoft Support documentation\.
 + RAM — 2 GB minimum
@@ -25,6 +26,9 @@ The AppStream 2\.0 client supports the following features and devices\.
 + [Peripheral Devices](#feature-support-peripheral-devices)
 
 ### Native Application Mode<a name="feature-support-native-application-mode"></a>
+
+**Note**  
+Native application mode is not available when streaming from Linux instances\.
 
 Native application mode provides a familiar experience for your users during their AppStream 2\.0 streaming sessions\. When your users connect to AppStream 2\.0 in this mode, they can work with their remote streaming applications in much the same way that they work with applications that are installed on their local computer\. Each streaming application in native application mode opens in its own window, and application icons appear on the taskbar on your users' local PC\.
 
@@ -73,7 +77,7 @@ With certain exceptions, USB redirection is required for the AppStream 2\.0 clie
 
 **Topics**
 + [Multiple Monitors](#feature-support-multiple-monitors)
-+ [Real\-Time Audio\-Video](#feature-support-real-time-av)
++ [Real\-Time Audio\-Video \(Client for Windows\)](#feature-support-real-time-av)
 + [USB Devices](#feature-support-USB-devices-qualified)
 + [Drawing Tablets](#feature-support-drawing-tablets)
 + [Keyboard Shortcuts](#feature-support-keyboard-shortcuts)
@@ -97,7 +101,7 @@ The following AppStream 2\.0 instance types support up to 2 monitors with a maxi
 **Note**  
 Non\-graphics instance types \(General Purpose, Memory Optimized, and Compute Optimized\) support a maximum display resolution of 2560x1600 pixels per monitor\.
 
-#### Real\-Time Audio\-Video<a name="feature-support-real-time-av"></a>
+#### Real\-Time Audio\-Video \(Client for Windows\)<a name="feature-support-real-time-av"></a>
 
 AppStream 2\.0 supports real\-time audio\-video \(AV\) by redirecting local webcam video input to AppStream 2\.0 streaming sessions\. This capability enables your users to use their local webcam for video and audio conferencing within an AppStream 2\.0 streaming session\. With real\-time AV and support for real\-time audio, your users can collaborate by using familiar video and audio conferencing applications without having to leave their AppStream 2\.0 streaming session\.
 
@@ -109,7 +113,9 @@ To configure and test support for real\-time AV, complete the following steps\.
 
 1. Create a new image builder or connect to an existing image builder that meets the following requirements:
    + The image builder must run Windows Server 2016 or Windows Server 2019\.
-   + The image builder must use a version of the AppStream 2\.0 agent released on or after December 17, 2020\.
+   + The image builder must use a version of the AppStream 2\.0 agent released on or after June 1, 2021\.
+   + For AppStream 2\.0 agents released on or after May 17, 2021, real\-time AV is enabled by default\. To create a streaming URL for testing, you can skip steps 3 through 6 and disconnect from the image builder\. If you need to disable real\-time AV, complete all of the steps, and disable webcam permissions in step 4\.
+   + The image builder must use a version of the AppStream 2\.0 agent released on or after June 24, 2021 to support video when connecting using web browser access\. For more information about supported web browsers, see [Web Browser Access](web-browser-user.md)\.
 
    For information about how to create an image builder, see [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md)\.
 
@@ -124,7 +130,7 @@ If the image builder that you want to connect to is joined to an Active Director
 1. Under **HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Amazon\\AppStream\\**, create a new registry value that has the following type, name, and value data:
    + Registry value type: DWORD
    + Registry value name: WebcamPermission
-   + Registry value data: 1 \(Hexademical\)
+   + Registry value data \(Hexademical\): 1 to enable or 0 to disable webcam permissions
 
 1. After you create the registry value, switch to **Template User** or to a domain user account that does not have administrator permissions on the image builder\. To switch to **Template User**, in the toolbar on the top right of the session window, choose **Admin Commands**, **Switch User**, **Template User**\.
 
@@ -140,17 +146,21 @@ If the image builder that you want to connect to is joined to an Active Director
 
    1. Choose **Copy Link** and save the link to a secure and accessible location\. You will use the link in the next step to connect to the image builder\.
 
-1. Using the streaming URL that you just created, connect to the image builder by using the AppStream 2\.0 client\. The client must be version 1\.1\.257 or later\.
+1. Using the streaming URL that you just created, connect to the image builder by using the AppStream 2\.0 client or web browser access\.
 
-1. Test the real\-time AV experience on the image builder by following the steps in [Video and Audio Conferencing](client-application-windows-user.md#client-application-windows-how-to-use-local-webcam-user)\.
+1. Test the real\-time AV experience on the image builder by following the steps in [Video and Audio Conferencing \(Client for Windows\)](client-application-windows-user.md#client-application-windows-how-to-use-local-webcam-user)\.
 
 1. After you verify that real\-time AV is working as expected, disconnect from your streaming session, reconnect to the image builder and follow the necessary steps in Image Assistant to finish creating your image\. For information about how to create an image, see [Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console](tutorial-image-builder.md)\.
 
-After you finish configuring your image builder and creating an image that supports real\-time AV, you can make this feature available to your users\. Ensure that version 1\.1\.257 or later of the AppStream 2\.0 client is installed on your users' computers\.
+After you finish configuring your image builder and creating an image that supports real\-time AV, you can make this feature available to your users on AppStream 2\.0 fleets\. Ensure that version 1\.1\.257 or later of the AppStream 2\.0 client is installed on your users' computers\.
 
-To use this feature, users must connect to their streaming session by using the AppStream 2\.0 client\. Local webcam video input redirection is already enabled by default when the AppStream 2\.0 client is installed\. Because USB redirection isn't used for this feature, you don't need to qualify webcams, and users don't need to share these devices with AppStream 2\.0 to use them during streaming sessions\. 
+**Note**  
+To use real\-time AV with the AppStream 2\.0 client, your AppStream 2\.0 base image and agent version should be June 1, 2021 or later\. We recommend using the latest AppStream 2\.0 client\. For guidance that you can provide to your users to help them use real\-time AV, see [Video and Audio Conferencing \(Client for Windows\)](client-application-windows-user.md#client-application-windows-how-to-use-local-webcam-user)\.  
+To use real\-time AV with web browser access, your AppStream 2\.0 image must use a version of the AppStream 2\.0 agent released on or after June 24, 2021\. For more information on supported web browsers, see [Web Browser Access](web-browser-user.md)\.
 
-For guidance that you can provide to your users to help them use real\-time AV, see [Video and Audio Conferencing](client-application-windows-user.md#client-application-windows-how-to-use-local-webcam-user)\.
+
+
+
 
 #### USB Devices<a name="feature-support-USB-devices-qualified"></a>
 
@@ -166,6 +176,9 @@ USB redirection is required for most local USB devices to be used during AppStre
 
 In other cases, USB devices are already enabled for use with AppStream 2\.0 and no further configuration is required\. For example, smart card redirection is already enabled by default when the AppStream 2\.0 client is installed\. Because USB redirection isn't used when this feature is enabled, you don't need to qualify smart card readers, and users don't need to share these devices with AppStream 2\.0 to use them during streaming sessions\.
 
+**Note**  
+USB redirection is currently not supported for Linux\-based fleet instances\.
+
 ##### Smart Cards<a name="feature-support-USB-devices-qualified-smart-cards"></a>
 
 AppStream 2\.0 supports using a smart card for Windows sign in to Active Directory\-joined streaming instances and in\-session authentication for streaming applications\. Because smart card redirection is enabled by default, users can use smart card readers that are connected to their local computer and their smart cards without USB redirection\.
@@ -180,7 +193,7 @@ AppStream 2\.0 supports the use of Active Directory domain passwords or smart ca
 
 To ensure that your users can use their smart cards for Windows sign in to Active Directory\-joined streaming instances and for in\-session authentication for streaming applications, you must:
 + Use an image that meets the following requirements:
-  + The image must be created from a base image published by AWS on or after December 28, 2020\. For more information, see [AppStream 2\.0 Base Image Release Notes](base-image-version-history.md)\.
+  + The image must be created from a base image published by AWS on or after December 28, 2020\. For more information, see [AppStream 2\.0 Base Image and Managed Image Update Release Notes](base-image-version-history.md)\.
   + The image must use a version of the AppStream 2\.0 agent released on or after January 4, 2021\. For more information, see [AppStream 2\.0 Agent Release Notes](agent-software-versions.md)\.
 + Enable **Smart card sign in for Active Directory** on the AppStream 2\.0 stack that your users access for streaming sessions, as described in this section\.
 **Note**  
@@ -210,6 +223,9 @@ Alternatively, you can enable smart card sign in for Active Directory by using t
 ##### Smart Card Redirection<a name="feature-support-USB-devices-qualified-smart-cards-support"></a>
 
 When the AppStream 2\.0 client is installed, smart card redirection is enabled by default\. When this feature is enabled, users can use smart card readers that are connected to their local computer and their smart cards during AppStream 2\.0 streaming sessions without USB redirection\. During AppStream 2\.0 streaming sessions, users' smart card readers and smart cards remain accessible for use with local applications\. The AppStream 2\.0 client redirects the smart card API calls from users’ streaming applications to their local smart card\. 
+
+**Note**  
+Smart card redirection is currently not supported for Linux\-based fleet instances\.
 
 **Note**  
 If your smart card requires middleware software to operate, the middleware software must be installed on both the user’s device, and the AppStream 2\.0 streaming instance\.

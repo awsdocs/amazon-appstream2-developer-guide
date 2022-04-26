@@ -1,9 +1,11 @@
 # Tutorial: Create a Custom AppStream 2\.0 Image by Using the AppStream 2\.0 Console<a name="tutorial-image-builder"></a>
 
-This tutorial describes how to create a custom Amazon AppStream 2\.0 image that contains applications you can stream to your users, and default application and Windows settings to enable your users to get started with their applications quickly\. To complete this tutorial, you must already have an image builder\. If you don't have an image builder, see [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md)\.
+This tutorial describes how to create AppStream 2\.0 images that are based on Microsoft Windows Server operating systems\. If you want to create custom images that are based on Amazon Linux 2 operating system, see [Tutorial: Create a Custom Linux\-Based AppStream 2\.0 Image](tutorial-create-linux-image.md)\.
+
+In this tutorial, you will learn how to create a custom Amazon AppStream 2\.0 image that contains applications you can stream to your users, and default application and Windows settings to enable your users to get started with their applications quickly\. To complete this tutorial, you must already have an image builder\. If you don't have an image builder, see [Launch an Image Builder to Install and Configure Streaming Applications](tutorial-image-builder-create.md)\.
 
 **Important**  
-This tutorial includes information that applies to the latest base image release\. For more information, see [AppStream 2\.0 Base Image Release Notes](base-image-version-history.md)\.
+This tutorial includes information that applies to the latest base image release\. For more information, see [AppStream 2\.0 Base Image and Managed Image Update Release Notes](base-image-version-history.md)\.
 
 **Topics**
 + [Step 1: Install Applications on the Image Builder](#tutorial-image-builder-install)
@@ -150,7 +152,7 @@ In this step, choose an image name and finish creating your image\.
 
    You can also add one or more tags to the image\. To do so, choose **Add Tag**, and type the key and value for the tag\. To add more tags, repeat this step\. For more information, see [Tagging Your Amazon AppStream 2\.0 Resources](tagging-basic.md)\. When you're done, choose **Next**\.
 **Note**  
-If you choose a base image that is published by AWS on or after December 7, 2017, the option **Always use the latest agent version** appears, selected by default\. We recommend that you leave this option selected so that streaming instances that are launched from the image always use the latest version of the agent\. If you disable this option, you cannot enable it after you finish creating the image\. For information about the latest release of the AppStream 2\.0 agent, see [AppStream 2\.0 Agent Release Notes](agent-software-versions.md)\.
+If you choose a base image that is published by AWS on or after December 7, 2017, the option **Always use the latest agent version** appears, selected by default\. We recommend that you leave this option selected so that streaming instances that are launched from the image always use the latest version of the agent\. If you disable this option, you can't enable it again after you finish creating the image\. For information about the latest release of the AppStream 2\.0 agent, see [AppStream 2\.0 Agent Release Notes](agent-software-versions.md)\.
 
 1. In **6\. Review**, verify the image details\. To make changes, choose **Previous** to navigate to the appropriate Image Assistant tab, make your changes, and then proceed through the steps in Image Assistant as needed\.
 
@@ -167,11 +169,12 @@ If you choose a base image that is published by AWS on or after December 7, 2017
     To continue creating images, start the image builder and connect to it from the console, or create a new image builder\.
 
 **Note**  
-After you create an image, you can't change it\. To add other applications, update existing applications, or change image settings, you must start and reconnect to the image builder that you used to create the image, or, if you deleted that image builder, launch a new image builder that is based on your image\. Then, make your changes and create a new image\. 
+After you create your image, you are responsible for maintaining updates for the Windows operating system\. To do so, you can use managed AppStream 2\.0 image updates\. You are also responsible for maintaining updates for your applications and their dependencies\. For more information, see [Keep Your AppStream 2\.0 Image Up\-to\-Date](administer-images.md#keep-image-updated)\.  
+To add other applications, update existing applications, or change image settings, you must start and reconnect to the image builder that you used to create the image\. Or, if you deleted that image builder, launch a new image builder that is based on your image\. Then, make your changes and create a new image\. 
 
 ## Step 7 \(Optional\): Tag and Copy an Image<a name="tutorial-image-builder-tag-copy"></a>
 
-You can add one or more tags to an image during image creation or after you create an image\. You can also copy the image within the same Region or to a new Region within the same AWS account\. Copying a source image results in an identical but distinct destination image\. AWS does not copy any user\-defined tags, however\. Also, you can only copy custom images that you create, not the base images that are provided by AWS\. 
+You can add one or more tags to an image during image creation or after you create an image\. You can also copy the image within the same Region or to a new Region within the same Amazon Web Services account\. Copying a source image results in an identical but distinct destination image\. AWS does not copy any user\-defined tags, however\. Also, you can only copy custom images that you create, not the base images that are provided by AWS\. 
 
 **Note**  
 You can copy up to two images at the same time to a destination\. If the destination to which you are copying an image is at the image limit, you receive an error\. To copy the image in this case, you must first remove images from the destination\. After the destination is below the image quota \(also referred to as limit\), initiate the image copy from the source Region\. For more information, see [Amazon AppStream 2\.0 Service Quotas](limits.md)\.

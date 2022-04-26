@@ -11,6 +11,7 @@ The following information helps you use a web browser to connect to AppStream 2\
 + [Touchscreen Devices](#web-browser-using-touchscreen-devices-user)
 + [Function Keys](#web-browser-using-function-keys-user)
 + [Remap the Mac Option and Command Keys](#web-browser-remap-mac-keys-user)
++ [Video and Audio Conferencing](#web-browser-video-audio)
 + [Drawing Tablets](#web-browser-drawing-tablets-user)
 + [Relative Mouse Offset](#web-browser-relative-mouse-offset-web-access-user)
 + [Troubleshooting](#web-browser-troubleshooting-user)
@@ -25,7 +26,7 @@ You can connect to AppStream 2\.0 from any location by using an HTML5\-capable w
 + Microsoft Internet Explorer version 11 or later
 
 **Note**  
-Only the Google Chrome or Mozilla Firefox browsers are supported for use with drawing tablets during AppStream 2\.0 streaming sessions\.
+Only the Google Chrome or Mozilla Firefox browsers are supported for use with drawing tablets during AppStream 2\.0 streaming sessions\. Webcam redirection for video and audio conferencing is supported on Chromium\-based web browsers, including Google Chrome and Microsoft Edge\.
 
 ## Setup<a name="web-browser-setup-user"></a>
 
@@ -73,6 +74,7 @@ You can use dual monitors for application streaming sessions that are started on
 + Google Chrome
 + Mozilla Firefox
 + Safari
++ Microsoft Edge
 
 For browser\-based streaming sessions on dual monitors, a maximum display resolution of 2560x1600 pixels is supported per monitor\. If you require more than two monitors, or a display resolution that is greater than 2560x1600 pixels per monitor, you must use the AppStream 2\.0 client\.
 
@@ -139,6 +141,34 @@ Follow these steps to remap the Mac Option and Command keys during an AppStream 
 
 1. Choose the options that correspond to the keys that you want to remap\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/images/AppStream-Mac-Key-Remapping-for-Windows.png)
+
+## Video and Audio Conferencing<a name="web-browser-video-audio"></a>
+
+AppStream 2\.0 real\-time audio\-video \(AV\) redirects your local webcam video and microphone audio input to AppStream 2\.0 streaming sessions\. That way, you can use your local devices for video and audio conferencing within your AppStream 2\.0 streaming session\. 
+
+**To use a local webcam and microphone within an AppStream 2\.0 streaming session**
+
+1. Connect to AppStream 2\.0 from a Chromium\-based web browser, including Google Chrome and Microsoft Edge\. 
+**Note**  
+Most popular HTML5 compatible browsers support audio input in an AppStream 2\.0 session, including Chrome, Edge, and Firefox\.
+**Note**  
+If your web browser doesn't support video or audio input, the options won't appear on the AppStream 2\.0 toolbar\.
+
+1. Configure your web browser’s camera and microphone permissions to set default devices and allow access to AppStream 2\.0\.
+**Note**  
+For information about how to configure Google Chrome, see [Use your camera & microphone](https://support.google.com/chrome/answer/2693767)\.
+
+1. In the top\-left of the AppStream 2\.0 toolbar, choose the Settings icon, and then choose **Enable webcam**\.
+**Note**  
+If the microphone or webcam icons don't appear in the **Settings** menu, contact your AppStream 2\.0 administrator\. Your web browser might not support video or audio input, or your administrator might need to perform additional configuration tasks\. For more information, see [Real\-Time Audio\-Video \(Client for Windows\)](client-system-requirements-feature-support.md#feature-support-real-time-av)\.
+
+1. Depending on your web browser settings, you might be prompted to allow the camera to be used by your web browser\. Choose **Allow** to enable your camera\.
+
+1. In the top\-left of the AppStream 2\.0 toolbar, choose the Settings icon, and then choose **Enable microphone**\.
+
+1. Depending on your web browser settings, you might be prompted to the microphone to be used by your web browser\. Choose **Allow** to enable your microphone\.
+**Note**  
+If you have more than one webcam or microphone and want to change the devices that you use for streaming within an AppStream 2\.0 session, you must clear your web browser settings for the AppStream 2\.0 website URL and configure default devices\. Then, refresh your browser or start a new session for the changes to take effect, and repeat the above steps to enable your webcam and microphone\.
 
 ## Drawing Tablets<a name="web-browser-drawing-tablets-user"></a>
 

@@ -4,11 +4,11 @@ Complete the following tasks to get set up for Amazon AppStream 2\.0\.
 
 ## Sign Up for AWS<a name="setting-up-sign-up-for-aws"></a>
 
-When you sign up for AWS, your AWS account is automatically signed up for all services, including AppStream 2\.0\. You are charged only for the services that you use\.
+When you sign up for AWS, your Amazon Web Services account is automatically signed up for all services, including AppStream 2\.0\. You are charged only for the services that you use\.
 
-If you have an AWS account already, skip to the next task\. If you don't have an AWS account, use the following procedure to create one\.
+If you have an Amazon Web Services account already, skip to the next task\. If you don't have an Amazon Web Services account, use the following procedure to create one\.
 
-**To create an AWS account**
+**To create an Amazon Web Services account**
 
 1. Open [https://portal\.aws\.amazon\.com/billing/signup](https://portal.aws.amazon.com/billing/signup)\.
 

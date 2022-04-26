@@ -5,13 +5,14 @@ AppStream 2\.0 supports the following persistent storage options for users in yo
 + Google Drive for G Suite
 + OneDrive for Business
 
-You can enable one or more options for your organization\. When you enable home folders for an AppStream 2\.0 stack, users of the stack can access a persistent storage folder during their application streaming sessions\. No further conﬁguration is required for your users to access their home folder\. Data stored by users in their home folder is automatically backed up to an Amazon Simple Storage Service bucket in your AWS account and is made available to those users in subsequent sessions\. 
+You can enable one or more options for your organization\. When you enable home folders for an AppStream 2\.0 stack, users of the stack can access a persistent storage folder during their application streaming sessions\. No further conﬁguration is required for your users to access their home folder\. Data stored by users in their home folder is automatically backed up to an Amazon Simple Storage Service bucket in your Amazon Web Services account and is made available to those users in subsequent sessions\. 
 
 Files and folders are encrypted in transit using Amazon S3's SSL endpoints\. Files and folders are encrypted at rest using Amazon S3\-managed encryption keys\. 
 
 Home folders are stored on fleet instances in the following default locations:
-+ Non\-domain\-joined instances: C:\\Users\\PhotonUser\\My Files\\Home Folder
-+ Domain\-joined instances: C:\\Users\\%username%\\My Files\\Home Folder
++ Non\-domain\-joined Windows instances: C:\\Users\\PhotonUser\\My Files\\Home Folder
++ Domain\-joined Windows instances: C:\\Users\\%username%\\My Files\\Home Folder
++ Linux instances: \~/MyFiles/HomeFolder
 
 As an administrator, use the applicable path if you configure your applications to save to the home folder\. In some cases, your users may not be able to find their home folder because some applications do not recognize the redirect that displays the home folder as a top\-level folder in File Explorer\. If this is the case, your users can access their home folder by browsing to the same directory in File Explorer\.
 
@@ -38,8 +39,8 @@ For more information, see:
 
 Before enabling home folders, you must do the following:
 + Check that you have the correct AWS Identity and Access Management \(IAM\) permissions for Amazon S3 actions\. For more information, see [Using IAM Policies to Manage Administrator Access to the Amazon S3 Bucket for Home Folders and Application Settings Persistence](s3-iam-policy.md)\.
-+ Use an image that was created from an AWS base image released on or after May 18, 2017\. For a current list of released AWS images, see [AppStream 2\.0 Base Image Release Notes](base-image-version-history.md)\.
-+ Enable network connectivity to Amazon S3 from your virtual private cloud \(VPC\) by configuring internet access or a VPC endpoint for Amazon S3\. For more information, see [Networking and Access for Amazon AppStream 2\.0](managing-network.md) and [Using Amazon S3 VPC Endpoints for Home Folders and Application Settings Persistence](managing-network-vpce-iam-policy.md)\.
++ Use an image that was created from an AWS base image released on or after May 18, 2017\. For a current list of released AWS images, see [AppStream 2\.0 Base Image and Managed Image Update Release Notes](base-image-version-history.md)\.
++ Enable network connectivity to Amazon S3 from your virtual private cloud \(VPC\) by configuring internet access or a VPC endpoint for Amazon S3\. For more information, see [Networking and Access for Amazon AppStream 2\.0](managing-network.md) and [Using Amazon S3 VPC Endpoints for AppStream 2\.0 Features](managing-network-vpce-iam-policy.md)\.
 
 You can enable or disable home folders while creating a stack \(see [Create a Stack](set-up-stacks-fleets.md#set-up-stacks-fleets-install)\), or after the stack is created by using the AWS Management Console for AppStream 2\.0, AWS SDK, or AWS CLI\. For each AWS Region, home folders are backed up by an Amazon S3 bucket\.
 
@@ -102,7 +103,7 @@ AppStream 2\.0 manages user content stored in home folders by using Amazon S3 bu
 appstream2-36fb080bb8-region-code-account-id-without-hyphens
 ```
 
-Where `region-code` is the AWS Region code in which the stack is created and `account-id-without-hyphens` is your AWS account ID\. The first part of the bucket name, `appstream2-36fb080bb8-`, does not change across accounts or Regions\. 
+Where `region-code` is the AWS Region code in which the stack is created and `account-id-without-hyphens` is your Amazon Web Services account ID\. The first part of the bucket name, `appstream2-36fb080bb8-`, does not change across accounts or Regions\. 
 
 For example, if you enable home folders for stacks in the US West \(Oregon\) Region \(us\-west\-2\) on account number 123456789012, the service creates an Amazon S3 bucket in that Region with the name shown\. Only an administrator with sufficient permissions can delete this bucket\.
 
@@ -114,9 +115,9 @@ As mentioned earlier, disabling home folders for stacks does not delete any user
 
 ### Home Folder Content Synchronization<a name="home-folders-content-synchronization"></a>
 
-When home folders are enabled, AppStream 2\.0 creates a unique folder for each user in which to store their content\. The folder is created as a unique Amazon S3 prefix that uses a hash of the user name within an S3 bucket for your AWS account and Region\. After AppStream 2\.0 creates the home folder in Amazon S3, it copies the accessed content in that folder from the S3 bucket to the fleet instance\. This enables the user to access their home folder content quickly, from the fleet instance, during their streaming session\. Changes that you make to a user’s home folder content in an S3 bucket and that the user makes to their home folder content on a fleet instance are synchronized between Amazon S3 and AppStream 2\.0 as follows\. 
+When home folders are enabled, AppStream 2\.0 creates a unique folder for each user in which to store their content\. The folder is created as a unique Amazon S3 prefix that uses a hash of the user name within an S3 bucket for your Amazon Web Services account and Region\. After AppStream 2\.0 creates the home folder in Amazon S3, it copies the accessed content in that folder from the S3 bucket to the fleet instance\. This enables the user to access their home folder content quickly, from the fleet instance, during their streaming session\. Changes that you make to a user’s home folder content in an S3 bucket and that the user makes to their home folder content on a fleet instance are synchronized between Amazon S3 and AppStream 2\.0 as follows\. 
 
-1. At the beginning of a user’s AppStream 2\.0 streaming session, AppStream 2\.0 catalogs the home folder files that are stored for that user in the Amazon S3 bucket for your AWS account and Region\. 
+1. At the beginning of a user’s AppStream 2\.0 streaming session, AppStream 2\.0 catalogs the home folder files that are stored for that user in the Amazon S3 bucket for your Amazon Web Services account and Region\. 
 
 1. A user’s home folder content is also stored on the AppStream 2\.0 fleet instance from which they stream\. When a user accesses their home folder on the AppStream 2\.0 fleet instance, the list of cataloged files is displayed\. 
 
@@ -124,7 +125,7 @@ When home folders are enabled, AppStream 2\.0 creates a unique folder for each u
 
 1. After AppStream 2\.0 downloads the file to the fleet instance, synchronization occurs after the file is accessed 
 
-1. If the user changes the file during their streaming session, AppStream 2\.0 uploads the new version of the file from the fleet instance to the S3 bucket every periodically or at the end of the streaming session\. However, the file is not downloaded from the S3 bucket again during the streaming session\.
+1. If the user changes the file during their streaming session, AppStream 2\.0 uploads the new version of the file from the fleet instance to the S3 bucket periodically or at the end of the streaming session\. However, the file is not downloaded from the S3 bucket again during the streaming session\.
 
 The following sections describe synchronization behavior when you add, replace, or remove a user's home folder file in Amazon S3\.
 
@@ -196,23 +197,23 @@ You can enable and disable home folders for a stack by using the AWS CLI or AWS 
 Use the following [create\-stack](https://docs.aws.amazon.com/cli/latest/reference/appstream/create-stack.html) command to enable home folders while creating a new stack:
 
 ```
-aws appstream create-stack --name ExampleStack –-storage-connectors type=HOMEFOLDERS
+aws appstream create-stack --name ExampleStack --storage-connectors ConnectorType=HOMEFOLDERS
 ```
 
 Use the following [update\-stack](https://docs.aws.amazon.com/cli/latest/reference/appstream/update-stack.html) command to enable home folders for an existing stack:
 
 ```
-aws appstream update-stack –-name ExistingStack –-storage-connectors type=HOMEFOLDERS
+aws appstream update-stack --name ExistingStack --storage-connectors ConnectorType=HOMEFOLDERS
 ```
 
 Use the following command to disable home folders for an existing stack\. This command does not delete any user data\.
 
 ```
-aws appstream update-stack –name ExistingStack –-delete-storage-connectors
+aws appstream update-stack --name ExistingStack --delete-storage-connectors
 ```
 
 ### Additional Resources<a name="home-folders-admin-additional"></a>
 
-For more information about managing Amazon S3 buckets and best practices, see the following topics in the *Amazon Simple Storage Service Developer Guide*: 
+For more information about managing Amazon S3 buckets and best practices, see the following topics in the *Amazon Simple Storage Service User Guide*: 
 + You can provide offline access to user data for your users with Amazon S3 policies\. For more information, see [Amazon S3: Allows IAM Users Access to Their S3 Home Directory, Programmatically and In the Console](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_s3_home-directory-console.html) in the *IAM User Guide*\.
 + You can enable file versioning for content stored in Amazon S3 buckets used by AppStream 2\.0\. For more information, see [Using Versioning](https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html)\.

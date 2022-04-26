@@ -4,10 +4,11 @@ Amazon AppStream 2\.0 uses EC2 instances to stream applications\. You launch ins
 
 When you launch an image builder, you choose:
 + An instance type — AppStream 2\.0 provides different instance types with various compute, memory, and graphics configurations\. The instance type must align with the instance family you need\. For more information, see [AppStream 2\.0 Instance Families](instance-types.md)\.
-+ An operating system — AppStream 2\.0 provides the following Microsoft Windows operating systems:
++ An operating system — AppStream 2\.0 provides the following operating systems:
   + Windows Server 2012 R2
   + Windows Server 2016 Base
   + Windows Server 2019 Base
+  + Amazon Linux 2
 + The subnet and security groups to use — Make sure that the subnet and security groups provide access to the network resources that your applications require\. Typical network resources required by applications may include licensing servers, database servers, file servers, and application servers\.
 
 **Topics**
@@ -15,4 +16,5 @@ When you launch an image builder, you choose:
 + [Connect to an Image Builder](managing-image-builders-connect.md)
 + [Image Builder Actions](managing-image-builders-actions.md)
 + [Instance Metadata for AppStream 2\.0 Image Builders](user-instance-metadata-image-builders.md)
-+ [AppStream 2\.0 Base Image Release Notes](base-image-version-history.md)
++ [Install AMD Driver on Graphics Design Instances](AMD-driver.md)
++ [AppStream 2\.0 Base Image and Managed Image Update Release Notes](base-image-version-history.md)

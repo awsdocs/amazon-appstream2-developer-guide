@@ -2,7 +2,7 @@
 
 AppStream 2\.0 provides on\-instance session scripts\. You can use these scripts to run your own custom scripts when specific events occur in users' streaming sessions\. For example, you can use custom scripts to prepare your AppStream 2\.0 environment before your users' streaming sessions begin\. You can also use custom scripts to clean up streaming instances after users complete their streaming sessions\. 
 
-Session scripts are specified within an AppStream 2\.0 image\. These scripts are run within the user context or the system context\. If your session scripts use the standard out to write information, error, or debugging messaging, these can be optionally saved to an Amazon S3 bucket within your AWS account\.
+Session scripts are specified within an AppStream 2\.0 image\. These scripts are run within the user context or the system context\. If your session scripts use the standard out to write information, error, or debugging messaging, these can be optionally saved to an Amazon S3 bucket within your Amazon Web Services account\.
 
 **Topics**
 + [Run Scripts Before Streaming Sessions Begin](#run-scripts-before-streaming-sessions-begin)
@@ -18,7 +18,7 @@ Session scripts are specified within an AppStream 2\.0 image\. These scripts are
 
 You can configure your scripts to run for a maximum of 60 seconds before your users' applications launch and their streaming sessions begin\. Doing so enables you to customize the AppStream 2\.0 environment before users start streaming their applications\. When the session scripts run, a loading spinner displays for your users\. When your scripts complete successfully or the maximum waiting time elapses, your users' streaming session will begin\. If your scripts don't complete successfully, an error message displays for your users\. However, your users are not prevented from using their streaming session\.
 
-When you specify a file name, you must use a double backslash\. For example:
+When you specify a file name on a Windows instance, you must use a double backslash\. For example:
 
 C:\\\\Scripts\\\\Myscript\.bat
 
@@ -104,9 +104,9 @@ You can also configure your scripts to run after users' streaming sessions end\.
 
 ## Create and Specify Session Scripts<a name="create-specify-session-scripts"></a>
 
-Session scripts are configured, specified, and stored within an AppStream 2\.0 image\. After you create your session scripts, perform the following steps on an image builder to specify the scripts\.
+You can configure and specify session scripts for Always\-on, On\-demand, and Elastic fleets\.
 
-**To configure and specify session scripts**
+**To configure and specify session scripts for Always\-on and On\-demand fleets**
 
 1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
 
@@ -116,23 +116,55 @@ Session scripts are configured, specified, and stored within an AppStream 2\.0 i
 
 1. When prompted, choose **Administrator**\.
 
-1. Navigate to C:\\AppStream\\SessionScripts, and open the **config\.json** configuration file\.
+1. Navigate to `C:\AppStream\SessionScripts`, and open the `config.json` configuration file\.
 
    For information about session script parameters, see [Session Scripts Configuration File](#session-script-configuration-file)\.
 
-1. After you finish making your changes, save and close the **config\.json** file\.
+1. After you finish making your changes, save and close the `config.json` file\.
 
-1. On the image builder desktop, open Image Assistant\.
+1. On the image builder desktop, open **Image Assistant**\.
 
-1. Optionally, specify any other applications that you want to include in the image\.
+1. \(Optional\) Specify any additional applications that you want to include in the image\.
 
 1. Follow the necessary steps in Image Assistant to finish creating your image\.
 
    If the session scripts configuration can't be validated \(for example, if the \.json file is not correctly formatted\), you are notified when you choose **Disconnect and create image**\. 
+**Note**  
+To locate the session scripts configuration file for Linux\-based image builders, navigate to `/opt/appstream/SessionScripts/config.json`\.
+
+**To configure and specify session scripts for Elastic fleets**
+
+1. Create a zip file that contains the session scripts and config\.json file\. The scripts files will be copied to the following locations\. You must use these locations for your config\.json\. 
+   + For Windows, use `C:\AppStream\SessionScripts\SessionScript`\.
+   + For Linux, use `/opt/appstream/SessionScripts/SessionScript`\.
+**Note**  
+In order to run the session script files, make sure that the \.zip file only contains the session scripts and `config.json` files, and not the containing folder\. For more information, see [Session Scripts Configuration File](#session-script-configuration-file)\.
+
+1. Upload the zip file to an Amazon S3 bucket in your account\.
+**Note**  
+Your VPC must provide access to the Amazon S3 bucket\. For more information, see [Using Amazon S3 VPC Endpoints for AppStream 2\.0 Features](managing-network-vpce-iam-policy.md)\.  
+You must have your S3 bucket and AppStream 2\.0 fleet in the same AWS Region\.  
+You must have IAM permissions to perform the `S3:GetObject` action on the session scripts object in the Amazon S3 bucket\. To learn more about storing the session scripts in an Amazon S3 bucket, see [Store Application Icon, Setup Script, Session Script, and VHD in S3 Bucket](store-s3-bucket.md)\.
+
+1. Open the AppStream 2\.0 console at [https://console\.aws\.amazon\.com/appstream2](https://console.aws.amazon.com/appstream2)\.
+
+1. In the navigation pane, choose **Fleets**\.
+
+1. Choose an Elastic fleet that you want to update, and then choose **View Details**\.
+
+1. On the **Session scripts settings** tab, choose **Edit**\.
+
+1. For **Session scripts object in S3**, either enter the S3 URI that represents the session scripts object, or choose **Browse S3** to navigate to your S3 buckets and find the session scripts object\.
+
+1. After you finish making your changes, choose **Save Changes**\.
+
+1. At this point, session scripts are available for all fleet instances launched\.
+**Note**  
+You can also configure the session scripts when you create a new Elastic fleet\. 
 
 ## Session Scripts Configuration File<a name="session-script-configuration-file"></a>
 
-To locate the session scripts configuration file, navigate to C:\\AppStream\\SessionScripts\\config\.json\. The file is formatted as follows\.
+To locate the session scripts configuration file in a Windows instance, navigate to C:\\AppStream\\SessionScripts\\config\.json\. On a Linux instance, navigate to /opt/appstream/SessionScripts/config\.json\. The file is formatted as follows\.
 
 **Note**  
 The configuration file is in \.json format\. Verify that any text you type in this file is in valid \.json format\.
@@ -217,7 +249,7 @@ The arguments for your session script or executable file\.
 **Length constraints:** The maximum length is 1,000 characters\.
 
 ***S3LogEnabled***  
-When the value for this parameter is set to **True**, an S3 bucket is created within your AWS account to store the logs created by the session script\. By default, this value is set to **True**\. For more information, see the *Logging Session Script Output* section later in this topic\.   
+When the value for this parameter is set to **True**, an S3 bucket is created within your Amazon Web Services account to store the logs created by the session script\. By default, this value is set to **True**\. For more information, see the *Logging Session Script Output* section later in this topic\.   
 **Type**: Boolean  
 **Required**: No  
 **Allowed values:** **True**, **False**
@@ -248,7 +280,7 @@ The log files are uploaded when the session script returns a value, or the value
 
 ## Use Storage Connectors with Session Scripts<a name="use-storage-connectors-with-session-scripts"></a>
 
-When AppStream 2\.0 storage connectors are enabled, they begin mounting when the session start scripts run\. If your script relies on the storage connectors being mounted, you can wait for the connectors to be available\. AppStream 2\.0 maintains the mount status of the storage connectors in the Windows registry, at the following key:
+When AppStream 2\.0 storage connectors are enabled, they begin mounting when the session start scripts run\. If your script relies on the storage connectors being mounted, you can wait for the connectors to be available\. AppStream 2\.0 maintains the mount status of the storage connectors in the Windows registry on Windows instances, at the following key:
 
 HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Amazon\\AppStream\\Storage\\<provided user name>\\<Storage connector>
 
@@ -270,15 +302,23 @@ To view these registry keys, you must have Microsoft \.NET Framework version 4\.
 
 | Value | Description | 
 | --- | --- | 
-| 0 | Storage connector not be enabled for this user | 
-| 1 | Storage connector mounting is in progress | 
-| 2 | Storage connector mounted successfully | 
-| 3 | Storage connector mounting failed | 
-| 4 | Storage connector mounting is enabled, but not mounted yet | 
+| 0 |  Storage connector not be enabled for this user  | 
+| 1 |  Storage connector mounting is in progress  | 
+| 2 |  Storage connector mounted successfully  | 
+| 3 |  Storage connector mounting failed  | 
+| 4 |  Storage connector mounting is enabled, but not mounted yet  | 
+
+On Linux instances, you can check the home folder mount status by looking at the value of appstream\_home\_folder\_mount\_status in the file \~/\.config/appstream\-home\-folder/appstream\-home\-folder\-mount\-status\.
+
+
+| Value | Description | 
+| --- | --- | 
+| True |  Home folder is mounted successfully  | 
+| False | Home folder is not mounted yet | 
 
 ## Enable Amazon S3 Bucket Storage for Session Script Logs<a name="enable-S3-bucket-storage-session-script-logs"></a>
 
-When you enable Amazon S3 logging in your session script configuration, AppStream 2\.0 captures standard output from your session script\. The output is periodically uploaded to an S3 bucket within your AWS account\. For every AWS Region, AppStream 2\.0 creates a bucket in your account that is unique to your account and the Region\.
+When you enable Amazon S3 logging in your session script configuration, AppStream 2\.0 captures standard output from your session script\. The output is periodically uploaded to an S3 bucket within your Amazon Web Services account\. For every AWS Region, AppStream 2\.0 creates a bucket in your account that is unique to your account and the Region\.
 
 You do not need to perform any configuration tasks to manage these S3 buckets\. They are fully managed by the AppStream 2\.0 service\. The log files that are stored in each bucket are encrypted in transit using Amazon S3's SSL endpoints and at rest using Amazon S3\-managed encryption keys\. The buckets are named in a specific format as follows:
 
@@ -290,7 +330,7 @@ appstream-logs-region-code-account-id-without-hyphens-random-identifier
 This is the AWS Region code in which the stack is created with Amazon S3 bucket storage enabled for session script logs\.
 
 ***account\-id\-without\-hyphens***  
-Your AWS account identifier\. The random ID ensures that there is no conflict with other buckets in that Region\. The first part of the bucket name, `appstream-logs`, does not change across accounts or Regions\.
+Your Amazon Web Services account identifier\. The random ID ensures that there is no conflict with other buckets in that Region\. The first part of the bucket name, `appstream-logs`, does not change across accounts or Regions\.
 
 For example, if you specify session scripts in an image in the US West \(Oregon\) Region \(us\-west\-2\) on account number 123456789012, AppStream 2\.0 creates an Amazon S3 bucket within your account in that Region with the name shown\. Only an administrator with sufficient permissions can delete this bucket\.
 

@@ -1,11 +1,15 @@
-# Update an AppStream 2\.0 Fleet with a New Image<a name="update-fleets-new-image"></a>
+# Update an AppStream 2\.0 Fleet<a name="update-fleets-new-image"></a>
 
-When you create a new Amazon AppStream image, you must update your fleets to make the applications and data on the new image available to users\. If your update is minor \(for example, patching applications or the operating system\), you can update your running fleet\. When new streaming instances are created, they are created from the updated image\. Changing the image on a running fleet does not disrupt users who have active streaming sessions\. Unused streaming instances are replaced periodically, while streaming instances that users are connected to are terminated after the streaming sessions are finished\. 
+You can make updates to an existing AppStream 2\.0 fleet\. 
+
+When you create a new AppStream 2\.0 image, you must update your Always\-On and On\-Demand fleets to make the applications and data on the new image available to users\. If your update is minor \(for example, patching applications or the operating system\), you can update your running fleet\. When new streaming instances are created, they are created from the updated image\. Changing the image on a running fleet does not disrupt users who have active streaming sessions\. Unused streaming instances are replaced periodically, while streaming instances that users are connected to are terminated after the streaming sessions are finished\. 
 
 You can update a fleet with a new image that runs the same operating system when the fleet is in a **Running** or **Stopped** state\. However, you can update a fleet with a new image that runs a different operating system only when the fleet is in a **Stopped** state\.
 
 **Note**  
 The application catalog that AppStream 2\.0 displays to users is based on the current image that is associated with the fleet\. If the updated image contains applications that are not specified in the older image, the applications may not launch if the user streams from an instance that is based on the older image\.
+
+## Update a fleet with a new image<a name="update-fleets"></a>
 
 **To update an AppStream 2\.0 fleet with a new image**
 
@@ -38,3 +42,17 @@ If your organization requires smart card sign in, you must create a streaming UR
 1. In the **Edit Fleet** dialog box, the list of available images displays in the **Name** list\. Select the new image from the list\. 
 
 1. Choose **Update**\.
+
+## Manage applications associated to an Elastic fleet<a name="manage-apps"></a>
+
+**To manage applications associated to an Elastic fleet**
+
+You can associate and disassociate applications from an Elastic fleet at any time\. Changes to the applications associated to an Elastic fleet are visible to users currently streaming from the fleet, but may not take effect\. For example, if you disassociate an application from a fleet, it will be removed from the application catalog, but the virtual hard disk will remain mounted to existing streaming sessions\.
+
+1. Open the [AppStream 2\.0 console](managing-image-builders-connect.md#managing-image-builders-connect-console)\.
+
+1. In the left navigation pane, choose **Fleets**, then either select the name of the fleet, or select the fleet radio button, then choose **View details**\.
+
+1. To associate a new application to the fleet, choose **Associate** in **Assigned applications**, select the application to be associated, and choose **Associate**\.
+
+1. To disassociate an existing application from the fleet, select the application to disassociate, choose **Disassociate**, and confirm that you want to disassociate the selected application by choosing **Disassociate**\.

@@ -7,11 +7,20 @@ For more information about the client, see [Provide Access Through the AppStream
 
 | Client version | Release date | Changes | 
 | --- | --- | --- | 
+| 1\.1\.398 | 02\-23\-2022 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
+| 1\.1\.394 | 02\-08\-2022 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
+| 1\.1\.386 | 12\-20\-2021 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
+| 1\.1\.360 | 11\-15\-2021 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
+| 1\.1\.333 | 09\-08\-2021 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
+| 1\.1\.319  | 08\-16\-2021 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
+| 1\.1\.304 | 08\-02\-2021 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
+| 1\.1\.294 | 04\-26\-2021 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
+| 1\.1\.285 | 03\-08\-2021 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
 | 1\.1\.257 | 12\-28\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
 | 1\.1\.195 | 08\-18\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
 | 1\.1\.179 | 07\-08\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
 | 1\.1\.160 | 04\-28\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
-| 1\.1\.156 | 04\-22\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html) Users who have this version of the AppStream 2\.0 client installed must have \.NET Framework version 4\.7\.2 or later installed on the same PC\. For a list of the \.NET Framework versions available for download, see [Download \.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework)\.  | 
+| 1\.1\.156 | 04\-22\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  Users who have this version of the AppStream 2\.0 client installed must have \.NET Framework version 4\.7\.2 or later installed on the same PC\. For a list of the \.NET Framework versions available for download, see [Download \.NET Framework](https://dotnet.microsoft.com/download/dotnet-framework)\.   | 
 | 1\.1\.137 | 03\-08\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
 | 1\.1\.136 | 03\-05\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 
 | 1\.1\.129 | 02\-28\-2020 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/appstream2/latest/developerguide/client-release-versions.html)  | 

@@ -44,7 +44,7 @@ AppStream 2\.0 adds an Amazon S3 bucket policy to the buckets that it creates to
 }
 ```
 
- For more information, see [Deleting or Emptying a Bucket](https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-or-empty-bucket.html) in the *Amazon Simple Storage Service Developer Guide*\.
+ For more information, see [Deleting or Emptying a Bucket](https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-or-empty-bucket.html) in the *Amazon Simple Storage Service User Guide*\.
 
 ## Restricting Administrator Access to the Amazon S3 Bucket for Home Folders and Application Settings Persistence<a name="s3-iam-policy-restricted-access"></a>
 

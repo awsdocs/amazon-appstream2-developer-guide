@@ -85,7 +85,9 @@ The following high\-level overview describes the process for programmatically cr
 
 This section describes the Image Assistant CLI operations that you can use to create and manage your AppStream 2\.0 image\.
 
-The executable file that includes the command line interface is located at: C:\\Program Files\\Amazon\\Photon\\ConsoleImageBuilder\\Image\-Assistant\.exe\. For your convenience, this executable file is included in the Windows PATH variable\. This lets you call the Image Assistant CLI operations without specifying the absolute path to the executable file\. To call these operations, type the image\-assistant\.exe command\.
+On Windows image builders, the executable file that includes the command line interface is located at: C:\\Program Files\\Amazon\\Photon\\ConsoleImageBuilder\\Image\-Assistant\.exe\. For your convenience, this executable file is included in the Windows PATH variable\. This lets you call the Image Assistant CLI operations without specifying the absolute path to the executable file\. To call these operations, type the image\-assistant\.exe command\.
+
+On Linux image builders, the image assistant tool is located at /usr/local/appstream/image\-assistant/AppStreamImageAssistant, with a symbolic link at /bin/AppStreamImageAssistant\.
 
 ### `help` operation<a name="help-operation-image-assistant-cli"></a>
 
@@ -108,6 +110,9 @@ Prints to standard out the list of available operations with a description of th
 ### `add-application` operation<a name="add-application-operation-image-assistant-cli"></a>
 
 Adds the application to the application list for AppStream 2\.0 users\. Applications in this list are included in the application catalog\. The application catalog displays to users when they sign in to an AppStream 2\.0 streaming session\.
+
+**Note**  
+If you need to make changes to an application configuration, remove the application and add the application with the updated settings\.
 
 **Synopsis**
 
@@ -206,6 +211,9 @@ list-applications
 
 Copies the specified Windows user’s profile to the Windows default user profile\. New users who stream inherit the settings stored in the specified profile\.
 
+**Note**  
+This operation is not supported by the Linux image assistant CLI tool\. 
+
 **Synopsis**
 
 ```
@@ -234,6 +242,9 @@ If your image builder isn’t joined to a Microsoft Active Directory domain, ent
 ### `reset-user-profile` operation<a name="reset-user-profile-image-assistant-cli"></a>
 
 Deletes the Windows user profile for the specified user\.
+
+**Note**  
+This operation is not supported by the Linux image assistant CLI tool\. 
 
 **Synopsis**
 
@@ -280,8 +291,8 @@ create-image
 **Options**
 
 **`--name` \(string\)**  
-The name for the AppStream 2\.0 image\. The name must be unique within the AWS account and AWS Region\. The maximum length is 100 characters\. Allowed characters are:  
-a\-z, A\-Z, 0\-9, and underscores \(\_\)  
+The name for the AppStream 2\.0 image\. The name must be unique within the Amazon Web Services account and AWS Region\. The maximum length is 100 characters\. Allowed characters are:  
+a\-z, A\-Z, 0\-9, underscores \(\_\), hyphens \(\-\), and periods \(\.\)  
 The image name cannot start with any of the following prefixes: 'aws', 'appstream', and 'amazon’\. These prefixes are reserved for AWS use\.
 
 **`--description` \(string\)**  
@@ -312,6 +323,6 @@ Performs validation without creating the image\. Use this command to identify wh
 | --- | --- | --- | 
 | 0 |  \{"status": 0, "message": "Success"\}  |  The workflow to create the image was initiated successfully\.  | 
 | 1 |  \{"status": 1, "message": "Administrator privileges are required to perform this operation"\}  |  Administrator privileges are required to complete the operation\.  | 
-| 1 |  \{"status": 1, "message": "An image with the given name already exists"\}  |  An image with the specified name already exists in the AWS account\.  | 
+| 1 |  \{"status": 1, "message": "An image with the given name already exists"\}  |  An image with the specified name already exists in the Amazon Web Services account\.  | 
 | 1 |  \{"status": 1, "message": "Invalid value \(tags\)"\}  |  The specified tags are not valid\.  | 
 | 255 |  \{"status": 255, "message": <error message>\}  |  An unexpected error occurred\. Try the request again\. If the error persists, contact AWS Support for assistance\. For more information, see [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.  | 

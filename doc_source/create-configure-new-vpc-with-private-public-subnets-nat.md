@@ -15,7 +15,7 @@ If you already have a VPC, complete the steps in [Add a NAT Gateway to an Existi
 
 ## Step 1: Allocate an Elastic IP Address<a name="allocate-elastic-ip"></a>
 
-Before you create your VPC, you must allocate an Elastic IP address in your AppStream 2\.0 Region\. You must first allocate an Elastic IP address for use in your VPC, and then associate it with your NAT gateway\. With an Elastic IP address, you can mask the failure of streaming instance by rapidly remapping the address to another streaming instance in your VPC\. For more information, see [Elastic IP Addresses](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html) in the *Amazon VPC User Guide*\.
+Before you create your VPC, you must allocate an Elastic IP address in your AppStream 2\.0 Region\. You must first allocate an Elastic IP address for use in your VPC, and then associate it with your NAT gateway\. For more information, see [Elastic IP Addresses](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html) in the *Amazon VPC User Guide*\.
 
 **Note**  
 Charges may apply to Elastic IP addresses that you use\. For more information, see [Elastic IP Addresses](https://aws.amazon.com/ec2/pricing/on-demand/#Elastic_IP_Addresses) on the Amazon EC2 pricing page\.

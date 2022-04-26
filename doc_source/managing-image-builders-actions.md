@@ -24,3 +24,5 @@ None of these actions can be performed on an instance in any of the following in
 + **Stopping**
 + **Starting**
 + **Deleting**
++ **Updating**
++ **Pending Qualification**

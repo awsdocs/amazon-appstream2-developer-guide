@@ -10,6 +10,9 @@ You can enable one or more options for your organization\. When you enable Googl
 **Important**  
 You can enable Google Drive for G Suite for accounts in your G Suite domains only, but not for personal Gmail accounts\.
 
+**Note**  
+You can enable Google Drive for Windows stacks, but not Linux stacks\.
+
 **Topics**
 + [Enable Google Drive for Your AppStream 2\.0 Users](#enable-google-drive)
 + [Disable Google Drive for Your AppStream 2\.0 Users](#disable-google-drive)
@@ -22,6 +25,7 @@ Before enabling Google Drive, you must do the following:
 
    The fleet must use an image that uses a version of the AppStream 2\.0 agent released on or after May 31, 2018\. For more information, see [AppStream 2\.0 Agent Release Notes](agent-software-versions.md)\. The fleet must also have access to the internet\.
 + Add Amazon AppStream 2\.0 as a trusted app in one or more domains associated with your G Suite account\. You can enable Google Drive for up to 10 domains\.
++ Have a Windows\-based stack\. \(Linux\-based stacks are not supported\)\.
 
 Follow these steps to add Amazon AppStream 2\.0 as a trusted app in your G Suite domains\.
 
@@ -63,9 +67,11 @@ Follow these steps to add Amazon AppStream 2\.0 as a trusted app in your G Suite
 | Asia Pacific \(Singapore\) | 856871139998\-4eia2n1db5j6gtv4c1rdte1fh1gec8vs\.apps\.googleusercontent\.com | 
 | Asia Pacific \(Sydney\) | 151535156524\-b889372osskprm4dt1clpm53mo3m9omp\.apps\.googleusercontent\.com  | 
 | Asia Pacific \(Tokyo\) | 922579247628\-qpl9kpihg3hu5dul2lphbjs4qbg6mjm2\.apps\.googleusercontent\.com  | 
+| Canada \(Central\) |  872792838542\-t39aqh72jv895c89thtk6v83sl6jugm2\.apps\.googleusercontent\.com | 
 | Europe \(Frankfurt\) | 643727794574\-1se5360a77i84je9j3ap12obov1ib76q\.apps\.googleusercontent\.com | 
 | Europe \(Ireland\) | 599492309098\-098muc7ofjfo9vua5rm5u9q2k3mlok3j\.apps\.googleusercontent\.com  | 
-| AWS GovCloud \(US\-West\) | `996065833880-litfkb2vfd7c65nt7s24r7t8le5bc9bl.apps.googleusercontent.com` For more information about using AppStream 2\.0 in AWS GovCloud \(US\-West\), see [Amazon AppStream 2\.0](https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-appstream2.html) in the *AWS GovCloud \(US\) User Guide*\. | 
+| Europe \(London\) | 682555519925\-usbn2sk1ffgo8odgf23nj66ri71na0k5\.apps\.googleusercontent\.com | 
+| AWS GovCloud \(US\-West\) |  `996065833880-litfkb2vfd7c65nt7s24r7t8le5bc9bl.apps.googleusercontent.com`  For more information about using AppStream 2\.0 in AWS GovCloud \(US\-West\), see [Amazon AppStream 2\.0](https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-appstream2.html) in the *AWS GovCloud \(US\) User Guide*\.   | 
 
 Follow these steps to enable Google Drive for your AppStream 2\.0 users\.
 

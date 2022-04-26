@@ -30,7 +30,7 @@ This topic describes how to configure an existing IAM role so that you can use i
 **Prerequisites**
 
 The IAM role that you want to use with an AppStream 2\.0 image builder or fleet streaming instance must meet the following prerequisites:
-+ The IAM role must be in the same AWS account as the AppStream 2\.0 streaming instance\.
++ The IAM role must be in the same Amazon Web Services account as the AppStream 2\.0 streaming instance\.
 + The IAM role cannot be a service role\.
 + The trust relationship policy that is attached to the IAM role must include the AppStream 2\.0 service as the principal\. A *principal* is an entity in AWS that can perform actions and access resources\. The policy must also include the `sts:AssumeRole` action\. This policy configuration defines AppStream 2\.0 as a trusted entity\.
 
@@ -39,7 +39,7 @@ The IAM role that you want to use with an AppStream 2\.0 image builder or fleet 
 
 **To enable the AppStream 2\.0 service principal to assume an existing IAM role**
 
-To perform the following steps, you must sign into the account as an IAM user who has the permissions required to list and update IAM roles\. If you don't have the required permissions, ask your AWS account administrator either to perform these steps in your account or to grant you the required permissions\.
+To perform the following steps, you must sign into the account as an IAM user who has the permissions required to list and update IAM roles\. If you don't have the required permissions, ask your Amazon Web Services account administrator either to perform these steps in your account or to grant you the required permissions\.
 
 1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -96,7 +96,7 @@ This topic describes how to create a new IAM role so that you can use it with im
 
 1. Choose **Next: Review**\.
 
-1. For **Role name**, type a role name that is unique within your AWS account\. Because other AWS resources might reference the role, you can't edit the name of the role after it has been created\.
+1. For **Role name**, type a role name that is unique within your Amazon Web Services account\. Because other AWS resources might reference the role, you can't edit the name of the role after it has been created\.
 
 1. For **Role description**, keep the default role description or type a new one\.
 

@@ -1,9 +1,12 @@
 # Fleet Auto Scaling for Amazon AppStream 2\.0<a name="autoscaling"></a>
 
-Fleet Auto Scaling lets you change the size of your AppStream 2\.0 fleet automatically to match the supply of available instances to user demand\. Because one user requires one fleet instance, the size of your fleet determines the number of users who can stream concurrently\. You can define scaling policies that adjust the size of your fleet automatically based on a variety of utilization metrics, and optimize the number of available instances to match user demand\. You can also choose to turn off automatic scaling and make the fleet run at a fixed size\.
+Fleet Auto Scaling lets you change the size of your AppStream 2\.0 Always\-On or On\-Demand fleet automatically to match the supply of available instances to user demand\. Because one user requires one fleet instance, the size of your fleet determines the number of users who can stream concurrently\. You can define scaling policies that adjust the size of your fleet automatically based on a variety of utilization metrics, and optimize the number of available instances to match user demand\. You can also choose to turn off automatic scaling and make the fleet run at a fixed size\.
 
 **Note**  
-As you develop your plan for AppStream 2\.0 fleet scaling, make sure that your network configuration meets your requirements\. For larger deployments that require hundreds or thousands of fleet instances and involve unpredictable user demand, Fleet Auto Scaling may not be the best solution\. For information about how to configure a network environment that supports effective fleet scaling and considerations for larger deployments, see [VPC Setup Recommendations](vpc-setup-recommendations.md)\.
+Elastic fleet capacity is automatically managed by AppStream 2\.0 for you\. You do not need to create auto scaling rules to manage the number of fleet streaming instances that are available for Elastic fleets\.
+
+**Note**  
+As you develop your plan for AppStream 2\.0 fleet scaling, make sure that your network configuration meets your requirements\. 
 
 Before you can use Fleet Auto Scaling, Application Auto Scaling needs permissions to access Amazon CloudWatch alarms and AppStream 2\.0 fleets\. For more information, see [Network Access to Your Streaming InstanceUsing AWS Managed Policies and Linked Roles to Manage Administrator Access to AppStream 2\.0 Resources](controlling-administrator-access-with-policies-roles.md) and [Using IAM Policies to Manage Administrator Access to Application Auto Scaling](autoscaling-iam-policy.md)\.
 

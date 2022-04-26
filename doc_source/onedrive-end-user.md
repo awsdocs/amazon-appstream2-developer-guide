@@ -1,5 +1,8 @@
 # Use OneDrive for Business<a name="onedrive-end-user"></a>
 
+**Note**  
+OneDrive for Business is currently not supported for Linux\-based streaming instances\.
+
 If your AppStream 2\.0 administrator has enabled this file storage option, you can add your OneDrive account to AppStream 2\.0\. After you add your account and sign in to an AppStream 2\.0 streaming session, you can do the following in OneDrive:
 + Open and edit files and folders that you store in OneDrive\. Other users cannot access your content unless you choose to share it\.
 + Upload and download files between your local computer and OneDrive\. Any changes that you make to your files and folders in OneDrive during a streaming session are backed up and synchronized automatically\. They are available to you when you sign in to your OneDrive account and access OneDrive outside of your streaming session\.

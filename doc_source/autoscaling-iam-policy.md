@@ -20,10 +20,22 @@ In addition to having the permissions defined in the [AmazonAppStreamFullAccess]
           "cloudwatch:EnableAlarmActions",
           "cloudwatch:ListMetrics",
           "cloudwatch:PutMetricAlarm",
-          "iam:PassRole",
           "iam:ListRoles"
       ],
       "Resource": "*"
+    },
+    {
+      "Sid": "iamPassRole",
+      "Effect": "Allow",
+      "Action": [
+          "iam:PassRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+         "StringEquals": {
+             "iam:PassedToService": "application-autoscaling.amazonaws.com"
+          }
+      }
     }
   ]
 }

@@ -1,6 +1,9 @@
 # Configure Default Regional Settings for Your AppStream 2\.0 Users<a name="configure-default-regional-settings"></a>
 
-In AppStream 2\.0, users can configure their streaming sessions to use settings that are specific to their location or language\. For more information, see [Enable Your AppStream 2\.0 Users to Configure Their Regional Settings](regional-settings.md)\. You can also configure your fleets to use default settings that are specific to your users’ location or language\. In particular, you can apply the following Windows settings to your fleets:
+**Note**  
+The instructions on this page only apply to Windows fleets\. 
+
+In AppStream 2\.0, users in a Windows stack can configure their streaming sessions to use settings that are specific to their location or language\. For more information, see [Enable Your AppStream 2\.0 Users to Configure Their Regional Settings](regional-settings.md)\. You can also configure your fleets to use default settings that are specific to your users’ location or language\. In particular, you can apply the following Windows settings to your fleets:
 + **Time Zone** — Determines the system time used by Windows and any applications that rely on the operating system time\. AppStream 2\.0 makes available the same options for this setting as Windows Server 2012 R2, Windows Server 2016, and Windows Server 2019\. 
 + **Display Language** — Determines the display language used by the Windows operating system and certain Windows applications\.
 + **System Locale** — Determines the code pages \(ANSI, MS\-DOS, and Macintosh\) and bitmap font files that Windows uses for non\-Unicode applications in different languages\.

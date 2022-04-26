@@ -1,6 +1,6 @@
 # Enable and Administer OneDrive for Business for Your AppStream 2\.0 Users<a name="onedrive"></a>
 
-AppStream 2\.0 supports the following persistent storage options for users in your organization: 
+AppStream 2\.0 supports the following persistent storage options for users in your organization\. 
 + OneDrive for Business
 + Google Drive for G Suite
 + Home folders
@@ -10,6 +10,9 @@ You can enable one or more options for your organization\. When you enable OneDr
 **Important**  
 You can enable OneDrive for Business for accounts in your OneDrive domains only, but not for personal accounts\. AppStream 2\.0 requires that you configure your Microsoft Azure Active Directory environment to allow end\-user consent to applications\. For more information, see [Configure how end\-users consent to applications](https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/configure-user-consent) in the Azure Active Directory [Application management](https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/) documentation\.   
  The admin consent workflow lets administrators grant access to applications that require administrator approval\. If the admin consent workflow is configured in your Azure Active Directory environment, contact AWS Support\. For information about how to contact AWS Support, see [AWS Support Center](https://console.aws.amazon.com/support/home#/)\. 
+
+**Note**  
+You can enable Google Drive for Windows stacks, but not Linux stacks\.
 
 **Topics**
 + [Enable OneDrive for Your AppStream 2\.0 Users](#enable-onedrive)
@@ -22,6 +25,7 @@ Before enabling OneDrive, you must do the following:
 + Configure an AppStream 2\.0 stack with an associated fleet\.
 
    The fleet must use an image that uses a version of the AppStream 2\.0 agent released on or after July 26, 2018\. For more information, see [AppStream 2\.0 Agent Release Notes](agent-software-versions.md)\. The fleet must also have access to the internet\.
++ Have a Windows\-based stack\. \(Linux\-based stacks are not supported\)\.
 
 Follow these steps to enable OneDrive for your AppStream 2\.0 users\.
 

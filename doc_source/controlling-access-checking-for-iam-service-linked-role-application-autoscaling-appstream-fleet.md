@@ -1,6 +1,6 @@
 # Checking for the AWSServiceRoleForApplicationAutoScaling\_AppStreamFleet Service\-Linked Role and Policies<a name="controlling-access-checking-for-iam-service-linked-role-application-autoscaling-appstream-fleet"></a>
 
-Complete the steps in this section to check whether the **AWSServiceRoleForApplicationAutoScaling\_AppStreamFleet** service\-linked role is present and has the correct policies attached\. If this role is not in your account and must be created, you or an administrator with the required permissions must perform the steps to get started with AppStream 2\.0 in your AWS account\.
+Complete the steps in this section to check whether the **AWSServiceRoleForApplicationAutoScaling\_AppStreamFleet** service\-linked role is present and has the correct policies attached\. If this role is not in your account and must be created, you or an administrator with the required permissions must perform the steps to get started with AppStream 2\.0 in your Amazon Web Services account\.
 
 **To check whether the AWSServiceRoleForApplicationAutoScaling\_AppStreamFleet IAM service\-linked role is present**
 

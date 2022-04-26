@@ -32,16 +32,19 @@ Disabling application settings persistence does not delete any VHDs stored in th
 
 When application settings persistence is enabled, a unique folder is created for each settings group to store the settings VHD\. The hierarchy of the folder in the S3 bucket depends on how the user launches a streaming session, as described in the following section\.
 
- The path for the folder where the settings VHD is stored in the S3 bucket in your account uses the following structure:
+The path for the folder where the settings VHD is stored in the S3 bucket in your account uses the following structure:
 
 ```
-bucket-name/Windows/v4/settings-group/access-mode/user-id-SHA-256-hash
+bucket-name/Windows/prefix/settings-group/access-mode/user-id-SHA-256-hash
 ```
 
 ***bucket\-name***  
 The name of the S3 bucket in which users' application settings are stored\. The name format is described earlier in this section\.
 
-***settings\-group ***  
+***prefix***  
+The Windows version\-specific prefix\. For example, v4 for Windows Server 2012 R2\.
+
+***settings\-group***  
 The settings group value\. This value is applied to one or more stacks that share the same the same application settings\.
 
 ***access\-mode***  
@@ -53,7 +56,7 @@ The user\-specific folder name\. This name is created using a lowercase SHA\-256
 The following example folder structure applies to a streaming session that is accessed using the API or CLI with a user ID of `testuser@mydomain.com`, an AWS account ID of `123456789012`, and the settings group `test-stack` in the US West \(Oregon\) Region \(us\-west\-2\):
 
 ```
-appstream-app-settings-us-west-2-1234567890123-abcdefg/Windows/v2/test-stack/custom/a0bcb1da11f480d9b5b3e90f91243143eac04cfccfbdc777e740fab628a1cd13
+appstream-app-settings-us-west-2-1234567890123-abcdefg/Windows/v4/test-stack/custom/a0bcb1da11f480d9b5b3e90f91243143eac04cfccfbdc777e740fab628a1cd13
 ```
 
 You can identify the folder for a user by generating the lowercase SHA\-256 hash value of the user ID using websites or open source coding libraries available online\.
@@ -95,7 +98,7 @@ Object versioning is not enabled by default in your S3 bucket, so you must expli
 
 1. Choose **Versioning**, **Enable versioning**, and then choose **Save**\.
 
-To expire older versions of your application settings VHDs, you can use Amazon S3 lifecycle policies\. For information, see [How Do I Create a Lifecycle Policy for an S3 Bucket?](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-lifecycle.html) in the *Amazon Simple Storage Service Console User Guide*\.
+To expire older versions of your application settings VHDs, you can use Amazon S3 lifecycle policies\. For information, see [How Do I Create a Lifecycle Policy for an S3 Bucket?](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-lifecycle.html) in the *Amazon Simple Storage Service User Guide*\.
 
 **To revert a user's application settings VHD**
 

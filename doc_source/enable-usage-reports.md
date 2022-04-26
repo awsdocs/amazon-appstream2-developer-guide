@@ -25,7 +25,7 @@ appstream-logs-region-code-account-id-without-hyphens-random-identifier
 The AWS Region code for the Region in which usage reporting is enabled\.
 
 ***account\-id\-without\-hyphens***  
-Your AWS account identifier\. The random ID ensures that there is no conflict with other buckets in the same Region\. The first part of the bucket name, `appstream-logs`, does not change across accounts or Regions\.
+Your Amazon Web Services account identifier\. The random ID ensures that there is no conflict with other buckets in the same Region\. The first part of the bucket name, `appstream-logs`, does not change across accounts or Regions\.
 
 For example, if you enable usage reporting in the US West \(Oregon\) Region \(us\-west\-2\) on account number 123456789012, AppStream 2\.0 creates an Amazon S3 bucket within your account in that Region similar to the name shown in the following example: 
 
@@ -37,7 +37,7 @@ Only an administrator with sufficient permissions can delete this bucket\.
 
 ## AppStream 2\.0 Sessions Reports<a name="usage-report-types-sessions-reports"></a>
 
-For each day that users launch at least one streaming session in your AWS account, AppStream 2\.0 exports a sessions report to your Amazon S3 bucket\. The report, named **daily\-session\-report\-\[YYYY\]\-\[MM\]\-\[DD\]\.csv**, is stored in a nested folder structure in your Amazon S3 account, using the following folder path:
+For each day that users launch at least one streaming session in your Amazon Web Services account, AppStream 2\.0 exports a sessions report to your Amazon S3 bucket\. The report, named **daily\-session\-report\-\[YYYY\]\-\[MM\]\-\[DD\]\.csv**, is stored in a nested folder structure in your Amazon S3 account, using the following folder path:
 
 \[bucket\_name\]/sessions/schedule=DAILY/year=\[YYYY\]/month=\[MM\]/day=\[DD\]/
 

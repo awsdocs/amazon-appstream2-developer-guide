@@ -2,6 +2,9 @@
 
 AppStream 2\.0 file system redirection lets users who have the AppStream 2\.0 client installed access files on their local computer from within their streaming session\. When you enable file system redirection, you can specify the list of local drives and folders that your users can choose to access\. When users sign in to AppStream 2\.0 and start a streaming session, they can choose the drive or folder that they want to access from the list\. Then they can share the drive or folder with AppStream 2\.0\. The drive or folder remains available for them to access during their streaming sessions\. Users can stop sharing their local drives or folders at any time\.
 
+**Note**  
+Enabling file system redirection is currently not supported for Linux\-based fleet instances\.
+
 ## Prerequisites for File System Redirection<a name="file-system-redirection-prerequisites"></a>
 
 To enable AppStream 2\.0 file redirection:

@@ -1,5 +1,8 @@
 # Use Google Drive<a name="google-drive-end-user"></a>
 
+**Note**  
+Google Drive is currently not supported for Linux\-based streaming instances\.
+
 If your AppStream 2\.0 administrator has enabled this file storage option, you can add your Google Drive account to AppStream 2\.0\. After you add your account and you sign in to an AppStream 2\.0 streaming session, you can do the following in Google Drive:
 + Open and edit files and folders that you store in Google Drive\. Other users cannot access your content unless you choose to share it\.
 + Upload and download files between your local computer and Google Drive\. Any changes that you make to your files and folders in Google Drive during a streaming session are automatically backed up and synchronized\. They are available to you when you sign in to your Google Drive account and access Google Drive outside of your streaming session\.
